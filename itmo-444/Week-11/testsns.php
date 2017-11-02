@@ -24,6 +24,10 @@ $subscriberesult = $sqs->subscribe([
 ]);
 
 //List S3 buckets
+$s3 = new Aws\S3\S3Client([
+    'version' => 'latest',
+    'region'  => 'us-west-2'
+]);
 
 $listbucketresult = $s3->listBuckets([
     ]);
@@ -38,10 +42,7 @@ $publishresult = $sqs->publish([
     'TopicArn' => $topicarn
 ]);
 
-$s3 = new Aws\S3\S3Client([
-    'version' => 'latest',
-    'region'  => 'us-west-2'
-]);
+
 
 
 ?>
