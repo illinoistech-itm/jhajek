@@ -23,4 +23,11 @@ $subscriberesult = $sqs->subscribe([
     'TopicArn' => $topicarn, // REQUIRED
 ]);
 
+// Publsih a message
+$publishresult = $sqs->publish([
+    'Message' => 'Hello World -- its a bit rainy', // REQUIRED
+    'Subject' => 'Contact from ITMO-5444',
+    'TopicArn' => $topicarn
+]);
+
 ?>
