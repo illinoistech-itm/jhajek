@@ -34,6 +34,8 @@ $listbucketresult = $s3->listBuckets([
 
 echo "\n";
 print_r ($listbucketresult['Buckets']);
+echo $listbucketresult['Buckets'][0]['Name'] . "\n";
+
 
 
 // Publsih a message
