@@ -24,11 +24,11 @@ $subscriberesult = $sqs->subscribe([
 ]);
 
 // add the + sign for to make sms work in front of phone number
-$subscriberesult = $sqs->subscribe([
-    'Endpoint' => '+16306389708',
-    'Protocol' => 'sms', // REQUIRED
-    'TopicArn' => $topicarn, // REQUIRED
-]);
+//$subscriberesult = $sqs->subscribe([
+//    'Endpoint' => '+16306389708',
+//    'Protocol' => 'sms', // REQUIRED
+//    'TopicArn' => $topicarn, // REQUIRED
+//]);
 
 //List S3 buckets
 $s3 = new Aws\S3\S3Client([
