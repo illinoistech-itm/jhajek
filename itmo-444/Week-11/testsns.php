@@ -44,14 +44,14 @@ print_r ($listbucketresult['Buckets']);
 echo $listbucketresult['Buckets'][0]['Name'] . "\n";
 $bucketname = $listbucketresult['Buckets'][0]['Name'];
 
-$listobjectresult = $s3->listObjects([
+$listobjectresults = $s3->listObjects([
     'Bucket' => $bucketname,
     'MaxKeys' => 2,
 ]);
 
 print_r($listobjectresults);
 //$s3url = $bucketname."/".$listobjectresult['Contents'][0]['key'];
-
+$s3url = "NA";
 
 // Publsih a message
 $publishresult = $sqs->publish([
