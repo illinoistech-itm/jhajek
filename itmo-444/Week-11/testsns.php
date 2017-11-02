@@ -50,7 +50,7 @@ $listobjectresults = $s3->listObjects([
 ]);
 
 print_r($listobjectresults);
-$s3url = $bucketname."/".$listobjectresult['Contents'][0]['Key'];
+$s3url = $bucketname."/".$listobjectresults['Contents'][0]['Key'];
 //$s3url = "NA";
 
 // Publsih a message
