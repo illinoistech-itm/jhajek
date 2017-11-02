@@ -54,11 +54,11 @@ $s3url = $bucketname."/".$listobjectresults['Contents'][0]['Key'];
 //$s3url = "NA";
 
 // AWS S3 base URL 
-$url = 'https://s3-us-west-2.amazonaws.com/'
+$url = "https://s3-us-west-2.amazonaws.com/".$s3url;
 
 // Publsih a message
 $publishresult = $sqs->publish([
-    'Message' => "Hello World -- its a bit rainy -- try this $url.$s3url", // REQUIRED
+    'Message' => "Hello World -- its a bit rainy -- try this $url", // REQUIRED
     'Subject' => 'Contact from ITMO-5444',
     'TopicArn' => $topicarn
 ]);
