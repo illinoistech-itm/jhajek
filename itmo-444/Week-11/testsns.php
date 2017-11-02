@@ -12,6 +12,6 @@ $sqs = new Aws\Sns\SnsClient([
 $result = $sqs->listTopics([
     
 ]);
-
 print_r ( $result['Topics']);
+print_r ( $result['Topics'][0]['TopicArn']);
 ?>
