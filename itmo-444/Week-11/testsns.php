@@ -23,6 +23,13 @@ $subscriberesult = $sqs->subscribe([
     'TopicArn' => $topicarn, // REQUIRED
 ]);
 
+// add the + sign for to make sms work in front of phone number
+$subscriberesult = $sqs->subscribe([
+    'Endpoint' => '+16306389708',
+    'Protocol' => 'sms', // REQUIRED
+    'TopicArn' => $topicarn, // REQUIRED
+]);
+
 //List S3 buckets
 $s3 = new Aws\S3\S3Client([
     'version' => 'latest',
@@ -35,12 +42,19 @@ $listbucketresult = $s3->listBuckets([
 echo "\n";
 print_r ($listbucketresult['Buckets']);
 echo $listbucketresult['Buckets'][0]['Name'] . "\n";
+$bucketname = $listbucketresult['Buckets'][0]['Name'];
 
+$listobjectresult = $s3->listObjects([
+    'Bucket' => $bucketname,
+    'MaxKeys' => 2,
+]);
+
+$s3url = $bucketname."/".$listobjectresult['Contents'][0]['key';]
 
 
 // Publsih a message
 $publishresult = $sqs->publish([
-    'Message' => 'Hello World -- its a bit rainy', // REQUIRED
+    'Message' => "Hello World -- its a bit rainy -- try this $s3url", // REQUIRED
     'Subject' => 'Contact from ITMO-5444',
     'TopicArn' => $topicarn
 ]);
