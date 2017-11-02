@@ -18,8 +18,8 @@ $topicarn = $result['Topics'][0]['TopicArn'];
 echo "Your Topic ARN: " . $topicarn;
 
 $subscriberesult = $sqs->subscribe([
-    'Endpoint' => '6306389708',
-    'Protocol' => 'sms', // REQUIRED
+    'Endpoint' => 'hajek@iit.edu',
+    'Protocol' => 'email', // REQUIRED
     'TopicArn' => $topicarn, // REQUIRED
 ]);
 
