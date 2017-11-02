@@ -32,7 +32,8 @@ $s3 = new Aws\S3\S3Client([
 $listbucketresult = $s3->listBuckets([
     ]);
 
-echo "\n" . $listbucketresult['Buckets'];
+echo "\n";
+print_r ($listbucketresult['Buckets']);
 
 
 // Publsih a message
