@@ -49,7 +49,7 @@ $listobjectresult = $s3->listObjects([
     'MaxKeys' => 2,
 ]);
 
-$s3url = $bucketname."/".$listobjectresult['Contents'][0]['key';]
+$s3url = $bucketname."/".$listobjectresult['Contents'][0]['key'];
 
 
 // Publsih a message
