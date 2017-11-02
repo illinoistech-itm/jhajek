@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
  echo "hello world!\n";
 
 $sqs = new Aws\Sns\SnsClient([
-    'version' => 'lates,
+    'version' => 'latest',
     'region'  => 'us-east-1'
 ]);
 
