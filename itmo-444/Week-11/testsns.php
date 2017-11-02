@@ -15,13 +15,21 @@ $result = $sqs->listTopics([
 print_r ( $result['Topics']);
 $topicarn = $result['Topics'][0]['TopicArn'];
 
-echo "Your Topic ARN: " . $topicarn;
+echo "Your Topic ARN: " . $topicarn . "\n";
 
 $subscriberesult = $sqs->subscribe([
     'Endpoint' => 'hajek@iit.edu',
     'Protocol' => 'email', // REQUIRED
     'TopicArn' => $topicarn, // REQUIRED
 ]);
+
+//List S3 buckets
+
+$listbucketresult = $s3->listBuckets([
+    ]);
+
+echo "\n" . $listbucketresult['Buckets'];
+
 
 // Publsih a message
 $publishresult = $sqs->publish([
@@ -35,10 +43,5 @@ $s3 = new Aws\S3\S3Client([
     'region'  => 'us-west-2'
 ]);
 
-
-$listbucketresult = $s3->listBuckets([
-    ]);
-
-echo "\n" . $listbucketresult['Buckets']['Name'];
 
 ?>
