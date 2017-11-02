@@ -50,8 +50,8 @@ $listobjectresults = $s3->listObjects([
 ]);
 
 print_r($listobjectresults);
-//$s3url = $bucketname."/".$listobjectresult['Contents'][0]['key'];
-$s3url = "NA";
+$s3url = $bucketname."/".$listobjectresult['Contents'][0]['Key'];
+//$s3url = "NA";
 
 // Publsih a message
 $publishresult = $sqs->publish([
