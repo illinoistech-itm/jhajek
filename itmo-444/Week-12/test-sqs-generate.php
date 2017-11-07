@@ -30,4 +30,6 @@ $sendmessageresult = $sqs->sendMessage([
     'QueueUrl' => $queueurl // REQUIRED
 ]);
 
+echo "The messageID is: ". $sendmessageresult['MessageId'] . "\n";
+
 ?>
