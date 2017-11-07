@@ -15,8 +15,8 @@ $listQueueresult = $sqs->listQueues([
 # print out every thing
 # print_r ($listQueueresult);  
 
-echo "Your SQS URL is: " . $listQueueresult[QueueUrls][0] . "\n";
-$queueurl = $listQueueresult[QueueUrls][0];
+echo "Your SQS URL is: " . $listQueueresult['QueueUrls'][0] . "\n";
+$queueurl = $listQueueresult['QueueUrls'][0];
 
 ### 
 # you need some code to insert records into the database -- make sure you retrieve the UUID into a variable so you can pass it to the SQS message
