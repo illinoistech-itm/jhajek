@@ -8,6 +8,7 @@ $sqs = new Aws\Sqs\SqsClient([
     'region'  => 'us-east-2'
 ]);
 
+#list the SQS Queue URL
 $listQueueresult = $sqs->listQueues([
     
 ]);
@@ -15,5 +16,18 @@ $listQueueresult = $sqs->listQueues([
 # print_r ($listQueueresult);  
 
 echo "Your SQS URL is: " . $listQueueresult[QueueUrls][0] . "\n";
+$queueurl = $listQueueresult[QueueUrls][0];
+
+### 
+# you need some code to insert records into the database -- make sure you retrieve the UUID into a variable so you can pass it to the SQS message
+
+$uuid = uniqid();
+
+### send message to the SQS Queue
+$sendmessageresult = $sqs->sendMessage([
+    'DelaySeconds' => 30,
+    'MessageBody' => $uuid, // REQUIRED
+    'QueueUrl' => $queueurl // REQUIRED
+]);
 
 ?>
