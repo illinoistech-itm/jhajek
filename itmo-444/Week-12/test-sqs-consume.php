@@ -27,6 +27,24 @@ $receivemessageresult = $sqs->receiveMessage([
 ]);
 
 # print out content of SQS message - we need to retreive Body and Receipt Handle
-print_r ($receivemessageresult['Messages'])
+#print_r ($receivemessageresult['Messages'])
+$receiptHandle = $receivemessageresult['Messages'][0]['ReceiptHandle'];
+$uuid = $receivemessageresult['Messages'][0]['Body'] . "\n";
+echo "The content of the message is: " . $receivemessageresult['Messages'][0]['Body'] . "\n";
+
+# Now in your data base do a select * from records where uuid=$uuid;
+# What will this give you?  S3 URL for the raw bucket
+
+# Include your S3 code to retreive the object from the S3URL -- save file local in a tmp file name
+
+# Pass this image into your image manipulation function  
+
+# upon completion put the finished image into the S3 bucket for finsihed images
+
+# Update your Database record using the UPDATE and the $uuid as the search term  
+#  * Add S3 finsihed URL 
+#  * change status from 0 to 1 (done)
+
+# SNS would then xend your user a text with the finsihed URL 
 
 ?>
