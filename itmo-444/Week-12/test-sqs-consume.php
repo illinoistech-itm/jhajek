@@ -26,6 +26,7 @@ $receivemessageresult = $sqs->receiveMessage([
     'WaitTimeSeconds' => 5,
 ]);
 
-
+# print out content of SQS message - we need to retreive Body and Receipt Handle
+print_r ($receivemessageresult['Messages'])
 
 ?>
