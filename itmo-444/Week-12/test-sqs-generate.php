@@ -22,6 +22,7 @@ $queueurl = $listQueueresult['QueueUrls'][0];
 # you need some code to insert records into the database -- make sure you retrieve the UUID into a variable so you can pass it to the SQS message
 
 $uuid = uniqid();
+echo $uuid . '\n';
 
 ### send message to the SQS Queue
 $sendmessageresult = $sqs->sendMessage([
