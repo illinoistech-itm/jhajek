@@ -33,4 +33,5 @@ $sendmessageresult = $sqs->sendMessage([
 
 echo "The messageID is: ". $sendmessageresult['MessageId'] . "\n";
 
+
 ?>

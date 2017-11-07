@@ -47,6 +47,11 @@ echo "The content of the message is: " . $receivemessageresult['Messages'][0]['B
 
 # SNS would then xend your user a text with the finsihed URL 
 
+# delete consumed message
 
+$deletemessageresult = $sqs->deleteMessage([
+    'QueueUrl' => $queueurl, // REQUIRED
+    'ReceiptHandle' => $receiptHandle, // REQUIRED
+]);
 
 ?>
