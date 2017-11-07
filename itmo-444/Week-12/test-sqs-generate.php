@@ -11,7 +11,9 @@ $sqs = new Aws\Sqs\SqsClient([
 $listQueueresult = $sqs->listQueues([
     
 ]);
+# print out every thing
+# print_r ($listQueueresult);  
 
-print_r ($listQueueresult);  
+echo "Your SQS URL is: " . $listQueueresult[QueueUrls][0] . "\n";
 
 ?>
