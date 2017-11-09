@@ -10,7 +10,7 @@
 
 # Make RDS connection
 
-# Select * from Records WHERE receipt=’$UUIID’
+# Select * from Records WHERE receipt=’$UUID’
 
 # Make S3 connection 
 
