@@ -5,5 +5,5 @@ if (!isset($_SESSION['count'])) {
 } else {
   $_SESSION['count']++;
 }
-echo $_SESSION['count'];
+echo "The count is: ". $_SESSION['count'];
 ?> 
