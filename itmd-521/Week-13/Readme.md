@@ -11,11 +11,11 @@ For Test 1-3
 * F-N 1991.txt
 * O-Z 1994.txt
 
-Run a maxtrix of jobs for the /user/ncdc/199X/199X.txt* and /user/ncdc/small/199X/* datasets 
+For each bullet point in a Test you will run it using these datasets:  /user/ncdc/199X/199X.txt* and /user/ncdc/small/199X/* datasets 
 *  199X.txt
 *  199X.txt.bz2
 *  199X.txt.gz
-*  199X small files
+*  199X small files (these are the inducidual 4K files not combined to a single file)
 
 ##  Test 1
 
