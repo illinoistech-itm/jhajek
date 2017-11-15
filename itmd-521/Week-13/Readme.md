@@ -131,5 +131,5 @@ Your explanation of the reults of the above graph goes here.  This explanation t
 
 ## Conclusion
 
-Write your general conclusion and recommendation for the optimal performance characteristics based on this work load and dataset (reference your test results above)
+Write your general conclusion and recommendation for the optimal performance characteristics relating to **intermediate compression**, **compression**, **combiners**, **block size**, and **number of reducers** based on this work load and dataset results (reference your test results above).
 
