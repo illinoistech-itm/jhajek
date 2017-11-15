@@ -1,5 +1,10 @@
 # Week-13 Cluster Assignment
 
+## Notes
+
+For test 4-15 You will need to recompile your **MaxTemperature** driver class and JAR to modify the following: ```job.setNumReduceTasks(X)``` and set ``` job.setJobName("Max temperature");``` to include your initials:  ```job.setJobName("MT test 1 jrh");```
+For test 4-6 You will need modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook *section 6-12* to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder (include just 1 sample)
+
 ##  Test 1
 
 * Without combiner, without intermediate compression, and 1 reducers
@@ -45,48 +50,39 @@ Your explanation of the reults of the above graph goes here.  This explanation t
 ## Test 4 
 
 * Repeat test 1 using the datasets located in: ```/user/ncdc/80/``` (Lastname A-K) and  ```/user/ncdc/90/``` (Lastname L-Z) 
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
+* For test 4-6 You will need modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook *section 6-12* to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder 
 
 ---
 
 ## Test 5
 
 * Repeat test 2 using the datasets located in: ```/user/ncdc/80/``` (Lastname A-K) and  ```/user/ncdc/90/``` (Lastname L-Z) 
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
+* For test 4-6 You will need modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook *section 6-12* to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder 
 
 ---
 
 ## Test 6
 
 * Repeat test 3 using the datasets located in: ```/user/ncdc/80/``` (Lastname A-K) and  ```/user/ncdc/90/``` (Lastname L-Z) 
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
+* For test 4-6 You will need modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook *section 6-12* to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder 
 
 ---
 
 ## Test 7 
 
 * Repeat test 1 using the datasets located in: ```/user/ncdc/80-90/```  (ALL students)
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
 
 ---
 
 ## Test 8
 
 * Repeat test 2 using the datasets located in: ```/user/ncdc/80-90/```  (ALL students)
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
 
 ---
 
 ## Test 9 
 
 * Repeat test 3 using the datasets located in: ```/user/ncdc/80-90/```  (ALL students)
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
 
 ---
 
@@ -94,8 +90,6 @@ Modify your MaxTemperature code to account for bad records use the sample code o
 
 * Repeat test 1 using the dataset and the ```/user/ncdc/256/80-90/``` datasets (ALL students)
    + This increases the default Block Size to 256 mb
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
 
 ---
 
@@ -103,8 +97,6 @@ Modify your MaxTemperature code to account for bad records use the sample code o
 
 * Repeat test 2 using the dataset and the ```/user/ncdc/256/80-90/``` datasets (ALL students)
    + This increases the default Block Size to 256 mb
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
 
 ---
 
@@ -112,8 +104,7 @@ Modify your MaxTemperature code to account for bad records use the sample code o
 
 * Repeat test 3 using the dataset and the ```/user/ncdc/256/80-90/``` datasets (ALL students)
    + This increases the default Block Size to 256 mb
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
+
 
 ---
 
@@ -121,8 +112,6 @@ Modify your MaxTemperature code to account for bad records use the sample code o
 
 * Repeat test 1 using the dataset and the ```/user/ncdc/512/80-90/``` datasets (ALL students)
    + This increases the default Block Size to 512 mb
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
 
 --- 
 
@@ -130,8 +119,6 @@ Modify your MaxTemperature code to account for bad records use the sample code o
 
 * Repeat test 2 using the dataset and the ```/user/ncdc/512/80-90/``` datasets (ALL students)
    + This increases the default Block Size to 512 mb
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
 
 ---
 
@@ -139,8 +126,6 @@ Modify your MaxTemperature code to account for bad records use the sample code o
 
 * Repeat test 3 using the dataset and the ```/user/ncdc/512/80-90/``` datasets (ALL students)
    + This increases the default Block Size to 512 mb
-* You will need to recompile your **MaxTemperature** driver class and JAR to include the following:
-Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
 
 ---
 
