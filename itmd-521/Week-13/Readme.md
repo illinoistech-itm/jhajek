@@ -89,3 +89,8 @@ Modify your MaxTemperature code to account for bad records use the sample code o
 Modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook section 6-12 to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder
 
 ---
+
+## Conclusion
+
+Write your general conclusion and recommendation for the optimal performance characteristics based on this work load and dataset (reference your test results above)
+
