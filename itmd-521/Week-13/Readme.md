@@ -1,8 +1,10 @@
 # Week-13 Cluster Assignment
 
-###  Without combiner, without intermediate compression, and 1 reducers
+1)  Without combiner, without intermediate compression, and 1 reducers
 
 #### Answer
+
+[*Item 1 Results*](../images/bar-graph.png "bar graph")
 
 Answer goes here
 
