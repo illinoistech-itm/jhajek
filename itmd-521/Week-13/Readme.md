@@ -6,7 +6,7 @@
 
 ![*Item 1 Results*](../images/bar-graph2.png "bar graph")
 
-Answer goes here
+Answer goes here with page or ebook section citations 
 
 ---
 
@@ -14,6 +14,6 @@ Answer goes here
 
 #### Answer
 
-Answer goes here 
+Answer goes here  with page or ebook section citations 
 
 ---
