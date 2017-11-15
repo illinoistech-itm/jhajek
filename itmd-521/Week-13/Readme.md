@@ -8,7 +8,7 @@
 
 Answer goes here
 
-### With combiner, with intermediate compression, and 1 reducers
+1) With combiner, with intermediate compression, and 1 reducers
 
 #### Answer
 
