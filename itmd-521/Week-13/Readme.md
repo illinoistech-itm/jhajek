@@ -11,6 +11,12 @@ For Test 1-3
 * F-N 1991.txt
 * O-Z 1994.txt
 
+Run a maxtrix of jobs for the /user/ncdc/199X/199X.txt* and /user/ncdc/small/199X/* datasets 
+*  199X.txt
+*  199X.txt.bz2
+*  199X.txt.gz
+*  199X small files
+
 ##  Test 1
 
 * Without combiner, without intermediate compression, and 1 reducers
