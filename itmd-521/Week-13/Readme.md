@@ -1,6 +1,6 @@
 # Week-13 Cluster Assignment
 
-1)  Without combiner, without intermediate compression, and 1 reducers
+###  Without combiner, without intermediate compression, and 1 reducers
 
 #### Answer
 
@@ -8,8 +8,12 @@
 
 Answer goes here
 
-1) With combiner, with intermediate compression, and 1 reducers
+---
+
+### With combiner, with intermediate compression, and 1 reducers
 
 #### Answer
 
-Answer goes here --
+Answer goes here 
+
+---
