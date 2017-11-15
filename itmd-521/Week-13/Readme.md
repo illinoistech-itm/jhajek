@@ -7,9 +7,9 @@ For test 4-6 You will need modify your MaxTemperature code to account for bad re
 
 MaxTemperature 1999.txt  recompile mt.jar changing job.setJobName name to add your initials 
 For Test 1-3
-* A-E 1999.txt
-* F-N 1991.txt
-* O-Z 1994.txt
+* A-E 1999 and small/1999
+* F-N 1991 and small/1991
+* O-Z 1994 and small/1994
 
 For each bullet point in a Test you will run it using these datasets:  /user/ncdc/199X/199X.txt* and /user/ncdc/small/199X/* datasets 
 *  199X.txt
