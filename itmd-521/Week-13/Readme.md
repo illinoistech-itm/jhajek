@@ -5,6 +5,12 @@
 For test 4-15 You will need to recompile your **MaxTemperature** driver class and JAR to modify the following: ```job.setNumReduceTasks(X)``` and set ``` job.setJobName("Max temperature");``` to include your initials:  ```job.setJobName("MT test 1 jrh");```
 For test 4-6 You will need modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook *section 6-12* to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder (include just 1 sample)
 
+MaxTemperature 1999.txt  recompile mt.jar changing job.setJobName name to add your initials 
+For Test 1-3
+* A-E 1999.txt
+* F-N 1991.txt
+* O-Z 1994.txt
+
 ##  Test 1
 
 * Without combiner, without intermediate compression, and 1 reducers
