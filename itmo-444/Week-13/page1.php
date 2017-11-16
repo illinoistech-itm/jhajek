@@ -16,7 +16,7 @@ echo '<br /><a href="page2.php">page 2</a><br />';
 if (!isset($_SESSION['myanimal'])) {
     echo "Not yet declared!\n";
   } 
- if (isset($_SESSION['myanimal'] && $_SESSION == 'cat')) {
+ if ($_SESSION['myanimal'] == 'cat') {
     echo '<span><img src="cat.jpg" /></span>';
   }  else {
     echo '<span style="visibility:hidden"><img src="cat.jpg" /></span>';
