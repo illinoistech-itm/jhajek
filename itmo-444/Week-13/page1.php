@@ -10,7 +10,7 @@ $_SESSION['animal']   = 'cat';
 $_SESSION['time']     = time();
 
 if (!isset($_SESSION['myanimal'])) {
-    echo "Not yet declared!\n"
+    echo "Not yet declared!\n";
   } else {
     echo "Your animal is: " . $_SESSION['myanimal'];
   }
