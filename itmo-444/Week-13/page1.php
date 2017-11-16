@@ -12,6 +12,8 @@ $_SESSION['time']     = time();
 
 // Works if session cookie was accepted
 echo '<br /><a href="page2.php">page 2</a><br />';
+# sample here on css visibility and display
+#https://stackoverflow.com/questions/133051/what-is-the-difference-between-visibilityhidden-and-displaynone
 
 if (!isset($_SESSION['myanimal'])) {
     echo "Not yet declared!\n";
