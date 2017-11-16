@@ -28,7 +28,8 @@ echo '<br /><a href="page1.php">page 1</a>';
 <?php
 
 echo "Your animal is: ". $_POST['animal'];
+$_SESSION['myanimal'] = $_POST['animal'];
 
-
+echo '<br /><a href="page1.php?' . SID . '">page 1</a>';
 
 ?>
