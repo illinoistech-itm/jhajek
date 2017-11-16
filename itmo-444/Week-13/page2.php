@@ -15,7 +15,7 @@ echo '<br /><a href="page1.php">page 1</a>';
 
 ?> 
 
-<form method="post">
+<form method="post" action="page2.php">
 <fieldset>
         <legend>What is Your Favorite Pet?</legend>
                 <input type="radio" name="animal" value="Cat" />Cats<br />
@@ -24,3 +24,11 @@ echo '<br /><a href="page1.php">page 1</a>';
                 <input type="submit" value="Submit now" />
 </fieldset>
 </form>
+
+<?php
+
+echo "Your animal is: ". $_POST['animal'];
+
+
+
+?>
