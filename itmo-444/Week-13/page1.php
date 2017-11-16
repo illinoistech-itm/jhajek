@@ -18,7 +18,7 @@ if (!isset($_SESSION['myanimal'])) {
   } else {
       echo "Value is set.\n";
   }
- if ($_SESSION['myanimal'] == 'cat') {
+ if ($_SESSION['myanimal'] == 'Cat') {
     echo '<span><img src="cat.jpg" /></span>';
   }  else {
     echo '<span style="visibility:hidden"><img src="cat.jpg" /></span>';
