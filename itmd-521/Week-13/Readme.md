@@ -6,7 +6,9 @@ For test 4-15 You will need to recompile your **MaxTemperature** driver class an
 
 For test 4-6 You will need modify your MaxTemperature code to account for bad records use the sample code on P.174 of textbook *section 6-12* to include a counter that will output the number of bad records at the end of the job -- place this new code and jar file in  Week-13 -> badrecord folder (include just 1 sample)
 
-MaxTemperature 1999.txt  recompile mt.jar changing job.setJobName name to add your initials 
+Test 17 
+
+For MaxTemperature*.java recompile ```mt.jar``` changing ```job.setJobName``` name to add your initials 
 For Test 1-3
 * A-E 1999 and small/1999
 * F-N 1991 and small/1991
@@ -16,7 +18,7 @@ For each bullet point in a Test you will run it using these datasets:  /user/ncd
 *  199X.txt
 *  199X.txt.bz2
 *  199X.txt.gz
-*  199X small files (these are the inducidual 4K files not combined to a single file)
+*  199X small files (these are the induvidual 4K files not combined to a single file)
 
 ##  Test 1
 
