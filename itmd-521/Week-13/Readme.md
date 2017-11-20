@@ -146,14 +146,14 @@ Your explanation of the reults of the above graph goes here.  This explanation t
 
 ## Test 16
 
-* Using the datasets contained in ```/user/logs/large-logs``` write and compile a MapReduce Program to do the following: For each month in the year find the page (html or php) name that has the highest number of HTTP 200 responses that is not the index.* page.  Use the following years and files:
+* Using the datasets contained in ```/user/logs/large-logs``` write and compile a MapReduce Program to do the following: For each month in the year find the page (html or php) name that has the highest number of HTTP 200 responses that is not the index.* page as well as the number (count) of those results graphed together.  Use the following years and files:
     + Lastname A-E 2012 + 2013
     + Lastname F-N 2014 + 2015
     + Lastname O-Z 2016 + 2012   
     + ```web-server-logs.txt```
     + ```web-server-logs.bz2``` 
     + ```web-server-logs.gz```
-*  Graph the retreived data, based on results of previous 15 tests, you decide the single configuration that is optimum for achieving the results.  Include your code inside your Github account in a folder named test-16.  Make sure all coded needed to compile and run the job is present.  Add a ReadMe.md with any instructions or assumptions in that folder.
+*  Graph the retrieved data, based on results of previous 15 tests, you decide the single configuration that is optimum for achieving the results and explain why you chose that configuration for this test.  Include your code inside your Github account in a folder named test-16.  Make sure all coded needed to compile and run the job is present.  Add a ReadMe.md with any instructions or assumptions in that folder.
 
 --
 
