@@ -10,11 +10,11 @@ Test 17
 
 For MaxTemperature*.java recompile ```mt.jar``` changing ```job.setJobName``` name to add your initials 
 For Test 1-3
-* A-E 1999 and small/1999
-* F-N 1991 and small/1991
-* O-Z 1994 and small/1994
+* A-E 1999 and ~~small/1999~~ small/91-1000
+* F-N 1991 and ~~small/1991~~ small/94-1000
+* O-Z 1994 and ~~small/1994~~ small/99-1000
 
-For each bullet point in a Test you will run it using these datasets:  /user/ncdc/199X/199X.txt* and /user/ncdc/small/199X/* datasets 
+For each bullet point in a Test you will run it using these datasets:  /user/ncdc/199X/199X.txt* and /user/ncdc/small/9X-1000/* datasets 
 *  199X.txt
 *  199X.txt.bz2
 *  199X.txt.gz
