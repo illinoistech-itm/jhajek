@@ -13,6 +13,7 @@ For Test 1-3
 * A-E 1999 and ~~small/1999~~ small/91-1000
 * F-N 1991 and ~~small/1991~~ small/94-1000
 * O-Z 1994 and ~~small/1994~~ small/99-1000
+  + Use ```/user/ncdc/small/80-1000```, ```/user/ncdc/small/90-1000```, ```/user/ncdc/small/80-90-1000``` as directed.
 
 For each bullet point in a Test you will run it using these datasets:  /user/ncdc/199X/199X.txt* and /user/ncdc/small/9X-1000/* datasets 
 *  199X.txt
