@@ -21,7 +21,7 @@ $cwresult = $cw->getMetricStatistics([
     'Namespace' => 'AWS/EC2', // REQUIRED
     'Period' => 300, // REQUIRED
     'StartTime' => strtotime('-5 minutes'), // REQUIRED
-   // 'Statistics' => ['<string>', ...],
+    'Statistics' => ['Maximum'],
    // 'Unit' => '
 
 ]);
