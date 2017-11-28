@@ -21,7 +21,7 @@ For each bullet point in a Test you will run it using these datasets:  /user/ncd
 *  199X.txt
 *  199X.txt.bz2
 *  199X.txt.gz
-*  199X small files (these are the induvidual 4K files not combined to a single file)
+*  9X-1000 small files (these are the induvidual 4K files not combined to a single file)
 
 ##  Test 1
 
