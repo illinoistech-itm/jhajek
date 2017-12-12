@@ -1,1 +1,1 @@
-pandoc -V geometry:margin=.75in -V paperwidth=6.14in -V paperheight=9.25in -V documentclass=report -V linkcolor=blue -V fontsize=12pt -V mainfont="Charis SIL" -V monofont=Inconsolata -s  --latex-engine=xelatex -o ./Final-Assignment-V3.pdf ./Readme.md
+pandoc -V geometry:margin=.75in -V paperwidth=6.14in -V paperheight=9.25in -V documentclass=report -V linkcolor=blue -V fontsize=12pt -V mainfont="Charis SIL" -V monofont=Inconsolata -s  --latex-engine=xelatex -o ./Final-Assignment-V3-2.pdf ./Readme.md
