@@ -17,4 +17,4 @@ It doesn't look like it now, but I played American Football in high school and j
 
 # Git tutorial
 
-![Git Tutorial](images/git-tutorial.png "Result")
+![Git Tutorial](images/new-git-badge.png "Result")
