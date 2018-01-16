@@ -1,3 +1,7 @@
 # Template
 
-ReadMe.md for this week
+## Chose an editor
+
+* Visual Studio Code
+* [Atom.io](https://atom.io)
+* Sublime
