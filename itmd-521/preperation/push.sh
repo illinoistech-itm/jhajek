@@ -11,10 +11,16 @@ for i in {1949..1999}
 do
 
     for file in ./$i/* ; do gunzip -c $file >> ./$i/$i.txt ; done
-    echo "Finished creating combined file of $i"
+    echo "Finished creating combined file of $i.txt\n"
     hadoop fs -mkdir /user/$USER/ncdc/$i
     hadoop fs -copyFromLocal ./$i/$i.txt /user/$USER/ncdc/$i/
-    gzip -ckv $i/$i.txt | hadoop fs -put - /user/$USER/ncdc/$i/
-    bzip2 -zkv $i/$i.txt | hadoop fs -put - /user/$USER/ncdc/$i/
+    echo "Gzip compressing $i.txt\n"
+    gzip -kv $i/$i.txt
+    echo "Uploading gzip to HDFS\n" 
+    hadoop fs -put $i/$i.txt.gz /user/$USER/ncdc/$i/
+    echo "bzip2 compressing $i.txt\n"
+    bzip2 -zkv $i/$i.txt
+    echo "Uploading bzip2 to HDFS\n"
+    hadoop fs -put $i/$i.txt.bz2 /user/$USER/ncdc/$i/
 
 done
