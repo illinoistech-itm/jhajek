@@ -14,7 +14,7 @@ do
     echo "Finished creating combined file of $i"
     hadoop fs -mkdir /user/$USER/ncdc/$i
     hadoop fs -copyFromLocal ./$i/$i.txt /user/$USER/ncdc/$i
-    gzip -ckv $i/$i.txt | hadoop fs -put - /user/$USER/ncdc/$i.txt.gz
-    bzip2 -zkv $i/$i.txt | hadoop fs -put - /user/$USER/ncdc/$i.txt.bz
+    gzip -ckv $i/$i.txt | hadoop fs -put - /user/$USER/ncdc/$i/
+    bzip2 -zkv $i/$i.txt | hadoop fs -put - /user/$USER/ncdc/$i/
 
 done
