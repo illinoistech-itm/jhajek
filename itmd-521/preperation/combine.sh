@@ -23,6 +23,6 @@ for (( i=$1; i<=$2; i++ ))
   bzip2 -zkv $3.txt
   echo "putting to Hadoop Cluster"
   hadoop fs -copyFromLocal ./$3.txt.bz /user/$USER/ncdc/$3/
-  rm $3.txt.bz
+  rm $3.txt.bz2
 
     
