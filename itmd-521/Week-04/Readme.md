@@ -7,9 +7,10 @@ Clone this repo to your system, add this file to a folder named Week-04 (mind th
 ### Part I
 
 * Insert the assigned datasets below into your local hadoop cluster 
-  + A-E 1997.txt  [1997.txt.xz](https://drive.google.com/open?id=0Bys2c__9q7eBNzhMNXdUSFpNYlk)
+  + A-E 1997.txt [1997.txt.xz](https://drive.google.com/open?id=0Bys2c__9q7eBNzhMNXdUSFpNYlk)
   + F-R 1950.txt [1950.txt.xz](https://drive.google.com/open?id=0Bys2c__9q7eBQVJnbXFMSkstMTQ)
   + S-Z 1985.txt [1985.txt.xz](https://drive.google.com/open?id=0Bys2c__9q7eBUUN4TkllRXFxYTg)
+  + Note that the files are compressed with xzip - you will need to use the vagrant shared file options to get them into your vagrant box - see Week 4 Tuesday video 
 * Insert the data into this directory structure /user/$USER/ncdc/19XX/  (with XX being your year)
 * Compile the source code in chapter-02 of the text book sample code into a single jar file named: ```mt.jar```
   + Place all your scripts (but not the datafile!) into the Week-04 github folder
@@ -31,6 +32,8 @@ Clone this repo to your system, add this file to a folder named Week-04 (mind th
 ### Deliverable Instructions
 
  [Clone my repo](https://github.com/illinoistech-itm/jhajek.git) and use this file as your template.   Add the required photo deliverables to the document as noted and submit your github URL to blackboard.
+
+ Assume all work and code will be executed on the Vagrant Box
 
 ### Deliverable 1
 
