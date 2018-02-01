@@ -18,15 +18,15 @@ Clone this repo to your system, add this file to a folder named Week-04 (mind th
 
 ### Part II
 
-1) In your Vagrant box, install mysql-server and give it the password: **itmd521**
-1) Install and configure the proper mysql-Java connector 
-1) Write a script in Python to parse the dataset given you (using schemea in Chapter 02) and insert this data into a database named: **521** and a table named: **records**
+* In your Vagrant box, install mysql-server and give it the password: **itmd521**
+* Install and configure the proper mysql-Java connector - [https://dev.mysql.com/downloads/connector/j/](mysql/J connector)
+* Write a script in Python to parse the dataset given you (using schemea in Chapter 02) and insert this data into a database named: **521** and a table named: **records**
   + Assume that the dataset.txt file is in the same directory as the script being executed
-1) Write a Java Application that will perform the same funtionality as the MapReduce program to find the Max Temperature in SQL.
-1) Provide any instructions or additional dependencies needed at the bottom of this document
+* Write a Java Application that will perform the same funtionality as the MapReduce program to find the Max Temperature in SQL.
+* Provide any instructions or additional dependencies needed at the bottom of this document
   + We will run your code to see if the results are as delvivered.
   + Place all your scripts (but not the datafile!) into the Week-04 github folder
-1) take a screenshot of the output 
+* take a screenshot of the output 
 
 ### Deliverable 1
 
