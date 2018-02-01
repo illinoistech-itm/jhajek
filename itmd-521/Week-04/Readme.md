@@ -12,6 +12,7 @@ Clone this repo to your system, add this file to a folder named Week-04 (mind th
   + S-Z 1989-half.txt
 1) Insert the data into this directory structure /user/$USER/ncdc/19XX/  (with XX being your year)
 1) Compile the source code in chapter-02 of the text book sample code into a single jar file named: ```mt.jar```
+  + Place all your scripts (but not the datafile!) into the Week-04 github folder
 1) Run the MaxTemperature class against your dataset
 1) Display the content of the part-r-00000  and capture that in a screenshot to be displayed below
 
