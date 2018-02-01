@@ -23,7 +23,7 @@ Clone this repo to your system, add this file to a folder named Week-04 (mind th
 1) Write a script in Python to parse the dataset given you (using schemea in Chapter 02) and insert this data into a database named: **521** and a table named: **records**
   + Assume that the dataset.txt file is in the same directory as the script being executed
 1) Write a Java Application that will perform the same funtionality as the MapReduce program to find the Max Temperature in SQL.
-1) Provide a ReadMe.md in the Week-04 folder with all requirements, instructions, and assumptions 
+1) Provide any instructions or additional dependencies needed at the bottom of this document
   + We will run your code to see if the results are as delvivered.
   + Place all your scripts (but not the datafile!) into the Week-04 github folder
 1) take a screenshot of the output 
@@ -35,4 +35,6 @@ Clone this repo to your system, add this file to a folder named Week-04 (mind th
 ### Devliverable 2
 
 **ScreenShot here**
+
+### Additional Notes
 
