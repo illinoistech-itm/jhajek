@@ -6,15 +6,15 @@ Clone this repo to your system, add this file to a folder named Week-04 (mind th
 
 ### Part I
 
-1) Insert the assigned datasets below into your local hadoop cluster 
-  + A-E 1987-half.txt
-  + F-R 1988-half.txt
-  + S-Z 1989-half.txt
-1) Insert the data into this directory structure /user/$USER/ncdc/19XX/  (with XX being your year)
-1) Compile the source code in chapter-02 of the text book sample code into a single jar file named: ```mt.jar```
+* Insert the assigned datasets below into your local hadoop cluster 
+  + A-E 1997.txt  [1997.txt.xz](https://drive.google.com/open?id=0Bys2c__9q7eBNzhMNXdUSFpNYlk)
+  + F-R 1950.txt [1950.txt.xz](https://drive.google.com/open?id=0Bys2c__9q7eBQVJnbXFMSkstMTQ)
+  + S-Z 1985.txt [1985.txt.xz](https://drive.google.com/open?id=0Bys2c__9q7eBUUN4TkllRXFxYTg)
+* Insert the data into this directory structure /user/$USER/ncdc/19XX/  (with XX being your year)
+* Compile the source code in chapter-02 of the text book sample code into a single jar file named: ```mt.jar```
   + Place all your scripts (but not the datafile!) into the Week-04 github folder
-1) Run the MaxTemperature class against your dataset
-1) Display the content of the part-r-00000  and capture that in a screenshot to be displayed below
+* Run the MaxTemperature class against your dataset
+* Display the content of the part-r-00000 and capture that in a screenshot to be displayed below
 
 ### Part II
 
@@ -27,6 +27,10 @@ Clone this repo to your system, add this file to a folder named Week-04 (mind th
   + We will run your code to see if the results are as delvivered.
   + Place all your scripts (but not the datafile!) into the Week-04 github folder
 * take a screenshot of the output 
+
+### Deliverable Instructions
+
+ [Clone my repo](https://github.com/illinoistech-itm/jhajek.git) and use this file as your template.   Add the required photo deliverables to the document as noted and submit your github URL to blackboard.
 
 ### Deliverable 1
 
