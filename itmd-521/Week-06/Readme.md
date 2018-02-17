@@ -23,7 +23,7 @@ Assuming the completion of week 05 homework and a working Sqoop instance and the
 
 ### Part II 
 
-Repeat the work above this time add a ```WHERE``` clause selecting only record number 1000-5000. Execute ```hadoop fs -cat <outputfile>```, place the screenshot in delvierable 2. 
+Repeat the work above this time add a ```WHERE``` clause selecting only record number 1000-5000 and temperature between 2 and 20 Celcius. Execute ```hadoop fs -cat <outputfile>```, place the screenshot in delvierable 2. 
 
 ### Deliverable Instructions
 
