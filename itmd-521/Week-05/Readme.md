@@ -4,11 +4,11 @@
 
 ### Part I
 
-In chapter 15 (up to page 390 in the ePub edition -- stop at the heading **Text and Binary Formats**)  You are to install Sqoop binary on your local Hadoop Cluster (Vagrant Box).  You are to use the  WHERE clause on page 393 (epub) to execute an import from your mysql to hadoop for all records that have temperatures >= 38.0 Celcius  
+In chapter 15 (up to page 390 in the ePub edition -- stop at the heading **Text and Binary Formats**)  You are to install Sqoop binary on your local Hadoop Cluster (Vagrant Box).  You are to use the  WHERE clause on page 393 (epub) to execute an import from your mysql to hadoop for all records that have temperatures >= 38.0 and <= 42.0 Celsius.  
 
 ### Part II 
 
-Upon succesful completion of this operation, use the ```hadoop fs -tail <file>``` command to display the last 10 records of the file (see page 388 epub ) or right before the heading **Text and Binary Formats**.  Place screen shot in the space allocated below.
+Upon succesful completion of this operation, use the ```hadoop fs -tail <file>``` command to display the last <strike>10 records</strike> last 1kb of the file (see page 388 epub) or right before the heading **Text and Binary Formats**.  Place screen shot in the space allocated below.
 
 ### Deliverable Instructions
 
