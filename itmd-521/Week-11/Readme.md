@@ -1,4 +1,4 @@
-## Setup remote hadoop cluster
+## Setup Remote Hadoop Cluster Notes
 
 Copy all *.xml and .sh files into your ```~/hadoop-2.6.5/etc/hadoop``` directory overwritting the defaults 
 
