@@ -1,0 +1,16 @@
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+127.0.0.1  itmd521-cluster
+
+# Hadoop Datanodes
+192.168.1.101 datanode1 datanode1.sat.iit.edu
+192.168.1.102 datanode2 datanode2.sat.iit.edu
+192.168.1.103 datanode3 datanode3.sat.iit.edu
+192.168.1.104 datanode4 datanode4.sat.iit.edu
+192.168.1.105 datanode5 datanode5.sat.iit.edu
+
+# namenode
+192.168.1.100 namenode namenode.sat.iit.edu

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+ <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://namenode.sat.iit.edu/</value>
+    <description>NameNode URI</description>
+  </property>
+  <property>
+		<name>io.file.buffer.size</name>
+		<value>131072</value>
+		<description>The default I/O file sizs for Hadoop</description>
+	</property>
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/home/controller/datapool1/hadoop-controller</value>
+    <description>https://hadoop.apache.org/docs/r2.6.5/hadoop-project-dist/hadoop-common/core-default.xml</description>
+  </property>
+
+</configuration>
