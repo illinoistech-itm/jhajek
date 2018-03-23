@@ -24,7 +24,7 @@ Execute this command from your itmd521-cluster vagrant box ```hadoop fs -ls /use
 
 Compile the MaxTemperature sample code from the hadoop-book chapter 02.  Place the code into a jar file mt.jar (you may already have this step done, which in that case you can reuse mt.jar).  Run the command ```hadoop jar mt.jar MaxTemperature /user/controller/ncdc/YEAROFYOURBIRTH/YEAROFYOURBIRTH.txt``` and ```hadoop jar mt.jar MaxTemperatureWithCombiner /user/controller/ncdc/YEAROFYOURBIRTH/YEAROFYOURBIRTH.txt```
 
-Repeat the above with this command:  ```hadoop jar mt.jar MaxTemperature /user/controller/ncdc/80-90/80-90.txt``` and ```hadoop jar mt.jar MaxTemperatureWithCombiner /user/controller/ncdc/80-90/80-90.txt```
+Repeat the above with this command:  ```hadoop jar mt.jar MaxTemperature /user/controller/ncdc/60-70/60-70.txt``` and ```hadoop jar mt.jar MaxTemperatureWithCombiner /user/controller/ncdc/60-70/60-70.txt```
 
 Run each of these three times, capture a screenshot(s) of only these jobs (not others) include them in **Deliverable 2**   This will give you a total of 12 jobs
 
@@ -41,6 +41,8 @@ Using the textbook and the previous chapters, explain the effect of the reducer 
 
 
 ### Deliverable 3
+
+
 
 ## Setup Remote Hadoop Cluster Notes
 
