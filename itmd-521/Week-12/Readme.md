@@ -53,11 +53,13 @@ Based on the output string use two datasets mentioned below:
 
 Capture a screenshot(s) of only these jobs (not others) include them in **Deliverable 3**   
 
-Note the execution time and graph all of the occurances.  Place an image of that graph in **Deliverable 3**
+Note the execution time and graph all of the occurances.  Place an image of those graphs in **Deliverable 3**
 
 Using the textbook and the previous chapters, explain the effect of the reducer upon the outcomes of the job execution time from Part II in technical detail (It is faster or slower is not an acceptable answer).  **Cite page sources from the book explaining how you arrived at your answer.**  
 
 **Submit your *.java files to your repo in week 12 as well.**
+
+Submit your Github repo URL to blackboard by 11:59 pm April 5th.
 
 ### Deliverable 1
 
