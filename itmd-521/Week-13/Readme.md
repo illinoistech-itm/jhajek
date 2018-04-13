@@ -4,70 +4,35 @@
 
 ### Objectives 
 
-* Understand the effect (positive and negative) of using multiple reducers on an MR job 
-* Understand the effect of using Intermediate Compression on an MR job
-* Understand the benefit of using custom counters in the output of an MR job 
-* Understand how to modify and change the jobname of an MR job
+* Understand how to deploy a local Spark Cluster
+* Understand the differences and similarities between MapReduce and Spark
+* Understand the SparkContext concept 
+* Understand how to use PySpark and Spark-Shell to process big data into meaningful results
 
 ### Outcomes 
 
-At the conclusion of this lab you will have run through a matrix of MR jobs with various optimizations relating to the number of reducers, use of intermediate compression, and the use of a combiner class.  In addition you will modify the sample MR code to include try/catch logic and a custom counter bad and invalid records.
+At the conclusion of this lab you will have a basic understanding of the terminology and concepts of Spark and its advantages and disadvantages over the MR platform
 
 
 ### Part I
 
-Using the single year of your birth, modify the sample MaxTemperature class to include a custom counter to count all bad (malformed) records and count all invalid ranged records (for instance anyhting greater than 50.0 celsius).  Disply the output of these two counters at the end of your MR output and take a screenshot of the output.  Place that image in **Deliverable 1** below. Submit your modified code into week 12 Github folder as well.
+In chapter 19 of the textbook, you are to install the Spark open-source cluster-computing framework on your local Hadoop Cluster (Vagrant Box). 
 
-### Part II - Reducers
+Using these datasets, as a basis using your python script from earlier in the semester, create a hybrid data set containing only, **longitude**, **air temperature**, and **air temperature quality code**, seperated by a **TAB**, **/t**
 
-Using the dataset for the year you were born, run the MaxTemperature and MaxTempertature jobs each using 1, and then 2 reducers; four jobs total.
+* A-E 1997.txt 1997.txt.xz
+* F-R 1950.txt 1950.txt.xz
+* S-Z 1985.txt 1985.txt.xz
 
-Capture a screenshot(s) of only these jobs (not others) include them in **Deliverable 2**   
+Provide a spark script (in either python or scala) that will find the max temperature per 10 degree of longitude (agregate the ranges so 20.000 to 29.999, 30.000 to 39.999, for example)
 
-Note the execution time and graph all of the occurances.  Place an image of that graph in **Deliverable 2**
-
-Using the textbook and the previous chapters, explain the effect of the reducer upon the outcomes of the job execution time from Part II in technical detail (It is faster or slower is not an acceptable answer).  **Cite page sources from the book explaining how you arrived at your answer.**
-
-### Part III - Reducers Large
-
-Using the linux command [md5](https://en.wikipedia.org/wiki/MD5 "md5") to take a hash of your Hawk ID: ```echo "hajek" | md5sum```.  Take a screenshot of this output and include it in **Deliverable 3**. 
-
-Based on the output string use two datasets mentioned below:
-
-1) If first character is even number: use 50.txt
-1) If first character is odd number use: 60.txt
-1) If first character is a letter use: 60-70.txt
-1) In addition to the above everyone needs to use 60-90.txt as well.
-
-* Enable **intermediate compression**, Page 118 of epub, for all of your MR jobs in this section.
-* Compile your code to contain the job.setName("Initials here and a description") value
-* Run 8 jobs on each dataset (8x2=16 total), 
-* Run your first dataset assigned above: MaxTemperature
-    + with 1, 2, 4, 8 reducers
-* Run your first dataset assigned above: MaxTemperatureWithCombiner
-    + with 1, 2, 4, 8 reducers
-*  * Run your second dataset assigned above: MaxTemperature
-    + with 1, 2, 4, 8 reducers
-* Run your second dataset assigned above: MaxTemperatureWithCombiner
-    + with 1, 2, 4, 8 reducers  
-
-Capture a screenshot(s) of only these jobs (not others) include them in **Deliverable 3**   
-
-Note the execution time and graph all of the occurances.  Place an image of those graphs in **Deliverable 3**
-
-Using the textbook and the previous chapters, explain the effect of the reducer upon the outcomes of the job execution time from Part II in technical detail (It is faster or slower is not an acceptable answer).  **Cite page sources from the book explaining how you arrived at your answer.**  
-
-**Submit your *.java files to your repo in week 12 as well.**
-
-Submit your Github repo URL to blackboard by 11:59 pm April 5th.
 
 ### Deliverable 1
 
+Submit your Github repo URL to blackboard by 11:59 pm April 19th.
 
-### Deliverable 2
+In your Week-13 folder include all scripts and program instructions needed to retrieve and reproduce your results.  Upload your part-r-0000 file (results) as well)  Write and instruction/assumptions needed in the Assumption section below.
 
-
-### Deliverable 3
-
+### Assumptions 1
 
 
