@@ -1,4 +1,4 @@
-## Chapter 03
+## Chapter 03 - Selecting a Service Platform
 
 1. Compare IaaS, PaaS, and SaaS on the basis of cost, configurability, and control.
 
