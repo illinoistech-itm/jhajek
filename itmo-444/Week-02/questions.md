@@ -1,3 +1,5 @@
+## Chapter 01 - Designing in a Distributed World
+
 1. What is distributed computing?
 
 2. Describe the three major composition patterns in distributed computing.
