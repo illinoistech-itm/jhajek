@@ -1,4 +1,4 @@
-## Exercises
+## Chapter 02 - Designing for Operations
 
 1. Why is design for operations so important?
 2. How is automated configuration typically supported?
