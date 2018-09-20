@@ -1,3 +1,3 @@
 # Template
 
-ReadMe.md for this week
+Screenshot of Jekyll welcome page
