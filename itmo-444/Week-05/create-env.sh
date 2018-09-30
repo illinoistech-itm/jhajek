@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# Script to run on a luanched AWS EC2 resources
+# Script to create environment
 
-sudo apt-get -y update
-sudo apt-get -y install python jekyll ruby-stuff 1> ~/out.log 2> ~/err.log
+sudo apt-get -y update 
+sudo apt-get -y install ruby gem ruby-dev links
 
-jekyll build
-jekyll run
+sudo gem install bundler jekyll 1>> ~/out.log 2>> ~/err.log
+jekyll site 1>> ~/out.log 2>> ~/err.log
+cd site
+bundle exec jekyll serve
