@@ -14,3 +14,14 @@
 
 7. What does a reverse proxy do? When is it needed?
 
+8. Suppose you wanted to build a simple image-sharing web site. How would you design it if the site was intended to serve people in one region of the world? How would you then expand it to work globally?
+
+9. What is a message bus architecture and how might one be used?
+
+10. What is an SOA?
+
+11. Why are SOAs loosely coupled?
+
+12. How would you design an email system as an SOA?
+
+13. Who was Christopher Alexander and what was his contribution to architecture?
