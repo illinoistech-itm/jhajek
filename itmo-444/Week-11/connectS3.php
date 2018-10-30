@@ -1,3 +1,5 @@
+<?php
+
 require '/home/ubuntu/vendor/autoload.php';
 
 use Aws\S3\S3Client;
@@ -14,3 +16,4 @@ $result = $s3->listBuckets([
 ]);
 
 echo $result;
+?>
