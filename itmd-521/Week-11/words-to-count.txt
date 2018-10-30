@@ -1,0 +1,15 @@
+ITMT 593 & ITMT 492  Introduction to Smart Technologies  
+Spring 2019 ITM Elective
+     
+Tuesday & Thursday  1:50 to 3:30  in TS-2030 Smart Lab
+Pre-req of ITM 311/312/313 or ITMD 510
+What is Smart Technology?  Smart Technologies encompasses all of the technology we use every day to generate data, retrieve data, and present that data in a meaningful or actionable fashion. This class focuses on various methods of Data Collection, Data Transmission, and Data Presentation.
+We will cover and provide a solid introduction to different forms of computing now in use, such as:
+
+Creating digital and analog sensor networks 
+using Arduino and Raspberry Pi
+We will investigate Solar power and battery backed computers for collecting data off grid.
+We will cover an introduction wireless for data transmission and collection
+Ethernet, NFC, xBee 802.15, Bluetooth 
+The course will focus on creating, developing, and deploying basic Augmented and Virtual Reality applications.    We will focus on creating basic voice based skills using Amazon Alexa and Google Home.  Finally we will work with drone repair, calibration, and flight programming via Python as well as explore an introduction to IoT device security, software licensing, and cloud based analytics and storage.
+The final project will be an integration of these technologies into a small group research project.  This class is ideal to be combined with ITMD 455/555 Android Development, ITMM 481/581, 482/582 Entrepreneurship or Innovation courses, this is a perfect follow up for you to get exposure to coding and application development of Smart Technologies.   This course has led to $6,000 in tuition being given to students and $3,000 raised in contest prize money for students. Any questions, feel free to ask Professor Jeremy Hajek -- hajek@iit.edu
