@@ -18,4 +18,4 @@ php -d memory_limit=-1 composer.phar require aws/aws-sdk-php
 
 sudo git clone https://github.com/illinoistech-itm/jhajek.git  1>> /home/ubuntu/out.log 2>> /home/ubuntu/err.log
 
-sudo cp /home/ubuntu/jhajek/itmo-444/Week-12/ConnectS3.php /var/www/html
+sudo cp /home/ubuntu/jhajek/itmo-444/Week-12/*.php /var/www/html
