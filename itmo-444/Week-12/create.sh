@@ -1,2 +1,2 @@
-aws ec2 run-instances --image-id ami-51537029 --count 3 --iam-instance-profile Name="s3access-profile" --instance-type t2.micro --key-name thinkpad --security-groups inclass2018 --user-data file://create-env.sh
+aws ec2 run-instances --image-id ami-51537029 --count 3 --iam-instance-profile Name="inclass-project" --instance-type t2.micro --key-name thinkpad --security-groups inclass2018 --user-data file://create-env.sh
  
