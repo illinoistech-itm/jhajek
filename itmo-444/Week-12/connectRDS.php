@@ -14,5 +14,5 @@ $result = $rds->describeDBInstances([
     'DBInstanceIdentifier' => 'jrh-inclass'
 ]);
 
-
+echo "Here is the Address: ". "\n";
 echo $result['DBInstances'][0]['Endpoint']['Address'];
