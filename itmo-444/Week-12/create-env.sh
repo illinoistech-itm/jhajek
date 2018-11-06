@@ -5,6 +5,8 @@ sudo apt-get install -y apache2 git curl php php-simplexml unzip zip libapache2-
 
 # download and install php composer - https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md
 #wget -q -O - https://composer.github.io/installer.sig
+
+cd /home/ubuntu
 sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 sudo php composer-setup.php --quiet
 
@@ -12,8 +14,8 @@ sudo php composer-setup.php --quiet
 php -d memory_limit=-1 composer.phar require aws/aws-sdk-php
 
 # move vendor to /home/ubuntu
-sudo mv vendor/ /home/ubuntu
+# sudo mv vendor/ /home/ubuntu
 
-cd /var/www/html
 sudo git clone https://github.com/illinoistech-itm/jhajek.git  1>> /home/ubuntu/out.log 2>> /home/ubuntu/err.log
 
+sudo cp /home/ubuntu/jhajek/itmo-444/Week-12/ConnectS3.php /var/www/html
