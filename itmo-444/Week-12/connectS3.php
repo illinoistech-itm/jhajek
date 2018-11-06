@@ -15,5 +15,5 @@ $s3 = new Aws\S3\S3Client([
 $result = $s3->listBuckets([
 ]);
 echo "Hello world!\n";
-echo $result['Buckets'][0]['Name'];
+echo $result['Buckets'][*]['Name'];
 ?>
