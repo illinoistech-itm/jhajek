@@ -11,7 +11,7 @@ sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 sudo php composer-setup.php --quiet
 
 # download and install aws-skp-php library and package
-php -d memory_limit=-1 composer.phar require aws/aws-sdk-php
+sudo php -d memory_limit=-1 composer.phar require aws/aws-sdk-php 1>> /home/ubuntu/out.log 2>> /home/ubuntu/err.log
 
 # move vendor to /home/ubuntu
 # sudo mv vendor/ /home/ubuntu
