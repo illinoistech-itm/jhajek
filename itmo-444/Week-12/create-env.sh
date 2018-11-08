@@ -1,7 +1,7 @@
 #!/bin/bash
 # PHP composer install link hhttps://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md
 sudo apt-get update
-sudo apt-get install -y apache2 git curl php php-simplexml unzip zip libapache2-mod-php php-xml
+sudo apt-get install -y apache2 git curl php php-simplexml unzip zip libapache2-mod-php php-xml php-mysql
 
 # download and install php composer - https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md
 #wget -q -O - https://composer.github.io/installer.sig
