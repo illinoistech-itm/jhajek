@@ -20,10 +20,10 @@ $rdsIP = $result['DBInstances'][0]['Endpoint']['Address'];
 echo $rdsIP;
 
 echo "Hello world"; 
-$link = mysqli_connect($rdsIP,"controller","ilovebunnies") or die("Error " . mysqli_error($link)); 
+$mysqli = mysqli_connect($rdsIP,"controller","ilovebunnies") or die("Error " . mysqli_error($link)); 
 
 //echo "Here is the result: " . $link;
-
+// http://php.net/manual/en/mysqli.query.php
 
 $sql = "CREATE TABLE comments 
 (
@@ -33,7 +33,9 @@ Title VARCHAR(32),
 Content VARCHAR(500)
 )";
 
-$con->query($sql);
+if ($mysqli->query($sql) {
+    printf("Table comments successfully created.\n");
+}
 
-
+$mysqli->close();
 ?>
