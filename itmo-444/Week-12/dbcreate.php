@@ -33,7 +33,7 @@ Title VARCHAR(32),
 Content VARCHAR(500)
 )";
 
-if ($mysqli->query($sql) {
+if ($mysqli->query($sql)) {
     printf("Table comments successfully created.\n");
 }
 
