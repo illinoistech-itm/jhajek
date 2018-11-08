@@ -15,4 +15,7 @@ $result = $rds->describeDBInstances([
 ]);
 
 echo "Here is the Address: ". "\n";
-echo $result['DBInstances'][0]['Endpoint']['Address'];
+$rdsIP = $result['DBInstances'][0]['Endpoint']['Address'];
+echo $rdsIP;
+
+?>
