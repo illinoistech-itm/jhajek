@@ -22,7 +22,7 @@ echo $rdsIP;
 echo "Hello world"; 
 $link = mysqli_connect($rdsIP,"controller","ilovebunnies") or die("Error " . mysqli_error($link)); 
 
-echo "Here is the result: " . $link;
+//echo "Here is the result: " . $link;
 
 
 $sql = "CREATE TABLE comments 
