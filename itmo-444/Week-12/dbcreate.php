@@ -20,7 +20,7 @@ $rdsIP = $result['DBInstances'][0]['Endpoint']['Address'];
 echo $rdsIP;
 
 echo "Hello world"; 
-$link = mysqli_connect($rdsIP,"controller","ilovebunnies","3306") or die("Error " . mysqli_error($link)); 
+$link = mysqli_connect($rdsIP,"controller","ilovebunnies") or die("Error " . mysqli_error($link)); 
 
 echo "Here is the result: " . $link;
 
