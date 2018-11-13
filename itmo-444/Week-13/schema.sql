@@ -1,0 +1,8 @@
+id (auto increment)
+uuid-receipt (varchar)
+username  (varchar)
+email   (varchar)
+phone (varchar)
+s3-raw-url  (varchar)
+s3-finished-url  (varchar)
+job-status (int)
