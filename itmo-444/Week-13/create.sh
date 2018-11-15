@@ -11,3 +11,4 @@ aws autoscaling create-auto-scaling-group --auto-scaling-group-name jrh-asg --la
  aws elb describe-load-balancers
 
  aws autoscaling describe-auto-scaling-groups
+ 
