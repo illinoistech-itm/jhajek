@@ -8,3 +8,6 @@ sleep 60
 
 aws autoscaling create-auto-scaling-group --auto-scaling-group-name jrh-asg --launch-configuration-name jrh-asg-lc --load-balancer-names inclass-2018 --health-check-type ELB --health-check-grace-period 120 --min 2 --max 4 --desired-capacity 3
  
+ aws elb describe-load-balancers
+
+ aws autoscaling describe-auto-scaling-groups
