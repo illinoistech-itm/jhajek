@@ -5,7 +5,7 @@
 
 # Where are you from?
 
-From the Chicago suburbs, Lombard/Glen Ellyn (30 miles west of campus).
+From the Chicago suburbs, Lombard and Glen Ellyn (30 miles west of campus).
 
 # IT Interest
 
@@ -17,4 +17,4 @@ It doesn't look like it now, but I played American Football in high school and j
 
 # Git tutorial
 
-![Git Tutorial](images/new-git-badge.png "Result")
+![Git Tutorial](images/badge.jpg "Result")
