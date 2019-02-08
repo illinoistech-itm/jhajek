@@ -18,11 +18,7 @@
 
 <configuration>
   <property>
-	  <name>fs.defaultFS</name>
-	  <value>hdfs://localhost:9000/</value>
+	  <name>dfs.replication</name>
+	  <value>1</value>
   </property>
-  I<property>
-	  <name>hadoop.tmp.dir</name>
-	  <value>/home/vagrant/hadoop-${user.name}</value>
-   </property>
 </configuration>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <!--
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,11 +18,7 @@
 
 <configuration>
   <property>
-	  <name>fs.defaultFS</name>
-	  <value>hdfs://localhost:9000/</value>
+	  <name>mapreduce.framework.name</name>
+	  <value>yarn</value>
   </property>
-  I<property>
-	  <name>hadoop.tmp.dir</name>
-	  <value>/home/vagrant/hadoop-${user.name}</value>
-   </property>
 </configuration>
