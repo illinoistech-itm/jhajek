@@ -17,8 +17,36 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-  <property>
-	  <name>mapreduce.framework.name</name>
-	  <value>yarn</value>
-  </property>
+<property>
+  <name>mapreduce.framework.name</name>
+  <value>yarn</value>
+  <description>Execution framework.</description>
+</property>
+<property>
+  <name>mapreduce.map.java.opts</name>
+  <value>-Xmx2048m</value>
+  <description>Increase from the 200 mb default</description>
+</property>
+<property>
+  <name>mapreduce.reduce.java.opts</name>
+  <value>-Xmx2048m</value>
+  <description>Increase from the 200 mb default</description>
+</property>
+<property>
+  <name>mapreduce.map.memory.mb</name>
+  <value>2048</value>
+  <description>Changing memory limits from 4096 down to 2048 in the attempt to get more containers</description>
+</property>
+<property>
+  <name>mapreduce.reduce.memory.mb</name>
+  <value>2048</value>
+  <description>Changing memory limits from 4096 down to 2048 in the attempt to get more containers</description>
+</property>
+<!--
+<property>
+  <name>yarn.app.mapreduce.am.resource.mb</name>
+  <value>4096</value>
+  <description>Amount of memory for Application Master</description>
+</property>
+-->
 </configuration>

@@ -15,12 +15,24 @@
 <configuration>
 
 <!-- Site specific YARN configuration properties -->
- <property>
-          <name>yarn.resourcemanager.hostname</name>
- 	  <value>0.0.0.0</value>
- </property>	  
- <property>
-	  <name>yarn.nodemanager.aux-services</name>
-	  <value>mapreduce_shuffle</value>
-  </property>
+<property>
+  <name>yarn.resourcemanager.hostname</name>
+  <value>namenode.sat.iit.edu</value>
+  <description>The hostname of the ResourceManager</description>
+</property>
+<property>
+  <name>yarn.resourcemanager.address</name>
+  <value>namenode.sat.iit.edu:8032</value>
+  <description>The hostname of the ResourceManager</description>
+</property>
+<property>
+  <name>yarn.resourcemanager.webapp.address</name>
+  <value>192.168.1.100:8088</value>
+  <description>IP address of rm</description>
+</property>
+<property>
+  <name>yarn.nodemanager.aux-services</name>
+  <value>mapreduce_shuffle</value>
+  <description>shuffle service for MapReduce</description>
+</property>
 </configuration>
