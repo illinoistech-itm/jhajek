@@ -12,6 +12,7 @@ Parameters:
 Place IMG here:
 ![*Experiemnt 01*](../images/bar-graph2.png "Bar graph example")
 
+**Conclusion:**
 Explanation of above graph explaining the modified parameters positive or negative impact on overall execution time.
 
 ---
@@ -28,6 +29,7 @@ Parameters set:
 Place IMG here:
 ![*Experiemnt 01*](../images/bar-graph2.png "Bar graph example")
 
+**Conclusion:**
 Explanation of above graph explaining the modified parameters positive or negative impact on overall execution time.
 
 ---
