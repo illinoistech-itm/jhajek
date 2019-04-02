@@ -91,4 +91,4 @@ job.setReducerClass(MaxTemperatureReducer.class);
 job.setOutputKeyClass(Text.class);
 job.setOutputValueClass(IntWritable.class);
 
-System.exit(job.waitForCompletion(true) ? 0 : 1);b
+System.exit(job.waitForCompletion(true) ? 0 : 1);
