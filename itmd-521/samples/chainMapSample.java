@@ -1,5 +1,5 @@
-org.apache.hadoop.conf.Confuiguration;
-org.apache.hadoop.conf.Confuigued;
+org.apache.hadoop.conf.Configuration;
+org.apache.hadoop.conf.Configured;
 org.apache.hadoop.mapreduce.lib.chain.ChainMapper;
 
 //Configuration conf = getConf();
