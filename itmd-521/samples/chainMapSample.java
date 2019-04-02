@@ -27,10 +27,12 @@ FileOutputFormat.setOutputPath(job, new Path(args[1]));
 // ***********************************************************************************************
 
 Configuration mapForFiltering=new Configuration(false);
-ChainMapper.addMapper(job, NameOfmapperFilteringClass.class, InputKey.class, InputVal.class,OutputKey.class,OutputVal.class,mapForFiltering);
+ChainMapper.addMapper(job, MaxTemperatureParse.class, LongWritable.class, Text.class,NullWritable.class,Text.class,mapForFiltering);
+
 
 Configuration mapForKVPair=new Configuration(false);
-ChainMapper.addMapper(job, NameOfmapperKVClass.class, InputKey.class, InputVal.class,OutputKey.class,OutputVal.class,mapForKVPair);
+ChainMapper.addMapper(job, MaxTemperatureFilteredMapper.class, LongWritable.class, Text.class,Text.class,IntWritable.class,mapForKVPair);
+
 
 /*
 JobConf map1Conf = new JobConf(false);
