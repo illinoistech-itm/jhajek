@@ -1,6 +1,3 @@
-xenial64*/.vagrant/*
-xenial64*/*.log
-
 .DS_Store
 id_rsa
 id_rsa.pub
