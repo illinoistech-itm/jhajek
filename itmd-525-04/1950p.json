@@ -1,0 +1,22 @@
+{
+    "wban": "13959",
+    "usaf": "722560",
+    "airtemp": "0.3",
+    "date": "19500710",
+    "wind_direction": "113",
+    "year": "1950",
+    "qc6": "5",
+    "qc1": "5",
+    "elevation": "155",
+    "longitude": "-9.721",
+    "qc4": "5",
+    "atm_pressure": "10.105",
+    "qc2": "4",
+    "dew_temp": "0.217",
+    "qc3": "5",
+    "time": "0200",
+    "latitude": "31.617",
+    "visi_distance": "24000",
+    "qc5": "5",
+    "sky_clng_hgt": "7620"
+}
