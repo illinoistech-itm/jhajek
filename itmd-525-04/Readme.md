@@ -8,7 +8,7 @@ Prerequists are [Oracle Virtualbox](https://virutalbox.org "Install link for Vir
   + ```git clone https://github.com/illinoistech-itm/jhajek.git```
 + Change directory to the ```itmd-525-04``` directory
 + Run the script ```build-script.ps1``` if on Windows or ```build-script.sh``` if on Mac/Linux
-+ Upon succes - from each directory [xenial64-1,xenial64-2,xenial64-3,xenial64-4]  issue the command ```vagrant up``` from a different terminal window.  
++ Upon success you will be returned to the command prompt  ~~from each directory [xenial64-1,xenial64-2,xenial64-3,xenial64-4]  issue the command ```vagrant up``` from a different terminal window~~.  
   + This will start 3 instances of Mongodb and a fourth for management and remote connections.
 + All 4 instances will be running on a Virtualbox private internal network so you can access these systems anywhere.
   + ```xenial64-1 192.168.33.10```
