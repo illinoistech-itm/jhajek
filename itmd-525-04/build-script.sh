@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #mkdir xenial64-{1..4}
-cd xenial64-1
+vagrant plugin install vagrant-vbguest
+d xenial64-1
 vagrant up
 cd ../xenial64-2
 vagrant up
