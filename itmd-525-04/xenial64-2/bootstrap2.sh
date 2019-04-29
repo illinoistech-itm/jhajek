@@ -5,4 +5,4 @@ sudo apt-get update
 sudo apt-get install -y mongodb
 sudo systemctl disable mongodb
 sudo systemctl stop mongodb
-mkdir /home/vagrant/data/rs2
+sudo mkdir /home/vagrant/data/rs2
