@@ -1,5 +1,6 @@
 xenial64*/
 .vagrant/
+!bootstrap*.sh
 
 .DS_Store
 id_rsa
