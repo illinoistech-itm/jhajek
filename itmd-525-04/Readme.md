@@ -87,15 +87,17 @@ rs.initaite()
 + Exit from the mongo commandline: ">" back to the commandline
 + Run the line of code below, there is a sample json in the repo named 1950t.json, 1950p.json, and example2.json
   + This will insert 10 lines of JSON formated data from the NCDC government weather data center
-  + 1950t.json is just 10 records, single line format--not human readible
-  + 1950p.json is the same 10 records and human readible
+  + s1950.json is just 10 records, single line format--not human readible
+  + sp950.json is the same 10 records and human readible
 
 ```bash
 # script needed to import json files into mongodb to replicate
 # https://stackoverflow.com/questions/19441228/insert-json-file-into-mongodb
 mongoimport --db test --collection employees --jsonArray --file example2.json --host 192.168.33.10
 
-mongoimport --db test --collection 1950 --jsonArray --file 1950t.json --host 192.168.33.10
+mongoimport --db test --collection s1950 --jsonArray --file s1950.json --host 192.168.33.10
+
+mongoimport --db test --collection p1950 --jsonArray --file p1950.json --host 192.168.33.10
 ```
 
 + Reconnect to the mongodb cluster: from xenial64-4, "m4" by issuing the command: ```mongo 192.168.33.10```
