@@ -6,3 +6,4 @@ sudo apt-get install -y mongodb
 sudo systemctl disable mongodb
 sudo systemctl stop mongodb
 sudo mkdir /home/vagrant/data/rs2
+sudo chown -R vagrant:vagrant /home/vagrant/data/rs2
