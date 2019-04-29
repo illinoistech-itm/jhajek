@@ -7,6 +7,7 @@ vagrant up
 Set-Location ../xenial64-3
 vagrant up
 Set-Location ../xenial64-4
+mkdir data
 vagrant up
 Set-Location ../
 

@@ -9,6 +9,7 @@ vagrant up
 cd ../xenial64-3
 vagrant up
 cd ../xenial64-4
+mkdir data
 vagrant up
 cd ../
 
