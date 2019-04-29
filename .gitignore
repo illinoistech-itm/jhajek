@@ -1,4 +1,5 @@
 xenial64*/
+.vagrant/
 
 .DS_Store
 id_rsa
