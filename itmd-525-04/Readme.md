@@ -85,7 +85,7 @@ rs.initaite()
 ```
 
 + Exit from the mongo commandline: ">" back to the commandline
-+ Run the line of code below, there is a sample json in the repo named 1950t.json, 1950p.json, and example2.json
++ Run the line of code below, there is a sample json in the repo named s1950.json, p1950.json, and example2.json
   + This will insert 10 lines of JSON formated data from the NCDC government weather data center
   + s1950.json is just 10 records, single line format--not human readible
   + s1950.json is the same 10 records in human readible
