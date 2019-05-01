@@ -22,7 +22,7 @@ Prerequists are [Oracle Virtualbox](https://virutalbox.org "Install link for Vir
 + Change directory to the xenial64-1 directory
 + Issue a ```vagrant ssh``` command
   + You will now see a prompt: ```m1```
-+ Issue the command: ```mongod --bind_ip localhost,192.169.33.10 --replSet mdbDefGuide --dbpath ~/data/rs1 --port 27017 --smallfiles --oplogSize 200```
++ Issue the command: ```mongod --bind_ip localhost,192.168.33.10 --replSet mdbDefGuide --dbpath ~/data/rs1 --port 27017 --smallfiles --oplogSize 200```
   + This is on page 213 of the pdf and 193 in the printed pages
 + You will get some warning message -- we will fix this shortly
 
