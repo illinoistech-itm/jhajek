@@ -77,7 +77,7 @@ rs.initiate(rsconf)
 + This code will start the replicant set accross the 3 IPs
 + On each terminal concole you will see the warning message is gone.
 + If 192.168.33.10 is not the PRIMARY you can exit the connection and connect to the PRIMARY in the replica set
-  + You can see the replicant set status by issuing the command: ```rs.status()```
+  + You can see the replica set status by issuing the command: ```rs.status()```
 
 ### Inserting data
 
