@@ -115,6 +115,4 @@ mongoimport --db test --collection p1950 --jsonArray --file p1950.json --host 19
 + Issue the command to list all of the ```airtemp``` values from the 1950 collection
 + Issue the command to list all of the ```atm_pressure``` values if they are not "99999" from the 1950 collection
 + Issue the commandto list all of the ```airtemp``` and ```qc4``` are of value 1, from the 1950 collection
-
-
 + To print out all of the Collections - issue the command: ```db.getCollectionNames()```
