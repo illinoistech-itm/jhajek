@@ -30,7 +30,7 @@ Prerequists are [Oracle Virtualbox](https://virutalbox.org "Install link for Vir
 + Change directory to the xenial64-2 directory
 + Issue a ```vagrant ssh``` command
   + You will now see a prompt: ```m2```
-+ Issue the command: ```mongod --bind_ip localhost,192.169.33.11 --replSet mdbDefGuide --dbpath ~/data/rs2 --port 27017 --smallfiles --oplogSize 200```
++ Issue the command: ```mongod --bind_ip localhost,192.168.33.11 --replSet mdbDefGuide --dbpath ~/data/rs2 --port 27017 --smallfiles --oplogSize 200```
   + This is on page 213 of the pdf and 193 in the printed pages
 + You will get some warning message -- we will fix this shortly
 
@@ -38,7 +38,7 @@ Prerequists are [Oracle Virtualbox](https://virutalbox.org "Install link for Vir
 + Change directory to the xenial64-3 directory
 + Issue a ```vagrant ssh``` command
   + You will now see a prompt: ```m3```
-+ Issue the command: ```mongod --bind_ip localhost,192.169.33.12 --replSet mdbDefGuide --dbpath ~/data/rs3 --port 27017 --smallfiles --oplogSize 200```
++ Issue the command: ```mongod --bind_ip localhost,192.168.33.12 --replSet mdbDefGuide --dbpath ~/data/rs3 --port 27017 --smallfiles --oplogSize 200```
   + This is on page 213 of the pdf and 193 in the printed pages
 + You will get some warning message -- we will fix this shortly
 
