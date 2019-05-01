@@ -47,7 +47,7 @@ Prerequists are [Oracle Virtualbox](https://virutalbox.org "Install link for Vir
   + You will now see a prompt: ```m4```
 + Issue the comand: ```mongo 192.168.33.10```
   + We will make a connection to mongo from m1
-  + At the mongodb prompt ">" issue the command:
+  + At the mongodb prompt ">" issue the command from page 214/197:
 
 ```javascript
 
@@ -64,7 +64,13 @@ Prerequists are [Oracle Virtualbox](https://virutalbox.org "Install link for Vir
 
 ```javascript
 
-rs.initaite()
+// or as a single line
+rsconf = { _id: "mdbDefGuide", members: [ {_id: 0, host: "192.168.33.10:27017"}, {_id: 1, host: "192.168.33.11:27017"}, {_id: 2, host: "192.168.33.12:27017"} ] }
+```
+
+```javascript
+
+rs.initaite(rsconf)
 
 ```
 
