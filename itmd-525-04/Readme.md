@@ -51,7 +51,7 @@ Prerequists are [Oracle Virtualbox](https://virutalbox.org "Install link for Vir
 
 ```javascript
 
-   rsconf = {
+  > rsconf = {
        _id: "mdbDefGuide",
        members: [
            {_id: 0, host: "192.168.33.10:27017"},
@@ -65,18 +65,18 @@ Prerequists are [Oracle Virtualbox](https://virutalbox.org "Install link for Vir
 ```javascript
 
 // or as a single line
-rsconf = { _id: "mdbDefGuide", members: [ {_id: 0, host: "192.168.33.10:27017"}, {_id: 1, host: "192.168.33.11:27017"}, {_id: 2, host: "192.168.33.12:27017"} ] }
+> rsconf = { _id: "mdbDefGuide", members: [ {_id: 0, host: "192.168.33.10:27017"}, {_id: 1, host: "192.168.33.11:27017"}, {_id: 2, host: "192.168.33.12:27017"} ] }
 ```
 
 ```javascript
 
-rs.initaite(rsconf)
+rs.initiate(rsconf)
 
 ```
 
 + This code will start the replicant set accross the 3 IPs
 + On each terminal concole you will see the warning message is gone.
-+ If 192.168.33.10 is not the PRIMARY you can exit the connection and connect to the PRIMARY in the replicant set
++ If 192.168.33.10 is not the PRIMARY you can exit the connection and connect to the PRIMARY in the replica set
   + You can see the replicant set status by issuing the command: ```rs.status()```
 
 ### Inserting data
