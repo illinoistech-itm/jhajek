@@ -12,6 +12,7 @@ cd ../xenial64-4
 if [ ! -f /xenial64-4/data ]
 then
 mkdir ./data
+echo "Making data directory in ./xenial64-4"
 fi
 vagrant up
 cd ../
