@@ -9,7 +9,10 @@ vagrant up
 cd ../xenial64-3
 vagrant up
 cd ../xenial64-4
-mkdir data
+if [ ! -f /xenial64-4/data ]
+then
+mkdir ./data
+fi
 vagrant up
 cd ../
 
