@@ -2,9 +2,11 @@ version: "3.7"
 services:
 
   web:
+    image: php:7.3.6-apache-stretch
+    command: apt-get update && apt-get install -y php-mysql
+    ports:
+      - 8080:80
     
-
-
 
 
 
