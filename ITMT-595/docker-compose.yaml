@@ -18,7 +18,10 @@ services:
       - frontend
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: example  
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-letmein} 
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}  
     volumes:
       - ~/maria-db:/var/lib/mysql
       - ./sql:/docker-entrypoint-initdb.d

@@ -4,10 +4,10 @@
 
 <?php
 // This is an include file that will pull the information of endpoint, username, password, and default database
-include("connection-info.php");
+//include("connection-info.php");
 
 echo "begin database<br />";
-$link = mysqli_connect($endpoint,$user,$password,$dbname) or die("Error " . mysqli_error($link));
+$link = mysqli_connect(db,$_ENV["MYSQL_USER"],$password,$dbname) or die("Error " . mysqli_error($link));
 
 /* check connection */
 if (mysqli_connect_errno()) {
