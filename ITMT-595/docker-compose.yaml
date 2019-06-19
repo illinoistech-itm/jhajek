@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3"
 services:
 
   web:
@@ -10,7 +10,7 @@ services:
       - frontend
     volumes:
       - ./code:/var/www/html:ro
-  db:
+  #db:
 
 
 
