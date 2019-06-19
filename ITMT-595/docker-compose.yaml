@@ -10,7 +10,18 @@ services:
       - frontend
     volumes:
       - ./code:/var/www/html:ro
-  #db:
+  db:
+    - image: mariadb:10.4.5-bionic
+    - expose:
+       - 3306
+    networks:
+      - frontend
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example  
+    volumes:
+      - ~/maria-db:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
 
 
 
