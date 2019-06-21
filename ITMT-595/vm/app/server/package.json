@@ -1,0 +1,63 @@
+{
+  "name": "Roomie",
+  "version": "1.0.0",
+  "description": "Private team repo for ITMT 430",
+  "main": "index.js",
+  "scripts": {
+    "npm-install-linux": "sudo npm config set bin-links false; sudo npm install",
+    "npm-install-windows": "npm install && (cd ../client && npm install)",
+    "start": "node server.js",
+    "production-server": "NODE_ENV=production exec pm2 start server.js",
+    "dev-server": "set NODE_ENV=development&& npx nodemon server.js",
+    "dev-server-linux": "NODE_ENV=development exec npx nodemon server.js",
+    "client": "npm start --prefix ../client",
+    "build": "npm run-script build --prefix ../client",
+    "dev": "concurrently \"npm run dev-server\" \"npm run client\"",
+    "dev-linux": "concurrently \"npm run dev-server-linux\" \"npm run client\"",
+    "setup-dev": "npm run npm-install-windows && npm run dev",
+    "setup-dev-linux": "sudo npm run npm-install-linux; sudo npm run dev-server",
+    "postbuild-script": "npm run build --prefix ../client",
+    "apidoc-build": "npx apidoc -i routes/api/ -o ../../docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarronb/2019-team-09f.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jarronb/2019-team-09f/issues"
+  },
+  "homepage": "https://github.com/jarronb/2019-team-09f#readme",
+  "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "apidoc": "^0.17.7",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cloudinary": "^1.14.0",
+    "dotenv-json": "^1.0.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.0",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.16",
+    "multer": "^1.4.1",
+    "multer-storage-cloudinary": "^2.2.1",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "nodemon": "^1.18.10"
+  },
+  "apidoc": {
+    "name": "Roomie",
+    "version": "0.1.0",
+    "description": "Roomie api documentation",
+    "apidoc": {
+      "title": "Rommie API",
+      "url": "https://github.com/illinoistech-itm/2019-team-09f"
+    }
+  }
+}

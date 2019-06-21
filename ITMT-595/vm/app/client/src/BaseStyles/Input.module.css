@@ -1,0 +1,20 @@
+.Input {
+  border: none;
+  border-radius: 10px;
+  border-bottom: solid 2px #0096BF ;
+  border-left: solid 2px #0096BF ;
+  color: #0096BF;
+  width: 100%;
+  height: 3vw;
+  min-height: 4rem;
+  background: transparent;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 2.4rem;
+  cursor: pointer;
+  max-width: 86rem;
+  padding-left: 2.5rem;
+}
+
+.Input::placeholder {
+  color: #0096BF;
+}

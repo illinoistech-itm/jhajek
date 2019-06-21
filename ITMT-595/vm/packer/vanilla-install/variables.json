@@ -1,0 +1,21 @@
+{
+  "nginx-web-server-ip": "192.168.50.11",
+  "node-app-ip": "192.168.50.12",
+  "database-ip": "192.168.50.13",
+  "database-rep1-ip": "192.168.50.14",
+  "redis-server-ip": "192.168.50.15",
+  "nginx-server-port": "8080",
+  "database-name": "production-db",
+  "database-root-name": "production-password",
+  "database-root-password": "production-user",
+  "database-user-name": "development-user",
+  "database-user-password": "development-password",
+  "database-production-connection": "mongodb://production-user:production-password@192.168.50.13:27017/production-db",
+  "database-development-connection": "mongodb://development-user:development-password@sp19-itmd430-capstone-shard-00-00-4piym.mongodb.net:27017,sp19-itmd430-capstone-shard-00-01-4piym.mongodb.net:27017,sp19-itmd430-capstone-shard-00-02-4piym.mongodb.net:27017/test?ssl=true&replicaSet=SP19-ITMD430-capstone-shard-0&authSource=admin&retryWrites=true",
+  "jwt-secret": "app_myJwtSecret",
+  "redis-server-password": "A81jWlISU/yYAtNlb+b5jdHpQ/N9epFNWYrhJciQ2NF50mHT1t7UPeT+TkEQLpYkasIrmoR4ck6V85cy",
+  "redis-server-port": "6379",
+  "cloudinary-cloud-name": "sp19-430capstone",
+  "cloudinary-api-key": "591363296377142",
+  "cloudinary-api-secret": "x-QXL6Vhr_U8v4PUSSrhOS9VqiA"
+}
