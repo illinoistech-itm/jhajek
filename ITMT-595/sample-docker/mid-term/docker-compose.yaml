@@ -6,11 +6,13 @@ services:
   nginx-web-server:
     image: nginx:1.17.1
     ports:
-      - "80:8080"
+      - "80:80"
   
   node-application-server:
-    
-    
+    images: node:8.16.0-jessie
+    expose: 
+      - 8080
+
   mongodb-server:
     
   mongodb-rep1-server: 
