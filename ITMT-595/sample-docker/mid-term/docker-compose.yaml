@@ -27,7 +27,7 @@ services:
   mongodb-rep1-server: 
     image: mongo:4.0.10-xenial
     expose:
-      - 27018
+      - 27017
     networks:
       - midterm      
 
