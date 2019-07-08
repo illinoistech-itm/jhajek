@@ -38,4 +38,4 @@ services:
       - midterm
 
 networks:
-  - midterm
+  midterm:
