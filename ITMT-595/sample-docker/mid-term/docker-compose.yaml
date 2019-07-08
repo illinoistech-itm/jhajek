@@ -1,5 +1,18 @@
 version: "3"
 services:
 
-  web:
-    image: php:7.3.6-apache-stretch
+# We need at least 4 containers, Nodejs, Nginx, Redis, Mongodb
+
+  nginx-web-server:
+    image: nginx:1.17.1
+    ports:
+      - "80:8080"
+  
+  node-application-server:
+    
+    
+  mongodb-server:
+    
+  mongodb-rep1-server: 
+    
+  redis-caching-server:
