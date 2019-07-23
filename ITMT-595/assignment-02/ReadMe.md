@@ -16,3 +16,5 @@ Include these additional features.
 * convert docker-compose to a ReplicaSet manifest (reuse from previous step) with nginx having replica value at 3
 
 *All work is due by the end of the semester Saturday July 27th 11:59 pm*
+
+Submit the URL to your GitHub repo in Blackboard
