@@ -1,3 +1,7 @@
+#packer 
+*.vdi
+*.box
+
 .DS_Store
 id_rsa
 id_rsa.pub
