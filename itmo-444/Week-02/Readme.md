@@ -1,9 +1,17 @@
-# Template
+# Vagrant and Packer Lab
 
-Updated for todays class
+## Part 1
 
-* item 1
-* item 2
-* item 3
+place screenshots here
 
-ReadMe.md for this week
+## Part 2
+
+place screenshots here
+
+## Part 3
+
+place screenshots here
+
+## part 4
+
+place screenshots here

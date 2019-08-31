@@ -1,4 +1,4 @@
-## Chapter 01 - Designing in a Distributed World
+# Chapter 01 - Designing in a Distributed World
 
 1. What is distributed computing?
 
