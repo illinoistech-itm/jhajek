@@ -1,6 +1,7 @@
 #packer 
 *.vdi
 *.box
+.vagrant/
 
 .DS_Store
 id_rsa
