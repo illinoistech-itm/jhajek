@@ -2,6 +2,7 @@
 *.vdi
 *.box
 .vagrant/
+*console.log
 
 .DS_Store
 id_rsa
