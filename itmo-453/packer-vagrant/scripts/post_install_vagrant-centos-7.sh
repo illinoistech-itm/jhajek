@@ -41,3 +41,13 @@ sudo yum install -y kernel-devel-`uname -r` gcc binutils make perl bzip2
 
 
 echo "All Done!"
+
+#####
+
+#wget JDK
+# wget riemann
+# multiline insert to ETC hosts
+# add riemann dependecies
+# clone your own repo and copy your riemann config into /etc/riemann/riemann.config
+# Change hostname - hostnamectl
+# open firewall ports
