@@ -1,8 +1,8 @@
 {
   "builders": [
     {
-      "name": "ubuntu-vanilla-18043-server",
-      "vm_name": "ubuntu-vanilla-18043-server",
+      "name": "ubuntu-riemannmc",
+      "vm_name": "ubuntu-riemannmc",
       "type": "virtualbox-iso",
       "boot_command": [
         "<esc><wait>",
