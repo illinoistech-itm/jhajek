@@ -3,6 +3,7 @@
 *.box
 .vagrant/
 *console.log
+packer-cache/
 
 .DS_Store
 id_rsa
