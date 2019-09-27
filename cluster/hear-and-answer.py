@@ -21,3 +21,4 @@ if r.recognize_sphinx(audio) == "brown bear what do you see":
     engine.runAndWait()
 
 # pip install pocketsphinx pyaudio pyttsx3
+# https://stackoverflow.com/questions/12239080/getting-started-with-speech-recognition-and-python
