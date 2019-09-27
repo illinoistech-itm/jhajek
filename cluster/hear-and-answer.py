@@ -19,3 +19,5 @@ engine.setProperty('rate', 150)
 if r.recognize_sphinx(audio) == "brown bear what do you see":
     engine.say("I see a yellow bird looking at me")
     engine.runAndWait()
+
+# pip install pocketsphinx pyaudio pyttsx3
