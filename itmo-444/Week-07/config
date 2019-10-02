@@ -1,0 +1,4 @@
+Host   github.com
+Hostname github.com
+IdentityFile  /home/ubuntu/.ssh/id_rsa_github_deploy_key
+StrictHostKeyChecking no
