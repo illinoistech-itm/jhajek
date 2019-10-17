@@ -18,7 +18,7 @@ while True:
         source = cv2.imdecode(npimg, 1)
         #cv2.imshow("Stream", source)
         if framecounter % 30 == 0:
-          cv2.imwrite("/home/controller/run/frame%d.jpg" % count, source)
+          cv2.imwrite("/home/user/run/frame%d.jpg" % count, source)
           print ("Writing a frame ") 
           count += 1
           print (count)
