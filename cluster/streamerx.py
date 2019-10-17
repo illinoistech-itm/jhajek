@@ -5,6 +5,7 @@ import sys
 
 ip = sys.argv[1]
 count = sys.argv[2]
+print(count)
 counter = 0
 context = zmq.Context()
 footage_socket = context.socket(zmq.PUB)
