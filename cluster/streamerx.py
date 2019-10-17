@@ -11,7 +11,7 @@ context = zmq.Context()
 footage_socket = context.socket(zmq.PUB)
 footage_socket.connect('tcp://' + ip + ':5555')
 
-camera = cv2.VideoCapture(-1)  # init the first camera
+camera = cv2.VideoCapture(0)  # init the first camera
 
 while counter != count:
     print("camera 1")
@@ -33,7 +33,7 @@ while counter != count:
 
 camera.release()
 counter = 0
-camera2 = cv2.VideoCapture(-2)  # init the second camera
+camera2 = cv2.VideoCapture(1)  # init the second camera
 
 while counter != count:
     print("camera 2")
