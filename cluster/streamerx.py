@@ -4,6 +4,8 @@ import zmq
 import sys
 
 ip = sys.argv[1]
+count = sys.argv[2]
+counter = 0
 context = zmq.Context()
 footage_socket = context.socket(zmq.PUB)
 footage_socket.connect('tcp://' + ip + ':5555')
@@ -11,7 +13,7 @@ footage_socket.connect('tcp://' + ip + ':5555')
 camera = cv2.VideoCapture(0)  # init the first camera
 camera2 = cv2.VideoCapture(1)  # init the first camera
 
-while True:
+while counter != count:
     try:
         grabbed, frame = camera.read()  # grab the current frame
        # frame = cv2.resize(frame, (640, 480))  # resize the frame
@@ -25,6 +27,11 @@ while True:
         cv2.destroyAllWindows()
         break
     
+    counter+=1
+
+    counter = 0
+
+while counter != count:
     try:
         grabbed, frame = camera2.read()  # grab the current frame
        # frame = cv2.resize(frame, (640, 480))  # resize the frame
@@ -37,3 +44,7 @@ while True:
         camera.release()
         cv2.destroyAllWindows()
         break
+        
+    counter+=1
+
+    counter = 0
