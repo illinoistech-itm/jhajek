@@ -16,7 +16,7 @@ https://stackoverflow.com/questions/1125476/retrieve-a-single-file-from-a-reposi
 ## Streamer.py install
 
 ```bash
-apt-get install libatlas-base-dev python3-pip python3-dev libjasper-dev libqtgui4 libqt4-test
+apt-get install libatlas-base-dev python3-pip python3-dev libjasper-dev libqtgui4 libqt4-test libilmbase-dev libopenexr-dev libgstreamer1.0-dev python3-picamera
 
 pip3 install opencv-python jasper
 ```
