@@ -60,9 +60,19 @@ for i in range(len(names)):
     engine.say("I see ") 
     for i in items:
       engine.say(c[i]) 
-      engine.say(i)
+      print("I see")
+      print(c[i])
+      # logic to detect person cs people 
+      if (c[i] > 1 and i == "person"):
+        print("people")
+        engine.say("people")
+      else:
+       print(i)
+       engine.say(i)
+      
       time.sleep(.25)
       
       engine.runAndWait()
       engine.stop()
 
+print("Program Finished") 

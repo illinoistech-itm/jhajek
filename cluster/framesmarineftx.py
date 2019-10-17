@@ -1,4 +1,3 @@
-
 # Program To Read video 
 # and Extract Frames 
 import cv2 
@@ -14,25 +13,20 @@ def FrameCapture(path):
   
     # checks whether frames were extracted 
     success = 1
-    framecounter = 1
-    
+  
     while success: 
   
         # vidObj object calls read 
         # function extract frames 
         success, image = vidObj.read() 
   
-        # Saves the frames with frame-count , 30 frames per second - so 1 keep 1 of every 30 frames
-        if framecounter % 30 == 0:
-          cv2.imwrite("/home/controller/run2/frame%d.jpg" % count, image) 
-          framecounter = 0
-          
+        # Saves the frames with frame-count 
+        cv2.imwrite("/tmp/marineftx/frame%d.jpg" % count, image) 
+  
         count += 1
-        framecounter += 1
   
 # Driver Code 
 if __name__ == '__main__': 
   
     # Calling the function 
-    FrameCapture("/home/controller/Downloads/AI_Test_Videos/Syria_AI_test3.mp4")
-
+    FrameCapture("/home/controller/Downloads/AI_Test_Videos/MarineFTX_AI_test1.mp4") 
