@@ -52,4 +52,6 @@ while counter != count:
         
     counter+=1
 
-    counter = 0
+camera2.release()
+counter = 0
+#camera3 = cv2.VideoCapture(-3)  # init the second camera
