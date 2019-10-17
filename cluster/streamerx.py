@@ -31,7 +31,7 @@ while counter != count:
     counter+=1
     print(counter)
 
-
+camera.release()
 counter = 0
 camera2 = cv2.VideoCapture(-2)  # init the second camera
 
