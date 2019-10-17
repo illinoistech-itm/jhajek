@@ -25,8 +25,8 @@ while True:
           framecounter = 0 
 
         framecounter += 1
-        if count == 20:
-            break
+       # if count == 20:
+       #     break
 
 #        cv2.waitKey(1)
 #        if cv2.waitKey(1) &0XFF == ord('x'):
