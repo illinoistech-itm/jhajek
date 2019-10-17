@@ -4,7 +4,7 @@ import zmq
 import sys
 
 ip = sys.argv[1]
-count = str(sys.argv[2])
+count = int(sys.argv[2])
 print(count)
 counter = 0
 context = zmq.Context()
