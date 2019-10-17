@@ -21,7 +21,7 @@ while True:
           cv2.imwrite("/home/controller/run/frame%d.jpg" % count, source)
           print ("Writing a frame ") 
           count += 1
-          print count
+          print (count)
           framecounter = 0 
 
         framecounter += 1
