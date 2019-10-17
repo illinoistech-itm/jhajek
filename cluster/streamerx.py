@@ -28,7 +28,7 @@ while counter != count:
         break
     
     counter+=1
-
+    print(coutner)
 
 counter = 0
 camera2 = cv2.VideoCapture(1)  # init the second camera
