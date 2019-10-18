@@ -13,6 +13,8 @@ pip3 install opencv-python jasper pyzmq
 
 ## viewer.py install
 
+This assumes you are installing on an Nvidia Jetson Nano -- custom Ubuntu Edition
+
 ```bash
 sudo apt-get install python3-pip python3-dev
 
