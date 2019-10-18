@@ -80,11 +80,11 @@ camera4 = cv2.VideoCapture(4)  # init the second camera
 while counter != count:
     print("camera 4")
     try:
-        grabbed, frame2 = camera4.read()  # grab the current frame
+        grabbed, frame4 = camera4.read()  # grab the current frame
        # frame = cv2.resize(frame, (640, 480))  # resize the frame
-        frame2 = cv2.resize(frame4, (800,620))  # resize the frame
+        frame4 = cv2.resize(frame4, (800,620))  # resize the frame
         encoded, buffer = cv2.imencode('.jpg', frame4)
-        jpg_as_text2 = base64.b64encode(buffer)
+        jpg_as_text4 = base64.b64encode(buffer)
         footage_socket.send(jpg_as_text4)
 
     except KeyboardInterrupt:
