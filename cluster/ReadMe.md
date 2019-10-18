@@ -18,5 +18,5 @@ This assumes you are installing on an Nvidia Jetson Nano -- custom Ubuntu Editio
 ```bash
 sudo apt-get install python3-pip python3-dev
 
-pip3 install opencv-python
+pip3 install opencv-python pyzmq
 ```
