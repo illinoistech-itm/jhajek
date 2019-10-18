@@ -46,7 +46,7 @@ while counter != count:
         footage_socket.send(jpg_as_text2)
 
     except KeyboardInterrupt:
-        camera.release()
+        camera2.release()
         cv2.destroyAllWindows()
         break
         
@@ -54,4 +54,45 @@ while counter != count:
 
 camera2.release()
 counter = 0
-#camera3 = cv2.VideoCapture(-3)  # init the second camera
+camera3 = cv2.VideoCapture(3)  # init the third camera
+
+while counter != count:
+    print("camera 3")
+    try:
+        grabbed, frame3 = camera3.read()  # grab the current frame
+       # frame = cv2.resize(frame, (640, 480))  # resize the frame
+        frame2 = cv2.resize(frame3, (800,620))  # resize the frame
+        encoded, buffer = cv2.imencode('.jpg', frame3)
+        jpg_as_text3 = base64.b64encode(buffer)
+        footage_socket.send(jpg_as_text3)
+
+    except KeyboardInterrupt:
+        camera3.release()
+        cv2.destroyAllWindows()
+        break
+        
+    counter+=1
+
+camera3.release()
+counter = 0
+camera4 = cv2.VideoCapture(4)  # init the second camera
+
+while counter != count:
+    print("camera 4")
+    try:
+        grabbed, frame2 = camera4.read()  # grab the current frame
+       # frame = cv2.resize(frame, (640, 480))  # resize the frame
+        frame2 = cv2.resize(frame4, (800,620))  # resize the frame
+        encoded, buffer = cv2.imencode('.jpg', frame4)
+        jpg_as_text2 = base64.b64encode(buffer)
+        footage_socket.send(jpg_as_text4)
+
+    except KeyboardInterrupt:
+        camera4.release()
+        cv2.destroyAllWindows()
+        break
+        
+    counter+=1
+
+camera4.release()
+counter = 0
