@@ -21,7 +21,7 @@ echo 'Here is some more debugging info:';
 print_r($_FILES);
 
 print "</pre>";
-require 'vendor/autoload.php';
+require '/home/ubuntu/vendor/autoload.php';
 use Aws\S3\S3Client;
 
 $client = S3Client::factory();
