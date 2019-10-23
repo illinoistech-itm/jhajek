@@ -24,22 +24,34 @@ print "</pre>";
 require '/home/ubuntu/vendor/autoload.php';
 use Aws\S3\S3Client;
 
-$client = S3Client::factory();
-$bucket = uniqid("php-jrh-",false);
+// https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/getting-started_basic-usage.html
+//Create a S3Client
+$s3 = new Aws\S3\S3Client([
+    'profile' => 'default',
+    'version' => 'latest',
+    'region' => 'us-east-1'
+]);
 
-$result = $client->createBucket(array(
-    'Bucket' => $bucket
-));
 
 
-$client->waitUntilBucketExists(array('Bucket' => $bucket));
+// create bucket code not needed for this assignment
+//$bucket = uniqid("php-jrh-",false);
+
+//$result = $client->createBucket(array(
+//    'Bucket' => $bucket
+//));
+//$client->waitUntilBucketExists(array('Bucket' => $bucket));
+$bucket="jrh-544-raw-bucket";
+
 $key = $uploadfile;
-$result = $client->putObject(array(
+
+$result = $s3->putObject([
     'ACL' => 'public-read',
     'Bucket' => $bucket,
     'Key' => $key,
     'SourceFile' => $uploadfile 
-));
+]);
+
 $url = $result['ObjectURL'];
 echo $url;
 
