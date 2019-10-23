@@ -7,7 +7,8 @@ session_start();
 
 echo $_POST['useremail'];
 
-$uploaddir = '/tmp/';
+//$uploaddir = '/tmp/';
+$uploaddir = '/home/ubuntu/img/';
 $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
 echo '<pre>';
