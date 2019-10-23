@@ -14,7 +14,7 @@ Enter Email of user: <input type="email" name="useremail"><br />
 Enter Phone of user (1-XXX-XXX-XXXX): <input type="phone" name="phone">
 
 
-<input type="submit" value="Send File" />
+<input type="submit" value="Submit" />
 </form>
 <hr />
 
