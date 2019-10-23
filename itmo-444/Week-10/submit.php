@@ -27,7 +27,7 @@ use Aws\S3\S3Client;
 // https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/getting-started_basic-usage.html
 //Create a S3Client
 $s3 = new Aws\S3\S3Client([
-    'profile' => 'default',
+    'profile' => 'inclass-2019',
     'version' => 'latest',
     'region' => 'us-east-1'
 ]);
