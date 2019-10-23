@@ -32,8 +32,6 @@ $s3 = new Aws\S3\S3Client([
     'region' => 'us-east-1'
 ]);
 
-
-
 // create bucket code not needed for this assignment
 //$bucket = uniqid("php-jrh-",false);
 
@@ -55,6 +53,7 @@ $result = $s3->putObject([
 $url = $result['ObjectURL'];
 echo $url;
 
+/*
 use Aws\Rds\RdsClient;
 $client = RdsClient::factory(array(
 'region'  => 'us-east-1'
@@ -65,23 +64,24 @@ $result = $client->describeDBInstances(array(
 ));
 
 $endpoint = "";
+*/
 
-foreach ($result->getPath('DBInstances/*/Endpoint/Address') as $ep) {
-    // Do something with the message
+//foreach ($result->getPath('DBInstances/*/Endpoint/Address') as $ep) {
+ /*   // Do something with the message
     echo "============". $ep . "================";
     $endpoint = $ep;
 }   
 //echo "begin database";
 $link = mysqli_connect($endpoint,"controller","ilovebunnies","itmo544db") or die("Error " . mysqli_error($link));
 
-/* check connection */
+// check connection
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
 
 
-/* Prepared statement, stage 1: prepare */
+// Prepared statement, stage 1: prepare 
 if (!($stmt = $link->prepare("INSERT INTO items (id, email,phone,filename,s3rawurl,s3finishedurl,status,issubscribed) VALUES (NULL,?,?,?,?,?,?,?)"))) {
     echo "Prepare failed: (" . $link->errno . ") " . $link->error;
 }
@@ -102,7 +102,7 @@ if (!$stmt->execute()) {
 
 printf("%d Row inserted.\n", $stmt->affected_rows);
 
-/* explicit close recommended */
+// explicit close recommended 
 $stmt->close();
 
 $link->real_query("SELECT * FROM items");
@@ -118,7 +118,7 @@ $link->close();
 
 //add code to detect if subscribed to SNS topic 
 //if not subscribed then subscribe the user and UPDATE the column in the database with a new value 0 to 1 so that then each time you don't have to resubscribe them
-
+*/
 // add code to generate SQS Message with a value of the ID returned from the most recent inserted piece of work
 //  Add code to update database to UPDATE status column to 1 (in progress)
 
