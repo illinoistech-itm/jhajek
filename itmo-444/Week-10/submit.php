@@ -44,7 +44,6 @@ $bucket="jrh-544-raw-bucket";
 $key = $uploadfile;
 
 $result = $s3->putObject([
-    'ACL' => 'public-read',
     'Bucket' => $bucket,
     'Key' => $key,
     'SourceFile' => $uploadfile 
