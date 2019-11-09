@@ -21,4 +21,3 @@ These are the instructions to install Detectron2 on multiple platforms
 #### Optional outputs
 --output is optional for writing the object recognition blocks to a file
 --confidence-threshold is set to 0.5 by default, this can be raised to exclude objects that have a certainty score less than this value
-
