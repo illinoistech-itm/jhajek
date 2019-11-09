@@ -14,9 +14,12 @@ import torch
 import pyttsx3
 import argparse
 import os
+import zmq
 import time
 import tqdm
 import multiprocessing as mp
+import zmq
+import base64
 
 # import some common detectron2 utilities
 from detectron2.engine import DefaultPredictor
@@ -40,9 +43,8 @@ def setup_cfg(args):
 
 
 def get_parser():
-    parser = argparse.ArgumentParser(description="Detectron2 Demo")
-    parser.add_argument("--input", nargs="+", help="A list of space separated input images")
-    parser.add_argument("--output", help="A file or directory to save output visualizations. " "If not given, will show output in an OpenCV window.",)
+    parser = argparse.ArgumentParser(description="Detectron2 Streaming Demo")
+    parser.add_argument("--video-stream", help="Process Streaming Video.")
     parser.add_argument(
         "--confidence-threshold",
         type=float,
@@ -53,6 +55,11 @@ def get_parser():
 
 if __name__ == "__main__":
     WINDOW_NAME = "COCO detections"
+    
+    context = zmq.Context()
+    footage_socket = context.socket(zmq.SUB)
+    footage_socket.bind('tcp://*:5555')
+    footage_socket.setsockopt_string(zmq.SUBSCRIBE, np.unicode(''))
 
     #command prompts values
     cfgin=os.environ['HOME'] + "/detectron2/configs/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"
@@ -69,7 +76,6 @@ if __name__ == "__main__":
     args = get_parser().parse_args()
     logger = setup_logger()
     logger.info("Arguments: " + str(args))
-    #cfg = setup_cfg(args)
 
     cfg = get_cfg()
     cfg.merge_from_file(cfgin)
@@ -77,14 +83,16 @@ if __name__ == "__main__":
     # Find a model from detectron2's model zoo. You can either use the https://dl.fbaipublicfiles.... url, or use the following shorthand
     cfg.MODEL.WEIGHTS = "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"
 
-    if args.input:
-        if len(args.input) == 1:
-            args.input = glob.glob(os.path.expanduser(args.input[0]))
-            assert args.input, "The input path(s) was not found"
-        for path in tqdm.tqdm(args.input, disable=not args.output):
+    while True:
+        try:
+            frame = footage_socket.recv_string()
+            img = base64.b64decode(frame)
+            npimg = np.fromstring(img, dtype=np.uint8)
+            source = cv2.imdecode(npimg, 1)
+
             # read image
             start_time = time.time()
-            im = cv2.imread(path)
+            im = cv2.imread(source)
             #cv2.imshow('display',im)
             #print("image display loaded")
             #https://stackoverflow.com/questions/22274789/cv2-imshow-function-is-opening-a-window-that-always-says-not-responding-pyth
@@ -97,7 +105,7 @@ if __name__ == "__main__":
             print("models loaded")
             logger.info(
                 "{}: detected {} instances in {:.2f}s".format(
-                    path, len(outputs["instances"]), time.time() - start_time
+                    "streaming", len(outputs["instances"]), time.time() - start_time
                 )
             )
 
@@ -122,26 +130,12 @@ if __name__ == "__main__":
             print("Speaking what I see...")
             engine.say("I see:")
             for i in range(len(uclasses)):
-              engine.say(cd[uclasses[i]])
-              engine.say(dataset[uclasses[i]])
+                engine.say(cd[uclasses[i]])
+                engine.say(dataset[uclasses[i]])
 
             engine.runAndWait()
             engine.stop()
 
-            if args.output:
-                if os.path.isdir(args.output):
-                    assert os.path.isdir(args.output), args.output
-                    out_filename = os.path.join(args.output, os.path.basename(path))
-                else:
-                    assert len(args.input) == 1, "Please specify a directory with args.output"
-                    out_filename = args.output
-                    v.save(out_filename)
-            else:
-                # add visualizations
-                # We can use `Visualizer` to draw the predictions on the image.
-                v = Visualizer(im[:, :, ::-1], MetadataCatalog.get(cfg.DATASETS.TRAIN[0]), scale=1.2)
-                v = v.draw_instance_predictions(outputs["instances"].to("cpu"))
-                #cv2.imshow("rendered",v.get_image()[:, :, ::-1])
-                #cv2.waitKey(5000)
-                #cv2.destroyAllWindows()
- 
+        except KeyboardInterrupt:
+            cv2.destroyAllWindows()
+            break
