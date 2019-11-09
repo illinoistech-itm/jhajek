@@ -17,5 +17,8 @@ These are the instructions to install Detectron2 on multiple platforms
 ```python3 annotations-load.py --input /home/controller/people/*.jpg --output /directory/to/save/the/image/detections```
 
 --input is the directory of images to render.  This can be a space seperated list or use a wildcard
---output is optional
+
+#### Optional outputs
+--output is optional for writing the object recognition blocks to a file
+--confidence-threshold is set to 0.5 by default, this can be raised to exclude objects that have a certainty score less than this value
 

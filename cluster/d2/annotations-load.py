@@ -26,10 +26,24 @@ from detectron2.data import MetadataCatalog
 # https://www.geeksforgeeks.org/python-count-occurrences-element-list/
 from collections import Counter 
 
+def setup_cfg(args):
+    # load config from file and command-line arguments
+    cfg = get_cfg()
+    cfg.merge_from_file(args.config_file)
+    cfg.merge_from_list(args.opts)
+    # Set score_threshold for builtin models
+    cfg.MODEL.RETINANET.SCORE_THRESH_TEST = args.confidence_threshold
+    cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = args.confidence_threshold
+    cfg.MODEL.PANOPTIC_FPN.COMBINE.INSTANCES_CONFIDENCE_THRESH = args.confidence_threshold
+    cfg.freeze()
+    return cfg
+
+
 def get_parser():
     parser = argparse.ArgumentParser(description="Detectron2 Demo")
     parser.add_argument("--input", nargs="+", help="A list of space separated input images")
     parser.add_argument("--output", help="A file or directory to save output visualizations. " "If not given, will show output in an OpenCV window.",)
+    parser.add_argument("--video-input", help="Path to video file.")
     parser.add_argument(
         "--confidence-threshold",
         type=float,
@@ -56,12 +70,13 @@ if __name__ == "__main__":
     args = get_parser().parse_args()
     logger = setup_logger()
     logger.info("Arguments: " + str(args))
+    #cfg = setup_cfg(args)
+
     cfg = get_cfg()
     cfg.merge_from_file(cfgin)
     cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5  # set threshold for this model
     # Find a model from detectron2's model zoo. You can either use the https://dl.fbaipublicfiles.... url, or use the following shorthand
     cfg.MODEL.WEIGHTS = "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"
-
 
     if args.input:
         if len(args.input) == 1:
@@ -107,7 +122,6 @@ if __name__ == "__main__":
             # speak what you see
             print("Speaking what I see...")
             engine.say("I see:")
-
             for i in range(len(uclasses)):
               engine.say(cd[uclasses[i]])
               engine.say(dataset[uclasses[i]])
@@ -131,4 +145,4 @@ if __name__ == "__main__":
                 #cv2.imshow("rendered",v.get_image()[:, :, ::-1])
                 #cv2.waitKey(5000)
                 #cv2.destroyAllWindows()
-
+ 
