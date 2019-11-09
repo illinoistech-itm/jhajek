@@ -15,8 +15,11 @@ from detectron2.config import get_cfg
 from detectron2.utils.visualizer import Visualizer
 from detectron2.data import MetadataCatalog
 
+#command prompts values
+imagein=sys.argv[1]
+
 # read image
-im = cv2.imread("/home/conntroller/Downloads/iitondacloud/_DSC0700.JPG")
+im = cv2.imread(imagein)
 cv2.imshow('display',im)
 print("image display loaded")
 #https://stackoverflow.com/questions/22274789/cv2-imshow-function-is-opening-a-window-that-always-says-not-responding-pyth
