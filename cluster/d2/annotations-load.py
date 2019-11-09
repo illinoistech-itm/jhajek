@@ -8,6 +8,7 @@ setup_logger()
 # import some common libraries
 import numpy as np
 import cv2
+import sys
 
 # import some common detectron2 utilities
 from detectron2.engine import DefaultPredictor
