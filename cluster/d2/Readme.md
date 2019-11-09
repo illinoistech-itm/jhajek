@@ -14,9 +14,8 @@ These are the instructions to install Detectron2 on multiple platforms
 
 ### Run the script
 
-```python3 annotations-load.py /home/controller/people/_DSC0700.JPG /home/controller/```
+```python3 annotations-load.py --input /home/controller/people/*.jpg --output /directory/to/save/the/image/detections```
 
-The first value: `/home/controller/people/_DSC0700.JPG` is the path to the sample image to do object detection on
-The second value:  `/home/controller/` is the path to your users home directory (this lets you switch systems)
-
+--input is the directory of images to render.  This can be a space seperated list or use a wildcard
+--output is optional
 
