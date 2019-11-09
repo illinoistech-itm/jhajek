@@ -21,7 +21,7 @@ def FrameCapture(path):
         success, image = vidObj.read() 
   
         # Saves the frames with frame-count 
-        cv2.imwrite("/tmp/marineftx/frame%d.jpg" % count, image) 
+        cv2.imwrite("/home/controller/marineftx/frame%d.jpg" % count, image) 
   
         count += 1
   
