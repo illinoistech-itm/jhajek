@@ -13,13 +13,13 @@ import multiprocessing as mp
 # sudo apt-get install v4l-utils
 
 def get_parser():
-    parser = argparse.ArgumentParser(description="Detectron2 Demo")
+    parser = argparse.ArgumentParser(description="Detectron2 Streaming Demo")
     parser.add_argument("--ip", help="ip address to stream to")
     parser.add_argument(
         "--count",
         type=int,
         default=5,
-        help="default amount of time to stream for",
+        help="default amount of framecaptures to stream",
     )
     parser.add_argument(
         "--height",
@@ -32,17 +32,25 @@ def get_parser():
         type=int,
         default=600,
         help="default amount of time to stream for",
-    )        
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=5555,
+        help="default remote port to connect to",
+    )            
     return parser
 
 args = get_parser().parse_args()
-ip = args.ip
+#ip = args.ip
 count = args.count
 print(count)
 counter = 0
 context = zmq.Context()
 footage_socket = context.socket(zmq.PUB)
-footage_socket.connect('tcp://' + ip + ':5555')
+footage_socket.connect('tcp://' + args.ip + args.port)
+
+# initialize the first camera
 camera = cv2.VideoCapture(0)  # init the first camera
 
 while counter != count:

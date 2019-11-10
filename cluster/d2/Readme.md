@@ -35,6 +35,7 @@ These are the instructions to install Detectron2 on multiple platforms
 ```python3 streamerx.py --ip 172.16.1.78 --count 2```
 
 `--ip` is the IP address to stream to
+`--port` is the default remote port to connect to, default is 5555
 `--count` is how many images to send, default is 5
 `--height` set the image height to be sent, default is 800
 `--width` set the image width, default to be 600
