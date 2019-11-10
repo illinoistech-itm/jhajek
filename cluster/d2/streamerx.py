@@ -5,6 +5,13 @@ import sys
 import argparse
 import multiprocessing as mp
 
+#########################################################################################################################
+# https://stackoverflow.com/questions/4290834/how-to-get-a-list-of-video-capture-devices-web-cameras-on-linux-ubuntu-c
+# You can use the following bash command:
+# v4l2-ctl --list-devices
+#In order to use the above command, you must install package v4l-utils before. In Ubuntu/Debian you can use the command:
+# sudo apt-get install v4l-utils
+
 def get_parser():
     parser = argparse.ArgumentParser(description="Detectron2 Demo")
     parser.add_argument("--ip", help="ip address to stream to")
@@ -67,7 +74,7 @@ while counter != count:
 
 camera2.release()
 counter = 0
-camera3 = cv2.VideoCapture(3)  # init the third camera
+camera3 = cv2.VideoCapture(6)  # init the third camera
 
 while counter != count:
     print("camera 3")

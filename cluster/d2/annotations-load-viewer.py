@@ -92,7 +92,7 @@ if __name__ == "__main__":
 
             # read image
             start_time = time.time()
-            im = cv2.imread(source)
+            #im = cv2.imread(source)
             #cv2.imshow('display',im)
             #print("image display loaded")
             #https://stackoverflow.com/questions/22274789/cv2-imshow-function-is-opening-a-window-that-always-says-not-responding-pyth
@@ -101,7 +101,8 @@ if __name__ == "__main__":
             # do detection
 
             predictor = DefaultPredictor(cfg)
-            outputs = predictor(im)
+            #outputs = predictor(im)
+            outputs = predictor(source)
             print("models loaded")
             logger.info(
                 "{}: detected {} instances in {:.2f}s".format(
