@@ -74,14 +74,14 @@ while counter != count:
 
 camera2.release()
 counter = 0
-camera3 = cv2.VideoCapture(3)  # init the third camera
+camera3 = cv2.VideoCapture(6)  # init the third camera
 
 while counter != count:
     print("camera 3")
     try:
         grabbed, frame3 = camera3.read()  # grab the current frame
        # frame = cv2.resize(frame, (640, 480))  # resize the frame
-        frame3 = cv2.resize(frame3, (640,480))  # resize the frame
+        frame3 = cv2.resize(frame3, (800,620))  # resize the frame
         encoded, buffer = cv2.imencode('.jpg', frame3)
         jpg_as_text3 = base64.b64encode(buffer)
         footage_socket.send(jpg_as_text3)
