@@ -51,6 +51,12 @@ def get_parser():
         default=0.5,
         help="Minimum score for instance predictions to be shown",
     )
+    parser.add_argument(
+        "--debug",
+        type=bool,
+        default=False,
+        help="Turn on image output",
+    )
     return parser
 
 if __name__ == "__main__":
@@ -92,14 +98,16 @@ if __name__ == "__main__":
 
             # read image
             start_time = time.time()
-            #im = cv2.imread(source)
-            #cv2.imshow('display',im)
-            #print("image display loaded")
-            #https://stackoverflow.com/questions/22274789/cv2-imshow-function-is-opening-a-window-that-always-says-not-responding-pyth
-            #cv2.waitKey(5000)
-            #cv2.destroyAllWindows()
-            # do detection
-
+            if (args.debug):
+                cv2.imwrite("/tmp/frame.jpg", source)
+                im = cv2.imread("/tmp/frame.jpg")
+                cv2.imshow('display',im)
+                print("image display loaded")
+                #https://stackoverflow.com/questions/22274789/cv2-imshow-function-is-opening-a-window-that-always-says-not-responding-pyth
+                cv2.waitKey(3000)
+                cv2.destroyAllWindows()
+            
+            # Do detection
             predictor = DefaultPredictor(cfg)
             #outputs = predictor(im)
             outputs = predictor(source)
