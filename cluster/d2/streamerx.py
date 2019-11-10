@@ -16,16 +16,28 @@ def get_parser():
     parser = argparse.ArgumentParser(description="Detectron2 Demo")
     parser.add_argument("--ip", help="ip address to stream to")
     parser.add_argument(
-        "--time",
+        "--count",
         type=int,
-        default=30,
+        default=5,
         help="default amount of time to stream for",
     )
+    parser.add_argument(
+        "--height",
+        type=int,
+        default=800,
+        help="default amount of time to stream for",
+    )
+    parser.add_argument(
+        "--width",
+        type=int,
+        default=600,
+        help="default amount of time to stream for",
+    )        
     return parser
 
 args = get_parser().parse_args()
 ip = args.ip
-count = args.time
+count = args.count
 print(count)
 counter = 0
 context = zmq.Context()
@@ -37,8 +49,7 @@ while counter != count:
     print("camera 1")
     try:
         grabbed, frame = camera.read()  # grab the current frame
-       # frame = cv2.resize(frame, (640, 480))  # resize the frame
-        frame = cv2.resize(frame, (800,620))  # resize the frame
+        frame = cv2.resize(frame, (args.height,args.width))  # resize the frame
         encoded, buffer = cv2.imencode('.jpg', frame)
         jpg_as_text = base64.b64encode(buffer)
         footage_socket.send(jpg_as_text)
@@ -59,8 +70,7 @@ while counter != count:
     print("camera 2")
     try:
         grabbed, frame2 = camera2.read()  # grab the current frame
-       # frame = cv2.resize(frame, (640, 480))  # resize the frame
-        frame2 = cv2.resize(frame2, (800,620))  # resize the frame
+        frame2 = cv2.resize(frame2, (args.height,args.width))  # resize the frame
         encoded, buffer = cv2.imencode('.jpg', frame2)
         jpg_as_text2 = base64.b64encode(buffer)
         footage_socket.send(jpg_as_text2)
@@ -80,8 +90,7 @@ while counter != count:
     print("camera 3")
     try:
         grabbed, frame3 = camera3.read()  # grab the current frame
-       # frame = cv2.resize(frame, (640, 480))  # resize the frame
-        frame3 = cv2.resize(frame3, (800,620))  # resize the frame
+        frame3 = cv2.resize(frame3, (args.height,args.width))  # resize the frame
         encoded, buffer = cv2.imencode('.jpg', frame3)
         jpg_as_text3 = base64.b64encode(buffer)
         footage_socket.send(jpg_as_text3)
@@ -101,8 +110,7 @@ while counter != count:
     print("camera 4")
     try:
         grabbed, frame4 = camera4.read()  # grab the current frame
-       # frame = cv2.resize(frame, (640, 480))  # resize the frame
-        frame4 = cv2.resize(frame4, (800,620))  # resize the frame
+        frame4 = cv2.resize(frame4, (args.height,args.width))  # resize the frame
         encoded, buffer = cv2.imencode('.jpg', frame4)
         jpg_as_text4 = base64.b64encode(buffer)
         footage_socket.send(jpg_as_text4)
