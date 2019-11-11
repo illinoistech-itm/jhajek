@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\palad\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+    "python.pythonPath": "/usr/bin/python3",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true
 }
