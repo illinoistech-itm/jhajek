@@ -92,7 +92,7 @@ while counter != count:
 
 camera2.release()
 counter = 0
-camera3 = cv2.VideoCapture(3)  # init the third camera
+camera3 = cv2.VideoCapture(6)  # init the third camera
 
 while counter != count:
     print("camera 3")
