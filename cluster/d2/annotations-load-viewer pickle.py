@@ -95,7 +95,8 @@ if __name__ == "__main__":
             img = base64.b64decode(frame)
             npimg = np.fromstring(img, dtype=np.uint8)
             source = cv2.imdecode(npimg, 1)
-
+     socket.send_string(topic, zmq.SNDMORE)
+    socket.send_pyobj(image)
             # read image
             start_time = time.time()
             if (args.debug):
