@@ -90,13 +90,12 @@ if __name__ == "__main__":
     cfg.MODEL.WEIGHTS = "detectron2://COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"
 
     while True:
-        try:
-            frame = footage_socket.recv_string()
-            img = base64.b64decode(frame)
-            npimg = np.fromstring(img, dtype=np.uint8)
-            source = cv2.imdecode(npimg, 1)
-     socket.send_string(topic, zmq.SNDMORE)
-    socket.send_pyobj(image)
+        try:  
+            cname = footage_socket.recv_string()  
+            frame = footage_socket.recv_pyobj()
+            #img = base64.b64decode(frame)
+            #npimg = np.fromstring(img, dtype=np.uint8)
+            source = cv2.imdecode(frame, 1)
             # read image
             start_time = time.time()
             if (args.debug):
