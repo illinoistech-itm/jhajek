@@ -91,11 +91,13 @@ if __name__ == "__main__":
 
     while True:
         try:  
-            cname = footage_socket.recv_string()  
+            cname = footage_socket.recv_string()
+            print(cname)  
             frame = footage_socket.recv_pyobj()
             #img = base64.b64decode(frame)
+            npimg = np.asarray(bytearray(frame))
             #npimg = np.fromstring(img, dtype=np.uint8)
-            source = cv2.imdecode(frame, 1)
+            source = cv2.imdecode(npimg, 1)
             # read image
             start_time = time.time()
             if (args.debug):
