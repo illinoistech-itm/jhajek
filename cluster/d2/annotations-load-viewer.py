@@ -92,6 +92,7 @@ if __name__ == "__main__":
     while True:
         try:
             frame = footage_socket.recv_string()
+            print("Image received")
             img = base64.b64decode(frame)
             npimg = np.fromstring(img, dtype=np.uint8)
             source = cv2.imdecode(npimg, 1)
