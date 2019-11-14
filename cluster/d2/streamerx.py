@@ -61,6 +61,7 @@ while counter != count:
         encoded, buffer = cv2.imencode('.jpg', frame)
         jpg_as_text = base64.b64encode(buffer)
         footage_socket.send(jpg_as_text)
+        print("Camera1 image sent")
 
     except KeyboardInterrupt:
         camera.release()
@@ -82,6 +83,7 @@ while counter != count:
         encoded, buffer = cv2.imencode('.jpg', frame2)
         jpg_as_text2 = base64.b64encode(buffer)
         footage_socket.send(jpg_as_text2)
+        print("Camera2 image sent")
 
     except KeyboardInterrupt:
         camera2.release()
@@ -102,6 +104,7 @@ while counter != count:
         encoded, buffer = cv2.imencode('.jpg', frame3)
         jpg_as_text3 = base64.b64encode(buffer)
         footage_socket.send(jpg_as_text3)
+        print("Camera3 image sent")
 
     except KeyboardInterrupt:
         camera3.release()
@@ -122,6 +125,7 @@ while counter != count:
         encoded, buffer = cv2.imencode('.jpg', frame4)
         jpg_as_text4 = base64.b64encode(buffer)
         footage_socket.send(jpg_as_text4)
+        print("Camera4 image sent")
 
     except KeyboardInterrupt:
         camera4.release()
