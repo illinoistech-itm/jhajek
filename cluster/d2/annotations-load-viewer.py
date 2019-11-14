@@ -111,14 +111,14 @@ if __name__ == "__main__":
             predictor = DefaultPredictor(cfg)
             #outputs = predictor(im)
             outputs = predictor(source)
-            print("models loaded")
+            #print("models loaded")
             logger.info(
                 "{}: detected {} instances in {:.2f}s".format(
                     "streaming", len(outputs["instances"]), time.time() - start_time
                 )
             )
 
-            # create a list that converts the classes tensor item to a python number so 
+            # create a list that converts the classes' tensor item to a python number so 
             # we can look up what class it is in the dataset list at the top of this program
             clist = []
             # prints out the predictor model
