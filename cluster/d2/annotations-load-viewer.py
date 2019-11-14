@@ -141,8 +141,8 @@ if __name__ == "__main__":
             for i in range(len(uclasses)):
                 engine.say(cd[uclasses[i]])
                 engine.say(dataset[uclasses[i]])
-
-            engine.runAndWait()
+                engine.runAndWait()
+            
             engine.stop()
 
         except KeyboardInterrupt:
