@@ -29,6 +29,7 @@ $recipt = uniqid();
 echo $receipt;
 
 $result = $client->putItem([
+'TableName' => "RecordsXYZ", // REQUIRED
 'Item' => [ // REQUIRED
     'Receipt' => ['S' => $receipt],
     'Email' => ['S' => "hajek@iit.edu"],
@@ -39,7 +40,7 @@ $result = $client->putItem([
     'Status' => ['B' => False],
     'Issubscribed' => ['B' => FALSE]     
     ],
-    'TableName' => "RecordsXYZ", // REQUIRED
+   
     ]);
 
     
