@@ -13,14 +13,10 @@ $client = new DynamoDbClient([
     'version' => 'latest'
 ]);
 
+$result = $client->describeTable(array(
+    'TableName' => 'RecordsXYZ'
+));
 
-$result = $client->createTable([
-    'AttributeDefinitions' => [ // REQUIRED
-        [
-            'AttributeName' => '<string>', // REQUIRED
-            'AttributeType' => 'S|N|B', // REQUIRED
-        ],
-        // ...
-    ],
+echo $result;
 
 ?>
