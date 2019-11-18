@@ -1,5 +1,5 @@
 <?php
-# https://stackoverflow.com/questions/25806267/need-a-complete-example-for-dynamodb-with-php
+# https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-dynamodb-2012-08-10.html#putitem-example-1
 
 require '/home/vagrant/vendor/autoload.php';
 
