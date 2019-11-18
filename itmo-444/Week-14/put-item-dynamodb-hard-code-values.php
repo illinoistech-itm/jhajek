@@ -39,7 +39,7 @@ $result = $client->putItem([
     'Status' => ['B' => False],
     'Issubscribed' => ['B' => FALSE]     
     ],
-    'TableName' => 'RecordsXYZ', // REQUIRED
+    'TableName' => "RecordsXYZ", // REQUIRED
     ]);
 
     
