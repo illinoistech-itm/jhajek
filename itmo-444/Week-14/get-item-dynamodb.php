@@ -14,16 +14,12 @@ $client = new DynamoDbClient([
 
 $result = $client->getItem([
     'TableName' => 'RecordsXYZ',
-    'RequestItems' => [
-        'RecordsXYZ' => [
-            'Keys' => [
+    'Keys' => [
                 [
                     'Receipt' => ['S' => '5dd3195b3bb72'],
                     'Email' => ['S' => 'hajek@iit.edu'],
                 ],
             ],
-        ],
-    ],
 ]);
 
 print_r($result);
