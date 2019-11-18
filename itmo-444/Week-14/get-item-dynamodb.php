@@ -22,10 +22,30 @@ $result = $client->getItem([
 
 print_r($result);
 
+echo $result['Item'];
+
 /* ProjectionExpression - A string that identifies one or more attributes to retrieve from the table. 
 These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must
  be separated by commas. If no attribute names are specified, then all attributes are returned. 
  If any of the requested attributes are not found, they do not appear in the result. 
+*/
+
+/*
+# Return Object
+[
+    'Item' => [
+        'AlbumTitle' => [
+            'S' => 'Songs About Life',
+        ],
+        'Artist' => [
+            'S' => 'Acme Band',
+        ],
+        'SongTitle' => [
+            'S' => 'Happy Day',
+        ],
+    ],
+]
+
 */
 ?>  
 
