@@ -31,9 +31,9 @@ echo $receipt;
 $result = $client->putItem([
 'Item' => [ // REQUIRED
     'Receipt' => ['S' => $receipt],
-    'Email' => ['S' => "hajek@iit.edu",
-    'Phone' => ['S'] => "16306389708",
-    'Filename' => ['S' => substr(md5(rand()), 0, 7);],
+    'Email' => ['S' => "hajek@iit.edu"],
+    'Phone' => ['S' => "16306389708"],
+    'Filename' => ['S' => substr(md5(rand()), 0, 7)],
     'S3rawurl' => ['S' => "S3://..."],
     'S3finishedurl' => ['S' => ''],     
     'Status' => ['B' => False],
