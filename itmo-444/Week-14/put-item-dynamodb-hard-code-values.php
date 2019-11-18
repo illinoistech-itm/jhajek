@@ -1,5 +1,4 @@
 <?php
-# https://stackoverflow.com/questions/25806267/need-a-complete-example-for-dynamodb-with-php
 
 require '/home/vagrant/vendor/autoload.php';
 
