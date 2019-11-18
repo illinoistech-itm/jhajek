@@ -23,7 +23,7 @@ $result = $client->putItem([
     'Receipt' => ['S' => uniqid()],
     'Email' => ['S' => "hajek@iit.edu"],
     'Phone' => ['S' => "16306389708"],
-    'Filename' => ['S' => $random_str],
+    'Filename' => ['S' => substr(md5(rand()), 0, 7)],
     'S3rawurl' => ['S' => "S3://"],
     'S3finishedurl' => ['S' => 'NA'],     
     'Status' => ['Bool' => false],
