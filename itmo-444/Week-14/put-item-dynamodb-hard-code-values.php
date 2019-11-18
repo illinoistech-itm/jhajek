@@ -11,17 +11,6 @@ $client = new DynamoDbClient([
     'version' => 'latest'
 ]);
 
-$response = $client->putItem(array(
-    'TableName' => '[Table_Name]', 
-    'Item' => array(
-        '[Hash_Name]'   => array('S' => '[Hash_Value]'),
-        '[Range_Name]'  => array('S' => '[Range_Value]')
-    )
-));
-
-//Echoing the response is only good to check if it was successful. Status: 200 = Success
-echo $response;
-
 # https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-dynamodb-2012-08-10.html#putitem
 # PHP UUID generator for Receipt- https://www.php.net/manual/en/function.uniqid.php
 
