@@ -25,7 +25,7 @@ $result = $client->putItem([
     'Filename' => ['S' => substr(md5(rand()), 0, 7)],
     'S3rawurl' => ['S' => "S3://..."],
     'S3finishedurl' => ['S' => ''],     
-    'Status' => ['B' => False],
+    'Status' => ['B' => FALSE],
     'Issubscribed' => ['B' => FALSE]     
     ]
    
