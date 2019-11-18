@@ -31,6 +31,6 @@ $result = $client->putItem([
     ]   
 ]);
 
-printr($result);
+print_r($result);
 
 ?>
