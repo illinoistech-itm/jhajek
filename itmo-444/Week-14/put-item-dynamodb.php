@@ -32,8 +32,6 @@ $result = $client->putItem([
     'TableName' => 'RecordsXYZ', // REQUIRED
     ]);
 
-
-
-printr($result);
+print_r($result);
 
 ?>
