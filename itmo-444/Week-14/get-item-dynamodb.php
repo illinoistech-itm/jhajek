@@ -13,6 +13,7 @@ $client = new DynamoDbClient([
 ]);
 
 $result = $client->getItem([
+    'TableName' => 'RecordsXYZ',
     'RequestItems' => [
         'RecordsXYZ' => [
             'Keys' => [
