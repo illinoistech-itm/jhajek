@@ -20,7 +20,7 @@ $random_str = substr(md5(rand()), 0, 7);
 $result = $client->putItem([
 'TableName' => "RecordsXYZ", // REQUIRED
 'Item' => [ // REQUIRED
-    'Receipt' => ['S' => uniqid()],
+    'Receipt' => ['S' => $receipt],
     'Email' => ['S' => "hajek@iit.edu"],
     'Phone' => ['S' => "16306389708"],
     'Filename' => ['S' => substr(md5(rand()), 0, 7)],
