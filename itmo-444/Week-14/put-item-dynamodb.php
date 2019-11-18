@@ -26,8 +26,8 @@ $result = $client->putItem([
     'Filename' => ['S' => $uploadfile],
     'S3rawurl' => ['S' => $url],
     'S3finishedurl' => ['S' => ''],     
-    'Status' => ['B' => False],
-    'Issubscribed' => ['B' => FALSE]     
+    'Status' => ['BOOL' => false],
+    'Issubscribed' => ['BOOL' => false]     
     ],
     'TableName' => 'RecordsXYZ', // REQUIRED
     ]);
