@@ -13,7 +13,7 @@ $client = new DynamoDbClient([
 # https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-dynamodb-2012-08-10.html#putitem
 # PHP UUID generator for Receipt- https://www.php.net/manual/en/function.uniqid.php
 
-$recipt = uniqid(); 
+$receipt = uniqid(); 
 echo $receipt;
 
 $result = $client->putItem([
