@@ -15,7 +15,7 @@ $client = new DynamoDbClient([
 $result = $client->getItem([
     'TableName' => 'RecordsXYZ',
     'Key' => [
-                    'Receipt' => ['S' => '5dd3195b3bb72'],
+                    'Receipt' => ['S' => '5dd31c34bdd98'],
                     'Email' => ['S' => 'hajek@iit.edu'],
             ],
 ]);
