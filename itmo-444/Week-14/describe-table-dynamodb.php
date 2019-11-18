@@ -3,8 +3,6 @@
 
 require '/home/vagrant/vendor/autoload.php';
 
-require 'aws/aws-autoloader.php';
-
 use Aws\DynamoDb\DynamoDbClient;
 
 $client = new DynamoDbClient([
