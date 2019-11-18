@@ -31,10 +31,10 @@ echo $receipt;
 $result = $client->putItem([
 'Item' => [ // REQUIRED
     'Receipt' => ['S' => $receipt],
-    'Email' => ['S' => $_POST['email'],
-    'Phone' => ['S'] => $_POST['phone'],
-    'Filename' => ['S' => $uploadfile],
-    'S3rawurl' => ['S' => $url],
+    'Email' => ['S' => "hajek@iit.edu",
+    'Phone' => ['S'] => "16306389708",
+    'Filename' => ['S' => "bat.jpg"],
+    'S3rawurl' => ['S' => "S3://..."],
     'S3finishedurl' => ['S' => ''],     
     'Status' => ['B' => False],
     'Issubscribed' => ['B' => FALSE]     
