@@ -25,7 +25,7 @@ print_r($result);
 
 echo "Results: " . "\n";
 echo "S3finished URL: " . "\n";
-echo $result['Item'][0]['S3finshedurl'];
+echo $result['Item']['S3finshedurl'];
 
 /* ProjectionExpression - A string that identifies one or more attributes to retrieve from the table. 
 These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must
