@@ -24,7 +24,7 @@ $result = $client->putItem([
     'Email' => ['S' => "hajek@iit.edu"],
     'Phone' => ['S' => "16306389708"],
     'Filename' => ['S' => $random_str],
-    'S3rawurl' => ['S' => "S3://..."],
+    'S3rawurl' => ['S' => "S3://"],
     'S3finishedurl' => ['S' => 'NA'],     
     'Status' => ['Bool' => false],
     'Issubscribed' => ['Bool' => false]     
