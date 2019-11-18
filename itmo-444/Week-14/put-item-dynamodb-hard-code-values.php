@@ -39,7 +39,7 @@ $result = $client->putItem([
     'S3finishedurl' => ['S' => ''],     
     'Status' => ['B' => False],
     'Issubscribed' => ['B' => FALSE]     
-    ],
+    ]
    
     ]);
 
