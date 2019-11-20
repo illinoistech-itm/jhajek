@@ -29,6 +29,7 @@ $result = $client->scan([
 ]);
 print_r($result);
 
+# retrieve the number of elements being returned -- use this to control the for loop
 $len = $result['Count'];
 echo "Len: " . $len . "\n";
 echo "\n";
@@ -37,7 +38,7 @@ echo "\n";
 print_r($result['Items'][0]['S3finishedurl']['S']);
 echo "\n";
 # for loop to iterate through all the elements of the returned matches
-for ($i=0; $i > $len; $i++) {
+for ($i=0; $i < $len; $i++) {
     echo "\n";
     print_r($result['Items'][$i]['S3rawurl']['S']);
     echo "\n";
