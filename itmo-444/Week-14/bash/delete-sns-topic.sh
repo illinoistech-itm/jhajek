@@ -4,4 +4,4 @@
 # https://docs.aws.amazon.com/cli/latest/reference/sns/list-topics.html
 
 $TOPICARN=`aws sqs list-topics`
-aws sqs delete-topic --topic-arn $TOPICARN | awk {'print $2'}  
+aws sns delete-topic --topic-arn $TOPICARN | awk {'print $2'}  
