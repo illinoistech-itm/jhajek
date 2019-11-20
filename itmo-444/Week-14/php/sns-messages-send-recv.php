@@ -20,14 +20,14 @@ $result = $client->listTopics([
 
 print_r($result);
 
-$TopicArn = $result['Topics']['TopicArn'];
+$TopicArn = $result['Topics'][0]['TopicArn'];
 echo "\n" . $TopicArn . "\n";
 
 
 # https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sns-2010-03-31.html#subscribe
 $result = $client->subscribe([
     'Endpoint' => '16306389708',  // this number is taken from the form on index.php POST action
-    'Protocol' => sms, // REQUIRED
+    'Protocol' => 'sms', // REQUIRED
     'ReturnSubscriptionArn' => true,
     'TopicArn' => $TopicArn, // REQUIRED
 ]);
