@@ -15,7 +15,7 @@ $client = new DynamoDbClient([
 
 $result = $client->scan([
     'ExpressionAttributeNames' => [
-        '#S3R' => 'S3finsihedurl',
+        '#S3R' => 'S3finishedurl',
         '#S3F' => 'S3rawurl',
     ],
     'ExpressionAttributeValues' => [
