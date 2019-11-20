@@ -12,14 +12,17 @@ $client = new DynamoDbClient([
     'version' => 'latest'
 ]);
 
+# remove ProjectionExpression line to return all values
 $result = $client->query([
     'ExpressionAttributeValues' => [
         ':v1' => ['S' => 'hajek@iit.edu'],
+        ':v2' => ['S' => '5dd3195b3bb72']
     ],
-    'KeyConditionExpression' => 'Email = :v1',
-    'ProjectionExpression' => 'S3finishedurl', 'S3rawurl'
+    'KeyConditionExpression' => 'Receipt = :v2 AND Email = :v1',
+    //'ProjectionExpression' => 'S3finishedurl', 'S3rawurl'
     'TableName' => 'RecordsXYZ',
 ]);
+
 
 print_r($result);
 
