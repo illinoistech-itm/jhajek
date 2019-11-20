@@ -27,6 +27,7 @@ print_r($result);
 
 # parse the results to get the URLs of the finished and raw S3 URL
 print_r($result['Items'][0]['S3rawurl']['S']);
+echo "\n";
 print_r($result['Items'][0]['S3finishedurl']['S']);
 
 /*
