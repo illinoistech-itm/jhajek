@@ -18,7 +18,7 @@ $result = $client->query([
         ':v1' => ['S' => 'hajek@iit.edu'],
         ':v2' => ['S' => '5dd3195b3bb72']
     ],
-    'KeyConditionExpression' => 'Email = :v1',
+    'KeyConditionExpression' => 'Receipt = :v2 AND Email = :v1',
     'ProjectionExpression' => 'S3finishedurl', 'S3rawurl',
     'TableName' => 'RecordsXYZ',
 ]);
