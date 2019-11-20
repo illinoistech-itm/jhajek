@@ -28,7 +28,9 @@ $result = $client->scan([
     'TableName' => 'RecordsXYZ',
 ]);
 
+print_r($result['Count']);
+echo "\n";
 print_r($result['Items'][0]['S3rawurl']['S']);
 echo "\n";
-print_r($result['Items'][*]['S3finshedurl']['S']);
+print_r($result['Items'][0]['S3finshedurl']['S']);
 
