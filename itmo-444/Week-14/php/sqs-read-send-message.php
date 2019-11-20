@@ -42,7 +42,7 @@ print_r($resultsqs);
 $result = $client->receiveMessage([
     'QueueUrl' => $URL, // REQUIRED
     'VisibilityTimeout' => 300,
-    'WaitTimeSeconds' => 30,
+    'WaitTimeSeconds' => 10,
 ]);
 
 print_r($result['Messages']);
