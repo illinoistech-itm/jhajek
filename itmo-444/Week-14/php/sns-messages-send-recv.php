@@ -43,6 +43,7 @@ $result = $client->confirmSubscription([
 */
 
 # https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sns-2010-03-31.html#publish
+# Use only one PhoneNumber or TopicARN -- topicARN will publish to all those subscribed PhoneNumber is just one 
 $result = $client->publish([
     'Message' => 'Your image is ready - add gallery URL here', // REQUIRED
     'PhoneNumber' => '16306389708',  // Use your own
