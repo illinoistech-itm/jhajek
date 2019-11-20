@@ -23,7 +23,7 @@ $result = $client->getItem([
 print_r($result);
 
 echo "Results: " . "\n";
-print_r($result['Item']['S3rawurl']);
+print_r($result['Item']['S3rawurl']['S']);
 echo "Raw: " . $result['S3rawurl'];
 
 /* ProjectionExpression - A string that identifies one or more attributes to retrieve from the table. 
