@@ -27,7 +27,7 @@ $result = $client->getQueueUrl([
 ]);
 
 print_r($result['QueueUrl']);
-$URL = $result['QueueUrl'][0];
+$URL = $result['QueueUrl'];
 echo "URL: " . $URL;
 # https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#sendmessage
 
