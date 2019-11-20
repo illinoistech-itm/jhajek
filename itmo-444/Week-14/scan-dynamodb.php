@@ -27,6 +27,7 @@ $result = $client->scan([
     'ProjectionExpression' => '#S3F, #S3R',
     'TableName' => 'RecordsXYZ',
 ]);
+print_r($result);
 
 print_r($result['Count']);
 $len = $result['Count'][0];
