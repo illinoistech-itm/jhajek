@@ -28,8 +28,8 @@ $result = $client->scan([
     'TableName' => 'RecordsXYZ',
 ]);
 
-$len = print_r($result['Count']);
-echo $len . "\n";
+print_r($result['Count']);
+$len = $result['Count'];
 echo "\n";
 print_r($result['Items'][0]['S3rawurl']['S']);
 echo "\n";
