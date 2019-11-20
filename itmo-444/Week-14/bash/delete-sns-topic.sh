@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# https://docs.aws.amazon.com/cli/latest/reference/sns/delete-topic.html
+# https://docs.aws.amazon.com/cli/latest/reference/sns/list-topics.html
+
+$TOPICARN=`aws sqs list-topics`
+delete-topic --topic-arn $TOPICARN | awk {'print $2'}  
