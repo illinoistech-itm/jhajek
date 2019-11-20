@@ -56,3 +56,5 @@ $result = $client->deleteMessage([
     'QueueUrl' => $URL, // REQUIRED
     'ReceiptHandle' => $handle, // REQUIRED
 ]);
+
+?>
