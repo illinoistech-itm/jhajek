@@ -19,7 +19,7 @@ $result = $client->query([
         ':v2' => ['S' => '5dd3195b3bb72']
     ],
     'KeyConditionExpression' => 'Email = :v1',
-    'ProjectionExpression' => 'S3finishedurl', 'S3rawurl'
+    'ProjectionExpression' => 'S3finishedurl', 'S3rawurl',
     'TableName' => 'RecordsXYZ',
 ]);
 
