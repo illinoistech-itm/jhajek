@@ -32,7 +32,6 @@ print_r($result);
 # retrieve the number of elements being returned -- use this to control the for loop
 $len = $result['Count'];
 echo "Len: " . $len . "\n";
-echo "\n";
 print_r($result['Items'][0]['S3rawurl']['S']);
 echo "\n";
 print_r($result['Items'][0]['S3finishedurl']['S']);
