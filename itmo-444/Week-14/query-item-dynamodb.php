@@ -26,8 +26,8 @@ $result = $client->query([
 print_r($result);
 
 # parse the results to get the URLs of the finished and raw S3 URL
-print_r($result['Items']['S3rawurl']['S']);
-print_r($result['Items']['S3finishedurl']['S']);
+print_r($result['Item']['S3rawurl']['S']);
+print_r($result['Item']['S3finishedurl']['S']);
 
 /*
 # Result syntax:
