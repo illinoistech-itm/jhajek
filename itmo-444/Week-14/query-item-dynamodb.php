@@ -19,14 +19,14 @@ $result = $client->query([
         ':v2' => ['S' => '5dd4d65c2099f']
     ],
     'KeyConditionExpression' => 'Receipt = :v2 AND Email = :v1',
-    'ProjectionExpression' => 'S3finishedurl', 'S3rawurl',
+    'ProjectionExpression' => 'S3finishedurl, S3rawurl',
     'TableName' => 'RecordsXYZ',
 ]);
 
 print_r($result);
 
 # parse the results to get the URLs of the finished and raw S3 URL
-//print_r($result['Items'][0]['S3rawurl']['S']);
+print_r($result['Items'][0]['S3rawurl']['S']);
 print_r($result['Items'][0]['S3finishedurl']['S']);
 
 /*
