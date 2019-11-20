@@ -33,7 +33,7 @@ $URL = $result['QueueURL'];
 
 $resultsqs = $client->sendMessage([
     'MessageBody' => uniqid(), // put UUID or receipt value here for look up. 
-    'QueueUrl' => $queueURL, // REQUIRED
+    'QueueUrl' => $URL, // REQUIRED
 ]);
 
 print_r($resultsqs);
