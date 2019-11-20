@@ -28,7 +28,7 @@ $result = $client->getQueueUrl([
 
 print_r($result['QueueURL']);
 $URL = $result['QueueURL'];
-
+echo $URL;
 # https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#sendmessage
 
 $resultsqs = $client->sendMessage([
