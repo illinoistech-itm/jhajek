@@ -29,8 +29,16 @@ $result = $client->scan([
 ]);
 
 print_r($result['Count']);
+$len = $result['Count'];
 echo "\n";
 print_r($result['Items'][0]['S3rawurl']['S']);
 echo "\n";
 print_r($result['Items'][0]['S3finishedurl']['S']);
-
+echo "\n";
+# for loop to iterate through all the elements of the returned matches
+for ($i=0; $i > $len; $i++) {
+    echo "\n";
+    print_r($result['Items'][$i]['S3rawurl']['S']);
+    echo "\n";
+    print_r($result['Items'][$i]['S3finishedurl']['S']);
+}
