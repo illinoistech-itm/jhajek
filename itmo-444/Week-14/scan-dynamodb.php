@@ -30,6 +30,7 @@ $result = $client->scan([
 
 print_r($result['Count']);
 $len = $result['Count'];
+echo "Mathcing item count: " . "\n";
 echo "\n";
 print_r($result['Items'][0]['S3rawurl']['S']);
 echo "\n";
