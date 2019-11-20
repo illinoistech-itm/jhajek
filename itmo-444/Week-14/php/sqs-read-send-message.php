@@ -26,8 +26,8 @@ $result = $client->getQueueUrl([
     //'QueueOwnerAWSAccountId' => '<string>',  // optional
 ]);
 
-print_r($result['QueueURL']);
-$URL = $result[0];
+print_r($result['QueueUrl']);
+$URL = $result['QueueUrl'][0];
 echo "URL: " . $URL;
 # https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#sendmessage
 
