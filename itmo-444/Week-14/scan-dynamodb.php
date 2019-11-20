@@ -29,7 +29,7 @@ $result = $client->scan([
 ]);
 
 print_r($result['Count']);
-$len = $result['Count'];
+$len = $result['Count'][0];
 echo "\n";
 print_r($result['Items'][0]['S3rawurl']['S']);
 echo "\n";
