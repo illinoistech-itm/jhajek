@@ -47,7 +47,6 @@ $result = $client->publish([
     'Message' => 'Your image is ready - add gallery URL here', // REQUIRED
     'PhoneNumber' => '16306389708',  // Use your own
     'Subject' => 'Submitted Image ready',
-    'TopicArn' => $TopicArn,
 ]);
 
 ?>
