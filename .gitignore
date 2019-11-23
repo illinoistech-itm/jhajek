@@ -46,3 +46,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+clone-pwrshell.ps1
+pull-repo.ps1
+roster.txt
