@@ -65,7 +65,7 @@ The delvierable will be to create a folder called **intro-concepts** under your 
   * answer here
 * ~8:44 What is the difference between, "rely on" vs. "work with"?
   * answer here
-* ~9:00 What is Apache Kafka and what does it do?
+* ~9:00 What is [Apache Kafka](http://kafka.apache.org/ "Apache Kafka") and what does it do?
   * answer here
 * ~10:25 List and briefly describe the 2nd principle of Joint Activity?
   * answer here
