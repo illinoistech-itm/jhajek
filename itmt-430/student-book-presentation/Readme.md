@@ -12,10 +12,6 @@ From these questions I will draw the material for the Final Exam.
 
 The presentation is worth 100 points (per team member).
 
-The Rubric will be as follows:
-
-100 points total
-
    Points          Category                        Grade
 ----------- --------------------------- ----------------------------------
     20       Review Questions            Are the proper amount present?
