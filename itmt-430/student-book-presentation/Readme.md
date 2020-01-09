@@ -23,7 +23,8 @@ The Rubric will be as follows:
     20       Content of presentation           5 point scale
     20       Conclusion                        5 point scale
     20       Time of presentation              5 point scale
------------ --------------------------- ----------------------------------
+
+Grading Rubric: How the presentation will be graded
 
 ## Deliverable
 
