@@ -8,7 +8,7 @@ If you have a Windows 10 system, make sure that the native SSH client and [Power
 
 ## Package Managers for Windows and MacOS
 
-Brew is the MacOS 3rd party package manager located at: [https://brew.sh/](https://brew.sh/ "brew installer page").  [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page") is the Windows 3rd party package manager.  Place screenshot of the version command output for: ```chocolatey --version``` or ```brew --version```
+Brew is the MacOS 3rd party package manager located at: [https://brew.sh/](https://brew.sh/ "brew installer page").  [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page") is the Windows 3rd party package manager.  Place screenshot of the version command output for: ```choco --version``` or ```brew --version```
 
 ## Install Git
 
@@ -76,7 +76,7 @@ The document will include:
 
 Push this to your GitHub private account repo.
 
-Here is my own completed sample: [https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430 "Professor's GitHub Repo Sample").  **Note**, I will have more folders then you because I have sample code for more classes.
+Here is my own completed sample: [https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/Readme.md](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/Readme.md "Professor's GitHub Repo Sample").  **Note**, I will have more folders then you because I have sample code for more classes.
 
 ## Final deliverable to Blackboard
 
