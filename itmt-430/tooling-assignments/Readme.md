@@ -31,7 +31,7 @@ Adobe Brackets
 
 ## Git-It Tutorial
 
-Compelte Git-It tutorial
+Complete Git-It tutorial
 
 ## Create and Push your Readme.md
 
