@@ -1,6 +1,6 @@
 # Jeremy Hajek
 
-![Family](images/family.jpg "Family")
+![Family](images/family.png "Family")
 
 ![Prince of all Sayans](images/vegeta.jpg "Vegeta")
 

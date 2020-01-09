@@ -76,6 +76,8 @@ The document will include:
 
 Push this to your GitHub private account repo.
 
+Here is my own completed sample: [https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430 "Professor's GitHub Repo Sample").  **Note**, I will have more folders then you because I have sample code for more classes.
+
 ## Final deliverable to Blackboard
 
 Submit to Blackboard the URL to your GitHub private repo, so I can clone and see all these elements.  Make sure to push code as you go and push this edited Readme.md file under the tooling-assignments folder.

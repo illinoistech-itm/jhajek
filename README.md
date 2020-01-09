@@ -1,7 +1,7 @@
 # Jeremy Hajek
 
 Picture of you:
-![Family](images/family.jpg "Family")
+![Family](images/family.png "Family")
 
 Picture of one thing that describes you or interets you:
 ![Prince of all Sayans](images/vegeta.jpg "Vegeta")
