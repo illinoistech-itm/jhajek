@@ -18,4 +18,4 @@ It doesn't look like it now, but I played American Football in high school and j
 
 ## Git tutorial
 
-![Git Tutorial](images/badge.jpg "Result")
+![Git Tutorial](images/badge.png "Result")
