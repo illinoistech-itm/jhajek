@@ -50,9 +50,32 @@ After installing an IDE editor of your choice, pick one of the listed or you can
 
 ## Git-It Tutorial
 
-Download, extract, and execute the Git-It tutorial, located: [https://github.com/jlord/git-it-electron/releases](https://github.com/jlord/git-it-electron/releases "Git-It release tutorial").  The program runs as an executable so there is no installation needed.  The program does require you to have completed and configured Git, which we did in a previous step.  
+Download, extract, and execute the Git-It tutorial, located: [https://github.com/jlord/git-it-electron/releases](https://github.com/jlord/git-it-electron/releases "Git-It release tutorial").  The program runs as an executable so there is no installation needed and is cross platform.  The program does require you to have completed and configured Git, which we did in a previous step.  
+
+Post a screenshot of your completion badge (or dots) after you finish the tutorial.
 
 ## Create and Push your Readme.md
 
-Push to your repo your intro Readme.md  
+Final step, is to clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it).  If you already have a private repo provided by the professor from a previous class, just create a new folder named **itmt-430**, no spaces! Ever! and push your new folder along with a Readme.md file and a folder named **images**.  
 
+This Readme.md will contain these elements written in Markdown. This is a good [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
+
+The document will include:
+
+* h1 with your name
+  * a picture of you
+  * a picture of something that describes you
+* h2 Where are you from?
+  * Tell us where you are from
+* h2 IT Interests
+  * Tell us what you IT Interests and or skills are
+* h2 Something Interesting About You
+  * Tell us something interesting about you
+* h2 Git-It Badge
+  * Place your Git-It Tutorial badge image here.
+
+Push this to your GitHub private account repo.
+
+## Final deliverable to Blackboard
+
+Submit to Blackboard the URL to your GitHub private repo, so I can clone and see all these elements.  Make sure to push code as you go and push this edited Readme.md file under the tooling-assignments folder.

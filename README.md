@@ -1,7 +1,9 @@
 # Jeremy Hajek
 
+Picture of you:
 ![Family](images/family.jpg "Family")
 
+Picture of one thing that describes you or interets you:
 ![Prince of all Sayans](images/vegeta.jpg "Vegeta")
 
 ## Where are you from?
@@ -16,6 +18,6 @@ My background is in IT Orchestration and Operations.  I had been an IT manager b
 
 It doesn't look like it now, but I played American Football in high school and junior college.  I managed to register one tackle to my credit.
 
-## Git tutorial
+## Git-IT Tutorial Badge
 
 ![Git Tutorial](images/badge.jpg "Result")
