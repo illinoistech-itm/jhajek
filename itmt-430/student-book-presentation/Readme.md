@@ -12,13 +12,13 @@ From these questions I will draw the material for the Final Exam.
 
 The presentation is worth 100 points (per team member).
 
-   Points          Category                        Grade
------------ --------------------------- ----------------------------------
-    20       Review Questions            Are the proper amount present?
-    20       Introduction                      5 point scale 
-    20       Content of presentation           5 point scale
-    20       Conclusion                        5 point scale
-    20       Time of presentation              5 point scale
+Points | Category | Grade
+--- | --- | ---
+20 | Review Questions | Are the proper amount present?
+20 | Introduction | 5 point scale
+20 | Content of presentation | 5 point scale
+20 | Conclusion | 5 point scale
+20 | Time of presentation | 5 point scale
 
 Grading Rubric: How the presentation will be graded
 
