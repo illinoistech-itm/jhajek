@@ -1,9 +1,7 @@
 # Jeremy Hajek
 
-Picture of you:
 ![Family](images/family.png "Family")
 
-Picture of one thing that describes you or interets you:
 ![Prince of all Sayans](images/vegeta.jpg "Vegeta")
 
 ## Where are you from?
@@ -20,4 +18,4 @@ It doesn't look like it now, but I played American Football in high school and j
 
 ## Git-IT Tutorial Badge
 
-![Git Tutorial](images/badge.jpg "Result")
+![Git Tutorial](images/badge.png "Result")
