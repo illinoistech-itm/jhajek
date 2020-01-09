@@ -1,4 +1,5 @@
 # Jeremy Hajek
+
 ![Family](images/family.jpg "Family")
 
 ![Prince of all Sayans](images/vegeta.jpg "Vegeta")
@@ -9,7 +10,7 @@ From the Chicago suburbs, Lombard and Glen Ellyn (30 miles west of campus).
 
 # IT Interest
 
-My background is in IT Orchestration and Operations.  I had been an IT manager before previously becoming a professor in 2012.  I came to the realization that cloud native development and deployment (DevOps) was the logic outcome of software deployment outcomes. 
+My background is in IT Orchestration and Operations.  I had been an IT manager before previously becoming a professor in 2012.  I came to the realization that cloud native development and deployment (DevOps) was the logic outcome of software deployment outcomes.
 
 # Something Interesting About You
 
