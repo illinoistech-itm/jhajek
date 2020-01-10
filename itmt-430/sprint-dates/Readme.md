@@ -17,6 +17,7 @@
 10 | March 25 & 26 & 27 | Sprint 4
 11 | April 01 & 02 & 03 | Sprint 4
 12 | April 08 & 09 & 10 | Sprint 4 – Presentation by PM on lab day
-13 | April 15 & 16 & 17 | Sprint 514 | April 22 & 23 & 24 | Sprint 5
+13 | April 15 & 16 & 17 | Sprint 5
+14 | April 22 & 23 & 24 | Sprint 5
 15 | April 29 & 30 & 31st | Sprint 5 – Final cumulative Presentation by PM on lab day
 16 | May 4th--May 10th | Written Final Exam Based on Review Questions
