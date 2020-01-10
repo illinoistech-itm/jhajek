@@ -24,4 +24,4 @@ Grading Rubric: How the presentation will be graded
 
 ## Deliverable
 
-Submit your PowerPoint to BlackBoard
+Each team member submit your PowerPoint to BlackBoard.  Name the file: **ITMT-430-Accelerate-X** or **ITMT-430-DevOps-X**  with X being the chapter number(s).
