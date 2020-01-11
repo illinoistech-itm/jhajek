@@ -4,7 +4,7 @@
 
 Teams will need to pick a project subject.  The project scope can be from existing work you have done in class or work you are doing on research projects currently.  The scope must be something that 5 people can contribute equally to over the course of 15 weeks and is not expected to 100% feature complete, but must be re-deployable and usable in all phases.
 
-Here are some suggestions to get you started
+## Suggested Outlines
 
 * Bug Overflow Q & A
   * Create a near feature complete copy of Stackoverflow Q&A site
@@ -38,3 +38,4 @@ Here are some suggestions to get you started
   * Prototype the initial setup
   * Implement the initial setup on department provided hardware
   * Re-implement several projects from previous semesters as proof of concepts (code will be provided)
+* Other student defined projects
