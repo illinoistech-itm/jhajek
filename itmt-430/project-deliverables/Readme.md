@@ -31,7 +31,9 @@ The outputs will be demonstrated through your application code and infrastructur
 
 ## Project Base Requirements
 
-Each Project will have additional specific details per job to be delivered once the exact project subject is determined.  But in this case we are going to disallow non-framework PHP and Google Firebase applications.
+Each Project will have additional specific details to be delivered once the exact project subject is determined.  But in this case we are going to disallow non-frameworked PHP and Google Firebase based applications.  Note some of the requirements below span across multiple categories.
+
+### Coding and Programming
 
 * Language and framework of your choice (ITM 311, ITM 312, ITMD 361 & 362, ITMD 411) Suggestions:
   * Android
@@ -40,18 +42,28 @@ Each Project will have additional specific details per job to be delivered once 
   * JavaScript – NodeJS/Angular/React/Vue.js
   * Ruby – Ruby on Rails
   * C# - ASP Dot SNet
+
+### Infrastructure and IT
+
 * Operating System Platform of Choice (ITM 301, ITMO 456)
 * Use of Data Store (ITMD 421, ITMD 411, ITMO 456)
   * Database or similar storage technology
-* Data encrypted at rest (ITMS 448)
-* Database makes use of master/slave replication (~ITMD 421, ITMD 411)
+* Datastore makes use of master/slave replication (~ITMD 421, ITMD 411)
   * Master for database writes
   * Slave for database reads
-* Use of Responsive design (where applicable) (ITMD 361, ITMD 362)
+
+### Security
+
+* Data encrypted at rest (ITMS 448)
 * Use of https (ITMS 448, ITMO 456)
   * Self-signed certs
   * Login authentication mechanism. Google authentication for login
   * SQRL - https://www.grc.com/sqrl/sqrl.htm
+  
+### UI/UX
+
+* Use of Responsive design (where applicable) (ITMD 361, ITMD 362)
+
 * Use of user authentication (ITMD 411)
   * Must use HTTP Session
   * Different UI for Unauthenticated users
