@@ -59,7 +59,7 @@ Each Project will have additional specific details to be delivered once the exac
   * Self-signed certs
   * Login authentication mechanism. Google authentication for login
   * SQRL - https://www.grc.com/sqrl/sqrl.htm
-  
+
 ### UI/UX
 
 * Use of Responsive design (where applicable) (ITMD 361, ITMD 362)
@@ -75,7 +75,7 @@ Each Project will have additional specific details to be delivered once the exac
   * UI is modified per authenticated user via CSS
 * Creation of Dev Environment (local laptop), (ITMO 456)
   * Production must always be working
-  * Environment must be configurable via scriptable pre-deploy 
+  * Environment must be configurable via scriptable pre-deploy
   * No manual editing or installing
   * Initial sprint will implement development via laptop using Packer, Vagrant, and VirtualBox
   * Test and Production environments will be built in the next 2 Sprints
