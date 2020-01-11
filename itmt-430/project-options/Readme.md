@@ -23,14 +23,18 @@ Here are some suggestions to get you started
 * Rideshare service for ITM Department
   * A service for connecting people wishing to share location and schedule for coordinating a rideshare
   * Make it a progressive web app
-* FixMe voting based repair site
-  * Create a website and PWA for mobile, Make it a progressive web app
-  * A service for allowing people to highlight problems and create a voting system for rank priorities
-  * Create image storage back end
-  * Create voting and reputation system including difficulty/time to completion/ and cost factors
-* Create AI assistant (Google Home, Microsoft Cortana, Amazon Echo) based assistant for ITM course syllabi inquires
+* Virtual Reality (VR) based Networking Lab
+  * Creating a VR based application that would be a self-contained network routing and switching app
+  * Create visual demonstrations (lectures)
+  * Create hands on networking and switching exercises to allow for virtual "hands-on" exercises
+  * Using a small physical switching and routing setup, create a bridge to allow the virtual configuration to be applied in real life.
+* Create and AI assistant for College Classes
+  * Google Home, Amazon Echo, and or OpenSource Mycroft based assistant
   * Coordinate department syllabi to be injected into application (will be provided)
   * Create voice syntax for querying via voice and receiving spoken responses
   * Focus on VI/VX (voice interface, voice experience) to make the service as friendly as possible
   * Focus on deployment (App store account will be provided to you)
-* Other user defined project
+* Create a functioning PaaS using RedHat OpenShift project
+  * Prototype the initial setup
+  * Implement the initial setup on department provided hardware
+  * Re-implement several projects from previous semesters as proof of concepts (code will be provided)
