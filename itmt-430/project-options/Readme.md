@@ -20,9 +20,10 @@ Here are some suggestions to get you started
   * Create a flicker like tagged photo system allowing employees to search and modify stock photos (I will provide the photos to you)
   * Analyze realtime image rendering vs storing pre-rendered images
   * Create storage solution for images
-* Rideshare service for ITM Department
-  * A service for connecting people wishing to share location and schedule for coordinating a rideshare
-  * Make it a progressive web app
+* Autonomous Drone Movement Framework Management Console
+  * Interface with PixHawk based UAVs via [Dronekit.io](https://dronekit.io "Dronekit.io webpage")
+  * Create a system for autonomously querying and ordering UAVs
+  * Create a software package for installation and create backend for storage of inflight telemetry
 * Virtual Reality (VR) based Networking Lab
   * Creating a VR based application that would be a self-contained network routing and switching app
   * Create visual demonstrations (lectures)
