@@ -34,7 +34,6 @@ Here are some suggestions to get you started
   * Coordinate department syllabi to be injected into application (will be provided)
   * Create voice syntax for querying via voice and receiving spoken responses
   * Focus on VI/VX (voice interface, voice experience) to make the service as friendly as possible
-  * Focus on deployment (App store account will be provided to you)
 * Create a functioning PaaS using RedHat OpenShift project
   * Prototype the initial setup
   * Implement the initial setup on department provided hardware
