@@ -6,3 +6,7 @@ pandoc -s -o ./sprint-dates/sprint-dates.txt ./sprint-dates/Readme.md
 pandoc -s -o ./sprint-dates/sprint-dates.docx ./sprint-dates/Readme.md
 pandoc -s -o ./tooling-assignments/tooling-assignments.txt ./tooling-assignments/Readme.md
 pandoc -s -o ./tooling-assignments/tooling-assignments.docx ./tooling-assignments/Readme.md
+pandoc -s -o ./project-options/project-options.txt ./project-options/Readme.md
+pandoc -s -o ./project-options/project-options.docx ./project-options/Readme.md
+pandoc -s -o ./project-deliverables/project-deliverables.txt ./project-deliverables/Readme.md
+pandoc -s -o ./project-deliverables/project-deliverables.docx ./project-deliverables/Readme.md
