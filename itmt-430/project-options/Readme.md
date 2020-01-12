@@ -2,7 +2,7 @@
 
 ## Project List
 
-Teams will need to pick a project subject.  The project scope can be from existing work you have done in class or work you are doing on research projects currently.  The scope must be something that 5 people can contribute equally to over the course of 15 weeks and is not expected to 100% feature complete, but must be re-deployable and usable in all phases.
+Teams will need to pick a project subject.  The project scope can be from existing work you have done in classes or work you are doing on research projects currently.  The scope must be something that 5 people can contribute equally to over the course of 15 weeks and is not expected to 100% feature complete, but must be re-deployable and usable in all phases.
 
 ## Suggested Outlines
 
