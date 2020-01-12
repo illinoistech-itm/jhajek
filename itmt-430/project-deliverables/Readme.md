@@ -51,19 +51,23 @@ Each Project will have additional specific details to be delivered once the exac
 * Datastore makes use of master/slave replication (~ITMD 421, ITMD 411)
   * Master for database writes
   * Slave for database reads
+* Creation of Data Schema
+* Creation of infrastructure diagram tool and work flow (Visio or comparable) (ITM 301, ITMO 456)
+* Team must generate at least 15 real “test” users and proper data to test functionality of a system
+  * No system is ever used “blank” always fill it up with real data.
 
 ### Security
 
 * Data encrypted at rest (ITMS 448)
 * Use of https (ITMS 448, ITMO 456)
   * Self-signed certs
-  * Login authentication mechanism. Google authentication for login
-  * SQRL - https://www.grc.com/sqrl/sqrl.htm
+* Login authentication mechanism. Google authentication for login
+  * [SQRL](https://www.grc.com/sqrl/sqrl.htm "SQRL introduction page")
+  * [Google OAuth2](https://developers.google.com/identity/protocols/OAuth2 "Google OAuth2 authentication")
 
 ### UI/UX
 
 * Use of Responsive design (where applicable) (ITMD 361, ITMD 362)
-
 * Use of user authentication (ITMD 411)
   * Must use HTTP Session
   * Different UI for Unauthenticated users
@@ -71,41 +75,42 @@ Each Project will have additional specific details to be delivered once the exac
   * Different UI for Authenticated users
   * Must have a user account management page (EDIT Page)
   * Different UI for Administrative users
-  * Must have an administrative database dump and restore feature
+  * Must have features for Operations in application (database dump and restore feature)
   * UI is modified per authenticated user via CSS
 * Creation of Dev Environment (local laptop), (ITMO 456)
-  * Production must always be working
-  * Environment must be configurable via scriptable pre-deploy
+  * Production must always be in a working state
+  * Environment must be configurable via scriptable deploy
   * No manual editing or installing
   * Initial sprint will implement development via laptop using Packer, Vagrant, and VirtualBox
   * Test and Production environments will be built in the next 2 Sprints
 * Layout design (ITMD 361, 362, ITMM 471)
-  * Diagrams of site functionality
+  * Diagrams of site functionality using layout tool
   * Diagrams of colors, fonts, and other usability features
-* Management of Visio (or comparable) diagram tool of work flow (ITM 301, ITMO 456)
+
+### Project Management
+
 * Management of project progress (ITMM 471)
   * Trello / basecamp
   * Slack
   * GitHub
   * GitHub Issues to resolve bug posts from UI/UX tester
-* Team must generate at least 15 real “test” users and proper data to test functionality of a system
-  * No system is ever used “blank” always fill it up with real data.
+* User story - how the user will experience the site
 
 ## Written Report Content
 
-At the end of a each sprint, the project manager will be responsible to collecting the team’s input and preparing a report.  You will receive feedback from me on this report, to be incorporated in the final project report.  The report should state the following:
+At the start of each sprint each person will contribute their deliverables.  This list of atomic events will be used to grade each person individually for each sprint.  The project manager will be responsible to collecting the team's input and prepare a report.  You will receive feedback from me on this report.  The report should state the following:
 
-1. Describe the team members and their functions
-2. Describe the groups stated (atomic) goals for the sprint
-a. Describe how many of these initial goals you accomplished
-b. Describe what you would change or adapt to complete more of these goals.
-3. Describe what was accomplished and why/how
-a. List feature deployment
-b. List next Sprints goals
-4. Explain and show how bugs were found, tracked, and delegated
-5. Explain any security assumptions made and explain how these were discovered and mitigated
-6. Each team member should comment on their own accomplishments and describe what they did and explain any decisions referencing any lectures or material from the text book or web.
-7. Reference decisions from any of the videos, guest lectures, and class presentations, or text book.
+* Describe the team members and their functions
+* Describe the groups stated (atomic) goals for the sprint
+  * Describe how many of these initial goals you accomplished
+  * Describe what you would change or adapt to complete more of these goals.
+* Describe what was accomplished and why/how
+  * List feature deployment
+  * List next Sprints goals
+* Explain and show how bugs were found, tracked, and delegated
+* Explain any security assumptions made and explain how these were discovered and mitigated
+* Each team member should comment on their own accomplishments and describe what they did and explain any decisions referencing any lectures or material from the text book or web.
+* Reference decisions from any of the videos, guest lectures, and class presentations, or text book.
 
 ## Deliverables
 
@@ -114,16 +119,15 @@ Each team will have different requirements but there are core requirements for a
 * Visio or other diagraming tool for the outline of your application
 * Create a folder named: diagrams in your team GitHub account.
 * Create UI/UX layout designs of every page – including content layout, colors, fonts, etc. etc.
-* Place these in your diagrams folder 
+* Place these in your diagrams folder
 * ReadMd.md must have each team members name and contact email
 * Must include build instructions to automatically build the application from the command line including all necessary dependencies, instructions, and assumptions
 
 ## Final project Report
 
-1.	Create and summarize into a final report detailing the accomplishments of the 6 sprint reports.  
-2.	Explain the overall accomplishments of the team based on the content of the 6 reports
-3.	Analyze the completeness of the project in fulfilling the stated goals (self-assessment, how close did you get?)  
-a.	Explain in detail from the textbook and resources – some features that were not implemented are ok if you can explain accurately why that happened.
-4.	Explain your technology and stack choices
-5.	Include your team’s backgrounds
-
+1. Create and summarize into a final report detailing the accomplishments of the 6 sprint reports.  
+2. Explain the overall accomplishments of the team based on the content of the 6 reports
+3. Analyze the completeness of the project in fulfilling the stated goals (self-assessment, how close did you get?)  
+a. Explain in detail from the textbook and resources – some features that were not implemented are ok if you can explain accurately why that happened.
+4. Explain your technology and stack choices
+5. Include your team’s backgrounds
