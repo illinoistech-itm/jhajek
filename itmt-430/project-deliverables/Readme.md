@@ -100,17 +100,14 @@ Each Project will have additional specific details to be delivered once the exac
 
 At the start of each sprint each person will contribute their deliverables.  This list of atomic events will be used to grade each person individually for each sprint.  The project manager will be responsible to collecting the team's input and prepare a report.  You will receive feedback from me on this report.  The report should state the following at the minimum with additional information will be released per sprint.
 
-* Describe the team members and their functions
+* List the team members and describe their functions during the spring
 * Describe the groups stated (atomic) goals for the sprint
-  * Describe how many of these initial goals you accomplished
-  * Describe what you would change or adapt to complete more of these goals.
-* Describe what was accomplished and why/how
-  * List feature deployment
-  * List next Sprints goals
-* Explain and show how bugs were found, tracked, and delegated
-* Explain any security assumptions made and explain how these were discovered and mitigated
-* Each team member should comment on their own accomplishments and describe what they did and explain any decisions referencing any lectures or material from the text book or web.
-* Reference decisions from any of the videos, guest lectures, and class presentations, or text book.
+  * Describe how each of these goals were accomplished
+  * Explain and show how bugs were found, tracked, and delegated
+  * Explain any security assumptions made and explain how these were discovered and mitigated
+* List the goals for the next sprint
+* Each team member should submit a small comment on their own accomplishments and describe what they did and explain any decisions referencing any lectures or material from the text book or web
+* Reference decisions from any of the videos, guest lectures, and class presentations, or text book
 
 ## Deliverables
 
