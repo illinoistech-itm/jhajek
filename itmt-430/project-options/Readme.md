@@ -34,7 +34,7 @@ Teams will need to pick a project subject.  The project scope can be from existi
   * Coordinate department syllabi to be injected into application (will be provided)
   * Create voice syntax for querying via voice and receiving spoken responses
   * Focus on VI/VX (voice interface, voice experience) to make the service as friendly as possible
-* Create a functioning PaaS using RedHat OpenShift project
+* Create a functioning PaaS using [Red Hat OpenShift project](https://www.openshift.com/ "Red Hat OpenShift")
   * Prototype the initial setup
   * Implement the initial setup on department provided hardware
   * Re-implement several projects from previous semesters as proof of concepts (code will be provided)
