@@ -45,21 +45,21 @@ Each Project will have additional specific details to be delivered once the exac
 
 ### Infrastructure and IT
 
-* Operating System Platform of Choice (ITM 301, ITMO 456)
-* Use of Data Store (ITMD 421, ITMD 411, ITMO 456)
+* Operating System Platform of Choice (ITM 301, ITMO 356)
+* Use of Data Store (ITMD 321, ITMD 411, ITMO 356)
   * Database or similar storage technology
-* Datastore makes use of master/slave replication (~ITMD 421, ITMD 411)
+* Datastore makes use of master/slave replication (~ITMD 321, ITMD 411)
   * Master for database writes
   * Slave for database reads
 * Creation of Data Schema
-* Creation of infrastructure diagram tool and work flow (Visio or comparable) (ITM 301, ITMO 456)
+* Creation of infrastructure diagram tool and work flow (Visio or comparable) (ITM 301, ITMO 356)
 * Team must generate at least 15 real “test” users and proper data to test functionality of a system
   * No system is ever used “blank” always fill it up with real data.
 
 ### Security
 
 * Data encrypted at rest (ITMS 448)
-* Use of https (ITMS 448, ITMO 456)
+* Use of https (ITMS 448, ITMO 356)
   * Self-signed certs
 * Login authentication mechanism. Google authentication for login
   * [SQRL](https://www.grc.com/sqrl/sqrl.htm "SQRL introduction page")
@@ -77,7 +77,7 @@ Each Project will have additional specific details to be delivered once the exac
   * Different UI for Administrative users
   * Must have features for Operations in application (database dump and restore feature)
   * UI is modified per authenticated user via CSS
-* Creation of Dev Environment (local laptop), (ITMO 456)
+* Creation of Dev Environment (local laptop), (ITMO 356)
   * Production must always be in a working state
   * Environment must be configurable via scriptable deploy
   * No manual editing or installing
@@ -90,7 +90,7 @@ Each Project will have additional specific details to be delivered once the exac
 ### Project Management
 
 * Management of project progress (ITMM 471)
-  * Trello / basecamp
+  * Trello (account will be provided) or Basecamp (not provided) or JIRA (account will be provided)
   * Slack
   * GitHub
   * GitHub Issues to resolve bug posts from UI/UX tester
