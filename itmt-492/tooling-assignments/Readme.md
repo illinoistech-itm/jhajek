@@ -43,6 +43,14 @@ After installing an IDE editor of your choice, pick one of the listed or you can
 * [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")
   * Cross Platform development tool from Adobe
 
+## Arduino and Fritzing
+
+Install the IDe from [Arduino](https://www.arduino.cc/en/Main/Software "Arduino software install")
+
+The tool available at https://fritzing.org now requires an 8 euro cost, which is pretty excellent considering what the software can do.  I would consider paying it.
+
+[Fritzing.org](https://fritzing.org/download/ "Fritzing download link")
+
 ## Git-It Tutorial
 
 Download, extract, and execute the Git-It tutorial, located: [https://github.com/jlord/git-it-electron/releases](https://github.com/jlord/git-it-electron/releases "Git-It release tutorial").  The program runs as an executable so there is no installation needed and is cross platform.  The program does require you to have completed and configured Git, which we did in a previous step.  
