@@ -34,6 +34,10 @@ git config --global user.email "<youremail@example.com>"
 
 If you do not already have VirtualBox 6.x installed, use the package manager to install VirtualBox.  Take a screenshot of the VirtualBox > Help > About VirtualBox output.
 
+**Note** - there is some incompatibility with VirtualBox 6.1.x and Vagrant 2.2.6. There is currently a manual workaround at [https://blogs.oracle.com/scoter/getting-vagrant-226-working-with-virtualbox-61-ga](https://blogs.oracle.com/scoter/getting-vagrant-226-working-with-virtualbox-61-ga "VirtualBox manual Workaround").   
+
+Version 6.x works with Vagrant 2.2.6
+
 ## Install Vagrant
 
 Using a package manager, install the latest version of [Vagrant](https://vagrantup.com "Vagrant download site").  If you have a version 2.2.x you will be ok.  Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  Place a screenshot of the output of the command: ```vagrant --version```
@@ -41,6 +45,10 @@ Using a package manager, install the latest version of [Vagrant](https://vagrant
 Complete the Vagrant tutorial located at [https://www.vagrantup.com/intro/getting-started/index.html](https://www.vagrantup.com/intro/getting-started/index.html "Vagrant tutorial"), up to the TEARDOWN step, skipping the SHARE step.  
 
 After completing this tutorial take a screenshot of the output of the command ```vagrant box list```
+
+**Note** - there is some incompatibility with VirtualBox 6.1.x and Vagrant 2.2.6. There is currently a manual workaround at [https://blogs.oracle.com/scoter/getting-vagrant-226-working-with-virtualbox-61-ga](https://blogs.oracle.com/scoter/getting-vagrant-226-working-with-virtualbox-61-ga "VirtualBox manual Workaround").
+
+Version 6.x works with Vagrant 2.2.6
 
 ## Install Packer.io
 
