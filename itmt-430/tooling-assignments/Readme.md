@@ -48,7 +48,7 @@ Using a package manager, install the latest version of [Packer](https://packer.i
 
 I have a series of samples that I use from Packer to build images.  Clone this sample repo to your computer: ```git clone https://github.com/jhajek/packer-vagrant-build-scripts```  navigate to the ```packer/vanilla-install``` directory from the command line.  Issue the command: ```packer build ubuntu18043-vanilla.json```
 
-Take a screenshot of the output of the ```build``` directory showing the ```*.box``` file.
+Take a screenshot of the output of the ```build``` directory showing the ```*.box``` file.  In the ```build``` directory, create a directory named **ubuntu-vanilla**.  ```cd``` into that directory and issue the ```vagrant init``` command:
 
 ## Install IDE editor
 
