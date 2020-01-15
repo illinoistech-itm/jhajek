@@ -27,6 +27,10 @@ PowerShell 6 (darkblue screen) and the version is shown in the top line.
 For Mac, you have Bash and SSH already installed, place a screenshot of
 the output of `ssh -V` and `bash --version`
 
+This link provides information on installing Bash 5.0 on MacOS and
+activating it to replace Bash 3.x
+<https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/>
+
 Package Managers for Windows and MacOS
 --------------------------------------
 
@@ -70,6 +74,13 @@ package manager as these versions of Vagrant and Packer are too old and
 unmaintained. Place a screenshot of the output of the command:
 `vagrant --version`
 
+Complete the Vagrant tutorial located at
+<https://www.vagrantup.com/intro/getting-started/index.html>, up to the
+TEARDOWN step, skipping the SHARE step.
+
+After completing this tutorial take a screenshot of the output of the
+command `vagrant box list`
+
 Install Packer.io
 -----------------
 
@@ -79,6 +90,15 @@ Using a package manager, install the latest version of
 package manager as these versions of Vagrant and Packer are too old and
 unmaintained. Place a screenshot of the output of the command:
 `packer --version`
+
+I have a series of samples that I use from Packer to build images. Clone
+this sample repo to your computer:
+`git clone https://github.com/jhajek/packer-vagrant-build-scripts`
+navigate to the `packer/vanilla-install` directory from the command
+line. Issue the command: `packer build ubuntu18043-vanilla.json`
+
+Take a screenshot of the output of the `build` directory showing the
+`*.box` file.
 
 Install IDE editor
 ------------------
