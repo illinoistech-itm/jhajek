@@ -65,7 +65,7 @@ manager to install VirtualBox. Take a screenshot of the VirtualBox \>
 Help \> About VirtualBox output. If you have 6.0.x at the moment, no
 need to upgrade.
 
-Try to use 6.0.x until the two applciations are compatible. Here are the
+Try to use 6.0.x until the two applications are compatible. Here are the
 direct download links
 
 -   Windows 10 -
