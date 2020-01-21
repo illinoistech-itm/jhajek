@@ -69,8 +69,7 @@ Try to use 6.0.x until the two applications are compatible. Here are the
 direct download links
 
 -   Windows 10 -
-    \[https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-Win.exe\]https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-Win.exe
-    "Direct win10 vbox download link"
+    <https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-Win.exe>
 -   MacOS -
     <https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-OSX.dmg>
 -   Linux Ubuntu -
