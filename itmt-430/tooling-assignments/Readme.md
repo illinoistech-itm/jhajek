@@ -34,7 +34,10 @@ git config --global user.email "<youremail@example.com>"
 
 If you do not already have VirtualBox 6.x installed, use the package manager to install VirtualBox.  Take a screenshot of the VirtualBox > Help > About VirtualBox output.  If you have 6.0.x at the moment, no need to upgrade.
 
-Try to use 6.0.x until the two applications are compatible.  Here are the direct download links
+In chocolatey you can pin the virtualbox version with this syntax (it needs to be on a line by itself)
+```choco install virtualbox --version 6.0.16```
+
+Try to use 6.0.x until the two applications are compatible.  Here are the direct download links:
 
 * Windows 10 - [https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-Win.exe](https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-Win.exe "Direct win10 vbox download link")
 * MacOS - [https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-OSX.dmg](https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-OSX.dmg "MacOS Vbox Download link")
