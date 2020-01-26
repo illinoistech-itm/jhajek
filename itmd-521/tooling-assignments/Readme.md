@@ -34,7 +34,7 @@ git config --global user.email "<youremail@example.com>"
 
 If you do not already have VirtualBox 6.x installed, use the package manager to install VirtualBox.  Take a screenshot of the VirtualBox > Help > About VirtualBox output.  If you have 6.0.x at the moment, no need to upgrade.
 
-In chocolatey you can pin the virtualbox version with this syntax (it needs to be on a line by itself)
+In chocolatey you can pin the VirtualBox version with this syntax (it needs to be on a line by itself)
 ```choco install virtualbox --version 6.0.16```
 
 Try to use 6.0.x until the two applications are compatible.  Here are the direct download links
@@ -65,7 +65,7 @@ Using a package manager, install the latest version of [Packer](https://packer.i
 
 I have a series of samples that I use from Packer to build images.  Clone this sample repo to your computer: ```git clone https://github.com/jhajek/packer-vagrant-build-scripts```  navigate to the ```packer/vanilla-install``` directory from the command line.  Issue the command: ```packer build ubuntu18043-vanilla.json```
 
-Take a screenshot of the output of the ```build``` directory showing the ```*.box``` file.  In the ```build``` directory, create a directory named **ubuntu-vanilla**.  ```cd``` into that directory and issue the ```vagrant init``` command:
+Take a screenshot of the output of the ```build``` directory showing the ```*.box``` file.  In the ```build``` directory, create a directory named **ubuntu-vanilla**.  ~```cd``` into that directory and issue the ```vagrant init``` command:~
 
 ## Install IDE editor
 
