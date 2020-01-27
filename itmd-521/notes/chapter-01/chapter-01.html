@@ -141,8 +141,100 @@ Chapter 01
 <li>Parquet</li>
 <li>Orc</li>
 <li>NoSQL, Cassandra and MongoDB</li>
-<li>AWS S3 and Openstack Swift, object storage</li>
+<li>AWS S3 and OpenStack Swift, object storage</li>
 </ul></li>
+</ul>
+</div><div id="difference-with-spark-and-hadoop" class="slide section level2">
+<h1>Difference with Spark and Hadoop</h1>
+<ul class="incremental">
+<li>Hadoop was designed in a time where there was slow disk and non-optimal file systems</li>
+<li>Hadoop has its own filesystem–HDFS</li>
+<li>Hadoop used only MapReduce in version 1, opened up to other frameworks in version 2</li>
+<li>Spark made the decision not to have a storage engine</li>
+</ul>
+</div><div id="libraries" class="slide section level2">
+<h1>Libraries</h1>
+<ul class="incremental">
+<li>What is the difference between a library and a framework?</li>
+<li>Spark has the ability to add more native libraries over time into the Core Spark Library
+<ul class="incremental">
+<li>Recently Microsoft contributed a native Spark Library for C#</li>
+</ul></li>
+<li>You can see all additional packages available at <a href="https://spark-packages.org" title="Spark Packages Web Site">https://spark-packages.org</a></li>
+</ul>
+</div><div id="context" class="slide section level2">
+<h1>Context</h1>
+<ul class="incremental">
+<li>Why do we need this at all?</li>
+<li>Let look at the historical context of Big Data
+<ul class="incremental">
+<li><a href="https://en.wikipedia.org/wiki/Michael_Stonebraker" title="Michael_Stonebraker wiki page">Michael Stonebreaker</a> father of RDMBS</li>
+<li>Ingress</li>
+<li>Size, Speed, and Latency of disk</li>
+<li>Ubiquitous Internet and network latency</li>
+<li>Filesystems not engineered for data integrity</li>
+</ul></li>
+</ul>
+</div><div id="hadoop-and-hdfs" class="slide section level2">
+<h1>Hadoop and HDFS</h1>
+<ul class="incremental">
+<li>Created in ~2005 by Doug Cutting while at Yahoo!
+<ul class="incremental">
+<li>2006 became an Apache Foundation project</li>
+</ul></li>
+<li>Part of an attempt to reverse engineer the Google Search Engine</li>
+<li>Originally used MySql and an opensource web-crawler named Nutch
+<ul class="incremental">
+<li>Found that MySql didn’t scale to web-scraping at that time</li>
+<li>Deficiencies in indexing that much data, and storing and retrieving data</li>
+</ul></li>
+<li>Two research papers from Google published in 2003 and 2004 lead to the ideas of Hadoop
+<ul class="incremental">
+<li><a href="https://research.google/pubs/pub51/" title="Google File System Paper">https://research.google/pubs/pub51/</a></li>
+<li><a href="https://research.google/pubs/pub62/" title="MapReduce Paper">MapReduce: Simplified Data Processing on Large Clusters</a></li>
+</ul></li>
+</ul>
+</div><div id="hardware-changes" class="slide section level2">
+<h1>Hardware Changes</h1>
+<ul class="incremental">
+<li>Processor speeds began to level off in the mid-2000s
+<ul class="incremental">
+<li>Number of processor cores per CPU increased</li>
+<li>Amount and speed of memory increased</li>
+<li>Disk Storage capacity of 1 TB drops by 2x every 14 months</li>
+</ul></li>
+<li>But with ubiquitous internet, everything generates more data
+<ul class="incremental">
+<li>Jet Engines</li>
+<li>Self Driving Cars</li>
+<li>Banking Apps</li>
+<li>Facial Recognition</li>
+<li>Twitter</li>
+</ul></li>
+</ul>
+</div><div id="spark-history" class="slide section level2">
+<h1>Spark History</h1>
+<ul class="incremental">
+<li>Spark was a research paper released at UC Berkely in 2009
+<ul class="incremental">
+<li><a href="https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf" title="Link to Original Spark Paper">Original Spark Paper</a></li>
+<li>Matei Zaharia and Mosharaf Chowdhury</li>
+<li>First software release in 2012, then code assigned to the Apache Foundation</li>
+<li>First Apache Spark release in 2014</li>
+<li>~8 years after Hadoop</li>
+<li>They studied the usage patterns of researchers using Hadoop at UC Berkeley and determined the weaknesses and strengths and sought to correct this based on the changes in hardware that had taken place since Hadoop was developed</li>
+</ul></li>
+</ul>
+</div><div id="results-of-spark-paper" class="slide section level2">
+<h1>Results of Spark Paper</h1>
+<ul class="incremental">
+<li>Two things became clear
+<ul class="incremental">
+<li>Cluster based parallel computing was a good thing in Hadoop as many new applications could be solved in parallel</li>
+<li>MapReduce Framework made developing things difficult (MapReduce vs SQL in a sense)</li>
+</ul></li>
+<li>No need to discard all of the knowledge and work that had been done in and with SQL over the many years of its history</li>
+<li>Spark is used by many large companies such as Netflix, NASA, and CERN as well as many small companies.</li>
 </ul>
 </div>
 </body>
