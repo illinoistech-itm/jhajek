@@ -27,30 +27,66 @@ Chapter 01
   </p>
   <p class="date">Spark Philosophy</p>
 </div>
-<div id="a-gentle-overview" class="title-slide slide section level1"><h1>A Gentle Overview</h1></div><div id="preface" class="slide section level2">
-<h1>Preface</h1>
+<div id="a-gentle-overview" class="title-slide slide section level1"><h1>A Gentle Overview</h1></div><div id="text-book" class="slide section level2">
+<h1>Text Book</h1>
 <div class="figure">
 <img src="../images/spark-book.png" alt="itmd-521 textbook" />
 <p class="caption"><em>itmd-521 textbook</em></p>
 </div>
-</div><div id="breakfast" class="slide section level2">
-<h1>Breakfast</h1>
+</div><div id="preface" class="slide section level2">
+<h1>Preface</h1>
 <ul class="incremental">
-<li>Eat eggs</li>
-<li>Drink coffee</li>
+<li>What part of Spark will we cover?
+<ul class="incremental">
+<li>High Level Structured APIs</li>
+<li>DataFrames</li>
+<li>DataSets</li>
+<li>SparkQL</li>
+<li>Structured Streaming</li>
+</ul></li>
+<li>We will focus in Application development more than operations</li>
+<li>RDDs and DStreams are deprecated and won’t be covered</li>
 </ul>
-</div>
-<div id="in-the-evening" class="title-slide slide section level1"><h1>In the evening</h1></div><div id="dinner" class="slide section level2">
-<h1>Dinner</h1>
+</div><div id="overview" class="slide section level2">
+<h1>Overview</h1>
+</div><div id="spark-philosophy" class="slide section level2">
+<h1>Spark Philosophy</h1>
 <ul class="incremental">
-<li>Eat spaghetti</li>
-<li>Drink wine</li>
+<li>Spark is a <strong>Unified Computing Engine</strong></li>
+<li>Spark is a set of libraries for parallel data processing on computer clusters</li>
 </ul>
-</div><div id="going-to-sleep" class="slide section level2">
-<h1>Going to sleep</h1>
+</div><div id="native-language-support" class="slide section level2">
+<h1>Native Language Support</h1>
 <ul class="incremental">
-<li>Get in bed</li>
-<li>Count sheep</li>
+<li><a href="https://en.wikipedia.org/wiki/Scala_(programming_language)" title="Scala programming language wikipedia page">Scala</a></li>
+<li>Java</li>
+<li>Python</li>
+<li><a href="https://en.wikipedia.org/wiki/R_(programming_language)" title="R programming language wikipedia page">R</a></li>
+<li>SQL</li>
+</ul>
+</div><div id="architecture" class="slide section level2">
+<h1>Architecture</h1>
+<p><a href="../images/fig1-1.png" title="figure 1-1"><em>Figure 1-1</em></a></p>
+</div><div id="breakdown" class="slide section level2">
+<h1>Breakdown</h1>
+<ul class="incremental">
+<li>A Unified Computing Engine and set of libraries for big data</li>
+<li>Lets break this design down and analyze the parts</li>
+</ul>
+</div><div id="unified" class="slide section level2">
+<h1>Unified</h1>
+<ul class="incremental">
+<li>Spark offers a <strong>Unified Problem</strong> for Big Data
+<ul class="incremental">
+<li>Spark supports data loading (called injesting of data)</li>
+<li>Spark supports SQL queries</li>
+<li>Native support of Machine Learning (in memory and iterative data processing)</li>
+<li>Native support for Streaming Computation (realtime data such as <a href="https://kafka.apache.org" title="Kafka apache web page">kafka</a></li>
+</ul></li>
+<li>All of these things are included in the standard library of Spark
+<ul class="incremental">
+<li>You get this all in one place</li>
+</ul></li>
 </ul>
 </div>
 </body>
