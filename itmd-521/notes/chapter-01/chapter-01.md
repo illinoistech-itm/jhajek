@@ -158,3 +158,10 @@
 - No need to discard all of the knowledge and work that had been done in and with SQL over the many years of its history
 - Spark is used by many large companies such as Netflix, NASA, and CERN as well as many small companies.
 
+## Conclusion
+
+- Spark is three things:
+  - A Unified Platform
+  - A Computing Engine
+  - A set of expandable core libraries
+- A Unified Computing Engine and set of libraries for big data
