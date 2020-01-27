@@ -7,5 +7,5 @@ Example comes from: [http://pages.stat.wisc.edu](http://pages.stat.wisc.edu/~yan
 ## Slidy Example
 
 ```bash
-pandoc -t slidy -s habits.txt -o habits.html
+pandoc -t slidy -s sample.md -o sample.html
 ```
