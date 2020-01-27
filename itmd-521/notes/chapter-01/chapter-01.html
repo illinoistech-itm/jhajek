@@ -66,7 +66,10 @@ Chapter 01
 </ul>
 </div><div id="architecture" class="slide section level2">
 <h1>Architecture</h1>
-<p><a href="../images/fig1-1.png" title="figure 1-1"><em>Figure 1-1</em></a></p>
+<div class="figure">
+<img src="../images/fig1-1.png" title="figure 1-1" alt="Figure 1-1" />
+<p class="caption"><em>Figure 1-1</em></p>
+</div>
 </div><div id="breakdown" class="slide section level2">
 <h1>Breakdown</h1>
 <ul class="incremental">
@@ -76,16 +79,69 @@ Chapter 01
 </div><div id="unified" class="slide section level2">
 <h1>Unified</h1>
 <ul class="incremental">
-<li>Spark offers a <strong>Unified Problem</strong> for Big Data
+<li>Spark offers a <strong>Unified Platform</strong> for Big Data
 <ul class="incremental">
 <li>Spark supports data loading (called injesting of data)</li>
 <li>Spark supports SQL queries</li>
 <li>Native support of Machine Learning (in memory and iterative data processing)</li>
-<li>Native support for Streaming Computation (realtime data such as <a href="https://kafka.apache.org" title="Kafka apache web page">kafka</a></li>
+<li>Native support for Streaming Computation (realtime data such as <a href="https://kafka.apache.org" title="Kafka apache web page">kafka</a>)</li>
 </ul></li>
 <li>All of these things are included in the standard library of Spark
 <ul class="incremental">
 <li>You get this all in one place</li>
+<li>In the past you needed different software for each process</li>
+</ul></li>
+</ul>
+</div><div id="unified-apis" class="slide section level2">
+<h1>Unified APIs</h1>
+<ul class="incremental">
+<li>Unified APIs allow you to mix and match above APIs
+<ul class="incremental">
+<li>For instance use SparkQL to load data via an SQL query into a Machine Learning Algorithm</li>
+<li>Use native Python or Rlang data analytics libraries and tools on data</li>
+<li>The Web has standardized frameworks, Nodejs, Django, or ASP.Net, why not big data?</li>
+</ul></li>
+</ul>
+</div><div id="unified-datatypes" class="slide section level2">
+<h1>Unified DataTypes</h1>
+<ul class="incremental">
+<li>Unified Engine for parallel data processing
+<ul class="incremental">
+<li>Structured APIs</li>
+<li>DataFrames</li>
+<li>DataSets</li>
+<li>SQL</li>
+</ul></li>
+</ul>
+</div><div id="computing-engine" class="slide section level2">
+<h1>Computing Engine</h1>
+<ul class="incremental">
+<li>Spark decided it wanted to only be a compute engine not a storage engine</li>
+<li>Spark realized in 2012, it no longer had to overcome hardware limitations
+<ul class="incremental">
+<li>RDBMS</li>
+<li>No T-SQL</li>
+<li>No MS-SQL</li>
+<li>No Hadoop/HDFS/Pig/Sqoop/Hive</li>
+</ul></li>
+<li>Spark does not have a native storage engine
+<ul class="incremental">
+<li>This is a good thing</li>
+</ul></li>
+</ul>
+</div><div id="focus" class="slide section level2">
+<h1>Focus</h1>
+<ul class="incremental">
+<li>This creates a simplified focus only computing not storage, latency, CAP, consistency</li>
+<li>It has libraries that will load from your storage types
+<ul class="incremental">
+<li>CSV/TSV</li>
+<li>SQL</li>
+<li>HDFS/Hadoop</li>
+<li>Parquet</li>
+<li>Orc</li>
+<li>NoSQL, Cassandra and MongoDB</li>
+<li>AWS S3 and Openstack Swift, object storage</li>
 </ul></li>
 </ul>
 </div>
