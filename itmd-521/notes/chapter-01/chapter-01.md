@@ -125,7 +125,7 @@
   - Found that MySql didn't scale to web-scraping at that time
   - Deficiencies in indexing that much data, and storing and retrieving data
 - Two research papers from Google published in 2003 and 2004 lead to the ideas of Hadoop
-  - [https://research.google/pubs/pub51/](https://research.google/pubs/pub51/ "Google File System Paper")
+  - [The Google File System](https://research.google/pubs/pub51/ "Google File System Paper")
   - [MapReduce: Simplified Data Processing on Large Clusters](https://research.google/pubs/pub62/ "MapReduce Paper")
 
 ## Hardware Changes
