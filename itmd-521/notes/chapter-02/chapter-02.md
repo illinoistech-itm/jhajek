@@ -65,6 +65,46 @@
 
 ![*Spark Core Architecture*](images/fig-2-1.png "Spark Core Architecture Diagram")
 
+## How Many Executors
+
+- User specifies how many **executor** processes should fall on each cluster node
+  - This can be declared at run time
+  - This can be declared in the code
+- There is a Spark mode called *local*
+  - This runs both the driver and executors as local CPU threads and not distrubuted
+  - Good for a quick test mode
+
+## Spark Application Have
+
+- Spark Applications have:
+  - A Cluster Manager
+  - Driver process
+  - Executors
+  - Code that is executed across executors
+
+## Spark Language APIs
+
+- Spark takes your logic in different languages
+  - Translates it to the Core Spark language
+  - Everything in Spark runs and computes in the Core Spark Language
+- Scala is the default shell
+  - You can launch this by typing from the command line:
+  - ```spark-shell```
+  - This assumes you already installed Spark
+- Spark runs on the JVM
+  - Only requirement is Java 8 JDK
+  - OpenJDK works fine
+
+## API Architecture
+
+![*Spark Executor Architecture*](images/fig-2-2.png "Spark Executor Architecture Diagram")
+
+## How to interact with the Spark Session
+
+- Every compiled spark code interacts through a ```SparkSession()``` object
+  - ```spark-submit``` is for running batch jobs
+  - Each Spark application has only 1 ```SparkSession()```
+
 ## Conclusion
 
 - Spark is great

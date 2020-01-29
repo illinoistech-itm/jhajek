@@ -33,12 +33,6 @@ Chapter 02
 <img src="images/spark-book.png" title="Spark TextBook" alt="itmd-521 textbook" />
 <p class="caption"><em>itmd-521 textbook</em></p>
 </div>
-</div><div id="core-architecture" class="slide section level2">
-<h1>Core Architecture</h1>
-<div class="figure">
-<img src="images/fig-2-1.png" title="Spark Core Architecture Diagram" alt="Spark Core Architecture" />
-<p class="caption"><em>Spark Core Architecture</em></p>
-</div>
 </div><div id="sparks-basic-architecture-22" class="slide section level2">
 <h1>Spark’s Basic Architecture 22</h1>
 <ul class="incremental">
@@ -72,6 +66,117 @@ Chapter 02
 </ul></li>
 <li>We will work initially with the built in Spark cluster manager</li>
 <li>YARN later in the semester when we move to cluster work</li>
+</ul>
+</div><div id="core-architecture" class="slide section level2">
+<h1>Core Architecture</h1>
+<div class="figure">
+<img src="images/fig-2-1.png" title="Spark Core Architecture Diagram" alt="Spark Core Architecture" />
+<p class="caption"><em>Spark Core Architecture</em></p>
+</div>
+</div><div id="spark-applications" class="slide section level2">
+<h1>Spark Applications</h1>
+<ul class="incremental">
+<li>What makes up a Spark application?
+<ul class="incremental">
+<li>Magic</li>
+</ul></li>
+<li>It is two things
+<ul class="incremental">
+<li>A single <strong>driver process</strong> (like a main process in Java or Python)</li>
+<li>A <strong>set</strong> of <em>executor processes</em></li>
+</ul></li>
+</ul>
+</div><div id="more-application" class="slide section level2">
+<h1>More Application</h1>
+<ul class="incremental">
+<li>A Driver runs the Spark Applications main() function</li>
+<li>This process sits on a node in the cluster
+<ul class="incremental">
+<li>Remember Spark is always assumed to be an 2+ node cluster with an additional master node</li>
+</ul></li>
+<li>The Main function does 3 things:
+<ul class="incremental">
+<li>Maintain information about the running process</li>
+<li>Respond a user’s program or input</li>
+<li>Analyzing, distributing, and scheduling work across the executor processes</li>
+</ul></li>
+<li>Driver process is essential to the running of the application (can’t crash!)</li>
+</ul>
+</div><div id="executors" class="slide section level2">
+<h1>Executors</h1>
+<ul class="incremental">
+<li>Responsible for carrying out the work that the Driver assigns them</li>
+<li>Executor then is responsible for two things:
+<ul class="incremental">
+<li>Executing the code assigned by the Driver</li>
+<li>Reporting the state of the execution back to the driver node</li>
+</ul></li>
+</ul>
+</div><div id="architecture" class="slide section level2">
+<h1>Architecture</h1>
+<div class="figure">
+<img src="images/fig-2-1.png" title="Spark Core Architecture Diagram" alt="Spark Core Architecture" />
+<p class="caption"><em>Spark Core Architecture</em></p>
+</div>
+</div><div id="how-many-executors" class="slide section level2">
+<h1>How Many Executors</h1>
+<ul class="incremental">
+<li>User specifies how many <strong>executor</strong> processes should fall on each cluster node
+<ul class="incremental">
+<li>This can be declared at run time</li>
+<li>This can be declared in the code</li>
+</ul></li>
+<li>There is a Spark mode called <em>local</em>
+<ul class="incremental">
+<li>This runs both the driver and executors as local CPU threads and not distrubuted</li>
+<li>Good for a quick test mode</li>
+</ul></li>
+</ul>
+</div><div id="spark-application-have" class="slide section level2">
+<h1>Spark Application Have</h1>
+<ul class="incremental">
+<li>Spark Applications have:
+<ul class="incremental">
+<li>A Cluster Manager</li>
+<li>Driver process</li>
+<li>Executors</li>
+<li>Code that is executed across executors</li>
+</ul></li>
+</ul>
+</div><div id="spark-language-apis" class="slide section level2">
+<h1>Spark Language APIs</h1>
+<ul class="incremental">
+<li>Spark takes your logic in different languages
+<ul class="incremental">
+<li>Translates it to the Core Spark language</li>
+<li>Everything in Spark runs and computes in the Core Spark Language</li>
+</ul></li>
+<li>Scala is the default shell
+<ul class="incremental">
+<li>You can launch this by typing from the command line:</li>
+<li><code>spark-shell</code></li>
+<li>This assumes you already installed Spark</li>
+</ul></li>
+<li>Spark runs on the JVM
+<ul class="incremental">
+<li>Only requirement is Java 8 JDK</li>
+<li>OpenJDK works fine</li>
+</ul></li>
+</ul>
+</div><div id="api-architecture" class="slide section level2">
+<h1>API Architecture</h1>
+<div class="figure">
+<img src="images/fig-2-2.png" title="Spark Executor Architecture Diagram" alt="Spark Executor Architecture" />
+<p class="caption"><em>Spark Executor Architecture</em></p>
+</div>
+</div><div id="how-to-interact-with-the-spark-session" class="slide section level2">
+<h1>How to interact with the Spark Session</h1>
+<ul class="incremental">
+<li>Every compiled spark code interacts through a <code>SparkSession()</code> object
+<ul class="incremental">
+<li><code>spark-submit</code> is for running batch jobs</li>
+<li>Each Spark application has only 1 <code>SparkSession()</code></li>
+</ul></li>
 </ul>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>
