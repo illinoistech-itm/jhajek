@@ -6,7 +6,7 @@
 
 ## Text Book
 
-![*itmd-521 textbook*](../images/spark-book.png)
+![*itmd-521 textbook*](images/spark-book.png)
 
 ## Preface
 
@@ -36,7 +36,7 @@
 
 ## Architecture
 
-![*Figure 1-1*](./fig1-1.png "figure 1-1")
+![*Figure 1-1*](images/fig1-1.png "figure 1-1")
 
 ## Breakdown
 
