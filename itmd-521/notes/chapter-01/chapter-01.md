@@ -36,7 +36,7 @@
 
 ## Architecture
 
-![*Figure 1-1*](../images/fig1-1.png "figure 1-1")
+![*Figure 1-1*](./fig1-1.png "figure 1-1")
 
 ## Breakdown
 
