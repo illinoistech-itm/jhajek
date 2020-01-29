@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Chapter 02" />
+  <title>Spark the Definitive Guide 2nd Edition</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Spark the Definitive Guide 2nd Edition</h1>
+  <p class="author">
+Chapter 02
+  </p>
+  <p class="date">A Gentle Introduction to Spark</p>
+</div>
+<div id="a-gentle-overview" class="title-slide slide section level1"><h1>A Gentle Overview</h1></div><div id="text-book" class="slide section level2">
+<h1>Text Book</h1>
+<div class="figure">
+<img src="images/spark-book.png" title="Spark TextBook" alt="itmd-521 textbook" />
+<p class="caption"><em>itmd-521 textbook</em></p>
+</div>
+</div><div id="core-architecture" class="slide section level2">
+<h1>Core Architecture</h1>
+<div class="figure">
+<img src="images/fig-2-1.png" title="Spark Core Architecture Diagram" alt="Spark Core Architecture" />
+<p class="caption"><em>Spark Core Architecture</em></p>
+</div>
+</div><div id="sparks-basic-architecture-22" class="slide section level2">
+<h1>Spark’s Basic Architecture 22</h1>
+<ul class="incremental">
+<li>Single Computers work pretty well</li>
+<li>Powerful</li>
+<li>But only one machine</li>
+<li>This limits what can be done</li>
+<li>Single machines don’t have the necessary power or the parallel ability</li>
+<li>Multiple computers alone are not enough – you need a framework to control the data
+<ul class="incremental">
+<li>To schedule data movement and data processing</li>
+</ul></li>
+</ul>
+</div><div id="spark-cluster-manager" class="slide section level2">
+<h1>Spark Cluster Manager</h1>
+<ul class="incremental">
+<li>Spark has its won software based cluster manager.<br />
+</li>
+<li>Configurable out of the box
+<ul class="incremental">
+<li>Simple config file denoting if the node is a slave or master</li>
+</ul></li>
+<li>Spark can also use existing cluster managers:
+<ul class="incremental">
+<li>YARN from Hadoop 2.x/3.x</li>
+</ul></li>
+<li><a href="https://mesos.apache.org" title="Apache mesos web site">Mesos</a>
+<ul class="incremental">
+<li>Cluster scheduler created by Twitter</li>
+<li>Still in use, we won’t focus on Mesos in this class</li>
+</ul></li>
+<li>We will work initially with the built in Spark cluster manager</li>
+<li>YARN later in the semester when we move to cluster work</li>
+</ul>
+</div><div id="conclusion" class="slide section level2">
+<h1>Conclusion</h1>
+<ul class="incremental">
+<li>Spark is great</li>
+</ul>
+</div>
+</body>
+</html>
