@@ -163,6 +163,18 @@ Chapter 02
 <li>OpenJDK works fine</li>
 </ul></li>
 </ul>
+</div><div id="languages" class="slide section level2">
+<h1>Languages</h1>
+<ul class="incremental">
+<li>We have said this a few times but again, Spark supports natively:
+<ul class="incremental">
+<li>Scala</li>
+<li>Java</li>
+<li>Python</li>
+<li>SQL, ANSI 2003 standard</li>
+<li>R though the SparkR package</li>
+</ul></li>
+</ul>
 </div><div id="api-architecture" class="slide section level2">
 <h1>API Architecture</h1>
 <div class="figure">
@@ -177,6 +189,19 @@ Chapter 02
 <li><code>spark-submit</code> is for running batch jobs</li>
 <li>Each Spark application has only 1 <code>SparkSession()</code></li>
 </ul></li>
+</ul>
+</div><div id="code" class="slide section level2">
+<h1>Code</h1>
+<ul class="incremental">
+<li>Open the CLI in your Ubuntu Virtual machine
+<ul class="incremental">
+<li>type: <code>spark-shell</code> or <code>pyspark</code></li>
+<li>For Scala, type:</li>
+<li><code>val myRange = spark.range(1000).toDF("number")</code></li>
+<li>For Python, type:</li>
+<li><code>myRange = spark.range(1000).toDF("number")</code></li>
+</ul></li>
+<li>The text offers both languages, I will tend to use Python more</li>
 </ul>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>

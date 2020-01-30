@@ -95,6 +95,15 @@
   - Only requirement is Java 8 JDK
   - OpenJDK works fine
 
+## Languages
+
+- We have said this a few times but again, Spark supports natively:
+  - Scala
+  - Java
+  - Python
+  - SQL, ANSI 2003 standard
+  - R though the SparkR package
+
 ## API Architecture
 
 ![*Spark Executor Architecture*](images/fig-2-2.png "Spark Executor Architecture Diagram")
@@ -104,6 +113,16 @@
 - Every compiled spark code interacts through a ```SparkSession()``` object
   - ```spark-submit``` is for running batch jobs
   - Each Spark application has only 1 ```SparkSession()```
+
+## Code
+
+- Open the CLI in your Ubuntu Virtual machine
+  - type: ```spark-shell``` or ```pyspark```
+  - For Scala, type:
+  - ```val myRange = spark.range(1000).toDF("number")```
+  - For Python, type:
+  - ```myRange = spark.range(1000).toDF("number")```
+- The text offers both languages, I will tend to use Python more 
 
 ## Conclusion
 
