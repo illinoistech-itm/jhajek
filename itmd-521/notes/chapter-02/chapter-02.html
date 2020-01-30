@@ -203,6 +203,74 @@ Chapter 02
 </ul></li>
 <li>The text offers both languages, I will tend to use Python more</li>
 </ul>
+</div><div id="dataframe" class="slide section level2">
+<h1>DataFrame</h1>
+<ul class="incremental">
+<li>The previous code created a DataFrame
+<ul class="incremental">
+<li>Containing 1000 rows</li>
+<li>The numbers 0 to 999</li>
+<li>It is a <em>distributed collection</em></li>
+<li>Depending on the number of <strong>executors</strong>, this range is divided across the cluster per executors</li>
+</ul></li>
+</ul>
+</div><div id="what-a-dataframe-is" class="slide section level2">
+<h1>What a DataFrame is</h1>
+<ul class="incremental">
+<li>Most common Spark Structured API</li>
+<li>Simply a table of data with rows and columns
+<ul class="incremental">
+<li>table has no relational capabilities</li>
+<li>Must be typed, but on demand can be inferred</li>
+</ul></li>
+<li>DataFrames are common in R and Python
+<ul class="incremental">
+<li>But those languages are limited to single systems</li>
+<li>DataFrame can only be as large as memory on that PC</li>
+</ul></li>
+<li>In Spark, DataFrames are the same as Python and R
+<ul class="incremental">
+<li>Same logic and operations</li>
+<li>But can be distributed and larger than the set of data.</li>
+</ul></li>
+</ul>
+</div><div id="partitions" class="slide section level2">
+<h1>Partitions</h1>
+<ul class="incremental">
+<li>To allow every <em>executor</em> to perform work in parallel, Spark breaks the Data up into chunks called <strong>partitions</strong></li>
+<li>A <strong>partition</strong> is a collection of rows that sits on a physical node in the cluster</li>
+<li>DataFrames therefore have partitions</li>
+<li>If you have only one partition, even with thousands of executor threads:
+<ul class="incremental">
+<li>Your parallelism is still 1</li>
+</ul></li>
+<li>If you have only one executor thread, with many partitions:
+<ul class="incremental">
+<li>Your parallelism is still 1</li>
+</ul></li>
+<li>For the most part, we cannot manipulate the partitions directly
+<ul class="incremental">
+<li>Only issue high-level transformations to data</li>
+</ul></li>
+</ul>
+</div><div id="transformations" class="slide section level2">
+<h1>Transformations</h1>
+<ul class="incremental">
+<li>In Spark the core data structures are <em>immutable</em>
+<ul class="incremental">
+<li>So data is immutable, strange?</li>
+<li>How do we change or manipulate the data?</li>
+</ul></li>
+<li>In Spark we issue instructions on how to change or transform the data</li>
+<li>Scala
+<ul class="incremental">
+<li><code>val divisby2 = myRage.where("number % 2 = 0")</code></li>
+</ul></li>
+<li>Python
+<ul class="incremental">
+<li><code>divisby2 = myRage.where("number % 2 = 0")</code></li>
+</ul></li>
+</ul>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>
 <ul class="incremental">

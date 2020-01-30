@@ -122,7 +122,51 @@
   - ```val myRange = spark.range(1000).toDF("number")```
   - For Python, type:
   - ```myRange = spark.range(1000).toDF("number")```
-- The text offers both languages, I will tend to use Python more 
+- The text offers both languages, I will tend to use Python more
+
+## DataFrame
+
+- The previous code created a DataFrame
+  - Containing 1000 rows
+  - The numbers 0 to 999
+  - It is a *distributed collection*
+  - Depending on the number of **executors**, this range is divided across the cluster per executors
+
+## What a DataFrame is
+
+- Most common Spark Structured API
+- Simply a table of data with rows and columns
+  - table has no relational capabilities
+  - Must be typed, but on demand can be inferred
+- DataFrames are common in R and Python
+  - But those languages are limited to single systems
+  - DataFrame can only be as large as memory on that PC
+- In Spark, DataFrames are the same as Python and R
+  - Same logic and operations
+  - But can be distributed and larger than the set of data.
+
+## Partitions
+
+- To allow every *executor* to perform work in parallel, Spark breaks the Data up into chunks called **partitions**
+- A **partition** is a collection of rows that sits on a physical node in the cluster 
+- DataFrames therefore have partitions
+- If you have only one partition, even with thousands of executor threads:
+  - Your parallelism is still 1
+- If you have only one executor thread, with many partitions:
+  - Your parallelism is still 1
+- For the most part, we cannot manipulate the partitions directly
+  - Only issue high-level transformations to data
+
+## Transformations
+
+- In Spark the core data structures are *immutable*
+  - So data is immutable, strange?
+  - How do we change or manipulate the data?
+- In Spark we issue instructions on how to change or transform the data
+- Scala
+  - ```val divisby2 = myRage.where("number % 2 = 0")```
+- Python
+  - ```divisby2 = myRage.where("number % 2 = 0")```
 
 ## Conclusion
 
