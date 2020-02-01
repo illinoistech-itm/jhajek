@@ -162,7 +162,7 @@
 - In Spark the core data structures are *immutable*
   - So data is immutable, strange?
   - How do we change or manipulate the data?
-- In Spark we issue instructions on how to change or transform the data
+- In Spark we issue instructions on how to change or *transform* the data
 - Scala
   - ```val divisby2 = myRage.where("number % 2 = 0")```
 - Python
