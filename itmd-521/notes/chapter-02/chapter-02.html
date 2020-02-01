@@ -261,7 +261,7 @@ Chapter 02
 <li>So data is immutable, strange?</li>
 <li>How do we change or manipulate the data?</li>
 </ul></li>
-<li>In Spark we issue instructions on how to change or transform the data</li>
+<li>In Spark we issue instructions on how to change or <em>transform</em> the data</li>
 <li>Scala
 <ul class="incremental">
 <li><code>val divisby2 = myRage.where("number % 2 = 0")</code></li>
@@ -270,11 +270,80 @@ Chapter 02
 <ul class="incremental">
 <li><code>divisby2 = myRage.where("number % 2 = 0")</code></li>
 </ul></li>
+<li>Notice no output will be returned… why?</li>
+<li>Spark will not perform the operation until we call an <strong>action</strong></li>
+</ul>
+</div><div id="types-of-transformations" class="slide section level2">
+<h1>Types of Transformations</h1>
+<ul class="incremental">
+<li>Two types of Transformations:
+<ul class="incremental">
+<li>Narrow dependencies</li>
+<li>Wide dependencies</li>
+</ul></li>
+<li>Narrow are 1 to 1 transformations, to find all numbers divisible by 2.
+<ul class="incremental">
+<li>the <code>where</code> clause is the clue for a narrow dependency</li>
+</ul></li>
+<li>Wide dependency will have <em>input partitions</em> contributing to many <em>output partitions</em>
+<ul class="incremental">
+<li>Known as a <em>shuffle</em></li>
+</ul></li>
+<li>Narrow transformations performed in-memory</li>
+<li>Wide result in writes to the disk (can be a temporary data write)</li>
+</ul>
+</div><div id="lazy-evaluations" class="slide section level2">
+<h1>Lazy Evaluations</h1>
+<ul class="incremental">
+<li>Spark will wait until the very last moment to “execute the graph of computation instructions”
+<ul class="incremental">
+<li>Spark doesn’t modify the data immediately</li>
+</ul></li>
+<li>Spark builds up a plan of execution</li>
+<li>By waiting as long as possible, Spark can optimize this plan from a raw DataFrame to a steamlined physical plan to run as efficiently as possible across the cluster</li>
+<li>Also known as <em>predicate pushdown</em> on DataFrames</li>
+<li>So when does this “plan” get put into action?</li>
+</ul>
+</div><div id="actions" class="slide section level2">
+<h1>Actions</h1>
+<ul class="incremental">
+<li>To trigger a computation plan we execute an <strong>action</strong>
+<ul class="incremental">
+<li>An action causes Spark to calculate a result</li>
+<li>Using the previous example: <code>divisby2.count()</code></li>
+<li>This will trigger an action that executes the entire plan and generates a result</li>
+</ul></li>
+<li>There are 3 kinds of actions:
+<ul class="incremental">
+<li>Actions to view data in the console</li>
+<li>Actions to collect data into native objects in their respective language</li>
+<li>Actions to write to data output sources</li>
+</ul></li>
+</ul>
+</div><div id="demo-time" class="slide section level2">
+<h1>Demo Time</h1>
+<ul class="incremental">
+<li>This lecture continues from P.28 of the e-book until the end of the chapter.</li>
+<li>We will execute a series of Spark commands on some sample data</li>
+<li>See the accompanying pages and or recording</li>
 </ul>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>
 <ul class="incremental">
-<li>Spark is great</li>
+<li>We learned about core architecture of Spark
+<ul class="incremental">
+<li>We learned about executors</li>
+<li>We learned about partitions</li>
+<li>We learned about drivers</li>
+</ul></li>
+<li>We learned about datatypes
+<ul class="incremental">
+<li>DataFrames</li>
+<li>APIs</li>
+</ul></li>
+<li>We learned about transformations</li>
+<li>We learned about actions</li>
+<li>We learned how to put it together from the Spark CLI</li>
 </ul>
 </div>
 </body>

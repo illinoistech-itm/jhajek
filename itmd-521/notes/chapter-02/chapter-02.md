@@ -167,7 +167,56 @@
   - ```val divisby2 = myRage.where("number % 2 = 0")```
 - Python
   - ```divisby2 = myRage.where("number % 2 = 0")```
+- Notice no output will be returned... why?
+- Spark will not perform the operation until we call an **action**
+
+## Types of Transformations
+
+- Two types of Transformations:
+  - Narrow dependencies
+  - Wide dependencies
+- Narrow are 1 to 1 transformations, to find all numbers divisible by 2.
+  - the ```where``` clause is the clue for a narrow dependency
+- Wide dependency will have *input partitions* contributing to many *output partitions*
+  - Known as a *shuffle*
+- Narrow transformations performed in-memory
+- Wide result in writes to the disk (can be a temporary data write)
+
+## Lazy Evaluations
+
+- Spark will wait until the very last moment to "execute the graph of computation instructions"
+  - Spark doesn't modify the data immediately
+- Spark builds up a plan of execution
+- By waiting as long as possible, Spark can optimize this plan from a raw DataFrame to a steamlined physical plan to run as efficiently as possible across the cluster
+- Also known as *predicate pushdown* on DataFrames
+- So when does this "plan" get put into action?
+
+## Actions
+
+- To trigger a computation plan we execute an **action**
+  - An action causes Spark to calculate a result
+  - Using the previous example: ```divisby2.count()```
+  - This will trigger an action that executes the entire plan and generates a result
+- There are 3 kinds of actions:
+  - Actions to view data in the console
+  - Actions to collect data into native objects in their respective language
+  - Actions to write to data output sources
+
+## Demo Time
+
+- This lecture continues from P.28 of the e-book until the end of the chapter.
+- We will execute a series of Spark commands on some sample data
+- See the accompanying pages and or recording
 
 ## Conclusion
 
-- Spark is great
+- We learned about core architecture of Spark
+  - We learned about executors
+  - We learned about partitions
+  - We learned about drivers
+- We learned about datatypes
+  - DataFrames
+  - APIs
+- We learned about transformations
+- We learned about actions
+- We learned how to put it together from the Spark CLI
