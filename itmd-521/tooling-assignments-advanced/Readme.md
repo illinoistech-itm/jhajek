@@ -17,15 +17,17 @@
 
 ## Inside Vagrant Box Steps
 
-* change host name, add initials and system for local
-* install mariadb server
-* install java 8 openjdk
+* Change host name, add initials and system for local
+* Install mariadb server
+* Install java 8 openjdk
   * make sure it is default jdk
 * Install Spark 2.4
-* Install Hadoop 2.9.3
-* configure .bashrc file to add path
-  * demonstrate with version commands
-* Configure Vagrant Paths, memory, and cpus
+  * [https://www.apache.org/dyn/closer.lua/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz](https://www.apache.org/dyn/closer.lua/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz "Apache Spark Download Link")
+* Install Hadoop 2.9.2
+  * [http://apache.mirrors.hoobly.com/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz](http://apache.mirrors.hoobly.com/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz "Apache Hadoop Download Link")
+* Configure `.bashrc` file to add path
+  * Demonstrate installation success with `--version` commands
+* Configure Vagrant paths, memory, and cpus
 
 ## Deliverable
 
