@@ -65,7 +65,7 @@ manager to install VirtualBox. Take a screenshot of the VirtualBox \>
 Help \> About VirtualBox output. If you have 6.0.x at the moment, no
 need to upgrade.
 
-In chocolatey you can pin the virtualbox version with this syntax (it
+In chocolatey you can pin the VirtualBox version with this syntax (it
 needs to be on a line by itself)
 `choco install virtualbox --version 6.0.16`
 
@@ -127,8 +127,8 @@ line. Issue the command: `packer build ubuntu18043-vanilla.json`
 
 Take a screenshot of the output of the `build` directory showing the
 `*.box` file. In the `build` directory, create a directory named
-**ubuntu-vanilla**. `cd` into that directory and issue the
-`vagrant init` command:
+**ubuntu-vanilla**. \~`cd` into that directory and issue the
+`vagrant init` command:\~
 
 Install IDE editor
 ------------------
