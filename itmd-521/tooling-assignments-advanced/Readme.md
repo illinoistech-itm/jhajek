@@ -25,7 +25,11 @@
   * [https://www.apache.org/dyn/closer.lua/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz](https://www.apache.org/dyn/closer.lua/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz "Apache Spark Download Link")
 * Install Hadoop 2.9.2
   * [http://apache.mirrors.hoobly.com/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz](http://apache.mirrors.hoobly.com/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz "Apache Hadoop Download Link")
-* Configure `.bashrc` file to add path
+* Configure `.bashrc` for PATH variables
+  * Add: `export JAVA_HOME=/usr`
+  * Add: `export HADOOP_HOME=/home/vagrant/hadoop-2.9.2`
+  * Add: `export SPARK_HOME=/home/vagrant/spark`
+  * Add: ```export HADOOP_CLASSPATH=/usr/lib/jvm/java-8-openjdk-amd64/lib/tools.jar```
   * Demonstrate installation success with `--version` commands
 * Configure Vagrant paths, memory, and cpus
 
