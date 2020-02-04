@@ -21,6 +21,8 @@
 * Install mariadb server
 * Install java 8 openjdk
   * make sure it is default jdk
+* Update default Python version to 3.6
+  * [https://askubuntu.com/questions/1065572/how-to-safely-switch-to-python3-as-default-after-upgrade-to-ubuntu-18-04](https://askubuntu.com/questions/1065572/how-to-safely-switch-to-python3-as-default-after-upgrade-to-ubuntu-18-04 "Instructions to update python version default")
 * Install Spark 2.4
   * [http://mirrors.advancedhosters.com/apache/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz](http://mirrors.advancedhosters.com/apache/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz "Apache Spark Download Link")
 * Install Hadoop 2.9.2
