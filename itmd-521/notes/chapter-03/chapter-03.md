@@ -66,17 +66,67 @@ So far we have:
   - DataSets can be cast back into DataFrames
   - Allows for *casting* of data depending on your needs
   - Large applications logic will need/enforce type safety, but data analysis via SQL won't need type safety
+  - DataSets Covered in depth in Chapter 11
 
-## Example code of DataSets
+## Example code of DataSets 39
 
 ```Scala
 
-case class Flight(DEST_COUNTRY_NAME: String, ORIGEN_COUNTRY_NAME: String, count: BigInt)
-val flightsDF = spark.read.parquet("/data/flight-data/parquet/2010-summary.parquet/")
+case class Flight(DEST_COUNTRY_NAME: String,
+ORIGEN_COUNTRY_NAME: String, count: BigInt)
+val flightsDF = spark.read
+.parquet("/data/flight-data/
+parquet/2010-summary.parquet/")
 val flights = flightsDF.as[Flight]
 
 ```
 
+## Structured Streaming
+
+- High-level API for stream processing
+  - Added in Spark 2.2, 2017-07-11
+- Structured Streaming takes batch mode operations and run them in a streaming fashion
+- See page 40 to page 44 in the e-book or class video for demonstration
+
+## Machine Learning and Advanced Analytics
+
+- Has a built in Spark Library called [MLlib](https://en.wikipedia.org/wiki/Apache_Spark#MLlib_Machine_Learning_Library "MLlib wiki page")
+- Allows for many options:
+  - Preprocessing
+  - Munging
+  - training of models
+
+## k-Means clustering
+
+- Using data loaded in the previous example we will:
+  - ingest raw data
+  - build up transformations
+  - train our simple model to make predictions
+- MLlib requires data to be represented as numerical data
+  - Sample shopping data is of all different types
+  - Need to use *transformations* to change the datatype
+  - P. 45-48 in the e-book has the steps needed
+  - Book has the steps needed to split our dataset into training and test sets
+
+## Lower-Level APIs
+
+- RDDs - you should mostly stick to higher level APIs
+- This section we will skip for now
+
+## SparkR and Other Packages
+
+- Is a tool for running [R](https://en.wikipedia.org/wiki/R_\(programming_language\) "R programming language") on Spark
+- Similar to the Python language but uses R syntax
+  - Can import other Spark libraries to make programming more R-like
+- [https://spark-packages.org](https://spark-packages.org "Spark Packages installation site")
+  - [Spark for dotNet](https://dotnet.microsoft.com/apps/data/spark "dotnet plugin for Spark")
+  - Work through the tutorial and see if you can get the results
+
 ## Conclusion
 
-- Spark is great
+- We learned Spark's programming model
+- We learned how to run production code
+- We were introduced to type-safe data structures in Spark
+- We were introduced to Structured Streaming on Spark
+- We were introduced to Machine Learning on Spark
+- We were introduced to 3rd party Spark packages
