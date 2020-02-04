@@ -50,6 +50,32 @@ So far we have:
 
 - ```spark-submit --class org.apache.spark.examples.SparkPi --master local ./examples/jar/spark-examples_2.11-2.4.4.jar 10```
   - The file name was changes since we are using version 2.4.4 not 2.2.0
+  - The job can also be submitted to a cluster by changing the `--master local` to `--master yarn` or `--master mesos`
+
+## Type-Safe DataSets
+
+- Spark uses multiple languages:
+  - Scala, Java, Python, R, and SQL
+  - Java and Scala are [statically typed](https://en.wikipedia.org/wiki/Type_system "Static typing wiki page") languages
+  - Python and R are not statically typed, but dynamically typed
+- How to handle type-safety?
+  - Recall that DataFrames (chapter 2) are a distributed collection of objected of type **Row**
+  - DataSet API allows you to assign a Java/Scala class to the records within a DataFrame
+  - Manipulate that data like a Java ArrayList or Scale Seq
+- DataSets can be used as needed
+  - DataSets can be cast back into DataFrames
+  - Allows for *casting* of data depending on your needs
+  - Large applications logic will need/enforce type safety, but data analysis via SQL won't need type safety
+
+## Example code of DataSets
+
+```Scala
+
+case class Flight(DEST_COUNTRY_NAME: String, ORIGEN_COUNTRY_NAME: String, count: BigInt)
+val flightsDF = spark.read.parquet("/data/flight-data/parquet/2010-summary.parquet/")
+val flights = flightsDF.as[Flight]
+
+```
 
 ## Conclusion
 
