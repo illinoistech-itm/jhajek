@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Chapter 03" />
+  <title>Spark the Definitive Guide 2nd Edition</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Spark the Definitive Guide 2nd Edition</h1>
+  <p class="author">
+Chapter 03
+  </p>
+  <p class="date">A Tour of Spark’s Toolset</p>
+</div>
+<div id="a-tour-of-sparks-toolset" class="title-slide slide section level1"><h1>A Tour of Spark’s Toolset</h1></div><div id="text-book" class="slide section level2">
+<h1>Text Book</h1>
+<div class="figure">
+<img src="images/spark-book.png" title="Spark TextBook" alt="itmd-521 textbook" />
+<p class="caption"><em>itmd-521 textbook</em></p>
+</div>
+</div><div id="objectives-and-outcomes" class="slide section level2">
+<h1>Objectives and Outcomes</h1>
+<ul class="incremental">
+<li>Take a tour of Spark’s toolset</li>
+<li>Understand how to run production Spark applications</li>
+<li>Understand type-safe APIs for structured data</li>
+<li>Understand Structured Streaming and Machine Learning</li>
+<li>Understand SparkR and Resilient Distributed DataSets</li>
+</ul>
+</div><div id="review" class="slide section level2">
+<h1>Review</h1>
+<p>So far we have:</p>
+<ul class="incremental">
+<li>learned about core architecture of Spark
+<ul class="incremental">
+<li>learned about executors</li>
+<li>learned about partitions</li>
+<li>learned about drivers</li>
+</ul></li>
+<li>learned about datatypes
+<ul class="incremental">
+<li>DataFrames</li>
+<li>APIs</li>
+</ul></li>
+<li>learned about transformations</li>
+<li>learned about actions</li>
+<li>learned how to put it together from the Spark CLI</li>
+</ul>
+</div><div id="spark-overview" class="slide section level2">
+<h1>Spark Overview</h1>
+<div class="figure">
+<img src="images/fig3-1.png" title="Figure 3-1 Spark Architecture" alt="Figure 3-1 Spark’s Toolsets" />
+<p class="caption"><em>Figure 3-1 Spark’s Toolsets</em></p>
+</div>
+</div><div id="running-production-applications" class="slide section level2">
+<h1>Running Production Applications</h1>
+<ul class="incremental">
+<li><code>spark-submit</code>
+<ul class="incremental">
+<li>Different from the interactive shell commands we saw in chapter 02</li>
+<li><code>spark-submit</code> does one thing: send your code to a cluster for execution</li>
+<li>Application will run until finished or reports and error</li>
+</ul></li>
+<li>Types of <strong>cluster managers include</strong>:
+<ul class="incremental">
+<li>local system (as threads)</li>
+<li><a href="http://mesos.apache.org/" title="Apache Mesos page">Mesos</a></li>
+<li><a href="https://hadoop.apache.org/docs/r2.9.2/hadoop-yarn/hadoop-yarn-site/YARN.html" title="Apache YARN page">YARN</a></li>
+</ul></li>
+</ul>
+</div><div id="sample-code" class="slide section level2">
+<h1>Sample Code</h1>
+<ul class="incremental">
+<li><code>spark-submit --class org.apache.spark.examples.SparkPi --master local ./examples/jar/spark-examples_2.11-2.4.4.jar 10</code>
+<ul class="incremental">
+<li>The file name was changes since we are using version 2.4.4 not 2.2.0</li>
+</ul></li>
+</ul>
+</div><div id="conclusion" class="slide section level2">
+<h1>Conclusion</h1>
+<ul class="incremental">
+<li>Spark is great</li>
+</ul>
+</div>
+</body>
+</html>

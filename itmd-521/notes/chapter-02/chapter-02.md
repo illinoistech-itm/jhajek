@@ -1,6 +1,6 @@
 % Spark the Definitive Guide 2nd Edition
 % Chapter 02
-% A Gentle Introduction to Spark
+% A Gentle Overview to Spark
 
 # A Gentle Overview
 
@@ -20,7 +20,7 @@
 
 ## Spark Cluster Manager
 
-- Spark has its won software based cluster manager.  
+- Spark has its own software based cluster manager.  
 - Configurable out of the box
   - Simple config file denoting if the node is a slave or master
 - Spark can also use existing cluster managers:
