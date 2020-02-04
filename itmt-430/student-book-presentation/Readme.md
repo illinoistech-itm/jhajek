@@ -24,7 +24,7 @@ Grading Rubric: How the presentation will be graded
 
 ## Books
 
-![*DevOps Handbook](../images/devops-handbook.png "DevOps Handbook cover image")
+![*DevOps Handbook](images/devops-handbook.png "DevOps Handbook cover image")
 
 * DevOps Handbook - How to Create World-Class Agility, Reliability, & Security in Technology Organizations
 * Gene Kim, Patrick Debois, John Willis, Jez Humble,
@@ -32,7 +32,7 @@ Grading Rubric: How the presentation will be graded
 * Publisher:  IT Revolution Press
 * [http://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1121371901?ean=9781942788003](http://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1121371901?ean=9781942788003 "URL to order DevOps Handbook")
 
-![*Accelerate - The Science of DevOps](../images/accelerate.png "Accerlate book cover image")
+![*Accelerate - The Science of DevOps](images/accelerate.png "Accerlate book cover image")
 
 * Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations
 by Nicole Forsgren, PhD, Jez Humble, Gene Kim
