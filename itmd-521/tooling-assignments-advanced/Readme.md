@@ -21,6 +21,8 @@
 * Install mariadb server
 * Install java 8 openjdk
   * make sure it is default jdk
+* Install R package
+  * [https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04](https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04 "Install R package in Ubuntu")
 * Update default Python version to 3.6
   * [https://askubuntu.com/questions/1065572/how-to-safely-switch-to-python3-as-default-after-upgrade-to-ubuntu-18-04](https://askubuntu.com/questions/1065572/how-to-safely-switch-to-python3-as-default-after-upgrade-to-ubuntu-18-04 "Instructions to update python version default")
 * Install Spark 2.4
