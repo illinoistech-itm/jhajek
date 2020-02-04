@@ -20,7 +20,7 @@ Place report here
 
 Place report here
 
-## User Story Goes here
+## User/Admin/Anonymous Story Goes here
 
 This is text inter-sparsed with mockups/screenshots
 
