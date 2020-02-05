@@ -50,17 +50,87 @@ Chapter 04
 <li>We were introduced to Machine Learning on Spark</li>
 <li>We were introduced to 3rd party Spark packages</li>
 </ul>
-</div><div id="spark-overview" class="slide section level2">
-<h1>Spark Overview</h1>
+</div><div id="api-overview-66" class="slide section level2">
+<h1>API Overview 66</h1>
+<ul class="incremental">
+<li>Three datatypes in Spark:
+<ul class="incremental">
+<li>DataFrames
+<ul class="incremental">
+<li>Can you define this term?</li>
+</ul></li>
+<li>Datasets
+<ul class="incremental">
+<li>Can you define this term?</li>
+</ul></li>
+<li>SQL Tables and Views
+<ul class="incremental">
+<li>Can you define these terms?</li>
+</ul></li>
+</ul></li>
+<li>With these data types we can manipulate dispirate types of data
+<ul class="incremental">
+<li>Unstructured log files</li>
+<li>Semi-structured CSV files</li>
+<li>Structured Parquet files</li>
+</ul></li>
+</ul>
+</div><div id="structured-api-concepts" class="slide section level2">
+<h1>Structured API concepts</h1>
+<ul class="incremental">
+<li>These concepts refer to both <em>batch</em> and <em>streaming</em>
+<ul class="incremental">
+<li>Code should easily switch between the two</li>
+<li>We will cover Streaming later in the course, Chapter 20</li>
+</ul></li>
+</ul>
+</div><div id="structured-collections" class="slide section level2">
+<h1>Structured Collections</h1>
+<ul class="incremental">
+<li>Spark has two notions of structured collections:
+<ul class="incremental">
+<li>Datasets and DataFrames</li>
+</ul></li>
+<li>Each are distributed table-like collections with well defined rows and columns
+<ul class="incremental">
+<li>Each row must have the same number of columns</li>
+<li>Both are <strong>immutable</strong></li>
+<li>Both allow for lazily evaluated plans that are only deployed when an <strong>action</strong> is called</li>
+</ul></li>
+</ul>
+</div><div id="schemas" class="slide section level2">
+<h1>Schemas</h1>
+<ul class="incremental">
+<li>A <strong>schema</strong> defines the column names and data types of the column
+<ul class="incremental">
+<li>Schemas can be defined manually or inferred</li>
+<li>Schema on Read</li>
+</ul></li>
+<li>All of Spark actions take place in the internal Spark language called Catalyst
+<ul class="incremental">
+<li>We don’t write in this language but the JVM allows us to write in higher level languages that convert to Catalyst</li>
+</ul></li>
+</ul>
+</div><div id="dataframes-vs-datasets" class="slide section level2">
+<h1>DataFrames vs Datasets</h1>
+<ul class="incremental">
+<li>DataFrames have types of a sort
+<ul class="incremental">
+<li>These are maintained by Spark internally</li>
+<li>Schema only checked at <em>runtime</em></li>
+</ul></li>
+<li>Datasets are typed DataFrames
+<ul class="incremental">
+<li>Only available in Scala and Java</li>
+<li>Enforce type at compile time</li>
+<li>P. 54</li>
+</ul></li>
+</ul>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>
 <ul class="incremental">
-<li>We learned Spark’s programming model</li>
-<li>We learned how to run production code</li>
-<li>We were introduced to type-safe data structures in Spark</li>
-<li>We were introduced to Structured Streaming on Spark</li>
-<li>We were introduced to Machine Learning on Spark</li>
-<li>We were introduced to 3rd party Spark packages</li>
+<li>We were introduced to Spark’s Structured APIs, DataSets, DataFrames, and SQL Views</li>
+<li>We learned how Spark transforms into a physical execution plan on a cluster</li>
 </ul>
 </div>
 </body>
