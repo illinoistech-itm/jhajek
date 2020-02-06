@@ -10,3 +10,7 @@ pandoc -s -o ./project-options/project-options.txt ./project-options/Readme.md
 pandoc -s -o ./project-options/project-options.docx ./project-options/Readme.md
 pandoc -s -o ./project-deliverables/project-deliverables.txt ./project-deliverables/Readme.md
 pandoc -s -o ./project-deliverables/project-deliverables.docx ./project-deliverables/Readme.md
+pandoc -s -o ./reports/sprint-01/template.txt ./reports/sprint-01/template.md
+pandoc -s -o ./reports/sprint-01/template.docx ./reports/sprint-01/template.md
+pandoc -s -o ./reports/sprint-01/rubric.txt ./reports/sprint-01/rubric.md
+pandoc -s -o ./reports/sprint-01/rubric.docx ./reports/sprint-01/rubric.md
