@@ -18,6 +18,8 @@
 ## Inside Vagrant Box Steps
 
 * Change host name, add initials and system for local
+* From the command line (non-admin) execute the command: `vagrant plugin install vagrant-vbguest`
+  * This takes care a warning message from Vagrant about not being able to mount VirtualBox shared drives
 * Install mariadb server
 * Install java 8 openjdk
   * make sure it is default jdk
