@@ -26,11 +26,19 @@ Inside Vagrant Box Steps
 ------------------------
 
 -   Change host name, add initials and system for local
+-   From the command line (non-admin) execute the command:
+    `vagrant plugin install vagrant-vbguest`
+    -   This takes care a warning message from Vagrant about not being
+        able to mount VirtualBox shared drives
 -   Install mariadb server
 -   Install java 8 openjdk
     -   make sure it is default jdk
+-   Install R package
+    -   <https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04>
+-   Update default Python version to 3.6
+    -   <https://askubuntu.com/questions/1065572/how-to-safely-switch-to-python3-as-default-after-upgrade-to-ubuntu-18-04>
 -   Install Spark 2.4
-    -   <https://www.apache.org/dyn/closer.lua/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz>
+    -   <http://mirrors.advancedhosters.com/apache/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz>
 -   Install Hadoop 2.9.2
     -   <http://apache.mirrors.hoobly.com/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz>
 -   Configure `.bashrc` for PATH variables
