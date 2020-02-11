@@ -48,7 +48,7 @@ So far we have:
 
 ## Sample Code
 
-- ```spark-submit --class org.apache.spark.examples.SparkPi --master local ./examples/jar/spark-examples_2.11-2.4.4.jar 10```
+- ```spark-submit --class org.apache.spark.examples.SparkPi --master local examples/jars/spark-examples_2.11-2.4.4.jar 10```
   - The file name was changes since we are using version 2.4.4 not 2.2.0
   - The job can also be submitted to a cluster by changing the `--master local` to `--master yarn` or `--master mesos`
 
