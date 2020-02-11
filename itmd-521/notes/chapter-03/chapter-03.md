@@ -59,7 +59,7 @@ So far we have:
   - Java and Scala are [statically typed](https://en.wikipedia.org/wiki/Type_system "Static typing wiki page") languages
   - Python and R are not statically typed, but dynamically typed
 - How to handle type-safety?
-  - Recall that DataFrames (chapter 2) are a distributed collection of objected of type **Row**
+  - Recall that DataFrames (chapter 2) are a distributed collection of objects of type **Row**
   - DataSet API allows you to assign a Java/Scala class to the records within a DataFrame
   - Manipulate that data like a Java ArrayList or Scale Seq
 - DataSets can be used as needed
