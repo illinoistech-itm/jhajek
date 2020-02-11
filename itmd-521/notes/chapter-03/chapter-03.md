@@ -102,7 +102,7 @@ val flights = flightsDF.as[Flight]
   - ingest raw data
   - build up transformations
   - train our simple model to make predictions
-- MLlib requires data to be represented as numerical data
+- [MLlib](https://en.wikipedia.org/wiki/Apache_Spark#MLlib_Machine_Learning_Library "MLlib wiki page") requires data to be represented as numerical data
   - Sample shopping data is of all different types
   - Need to use *transformations* to change the datatype
   - P. 45-48 in the e-book has the steps needed
@@ -130,3 +130,7 @@ val flights = flightsDF.as[Flight]
 - We were introduced to Structured Streaming on Spark
 - We were introduced to Machine Learning on Spark
 - We were introduced to 3rd party Spark packages
+
+## Questions
+
+- Questions?
