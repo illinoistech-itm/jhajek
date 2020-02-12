@@ -27,8 +27,8 @@
   * [https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04](https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04 "Install R package in Ubuntu")
 * Update default Python version to 3.6
   * [https://askubuntu.com/questions/1065572/how-to-safely-switch-to-python3-as-default-after-upgrade-to-ubuntu-18-04](https://askubuntu.com/questions/1065572/how-to-safely-switch-to-python3-as-default-after-upgrade-to-ubuntu-18-04 "Instructions to update python version default")
-* Install Spark 2.4
-  * [http://mirrors.advancedhosters.com/apache/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz](http://mirrors.advancedhosters.com/apache/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz "Apache Spark Download Link")
+* Install Spark 2.4.5 (just released Feb 5th 2020)
+  * [http://apache.mirrors.pair.com/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz](http://apache.mirrors.pair.com/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz "Apache Spark Download Link")
 * Install Hadoop 2.9.2
   * [http://apache.mirrors.hoobly.com/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz](http://apache.mirrors.hoobly.com/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz "Apache Hadoop Download Link")
 * Configure `.bashrc` for PATH variables
