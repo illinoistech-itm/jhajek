@@ -1,8 +1,8 @@
 % Spark the Definitive Guide 2nd Edition
-% Chapter 04
-% Structured API Overview
+% Chapter 05
+% Basic Structured Operations
 
-# Structured API Overview
+# Basic Structured Operations
 
 ## Text Book
 
@@ -10,19 +10,15 @@
 
 ## Objectives and Outcomes
 
-- Introduced to Spark's Structured APIs, Datasets, DataFrames, and SQL Views
-- Learn how Spark transforms into a physical execution plan on a cluster
+- Introduce the tools we will use to manipulate DataFrames
+- Focus on fundamental DataFrame operations
 
 ## Review
 
 So far:
 
-- We learned about Spark's programming model
-- We learned how to run production code
-- We were introduced to type-safe data structures in Spark
-- We were introduced to Structured Streaming on Spark
-- We were introduced to Machine Learning on Spark
-- We were introduced to 3rd party Spark packages
+- We were introduced to Spark's Structured APIs, DataSets, DataFrames, and SQL Views
+- We learned how Spark transform a logical plan into a physical execution plan on a cluster
 
 ## API Overview 66
 
@@ -152,8 +148,8 @@ So far:
 
 ## Conclusion
 
-- We were introduced to Spark's Structured APIs, Datasets, DataFrames, and SQL Views
-- We learned how Spark transforms a logical plan into a physical execution plan on a cluster
+- We were introduced to Spark's Structured APIs, DataSets, DataFrames, and SQL Views
+- We learned how Spark transforms into a physical execution plan on a cluster
 
 ## Questions
 
