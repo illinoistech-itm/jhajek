@@ -33,7 +33,7 @@ So far:
     - Can you define this term?
   - SQL Tables and Views
     - Can you define these terms?
-- With these data types we can manipulate dispirate types of data
+- With these data types we can manipulate disparate types of data
   - Unstructured log files
   - Semi-structured CSV files
   - Structured Parquet files
@@ -63,7 +63,7 @@ So far:
 
 ## DataFrames vs Datasets
 
-- DataFrames have types of a sort
+- DataFrames have types of a sort...
   - These are maintained by Spark internally
   - Schema only checked at *runtime*
 - Datasets are typed DataFrames
@@ -71,7 +71,73 @@ So far:
   - Enforce type at compile time
   - P. 54
 
+## Overview of Structured Spark Types
+
+- Spark is effectively a programming language of its own
+  - Uses the *Catalyst* engine internally to maintain type information
+- This code does not do math in Scala, but Catalyst:
+  - ```scala
+  val df = spark.range(500).toDF("number")
+  df.select(df.col("number") + 10)```
+
+## DataFrames vs. Datasets
+
+- DataFrame schema checked at *runtime*
+- Dataset schema checked at *compile time*
+  - Datasets only available in Java and Scala
+  - Why?
+- DataFrames are Datasets of type `Row`
+  - Type `Row` is Spark's internal optimized in-memory format for computation P.54
+- Even without Datasets in Python and R, we are still always working on an optimized in-memory datatype
+
+## Columns and Rows
+
+- Columns represent a 3 types of data:
+  - A *simple type* like an integer or string
+  - A *complex type* like an array or map
+  - A *null value* :!
+- A row is nothing more than a record of data
+- Each record in a DataFrame must be of type `Row`
+- Rows can be created in numerous ways:
+  - Via SQL statements
+  - DataSources (ingesting)
+  - dynamically and in memory
+  - ```spark.range(2).toDF().collect()```
+
+## Spark Types
+
+- You can import the types library you want to work with in Scala
+  - ```import org.apache.spark.sql.types._```
+  - ```val b = ByteType```
+- You can import the types library you want to work with in Java
+  - ```import org.apache.spark.sql.types.DataTypes;```
+  - ```ByteType x = DataTypes.ByteType;```
+- You can import the types library you want to work with in Python
+  - ```from pyspark.sql.types import \*```
+  - ```b = ByteType()```
+- Page 56 has an entire table of all the data type libraries available  
+
+## Overview of Structured API Execution
+
+- Structured API execution happens in 4 steps on Page 58:
+  - Write your DataFrame/Dataset/SQL code
+  - If valid code, Spark converts this to a *Logical Plan*
+  - Spark transforms this *Logical Plan* to a *Physical Plan*, checking for optimizations along the way
+  - Spark the executes this *Physical Plan* on the cluster
+  - ![*Figure 4-1*](images/figure4-1.png "The Catalyst Optimizer diagram")
+
+## Logical and Physical Planning
+
+![*Figure 4-2*](images/figure4-2.png "The Structured API logical planning process")
+![*Figure 4-3*](images/figure4-3.png "The Physical planning process")
+
+
 ## Conclusion
 
 - We were introduced to Spark's Structured APIs, DataSets, DataFrames, and SQL Views
 - We learned how Spark transforms into a physical execution plan on a cluster
+
+## Questions
+
+- Any questions?
+- Read Chapter 05 and do any exercises in the book.

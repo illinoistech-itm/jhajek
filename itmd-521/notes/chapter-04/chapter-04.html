@@ -68,7 +68,7 @@ Chapter 04
 <li>Can you define these terms?</li>
 </ul></li>
 </ul></li>
-<li>With these data types we can manipulate dispirate types of data
+<li>With these data types we can manipulate disparate types of data
 <ul class="incremental">
 <li>Unstructured log files</li>
 <li>Semi-structured CSV files</li>
@@ -114,7 +114,7 @@ Chapter 04
 </div><div id="dataframes-vs-datasets" class="slide section level2">
 <h1>DataFrames vs Datasets</h1>
 <ul class="incremental">
-<li>DataFrames have types of a sort
+<li>DataFrames have types of a sort…
 <ul class="incremental">
 <li>These are maintained by Spark internally</li>
 <li>Schema only checked at <em>runtime</em></li>
@@ -126,11 +126,98 @@ Chapter 04
 <li>P. 54</li>
 </ul></li>
 </ul>
+</div><div id="overview-of-structured-spark-types" class="slide section level2">
+<h1>Overview of Structured Spark Types</h1>
+<ul class="incremental">
+<li>Spark is effectively a programming language of its own
+<ul class="incremental">
+<li>Uses the <em>Catalyst</em> engine internally to maintain type information</li>
+</ul></li>
+<li>This code does not do math in Scala, but Catalyst:
+<ul class="incremental">
+<li><code>scala val df = spark.range(500).toDF("number") df.select(df.col("number") + 10)</code></li>
+</ul></li>
+</ul>
+</div><div id="dataframes-vs.-datasets" class="slide section level2">
+<h1>DataFrames vs. Datasets</h1>
+<ul class="incremental">
+<li>DataFrame schema checked at <em>runtime</em></li>
+<li>Dataset schema checked at <em>compile time</em>
+<ul class="incremental">
+<li>Datasets only available in Java and Scala</li>
+<li>Why?</li>
+</ul></li>
+<li>DataFrames are Datasets of type <code>Row</code>
+<ul class="incremental">
+<li>Type <code>Row</code> is Spark’s internal optimized in-memory format for computation P.54</li>
+</ul></li>
+<li>Even without Datasets in Python and R, we are still always working on an optimized in-memory datatype</li>
+</ul>
+</div><div id="columns-and-rows" class="slide section level2">
+<h1>Columns and Rows</h1>
+<ul class="incremental">
+<li>Columns represent a 3 types of data:
+<ul class="incremental">
+<li>A <em>simple type</em> like an integer or string</li>
+<li>A <em>complex type</em> like an array or map</li>
+<li>A <em>null value</em> :!</li>
+</ul></li>
+<li>A row is nothing more than a record of data</li>
+<li>Each record in a DataFrame must be of type <code>Row</code></li>
+<li>Rows can be created in numerous ways:
+<ul class="incremental">
+<li>Via SQL statements</li>
+<li>DataSources (ingesting)</li>
+<li>dynamically and in memory</li>
+<li><code>spark.range(2).toDF().collect()</code></li>
+</ul></li>
+</ul>
+</div><div id="spark-types" class="slide section level2">
+<h1>Spark Types</h1>
+<ul class="incremental">
+<li>You can import the types library you want to work with in Scala
+<ul class="incremental">
+<li><code>import org.apache.spark.sql.types._</code></li>
+<li><code>val b = ByteType</code></li>
+</ul></li>
+<li>You can import the types library you want to work with in Java
+<ul class="incremental">
+<li><code>import org.apache.spark.sql.types.DataTypes;</code></li>
+<li><code>ByteType x = DataTypes.ByteType;</code></li>
+</ul></li>
+<li>You can import the types library you want to work with in Python
+<ul class="incremental">
+<li><code>from pyspark.sql.types import \*</code></li>
+<li><code>b = ByteType()</code></li>
+</ul></li>
+<li>Page 56 has an entire table of all the data type libraries available</li>
+</ul>
+</div><div id="overview-of-structured-api-execution" class="slide section level2">
+<h1>Overview of Structured API Execution</h1>
+<ul class="incremental">
+<li>Structured API execution happens in 4 steps on Page 58:
+<ul class="incremental">
+<li>Write your DataFrame/Dataset/SQL code</li>
+<li>If valid code, Spark converts this to a <em>Logical Plan</em></li>
+<li>Spark transforms this <em>Logical Plan</em> to a <em>Physical Plan</em>, checking for optimizations along the way</li>
+<li>Spark the executes this <em>Physical Plan</em> on the cluster</li>
+<li><img src="images/figure4-1.png" title="fig:The Catalyst Optimizer diagram" alt="Figure 4-1" /></li>
+</ul></li>
+</ul>
+</div><div id="logical-planning" class="slide section level2">
+<h1>Logical Planning</h1>
+<p><img src="images/figure4-2.png" title="The Structured API logical planning process" alt="Figure 4-2" /> <img src="images/figure4-3.png" title="The Physical planning process" alt="Figure 4-3" /></p>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>
 <ul class="incremental">
 <li>We were introduced to Spark’s Structured APIs, DataSets, DataFrames, and SQL Views</li>
 <li>We learned how Spark transforms into a physical execution plan on a cluster</li>
+</ul>
+</div><div id="questions" class="slide section level2">
+<h1>Questions</h1>
+<ul class="incremental">
+<li>Any questions?</li>
+<li>Read Chapter 05 and do any exercises in the book.</li>
 </ul>
 </div>
 </body>
