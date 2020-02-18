@@ -200,13 +200,42 @@ Chapter 04
 <li>Write your DataFrame/Dataset/SQL code</li>
 <li>If valid code, Spark converts this to a <em>Logical Plan</em></li>
 <li>Spark transforms this <em>Logical Plan</em> to a <em>Physical Plan</em>, checking for optimizations along the way</li>
-<li>Spark the executes this <em>Physical Plan</em> on the cluster</li>
+<li>Spark then executes this <em>Physical Plan</em> on the cluster</li>
 <li><img src="images/figure4-1.png" title="fig:The Catalyst Optimizer diagram" alt="Figure 4-1" /></li>
 </ul></li>
 </ul>
+</div><div id="logical-and-physical-planning" class="slide section level2">
+<h1>Logical and Physical Planning</h1>
+<p><img src="images/figure4-2.png" title="The Structured API logical planning process" alt="Figure 4-2" /> <img src="images/figure4-3.png" title="The Physical planning process" alt="Figure 4-3" /></p>
 </div><div id="logical-planning" class="slide section level2">
 <h1>Logical Planning</h1>
-<p><img src="images/figure4-2.png" title="The Structured API logical planning process" alt="Figure 4-2" /> <img src="images/figure4-3.png" title="The Physical planning process" alt="Figure 4-3" /></p>
+<ul class="incremental">
+<li>The first phase takes the user code and converts it into a logical plan
+<ul class="incremental">
+<li>Purely to convert the code into the most optimized version</li>
+<li>Spark has an unresolved logical plan
+<ul class="incremental">
+<li>Your code may compile, but what if the table name or column name is wrong?</li>
+</ul></li>
+<li>Spark uses a <em>catalog</em> - an internal repo of all table and DataFrame information</li>
+<li>Then <em>resolves</em> column and <em>tables</em> in the <em>analyzer</em></li>
+</ul></li>
+<li>The analyzer might reject an <em>unresolved logical plan</em>, otherwise pass it to the <em>Catalyst Optimizer</em>
+<ul class="incremental">
+<li>A collection of rules that attempts to optimize the logical plan by pushing predicates or selections down</li>
+</ul></li>
+</ul>
+</div><div id="physical-planning" class="slide section level2">
+<h1>Physical Planning</h1>
+<ul class="incremental">
+<li>After an optimized plan is generated.
+<ul class="incremental">
+<li>Spark begins to specify how this plan will be executed on the cluster</li>
+<li>Creates multiple strategies and compares them via a <em>cost model</em> <img src="images/figure4-3.png" title="The Physical planning process" alt="Figure 4-3" /><br />
+</li>
+</ul></li>
+<li>At execution time, Java bytecode is generated and the final result returned to the user</li>
+</ul>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>
 <ul class="incremental">

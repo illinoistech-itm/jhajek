@@ -123,7 +123,7 @@ So far:
   - Write your DataFrame/Dataset/SQL code
   - If valid code, Spark converts this to a *Logical Plan*
   - Spark transforms this *Logical Plan* to a *Physical Plan*, checking for optimizations along the way
-  - Spark the executes this *Physical Plan* on the cluster
+  - Spark then executes this *Physical Plan* on the cluster
   - ![*Figure 4-1*](images/figure4-1.png "The Catalyst Optimizer diagram")
 
 ## Logical and Physical Planning
@@ -131,6 +131,24 @@ So far:
 ![*Figure 4-2*](images/figure4-2.png "The Structured API logical planning process")
 ![*Figure 4-3*](images/figure4-3.png "The Physical planning process")
 
+## Logical Planning
+
+- The first phase takes the user code and converts it into a logical plan
+  - Purely to convert the code into the most optimized version
+  - Spark has an unresolved logical plan
+    - Your code may compile, but what if the table name or column name is wrong?
+  - Spark uses a *catalog* - an internal repo of all table and DataFrame information
+  - Then *resolves* column and *tables* in the *analyzer*
+- The analyzer might reject an *unresolved logical plan*, otherwise pass it to the *Catalyst Optimizer*
+  - A collection of rules that attempts to optimize the logical plan by pushing predicates or selections down
+
+## Physical Planning
+
+- After an optimized plan is generated.
+  - Spark begins to specify how this plan will be executed on the cluster
+  - Creates multiple strategies and compares them via a *cost model*
+![*Figure 4-3*](images/figure4-3.png "The Physical planning process")  
+- At execution time, Java bytecode is generated and the final result returned to the user
 
 ## Conclusion
 
