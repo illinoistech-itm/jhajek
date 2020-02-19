@@ -37,11 +37,11 @@ Each Project will have additional specific details to be delivered once the exac
 
 * Language and framework of your choice (ITM 311, ITM 312, ITMD 361 & 362, ITMD 411) Suggestions:
   * Android
-  * PHP – Cake/Symphony
+  * PHP – Cake/Symphony/Zend
   * Java – Spring/JSP/Hibernate
   * JavaScript – NodeJS/Angular/React/Vue.js
   * Ruby – Ruby on Rails
-  * C# - ASP Dot SNet
+  * C# - ASP.NET
 
 ### Infrastructure and IT
 
@@ -61,28 +61,25 @@ Each Project will have additional specific details to be delivered once the exac
 * Data encrypted at rest (ITMS 448)
 * Use of https (ITMS 448, ITMO 356)
   * Self-signed certs
-* Login authentication mechanism. Google authentication for login
+* Login authentication mechanism. Google authentication for login, such as:
   * [SQRL](https://www.grc.com/sqrl/sqrl.htm "SQRL introduction page")
   * [Google OAuth2](https://developers.google.com/identity/protocols/OAuth2 "Google OAuth2 authentication")
 
 ### UI/UX
 
-* Use of Responsive design (where applicable) (ITMD 361, ITMD 362)
+* Use of Responsive Design (where applicable) (ITMD 361, ITMD 362)
 * Use of user authentication (ITMD 411)
   * Must use HTTP Session
   * Different UI for Unauthenticated users
-  * Must have read/only features for unauthenticated users
+  * Have read/only features for unauthenticated users
   * Different UI for Authenticated users
-  * Must have a user account management page (EDIT Page)
+  * Have a user account management page (EDIT Page)
   * Different UI for Administrative users
-  * Must have features for Operations in application (database dump and restore feature)
+  * Have features for Operations in application
+    * database dump
+    * database restore feature
+    * turn any/an upload feature to read-only
   * UI is modified per authenticated user via CSS
-* Creation of Dev Environment (local laptop), (ITMO 356)
-  * Production must always be in a working state
-  * Environment must be configurable via scriptable deploy
-  * No manual editing or installing
-  * Initial sprint will implement development via laptop using Packer, Vagrant, and VirtualBox
-  * Test and Production environments will be built in the next 2 Sprints
 * Layout design (ITMD 361, 362, ITMM 471)
   * Diagrams of site functionality using layout tool
   * Diagrams of colors, fonts, and other usability features
@@ -90,11 +87,26 @@ Each Project will have additional specific details to be delivered once the exac
 ### Project Management
 
 * Management of project progress (ITMM 471)
-  * Trello (account will be provided) or Basecamp (not provided) or JIRA (account will be provided)
+  * Trello (not provided) or JIRA (account will be provided)
   * Slack
   * GitHub
   * GitHub Issues to resolve bug posts from UI/UX tester
 * User story - how the user will experience the site
+
+## IT Operations
+
+* Application needs to include:
+  * A load balancer
+  * minimum of 2 front-ends
+  * A memory caching layer (such as Redis or Memcached)
+* Database needs to have 15 users with actual data contained at deploy time
+  * Needs to have Master Slave replication and or 3 nodes for replication
+* Creation of Dev Environment on local laptop (ITMO 356) (ITM 301)
+  * Application must always be in a working state
+  * Each team member must be able to deploy the entire environment via script on their own hardware
+  * Environment must be configurable via a scriptable deploy
+  * No manual editing or installing
+    * Note - Test and Production environments will be built after sprint 03
 
 ## Written Report Content
 
