@@ -57,7 +57,7 @@ Explain the choice of operating systems and platforms.  Explain datastore choice
 
 ### Project Manager
 
-Will gather the contributed portions into a single narrative (be careful just copying and pasting) -- see the template.md for a standard template.   They will give the presentation overall, as well as gather what the atomic goals for the next semester will be based on the input gathered in this first sprint.
+Will gather the contributed portions into a single narrative (be careful just copying and pasting) -- see the template.md for a standard template.   They will give the presentation overall, as well as gather what the atomic goals for the next sprint will be based on the input gathered in this first sprint.
 
 ## Deliverable
 
