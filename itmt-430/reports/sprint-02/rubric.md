@@ -109,7 +109,7 @@ Each Project will have additional specific details to be delivered once the exac
 - Creation of Dev Environment on local laptop (ITMO 356) (ITM 301)
   - Application must always be in a working state
   - Each team member must be able to deploy the entire environment via script on their own hardware
-  - Environment must be configurable via a scriptable deploy
+  - Environment must be configurable via a scriptable deploy (suggested to use Packer and Vagrant)
   - No manual editing or installing
     - Note - Test and Production environments will be built after sprint 03
 
