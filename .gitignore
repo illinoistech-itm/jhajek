@@ -5,6 +5,7 @@
 *console.log
 packer-cache/
 *.pem
+*~$
 
 .DS_Store
 id_rsa
