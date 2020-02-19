@@ -1,59 +1,55 @@
-Team Project Deliverables
-=========================
+Sprint-02 Grading Rubric
+========================
 
-You will form a team of 5 based on the Lab section you are in. If the
-section has less than 20 people enrolled you will form teams of 4
-people. There are 5 positions that you will rotate through in
-development sprints. Each person will take a primary role---but that
-role is not exclusive. Each team, starting week 1 in sprint 1, will
-outline a project plan of goals they aspire to accomplish. At the end of
-the sprint the team will present their project to the entire class. See
-below for written paper requirements:
+Grading Style
+-------------
 
-The outputs will be demonstrated through your application code and
-infrastructure code on GitHub, your project progress will be tracked
-using a Project Management tool and Slack will be used to show code
-commits and team discussion. Bugs will be tracked and resolved on GitHub
-Issues. Operations will be tested to show your Visio diagrams match your
-output and how automated your build infrastructure is.
+The second sprint report will be defined by your own group. The goals
+per person will be laid out based on your User Story and you will break
+the work into parts and based on your goals, you will essentially grade
+yourself.
 
-Team Roles
-----------
+Points
+------
 
--   Project Manager responsibilities include but are not exclusive to:
-    -   Responsible for managing resources, team, goal setting, and
-        achieving set goals for that 3-week sprint
-    -   Responsible for determining resource blockers and re-allocating
-        resources
-    -   Responsible for preparing reports and demonstrating application
-        build
-    -   Responsible for assuring working product and documenting
-        necessary build instructions
-    -   Responsible for allocating issues and issues tracking on GitHub
--   Developer responsibilities include but are not exclusive to:
-    -   Responsible for coding and programming
-    -   Responsible for showing consistent code commitment and
-        deployment based on the language the team selected
--   Jr. Developer
-    -   Responsible for working with the Developer in coding tasks
-    -   Responsible for SecOps (Security Operations) in
-        testing/searching code for security vulnerabilities
-    -   Responsible for working with UI/UX developer to resolve user
-        bugs
--   IT Operations responsibilities include but are not exclusive to:
-    -   Responsible for ensuring and deploying infrastructure and code
-    -   Responsible for ensuring all team members can deploy all code
-        locally and to production
-    -   Responsible for documenting and drawing all infrastructure
--   UI/UX Developer
-    -   Responsible for designing and documenting the UI/UX of the
-        project
-    -   Responsible for justifying the UI/UX decision
-    -   Responsible for testing responsive design
-    -   Responsible for user testing and filing of bugs on GitHub Issues
+The assignment will be 100 points cumulative.
 
-Project Base Requirements
--------------------------
+-   20 points for the UI/UX portion
+-   20 points for the Security Assumptions
+-   20 points for IT and Infrastructure Report
+-   20 points for Developer and Coding assumptions
+-   10 points for the cumulative report and listing of goals for the
+    next sprint
+-   10 points for the Presentation style
+    -   The grading for the presentation will be a standard presentation
+    -   Was there a clear opening?
+    -   Was there a clear explanation of the entire report content (not
+        read of the page)?
+    -   Was there a clear conclusion?
+
+Each section will be graded on a Likert Scale:
+
+-   Meets expectations
+-   Somewhat meets expectations
+-   Somewhat meets expectations, with a few missing items
+-   Doesn't meet expectations
+-   Non-effort
+-   20, 16, 15, 12, and 5 points respectively
+-   10, 8, 7, 6, and 5 points respectively
+
+Content
+-------
+
+The deliverable will be a single file named **sprint-02.md** located in
+a folder named **sprint-02** under the **reports** folder in your team
+GitHub repo. The main goal here will be that each member will determine
+a minimum of 5 goals for themselves for the sprint. They will pick at
+least 1 from my list below, and the other 4 will be related to their
+job. These minimum 5 goals will be your own grading rubric for the
+sprint. Your report will detail the completion of these items. Those
+items include:
+
+### Project Base Requirements
 
 Each Project will have additional specific details to be delivered once
 the exact project subject is determined. But in this case we are going
@@ -125,9 +121,9 @@ Note some of the requirements below span across multiple categories.
     -   GitHub
     -   GitHub Issues to resolve bug posts from UI/UX tester
 -   User story - how the user will experience the site
+-   Focus on allocation of resources to help others meet their goals
 
-IT Operations
--------------
+### IT Operations
 
 -   Application needs to include:
     -   A load balancer
@@ -142,6 +138,7 @@ IT Operations
     -   Each team member must be able to deploy the entire environment
         via script on their own hardware
     -   Environment must be configurable via a scriptable deploy
+        (suggested to use Packer and Vagrant)
     -   No manual editing or installing
         -   Note - Test and Production environments will be built after
             sprint 03
@@ -170,39 +167,14 @@ released per sprint.
 -   Reference decisions from any of the videos, guest lectures, and
     class presentations, or text book
 
-Deliverables
-------------
+Report
+------
 
-Each team will have different requirements but there are core
-requirements for all.
+This story will weave together the contributions of each team member
+into a single narrative.
 
--   Visio or other diagraming tool for the outline of your application
--   Create a folder named: diagrams in your team GitHub account.
--   Create UI/UX layout designs of every page -- including content
-    layout, colors, fonts, etc. etc.
--   Place these in your diagrams folder
--   ReadMd.md must have each team members name and contact email
--   Must include build instructions to automatically build the
-    application from the command line including all necessary
-    dependencies, instructions, and assumptions
+Deliverable
+-----------
 
-Final project Report
---------------------
-
-1.  Create and summarize into a final report detailing the
-    accomplishments of the 6 sprint reports.\
-2.  Explain the overall accomplishments of the team based on the content
-    of the 6 reports
-3.  Analyze the completeness of the project in fulfilling the stated
-    goals (self-assessment, how close did you get?)\
-
-<!-- -->
-
-a.  Explain in detail from the textbook and resources -- some features
-    that were not implemented are ok if you can explain accurately why
-    that happened.
-
-<!-- -->
-
-4.  Explain your technology and stack choices
-5.  Include your team's backgrounds
+The Project Manager will submit the URL to the sprint-02.md on GitHub,
+it will be a group submission so only one is needed. Don't forget!

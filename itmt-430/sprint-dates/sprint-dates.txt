@@ -25,19 +25,23 @@ Lab Days
                                                   Presentation by PM on
                                                   lab day~~
 
-  7                       February 26 & 27 & 28   Sprint ~~3~~ 2 --
+  7                       February 26 & 27 & 28   Sprint ~~3~~ 2 ~~--
+                                                  Presentation by PM on
+                                                  lab day~~
+
+  8                       March 04 & 05 & 06      Sprint ~~3~~ 2 --
                                                   Presentation by PM on
                                                   lab day
 
-  8                       March 04 & 05 & 06      Sprint 3
-
-  9                       March 11 & 12 & 13      Sprint 3 -- Cumulative
-                                                  presentation by PM on
-                                                  lab day
+  9                       March 11 & 12 & 13      Sprint 3 ~~--
+                                                  Cumulative presentation
+                                                  by PM on lab day~~
 
   \-                      March 14-21             NO CLASS: Spring Break
 
-  10                      March 25 & 26 & 27      Sprint 4
+  10                      March 25 & 26 & 27      Sprint ~~4~~ 3 --
+                                                  Cumulative presentation
+                                                  by PM on lab day
 
   11                      April 01 & 02 & 03      Sprint 4
 
