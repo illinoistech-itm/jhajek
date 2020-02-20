@@ -46,6 +46,7 @@ Each Project will have additional specific details to be delivered once the exac
   - JavaScript – NodeJS/Angular/React/Vue.js
   - Ruby – Ruby on Rails
   - C# - ASP.NET
+- Application Database Reads and Writes should go to different databases (see the replication section in IT Operations)
 
 ### Infrastructure and IT
 
@@ -103,7 +104,7 @@ Each Project will have additional specific details to be delivered once the exac
 - Application needs to include:
   - A load balancer
   - minimum of 2 front-ends
-  - A memory caching layer (such as Redis or Memcached)
+  - A memory caching layer, such as [Redis](https://redis.io/ "Redis caching page") or [Memcached](https://www.memcached.org/ "Memcached main website")
 - Database needs to have 15 users with actual data contained at deploy time
   - Needs to have Master Slave replication and or 3 nodes for replication
 - Creation of Dev Environment on local laptop (ITMO 356) (ITM 301)
