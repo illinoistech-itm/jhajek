@@ -115,7 +115,7 @@ Each Project will have additional specific details to be delivered once the exac
 
 ## Written Report Content
 
-At the start of each sprint each person will contribute their deliverables.  This list of atomic events will be used to grade each person individually for each sprint.  The project manager will be responsible to collecting the team's input and prepare a report.  You will receive feedback from me on this report.  The report should state the following at the minimum with additional information will be released per sprint.
+At the start of each sprint each person will contribute their deliverables.  This list of atomic ~~events~~ tasks will be used to grade each person's contribution to the overall project for each sprint.  The project manager will be responsible to collecting the team's input and prepare a report.  You will receive feedback from me on this report.  The report should state the following at the minimum with additional information will be released per sprint.
 
 - List the team members and describe their functions during the spring
 - Describe the groups stated (atomic) goals for the sprint
@@ -123,8 +123,9 @@ At the start of each sprint each person will contribute their deliverables.  Thi
   - Explain and show how bugs were found, tracked, and delegated
   - Explain any security assumptions made and explain how these were discovered and mitigated
 - List the goals for the next sprint
-- Each team member should submit a small comment on their own accomplishments and describe what they did and explain any decisions referencing any lectures or material from the text book or web
+- Each team member should submit a small comment of their own accomplishments and describe what they did and explain any decisions referencing any lectures or material from the text book or web
 - Reference decisions from any of the videos, guest lectures, and class presentations, or text book
+- Also in the main directory of the team GitHub repo, there needs to be an **install.md** file with instructions and assumptions of how to install and run your project
 
 ## Report
 
