@@ -102,10 +102,14 @@ col("someColumnName")
 column("someColumnName")
 ```
 
-## Expressions
+## Expressions 63
 
-- Page 63
+- If you need to explicitly reference a column you can
+- Think of it as a namespace way to reference columns in different DataFrames that have the same name
+  - ```df.col("count")```
 
+
+  
 ## Conclusion
 
 - Conclusion here
