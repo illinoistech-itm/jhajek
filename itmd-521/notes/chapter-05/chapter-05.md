@@ -102,14 +102,27 @@ col("someColumnName")
 column("someColumnName")
 ```
 
-## Expressions 63
+## Column Reference
 
 - If you need to explicitly reference a column you can
 - Think of it as a namespace way to reference columns in different DataFrames that have the same name
   - ```df.col("count")```
 
+## Columns as Expressions
 
-  
+- What is an *expression*?
+  - A set of *transformations* on one or more values in a *record* in a DataFrame
+- You can use a ```col()``` and perform a transformation on a column
+- You can use an ```expr()``` to parse transformations and column references
+  - These references can subsequently be passed into further transformations
+  - `expr("someCol - 5")` and `col("someCol") - 5` and `expr("someCol") - 5` all evaluate the same
+  - Spark compiles these to the same logic tree
+- Columns are just expressions
+- Columns and transformations of those columns compile to the same logical plan
+```(((col("someCol") + 5 ) * 200 ) - 6 ) < col("otherCol")```
+- This is also represented by in Python (64):
+  - ```python from pyspark.sql.functions import expr expr("(((someCol + 5) * 200) -6) < "otherCol")```
+
 ## Conclusion
 
 - Conclusion here
