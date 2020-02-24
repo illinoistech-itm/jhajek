@@ -119,9 +119,36 @@ column("someColumnName")
   - Spark compiles these to the same logic tree
 - Columns are just expressions
 - Columns and transformations of those columns compile to the same logical plan
-```(((col("someCol") + 5 ) * 200 ) - 6 ) < col("otherCol")```
+  - ```(((col("someCol") + 5 ) * 200 ) - 6 ) < col("otherCol")```
+
+## Directed Acyclic Graph
+
 - This is also represented by in Python (64):
-  - ```python from pyspark.sql.functions import expr expr("(((someCol + 5) * 200) -6) < "otherCol")```
+  - ```from pyspark.sql.functions import expr expr("(((someCol + 5) * 200) -6) < "otherCol")```
+  - Previous expression is actually valid SQL code
+- This means you can write your expressions as DataFrame code or as SQL expressions and get the same performance characteristics
+
+## Accessing a DataFrames Columns
+
+- How can you see a DataFrame's columns?
+```spark.read.format("json").load("The-Definitive-Guide-To-Spark/data/flight-data/json/2015-summary.json").columns```
+
+## Records and Rows 65
+
+- Review:  Each row in a DataFrame is a single record
+  - Represented as an object of type `Row`
+- How to read the first row of a DataFrame:
+  - `df.first()`
+- Only DataFrames have schemas, Rows do not have a schema
+- To create a *Row* you must append values in the correct "schema"
+  - ```from pyspark.sql import Row```
+  - ```myRow = Row("Hello", None, 1, False)```
+- To access Rows, Python and R will autodetect the datatype
+  - myRow[2]
+  - myRow[0]
+- Scala and Java will require casting or coercing the values
+  - ```myRow(0).asInstanceOf[String] // String```
+  - ```myRow.getInt(2)```
 
 ## Conclusion
 
