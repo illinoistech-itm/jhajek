@@ -150,6 +150,88 @@ column("someColumnName")
   - ```myRow(0).asInstanceOf[String] // String```
   - ```myRow.getInt(2)```
 
+## DataFrame Transformations
+
+- When working with individual DataFrames:
+  - We can add rows or columns
+  - We can remove rows or columns
+  - We can transform a row into a column
+  - We can change the order of rows based on the values of columns
+![*Figure 5-2*](images/figure-5-2.png "Different Kinds of Transmissions")
+
+## Creating DataFrames
+
+- We can create DataFrames from raw sources
+  - Chapter 9 will cover this in more detail
+  - We can register raw data as a temporary view
+  - Query it with SQL
+- We can create a DataFrame on the fly by taking a set of rows and converting them to a DataFrame
+
+## Code Example 65
+
+```python
+df = spark.read.format("json").load("data/flight-data/json/2015-summary.json")
+df.createORReplaceTempView("dfTable")
+```
+
+```scala
+import org.apache.spark.sql.Row
+import org.apache.spark.sql.types{StructField, StructType, StringType, LongType}
+
+val myManualSchema = new StructType(Array(new STructField("some", StringType, true),new StructField("col", StringType, true),new StructFiled("names", LongType, false)))
+val myRows = Seq(Row("Hello", null, 1L))
+val myRDD = spark.sparkContect.parallelize(myRows)
+val myDf = spark.createDataFrame(myRDD, myManualSchema)
+myDf.show()
+```
+
+```scala
+// use can map Scala Seq directly to DataFrames, but Seq don't handle nulls -- so be careful
+val myDf = Seq(("Hello",2,1L)).toDf("col1","col2","col3")
+```
+
+```python
+from pyspark.sql import Row
+from pyspark.sql.types import StructField, StructType, StringType, LongType
+myManualSchema = StructType([
+  StructField("some", StringType(), True),
+  StructField("col", StringType(), True),
+  StructField("names",LongType(), False)
+])
+myRow = Row("Hello", None, 1)
+myDf = spark.createDataFrame([myRow], myManualSchema)
+myDf.show()
+```
+
+## Select and selectExpr
+
+- Use the *select* method when working with columns or expressions
+- Use the *selectExpr* method when working with expressions in **strings**
+- Both are found in ```org.apache.spark.sql.functions```
+  - select and selectExpr allow you to execute SQL queries on a DataFrame
+  - ```df.select("DEST_COUNTRY_NAME").show(2)```
+  - ```SELECT DEST_COUNTRY_NAME FROM dfTable LIMIT 2```
+- You can select multiple columns by using a comma
+
+```python
+from pyspark.sql.functions import expr, col, column
+df.select(
+  expr("DEST_COUNTRY_NAME"),
+  col("DEST_COUNTRY_NAME"),
+  column("DEST_COUNTRY_NAME")
+).show(2)
+
+```
+
+## selectExpr
+
+- If you find yourself typing a bunch of *select* then *expr* statements
+  - then ```selectExpr``` is the convenient interface you want
+  - ```df.selectExpr("DEST_COUNTRY_NAME" as newColumnName:,"DEST_COUNTRY_NAME").show(2)```
+  - We can add new columns to a DataFrame
+  
+
+
 ## Conclusion
 
 - Conclusion here

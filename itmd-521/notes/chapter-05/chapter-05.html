@@ -219,10 +219,127 @@ Chapter 05
 <li>Spark compiles these to the same logic tree</li>
 </ul></li>
 <li>Columns are just expressions</li>
-<li>Columns and transformations of those columns compile to the same logical plan <code>(((col("someCol") + 5 ) * 200 ) - 6 ) &lt; col("otherCol")</code></li>
+<li>Columns and transformations of those columns compile to the same logical plan
+<ul class="incremental">
+<li><code>(((col("someCol") + 5 ) * 200 ) - 6 ) &lt; col("otherCol")</code></li>
+</ul></li>
+</ul>
+</div><div id="directed-acyclic-graph" class="slide section level2">
+<h1>Directed Acyclic Graph</h1>
+<ul class="incremental">
 <li>This is also represented by in Python (64):
 <ul class="incremental">
-<li><code>python from pyspark.sql.functions import expr expr("(((someCol + 5) * 200) -6) &lt; "otherCol")</code></li>
+<li><code>from pyspark.sql.functions import expr expr("(((someCol + 5) * 200) -6) &lt; "otherCol")</code></li>
+<li>Previous expression is actually valid SQL code</li>
+</ul></li>
+<li>This means you can write your expressions as DataFrame code or as SQL expressions and get the same performance characteristics</li>
+</ul>
+</div><div id="accessing-a-dataframes-columns" class="slide section level2">
+<h1>Accessing a DataFrames Columns</h1>
+<ul class="incremental">
+<li>How can you see a DataFrame’s columns? <code>spark.read.format("json").load("The-Definitive-Guide-To-Spark/data/flight-data/json/2015-summary.json").columns</code></li>
+</ul>
+</div><div id="records-and-rows-65" class="slide section level2">
+<h1>Records and Rows 65</h1>
+<ul class="incremental">
+<li>Review: Each row in a DataFrame is a single record
+<ul class="incremental">
+<li>Represented as an object of type <code>Row</code></li>
+</ul></li>
+<li>How to read the first row of a DataFrame:
+<ul class="incremental">
+<li><code>df.first()</code></li>
+</ul></li>
+<li>Only DataFrames have schemas, Rows do not have a schema</li>
+<li>To create a <em>Row</em> you must append values in the correct “schema”
+<ul class="incremental">
+<li><code>from pyspark.sql import Row</code></li>
+<li><code>myRow = Row("Hello", None, 1, False)</code></li>
+</ul></li>
+<li>To access Rows, Python and R will autodetect the datatype
+<ul class="incremental">
+<li>myRow[2]</li>
+<li>myRow[0]</li>
+</ul></li>
+<li>Scala and Java will require casting or coercing the values
+<ul class="incremental">
+<li><code>myRow(0).asInstanceOf[String] // String</code></li>
+<li><code>myRow.getInt(2)</code></li>
+</ul></li>
+</ul>
+</div><div id="dataframe-transformations" class="slide section level2">
+<h1>DataFrame Transformations</h1>
+<ul class="incremental">
+<li>When working with individual DataFrames:
+<ul class="incremental">
+<li>We can add rows or columns</li>
+<li>We can remove rows or columns</li>
+<li>We can transform a row into a column</li>
+<li>We can change the order of rows based on the values of columns <img src="images/figure-5-2.png" title="Different Kinds of Transmissions" alt="Figure 5-2" /></li>
+</ul></li>
+</ul>
+</div><div id="creating-dataframes" class="slide section level2">
+<h1>Creating DataFrames</h1>
+<ul class="incremental">
+<li>We can create DataFrames from raw sources
+<ul class="incremental">
+<li>Chapter 9 will cover this in more detail</li>
+<li>We can register raw data as a temporary view</li>
+<li>Query it with SQL</li>
+</ul></li>
+<li>We can create a DataFrame on the fly by taking a set of rows and converting them to a DataFrame</li>
+</ul>
+</div><div id="code-example-65" class="slide section level2">
+<h1>Code Example 65</h1>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" title="1">df <span class="op">=</span> spark.read.<span class="bu">format</span>(<span class="st">&quot;json&quot;</span>).load(<span class="st">&quot;data/flight-data/json/2015-summary.json&quot;</span>)</a>
+<a class="sourceLine" id="cb6-2" title="2">df.createORReplaceTempView(<span class="st">&quot;dfTable&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">import</span> org.<span class="fu">apache</span>.<span class="fu">spark</span>.<span class="fu">sql</span>.<span class="fu">Row</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="kw">import</span> org.<span class="fu">apache</span>.<span class="fu">spark</span>.<span class="fu">sql</span>.<span class="fu">types</span>{StructField, StructType, StringType, LongType}</a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="kw">val</span> myManualSchema = <span class="kw">new</span> <span class="fu">StructType</span>(Array(<span class="kw">new</span> <span class="fu">STructField</span>(<span class="st">&quot;some&quot;</span>, StringType, <span class="kw">true</span>),<span class="kw">new</span> <span class="fu">StructField</span>(<span class="st">&quot;col&quot;</span>, StringType, <span class="kw">true</span>),<span class="kw">new</span> <span class="fu">StructFiled</span>(<span class="st">&quot;names&quot;</span>, LongType, <span class="kw">false</span>)))</a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="kw">val</span> myRows = Seq(<span class="fu">Row</span>(<span class="st">&quot;Hello&quot;</span>, <span class="kw">null</span>, 1L))</a>
+<a class="sourceLine" id="cb7-6" title="6"><span class="kw">val</span> myRDD = spark.<span class="fu">sparkContect</span>.<span class="fu">parallelize</span>(myRows)</a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="kw">val</span> myDf = spark.<span class="fu">createDataFrame</span>(myRDD, myManualSchema)</a>
+<a class="sourceLine" id="cb7-8" title="8">myDf.<span class="fu">show</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode scala"><code class="sourceCode scala"><a class="sourceLine" id="cb8-1" title="1"><span class="co">// use can map Scala Seq directly to DataFrames, but Seq don&#39;t handle nulls -- so be careful</span></a>
+<a class="sourceLine" id="cb8-2" title="2"><span class="kw">val</span> myDf = Seq((<span class="st">&quot;Hello&quot;</span>,<span class="dv">2</span>,1L)).<span class="fu">toDf</span>(<span class="st">&quot;col1&quot;</span>,<span class="st">&quot;col2&quot;</span>,<span class="st">&quot;col3&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" title="1"><span class="im">from</span> pyspark.sql <span class="im">import</span> Row</a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="im">from</span> pyspark.sql.types <span class="im">import</span> StructField, StructType, StringType, LongType</a>
+<a class="sourceLine" id="cb9-3" title="3">myManualSchema <span class="op">=</span> StructType([</a>
+<a class="sourceLine" id="cb9-4" title="4">  StructField(<span class="st">&quot;some&quot;</span>, StringType(), <span class="va">True</span>),</a>
+<a class="sourceLine" id="cb9-5" title="5">  StructField(<span class="st">&quot;col&quot;</span>, StringType(), <span class="va">True</span>),</a>
+<a class="sourceLine" id="cb9-6" title="6">  StructField(<span class="st">&quot;names&quot;</span>,LongType(), <span class="va">False</span>)</a>
+<a class="sourceLine" id="cb9-7" title="7">])</a>
+<a class="sourceLine" id="cb9-8" title="8">myRow <span class="op">=</span> Row(<span class="st">&quot;Hello&quot;</span>, <span class="va">None</span>, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb9-9" title="9">myDf <span class="op">=</span> spark.createDataFrame([myRow], myManualSchema)</a>
+<a class="sourceLine" id="cb9-10" title="10">myDf.show()</a></code></pre></div>
+</div><div id="select-and-selectexpr" class="slide section level2">
+<h1>Select and selectExpr</h1>
+<ul class="incremental">
+<li>Use the <em>select</em> method when working with columns or expressions</li>
+<li>Use the <em>selectExpr</em> method when working with expressions in <strong>strings</strong></li>
+<li>Both are found in <code>org.apache.spark.sql.functions</code>
+<ul class="incremental">
+<li>select and selectExpr allow you to execute SQL queries on a DataFrame</li>
+<li><code>df.select("DEST_COUNTRY_NAME").show(2)</code></li>
+<li><code>SELECT DEST_COUNTRY_NAME FROM dfTable LIMIT 2</code></li>
+</ul></li>
+<li>You can select multiple columns by using a comma</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" title="1"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> expr, col, column</a>
+<a class="sourceLine" id="cb10-2" title="2">df.select(</a>
+<a class="sourceLine" id="cb10-3" title="3">  expr(<span class="st">&quot;DEST_COUNTRY_NAME&quot;</span>),</a>
+<a class="sourceLine" id="cb10-4" title="4">  col(<span class="st">&quot;DEST_COUNTRY_NAME&quot;</span>),</a>
+<a class="sourceLine" id="cb10-5" title="5">  column(<span class="st">&quot;DEST_COUNTRY_NAME&quot;</span>)</a>
+<a class="sourceLine" id="cb10-6" title="6">).show(<span class="dv">2</span>)</a></code></pre></div>
+</div><div id="selectexpr" class="slide section level2">
+<h1>selectExpr</h1>
+<ul class="incremental">
+<li>If you find yourself typing a bunch of <em>select</em> then <em>expr</em> statements
+<ul class="incremental">
+<li>then <code>selectExpr</code> is the convenient interface you want</li>
+<li><code>df.selectExpr("DEST_COUNTRY_NAME" as newColumnName:,"DEST_COUNTRY_NAME").show(2)</code></li>
+<li>We can add new columns to a DataFrame</li>
 </ul></li>
 </ul>
 </div><div id="conclusion" class="slide section level2">
