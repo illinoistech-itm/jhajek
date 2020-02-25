@@ -341,6 +341,47 @@ Chapter 05
 <li><code>df.selectExpr("DEST_COUNTRY_NAME" as newColumnName:,"DEST_COUNTRY_NAME").show(2)</code></li>
 <li>We can add new columns to a DataFrame</li>
 </ul></li>
+<li>We can use <code>selectExpr</code> to build up complex expressions and create new DataFrames
+<ul class="incremental">
+<li><code>df.selectExpr("*",("DEST_COUNTRY_NAME = ORIGIN_COUNTRY_NAME") as withinCountry).show(2)</code></li>
+<li><code>SELECT *, (DEST_COUNTRY_NAME = ORIGIN_COUNTRY_NAME) as withinCountry FROM dfTable LIMIT 2</code></li>
+</ul></li>
+<li>We can specify aggregations over an entire DataFrame
+<ul class="incremental">
+<li><code>df.selectExpr("avg(count"), "count(distinct(DEST_COUNTRY_NAME))").show(2)</code></li>
+<li><code>SELECT avg(count), count(distinct(DEST_COUNTRY_NAME)) FROM dfTable LIMIT 2</code></li>
+</ul></li>
+</ul>
+</div><div id="spark-literals" class="slide section level2">
+<h1>Spark Literals</h1>
+<ul class="incremental">
+<li>Sometimes we need to pass a literal value, such as a constant
+<ul class="incremental">
+<li><code>from pyspark.sql.functions import lit</code></li>
+<li><code>df.selectExpr(expr("*"), lit(1).alias("One")).show(2)</code></li>
+<li>This will come up when you need to check if a value against a predetermined value</li>
+</ul></li>
+<li>Adding additional columns is possible: <code>withColumn</code>
+<ul class="incremental">
+<li><code>df.withColumn("withinCountry", expr("ORIGIN_COUNTRY_NAME == DEST_COUNTRY_NAME")).show(2)</code></li>
+<li>This creates a column with a Boolean if the ORIGIN and DEST Country name match.
+<ul class="incremental">
+<li>This can save much time in a lookup later on as you will not have to do String comparison</li>
+</ul></li>
+</ul></li>
+<li>Columns can be dropped as well
+<ul class="incremental">
+<li><code>df.drop("ORIGIN_COUNTRY_NAME").columns</code></li>
+</ul></li>
+<li>You can cast columns as well
+<ul class="incremental">
+<li><code>df.withColumn("count2", col("count").cast("long"))</code></li>
+</ul></li>
+</ul>
+</div><div id="p-72" class="slide section level2">
+<h1>P 72</h1>
+<ul class="incremental">
+<li>We will stop here for today</li>
 </ul>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>

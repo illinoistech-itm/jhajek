@@ -229,8 +229,31 @@ df.select(
   - then ```selectExpr``` is the convenient interface you want
   - ```df.selectExpr("DEST_COUNTRY_NAME" as newColumnName:,"DEST_COUNTRY_NAME").show(2)```
   - We can add new columns to a DataFrame
-  
+- We can use `selectExpr` to build up complex expressions and create new DataFrames
+  - ```df.selectExpr("*",("DEST_COUNTRY_NAME = ORIGIN_COUNTRY_NAME") as withinCountry).show(2)```
+  - ```SELECT *, (DEST_COUNTRY_NAME = ORIGIN_COUNTRY_NAME) as withinCountry FROM dfTable LIMIT 2```
+- We can specify aggregations over an entire DataFrame
+  - ```df.selectExpr("avg(count"), "count(distinct(DEST_COUNTRY_NAME))").show(2)```
+  - ```SELECT avg(count), count(distinct(DEST_COUNTRY_NAME)) FROM dfTable LIMIT 2```  
 
+## Spark Literals
+
+- Sometimes we need to pass a literal value, such as a constant
+  - ```from pyspark.sql.functions import lit```
+  - ```df.selectExpr(expr("*"), lit(1).alias("One")).show(2)```
+  - This will come up when you need to check if a value against a predetermined value
+- Adding additional columns is possible: ```withColumn```
+  - ```df.withColumn("withinCountry", expr("ORIGIN_COUNTRY_NAME == DEST_COUNTRY_NAME")).show(2)```
+  - This creates a column with a Boolean if the ORIGIN and DEST Country name match.  
+    - This can save much time in a lookup later on as you will not have to do String comparison
+- Columns can be dropped as well
+  - ```df.drop("ORIGIN_COUNTRY_NAME").columns```
+- You can cast columns as well
+  - ```df.withColumn("count2", col("count").cast("long"))```
+
+## P 72
+
+- We will stop here for today
 
 ## Conclusion
 
