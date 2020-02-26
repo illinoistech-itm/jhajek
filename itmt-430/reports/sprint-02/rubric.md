@@ -8,16 +8,18 @@ The second sprint report will be defined by your own group.  The goals per perso
 
 The assignment will be 100 points cumulative.
 
-- 20 points for the UI/UX portion
-- 20 points for the Security Assumptions
-- 20 points for IT and Infrastructure Report
-- 20 points for Developer and Coding assumptions
-- 10 points for the cumulative report and listing of goals for the next sprint
-- 10 points for the Presentation style
-  - The grading for the presentation will be a standard presentation
-  - Was there a clear opening?
-  - Was there a clear explanation of the entire report content (not read of the page)?
-  - Was there a clear conclusion?
+- 20 points for the UI/UX portion, including goals defined, goals met, and any assumptions made
+- 20 points for the Security and Testing portion including goals defined, goals met, and any assumptions made
+- 20 points for IT and Infrastructure Report including goals defined, goals met, and any assumptions made
+- 20 points for Developer and Coding reports including goals defined, goals met, and any assumptions made
+- 10 points for the install.md (your install instructions will be tested, so it needs to work)
+- 10 points for presentation.  The presentation should match the goals completed to your User/Admin Story.  Map them in aggregate to show your teams progress.
+- ~~10 points for the cumulative report and listing of goals for the next sprint~~
+- ~~10 points for the Presentation style~~
+  - ~~The grading for the presentation will be a standard presentation~~
+  - ~~Was there a clear opening?~~
+  - ~~Was there a clear explanation of the entire report content (not read of the page)?~~
+  - ~~Was there a clear conclusion?~~
 
 Each section will be graded on a Likert Scale:
 
