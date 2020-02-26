@@ -291,24 +291,70 @@ dataFrames[0].count() > dataFrames[1].count()
   - How then can we append to a DataFrame?
   - In order to append to a DataFrame, you must **union** the original DataFrame along with the new DataFrame
   - Both DataFrames need to have the same schema and number of columns, otherwise the operation fails
-  - ```python
+  - The new DataFrame union can be assigned to a view or registered as a table to allow your code to reference it
+
+```python
 from pyspark.sql import Row
 schema = df.schema
 newRows = [
   Row("New Country", "Other Country", 5L),
   Row("New Country 2", "Other Country 3", 1L)  
 ]
-paralleizedRows = spark.sparkContext.parallelize(newRows)
+parallelizedRows = spark.sparkContext.parallelize(newRows)
 newDF = spark.createDataFrame(parallelizedRows, schema)
 ```
-  - ```python
+
+```python
 df.union(newDF).where("count = 1").where(col("ORIGIN_COUNTRY_NAME") != "United States").show()
 ```
 
+## Sorting Rows
+
+- You can sort the output of a DataFrame
+  - You can use the `sort` and `orderBy`, they work exactly the same
+  - They accept both column expressions and strings as well as multiple columns
+  - Default is to sort ascending
+  - You can sort nulls, `asc_nulls_first`, `desc_nulls_first`, `asc_nulls_last`, `desc_nulls_last`
+
+```python
+df.sort("count").show(5)
+df.orderBy("count", "DEST_COUNTRY_NAME").show(5)
+df.orderBy(col("count"), col("DEST_COUNTRY_NAME")).show(5)
+```
+
+```python
+from pyspark.sql.functions import desc, asc
+df.orderBy(expr("count desc")).show(2)
+df.orderBy(col("count").desc(),col("DEST_COUNTRY_NAME").asc()).show(2)
+```
+
+```sql
+SELECT * FROM dfTable ORDER BY count DESC, DEST_COUNTRY_NAME ASC LIMIT 2
+```
+
+## Repartition and Coalesce
+
+- An important optimization opportunity is to partition the data according to a frequently filtered column
+  - This controls the physical layout of data across the cluster
+  - Including the partitioning scheme and the number of partitions
+- Repartitioning will incur a full shuffle
+  - This means you should only repartition when future number of partitions is greater than your current number of partitions
+  - Or when you are looking to partition by a set of columns
+  - `df.rdd.getNumPatitions()`{.python}
+  - `df.repartitions(5)`{.python}
+- If you know you will be filtering by a certain column often, you can repartition based on that column:
+  - `df.repartition(col("DEST_COUNTRY_NAME"))`{.python}
+  - You can specify how many partitions you want
+  - `df.repartition(5, col("DEST_COUNTRY_NAME"))`{.python}
 
 ## Conclusion
 
-- Conclusion here
+- This chapter covered basic DataFrame operations.
+  - We learned the simple concepts and tools that you will need to be successful with Spark DataFrames
+  - We learned what an expression is
+  - We learned the difference between Select and SelectExpr
+  - We learned how to add columns and rows to a DataFrame
+  - We learned how to take random samples from DataFrames
 
 ## Questions
 

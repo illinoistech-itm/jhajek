@@ -430,16 +430,69 @@ Chapter 05
 <li>How then can we append to a DataFrame?</li>
 <li>In order to append to a DataFrame, you must <strong>union</strong> the original DataFrame along with the new DataFrame</li>
 <li>Both DataFrames need to have the same schema and number of columns, otherwise the operation fails</li>
-<li>```python from pyspark.sql import Row schema = df.schema newRows = [ Row(“New Country”, “Other Country”, 5L), Row(“New Country 2”, “Other Country 3”, 1L)<br />
-] paralleizedRows = spark.sparkContext.parallelize(newRows) newDF = spark.createDataFrame(parallelizedRows, schema)</li>
+<li>The new DataFrame union can be assigned to a view or registered as a table to allow your code to reference it</li>
+</ul></li>
 </ul>
-<pre><code>- ```python
-df.union(newDF).where(&quot;count = 1&quot;).where(col(&quot;ORIGIN_COUNTRY_NAME&quot;) != &quot;United States&quot;).show()</code></pre></li>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" title="1"><span class="im">from</span> pyspark.sql <span class="im">import</span> Row</a>
+<a class="sourceLine" id="cb13-2" title="2">schema <span class="op">=</span> df.schema</a>
+<a class="sourceLine" id="cb13-3" title="3">newRows <span class="op">=</span> [</a>
+<a class="sourceLine" id="cb13-4" title="4">  Row(<span class="st">&quot;New Country&quot;</span>, <span class="st">&quot;Other Country&quot;</span>, 5L),</a>
+<a class="sourceLine" id="cb13-5" title="5">  Row(<span class="st">&quot;New Country 2&quot;</span>, <span class="st">&quot;Other Country 3&quot;</span>, 1L)  </a>
+<a class="sourceLine" id="cb13-6" title="6">]</a>
+<a class="sourceLine" id="cb13-7" title="7">parallelizedRows <span class="op">=</span> spark.sparkContext.parallelize(newRows)</a>
+<a class="sourceLine" id="cb13-8" title="8">newDF <span class="op">=</span> spark.createDataFrame(parallelizedRows, schema)</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" title="1">df.union(newDF).where(<span class="st">&quot;count = 1&quot;</span>).where(col(<span class="st">&quot;ORIGIN_COUNTRY_NAME&quot;</span>) <span class="op">!=</span> <span class="st">&quot;United States&quot;</span>).show()</a></code></pre></div>
+</div><div id="sorting-rows" class="slide section level2">
+<h1>Sorting Rows</h1>
+<ul class="incremental">
+<li>You can sort the output of a DataFrame
+<ul class="incremental">
+<li>You can use the <code>sort</code> and <code>orderBy</code>, they work exactly the same</li>
+<li>They accept both column expressions and strings as well as multiple columns</li>
+<li>Default is to sort ascending</li>
+<li>You can sort nulls, <code>asc_nulls_first</code>, <code>desc_nulls_first</code>, <code>asc_nulls_last</code>, <code>desc_nulls_last</code></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" title="1">df.sort(<span class="st">&quot;count&quot;</span>).show(<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb15-2" title="2">df.orderBy(<span class="st">&quot;count&quot;</span>, <span class="st">&quot;DEST_COUNTRY_NAME&quot;</span>).show(<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb15-3" title="3">df.orderBy(col(<span class="st">&quot;count&quot;</span>), col(<span class="st">&quot;DEST_COUNTRY_NAME&quot;</span>)).show(<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" title="1"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> desc, asc</a>
+<a class="sourceLine" id="cb16-2" title="2">df.orderBy(expr(<span class="st">&quot;count desc&quot;</span>)).show(<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb16-3" title="3">df.orderBy(col(<span class="st">&quot;count&quot;</span>).desc(),col(<span class="st">&quot;DEST_COUNTRY_NAME&quot;</span>).asc()).show(<span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb17-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> dfTable <span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">count</span> <span class="kw">DESC</span>, DEST_COUNTRY_NAME <span class="kw">ASC</span> <span class="kw">LIMIT</span> <span class="dv">2</span></a></code></pre></div>
+</div><div id="repartition-and-coalesce" class="slide section level2">
+<h1>Repartition and Coalesce</h1>
+<ul class="incremental">
+<li>An important optimization opportunity is to partition the data according to a frequently filtered column
+<ul class="incremental">
+<li>This controls the physical layout of data across the cluster</li>
+<li>Including the partitioning scheme and the number of partitions</li>
+</ul></li>
+<li>Repartitioning will incur a full shuffle
+<ul class="incremental">
+<li>This means you should only repartition when future number of partitions is greater than your current number of partitions</li>
+<li>Or when you are looking to partition by a set of columns</li>
+<li><code class="sourceCode python">df.rdd.getNumPatitions()</code></li>
+<li><code class="sourceCode python">df.repartitions(<span class="dv">5</span>)</code></li>
+</ul></li>
+<li>If you know you will be filtering by a certain column often, you can repartition based on that column:
+<ul class="incremental">
+<li><code class="sourceCode python">df.repartition(col(<span class="st">&quot;DEST_COUNTRY_NAME&quot;</span>))</code></li>
+<li>You can specify how many partitions you want</li>
+<li><code class="sourceCode python">df.repartition(<span class="dv">5</span>, col(<span class="st">&quot;DEST_COUNTRY_NAME&quot;</span>))</code></li>
+</ul></li>
 </ul>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>
 <ul class="incremental">
-<li>Conclusion here</li>
+<li>This chapter covered basic DataFrame operations.
+<ul class="incremental">
+<li>We learned the simple concepts and tools that you will need to be successful with Spark DataFrames</li>
+<li>We learned what an expression is</li>
+<li>We learned the difference between Select and SelectExpr</li>
+<li>We learned how to add columns and rows to a DataFrame</li>
+<li>We learned how to take random samples from DataFrames</li>
+</ul></li>
 </ul>
 </div><div id="questions" class="slide section level2">
 <h1>Questions</h1>
