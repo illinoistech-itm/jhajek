@@ -12,6 +12,10 @@
 
 - Introduce the tools we will use to manipulate DataFrames
 - Focus on fundamental DataFrame operations
+  - Understand what an expression is
+  - Understand the difference between Select and SelectExpr
+  - Understand how to add columns and rows to a DataFrame
+  - Understand how to take random samples from DataFrames
 
 ## Review
 
@@ -75,7 +79,7 @@ spark.read.format("json").load("Spark-The-Definitive-Guide/data/flight-data/json
 ## Declare a Schema
 
 ```python
-from pyspark.sql.types import StructField, StructType, String Type, LongType
+from pyspark.sql.types import StructField, StructType, StringType, LongType
 
 myManualSchema = StructType([StructField("DEST_COUNTRY_NAME",StringType(), True),
 StructField("ORIGIN_COUTNRY_NAME",StringType(),True),StructField("count", LongType(), False,metadata={"hello":"world"})])
@@ -124,7 +128,7 @@ column("someColumnName")
 ## Directed Acyclic Graph
 
 - This is also represented by in Python (64):
-  - ```from pyspark.sql.functions import expr expr("(((someCol + 5) * 200) -6) < "otherCol")```
+  - ```from pyspark.sql.functions import expr expr("(((someCol + 5) * 200) -6) < "otherCol")```{.python}
   - Previous expression is actually valid SQL code
 - This means you can write your expressions as DataFrame code or as SQL expressions and get the same performance characteristics
 
@@ -141,14 +145,14 @@ column("someColumnName")
   - `df.first()`
 - Only DataFrames have schemas, Rows do not have a schema
 - To create a *Row* you must append values in the correct "schema"
-  - ```from pyspark.sql import Row```
-  - ```myRow = Row("Hello", None, 1, False)```
+  - ```from pyspark.sql import Row```{.python}
+  - ```myRow = Row("Hello", None, 1, False)```{.python}
 - To access Rows, Python and R will autodetect the datatype
-  - myRow[2]
-  - myRow[0]
+  - myRow[2]{.python}
+  - myRow[0]{.python}
 - Scala and Java will require casting or coercing the values
-  - ```myRow(0).asInstanceOf[String] // String```
-  - ```myRow.getInt(2)```
+  - ```myRow(0).asInstanceOf[String] // String```{.scala}
+  - ```myRow.getInt(2)```{.scala}
 
 ## DataFrame Transformations
 
@@ -171,16 +175,16 @@ column("someColumnName")
 
 ```python
 df = spark.read.format("json").load("data/flight-data/json/2015-summary.json")
-df.createORReplaceTempView("dfTable")
+df.createOrReplaceTempView("dfTable")
 ```
 
 ```scala
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.types{StructField, StructType, StringType, LongType}
 
-val myManualSchema = new StructType(Array(new STructField("some", StringType, true),new StructField("col", StringType, true),new StructFiled("names", LongType, false)))
+val myManualSchema = new StructType(Array(new StructField("some", StringType, true),new StructField("col", StringType, true),new StructFiled("names", LongType, false)))
 val myRows = Seq(Row("Hello", null, 1L))
-val myRDD = spark.sparkContect.parallelize(myRows)
+val myRDD = spark.sparkContext.parallelize(myRows)
 val myDf = spark.createDataFrame(myRDD, myManualSchema)
 myDf.show()
 ```
@@ -209,8 +213,8 @@ myDf.show()
 - Use the *selectExpr* method when working with expressions in **strings**
 - Both are found in ```org.apache.spark.sql.functions```
   - select and selectExpr allow you to execute SQL queries on a DataFrame
-  - ```df.select("DEST_COUNTRY_NAME").show(2)```
-  - ```SELECT DEST_COUNTRY_NAME FROM dfTable LIMIT 2```
+  - ```df.select("DEST_COUNTRY_NAME").show(2)```{.python}
+  - ```SELECT DEST_COUNTRY_NAME FROM dfTable LIMIT 2```{.sql}
 - You can select multiple columns by using a comma
 
 ```python
@@ -225,35 +229,82 @@ df.select(
 
 ## selectExpr
 
-- If you find yourself typing a bunch of *select* then *expr* statements
-  - then ```selectExpr``` is the convenient interface you want
-  - ```df.selectExpr("DEST_COUNTRY_NAME" as newColumnName:,"DEST_COUNTRY_NAME").show(2)```
+- If you find yourself typing a bunch of *select* then *expr* statements:
+  - Then ```selectExpr``` is the convenient interface you want
   - We can add new columns to a DataFrame
 - We can use `selectExpr` to build up complex expressions and create new DataFrames
-  - ```df.selectExpr("*",("DEST_COUNTRY_NAME = ORIGIN_COUNTRY_NAME") as withinCountry).show(2)```
-  - ```SELECT *, (DEST_COUNTRY_NAME = ORIGIN_COUNTRY_NAME) as withinCountry FROM dfTable LIMIT 2```
+  - ```df.selectExpr("*",("DEST_COUNTRY_NAME = ORIGIN_COUNTRY_NAME") as withinCountry).show(2)```{.python}
+  - ```SELECT *, (DEST_COUNTRY_NAME = ORIGIN_COUNTRY_NAME) as withinCountry FROM dfTable LIMIT 2```{.sql}
 - We can specify aggregations over an entire DataFrame
-  - ```df.selectExpr("avg(count"), "count(distinct(DEST_COUNTRY_NAME))").show(2)```
-  - ```SELECT avg(count), count(distinct(DEST_COUNTRY_NAME)) FROM dfTable LIMIT 2```  
+  - ```df.selectExpr("avg(count"), "count(distinct(DEST_COUNTRY_NAME))").show(2)```{.python}
+  - ```SELECT avg(count), count(distinct(DEST_COUNTRY_NAME)) FROM dfTable LIMIT 2```{.sql}  
 
 ## Spark Literals
 
 - Sometimes we need to pass a literal value, such as a constant
-  - ```from pyspark.sql.functions import lit```
-  - ```df.selectExpr(expr("*"), lit(1).alias("One")).show(2)```
-  - This will come up when you need to check if a value against a predetermined value
-- Adding additional columns is possible: ```withColumn```
-  - ```df.withColumn("withinCountry", expr("ORIGIN_COUNTRY_NAME == DEST_COUNTRY_NAME")).show(2)```
+  - ```from pyspark.sql.functions import lit```{.python}
+  - ```df.selectExpr(expr("*"), lit(1).alias("One")).show(2)```{.python}
+  - This will come up when you need to check a Row value against a predetermined constant value
+- Adding additional columns is possible: ```.withColumn()```
+  - ```df.withColumn("withinCountry", expr("ORIGIN_COUNTRY_NAME == DEST_COUNTRY_NAME")).show(2)```{.python}
   - This creates a column with a Boolean if the ORIGIN and DEST Country name match.  
     - This can save much time in a lookup later on as you will not have to do String comparison
 - Columns can be dropped as well
-  - ```df.drop("ORIGIN_COUNTRY_NAME").columns```
+  - ```df.drop("ORIGIN_COUNTRY_NAME").columns```{.python}
 - You can cast columns as well
-  - ```df.withColumn("count2", col("count").cast("long"))```
+  - ```df.withColumn("count2", col("count").cast("long"))```{.python}
+  - Renaming a column is possible using the ```.withColumnRenamed("existingColumnName","newColumnName")```{.python}
 
-## P 72
+## Filter and Where Clauses 72
 
-- We will stop here for today
+- In working with Spark DataFrames, you can use both ```where``` and ```filter``` on a DataFrame
+  - ```df.filter(col("count") < 2).show(2)```{.python}
+  - ```df.where("count < 2").show(2)```{.python}
+  - More details in Chapter 11
+- Both statements have the same output, ```where``` is a familiar term from SQL so the book will use that
+- You can chain multiple ```where``` statements together, Spark will handle the expressions at run time
+  - ```df.where(col("count") < 2).where(col("ORIGIN_COUNTRY_NAME") != "Croatia").show(2)```{.python}
+  - ```SELECT * FROM dfTable WHERE count < 2 AND ORIGIN_COUNTRY_NAME != "Croatia" LIMIT 2```{.sql}
+- You can access distinct results as we saw earlier in the chapter
+  - `df.select("ORIGIN_COUNTRY_NAME", "DEST_COUNTRY_NAME").distinct().count()`{.python}
+
+## Random Samples and Splits
+
+- Sometimes you want to select a random sample of data for running a test on a small representative set
+  - You can use the `sample` method on a DataFrame
+  - ```python
+seed = 5
+withReplacement = False
+fraction = 0.5
+df.sample(withReplacement, fraction, seed).count()
+```
+- You can split a DataFrame
+  - The `seed` definition is how the random selection is begun
+  - ```python
+dataFrames = df.randomSplit([0.25, 0.75], seed)
+dataFrames[0].count() > dataFrames[1].count()
+```
+
+## Concatenating and Appending Rows (Union)
+
+- Previously we learned that DataFrames are **immutable**
+  - How then can we append to a DataFrame?
+  - In order to append to a DataFrame, you must **union** the original DataFrame along with the new DataFrame
+  - Both DataFrames need to have the same schema and number of columns, otherwise the operation fails
+  - ```python
+from pyspark.sql import Row
+schema = df.schema
+newRows = [
+  Row("New Country", "Other Country", 5L),
+  Row("New Country 2", "Other Country 3", 1L)  
+]
+paralleizedRows = spark.sparkContext.parallelize(newRows)
+newDF = spark.createDataFrame(parallelizedRows, schema)
+```
+  - ```python
+df.union(newDF).where("count = 1").where(col("ORIGIN_COUNTRY_NAME") != "United States").show()
+```
+
 
 ## Conclusion
 
