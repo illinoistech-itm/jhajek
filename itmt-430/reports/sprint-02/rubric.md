@@ -118,7 +118,7 @@ Each Project will have additional specific details to be delivered once the exac
 
 ## Written Report Content
 
-At the start of each sprint each person will contribute their deliverables.  This list of atomic ~~events~~ tasks will be used to grade each person's contribution to the overall project for each sprint.  The project manager will be responsible to collecting the team's input and prepare a report.  You will receive feedback from me on this report.  The report should state the following at the minimum with additional information will be released per sprint.
+At the start of each sprint each person will contribute their deliverables.  This list of atomic ~~events~~ tasks will be used to grade each person's contribution to the overall project for each sprint.  The project manager will be responsible to collecting the team's input and prepare a report written in markdown.  You will receive feedback from me on this report.  The report should state the following at the minimum with additional information will be released per sprint.
 
 - List the team members and describe their functions during the spring
 - Describe the groups stated (atomic) goals for the sprint
