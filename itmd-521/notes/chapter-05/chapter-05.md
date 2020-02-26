@@ -349,7 +349,7 @@ SELECT * FROM dfTable ORDER BY count DESC, DEST_COUNTRY_NAME ASC LIMIT 2
 
 ## Conclusion
 
-- This chapter covered basic DataFrame operations.
+- This chapter covered basic DataFrame operations:
   - We learned the simple concepts and tools that you will need to be successful with Spark DataFrames
   - We learned what an expression is
   - We learned the difference between Select and SelectExpr
