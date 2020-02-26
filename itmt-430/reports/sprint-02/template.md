@@ -6,11 +6,13 @@ List team members and roles here
 
 ## Project Manager Report
 
-List all atomic defined goals for the sprint and place screenshots showing the artifact that completes the particular goal.   In addition, present the screenshots of your working system and explain which parts of your User Story is still outstanding.  An artifact in this case is a GitHub commit SHA hash and the JIRA/Trello screenshot of the task *completed*.
+List all atomic defined goals for the sprint and place screenshots showing the artifact that completes the particular goal.   In addition, present the screenshots of your working system and explain which parts of your User Story is still outstanding.  An artifact in this case is a GitHub commit SHA hash and URL and the JIRA/Trello screenshot of the task *completed*.
+
+Show the completed goals as they overlay on the User/Admin story--to chart your progress
 
 ## Atomic Goals for Sprint-03
 
-List atomic goals here in ordered list, minimum 3 per category
+List atomic goals here in ordered list, minimum ~~3~~ 5 per category
 
 ## UI/UX Report
 
