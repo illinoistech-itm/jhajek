@@ -14,18 +14,28 @@ Points
 
 The assignment will be 100 points cumulative.
 
--   20 points for the UI/UX portion
--   20 points for the Security Assumptions
--   20 points for IT and Infrastructure Report
--   20 points for Developer and Coding assumptions
--   10 points for the cumulative report and listing of goals for the
-    next sprint
--   10 points for the Presentation style
-    -   The grading for the presentation will be a standard presentation
-    -   Was there a clear opening?
-    -   Was there a clear explanation of the entire report content (not
-        read of the page)?
-    -   Was there a clear conclusion?
+-   20 points for the UI/UX portion, including goals defined, goals met,
+    and any assumptions made
+-   20 points for the Security and Testing portion including goals
+    defined, goals met, and any assumptions made
+-   20 points for IT and Infrastructure Report including goals defined,
+    goals met, and any assumptions made
+-   20 points for Developer and Coding reports including goals defined,
+    goals met, and any assumptions made
+-   10 points for the install.md (your install instructions will be
+    tested, so it needs to work)
+-   10 points for presentation. The presentation should match the goals
+    completed to your User/Admin Story. Map them in aggregate to show
+    your teams progress.
+-   ~~10 points for the cumulative report and listing of goals for the
+    next sprint~~
+-   ~~10 points for the Presentation style~~
+    -   ~~The grading for the presentation will be a standard
+        presentation~~
+    -   ~~Was there a clear opening?~~
+    -   ~~Was there a clear explanation of the entire report content
+        (not read of the page)?~~
+    -   ~~Was there a clear conclusion?~~
 
 Each section will be graded on a Likert Scale:
 
@@ -154,31 +164,33 @@ At the start of each sprint each person will contribute their
 deliverables. This list of atomic ~~events~~ tasks will be used to grade
 each person's contribution to the overall project for each sprint. The
 project manager will be responsible to collecting the team's input and
-prepare a report. You will receive feedback from me on this report. The
-report should state the following at the minimum with additional
-information will be released per sprint.
+prepare a report written in markdown. You will receive feedback from me
+on this report. ~~The report should state the following at the minimum
+with additional information will be released per sprint.~~
 
--   List the team members and describe their functions during the spring
--   Describe the groups stated (atomic) goals for the sprint
-    -   Describe how each of these goals were accomplished
-    -   Explain and show how bugs were found, tracked, and delegated
-    -   Explain any security assumptions made and explain how these were
-        discovered and mitigated
--   List the goals for the next sprint
+-   List the team members and describe their functions during the sprint
+-   Describe the group's stated (atomic) goals for the sprint
+    -   Describe how each of these section's goals were accomplished
+        along with Project Management tool and GitHub artifact to show
+        how it was done
+    -   List all assumptions made
+-   List the atomic goals for the next sprint
 -   Each team member should submit a small comment of their own
     accomplishments and describe what they did and explain any decisions
     referencing any lectures or material from the text book or web
--   Reference decisions from any of the videos, guest lectures, and
-    class presentations, or text book
--   Also in the main directory of the team GitHub repo, there needs to
-    be an **install.md** file with instructions and assumptions of how
-    to install and run your project
+-   ~~Reference decisions from any of the videos, guest lectures, and
+    class presentations, or text book~~
+-   In the main directory of the team GitHub repo, there needs to be an
+    **install.md** file with instructions and assumptions of how to
+    install and run your project
 
 Report
 ------
 
 This story will weave together the contributions of each team member
-into a single narrative.
+into a single narrative. Showing how the goals were laid out and how
+they were completed compared to the User/Admin story--showing your
+current progress
 
 Deliverable
 -----------
