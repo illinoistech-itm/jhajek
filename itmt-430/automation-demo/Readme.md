@@ -66,8 +66,19 @@ git clone git@github.com:illinoistech-itm/hajek.git
 You are prompted with a yes/no prompt, which will prevent an automated cloning.
 ![*Yes/No fingerprinting*](images/yesno.jpg "Yes/No prompt for SSH fingerprinting")
 
+There is a way to disable the fingerprinting.   It involves creating a file called `config` and placing it in your `~/.ssh` directory. This `config` file is an SSH default file that any SSH connection will read automatically.   This helps setup FQDNs or complicated file paths and saves you the time to type them.  The file should contain this content at the least:
 
-One aspect of cloning via SSH is we now introduce the concept of fingerprinting, or anti-man-in-the-middle. 
+```bash
+Host   github.com
+Hostname github.com
+IdentityFile  /home/vagrant/.ssh/id_rsa
+StrictHostKeyChecking no
+```
+
+* The value ```StrictHostKeyChecking``` is what turns off the fingerprint checking.  
+* The `IdentityFile` value should point to your private key location (id_rsa)
+
+One aspect of cloning via SSH is we now introduce the concept of fingerprinting, or anti-man-in-the-middle.
 
 ## Packer User-Variables
 
