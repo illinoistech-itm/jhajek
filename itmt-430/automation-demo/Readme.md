@@ -54,6 +54,21 @@ Open your Public Key and paste the content into a new GitHub Deploy Key. Give th
 
 ![*How to add a new key*](images/add-new-key.jpg "How to add a GitHub Deploy Key")
 
+### SSH Config
+
+What happens when we run this command?
+
+```bash
+# replace hajek.git with your teams or your own private repo name
+git clone git@github.com:illinoistech-itm/hajek.git
+```
+
+You are prompted with a yes/no prompt, which will prevent an automated cloning.
+![*Yes/No fingerprinting*](images/yesno.jpg "Yes/No prompt for SSH fingerprinting")
+
+
+One aspect of cloning via SSH is we now introduce the concept of fingerprinting, or anti-man-in-the-middle. 
+
 ## Packer User-Variables
 
 In this example we will be using Packer and Vagrant.  Packer will be used to construct and automate the build of our application.  Packer makes use of `scp` commands during its post-provisioner phase in order to allow files and other secrets to be transferred.  
