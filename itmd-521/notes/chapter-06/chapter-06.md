@@ -74,7 +74,7 @@ root
 
 ```python
 from pyspark.sql.functions import instr
-priceFilter - col("UnitPrice") > 600
+priceFilter = col("UnitPrice") > 600
 descripFilter = instr(df.Description, "POSTAGE") >= 1
 df.where(df.StockCode.isin("DOT")).where(priceFilter | descripFilter).show()
 ```
@@ -87,7 +87,7 @@ SELECT * FROM dfTable WHERE StockCode in ("DOT") AND (UnitPrice > 600 OR instr(D
 
 ```python
 from pyspark.sql.functions import instr
-DOTCodeFileter = col("StockCode") == "DOT"
+DOTCodeFilter = col("StockCode") == "DOT"
 priceFilter = col("UnitPrice") > 600
 descripFilter = instr(col("Description"), "POSTAGE") >= 1
 df.withColumn("isExpensive", DOTCodeFilter & (priceFilter | descripFilter)).where("isExpensive").select("unitPrice","isExpensive").show(5)
