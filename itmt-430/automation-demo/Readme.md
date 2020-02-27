@@ -78,6 +78,10 @@ StrictHostKeyChecking no
 * The value ```StrictHostKeyChecking``` is what turns off the fingerprint checking.  
 * The `IdentityFile` value should point to your private key location (id_rsa)
 
+After adding the `config` file, we now encounter a file permission error.  You will see the issue here is that GitHub requires the file to be permission 600 if you are on Linux or Mac, but not Windows.  
+
+![*bad-permission*](images/bad-permission.jpg "How to solve the bad permission issues for SSH")
+
 One aspect of cloning via SSH is we now introduce the concept of fingerprinting, or anti-man-in-the-middle.
 
 ## Packer User-Variables
