@@ -31,7 +31,7 @@ git clone https://github.com/jhajek/packer-vagrant-build-scripts.git
 # The sample application code is located in my public repo jhajek
 # you can clone this and copy it to your own private repo, located in the itmt-430 directory > sample code
 git clone https://github/com/illinoistech-itm/jhajek.git
-```b
+```
 
 In this repo, under the folder named Packer > itmt430 you will find a detailed [Readme.md](https://github.com/jhajek/packer-vagrant-build-scripts/blob/master/packer/itmt430/ReadMe.md "Detailed Sample Project Repo Link").  The content of that link will be reprinted here.
 
