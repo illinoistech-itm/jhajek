@@ -6,12 +6,16 @@ This is a small demo that will show the concepts of application automation
 
 * Discuss and explain issues of authentication and access with automation
 * Understand secrets management and discuss potential software solutions
-* Discuss and understand the creation and use of SSH/RSA keys
-* Discuss and understand software automation solutions
+* Discuss and understand the creation and use of SSH/RSA keys in relation to private repositories
+* Describe and Understand the functional domains of Packer and Vagrant
+  * How to manage the creation of virtual machine images/artifacts with Packer
+  * How to manage, create, and start those Virtual Machines in Vagrant
+  * How to manage private networking in VirtualBox/Vagrant for application deployment
+* Describe and understand the concept of provisioning and post-processing of virtual machine artifacts
 
 ## Outcomes
 
-At the end of this demonstration you will be able to deploy two sample applications.  The first involving pre-seeding a root password for a database (MariaDB) and pre-seeding 3 records into the database via automation software and from a private GitHub repo.  The second will involve deploying a small NodeJS application and application code as well as a proxy frontend from a private GitHub repo.
+At the end of this demonstration you will be able to deploy create two virtual machines, containing a sample NodeJS application and a sample relational database, via Packer and run/managed via Vagrant.  You will have successfully deployed this application code from a private GitHub repo via SSH and securely used RSA keys and Linux ENV variables to do so.
 
 ## Setup
 
@@ -22,6 +26,12 @@ You can clone the sample code I will be using--issue the command:
 ```bash
 git clone https://github.com/jhajek/packer-vagrant-build-scripts.git
 ```
+
+```bash
+# The sample application code is located in my public repo jhajek
+# you can clone this and copy it to your own private repo, located in the itmt-430 directory > sample code
+git clone https://github/com/illinoistech-itm/jhajek.git
+```b
 
 In this repo, under the folder named Packer > itmt430 you will find a detailed [Readme.md](https://github.com/jhajek/packer-vagrant-build-scripts/blob/master/packer/itmt430/ReadMe.md "Detailed Sample Project Repo Link").  The content of that link will be reprinted here.
 
