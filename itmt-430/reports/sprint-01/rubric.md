@@ -14,6 +14,7 @@ The assignment will be 100 points cumulative.
 - 20 points for Developer and Coding assumptions
 - 10 points for the cumulative report and listing of goals for the next sprint
 - 10 points for the Presentation style
+  
   - The grading for the presentation will be a standard presentation
   - Was there a clear opening?
   - Was there a clear explanation of the entire report content (not read of the page)?
