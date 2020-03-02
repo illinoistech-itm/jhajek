@@ -53,3 +53,8 @@ pull-repo.ps1
 roster.txt
 clone-bash.sh
 pull-repo.sh
+
+# Artifacts for Published Documents
+*.pdf
+*.docx
+*.txt
