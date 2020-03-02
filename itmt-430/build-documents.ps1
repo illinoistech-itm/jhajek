@@ -18,4 +18,4 @@ pandoc -s -o ./reports/sprint-02/template.txt ./reports/sprint-02/template.md
 pandoc -s -o ./reports/sprint-02/template.docx ./reports/sprint-02/template.md
 pandoc -s -o ./reports/sprint-02/rubric.txt ./reports/sprint-02/rubric.md
 pandoc -s -o ./reports/sprint-02/rubric.docx ./reports/sprint-02/rubric.md
-pandoc -s -o ./reports/sprint-02/rubric.pdf ./reports/sprint-02/rubric.md
+pandoc -s -o ./reports/sprint-02/rubric.pdf -V geometry:margin=.75in ./reports/sprint-02/rubric.md
