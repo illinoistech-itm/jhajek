@@ -173,21 +173,21 @@ root
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" title="1"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> instr</a>
-<a class="sourceLine" id="cb3-2" title="2">priceFilter <span class="op">-</span> col(<span class="st">&quot;UnitPrice&quot;</span>) <span class="op">&gt;</span> <span class="dv">600</span></a>
+<a class="sourceLine" id="cb3-2" title="2">priceFilter <span class="op">=</span> col(<span class="st">&quot;UnitPrice&quot;</span>) <span class="op">&gt;</span> <span class="dv">600</span></a>
 <a class="sourceLine" id="cb3-3" title="3">descripFilter <span class="op">=</span> instr(df.Description, <span class="st">&quot;POSTAGE&quot;</span>) <span class="op">&gt;=</span> <span class="dv">1</span></a>
 <a class="sourceLine" id="cb3-4" title="4">df.where(df.StockCode.isin(<span class="st">&quot;DOT&quot;</span>)).where(priceFilter <span class="op">|</span> descripFilter).show()</a></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> dfTable <span class="kw">WHERE</span> StockCode <span class="kw">in</span> (<span class="ot">&quot;DOT&quot;</span>) <span class="kw">AND</span> (UnitPrice <span class="op">&gt;</span> <span class="dv">600</span> <span class="kw">OR</span> <span class="fu">instr</span>(Description, <span class="ot">&quot;POSTAGE&quot;</span>) <span class="op">&gt;=</span> <span class="dv">1</span>)</a></code></pre></div>
 </div><div id="boolean-column" class="slide section level2">
 <h1>Boolean Column</h1>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" title="1"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> instr</a>
-<a class="sourceLine" id="cb5-2" title="2">DOTCodeFileter <span class="op">=</span> col(<span class="st">&quot;StockCode&quot;</span>) <span class="op">==</span> <span class="st">&quot;DOT&quot;</span></a>
+<a class="sourceLine" id="cb5-2" title="2">DOTCodeFilter <span class="op">=</span> col(<span class="st">&quot;StockCode&quot;</span>) <span class="op">==</span> <span class="st">&quot;DOT&quot;</span></a>
 <a class="sourceLine" id="cb5-3" title="3">priceFilter <span class="op">=</span> col(<span class="st">&quot;UnitPrice&quot;</span>) <span class="op">&gt;</span> <span class="dv">600</span></a>
 <a class="sourceLine" id="cb5-4" title="4">descripFilter <span class="op">=</span> instr(col(<span class="st">&quot;Description&quot;</span>), <span class="st">&quot;POSTAGE&quot;</span>) <span class="op">&gt;=</span> <span class="dv">1</span></a>
 <a class="sourceLine" id="cb5-5" title="5">df.withColumn(<span class="st">&quot;isExpensive&quot;</span>, DOTCodeFilter <span class="op">&amp;</span> (priceFilter <span class="op">|</span> descripFilter)).where(<span class="st">&quot;isExpensive&quot;</span>).select(<span class="st">&quot;unitPrice&quot;</span>,<span class="st">&quot;isExpensive&quot;</span>).show(<span class="dv">5</span>)</a></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb6-1" title="1"><span class="co">--in SQL</span></a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw">SELECT</span> UnitPrice, (StockCode <span class="op">=</span> <span class="st">&#39;DOT&#39;</span> <span class="kw">AND</span> (UnitPrice <span class="op">&gt;</span> <span class="dv">600</span> <span class="kw">or</span> <span class="fu">instr</span>(Description, <span class="ot">&quot;POSTAGE&quot;</span>) <span class="op">&gt;=</span> <span class="dv">1</span>)) <span class="kw">as</span> isExpensive</a>
 <a class="sourceLine" id="cb6-3" title="3"><span class="kw">FROM</span> dfTable</a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="kw">WHERE</span> (StockCode <span class="op">=</span> <span class="st">&#39;DOT&#39;</span> <span class="kw">AND</span> (UnitPrice . <span class="dv">600</span> <span class="kw">OR</span> <span class="fu">instr</span>(Description, <span class="ot">&quot;POSTAGE&quot;</span>) <span class="op">&gt;=</span> <span class="dv">1</span>))</a></code></pre></div>
+<a class="sourceLine" id="cb6-4" title="4"><span class="kw">WHERE</span> (StockCode <span class="op">=</span> <span class="st">&#39;DOT&#39;</span> <span class="kw">AND</span> (UnitPrice <span class="op">&gt;</span> <span class="dv">600</span> <span class="kw">OR</span> <span class="fu">instr</span>(Description, <span class="ot">&quot;POSTAGE&quot;</span>) <span class="op">&gt;=</span> <span class="dv">1</span>))</a></code></pre></div>
 </div><div id="working-with-numbers-and-nulls" class="slide section level2">
 <h1>Working With Numbers and Nulls</h1>
 <ul class="incremental">
@@ -213,7 +213,7 @@ root
 <li>Calculate the <a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient" title="Pearson&#39;s R Definition">Pearson Correlation</a></li>
 <li><code class="sourceCode python"><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> corr</code></li>
 <li><code class="sourceCode python">df.stat.corr(<span class="st">&quot;Quantity&quot;</span>, <span class="st">&quot;UnitPrice&quot;</span>)</code></li>
-<li><code class="sourceCode python">df.select(corr(<span class="st">&quot;Quantity&quot;</span>, UnityPrice<span class="st">&quot;)).show()</span></code></li>
+<li><code class="sourceCode python">df.select(corr(<span class="st">&quot;Quantity&quot;</span>, <span class="st">&quot;UnitPrice&quot;</span>)).show()</code></li>
 </ul></li>
 <li>You can use a single <code>describe()</code> method to generate the following:
 <ul class="incremental">
