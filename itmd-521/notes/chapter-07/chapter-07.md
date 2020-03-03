@@ -81,9 +81,35 @@
   - `cov` and `corr`
   - Chapter 6 talked about the [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient "Pearson Correlation coefficient wiki page")
   - Correlation is measured on a -1 to 1 scale
-  - The covariance can be taken over a population sample or the entire population of records
-  - Page 110
+  - The covariance can be taken over a population sample or the entire population of records 110
 
+## Grouping
+
+- We have done ```groupBy```{.python} on the DataFrame level aggregations
+  - We can perform calculations based on *groups* in the data
+  - Using our purchase data DataFrame, for example we can group on unique **invoice number** and do a ```count()``` of items on that invoice
+  - This returns a second DataFrame that is lazily evaluated
+  - ```df.groupBy("InvoiceNo","CustomerId").count().show()```{.python}
+  - ```SELECT count(*) FROM dfTable GROUP BY InvoiceNo, CustomerId```{.sql}
+- We can specify an arbitrary expression statement as an ```agg``` statement
+  - This makes it possible to say *alias* a column
+  - ```df.groupBy("InvoiceNo").agg(count("Quantity").alias("quan"), expr(count(Quantity)")).show()```{.python}
+
+## Grouping With Maps
+
+- Sometimes it can be easier to specify your transformations as a series of **Maps**
+  - For which the key is the column 
+  - The value is the aggregation function that you would like to perform
+- ```df.groupBy("InvoiceNo").agg(expr("avg(Quantity)"),expr("stddev_pop(Quantity)")).show()```{.python}
+
+## Window Functions 112
+
+- Window Functions can be used to carry out aggregations by computing on a certain *window* of data
+  - This sounds very similar to a ```groupBy```{.python} function, so what is the difference?
+  - ```groupBy```{.python} takes data and every row can only go into one grouping
+  - A Window function calculates a return value for every input row of a table based on groups of rows, called a **frame**
+    - Not a DataFrame
+  - Each row can fall into one or more frame, unlike a ```groupBy```{.python}
 
 ## Conclusion
 
