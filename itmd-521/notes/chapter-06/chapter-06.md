@@ -118,7 +118,7 @@ WHERE (StockCode = 'DOT' AND (UnitPrice . 600 OR instr(Description, "POSTAGE") >
   - Calculate the [Pearson Correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient "Pearson's R Definition")
   - ```from pyspark.sql.functions import corr```{.python}
   - ```df.stat.corr("Quantity", "UnitPrice")```{.python}
-  - ```df.select(corr("Quantity", UnityPrice")).show()```{.python}
+  - ```df.select(corr("Quantity", "UnitPrice")).show()```{.python}
 - You can use a single `describe()` method to generate the following:
   - count
   - mean
