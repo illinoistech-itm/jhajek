@@ -97,7 +97,7 @@ df.withColumn("isExpensive", DOTCodeFilter & (priceFilter | descripFilter)).wher
 --in SQL
 SELECT UnitPrice, (StockCode = 'DOT' AND (UnitPrice > 600 or instr(Description, "POSTAGE") >= 1)) as isExpensive
 FROM dfTable
-WHERE (StockCode = 'DOT' AND (UnitPrice . 600 OR instr(Description, "POSTAGE") >= 1))
+WHERE (StockCode = 'DOT' AND (UnitPrice > 600 OR instr(Description, "POSTAGE") >= 1))
 ```
 
 ## Working With Numbers and Nulls
