@@ -110,6 +110,12 @@
   - A Window function calculates a return value for every input row of a table based on groups of rows, called a **frame**
     - Not a DataFrame
   - Each row can fall into one or more frame, unlike a ```groupBy```{.python}
+  - ![*Figure 7.1 Visualizing a Window*](images/figure-7-1.png "Image Visualizing a Window Function")
+
+
+## Example of a Window
+
+- 
 
 ## Conclusion
 
