@@ -98,7 +98,7 @@
 ## Grouping With Maps
 
 - Sometimes it can be easier to specify your transformations as a series of **Maps**
-  - For which the key is the column 
+  - For which the key is the column
   - The value is the aggregation function that you would like to perform
 - ```df.groupBy("InvoiceNo").agg(expr("avg(Quantity)"),expr("stddev_pop(Quantity)")).show()```{.python}
 
@@ -112,14 +112,30 @@
   - Each row can fall into one or more frame, unlike a ```groupBy```{.python}
   - ![*Figure 7.1 Visualizing a Window*](images/figure-7-1.png "Image Visualizing a Window Function")
 
-
 ## Example of a Window
 
-- 
+- First we need to create a Window Specification
+- ```windowSpec = Window.partitionBy("CustomerId","date").orderBy(desc("Quantity")).rowsBetween(Window.unboundedPreceeding,Window.currentRow)```{.python}
+  - First the *partitionBy* here has nothing to do with storage partitions
+  - ```orderBy``` is how the Window will be sorted
+  - ```rowsBetween``` is the range of the Window
+- We can now run aggregation functions over these Windows
+  - ```maxPurchaseQuantity = max(col("Quantity").over("WindowSpec"))```{.python}
+  - This statement returns a column, which can be used in a DataFrame Select statement for further analysis
+  - We could now establish the maximum purchase quantity for each customer over all time
+  - `dense_rank()` and `rank()`
+
+## Remaining Aggregations
+
+- Lets take a look at the end of the chapter for definitions as the code sample helps immensely in defining these
+  - Rollups
+  - GroupingSets
+  - Cubes
+  - Pivot
 
 ## Conclusion
 
-- Conc goes here
+- We walked through the types of aggregations, from simply groupBy to Window Functions.  These are the basic sets of aggregations that can be performed.  
 
 ## Questions
 

@@ -245,10 +245,39 @@ Chapter 07
 <li><img src="images/figure-7-1.png" title="fig:Image Visualizing a Window Function" alt="Figure 7.1 Visualizing a Window" /></li>
 </ul></li>
 </ul>
+</div><div id="example-of-a-window" class="slide section level2">
+<h1>Example of a Window</h1>
+<ul class="incremental">
+<li>First we need to create a Window Specification</li>
+<li><code class="sourceCode python">windowSpec <span class="op">=</span> Window.partitionBy(<span class="st">&quot;CustomerId&quot;</span>,<span class="st">&quot;date&quot;</span>).orderBy(desc(<span class="st">&quot;Quantity&quot;</span>)).rowsBetween(Window.unboundedPreceeding,Window.currentRow)</code>
+<ul class="incremental">
+<li>First the <em>partitionBy</em> here has nothing to do with storage partitions</li>
+<li><code>orderBy</code> is how the Window will be sorted</li>
+<li><code>rowsBetween</code> is the range of the Window</li>
+</ul></li>
+<li>We can now run aggregation functions over these Windows
+<ul class="incremental">
+<li><code class="sourceCode python">maxPurchaseQuantity <span class="op">=</span> <span class="bu">max</span>(col(<span class="st">&quot;Quantity&quot;</span>).over(<span class="st">&quot;WindowSpec&quot;</span>))</code></li>
+<li>This statement returns a column, which can be used in a DataFrame Select statement for further analysis</li>
+<li>We could now establish the maximum purchase quantity for each customer over all time</li>
+<li><code>dense_rank()</code> and <code>rank()</code></li>
+</ul></li>
+</ul>
+</div><div id="remaining-aggregations" class="slide section level2">
+<h1>Remaining Aggregations</h1>
+<ul class="incremental">
+<li>Lets take a look at the end of the chapter for definitions as the code sample helps immensely in defining these
+<ul class="incremental">
+<li>Rollups</li>
+<li>GroupingSets</li>
+<li>Cubes</li>
+<li>Pivot</li>
+</ul></li>
+</ul>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>
 <ul class="incremental">
-<li>Conc goes here</li>
+<li>We walked through the types of aggregations, from simply groupBy to Window Functions. These are the basic sets of aggregations that can be performed.</li>
 </ul>
 </div><div id="questions" class="slide section level2">
 <h1>Questions</h1>
