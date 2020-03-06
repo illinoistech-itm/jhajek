@@ -1,0 +1,122 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=.50in]{geometry}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\date{}
+
+\begin{document}
+
+\hypertarget{sprint-03-written-report}{%
+\section{Sprint-03 Written Report}\label{sprint-03-written-report}}
+
+\hypertarget{team-number-xx}{%
+\subsection{Team Number XX}\label{team-number-xx}}
+
+List team members and roles here
+
+\hypertarget{uiux-artifacts}{%
+\subsubsection{UI/UX Artifacts}\label{uiux-artifacts}}
+
+Place links and or screenshots to minimum of 5 artifacts here. Artifacts
+are defined as Git commit SHA hashes via URL and Project Management Tool
+Kanban board (Trello or JIRA).
+
+\hypertarget{infrastructure}{%
+\subsubsection{Infrastructure}\label{infrastructure}}
+
+Place links and or screenshots to minimum of 5 artifacts here. Artifacts
+are defined as Git commit SHA hashes via URL and Project Management Tool
+Kanban board (Trello or JIRA)
+
+\hypertarget{developer}{%
+\subsubsection{Developer}\label{developer}}
+
+Place links and or screenshots to minimum of 5 artifacts here. Artifacts
+are defined as Git commit SHA hashes via URL and Project Management Tool
+Kanban board (Trello or JIRA)
+
+\hypertarget{junior-developer-and-security}{%
+\subsubsection{Junior Developer and
+Security}\label{junior-developer-and-security}}
+
+Place links and or screenshots to minimum of 5 artifacts here. Artifacts
+are defined as Git commit SHA hashes via URL and Project Management Tool
+Kanban board (Trello or JIRA)
+
+\hypertarget{project-manager}{%
+\subsubsection{Project Manager}\label{project-manager}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Place images of the full User \& Admin and/or anonymous story here
+  with annotations of functioning and non-functioning portions as
+  necessary
+\item
+  Include a file \texttt{install.md} in the root of the team GitHub Repo
+  detailing all instructions to build and run the functioning parts of
+  your site
+\item
+  Verify that all defined minimum goals were met and explain goals that
+  were reached beyond what was defined. Also explain reasons behind
+  goals that were not met.
+\item
+  Add any detailed assumptions your team made at this time to explain
+  any deliverables
+\item
+  List Atomic goals for sprint-04
+\end{enumerate}
+
+\end{document}
