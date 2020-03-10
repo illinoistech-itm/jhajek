@@ -30,4 +30,3 @@ Place screen shot to image of a minimum of 5 GitHub issues/bugs reported and ass
 1. Include a file  ```install.md``` in the root of the team GitHub Repo detailing all instructions to build and run the functioning parts of your site
 1. Verify that all defined minimum goals were met and explain goals that were reached beyond what was defined.  Also explain reasons behind goals that were not met.
 1. List any detailed assumptions your team made explaining deliverable context as needed
-1. List Atomic goals for sprint-04
