@@ -39,7 +39,6 @@ The assignment will be graded in two parts, 80 points for the report, 20 points 
 1. Include a file  ```install.md``` in the root of the team GitHub Repo detailing all instructions to build and run your application
 1. Verify that all defined minimum goals were met and explain any goals that were reached beyond what was defined.  Explain reasons behind goals that were not met
 1. List any detailed assumptions your team made explaining deliverable context as needed
-1. List Atomic goals for sprint-04, minimum 5 for each category (excluding Project Management)
 
 ### Presentation Rubric
 
@@ -54,7 +53,7 @@ Presentation is worth 20 points and needs to **only** contain the following:
 
 ### Written Report Deliverable
 
-The deliverable will be a single file named **sprint-03.md** located in a folder named **sprint-03** under the **reports** folder in your team GitHub repo.  Submit the URL to Blackboard under the Sprint-03 Assignment deliverable by the Project Manager as the report is a group submission.  Due date for the report is **9:35 AM the the day of your class lab time**, March 25 & 26 & 27.  
+The deliverable will be a single file named **sprint-03.md** located in a folder named **sprint-03** under the **reports** folder in your team GitHub repo.  Submit the URL to Blackboard under the Sprint-03 Assignment deliverable by the Project Manager as the report is a group submission.  Due date for the report is **9:35 AM the the day of your class lab time**, March 25 & 26 & 27.  Written report should follow the layout of document: ```written-report-submission-template.pdf```.
 
 ## Presentation Deliverable
 
