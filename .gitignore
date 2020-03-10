@@ -58,3 +58,5 @@ pull-repo.sh
 *.pdf
 *.docx
 *.txt
+
+variables.json
