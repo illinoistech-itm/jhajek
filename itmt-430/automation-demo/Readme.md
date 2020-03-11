@@ -390,16 +390,16 @@ git clone https://github.com/illinoistech-itm/jhajek
 
 ### Packer Cache Dir
 
-Packer lets you set an Environment (ENV) variable for caching downloaded ISO images.  The variable is named: ```PACKER_CACHE_DIR```.  You can set this as a user ENV variable in Windows or in a .bashrc file in MacOS or Linux.  This saves much time in building Packer artifacts, saving you the repeated downloads.
+Packer lets you set an Environment (ENV) variable for caching downloaded ISO images.  The variable is named: ```PACKER_CACHE_DIR```.  You can set this as a user ENV variable in Windows or in a `.bashrc` file in MacOS or Linux.  This saves much time in building Packer artifacts, saving you the repeated downloads.
 
 ![*Packer Cache Dir for Windows*](images/packer-cache-dir.png "Image of Cache Directory Location for Packer")
 
 ### Further Security Choices
 
-The methods described above are a good start, but might not be scalable beyond a small team.   A product recommended to look at is [Hashicorp Vault](https://www.vaultproject.io/ "Hashicorp Vault introduction website").  This is a much more centralized and scalable way to handle secrets that works locally and in the cloud.  It has direct integration with Packer, which skips the regular variable.json files method and instead pulls those values from an encrypted vault datastore.
+The methods described above are a good start, but might not be scalable beyond a small team.   A product recommended to look at is [Hashicorp Vault](https://www.vaultproject.io/ "Hashicorp Vault introduction website").  This is a much more centralized and scalable way to handle secrets that works locally and in the cloud.  [It has direct integration with Packer](https://packer.io/docs/templates/user-variables.html#vault-variables "Packer Integration with Vault webpage"), which skips the regular `variable.json` files method and instead pulls those values from an encrypted vault datastore.
 
-If you are looking for a challenge
+If you are looking for a challenge, try to implement this, and put it on your resume. If you are curious I have a working sample from a team form 2019
 
 ## Questions
 
-If you have any questions myself and the TA are available over the break and via Slack.  We will endeavor to help out where needed.
+If you have any questions myself and the TA are available over the break and via Slack.  We will endeavor to help out where needed.  Note that these are my suggestions and if other or better ways appear please share or feel free to follow them.
