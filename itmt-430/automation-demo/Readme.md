@@ -271,11 +271,32 @@ What kind of secrets might we have?
 
 ## Packer User-Variables
 
-[https://www.packer.io/docs/templates/user-variables.html](https://www.packer.io/docs/templates/user-variables.html)
+[Packer User Variables](https://www.packer.io/docs/templates/user-variables.html)
+
+User variables allow your templates to be further configured with variables from the command-line, environment variables, Vault, or files. This lets you parameterize your templates so that you can keep secret tokens, environment-specific data, and other types of information out of your templates. This maximizes the portability of the template.
 
 In this example we will be using Packer and Vagrant.  Packer will be used to construct and automate the build of our application.  Packer makes use of `scp` commands during its post-provisioner phase in order to allow files and other secrets to be transferred.  
 
-## What we need to set username and passwords securely in Packer
+### Example Two for a complex application
+
+In the repository: [https://github.com/jhajek/packer-vagrant-build-scripts](https://github.com/jhajek/packer-vagrant-build-scripts "Repository for complex samples") you will now find: packer >  ITMT-430 folder.  This folder contains two example build scripts.  The first one is `ubuntu18044-itmt430-webserver.json` and `ubuntu18044-itmt430-database.json`.   The first sample will clone a Hello World Nodejs application from my own private repository.  The second build template will show you how to preseed root passwords for a MariaDB database, create a table, and insert three records to the database, then print those records out to the CLI.
+
+### Variables File
+
+Packer accepts an additional commandline value called ```--var-file=```.  The name of this file can be arbitrary. In the sample [Readme.md](https://github.com/jhajek/packer-vagrant-build-scripts/blob/master/packer/itmt430/ReadMe.md "Sample Readme.md from class example GitHub repo").  I called my file variables.json, but that is arbitrary.  I also added that filename, variables.json to the `.gitignore` file to prevent accidental pushing of your credentials to the GitHub repo.   This is a common tactic, Wordpress does this by giving you a `config-sample` file and have you rename the file.  That way the template can be distributed, but your own file with values will not be pushed or accessible to the outside.
+
+```json
+{
+    "database-root-password": "foo",
+    "database-user-password": "bar",
+    "database-access-from-ip": "192.168.33.50",
+    "database-ip": "192.168.33.51",
+    "webserver-ip": "192.168.33.50",
+    "database-name": "namegoeshere",
+    "database-user-name": "database-username-goes-here"
+}
+
+## One way to set username and passwords securely in Packer
 
 1) Issue the command inside of the folder, ```cp variables-sample.json variables.json```
     1) The ```variables.json``` file contains key value pairs of variables and passwords to be passed into the provisioner shell script.
