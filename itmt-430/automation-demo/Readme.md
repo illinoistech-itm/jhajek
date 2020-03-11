@@ -285,6 +285,8 @@ In the repository: [https://github.com/jhajek/packer-vagrant-build-scripts](http
 
 Packer accepts an additional commandline value called ```--var-file=```.  The name of this file can be arbitrary. In the sample [Readme.md](https://github.com/jhajek/packer-vagrant-build-scripts/blob/master/packer/itmt430/ReadMe.md "Sample Readme.md from class example GitHub repo").  I called my file variables.json, but that is arbitrary.  I also added that filename, variables.json to the `.gitignore` file to prevent accidental pushing of your credentials to the GitHub repo.   This is a common tactic, Wordpress does this by giving you a `config-sample` file and have you rename the file.  That way the template can be distributed, but your own file with values will not be pushed or accessible to the outside.
 
+This is a sample variables.json file:
+
 ```json
 {
     "database-root-password": "foo",
@@ -295,6 +297,7 @@ Packer accepts an additional commandline value called ```--var-file=```.  The na
     "database-name": "namegoeshere",
     "database-user-name": "database-username-goes-here"
 }
+```
 
 ## One way to set username and passwords securely in Packer
 
