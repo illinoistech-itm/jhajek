@@ -388,6 +388,18 @@ The code samples here are hosted in my private repo, but I made a copy available
 git clone https://github.com/illinoistech-itm/jhajek
 ```
 
+### Packer Cache Dir
+
+Packer lets you set an Environment (ENV) variable for caching downloaded ISO images.  The variable is named: ```PACKER_CACHE_DIR```.  You can set this as a user ENV variable in Windows or in a .bashrc file in MacOS or Linux.  This saves much time in building Packer artifacts, saving you the repeated downloads.
+
+![*Packer Cache Dir for Windows*](images/packer-cache-dir.png "Image of Cache Directory Location for Packer")
+
+### Further Security Choices
+
+The methods described above are a good start, but might not be scalable beyond a small team.   A product recommended to look at is [Hashicorp Vault](https://www.vaultproject.io/ "Hashicorp Vault introduction website").  This is a much more centralized and scalable way to handle secrets that works locally and in the cloud.  It has direct integration with Packer, which skips the regular variable.json files method and instead pulls those values from an encrypted vault datastore.
+
+If you are looking for a challenge
+
 ## Questions
 
 If you have any questions myself and the TA are available over the break and via Slack.  We will endeavor to help out where needed.
