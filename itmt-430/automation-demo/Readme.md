@@ -301,6 +301,48 @@ This is a sample variables.json file:
 
 ## One way to set username and passwords securely in Packer
 
+In the build template, under the **provisioner** section you will see this section which contains multiple file provisioners and shell script provisioners.  The sample that built the vanilla ubuntu images just used a shell provisioner.
+
+```json
+"provisioners": [
+    {
+    "type": "file",
+    "source": "./id_rsa_github_deploy_key",
+    "destination": "/home/vagrant/"
+    },
+    {
+      "type": "file",
+      "source": "./config",
+      "destination": "/home/vagrant/"
+    },
+    {
+      "type": "shell",
+      "execute_command" : "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+      "inline": [
+        "mkdir -p /home/vagrant/.ssh",
+        "mkdir -p /root/.ssh",
+        "chmod 600 /home/vagrant/id_rsa_github_deploy_key",
+        "cp -v /home/vagrant/id_rsa_github_deploy_key /home/vagrant/.ssh/",
+        "cp -v /home/vagrant/config /home/vagrant/.ssh/",
+        "cp -v /home/vagrant/config /root/.ssh/",
+        "git clone git@github.com:illinoistech-itm/hajek.git"
+      ]
+    },
+```
+
+These provisioners run after the operating system is installed.  Packer will launch the VM again and attempt to establish an SSH connection.  Once a connection is established, these provisioners will be executed in order.  This is all done by the Packer executable -- no human intervention needed.  From my sample I do three things.  
+
+* I copy the RSA private key from my repo into the virtual machine
+  * Note that I add this filename to the `.gitignore` file to make sure that I never push it to a repo
+  * The name of the file `id_rsa_github_deploy_key` is arbitrary, I named mine that so I would remember what it was
+* I added the config file for SSH to the virtual machine `~/.ssh` directory
+  * This is needed to force a `git clone` via ssh to use the RSA private key that is the other half of the GitHub Code Deploy public key
+* Finally I run my provisioner shell script for installing all needed dependencies
+  * I added an inline shell command that will make directories, copy files, and execute the `git clone` command
+  * This is my private repo so you will need to change **hajek.git** to your team private repo name
+
+### To launch the sample
+
 1) Issue the command inside of the folder, ```cp variables-sample.json variables.json```
     1) The ```variables.json``` file contains key value pairs of variables and passwords to be passed into the provisioner shell script.
     1) This renames the file ```variables-sample.json``` to ```variables.json```  (There is an entry in the `.gitignore` so you cannot accidentally `git push` your passwords).
