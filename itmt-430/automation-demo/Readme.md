@@ -341,22 +341,53 @@ These provisioners run after the operating system is installed.  Packer will lau
   * I added an inline shell command that will make directories, copy files, and execute the `git clone` command
   * This is my private repo so you will need to change **hajek.git** to your team private repo name
 
-### To launch the sample
+## To launch the sample and put it all together
 
-1) Issue the command inside of the folder, ```cp variables-sample.json variables.json```
-    1) The ```variables.json``` file contains key value pairs of variables and passwords to be passed into the provisioner shell script.
-    1) This renames the file ```variables-sample.json``` to ```variables.json```  (There is an entry in the `.gitignore` so you cannot accidentally `git push` your passwords).
-1) Edit the ```variables.json``` file replacing default values with your own
-1) Issue the command ```packer build --var-file=./variables.json ubuntu18044-itmt430-database.json``` and ```packer build --var-file=./variables.json ubuntu18044-itmt430-webserver.json``` to begin the install with password, usernames, and RSA private key properly seeded
-1) This way we can securely build the system, deploy it and when building it pass in passwords via environment variables
+* Issue the command inside of the folder, ```cp variables-sample.json variables.json```
+  * The ```variables.json``` file contains key value pairs of variables and passwords to be passed into the provisioner shell script.
+  * This renames the file ```variables-sample.json``` to ```variables.json```  (There is an entry in the `.gitignore` so you cannot accidentally `git push` your passwords).
+* Edit the ```variables.json``` file replacing default values with your own
+  * Note you won't see my private key in the public repo
+* Issue the command below to begin the install with password, usernames, and RSA private key properly seeded
+
+ ```bash
+ packer build --var-file=./variables.json ubuntu18044-itmt430-database.json
+ packer build --var-file=./variables.json ubuntu18044-itmt430-webserver.json
+ ```
+  
+### Contents of Sample Packer Build Templates
+
+There are two sample packer build templates in the itmt430 directory.
 
 ## Webserver contents
 
+Once the artifact from Packer is built, you need to add the box to Vagrant to be managed.  This can be performed the same way that the Ubuntu-Vanilla install is done.
+
+To access the application once the command: `vagrant up` has been run:
+
+1) Open a browser on your host system and navigate to the IP address you set in the variables file.  The default is 192.168.33.50
 1) This application has an Nginx webserver running on port 80.  
 1) It has a Nodejs Hello World application running on port 3000.
 1) It has an Nginx route to the Nodejs app located at `/app`
 
 ## Database contents
 
+Once the artifact from Packer is built, you need to add the box to Vagrant to be managed.  This can be performed the same way that the Ubuntu-Vanilla install is done.
+
+You will know this is successful when the root password is pre-seeded, the tables have been created, and the 3 records have been added.  You will see the output of a `SELECT * FROM TABLE;` command in the output of the provisioner step before Packer finished its build.  You can also access the MariaDB CLI via the command: `mysql -u root` and use table and select * from there.
+
 1) System will create a `.my.cnf` file which allows for password-less authentication
-1) System will pre-seed MariaDB or MySql root password
+1) System will pre-seed MariaDB or MyQL root password
+
+### Link to Sample Code
+
+The code samples here are hosted in my private repo, but I made a copy available in my public repo.  They are located in [https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/sample-code/](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/sample-code/ "Sample Application Code")  or issue the command:
+
+```bash
+# clone the public repo and nagivate to: > itmt-430 > sample-code
+git clone https://github.com/illinoistech-itm/jhajek
+```
+
+## Questions
+
+If you have any questions myself and the TA are available over the break and via Slack.  We will endeavor to help out where needed.
