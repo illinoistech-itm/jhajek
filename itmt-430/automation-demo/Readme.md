@@ -162,11 +162,49 @@ The build template file, is this case named ```ubuntu-18044-vanilla.json``` has 
   * This phase is once the builder artifact is completed, you can export that format into multiple other formats.  
   * This allows you to create a VirtualBox OVF file and then convert it into an Amazon EC2 AMI or in our case we will be converting into a Vagrant Box.
 
+### Run the Sample
+
+You can build a vanilla Ubuntu Server 18.04.4 and/or a Centos 19.08 Vagrant Box by running this command from the directory where the build templates (JSON) are located:
+
+```bash
+# command to build Vagrant boxes with Packer
+packer build ubuntu18044-vanilla.json
+packer build centos-7-vanilla.json
+```
+
+These samples contain no code from any GitHub repos so they will simply complete their automated install and leave you with an artifact named: ```*.box``` located in the ```../build``` directory
+
+### How does it answer install questions
+
+Packer makes use of existing answer file technology.  Debian/Ubuntu uses a file format called [preseed](https://help.ubuntu.com/lts/installation-guide/armhf/apbs02.html "Ubuntu preseed documentation") and RedHat/CentOS uses a file format called **kickstart** which is an homage to Sun's Jumpstart.  
+
+For the Ubuntu 18.04.4 template you can see this on line 28 and line 24 in the Centos-7 template.  These have been provided for you and will work out of the box &#8482; without having to modify anything as long as the **ks** or **preseed** directory are located in the same level as the build template.
+
+### Output
+
+Once the Packer build template finishes, you will have a *.box file.  This conversion step from an OVF to a Vagrant file is specified in the post-processing step, line 42-46 in the Ubuntu sample.  The value ```output``` is the directory of where you would like the artifact to be placed.  I choose to make a directory called ```../build``` relative to my build templates and have all artifacts placed there.  
+
+This is a convention that makes sense to me, but you can change this to match your own convention.  
+
+### Application Sample
+
+The vanilla installs are a good start, but they don't answer the question of **secrets** and how to pass them.  
+
+What kind of secrets might we have?
+
+* Private keys
+* Usernames and Passwords
+* Authorization keys
+* JWT seeds
+* Salts
+
+
+
 ## Packer User-Variables
 
-In this example we will be using Packer and Vagrant.  Packer will be used to construct and automate the build of our application.  Packer makes use of `scp` commands during its post-provisioner phase in order to allow files and other secrets to be transferred.  
-
 [https://www.packer.io/docs/templates/user-variables.html](https://www.packer.io/docs/templates/user-variables.html)
+
+In this example we will be using Packer and Vagrant.  Packer will be used to construct and automate the build of our application.  Packer makes use of `scp` commands during its post-provisioner phase in order to allow files and other secrets to be transferred.  
 
 ## What we need to set username and passwords securely in Packer
 
