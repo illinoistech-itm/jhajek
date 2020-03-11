@@ -180,11 +180,80 @@ Packer makes use of existing answer file technology.  Debian/Ubuntu uses a file 
 
 For the Ubuntu 18.04.4 template you can see this on line 28 and line 24 in the Centos-7 template.  These have been provided for you and will work out of the box &#8482; without having to modify anything as long as the **ks** or **preseed** directory are located in the same level as the build template.
 
-### Output
+### Output and Vagrant
 
 Once the Packer build template finishes, you will have a *.box file.  This conversion step from an OVF to a Vagrant file is specified in the post-processing step, line 42-46 in the Ubuntu sample.  The value ```output``` is the directory of where you would like the artifact to be placed.  I choose to make a directory called ```../build``` relative to my build templates and have all artifacts placed there.  
 
-This is a convention that makes sense to me, but you can change this to match your own convention.  
+This is a convention that makes sense to me, but you can change this to match your own convention if you desire.
+
+The `*.box` artifact is good to have but doesn't do us any good.  Vagrant is a virtualization abstraction tool.  We need to add our newly created *.box so that Vagrant can manage it.  Let's walk through this.
+
+Say you have an artifact named: `ubuntu-ws-18044-server-virtualbox-1583722003.box`. The numbers on yours will be different because I added a system variable that always appends [epoch time](https://en.wikipedia.org/wiki/Unix_time "Unix time article") to the filename guaranteeing a unique filename every time.  Packer build will fail if you already have an existing artifact with the same name (won't overwrite unless you use a --force flag).
+
+To see which boxes Vagrant is currently managing, from the commandline type:
+
+```bash
+# Command to see what boxes Vagrant is managing
+vagrant box list
+```
+
+```bash
+# Command to add the newly built box to Vagrant for management
+# Note, the end of your file name will be different as the timestamp will be different
+# the --name potion is important as this is how Vagrant will refer this virtual machine
+vagrant box add ./ubuntu-ws-18044-server-virtualbox-1583722003.box --name ubuntu-vanilla
+vagrant box list
+```
+
+You should see your Vagrant box in the list as: ubuntu-vanilla
+
+### Vagrant init
+
+The next step is to create a properties file for this virtual machine called a **Vagrantfile**.  This is essentially a configuration file that is interpreted on boot time of the virtual machine and the configuration is translated into VirtualBox CLI commands to create the desired configuration.  
+
+To create this file, I would strongly suggest creating a directory first with the name of the Vagrant box.  This helps keep things clear as to which virtual machine this controls and secondly every Vagrantfile has the same name Vagrantfile, and you wouldn't want to overwrite existing files.
+
+```bash
+# Commands to create a directory and create a Vagrantfile for ubuntu-vanilla
+# Assuming that your PWD is a directory called build
+mkdir ubuntu-vanllia
+cd ubuntu-vanilla
+vagrant init ubuntu-vanilla
+```
+
+Once these steps are done, you can launch the virtual machine with a simple command:
+
+```bash
+#  Command to launch and connect to a Vagrant Box
+# From the CLI with the location the directory where the Vagrantfile is located
+vagrant up
+# to remotely connect
+vagrant ssh
+```
+
+### Vagrant Private Networking
+
+Vagrant has an added feature that will enable a local routable private network on your host PC between all VMs and your host.  It has the added benefit of handling IP address assignment - forging the need to have a DHCP server.  This will allow each person to work on their own hardware without the need for a lab or network.  Meaning you can work at home, in the school library, in the lab, all without having to change your networking stack.
+
+Located in the Vagrantfile on line ~35 you will find this commented out code block.
+
+```ruby
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  # config.vm.network "private_network", ip: "192.168.33.10"
+```  
+
+Uncomment the `config.vm.network` line to automatically assign the listed private IP to your ubuntu-vanilla machine.
+
+```ruby
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+    config.vm.network "private_network", ip: "192.168.33.10"
+```  
+
+If you have multiple machines, you would change the IP addresses and you now can have a fully assignable network as well as be able to use FQDNs out of your `/etc/hosts` file.  This allows you to add premade Vagrantfiles to your GitHub repo, which you can clone and script the process of starting the VM automatically.
+
+One thing you will have to do in this case is if you have run the `vagrant up` command already and make a change to the `Vagrantfile` you will need to exit the `vagrant ssh` session and issue a `vagrant reload --provision` which is the command that forces Vagrant to re-evaluate the `Vagrantfile` for any changes it needs to make to the structure of the VM.  This only needs to take place once.  If you change the Vagrantfile.
 
 ### Application Sample
 
