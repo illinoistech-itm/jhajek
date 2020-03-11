@@ -88,9 +88,79 @@ StrictHostKeyChecking no
 * The value ```StrictHostKeyChecking``` is what turns off the fingerprint checking.  
 * The `IdentityFile` value should point to your private key location (id_rsa)
 
-After adding the `config` file, we now encounter a file permission error.  You will see the issue here is that GitHub requires the file to be permission 600 if you are on Linux or Mac, but not Windows.  
+After adding the `config` file, we now encounter a file permission error.  You will see the issue here is that GitHub requires private key files file to be permission 600 if you are on Linux or Mac, but not Windows.  
 
 ![*bad-permission*](images/bad-permission.jpg "How to solve the bad permission issues for SSH")
+
+## A word about automation
+
+Looking back to the dawn of the PC era and the operating systems that flowed from that era, Windows, MacOS, and Linux, we see that installation of these OSes are tailored for single person installs with many manual options and configurations.  As students we learned this in ITM 301 or a related Intro to Computers class, where we install many operating systems.  
+
+Outside of a technology called [Jumpstart](https://en.wikipedia.org/wiki/JumpStart_\(Solaris\)) "Sun Solaris Jumpstart network based install tool wike page") which was successful doing network based installs, the idea deploying operating systems in an automated fashion was difficult, as operating systems were not built for this kind of thing.  
+
+Coming into the current decade (2010), we begin to see the prevalence of a few things;
+
+* High speed and Wireless Internet
+* Laptops comparable in memory, disk, and CPU to desktops
+* Massive increase in hard disk capacity and in speeds (SSD, NVMe)
+* Virtualization -- through VirtualBox being opensource software
+  * Virtual networking and routing through the VirtualBox Network interface
+* Elastic Self-Serve Cloud Computing
+
+With this combination, the idea of building a network and multiple machines that represents your application became possible.  The remainder of this tutorial will show you a way that based on your project this can be achieved.  As always these are not the only tools available, but a large part of the industry will be familiar with this method.   And always there are further optimizations that I will mention but are not required--feel free to explore.
+
+## Packer.io
+
+[Packer is an open source tool](https://packer.io/intro/index.html "Packer.io Introduction web page") for creating identical machine images for multiple platforms from a single source configuration. Packer is lightweight, runs on every major operating system, and is highly performant, creating machine images for multiple platforms in parallel...
+
+A machine image is a single static unit that contains a pre-configured operating system and installed software which is used to quickly create new running machines. Machine image formats change for each platform. Some examples include AMIs for EC2, VMDK/VMX files for VMware, OVF exports for VirtualBox, etc.
+
+### Why Use Packer
+
+The verbiage is taken from [Why Use Packer?](https://packer.io/intro/why.html "Packer.io why use it web page")
+
+Pre-baked machine images have a lot of advantages, but most have been unable to benefit from them because images have been too tedious to create and manage. There were either no existing tools to automate the creation of machine images or they had too high of a learning curve. The result is that, prior to Packer, creating machine images threatened the agility of operations teams, and therefore aren't used, despite the massive benefits.
+
+Packer changes all of this. Packer is easy to use and automates the creation of any type of machine image. It embraces modern configuration management by encouraging you to use a framework such as Chef or Puppet to install and configure the software within your Packer-made images.
+
+In other words: Packer brings pre-baked images into the modern age, unlocking untapped potential and opening new opportunities.
+
+### Advantages of Using Packer
+
+Super fast infrastructure deployment. Packer images allow you to launch completely provisioned and configured machines in seconds, rather than several minutes or hours. This benefits not only production, but development as well, since development virtual machines can also be launched in seconds, without waiting for a typically much longer provisioning time.
+
+* Multi-provider portability
+  * Because Packer creates identical images for multiple platforms, you can run production in AWS, staging/QA in a private cloud like OpenStack, and development in desktop virtualization solutions such as VMware or VirtualBox. Each environment is running an identical machine image, giving ultimate portability.
+* Improved stability
+  * Packer installs and configures all the software for a machine at the time the image is built. If there are bugs in these scripts, they'll be caught early, rather than several minutes after a machine is launched.
+* Greater testability
+  * After a machine image is built, that machine image can be quickly launched and smoke tested to verify that things appear to be working. If they are, you can be confident that any other machines launched from that image will function properly.
+
+Packer makes it extremely easy to take advantage of all these benefits.
+
+### Packer Structure
+
+Packer uses JSON based build template files to provide all the answers needed for an automated installation.  You can find many working samples all over the internet, but I have provided 2 bare-bones or vanilla samples using CentOS Server and Ubuntu Server.  You can clone the repo for these samples here:
+
+```bash
+# public repo containing Packer.io working build template samples.   The samples are located in the directory: packer > vanilla-install
+git clone https://github.com/jhajek/packer-vagrant-build-scripts.git
+```
+
+Let us take a look at the file: ```ubuntu-18044-vanilla.json```.  It is [located here](https://github.com/jhajek/packer-vagrant-build-scripts/blob/master/packer/vanilla-install/ubuntu18044-vanilla.json "URL to ubuntu vanilla packer build template") for viewing purposes.
+
+If you are not familiar with JSON, it is a way to create key-value paired *objects* in basic text format, in order to give text data a searchable format, as well as make data-interchange possible between languages.
+
+The build template file, is this case named ```ubuntu-18044-vanilla.json``` has three major sections:
+
+* [builders](https://packer.io/docs/builders/index.html "Packer builders webpage")
+  * The builder section tells packer what you are going to be building -- such as an VirtualBox VM or a Hyper-V VM for instance.  The values in this section the would relate to the options you would select if you were to manually create a new VirtualBox virtual machine.
+* [provisioners](https://packer.io/docs/provisioners/index.html "Packer provisioners webpage")
+  * This section is the added benefit to Packer.  This step executes after the base install is finished.  
+  * This is where you can secure copy SSH keys into the new virtual machine, and/or execute shell scripts to add additional software or configure your software.
+* [post-processors](https://packer.io/docs/post-processors/index.html "Packer post-processors webpage")
+  * This phase is once the builder artifact is completed, you can export that format into multiple other formats.  
+  * This allows you to create a VirtualBox OVF file and then convert it into an Amazon EC2 AMI or in our case we will be converting into a Vagrant Box.
 
 ## Packer User-Variables
 
