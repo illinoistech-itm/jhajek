@@ -267,7 +267,7 @@ What kind of secrets might we have?
 * JWT seeds
 * Salts
 
-
+![*The General Problem*](images/the_general_problem.png "XKCD cartoon about passing salts")
 
 ## Packer User-Variables
 
