@@ -143,7 +143,8 @@ Packer makes it extremely easy to take advantage of all these benefits.
 Packer uses JSON based build template files to provide all the answers needed for an automated installation.  You can find many working samples all over the internet, but I have provided 2 bare-bones or vanilla samples using CentOS Server and Ubuntu Server.  You can clone the repo for these samples here:
 
 ```bash
-# public repo containing Packer.io working build template samples.   The samples are located in the directory: packer > vanilla-install
+# Public repo containing Packer.io working build template samples.
+# The samples are located in the directory: packer > vanilla-install
 git clone https://github.com/jhajek/packer-vagrant-build-scripts.git
 ```
 
@@ -399,6 +400,10 @@ Packer lets you set an Environment (ENV) variable for caching downloaded ISO ima
 The methods described above are a good start, but might not be scalable beyond a small team.   A product recommended to look at is [Hashicorp Vault](https://www.vaultproject.io/ "Hashicorp Vault introduction website").  This is a much more centralized and scalable way to handle secrets that works locally and in the cloud.  [It has direct integration with Packer](https://packer.io/docs/templates/user-variables.html#vault-variables "Packer Integration with Vault webpage"), which skips the regular `variable.json` files method and instead pulls those values from an encrypted vault datastore.
 
 If you are looking for a challenge, try to implement this, and put it on your resume. If you are curious I have a working sample from a team form 2019
+
+### Manually Binding Network Interfaces
+
+When using a VirtualBox Private network, Vagrant will prompt you to choose which physical NIC you want to pair to the virtual network.  This obviously requires a manual user-intervention, albeit a simple push of the number 1 or 2 (Usually WiFi or Ethernet NIC).
 
 ## Questions
 
