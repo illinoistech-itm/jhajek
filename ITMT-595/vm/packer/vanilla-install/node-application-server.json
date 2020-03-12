@@ -56,11 +56,11 @@
     {
       "type": "shell",
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
-      "script": "../../scripts/post_install_vagrant.sh"
+      "script": "../scripts/post_install_vagrant.sh"
     },
     {
       "type": "file",
-      "source": "../../vms/node-application-server/id_rsa_github_deploy_key",
+      "source": "./id_rsa_github_deploy_key",
       "destination": "/home/vagrant/"
     },
     {
