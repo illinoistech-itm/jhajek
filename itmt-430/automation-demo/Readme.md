@@ -388,7 +388,7 @@ The code samples here are hosted in my private repo, but I made a copy available
 git clone https://github.com/illinoistech-itm/jhajek
 ```
 
-### Packer Cache Dir
+### Packer Caching Directory
 
 Packer lets you set an Environment (ENV) variable for caching downloaded ISO images.  The variable is named: ```PACKER_CACHE_DIR```.  You can set this as a user ENV variable in Windows or in a `.bashrc` file in MacOS or Linux.  This saves much time in building Packer artifacts, saving you the repeated downloads.
 
