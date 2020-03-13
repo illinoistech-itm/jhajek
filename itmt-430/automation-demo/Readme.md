@@ -254,7 +254,7 @@ Uncomment the `config.vm.network` line to automatically assign the listed privat
 
 If you have multiple machines, you would change the IP addresses and you now can have a fully assignable network as well as be able to use FQDNs out of your `/etc/hosts` file.  This allows you to add premade Vagrantfiles to your GitHub repo, which you can clone and script the process of starting the VM automatically.
 
-One thing you will have to do in this case is if you have run the `vagrant up` command already and make a change to the `Vagrantfile` you will need to exit the `vagrant ssh` session and issue a `vagrant reload --provision` which is the command that forces Vagrant to re-evaluate the `Vagrantfile` for any changes it needs to make to the structure of the VM.  This only needs to take place once.  If you change the Vagrantfile.
+One thing you will have to do in this case is if you have run the `vagrant up` command already and make a change to the `Vagrantfile` you will need to exit the `vagrant ssh` session and issue a `vagrant reload --provision` which is the command that forces Vagrant to re-evaluate the `Vagrantfile` for any changes it needs to make to the structure of the VM.  This only needs to take place one time when you change the Vagrantfile, not every time.
 
 ### Application Sample
 
