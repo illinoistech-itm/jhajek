@@ -217,7 +217,7 @@ To create this file, I would strongly suggest creating a directory first with th
 ```bash
 # Commands to create a directory and create a Vagrantfile for ubuntu-vanilla
 # Assuming that your PWD is a directory called build
-mkdir ubuntu-vanllia
+mkdir ubuntu-vanilla
 cd ubuntu-vanilla
 vagrant init ubuntu-vanilla
 ```
