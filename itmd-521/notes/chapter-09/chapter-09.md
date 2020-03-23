@@ -50,8 +50,6 @@
 - [AWS Redshift](https://aws.amazon.com/redshift/ "AWS Redshift description website")
   - AWS Enterprise grade Data Warehouse project
   - [spark-redshift package](https://spark-packages.org/?q=Redshift "Spark Redshift third party package link")
-- XML
-  - Yes it exists.
 
 ## Conclusion
 
