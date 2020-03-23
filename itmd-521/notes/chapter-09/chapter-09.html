@@ -41,8 +41,13 @@ Chapter 09
 <li>Introduce and understand the ability to read and write to these 6 core data sources</li>
 <li>Understand tooling needed to configure Virtual Machines for Remote Cluster access via VPN</li>
 </ul>
-</div><div id="six-core-data-sources" class="slide section level2">
-<h1>Six Core Data Sources</h1>
+</div><div id="what-to-do-with-data" class="slide section level2">
+<h1>What to do with data</h1>
+<ul class="incremental">
+<li>The goal of this chapter is to give you the ability to read and write from Spark’s core data sources and know enough to understand what you should look for in a data type.</li>
+</ul>
+</div><div id="six-core-data-sources-1-3" class="slide section level2">
+<h1>Six Core Data Sources (1-3)</h1>
 <ul class="incremental">
 <li><a href="https://en.wikipedia.org/wiki/Comma-separated_values" title="CSV Wikipedia Page Link">CSV</a>
 <ul class="incremental">
@@ -57,6 +62,10 @@ Chapter 09
 <li>Apache Parquet is a columnar storage format available to any project in the Hadoop ecosystem, regardless of the choice of data processing framework, data model or programming language.</li>
 <li><a href="http://en.wikipedia.org/wiki/Column-oriented_DBMS" title="columnar storage">Columnar Storage</a></li>
 </ul></li>
+</ul>
+</div><div id="six-core-data-sources-continued-4-6" class="slide section level2">
+<h1>Six Core Data Sources Continued (4-6)</h1>
+<ul class="incremental">
 <li><a href="https://orc.apache.org/" title="Apache ORC project page">ORC</a>
 <ul class="incremental">
 <li>The smallest, fastest columnar storage for Hadoop workloads.</li>
@@ -68,6 +77,32 @@ Chapter 09
 <li>Plain-Text files
 <ul class="incremental">
 <li>Simplest and most universal data format, also the slowest and most inefficient.</li>
+</ul></li>
+</ul>
+</div><div id="additional-community-data-sources" class="slide section level2">
+<h1>Additional Community Data Sources</h1>
+<ul class="incremental">
+<li><a href="https://cassandra.apache.org" title="Cassandra introduction webpage">Cassandra</a>
+<ul class="incremental">
+<li>The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra’s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</li>
+</ul></li>
+<li>Google Spreadsheets
+<ul class="incremental">
+<li><a href="https://spark-packages.org/package/potix2/spark-google-spreadsheets" title="Package to connect Spark to Google spreadsheets">spark google spreadsheets</a></li>
+</ul></li>
+<li><a href="https://www.mongodb.com/" title="MongoDB company website">MongoDB</a>
+<ul class="incremental">
+<li>MongoDB is a general purpose, document-based, distributed database built for modern application developers and for the cloud era.</li>
+<li><a href="https://spark-packages.org/package/mongodb/mongo-spark" title="Spark Package for MongoDB">mongo-spark package</a></li>
+</ul></li>
+<li><a href="https://aws.amazon.com/redshift/" title="AWS Redshift description website">AWS Redshift</a>
+<ul class="incremental">
+<li>AWS Enterprise grade Data Warehouse project</li>
+<li><a href="https://spark-packages.org/?q=Redshift" title="Spark Redshift third party package link">spark-redshift package</a></li>
+</ul></li>
+<li>XML
+<ul class="incremental">
+<li>Yes it exists.</li>
 </ul></li>
 </ul>
 </div><div id="conclusion" class="slide section level2">

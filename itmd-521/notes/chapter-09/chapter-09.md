@@ -14,8 +14,12 @@
 - Introduce and understand community-created data sources for Spark (3rd Party)
 - Introduce and understand the ability to read and write to these 6 core data sources
 - Understand tooling needed to configure Virtual Machines for Remote Cluster access via VPN
+
+## What to do with data
+
+- The goal of this chapter is to give you the ability to read and write from Spark's core data sources and know enough to understand what you should look for in a data type.
   
-## Six Core Data Sources
+## Six Core Data Sources (1-3)
 
 - [CSV](https://en.wikipedia.org/wiki/Comma-separated_values "CSV Wikipedia Page Link")
   - A comma-separated values (CSV) file is a delimited text file that uses a comma to separate values.
@@ -24,6 +28,9 @@
 - [Parquet](http://parquet.apache.org/documentation/latest/ "Parquet file format description web page")
   - Apache Parquet is a columnar storage format available to any project in the Hadoop ecosystem, regardless of the choice of data processing framework, data model or programming language.
   - [Columnar Storage](http://en.wikipedia.org/wiki/Column-oriented_DBMS "columnar storage")
+
+## Six Core Data Sources Continued (4-6)
+
 - [ORC](https://orc.apache.org/ "Apache ORC project page")
   - The smallest, fastest columnar storage for Hadoop workloads.
 - [JDBC/ODBC](https://en.wikipedia.org/wiki/Open_Database_Connectivity "ODBC wikipedia description page")
@@ -45,10 +52,6 @@
   - [spark-redshift package](https://spark-packages.org/?q=Redshift "Spark Redshift third party package link")
 - XML
   - Yes it exists.
-
-## What to do with data
-
-- The goal of this chapter is to give you the ability to read and write from Spark's core data sources and know enough to understand what you should look for in a data type.
 
 ## Conclusion
 
