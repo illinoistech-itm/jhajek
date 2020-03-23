@@ -68,7 +68,7 @@
     {
       "type": "vagrant",
       "keep_input_artifact": false,
-      "output": "../build/redis-web-server.box"
+      "output": "../build/redis-caching-server.box"
     }
   ]
 }
