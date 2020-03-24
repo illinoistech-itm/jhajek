@@ -239,9 +239,12 @@ dataframe.write.format("csv")
 
 ## Conclusion
 
-- We walked through...
+- We walked through the six core data-sources.
+- We walked through the various read and write options for these six datatypes
+- We covered reading and writing data in parallel
+- We explained partitioning and bucketing in relation to writing data
 
 ## Questions
 
 - Any questions?
-- Read Chapter 15 & 16 and do any exercises in the book.
+- For next time, read Chapter 15 & 16 and do any exercises in the book.

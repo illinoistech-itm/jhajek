@@ -353,24 +353,103 @@ Chapter 09
 <li>We will need a proper JAR file to allow the JDBC connectivity
 <ul class="incremental">
 <li>Even though our code is in Python, we compile down to bytecode that runs on the JVM</li>
-<li>Sample application is on Page 143</li>
+<li>Sample application is on Page 143-147</li>
 </ul></li>
 </ul></li>
 </ul>
 </div><div id="unstructured-text-files" class="slide section level2">
 <h1>Unstructured Text Files</h1>
-</div><div id="place-holder" class="slide section level2">
-<h1>Place Holder</h1>
+<ul class="incremental">
+<li>Spark allows you to read in plain-text files
+<ul class="incremental">
+<li>Each line in the file becomes a record in the DataFrame</li>
+<li>Its up to you to transform it accordingly
+<ul class="incremental">
+<li>Parse Log files</li>
+<li>Text for NLP</li>
+<li>Column delimited files–files without delimiters, but columns defined by size</li>
+<li>Look on Blackboard at the sample files I provided from NCDC</li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div id="advanced-io-concepts" class="slide section level2">
+<h1>Advanced I/O Concepts</h1>
+<ul class="incremental">
+<li>How does a file get written out?
+<ul class="incremental">
+<li>You will notice that when we executed write commands we didn’t get a single file written out. Why?</li>
+<li>It has to do with the parallelism of the files that we write by controlling the <em>partitions</em> prior to writing</li>
+<li>It also has to do with the nature of some file types
+<ul class="incremental">
+<li>Some are naturally splitable</li>
+<li>Splitable files can optimize storage (put small pieces all across a cluster)</li>
+</ul></li>
+<li>What about compression?
+<ul class="incremental">
+<li>Some compression schemes are splitable, some are not (block vs stream)</li>
+</ul></li>
+</ul></li>
+<li>If a large file is a single file, multiple executors cannot read from the same file at the same time
+<ul class="incremental">
+<li>But they can read from multiple files in a folder in parallel</li>
+<li>Each file will be come a <em>partition</em> in a DataFrame read by available executors in parallel</li>
+</ul></li>
+</ul>
+</div><div id="writing-data-in-parallel-and-partitioning" class="slide section level2">
+<h1>Writing Data in Parallel and Partitioning</h1>
+<ul class="incremental">
+<li>The number of files written is dependent upon the number of <em>partitions</em> the DataFrame has at the time you write out the data
+<ul class="incremental">
+<li>We specify a “file” but it is actually a number of files</li>
+<li>Example Code:</li>
+<li><code class="sourceCode python">csvFile.repartition.write.<span class="bu">format</span>.(<span class="st">&quot;csv&quot;</span>).save(<span class="st">&quot;/multi.csv&quot;</span>)</code></li>
+<li>What is the output? Try it and see.</li>
+</ul></li>
+<li><strong>Partitioning</strong> allows you to control what data is stored where
+<ul class="incremental">
+<li>When you write to a partitioned directory you can encode a column as a folder</li>
+<li>What does this gain you?
+<ul class="incremental">
+<li>You now can read in only relevant data instead of entire tables, reducing query and search time</li>
+<li>Supported by all Spark file types</li>
+<li>Optimize by column save it out as a Parquet file. What optimization do we gain? 150</li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div id="bucketing" class="slide section level2">
+<h1>Bucketing</h1>
+<ul class="incremental">
+<li>Partitioning is one of the easiest optimizations
+<ul class="incremental">
+<li>Another is Bucketing</li>
+</ul></li>
+<li>Bucketing is another approach to control the data that is specifically written to each file
+<ul class="incremental">
+<li>Like a bucket in reality, Spark bucketing keeps the data you want together to save disk shuffle and retrieval time</li>
+<li>More efficient than just partitioning</li>
+<li>See and run example on page 150</li>
+<li>Only supported on Spark managed tables</li>
+</ul></li>
+<li>Managing file size
+<ul class="incremental">
+<li>The number of output files is a derivative of the number of partitions</li>
+<li>There is now a <code>maxRecoredPerFile</code> option where you can define a value for a write operation</li>
+<li>Allowing you to optimize or standardize</li>
+</ul></li>
+</ul>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>
 <ul class="incremental">
-<li>We walked through…</li>
+<li>We walked through the six core data-sources.</li>
+<li>We walked through the various read and write options for these six datatypes</li>
+<li>We covered reading and writing data in parallel</li>
+<li>We explained partitioning and bucketing in relation to writing data</li>
 </ul>
 </div><div id="questions" class="slide section level2">
 <h1>Questions</h1>
 <ul class="incremental">
 <li>Any questions?</li>
-<li>Read Chapter 15 &amp; 16 and do any exercises in the book.</li>
+<li>For next time, read Chapter 15 &amp; 16 and do any exercises in the book.</li>
 </ul>
 </div>
 </body>
