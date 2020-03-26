@@ -49,11 +49,11 @@ Presentation is worth 20 points and needs to **only** contain the following:
   - Live demonstration of an admin user login and logout
   - Live demonstration of the creation of a new user/new admin account
   - Live demonstration of one user action on your site -- such as creating a ticket, or making a purchase
-  - Each team member (excluding Project Manager), once they arrive in the class on presentation day must begin a clean build of the system to be demonstrated at the end of the class on their own laptop and/or lab computer (demonstrate a user login)
+  - Each team member (excluding Project Manager), once they arrive in the class on presentation day must begin a clean build of the system to be demonstrated at the end of the class on their own laptop and/or lab computer and demonstrate a user login and logout
 
 ### Written Report Deliverable
 
-The deliverable will be a single file named **sprint-03.md** located in a folder named **sprint-03** under the **reports** folder in your team GitHub repo.  Submit the URL to Blackboard under the Sprint-03 Assignment deliverable by the Project Manager as the report is a group submission.  Due date for the report is **9:35 AM the the day of your class lab time**, March 25 & 26 & 27.  Written report should follow the layout of document: ```written-report-submission-template.pdf```.
+The deliverable will be a single file named **sprint-03.md** located in a folder named **sprint-03** under the **reports** folder in your team GitHub repo.  Submit the URL to Blackboard under the Sprint-03 Assignment deliverable by the Project Manager as the report is a group submission.  Due date for the report is **9:35 AM the the day of your class lab time**, April 1 & 2 & 3.  Written report should follow the layout of document: ```written-report-submission-template-COVID-19-update.pdf```.
 
 ## Presentation Deliverable
 
