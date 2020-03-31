@@ -17,10 +17,13 @@ This is a small demo that will show the concepts of application automation
 
 At the end of this demonstration you will be able to deploy create two virtual machines, containing a sample NodeJS application and a sample relational database, via Packer and run/managed via Vagrant.  You will have successfully deployed this application code from a private GitHub repo via SSH and securely used RSA keys and Linux ENV variables to do so.
 
+## Questions
+
+If you have any questions myself and the TA are available over the break and via Slack.  We will endeavor to help out where needed.  Note that these are my suggestions and if other or better ways appear please share or feel free to follow them.
+
 ## Setup
 
 For this demonstration, you need to have Packer, Vagrant, and VirtualBox installed.  If you completed the Tooling Assignment then you will have the correct tools.
-
 You can clone the sample code I will be using--issue the command:
 
 ```bash
