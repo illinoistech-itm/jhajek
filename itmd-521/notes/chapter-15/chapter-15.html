@@ -118,12 +118,81 @@ Chapter 15
 <li>Cluster is the most common way of running Spark Applications
 <ul class="incremental">
 <li>User submits a precompiled JAR file, Python, or R script</li>
+<li>Runs completely on the cluster</li>
 <li>Cluster manager then launches the <strong>driver</strong> process on a worker node
 <ul class="incremental">
 <li>In addition to the <strong>executor</strong> processes</li>
 <li>This means that the cluster manager is responsible for maintaining all Spark Application processes</li>
 </ul></li>
 <li><img src="images/figure-15-2.png" title="fig:Spark&#39;s cluster mode" alt="Figure 15-2. Spark’s Cluster Mode" /></li>
+</ul></li>
+</ul>
+</div><div id="client-mode" class="slide section level2">
+<h1>Client Mode</h1>
+<ul class="incremental">
+<li>Almost the same as <strong>cluster mode</strong> except that the spark driver remains on the client machine that submitted the application
+<ul class="incremental">
+<li>This could be your laptop in this case</li>
+<li>The disadvantage is that you can’t shutdown your laptop!</li>
+<li>Client machines are responsible for maintaining <strong>driver</strong> process</li>
+<li>Cluster manager maintains the <strong>executor</strong> processes</li>
+</ul></li>
+<li>The driver is running on a machine outside of the cluster
+<ul class="incremental">
+<li>Workers are located on machines in the cluster</li>
+<li><img src="images/figure-15-3.png" title="fig:Spark&#39;s Client Mode" alt="Figure 15-3 Spark’s Client Mode" /></li>
+</ul></li>
+</ul>
+</div><div id="local-mode" class="slide section level2">
+<h1>Local Mode</h1>
+<ul class="incremental">
+<li>Different from the above two modes
+<ul class="incremental">
+<li>Local mode means the entire cluster runs on a single machine</li>
+<li>Good for quick testing</li>
+<li>Good for our class as there is zero setup</li>
+<li>Good way to learn Spark</li>
+</ul></li>
+</ul>
+</div><div id="spark-application-life-cycle" class="slide section level2">
+<h1>Spark Application Life Cycle</h1>
+<ul class="incremental">
+<li>Now, how does it work?
+<ul class="incremental">
+<li>Here is an illustrated example</li>
+<li>4 node cluster
+<ul class="incremental">
+<li>1 driver node (cluster manager driver node, not Spark node)</li>
+<li>The type is irrelevant for this example)</li>
+<li>3 worker nodes</li>
+</ul></li>
+</ul></li>
+<li>Client request
+<ul class="incremental">
+<li><img src="images/figure-15-4.png" title="Requesting resources for a driver" alt="Figure 15-4. Requesting resources for a driver" /></li>
+<li>We take a precompiled JAR and it is submitted to the Spark driver nodes</li>
+<li>To do this we would run code like this: <code>spark-submit --class &lt;main-class&gt; --master &lt;master-url&gt;  --deploy-mode cluster &lt;application-jar name&gt;</code></li>
+</ul></li>
+</ul>
+</div><div id="launch" class="slide section level2">
+<h1>Launch</h1>
+<ul class="incremental">
+<li>Once the driver process has been placed on the cluster, it begins running user code
+<ul class="incremental">
+<li>The code contains a <code>SparkSession</code> object</li>
+<li>The <code>SparkSession</code> will communicate with the cluster manager (darker line)</li>
+<li>Asking to launch Spark executor processes across the cluster (lighter lines)</li>
+<li>Number of executors and partitions are defined on the command line dynamically or in the application code</li>
+<li><img src="images/figure-15-5.png" title="fig:Launch the Spark Application" alt="Figure 15-5. Launching the Spark Application" /></li>
+</ul></li>
+</ul>
+</div><div id="execution-and-completion" class="slide section level2">
+<h1>Execution and Completion</h1>
+<ul class="incremental">
+<li>The drivers and the workers communicate among themselves, moving code around
+<ul class="incremental">
+<li><img src="images/figure-15-6.png" title="Application Execution" alt="Figure 15-6. Application Execution" /></li>
+<li><img src="images/figure-15-7.png" title="fig:Shutting down the application" alt="Figure 15-7. Shutting down the application" /></li>
 </ul></li>
 </ul>
 </div><div id="sample" class="slide section level2">
