@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+<property>
+  <name>mapreduce.framework.name</name>
+  <value>yarn</value>
+  <description>Execution framework.</description>
+</property>
+<property>
+  <name>mapreduce.map.java.opts</name>
+  <value>-Xmx2048m</value>
+  <description>Increase from the 200 mb default</description>
+</property>
+<property>
+  <name>mapreduce.reduce.java.opts</name>
+  <value>-Xmx2048m</value>
+  <description>Increase from the 200 mb default</description>
+</property>
+<property>
+  <name>mapreduce.map.memory.mb</name>
+  <value>3072</value>
+  <description>Raising the default map memory limit</description>
+</property>
+<property>
+  <name>mapreduce.reduce.memory.mb</name>
+  <value>3072</value>
+  <description>Raising the default map memory limit</description>
+</property>
+<!--
+<property>
+  <name>yarn.app.mapreduce.am.resource.mb</name>
+  <value>4096</value>
+  <description>Amount of memory for Application Master</description>
+</property>
+-->
+</configuration>

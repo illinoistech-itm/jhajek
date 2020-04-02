@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+ <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://namenode.sat.iit.edu</value>
+    <description>NameNode URI</description>
+  </property>
+  <property>
+		<name>io.file.buffer.size</name>
+		<value>4096</value>
+		<description>The default I/O file sizs for Hadoop</description>
+	</property>
+</configuration>

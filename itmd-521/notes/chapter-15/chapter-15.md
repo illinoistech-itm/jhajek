@@ -136,18 +136,39 @@
 
 ## A Spark Job
 
-## Sample
+- There is always one SparkContext per application
+  - Actions always return results
+  - Each Job breaks down into a series of *stages*
+  - Number of stages depends on number of *shuffles*
+  - The sample code `demo.py` has 6 stages - 222
+- Stages
+  - **Stages** represent groups of tasks than can be executed together (on multiple machines)
+  - Spark tries to pack as much work as possible into the same stage
+- Shuffles
+  - A *shuffle* represents a physical repartitioning of the data
+  - i.e. sorting a DataFrame or grouping a file read from a file
+  - This requires Spark executors to coordinate how data will be distributed
+  - Can even include temporary disk writes (slow!)
+  - The ```spark.sql.shuffle.partitions``` default value is 200, means when a shuffle takes place, there are 200 partitions created.
+  - ```spark.conf.set("spark.sql.shuffle.partitions", 50)```{.python}
 
-- sample 1
+## Tasks and Pipelining
+
+- A task is just a unit of computation applied to a unit of data (the partition)
+  - Partitioning your data into a larger number of partition means more parallel execution
+- Pipelining allows stages to be combined (this is internal to Spark)
+  - Pipelining allows Spark to cache shuffle data to disk
+  - Can persist (cache) data between jobs, called *shuffle persistence* - 222
 
 ## Conclusion
 
-- We walked through the six core data-sources.
-- We walked through the various read and write options for these six datatypes
-- We covered reading and writing data in parallel
-- We explained partitioning and bucketing in relation to writing data
+- We walked through the internal and external Spark Application structure
+- We walked through the types of cluster managers
+- We walked through the types of cluster execution methods
+- We walked through the SparkContext object
+- We created a Python demo for a spark-submit job
+- We discussed Spark stages, tasks, and shuffle persistence.
 
 ## Questions
 
 - Any questions?
-- For next time, read Chapter 15 & 16 and do any exercises in the book.

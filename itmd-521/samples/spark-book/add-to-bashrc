@@ -1,0 +1,8 @@
+########## Have these lines in your .bashrc
+export JAVA_HOME=/usr
+export HADOOP_HOME=/home/vagrant/hadoop-2.9.2
+export SPARK_HOME=/home/vagrant/spark
+export PATH=/sbin:/usr/sbin:/bin:/usr/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:/usr/local/bin:$SPARK_HOME/bin
+export HADOOP_CLASSPATH=/usr/lib/jvm/java-8-openjdk-amd64/lib/tools.jar
+export HADOOP_USER_CLASSPATH_FIRST=true
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop

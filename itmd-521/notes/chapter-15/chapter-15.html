@@ -14,6 +14,69 @@
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
     href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
   <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
@@ -195,24 +258,75 @@ Chapter 15
 <li><img src="images/figure-15-7.png" title="fig:Shutting down the application" alt="Figure 15-7. Shutting down the application" /></li>
 </ul></li>
 </ul>
-</div><div id="sample" class="slide section level2">
-<h1>Sample</h1>
+</div><div id="the-life-cycle-of-a-spark-application-inside-spark" class="slide section level2">
+<h1>The Life Cycle of a Spark Application (Inside Spark)</h1>
 <ul class="incremental">
-<li>sample 1</li>
+<li>The <code>SparkSession</code>
+<ul class="incremental">
+<li>The first step of any code submitted to a cluster is to include a SparkSession object</li>
+<li>This is created automatically in the interactive mode</li>
+<li>Avoid older code using the SparkContext pattern</li>
+</ul></li>
+<li>Add this line to existing Python Code (we will focus on Python)
+<ul class="incremental">
+<li><code class="sourceCode python"><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</code></li>
+<li><code class="sourceCode python">spark <span class="op">=</span> SparkSession.builder.master(<span class="st">&quot;local&quot;</span>).appName(<span class="st">&quot;Word Count&quot;</span>).config(<span class="st">&quot;put option here&quot;</span>,<span class="st">&quot;put value here&quot;</span>).getOrCreate()</code></li>
+<li>Page 221 has the remaining sample python code that you could type into a script to run</li>
+<li>Code is typed up and in the <a href="https://github.com/illinoistech-itm/jhajek" title="sample code repo">https://github.com/illinoistech-itm/jhajek</a> repo in itmd521 &gt; samples &gt; spark-book</li>
+</ul></li>
+</ul>
+</div><div id="a-spark-job" class="slide section level2">
+<h1>A Spark Job</h1>
+<ul class="incremental">
+<li>There is always one SparkContext per application
+<ul class="incremental">
+<li>Actions always return results</li>
+<li>Each Job breaks down into a series of <em>stages</em></li>
+<li>Number of stages depends on number of <em>shuffles</em></li>
+<li>The sample code <code>demo.py</code> has 6 stages - 222</li>
+</ul></li>
+<li>Stages
+<ul class="incremental">
+<li><strong>Stages</strong> represent groups of tasks than can be executed together (on multiple machines)</li>
+<li>Spark tries to pack as much work as possible into the same stage</li>
+</ul></li>
+<li>Shuffles
+<ul class="incremental">
+<li>A <em>shuffle</em> represents a physical repartitioning of the data</li>
+<li>i.e. sorting a DataFrame or grouping a file read from a file</li>
+<li>This requires Spark executors to coordinate how data will be distributed</li>
+<li>Can even include temporary disk writes (slow!)</li>
+<li>The <code>spark.sql.shuffle.partitions</code> default value is 200, means when a shuffle takes place, there are 200 partitions created.</li>
+<li><code class="sourceCode python">spark.conf.<span class="bu">set</span>(<span class="st">&quot;spark.sql.shuffle.partitions&quot;</span>, <span class="dv">50</span>)</code></li>
+</ul></li>
+</ul>
+</div><div id="tasks-and-pipelining" class="slide section level2">
+<h1>Tasks and Pipelining</h1>
+<ul class="incremental">
+<li>A task is just a unit of computation applied to a unit of data (the partition)
+<ul class="incremental">
+<li>Partitioning your data into a larger number of partition means more parallel execution</li>
+</ul></li>
+<li>Pipelining allows stages to be combined (this is internal to Spark)
+<ul class="incremental">
+<li>Pipelining allows Spark to cache shuffle data to disk</li>
+<li>Can persist (cache) data between jobs, called <em>shuffle persistence</em> - 222</li>
+</ul></li>
 </ul>
 </div><div id="conclusion" class="slide section level2">
 <h1>Conclusion</h1>
 <ul class="incremental">
-<li>We walked through the six core data-sources.</li>
-<li>We walked through the various read and write options for these six datatypes</li>
-<li>We covered reading and writing data in parallel</li>
-<li>We explained partitioning and bucketing in relation to writing data</li>
+<li>We walked through the internal and external Spark Application structure</li>
+<li>We walked through the types of cluster managers</li>
+<li>We walked through the types of cluster execution methods</li>
+<li>We walked through the SparkContext object</li>
+<li>We created a Python demo for a spark-submit job</li>
+<li>We discussed Spark stages, tasks, and shuffle persistence.</li>
 </ul>
 </div><div id="questions" class="slide section level2">
 <h1>Questions</h1>
 <ul class="incremental">
 <li>Any questions?</li>
-<li>For next time, read Chapter 15 &amp; 16 and do any exercises in the book.</li>
 </ul>
 </div>
 </body>
