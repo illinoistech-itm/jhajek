@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Chapter 15" />
+  <title>Spark the Definitive Guide 2nd Edition</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="https://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="https://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Spark the Definitive Guide 2nd Edition</h1>
+  <p class="author">
+Chapter 15
+  </p>
+  <p class="date">How Spark Runs on a Cluster</p>
+</div>
+<div id="how-spark-runs-on-a-cluster" class="title-slide slide section level1"><h1>How Spark Runs on a Cluster</h1></div><div id="text-book" class="slide section level2">
+<h1>Text Book</h1>
+<div class="figure">
+<img src="images/spark-book.png" title="Spark TextBook" alt="itmd-521 textbook" />
+<p class="caption"><em>itmd-521 textbook</em></p>
+</div>
+</div><div id="objectives-and-outcomes" class="slide section level2">
+<h1>Objectives and Outcomes</h1>
+<ul class="incremental">
+<li>Introduce and discuss what happens when Spark executes code</li>
+<li>Understand the architecture and components of a Spark Application</li>
+<li>Understand and discuss Spark pipelining</li>
+<li>Understand the requirements to run a Spark Application (leaning into chapter 16)</li>
+</ul>
+</div><div id="review---214" class="slide section level2">
+<h1>Review - 214</h1>
+<ul class="incremental">
+<li>Thus far we have…
+<ul class="incremental">
+<li>Focused on Spark’s properties as a programming interface</li>
+<li>Discussed how the structured APIs take a logical operation</li>
+<li>Break it into a logical plan</li>
+<li>Convert that to a physical plan that consists of RDD operations</li>
+<li>Executes them across a cluster of machines</li>
+</ul></li>
+<li>Learned the 6 core filetypes and their pros and cons</li>
+</ul>
+</div><div id="the-architecture-of-a-spark-application" class="slide section level2">
+<h1>The Architecture of a Spark Application</h1>
+<ul class="incremental">
+<li>Some review from the mid-term:
+<ul class="incremental">
+<li>The Spark driver</li>
+<li>The controller of the execution of a Spark Application</li>
+<li>Maintains all of the state of the Spark cluster</li>
+<li>It must interface with the cluster manager to get physical resources</li>
+<li>Ultimately a process for maintaining the state of the application running on the cluster</li>
+</ul></li>
+</ul>
+</div><div id="sample" class="slide section level2">
+<h1>Sample</h1>
+<ul class="incremental">
+<li>sample 1</li>
+</ul>
+</div><div id="conclusion" class="slide section level2">
+<h1>Conclusion</h1>
+<ul class="incremental">
+<li>We walked through the six core data-sources.</li>
+<li>We walked through the various read and write options for these six datatypes</li>
+<li>We covered reading and writing data in parallel</li>
+<li>We explained partitioning and bucketing in relation to writing data</li>
+</ul>
+</div><div id="questions" class="slide section level2">
+<h1>Questions</h1>
+<ul class="incremental">
+<li>Any questions?</li>
+<li>For next time, read Chapter 15 &amp; 16 and do any exercises in the book.</li>
+</ul>
+</div>
+</body>
+</html>
