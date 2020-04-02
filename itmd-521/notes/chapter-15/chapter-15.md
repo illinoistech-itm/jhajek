@@ -65,6 +65,15 @@
     - Local mode
 - We will be moving away from the shell (pyspark or spark-shell) and to compiled code for submission to a cluster
 
+## Cluster Mode
+
+- Cluster is the most common way of running Spark Applications
+  - User submits a precompiled JAR file, Python, or R script
+  - Cluster manager then launches the **driver** process on a worker node
+    - In addition to the **executor** processes
+    - This means that the cluster manager is responsible for maintaining all Spark Application processes
+  - ![*Figure 15-2. Spark's Cluster Mode*](images/figure-15-2.png "Spark's cluster mode")
+  
 
 
 

@@ -57,13 +57,73 @@ Chapter 15
 </div><div id="the-architecture-of-a-spark-application" class="slide section level2">
 <h1>The Architecture of a Spark Application</h1>
 <ul class="incremental">
-<li>Some review from the mid-term:
+<li>Some review from the mid-term:</li>
+<li>The Spark driver
 <ul class="incremental">
-<li>The Spark driver</li>
 <li>The controller of the execution of a Spark Application</li>
 <li>Maintains all of the state of the Spark cluster</li>
 <li>It must interface with the cluster manager to get physical resources</li>
 <li>Ultimately a process for maintaining the state of the application running on the cluster</li>
+</ul></li>
+<li>Spark Executors
+<ul class="incremental">
+<li>These are processes that perform the tasks assigned by the Spark driver</li>
+<li>Report their state back (success or failure)</li>
+<li>There can be multiple <strong>executor</strong> processes</li>
+</ul></li>
+</ul>
+</div><div id="the-architecture-of-a-spark-application---new-parts" class="slide section level2">
+<h1>The Architecture of a Spark Application - New Parts</h1>
+<ul class="incremental">
+<li>The Cluster Manager
+<ul class="incremental">
+<li>The driver and executors do not exist in a vacuum</li>
+<li>A cluster manager maintains a cluster of machines that will run your Spark Application</li>
+<li>A cluster has its own “driver” process and “worker” processes (separate from Spark)</li>
+<li>These processes are tied to physical machines (cluster nodes)</li>
+</ul></li>
+<li>When we run a Spark Application we request resources from the cluster manager to run it
+<ul class="incremental">
+<li>The cluster manager is responsible for running the underlying computers</li>
+<li><img src="images/figure-15-1.png" title="fig:Figure 15-1 A Cluster Driver" alt="Figure 15-1. A Cluster Driver" /></li>
+</ul></li>
+</ul>
+</div><div id="execution-modes" class="slide section level2">
+<h1>Execution Modes</h1>
+<ul class="incremental">
+<li>There are <a href="https://spark.apache.org/docs/latest/" title="Spark documentation on cluster types">four types of cluster manager types</a> available (Spark 2.4.5)
+<ul class="incremental">
+<li>standalone cluster manager</li>
+<li>Apache Mesos</li>
+<li><a href="https://spark.apache.org/docs/latest/running-on-yarn.html" title="Apache YARN documentation">Hadoop YARN</a></li>
+<li>Kubernetes</li>
+</ul></li>
+<li>We will be focusing on Hadoop YARN as that is what we have setup and running already<br />
+</li>
+<li>There are three execution modes
+<ul class="incremental">
+<li>This is how you tell the Spark application how to distribute your application</li>
+<li>This gives you the power to determine where the resources are located when you run the application
+<ul class="incremental">
+<li>Cluster mode</li>
+<li>Client mode</li>
+<li>Local mode</li>
+</ul></li>
+</ul></li>
+<li>We will be moving away from the shell (pyspark or spark-shell) and to compiled code for submission to a cluster</li>
+</ul>
+</div><div id="cluster-mode" class="slide section level2">
+<h1>Cluster Mode</h1>
+<ul class="incremental">
+<li>Cluster is the most common way of running Spark Applications
+<ul class="incremental">
+<li>User submits a precompiled JAR file, Python, or R script</li>
+<li>Cluster manager then launches the <strong>driver</strong> process on a worker node
+<ul class="incremental">
+<li>In addition to the <strong>executor</strong> processes</li>
+<li>This means that the cluster manager is responsible for maintaining all Spark Application processes</li>
+</ul></li>
+<li><img src="images/figure-15-2.png" title="fig:Spark&#39;s cluster mode" alt="Figure 15-2. Spark’s Cluster Mode" /></li>
 </ul></li>
 </ul>
 </div><div id="sample" class="slide section level2">
