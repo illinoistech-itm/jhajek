@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+
+    <div class="mermaid">
+      graph TD
+      A[Client] -->|tcp_80 tcp_443| B(Load Balancer <br/>Nginx 1.14.1 <br/>Ubuntu 18.04.4 <br/>192.168.33.10)
+      B -->|tcp_80 tcp_443| C[Frontend webserver1 <br/>Nginx 1.14.1 <br/>Ubuntu 18.04.4 <br/>192.168.33.11]
+      B -->|tcp_80 tcp_443| D[Frontend webserver2 <br/>Nginx 1.14.1 <br/>Ubuntu 18.04.4 <br/>192.168.33.12]
+      B -->|tcp_80 tcp_443| E[Frontend webserver3 <br/>Nginx 1.14.1 <br/>Ubuntu 18.04.4 <br/>192.168.33.13]
+      C -->|tcp_3306| F(Database 1)
+      D -->|tcp_3306| F(Database 1)
+      E -->|tcp_3306| F(Database 1)
+      C -->|tcp_3306| G(Database 2)
+      D -->|tcp_3306| G(Database 2)
+      E -->|tcp_3306| G(Database 2)
+
+    </div>
+  </body>
+</html>
