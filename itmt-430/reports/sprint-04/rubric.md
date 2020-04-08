@@ -53,7 +53,7 @@ Presentation is worth 20 points and needs to **only** contain the following:
 
 ### Written Report Deliverable
 
-The deliverable will be a single file named **sprint-04.md** located in a folder named **sprint-04** under the **reports** folder in your team GitHub repo.  Submit the URL to Blackboard under the Sprint-03 Assignment deliverable by the Project Manager as the report is a group submission.  Due date for the report is **9:35 AM the the day of your class lab time**, April 15 & 16 & 17.  Written report should follow the layout of document: ```written-report-submission-template.pdf```.
+The deliverable will be a single file named **sprint-04.md** located in a folder named **sprint-04** under the **reports** folder in your team GitHub repo.  Submit the URL to Blackboard under the ~~Sprint-03~~ Sprint-04 Assignment deliverable by the Project Manager as the report is a group submission.  Due date for the report is **9:35 AM the the day of your class lab time**, April 15 & 16 & 17.  Written report should follow the layout of document: ```written-report-submission-template.pdf```.
 
 ## Presentation Deliverable
 
