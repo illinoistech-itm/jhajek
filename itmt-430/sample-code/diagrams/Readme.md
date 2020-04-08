@@ -7,7 +7,7 @@ https://mermaid-js.github.io/mermaid/#/n00b-gettingStarted "mermaid JS getting s
 
 ## Sample Diagram
 
-```html
+```mermaid
 <html>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.0/dist/mermaid.min.js"></script>
