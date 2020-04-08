@@ -32,4 +32,6 @@ https://mermaid-js.github.io/mermaid/#/n00b-gettingStarted "mermaid JS getting s
 </html>
 ```
 
-Save the above file as *.html and it will render in a browser 
+Save the above file as *.html and it will render in a browser.
+
+![*Browser Render of above code*](images/mermaid-render.png "Render of Mermaid PNG")
