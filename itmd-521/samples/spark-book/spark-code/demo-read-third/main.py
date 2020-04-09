@@ -2,6 +2,7 @@
 from __future__ import print_function
 if __name__ == 'main':
     from pyspark.sql import SparkSession
+    from pyspark import SparkContext
     spark = SparkSession.builder.appName("Demo Spark Python Cluster Program").master("yarn").getOrCreate()
     
     sc = spark.sparkContext()
