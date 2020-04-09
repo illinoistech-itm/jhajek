@@ -8,5 +8,5 @@ if __name__ == 'main':
  
     df = sc.read.format("csv").option("inferSchema","true").option("header","true").load("hdfs://192.168.1.100/user/controller/ncdc-parsed-csv/20/part-r-00000")
     #df = sc.read.csv("hdfs://192.168.1.100/user/controller/ncdc-parsed-csv/20/part-r-00000").option("inferSchema","true").option("header","true")
-    print(df.show(10))
+    print(df.parallelize.show(10))
     
