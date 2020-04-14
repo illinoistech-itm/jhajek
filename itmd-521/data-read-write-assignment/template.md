@@ -8,12 +8,10 @@ Provide the command and all of the commandline options used to generate your csv
 
 I should be able to execute this command and achieve your results.
 
-### Example
-
 ```bash
 spark-submit --verbose jrh-demo-read.py --name --master yarn --deploy-mode cluster demo-read.py
 ```
 
-### Explanation
+### Your Explanation
 
 CITING from the text of the book, explain why you chose the values on the commandline that you did and explain what they do and what occurs.
