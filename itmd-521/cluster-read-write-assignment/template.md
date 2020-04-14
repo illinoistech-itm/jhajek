@@ -15,3 +15,5 @@ spark-submit --verbose jrh-demo-read.py --name --master yarn --deploy-mode clust
 ### Your Explanation
 
 CITING from the text of the book, explain why you chose the values on the commandline that you did and explain what they do and what occurs.
+
+In an additional paragraph, explain the process of how you handled bad/corrupt data during the read process.
