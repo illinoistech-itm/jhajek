@@ -1,4 +1,4 @@
-# ITMD-521 Assignment - Data Read & Write
+# ITMD-521 Assignment - Cluster Read & Write
 
 Using this chart, find the dataset you are to use for this assignment
 
@@ -65,7 +65,7 @@ In addition, these datasets are large ~100 GB so they will take time to execute.
 
 The columns listed above are delineated by a default column size, and not all of the information will be needed from each record.
 
-The substrings can be accessed via a method such as with a dDtaframe named df2:
+The substrings can be accessed via a method such as with a Dataframe named df2:
 
 ```bash
 df2.withColumn('Weather Station', df2['value'].substr(5, 6)) \
@@ -100,15 +100,11 @@ Your goal is three-fold:
 
 ### Location of Sources
 
-You can see the sources by issuing this Hadoop command from the remote-cluster CLI over the VPN: ```hadoop fs -ls -h /user/controller/ncdc-orig```
-
-You will find the text files in the HDFS directory: ```hdfs://namenode/user/controller/ncdc-orig``` for your Spark `.read()`
-
-You can write the results out to: ```hdfs://namenode/output/itmd-521/yyy/0000```for your Spark `.write()`
-
-Where `yyy` are your initials and `0000` is the individual year (place both csv and parquet into one year directory) -- naming the file the year plus file type extension.
-
-The original source files are of type `text` not to be confused with `textFile` in the book.
+* You can see the sources by issuing this Hadoop command from the remote-cluster CLI over the VPN: ```hadoop fs -ls -h /user/controller/ncdc-orig```
+* You will find the text files in the HDFS directory: ```hdfs://namenode/user/controller/ncdc-orig``` for your Spark `.read()`
+* You can write the results out to: ```hdfs://namenode/output/itmd-521/yyy/0000```for your Spark `.write()`
+  * Where `yyy` are your initials and `0000` is the individual year (place both csv and parquet into one year directory) -- naming the file the year plus file type extension.
+* The original source files are of type `text` not to be confused with `textFile` in the book.
 
 To get you started:
 
