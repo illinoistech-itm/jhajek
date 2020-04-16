@@ -116,7 +116,7 @@ df2 = spark.read.text("hdfs://namenode/user/controller/ncdc-orig/20.txt")
 
 The execution times may be upwards of 2/3 hours, so start early and don't wait.  This also requires that your remote cluster virtual machine is up and running.  Each dataset will be different so the results will not be the same as any other persons results.  
 
-When making decision in your code, **CITE** the page and chapter you found the information on in Python comment.  Do not be tempted to go to the internet initially, as all the answers you will need are in your textbook.  The internet can mislead you or present you with deprecated code and lead you down a wrong path.
+When making decision in your code, **CITE** the page and chapter you found the information on in Python comment.  Do not be tempted to go to the internet initially, as all the answers you will need are in your textbook.  The internet can mislead you or present you with deprecated code and lead you down a wrong path. Use the textbook and the [PySpark documentation to provide everything you need](https://spark.apache.org/docs/latest/api/python/pyspark.sql.html "PySpark documentation page").
 
 Each Spark job you submit, use the name option to put your initials in front of the name so that your job can be identified in the YARN job console. ```--name jrh-your-python-file.py```.  You find this console at [http://192.168.1.100:8088](http://192.168.1.100:8088 "YARN console")
 
