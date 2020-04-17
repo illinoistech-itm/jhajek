@@ -26,9 +26,9 @@ The assignment will be graded in two parts, 80 points for the report, 20 points 
   - Add screenshot of a minimum of 5 additional GitHub issues/bugs reported, assigned, and resolved
 - Infrastructure
   - List all tasks that you have completed along with the artifacts proving they are complete (GitHub commit URL and Project Management artifact screenshot)
-  - Create an Nginx based Load-Balancer to route between two copies of the front end virtual machine
+  - Create a virtual machine based Load-Balancer to route between two copies of the front end virtual machines (For example: Nginx)
   - Include a script that will build each of these discrete systems as virtual machines automatically, include instructions how to do this in the ```install.md``` located in the root of the GitHub repo
-    - Now at a minimum of 4 systems: Load Balancer, Frontend 1, Frontend 2, Backend-datastore
+    - At a minimum of 4 systems: Load Balancer, Frontend 1, Frontend 2, Backend-datastore
   - Include in the *Diagrams* folder a diagram of all of the discrete servers and their IP addresses in your application (All systems need to be on a discrete server)
   - Include a list of external packages per system being installed for this application via package manager that were added or removed since sprint-04
 - Developer
@@ -42,25 +42,27 @@ The assignment will be graded in two parts, 80 points for the report, 20 points 
 - Junior Developer
   - List all tasks that you have completed along with the artifacts proving they are complete (GitHub commit URL and Project Management artifact screenshot)
   - Create a feature and functionality on the Admin portal of your site that allows an admin to export (or dump) the entire database to a local file
-  - For the 15 "test" user accounts, create 3 actions per user upon automated deploy of the system
+  - For the 15 "test" user accounts, create 2 actions per user upon automated deploy of the system
     - For instance, have each user *buy* three things, or make three posts, or three uploaded photos, or flip three buttons
   - Show from the code the firewall ports opened on each discrete vm
 - Project Manager
-  - Include a file  ```install.md``` in the root of the team GitHub Repo detailing all instructions to build and run your application
+  - Based on the install.md instruction, the Professor will build your application and recreate the action the Project Manager demonstrated in their recorded video
   - List any detailed assumptions your team made explaining deliverable context as needed
 
 ### Presentation Rubric
 
 Presentation is worth 20 points and will be submitted by video recording. The due date for the video recording will be **11:59 PM Saturday May 2nd**.  The submission will be **individual submission**.  I recommend using the [OBS Project](https://obsproject.com/ "OBS Project website") for screen and video capture, it is Opensource software and cross platform available, but you are free to use other software.
 
-Each person needs to record these following steps with your camera in the upper left corner and annotating the steps mentioned below.  There are some compromises we will have to make, for instance, the build time of each system might be long, we don't need to capture the entire build, just the beginning phases.
+Each person needs to record these following steps with your camera in the upper right corner and annotating the steps mentioned below.  There are some compromises we will have to make, for instance, the build time of each system might be long, we don't need to capture the entire build, just the beginning and ending phases.
 
-- From the commandline launch the script needed to build the infrastructure, as each virtual machines begins to build capture the beginning of this process annotating which system it is and then pause the recording during the build until the completion of the `packer build` and completion of the `vagrant up` process.  Resume the recording when the next component starts building and annotate this.  
-  - Upon successful building of the infrastructure, begin recording by opening a new browser tab and complete these steps
-- Log in as an already created user and execute an action your team has defined once, then log out
-- Log in as an already created user and execute an action your team has defined once, then log out
-- Live demonstration of the creation of a new user account and log in as the user just created and execute an action your team has defined once, then log out
-- Log in as an admin and demonstrate the Database dump feature
+- We need to see you demonstrate, from the commandline, the automated build of each infrastructure component for the application
+  - Capture just enough to see the building of the virtual machine begin (say 45 seconds worth)
+  - Using OBS or other software, you can pause the recording and restart it.  Resume the recording when the next component starts building and verbally annotate this.  
+- Upon successful building of the infrastructure, begin recording again by opening a new browser tab, accessing your application and complete these steps:
+  - Log in as an already created user and execute an action, then log out
+  - Log in as another already created user and execute an action, then log out
+  - Live demonstration of the creation of a new user account and log in as the user just created and execute one action, then log out
+  - Log in as an admin and demonstrate the Database dump feature
 
 ## Presentation Deliverable
 
