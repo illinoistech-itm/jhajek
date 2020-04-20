@@ -34,31 +34,26 @@ The assignment will be graded in two parts, 80 points for the report, 20 points 
 - Developer
   - List all tasks that you have completed along with the artifacts proving they are complete (GitHub commit URL and Project Management artifact screenshot)
   - Show in the scripts required to build the Infrastructure, how you added the ability to clone application source code from your private repo to your local application
-  - Show the .sql schema file that creates your database.  If using MongoDB, show the JavaScript file.  Not a screen shot but put the code into the document
-    - Just the schema: CREATE statements no need for any INSERT statements
   - Show the creation of a non-root Database user and a brief explanation the reason for the permissions granted
-  - Show that https is enabled using local self-signed certs from the code
   - Show that database encryption at rest is enabled from the code
 - Junior Developer
   - List all tasks that you have completed along with the artifacts proving they are complete (GitHub commit URL and Project Management artifact screenshot)
   - Create a feature and functionality on the Admin portal of your site that allows an admin to export (or dump) the entire database to a local file
   - For the 15 "test" user accounts, create 2 actions per user upon automated deploy of the system
-    - For instance, have each user *buy* three things, or make three posts, or three uploaded photos, or flip three buttons
+    - For instance, have each user *buy* two things, or make two posts, or two uploaded photos, or flip two buttons
   - Show from the code the firewall ports opened on each discrete vm
 - Project Manager
-  - Based on the install.md instruction, the Professor will build your application and recreate the action the Project Manager demonstrated in their recorded video
   - List any detailed assumptions your team made explaining deliverable context as needed
+  - Instructor will execute instructions in your `install.md` file and recreate your live demonstration, so test, test, test.
 
 ### Presentation Rubric
 
-Presentation is worth 20 points and will be submitted by video recording. The due date for the video recording will be **11:59 PM Saturday May 2nd**.  The submission will be **individual submission**.  I recommend using the [OBS Project](https://obsproject.com/ "OBS Project website") for screen and video capture, it is Opensource software and cross platform available, but you are free to use other software.
-
-Each person needs to record these following steps with your camera in the upper right corner and annotating the steps mentioned below.  There are some compromises we will have to make, for instance, the build time of each system might be long, we don't need to capture the entire build, just the beginning and ending phases.
+Presentation is worth 20 points and will be submitted by video recording to Blackboard. **Each team member** needs to record the following steps with your camera in the upper right corner and annotating the steps mentioned below.  There are some compromises we will have to make. For instance, the build time of each system might be long, we don't need to capture the entire build, just the beginning phases -- if you opt to build in parallel then showing the parallel build starting satisfies this requirement.
 
 - We need to see you demonstrate, from the commandline, the automated build of each infrastructure component for the application
   - Capture just enough to see the building of the virtual machine begin (say 45 seconds worth)
-  - Using OBS or other software, you can pause the recording and restart it.  Resume the recording when the next component starts building and verbally annotate this.  
-- Upon successful building of the infrastructure, begin recording again by opening a new browser tab, accessing your application and complete these steps:
+  - **Note:** Using OBS or other software, you can pause the recording and restart it.  Resume the recording when the next component starts building and verbally annotate this.  
+- Upon successful building and automated deployment of the infrastructure, begin recording again by opening a new browser tab, accessing your application and complete these steps:
   - Log in as an already created user and execute an action, then log out
   - Log in as another already created user and execute an action, then log out
   - Live demonstration of the creation of a new user account and log in as the user just created and execute one action, then log out
@@ -66,7 +61,9 @@ Each person needs to record these following steps with your camera in the upper 
 
 ## Presentation Deliverable
 
-Name the single video: lastname-firstname-teamnumber.mp4.  Place the video on your school account Gmail drive.  Click the *Get Sharable Link*, submit this link to Blackboard on the individual deliverable.
+The due date for the video recording will be **11:59 PM Saturday May 2nd**.  The submission will be an **individual submission**.  I recommend using the [OBS Project](https://obsproject.com/ "OBS Project website") for screen and video capture, it is Opensource software and cross platform available - and records directly to MP4 files, but you are free to use other software.
+
+Name the single video: ```lastname-firstname-teamXXd.mp4```. Where *XXd* equals team number plus day. Place the video on your school account Gmail drive.  Click the *Get Sharable Link*, submit this link to Blackboard on the individual deliverable.
 
 ### Written Report Deliverable
 
