@@ -259,7 +259,7 @@ If you have multiple machines, you would change the IP addresses and you now can
 
 One thing you will have to do in this case is if you have run the `vagrant up` command already and make a change to the `Vagrantfile` you will need to exit the `vagrant ssh` session and issue a `vagrant reload --provision` which is the command that forces Vagrant to re-evaluate the `Vagrantfile` for any changes it needs to make to the structure of the VM.  This only needs to take place one time when you change the Vagrantfile, not every time.
 
-### Application Sample
+## Application Sample
 
 The vanilla installs are a good start, but they don't answer the question of **secrets** and how to pass them.  
 
@@ -273,7 +273,7 @@ What kind of secrets might we have?
 
 ![*The General Problem*](images/the_general_problem.png "XKCD cartoon about passing salts")
 
-## Packer User-Variables
+### Packer User-Variables
 
 [Packer User Variables](https://www.packer.io/docs/templates/user-variables.html)
 
