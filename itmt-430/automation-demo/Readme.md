@@ -95,7 +95,7 @@ After adding the `config` file, we now encounter a file permission error.  You w
 
 ![*bad-permission*](images/bad-permission.jpg "How to solve the bad permission issues for SSH")
 
-## A word about automation
+## A Word About Automation
 
 Looking back to the dawn of the PC era and the operating systems that flowed from that era, Windows, MacOS, and Linux, we see that installation of these OSes are tailored for single person installs with many manual options and configurations.  As students we learned this in ITM 301 or a related Intro to Computers class, where we install many operating systems.  
 
