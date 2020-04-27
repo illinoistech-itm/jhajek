@@ -164,7 +164,7 @@ The build template file, is this case named ```ubuntu-18044-vanilla.json``` has 
   * This is where you can secure copy SSH keys into the new virtual machine, and/or execute shell scripts to add additional software or configure your software.
 * [post-processors](https://packer.io/docs/post-processors/index.html "Packer post-processors webpage")
   * This phase is once the builder artifact is completed, you can export that format into multiple other formats.  
-  * This allows you to create a VirtualBox OVF file and then convert it into an Amazon EC2 AMI or in our case we will be converting into a Vagrant Box.
+  * This allows you to create a VirtualBox OVF file and then convert it into a Vagrant Box file.  There is an [entire list of other types Packer can export to](https://www.packer.io/docs/post-processors/index.html "List of types packer can export to website").
 
 ### Run the Sample
 
