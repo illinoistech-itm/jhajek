@@ -41,7 +41,7 @@
   - Magic
 - It is two things
   - A single **driver process** (like a main process in Java or Python)
-  - A **set** of *executor processes* 
+  - A **set** of *executor processes*
 
 ## More Application
 
@@ -71,7 +71,7 @@
   - This can be declared at run time
   - This can be declared in the code
 - There is a Spark mode called *local*
-  - This runs both the driver and executors as local CPU threads and not distrubuted
+  - This runs both the driver and executors as local CPU threads and not distributed
   - Good for a quick test mode
 
 ## Spark Application Have
