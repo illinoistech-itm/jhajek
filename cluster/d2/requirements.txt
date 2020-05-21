@@ -1,4 +1,0 @@
-opencv2-python
-zmq
-pyttsx3
-ghostscript

@@ -1,2 +1,0 @@
-
-rm -v /tmp/detectron-visualizations/*.pdf ; rm -v ~/run/*.jpg ; rm -v ./output.txt ; python3 viewer.py ; python ~/Detectron/tools/infer_simple.py --cfg ~/Detectron/configs/12_2017_baselines/e2e_mask_rcnn_R-101-FPN_2x.yaml --output-dir /tmp/detectron-visualizations --image-ext jpg --wts /home/user/model_final.pkl /home/user/run && python convert-pdf-text-and-speak-it.py output.txt /tmp/detectron-visualizations/frame0.jpg.pdf && qpdfview /tmp/detectron-visualizations/frame0.jpg.pdf

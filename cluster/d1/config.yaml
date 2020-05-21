@@ -1,5 +1,0 @@
-#https://askubuntu.com/questions/294338/is-it-possible-to-download-a-bash-script-and-execute-it-from-a-preseed-file
-# Let NetworkManager manage all devices on this system
-network:
-  version: 2
-  renderer: NetworkManager
