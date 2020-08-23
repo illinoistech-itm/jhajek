@@ -73,19 +73,6 @@ Upon a completion of the tutorial take a screenshot of your completion badge (or
 
 ![*Git-it Completion Badge*](images/completed.png "Image of Git-it Badge Completion")
 
-## Install IDE editor
-
-After installing an IDE editor of your choice, pick one of the listed or you can use another one, but it needs to have native Git support built into the editor.  Take a screenshot of output of the help > about button in the application.  You can install all or any of these via the package managers Chocolatey and Brew.
-
-* [VSCode from Microsoft](https://code.visualstudio.com/ "VSCode install")
-  * Cross platform and has direct shell integration
-* [atom.io](https://atom.io/ "Atom.io install")
-  * Built by GitHub for Git integration
-* [Sublime Text](http://www.sublimetext.com/ "Submlime Text installer site")
-  * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose.  Available for all platforms.
-* [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")
-  * Cross Platform development tool from Adobe
-
 ## Create and Push your Readme.md
 
 Final step, is to clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it).  If you already have a private repo provided by the professor from a previous class, just create a new folder named **itmo-453** or **itmo-553**, no spaces! Ever! and push your new folder along with a Readme.md file and a folder named **images**.  
