@@ -67,7 +67,7 @@ brew cask install visual-studio-code virtualbox vagrant
 
 Download, extract, and execute the Git-it tutorial, located: [https://github.com/jlord/git-it-electron/releases](https://github.com/jlord/git-it-electron/releases "Git-it release tutorial").  The program runs as an executable so there is no installation needed and is cross platform.
 
-Next we can download and extract the [Git-it Tutorial](https://github.com/jlord/git-it-electron/ "Git-it install Page"). Git-it is a desktop (Mac, Windows and Linux) app that teaches you how to use Git and GitHub on the command line.  Releases can be found under the [Release Tab](https://github.com/jlord/git-it-electron/releases "Git-it Download Releases").  Extract the file, execute the file `Git-it`:
+Next we can download and extract the [Git-it Tutorial](https://github.com/jlord/git-it-electron/ "Git-it install Page"). Git-it is a desktop (Mac, Windows and Linux) app that teaches you how to use Git and GitHub on the command line.  Releases can be found under the [Release Tab](https://github.com/jlord/git-it-electron/releases "Git-it Download Releases").  Extract the file, execute the file `Git-it`.
 
 Upon a completion of the tutorial take a screenshot of your completion badge (or dots).
 
