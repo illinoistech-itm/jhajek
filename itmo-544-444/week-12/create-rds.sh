@@ -1,1 +1,0 @@
-aws rds create-db-instance --db-name dataserver --db-instance-identifier jrh-inclass --master-username controller --master-user-password ilovebunnies --engine mysql --db-instance-class db.t2.micro --allocated-storage 5

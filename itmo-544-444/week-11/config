@@ -1,4 +1,0 @@
-Host github.com
-    StrictHostKeyChecking no
-    IdentityFile /home/ubuntu/.ssh/id_rsa
-    User git
