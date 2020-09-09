@@ -4,7 +4,7 @@
 
 ![Prince of all Sayans](images/vegeta.jpg "Vegeta")
 
-## Where are you from?
+## Where are you from
 
 From the Chicago suburbs, Lombard and Glen Ellyn (30 miles west of campus).
 
