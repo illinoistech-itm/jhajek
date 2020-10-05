@@ -6,6 +6,7 @@
 packer-cache/
 *.pem
 *~$
+*.ova
 
 .DS_Store
 id_rsa
