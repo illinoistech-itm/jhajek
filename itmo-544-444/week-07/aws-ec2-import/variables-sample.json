@@ -1,0 +1,14 @@
+{
+    "database-root-password": "foo",
+    "database-user-password": "bar",
+    "database-access-from-ip": "127.0.0.1",
+    "database-ip": "127.0.0.1",
+    "webserver-ip": "127.0.0.1",
+    "database-name": "namegoeshere",
+    "database-user-name": "database-username-goes-here",
+    "access_key": "AWS key goes here",
+    "secret_key": "AWS secret key goes here",
+    "s3_bucket_name": "ova-bucket-xyz",
+    "region": "us-east-1"
+
+}

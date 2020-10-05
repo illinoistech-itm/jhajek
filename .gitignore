@@ -9,6 +9,7 @@ packer-cache/
 
 .DS_Store
 id_rsa
+id_rsa*
 id_rsa.pub
 
 [Ll]ibrary/
