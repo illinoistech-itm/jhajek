@@ -41,6 +41,7 @@
       "ssh_password": "ubuntu",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
+      "headless": true,
       "shutdown_command": "echo 'ubuntu'|sudo -S shutdown -P now",
       "guest_additions_mode": "disable",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
