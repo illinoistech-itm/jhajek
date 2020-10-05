@@ -72,7 +72,10 @@
         "type": "shell",
         "execute_command" : "echo 'ubuntu' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
         "inline": [
-          "mkdir -p /home/ubuntu/.ssh",
+          "mkdir -p /home/ubuntu/.ssh/",
+          "touch /home/ubuntu/.ssh/authorized_keys",
+          "chmod 600 /home/ubuntu/.ssh/authorized_keys",
+          "chown ubuntu:ubuntu /home/ubuntu/.ssh/authorized_keys",
           "mkdir -p /root/.ssh",
           "chmod 600 /home/ubuntu/id_rsa_github_deploy_key",
           "cp -v /home/ubuntu/id_rsa_github_deploy_key /home/ubuntu/.ssh/",
