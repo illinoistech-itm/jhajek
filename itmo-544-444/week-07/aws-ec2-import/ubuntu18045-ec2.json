@@ -69,6 +69,16 @@
         "destination": "/home/ubuntu/"     
       },
       {
+        "type": "file",
+        "source": "./05_logging.cfg",
+        "destination": "/etc/cloud/cloud.cfg.d/"  
+      },
+      {
+        "type": "file",
+        "source": "./95_mirrors.cfg",
+        "destination": "/etc/cloud/cloud.cfg.d/"  
+      },
+      {
         "type": "shell",
         "execute_command" : "echo 'ubuntu' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
         "inline": [
@@ -81,6 +91,7 @@
           "cp -v /home/ubuntu/id_rsa_github_deploy_key /home/ubuntu/.ssh/",
           "cp -v /home/ubuntu/config /home/ubuntu/.ssh/",
           "cp -v /home/ubuntu/config /root/.ssh/"
+          "cp -v "
         ]
       }, 
     {
