@@ -13,7 +13,7 @@ sudo systemctl start ssh.service
 sudo apt-get install -y git rsync wget links apache2 cloud-init
 
 sudo systemctl enable cloud-init
-sudo systemctl start cloud-init
+#sudo systemctl start cloud-init
 
 sudo systemctl enable apache2
 sudo systemctl start apache2
