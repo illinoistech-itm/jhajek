@@ -2,3 +2,4 @@ id_rsa*
 id_rsa*.pub
 packer-cache/
 output*/
+variables.json
