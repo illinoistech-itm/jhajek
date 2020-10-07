@@ -86,10 +86,10 @@
           "chown -R ubuntu:ubuntu /home/ubuntu/.ssh",
           "chmod 700 /home/ubuntu/.ssh/",
           "chmod 600 /home/ubuntu/id_rsa_github_deploy_key",
-          "cp -v /home/ubuntu/id_rsa_github_deploy_key /home/ubuntu/.ssh/",
-          "cp -v /home/ubuntu/config /home/ubuntu/.ssh/",
-          "cp -v /home/ubuntu/95_mirrors.cfg /etc/cloud/cloud.cfg.d/",
-          "cp -v /home/ubuntu/05_logging.cfg /etc/cloud/cloud.cfg.d/"
+          "mv -v /home/ubuntu/id_rsa_github_deploy_key /home/ubuntu/.ssh/",
+          "mv -v /home/ubuntu/config /home/ubuntu/.ssh/",
+          "mv -v /home/ubuntu/95_mirrors.cfg /etc/cloud/cloud.cfg.d/",
+          "mv -v /home/ubuntu/05_logging.cfg /etc/cloud/cloud.cfg.d/"
         ]
       }, 
     {
