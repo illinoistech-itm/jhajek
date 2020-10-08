@@ -3,7 +3,7 @@
 # Install dependecies here:
 
 sudo apt-get update
-sudo apt-get install nodejs npm 
+sudo apt-get install -y nodejs npm 
 
 # Run NPM to install the NPM Node packages needed for the code
 # You will start this NodeJS script by executing the command: node app.js
@@ -20,3 +20,4 @@ npm install express aws-sdk multer multer-s3 pm2
 git clone git@github.com:illinoistech-itm/hajek.git
 
 # Start the nodejs app where it is located via PM2
+# https://pm2.keymetrics.io/docs/usage/quick-start
