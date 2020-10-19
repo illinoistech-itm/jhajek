@@ -1,7 +1,7 @@
 {
   "variables": {
   "mem-build-allocation": "1024",
-  "headless-val": "false"
+  "headless-val": "true"
 },
   "builders": [{
     "name": "ub-host1",
