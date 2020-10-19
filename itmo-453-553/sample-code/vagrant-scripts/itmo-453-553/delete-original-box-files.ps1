@@ -5,3 +5,5 @@ Remove-Item ../ub-riemannmc-virtualbox*.box
 Remove-Item ../ub-graphitea-virtualbox*.box
 Remove-Item ../centos-graphiteb-virtualbox*.box
 Remove-Item ../ub-graphitemc-virtualbox*.box
+Remove-Item ../ub-host1-virtualbox*.box
+Remove-Item ../centos-host2-virtualbox*.box

@@ -6,3 +6,5 @@ rm ../ub-riemannmc-virtualbox*.box
 rm ../ub-graphitea-virtualbox*.box
 rm ../centos-graphiteb-virtualbox*.box
 rm ../ub-graphitemc-virtualbox*.box
+rm ../ub-host1-virtualbox*.box
+rm ../centos-host2-virtualbox*.box

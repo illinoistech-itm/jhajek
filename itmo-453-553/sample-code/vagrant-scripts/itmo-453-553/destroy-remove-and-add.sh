@@ -21,7 +21,7 @@ rm -rf ./.vagrant
 cd ../host1
 vagrant destroy -f
 rm -rf ./.vagrant  
-cd ../ub-host2
+cd ../host2
 vagrant destroy -f
 rm -rf ./.vagrant 
 cd ../
