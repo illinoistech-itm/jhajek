@@ -76,5 +76,5 @@ fi
 if [ -a  ../centos-host2-virtualbox*.box ] 
     vagrant box add ../centos-host2-virtualbox*.box --name host2
 else
-   echo  "File ../centos-host2-virtualbox*.box doesn't exist"
+   echo  "File ../centos-host2-virtualbox*.box does not exist"
 fi
