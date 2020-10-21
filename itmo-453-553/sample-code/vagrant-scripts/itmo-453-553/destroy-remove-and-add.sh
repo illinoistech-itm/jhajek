@@ -37,44 +37,51 @@ vagrant box remove host1 --force
 vagrant box remove host2 --force
 
 # Add newly built Vagrant boxes
-if [ -a  ../ub-riemanna-virtualbox*.box ]
+if [ -a  ../../itmo-453-553/build/ub-riemanna-virtualbox*.box ]
 then 
-    vagrant box add ../ub-riemanna-virtualbox*.box --name ub-riemanna
+    vagrant box add ../../itmo-453-553/build/ub-riemanna-virtualbox*.box --name ub-riemanna
 else
-   echo  "File ../ub-riemanna-virtualbox*.box doesn't exist"
+   echo  "File ../../itmo-453-553/build/ub-riemanna-virtualbox*.box doesn't exist"
 fi
-if [ -a  ../centos-riemannb-virtualbox*.box ] 
-    vagrant box add ../centos-riemannb-virtualbox*.box --name centos-riemannb
+if [ -a  ../../itmo-453-553/build/centos-riemannb-virtualbox*.box ] 
+then
+    vagrant box add ../../itmo-453-553/build/centos-riemannb-virtualbox*.box --name centos-riemannb
 else
-   echo  "File ../centos-riemannb-virtualbox*.box doesn't exist"
+   echo  "File ../../itmo-453-553/build/centos-riemannb-virtualbox*.box doesn't exist"
 fi
-if [ -a  ../ub-riemannmc-virtualbox*.box ] 
-    vagrant box add ../ub-riemannmc-virtualbox*.box --name ub-riemannmc
+if [ -a  ../../itmo-453-553/build/ub-riemannmc-virtualbox*.box ] 
+then
+    vagrant box add ../../itmo-453-553/build/ub-riemannmc-virtualbox*.box --name ub-riemannmc
 else
-   echo  "File ../ub-riemannmc-virtualbox*.box doesn't exist"
+   echo  "File ../../itmo-453-553/build/ub-riemannmc-virtualbox*.box doesn't exist"
 fi
-if [ -a  ../ub-graphitea-virtualbox*.box ] 
-    vagrant box add ../ub-graphitea-virtualbox*.box --name ub-graphitea
+if [ -a  ../../itmo-453-553/build/ub-graphitea-virtualbox*.box ] 
+then
+    vagrant box add ../../itmo-453-553/build/ub-graphitea-virtualbox*.box --name ub-graphitea
 else
-   echo  "File ../ub-graphitea-virtualbox*.box doesn't exist"
+   echo  "File ../../itmo-453-553/build/ub-graphitea-virtualbox*.box doesn't exist"
 fi
-if [ -a  ../centos-graphiteb-virtualbox*.box ] 
-    vagrant box add ../centos-graphiteb-virtualbox*.box --name centos-graphiteb
+if [ -a  ../../itmo-453-553/build/centos-graphiteb-virtualbox*.box ] 
+then
+    vagrant box add ../../itmo-453-553/build/centos-graphiteb-virtualbox*.box --name centos-graphiteb
 else
-   echo  "File ../centos-graphiteb-virtualbox*.box doesn't exist"
+   echo  "File ../../itmo-453-553/build/centos-graphiteb-virtualbox*.box doesn't exist"
 fi
-if [ -a  ../ub-graphitemc-virtualbox*.box ] 
-    vagrant box add ../ub-graphitemc-virtualbox*.box --name ub-graphitemc
+if [ -a  ../../itmo-453-553/build/ub-graphitemc-virtualbox*.box ] 
+then
+    vagrant box add ../../itmo-453-553/build/ub-graphitemc-virtualbox*.box --name ub-graphitemc
 else
-   echo  "File ../ub-graphitemc-virtualbox*.box doesn't exist"
+   echo  "File ../../itmo-453-553/build/ub-graphitemc-virtualbox*.box doesn't exist"
 fi
-if [ -a  ../ub-host1-virtualbox*.box ] 
-    vagrant box add ../ub-host1-virtualbox*.box --name host1
+if [ -a  ../../itmo-453-553/build/ub-host1-virtualbox*.box ] 
+then
+    vagrant box add ../../itmo-453-553/build/ub-host1-virtualbox*.box --name host1
 else
-   echo  "File ../ub-host1-virtualbox*.box doesn't exist"
+   echo  "File ../../itmo-453-553/build/ub-host1-virtualbox*.box doesn't exist"
 fi
-if [ -a  ../centos-host2-virtualbox*.box ] 
-    vagrant box add ../centos-host2-virtualbox*.box --name host2
+if [ -a  ../../itmo-453-553/build/centos-host2-virtualbox*.box ] 
+then
+    vagrant box add ../../itmo-453-553/build/centos-host2-virtualbox*.box --name host2
 else
-   echo  "File ../centos-host2-virtualbox*.box does not exist"
+   echo  "File ../../itmo-453-553/build/centos-host2-virtualbox*.box doesn't exist"
 fi
