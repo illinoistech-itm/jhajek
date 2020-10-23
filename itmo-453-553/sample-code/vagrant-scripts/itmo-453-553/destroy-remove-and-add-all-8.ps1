@@ -76,13 +76,3 @@ If (Test-Path -Path ../../itmo-453-553/build/ub-host1-virtualbox*.box) {
 } Else {
     Write-Host "File ../../itmo-453-553/build/ub-host1-virtualbox*.box doesn't exist"
 }
-If (Test-Path -Path ../../itmo-453-553/build/centos-host2-virtualbox*.box) {
-    vagrant box add ../../itmo-453-553/build/centos-host2-virtualbox*.box --name host2
-} Else {
-    Write-Host "File ../../itmo-453-553/build/centos-host2-virtualbox*.box doesn't exist"
-}
-If (Test-Path -Path ../../itmo-453-553/build/ub-host1-virtualbox*.box) {
-    vagrant box add ../../itmo-453-553/build/ub-host1-virtualbox*.box --name host1
-} Else {
-    Write-Host "File ../../itmo-453-553/build/ub-host1-virtualbox*.box doesn't exist"
-}
