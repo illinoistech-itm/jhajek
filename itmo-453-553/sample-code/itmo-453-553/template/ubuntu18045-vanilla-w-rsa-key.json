@@ -61,6 +61,29 @@
       }],
       
   "provisioners": [
+    {
+      "type": "file",
+      "source": "./id_rsa_itmo-453-553-2020",
+      "destination": "/home/vagrant/"
+      },
+      {
+        "type": "file",
+        "source": "./config",
+        "destination": "/home/vagrant/"     
+      },
+      {
+        "type": "shell",
+        "execute_command" : "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
+        "inline": [
+          "mkdir -p /home/vagrant/.ssh",
+          "mkdir -p /root/.ssh",
+          "chmod 600 /home/vagrant/id_rsa_github_deploy_key",
+          "cp -v /home/vagrant/id_rsa_github_deploy_key /home/vagrant/.ssh/",
+          "cp -v /home/vagrant/config /home/vagrant/.ssh/",
+          "cp -v /home/vagrant/config /root/.ssh/",
+          "git clone git@github.com:illinoistech-itm/hajek.git"
+        ]
+      },
   {
     "type": "shell",
   "execute_command" : "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
