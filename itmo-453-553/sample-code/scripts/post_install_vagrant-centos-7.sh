@@ -35,7 +35,7 @@ sudo yum install -y epel-release
 
 # Install base dependencies -  Centos 7 mininal needs the EPEL repo in the line above and the package daemonize
 sudo yum update -y
-sudo yum install -y wget unzip vim git python-setuptools curl
+sudo yum install -y wget unzip vim git python-setuptools curl fail2ban
 # Due to needing a tty to run sudo, this install command adds all the pre-reqs to build the virtualbox additions
 sudo yum install -y kernel-devel-`uname -r` gcc binutils make perl bzip2
 
