@@ -9,3 +9,17 @@
 packer build -parallel-builds=0 -var "mem-build-allocation=2048" -var "headless-val=true" -force ./aom-parallel-deploy-mixed-riemann-grafana-collectd.json
 packer build -parallel-builds=0 -var "mem-build-allocation=2048" -var "headless-val=true" -force ./aom-parallel-deploy-mixed-hosts.json
 ```
+
+## Setting up Mailer
+
+In your email.clj file add this line, replacing the james@example.com
+
+```clojure
+
+(def email (mailer {:host "smtp.gmail.com" :user "hajek@hawk.iit.edu" :pass "passwordhere" :tls true :port 587 :from "riemann@example.com"}))
+; URL to IIT student email https://ots.iit.edu/email/student-mail
+
+```
+
+For this library you need to disable secure Google Authentication (which might not be a good thing)
+[https://myaccount.google.com/lesssecureapps](https://myaccount.google.com/lesssecureapps "Link to less secure apps for Gmail")
