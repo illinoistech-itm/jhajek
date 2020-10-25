@@ -38,6 +38,8 @@ sudo yum update -y
 sudo yum install -y wget unzip vim git python-setuptools curl fail2ban
 # Due to needing a tty to run sudo, this install command adds all the pre-reqs to build the virtualbox additions
 sudo yum install -y kernel-devel-`uname -r` gcc binutils make perl bzip2
-
+sudo sed -i "s/bantime = 600/bantime = -1/g" /etc/fail2ban/jail.conf
+sudo systemctl enable fail2ban
+sudo service fail2ban restart
 
 echo "All Done!"
