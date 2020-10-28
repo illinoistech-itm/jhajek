@@ -35,7 +35,7 @@ sudo hostnamectl set-hostname logstash
 
 ##################################################
 sudo apt-get update -y
-sudo apt-get install -y openjdk-8-jdk
+sudo apt-get install -y openjdk-8-jre
 
 wget https://artifacts.elastic.co/downloads/kibana/kibana-7.9.3-amd64.deb
 sudo dpkg -i ./kibana-7.9.3-amd64.deb

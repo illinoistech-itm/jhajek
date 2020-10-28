@@ -35,7 +35,7 @@ sudo hostnamectl set-hostname ela1
 
 ##################################################
 sudo apt-get update -y
-sudo apt-get install -y openjdk-8-jdk
+sudo apt-get install -y openjdk-8-jre
 
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.3-amd64.deb
 sudo dpkg -i ./elasticsearch-7.9.3-amd64.deb
