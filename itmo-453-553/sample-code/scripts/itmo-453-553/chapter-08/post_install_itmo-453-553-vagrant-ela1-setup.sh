@@ -32,7 +32,8 @@ cat << EOT >> /etc/hosts
 EOT
 
 sudo hostnamectl set-hostname ela1
-
+#Set timezone to UTC
+sudo timedatectl set-timezone UTC
 ##################################################
 sudo apt-get update -y
 sudo apt-get install -y openjdk-8-jre
