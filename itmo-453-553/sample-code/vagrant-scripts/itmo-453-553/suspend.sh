@@ -15,4 +15,12 @@ cd ../host2
 vagrant suspend
 cd ../host2
 vagrant suspend
+cd ../ela1
+vagrant suspend
+cd ../ela2
+vagrant suspend
+cd ../ela3
+vagrant suspend
+cd ../logstash
+vagrant suspend
 cd ../

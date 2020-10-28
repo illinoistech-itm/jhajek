@@ -16,4 +16,12 @@ cd ../centos-graphiteb
 vagrant halt
 cd ../ub-graphitemc
 vagrant halt
+cd ../ela1
+vagrant halt
+cd ../ela2
+vagrant halt
+cd ../ela3
+vagrant halt
+cd ../logstash
+vagrant halt
 cd ../
