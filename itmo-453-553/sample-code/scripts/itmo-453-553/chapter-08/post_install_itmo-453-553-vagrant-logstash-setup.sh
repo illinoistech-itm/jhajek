@@ -49,5 +49,3 @@ sudo dpkg -i ./logstash-7.9.3.deb
 sudo systemctl enable logstash
 sudo systemctl start logstash
 
-sudo useradd -G adm logstash
-
