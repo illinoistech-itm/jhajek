@@ -27,6 +27,14 @@ var upload = multer({
     })
 });
 
+var params = {
+    Bucket: 'fall2020-jrh', /* required */
+   };
+s3.listObjects(params, function(err, data) {
+    if (err) console.log(err, err.stack); // an error occurred
+    else     console.log(data);           // successful response
+  });
+
 var rds = new aws.RDS();
 
 var dbhost = '';
@@ -49,6 +57,11 @@ app.get('/', function (req, res) {
 
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 
+    s3.listObjects(params, function(err, data) {
+        if (err) console.log(err, err.stack); // an error occurred
+        else     console.log(data);           // successful response
+      });
+
 // create the connection to database
 const connection = mysql.createConnection({
     //host: 'jrh-db-identifier.cy1h2nhwscl7.us-east-1.rds.amazonaws.com',
@@ -65,7 +78,7 @@ connection.query(
       console.log(results); // results contains rows returned by server
      }
   );
-        res.write(upload.array);
+        res.write(upload.array(''));
         res.write(dbhost);
         res.write("<br />File uploaded successfully to Amazon S3 Server!<br />");
 
