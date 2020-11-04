@@ -41,11 +41,11 @@ wget https://artifacts.elastic.co/downloads/kibana/kibana-7.9.3-amd64.deb
 sudo dpkg -i ./kibana-7.9.3-amd64.deb
 
 sudo systemctl enable kibana
-sudo systemctl start kibana
+#sudo systemctl start kibana
 
 wget https://artifacts.elastic.co/downloads/logstash/logstash-7.9.3.deb
 sudo dpkg -i ./logstash-7.9.3.deb
 
 sudo systemctl enable logstash
-sudo systemctl start logstash
+#sudo systemctl start logstash
 
