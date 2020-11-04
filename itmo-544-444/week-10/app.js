@@ -53,11 +53,6 @@ app.get('/', function (req, res) {
 
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 
-    s3.listObjects(paramss3, function(err, data) {
-        if (err) console.log(err, err.stack); // an error occurred
-        else     console.log(data);           // successful response
-      });
-
 // create the connection to database
 const connection = mysql.createConnection({
     //host: 'jrh-db-identifier.cy1h2nhwscl7.us-east-1.rds.amazonaws.com',
