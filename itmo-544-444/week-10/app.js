@@ -43,6 +43,12 @@ rds.describeDBInstances(params, function(err, data) {
           }
 });
 
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
+
 // create the connection to database
 const connection = mysql.createConnection({
     //host: 'jrh-db-identifier.cy1h2nhwscl7.us-east-1.rds.amazonaws.com',
@@ -51,13 +57,8 @@ const connection = mysql.createConnection({
     password: 'ilovebunnies',
     database: 'company'
  });
-
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/index.html');
-});
-
-app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
-        res.write(dbhost);
+ 
+ res.write(dbhost);
         res.write("<br />File uploaded successfully to Amazon S3 Server!<br />");
 
         res.end();
