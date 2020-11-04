@@ -58,7 +58,16 @@ const connection = mysql.createConnection({
     database: 'company'
  });
  
- res.write(dbhost);
+// simple query
+connection.query(
+    'SELECT * FROM `jobs`', 
+    function(err, results, fields) {
+      console.log(results); // results contains rows returned by server
+      console.log(fields); // fields contains extra meta data about results, if available
+    }
+  );
+
+        res.write(dbhost);
         res.write("<br />File uploaded successfully to Amazon S3 Server!<br />");
 
         res.end();
