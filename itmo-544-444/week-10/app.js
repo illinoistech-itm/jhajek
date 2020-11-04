@@ -30,10 +30,6 @@ var upload = multer({
 var paramss3 = {
     Bucket: 'fall2020-jrh', /* required */
    };
-s3.listObjects(paramss3, function(err, data) {
-    if (err) console.log(err, err.stack); // an error occurred
-    else     console.log(data);           // successful response
-  });
 
 var rds = new aws.RDS();
 
@@ -57,7 +53,7 @@ app.get('/', function (req, res) {
 
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 
-    s3.listObjects(params, function(err, data) {
+    s3.listObjects(paramss3, function(err, data) {
         if (err) console.log(err, err.stack); // an error occurred
         else     console.log(data);           // successful response
       });
