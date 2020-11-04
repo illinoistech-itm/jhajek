@@ -27,10 +27,10 @@ var upload = multer({
     })
 });
 
-var params = {
+var paramss3 = {
     Bucket: 'fall2020-jrh', /* required */
    };
-s3.listObjects(params, function(err, data) {
+s3.listObjects(paramss3, function(err, data) {
     if (err) console.log(err, err.stack); // an error occurred
     else     console.log(data);           // successful response
   });
