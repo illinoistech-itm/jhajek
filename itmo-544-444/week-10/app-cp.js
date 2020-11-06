@@ -15,7 +15,7 @@ aws.config.update({
 var app = express(),
     s3 = new aws.S3();
 
- var endpoint = s3.endpoint;
+ var endpoint = "";
 
 app.use(bodyParser.json());
 
