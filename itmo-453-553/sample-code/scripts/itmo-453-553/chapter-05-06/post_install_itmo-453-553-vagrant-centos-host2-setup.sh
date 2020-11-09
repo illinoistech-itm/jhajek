@@ -74,7 +74,7 @@ git clone https://github.com/turnbullpress/aom-code.git
 # Collectd config filees
 sudo cp -v /home/vagrant/aom-code/5-6/collectd/collectd.conf /etc
 sudo sudo cp -rv /home/vagrant/aom-code/5-6/collectd/collectd.d/*.conf /etc/collectd.d/
-sudo sed -i 's/riemanna.exmaple.com/riemannb.example.com/g' /etc/collectd.d/write_riemann.conf
+sudo sed -i 's/riemanna.example.com/riemannb.example.com/g' /etc/collectd.d/write_riemann.conf
 sudo sed -i 's/riemanna/host2/g' /etc/collectd.d/write_riemann.conf
 
 # Reload collectd service and start it at boot

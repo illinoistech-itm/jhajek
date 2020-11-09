@@ -59,8 +59,12 @@ var fname = req.files[0].originalname;
 // Now we can construct the S3 URL since we already know the structure of S3 URLS and our bucket
 // For this sample I hardcoded my bucket, you can do this or retrieve it dynamically
 var s3url = "https://fall2020-jrh.s3.amazonaws.com/" + fname;
-
+// Use this code to retrieve the value entered in the username field in the index.html
 var username = req.body['name'];
+// Use this code to retrieve the value entered in the email field in the index.html
+var email = req.body['email'];
+// Use this code to retrieve the value entered in the phone field in the index.html
+var phone = req.body['phone'];
 
 // create the connection to database
 const connection = mysql.createConnection({
@@ -71,9 +75,17 @@ const connection = mysql.createConnection({
     database: 'company'
  });
  
- // simple query
+ // simple query to test making a query from the database, not needed for this application
 connection.query(
     'SELECT * FROM `jobs`', 
+    function(err, results) {
+      console.log(results); // results contains rows returned by server
+     }
+  ); 
+
+ // SQL INSERT STATEMENT to insert the values from the 
+ connection.query(
+    'INSERT INTO jobs (RecordNumber,CustomerName,Email,Phone, Status,S3URL) VALUES ()  ', 
     function(err, results) {
       console.log(results); // results contains rows returned by server
      }
