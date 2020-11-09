@@ -95,6 +95,7 @@ var recorddata = {ID:1,RecordNumber: id,CustomerName: username,Email: email,Phon
  var query = connection.query('INSERT INTO jobs ?', recorddata,
     function(err, results) {
         console.log(query.sql);
+        console.log(err);
         //console.log(results); // results contains rows returned by server
      }
   ); 
