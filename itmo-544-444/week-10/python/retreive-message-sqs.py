@@ -24,9 +24,10 @@ for message in queue.receive_messages():
 # use sample code from render-image.py
 
 # Put Image Object back into S3 Bucket
-
+# use source code from upload-image-to-s3.py
 
  # SQL UPDATE record where id == message.body  set Stat from 0 to 1
+# https://dev.mysql.com/doc/connector-python/en/    
 
 # Let the queue know that the message is processed
 message.delete()
