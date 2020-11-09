@@ -92,12 +92,12 @@ var recorddata = {ID:1,RecordNumber: id,CustomerName: username,Email: email,Phon
 
  // https://github.com/mysqljs/mysql#escaping-query-values
  // SQL INSERT STATEMENT to insert the values from the POST
- connection.query('INSERT INTO jobs ?', recorddata,
+ var query = connection.query('INSERT INTO jobs ?', recorddata,
     function(err, results) {
       console.log(results); // results contains rows returned by server
      }
   ); 
-
+  console.log(query.sql);
 // Write output to the screen
         res.write(s3url + "\n");
         res.write(username + "\n")
