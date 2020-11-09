@@ -17,16 +17,13 @@ var app = express(),
 
 app.use(bodyParser.json());
 
-var fname = '';
-
 var upload = multer({
     storage: multerS3({
         s3: s3,
         bucket: 'fall2020-jrh',
         key: function (req, file, cb) {
             cb(null, file.originalname);
-            fname = req.files.originalname;
-         }
+            }
     })
 });
 
@@ -73,7 +70,7 @@ connection.query(
       console.log(results); // results contains rows returned by server
      }
   ); 
-        res.write(fname);
+        res.write(upload.array('uploadFiles',1).originalname);
         res.write(dbhost);
         res.write("<br />File uploaded successfully to Amazon S3 Server!<br />");
 
