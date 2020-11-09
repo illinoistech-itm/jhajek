@@ -88,7 +88,9 @@ connection.query(
      }
   ); 
 
-var recorddata = {RecordNumber: 45,CustomerName: 'jeremy',Email: 'hajek@iit.edu',Phone: '630-469-6411', Stat: 0, S3URL: "https"};
+// hardcoded values for testing
+//var recorddata = {RecordNumber: 45,CustomerName: 'jeremy',Email: 'hajek@iit.edu',Phone: '630-469-6411', Stat: 0, S3URL: "https"};
+var recorddata = {RecordNumber: id,CustomerName: username,Email: email,Phone: phone, Stat: 0, S3URL: s3url};
 
  // https://github.com/mysqljs/mysql#escaping-query-values
  // SQL INSERT STATEMENT to insert the values from the POST
@@ -99,6 +101,9 @@ var recorddata = {RecordNumber: 45,CustomerName: 'jeremy',Email: 'hajek@iit.edu'
         //console.log(results); // results contains rows returned by server
      }
   ); 
+
+// Code for SQS Message sending goes here
+// https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SQS.html#sendMessage-property
 
 // Write output to the screen
         res.write(s3url + "\n");
