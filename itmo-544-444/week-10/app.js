@@ -98,7 +98,7 @@ var recorddata = {RecordNumber: id,CustomerName: username,Email: email,Phone: ph
     function(err, results) {
         console.log(query.sql);
         console.log(err);
-        //console.log(results); // results contains rows returned by server
+        console.log(results); // results contains rows returned by server
      }
   ); 
 
