@@ -96,8 +96,6 @@ connection.query(
      }
   ); 
 
-
-
 // Write output to the screen
         res.write(s3url + "\n");
         res.write(username + "\n")
