@@ -94,10 +94,11 @@ var recorddata = {ID:1,RecordNumber: id,CustomerName: username,Email: email,Phon
  // SQL INSERT STATEMENT to insert the values from the POST
  var query = connection.query('INSERT INTO jobs ?', recorddata,
     function(err, results) {
-      console.log(results); // results contains rows returned by server
+        console.log(query.sql);
+        console.log(results); // results contains rows returned by server
      }
   ); 
-  console.log(query.sql);
+
 // Write output to the screen
         res.write(s3url + "\n");
         res.write(username + "\n")
