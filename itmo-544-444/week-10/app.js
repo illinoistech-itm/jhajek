@@ -68,7 +68,7 @@ const connection = mysql.createConnection({
         res.write(fname + "\n");
         res.write(dbhost);
         res.write("<br />File uploaded successfully to Amazon S3 Server!<br />");
-        res.write();
+      
 
         res.end();
 });
