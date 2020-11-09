@@ -15,9 +15,9 @@ aws.config.update({
 var app = express(),
     s3 = new aws.S3();
 
- var endpoint = s3.endpoint;
-
 app.use(bodyParser.json());
+
+var fname = '';
 
 var upload = multer({
     storage: multerS3({
@@ -25,7 +25,8 @@ var upload = multer({
         bucket: 'fall2020-jrh',
         key: function (req, file, cb) {
             cb(null, file.originalname);
-        }
+            fname = req.files.originalname;
+         }
     })
 });
 
@@ -72,8 +73,7 @@ connection.query(
       console.log(results); // results contains rows returned by server
      }
   ); 
-        var uploadedfile = upload.array('originalname',1);
-        res.write(uploadedfile);
+        res.write(fname);
         res.write(dbhost);
         res.write("<br />File uploaded successfully to Amazon S3 Server!<br />");
 
