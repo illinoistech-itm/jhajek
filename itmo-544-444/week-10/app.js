@@ -12,8 +12,6 @@ const mysql = require('mysql2');
 // https://www.npmjs.com/package/uuid
 const { v4: uuidv4 } = require('uuid');
 
-var id = uuidv4();
-
 aws.config.update({
     region: 'us-east-1'
 });
@@ -71,10 +69,11 @@ var username = req.body['name'];
 var email = req.body['email'];
 // Use this code to retrieve the value entered in the phone field in the index.html
 var phone = req.body['phone'];
+// generate a UUID for this action
+var id = uuidv4();
 
 // create the connection to database
 const connection = mysql.createConnection({
-    //host: 'jrh-db-identifier.cy1h2nhwscl7.us-east-1.rds.amazonaws.com',
     host: dbhost,
     user: 'admin',
     password: 'ilovebunnies',
@@ -89,9 +88,15 @@ connection.query(
      }
   ); 
 
-var sql = 'INSERT INTO jobs (ID,RecordNumber,CustomerName,Email,Phone, Status, S3URL) VALUES (?,?,?,?,?,?,?)'; 
+var recorddata = {ID:1,RecordNumber: id,CustomerName: username,Email: email,Phone: phone, Status: 0, S3URL:s3url};
 
-
+ // https://github.com/mysqljs/mysql#escaping-query-values
+ // SQL INSERT STATEMENT to insert the values from the POST
+ connection.query('INSERT INTO jobs ?', recorddata,
+    function(err, results) {
+      console.log(results); // results contains rows returned by server
+     }
+  ); 
 
 // Write output to the screen
         res.write(s3url + "\n");
