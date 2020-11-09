@@ -54,7 +54,14 @@ app.get('/', function (req, res) {
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 
 // https://www.npmjs.com/package/multer
-    var fname = req.files[0].originalname;
+// This retrieves the name of the uploaded file
+var fname = req.files[0].originalname;
+// Now we can construct the S3 URL since we already know the structure of S3 URLS and our bucket
+// For this sample I hardcoded my bucket, you can do this or retrieve it dynamically
+var s3url = "https://fall2020-jrh.s3.amazonaws.com/" + fname;
+
+var username = req.body['name'];
+
 // create the connection to database
 const connection = mysql.createConnection({
     //host: 'jrh-db-identifier.cy1h2nhwscl7.us-east-1.rds.amazonaws.com',
@@ -64,10 +71,22 @@ const connection = mysql.createConnection({
     database: 'company'
  });
  
+ // simple query
+connection.query(
+    'SELECT * FROM `jobs`', 
+    function(err, results) {
+      console.log(results); // results contains rows returned by server
+     }
+  ); 
 
+
+
+// Write output to the screen
+        res.write(s3url + "\n");
+        res.write(username + "\n")
         res.write(fname + "\n");
-        res.write(dbhost);
-        res.write("<br />File uploaded successfully to Amazon S3 Server!<br />");
+        res.write(dbhost + "\n");
+        res.write("File uploaded successfully to Amazon S3 Server!" + "\n");
       
 
         res.end();
