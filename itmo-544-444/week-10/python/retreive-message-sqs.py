@@ -1,24 +1,19 @@
 import boto3
-sqs = boto3.resource('sqs')
+sqs = boto3.resource('sqs',region_name='us-east-1')
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/guide/sqs.html#processing-messages
 # Get the queue
-queue = sqs.get_queue_by_name(QueueName='test')
+queue = sqs.get_queue_by_name(QueueName='jrh-sqs-itmo-544')
 
 # Process messages by printing out body and optional author name
-for message in queue.receive_messages(MessageAttributeNames=['Author']):
-    # Get the custom author message attribute if it was set
-    author_text = ''
-    if message.message_attributes is not None:
-        author_name = message.message_attributes.get('Author').get('StringValue')
-        if author_name:
-            author_text = ' ({0})'.format(author_name)
-
-    # Print out the body and author (if set)
-    print('Hello, {0}!{1}'.format(message.body, author_text))
+for message in queue.receive_messages():
+  # Print out the body and author (if set)
+  print(message.body)                 
 
 ### Connect to Mysql Database and retrieve record relating to the SQS job
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html
+# https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_instances
+# https://dev.mysql.com/doc/connector-python/en/    
 #  SELECT * FROM jobs WHERE id = message.body;
 
 # Retreive image from the S3 bucket
