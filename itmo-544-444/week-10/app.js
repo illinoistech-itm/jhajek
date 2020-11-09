@@ -53,7 +53,7 @@ app.get('/', function (req, res) {
 
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 
-    // https://www.npmjs.com/package/multer
+// https://www.npmjs.com/package/multer
     var fname = req.files[0].originalname;
 // create the connection to database
 const connection = mysql.createConnection({
@@ -65,9 +65,10 @@ const connection = mysql.createConnection({
  });
  
 
-        res.write(fname);
+        res.write(fname + "\n");
         res.write(dbhost);
         res.write("<br />File uploaded successfully to Amazon S3 Server!<br />");
+        res.write
 
         res.end();
 });
