@@ -5,8 +5,13 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     multer = require('multer'),
     multerS3 = require('multer-s3');
-    
+      
 const mysql = require('mysql2');
+
+// needed to include to generate UUIDs
+import { v4 as uuidv4 } from 'uuid';
+
+var id = uuidv4();
 
 aws.config.update({
     region: 'us-east-1'
@@ -85,7 +90,7 @@ connection.query(
 
  // SQL INSERT STATEMENT to insert the values from the 
  connection.query(
-    'INSERT INTO jobs (RecordNumber,CustomerName,Email,Phone, Status,S3URL) VALUES ()  ', 
+    'INSERT INTO jobs (RecordNumber,CustomerName,Email,Phone, Status,S3URL) VALUES (id,username,email,phone,0,s3url)', 
     function(err, results) {
       console.log(results); // results contains rows returned by server
      }
