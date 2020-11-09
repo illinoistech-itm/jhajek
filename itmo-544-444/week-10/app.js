@@ -114,7 +114,6 @@ var recorddata = {RecordNumber: id,CustomerName: username,Email: email,Phone: ph
         res.write(dbhost + "\n");
         res.write("File uploaded successfully to Amazon S3 Server!" + "\n");
       
-
         res.end();
 });
 
