@@ -72,12 +72,7 @@ connection.query(
       console.log(results); // results contains rows returned by server
      }
   );
-
-  s3.listObjects(paramss3, function(err, data) {
-    if (err) console.log(err, err.stack); // an error occurred
-    else      console.log(data.Contents[0]['key']); console.log(endpoint);           // successful response
-  });
-
+        res.write(upload.array('files'));
         res.write(dbhost);
         res.write("<br />File uploaded successfully to Amazon S3 Server!<br />");
 
