@@ -14,13 +14,17 @@ for message in queue.receive_messages():
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_instances
 # https://dev.mysql.com/doc/connector-python/en/    
-#  SELECT * FROM jobs WHERE id = message.body;
+#  SELECT * FROM jobs WHERE id == message.body;
 
 # Retreive image from the S3 bucket
+# https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-example-download-file.html
+# use sample code from download-s3-bucket-image.py
 
 # Process image with PIL 
+# use sample code from render-image.py
 
 # Put Image Object back into S3 Bucket
+
 
  # SQL UPDATE record where id == message.body  set Stat from 0 to 1
 
