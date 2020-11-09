@@ -88,7 +88,7 @@ connection.query(
      }
   ); 
 
-var recorddata = {ID:1,RecordNumber: id,CustomerName: username,Email: email,Phone: phone, Status: 0, S3URL:s3url};
+var recorddata = {RecordNumber: id,CustomerName: username,Email: email,Phone: phone, Status: 0, S3URL:s3url};
 
  // https://github.com/mysqljs/mysql#escaping-query-values
  // SQL INSERT STATEMENT to insert the values from the POST
