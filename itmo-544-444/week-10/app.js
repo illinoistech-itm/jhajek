@@ -16,11 +16,14 @@ aws.config.update({
     region: 'us-east-1'
 });
 
+// initialize an s3 connection object
 var app = express(),
     s3 = new aws.S3();
 
+// configure S3 parameters to send to the connection object
 app.use(bodyParser.json());
 
+// I hardcoded my S3 bucket name, this you need to determine dynamically
 var upload = multer({
     storage: multerS3({
         s3: s3,
@@ -31,17 +34,16 @@ var upload = multer({
     })
 });
 
-var paramss3 = {
-    Bucket: 'fall2020-jrh', /* required */
-   };
-
+// initialize an RDS connection object
 var rds = new aws.RDS();
 
+// connect to RDS to retrieve RDS database instance endpoint
 var dbhost = '';
-
+// configure RDS parameters to send to the connection object
 var params = {
-          DBInstanceIdentifier: 'jrh-db-identifier',
+    DBInstanceIdentifier: 'jrh-db-identifier',
 };
+
 rds.describeDBInstances(params, function(err, data) {
           if (err) console.log(err, err.stack); // an error occurred
           else     {
@@ -80,7 +82,7 @@ const connection = mysql.createConnection({
     database: 'company'
  });
  
- // simple query to test making a query from the database, not needed for this application
+// simple query to test making a query from the database, not needed for this application
 connection.query(
     'SELECT * FROM `jobs`', 
     function(err, results) {
