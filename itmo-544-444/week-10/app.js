@@ -89,9 +89,10 @@ connection.query(
      }
   ); 
 
+var sql = 'INSERT INTO jobs (ID,RecordNumber,CustomerName,Email,Phone, Status, S3URL) VALUES (?,?,?,?,?,?,?)'; 
+
  // SQL INSERT STATEMENT to insert the values from the POST
- connection.query(
-    'INSERT INTO `jobs` (RecordNumber,CustomerName,Email,Phone, Status,S3URL) VALUES (`id`,`username`,`email`,`phone`,0,`s3url`)', 
+ connection.query(sql, [0,id,username,email,phone,0,s3url],
     function(err, results) {
       console.log(results); // results contains rows returned by server
      }
