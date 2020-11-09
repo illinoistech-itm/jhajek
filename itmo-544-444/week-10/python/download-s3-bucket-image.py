@@ -4,5 +4,5 @@ import boto3
 
 s3 = boto3.client('s3')
 # s3.download_file('BUCKET_NAME', 'OBJECT_NAME', 'FILE_NAME')
-s3.download_file('jrh-544-raw-bucket', '20160812_205519.jpg', 'current-image.jpg')
+s3.download_file('fall2020-jrh', 'ch-05-files-location.png', 'current-image.jpg')
 
