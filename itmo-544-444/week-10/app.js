@@ -72,7 +72,7 @@ connection.query(
       console.log(results); // results contains rows returned by server
      }
   );
-        res.write(upload.array('originalname'));
+        res.write(upload.array('originalname',1));
         res.write(dbhost);
         res.write("<br />File uploaded successfully to Amazon S3 Server!<br />");
 
