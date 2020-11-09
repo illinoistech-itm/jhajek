@@ -89,9 +89,8 @@ connection.query(
      }
   ); 
 
- // SQL INSERT STATEMENT to insert the values from the POST, need to execute a connection.execute 
- // (as we are executing an instruction)
- connection.execute(
+ // SQL INSERT STATEMENT to insert the values from the POST
+ connection.query(
     'INSERT INTO `jobs` (RecordNumber,CustomerName,Email,Phone, Status,S3URL) VALUES (`id`,`username`,`email`,`phone`,0,`s3url`)', 
     function(err, results) {
       console.log(results); // results contains rows returned by server
