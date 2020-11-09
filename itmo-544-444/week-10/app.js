@@ -54,7 +54,7 @@ app.get('/', function (req, res) {
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 
     // https://www.npmjs.com/package/multer
-    var fname = req.files['uploadFile'][0];
+    var fname = req.files['uploadFile'];
 // create the connection to database
 const connection = mysql.createConnection({
     //host: 'jrh-db-identifier.cy1h2nhwscl7.us-east-1.rds.amazonaws.com',
