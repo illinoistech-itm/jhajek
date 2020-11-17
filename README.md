@@ -1,4 +1,4 @@
-# Jeremy Hajek
+# Jeremy Hajek - Video Demo
 
 ![Family](images/family.png "Family")
 
