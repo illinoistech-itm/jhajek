@@ -44,3 +44,22 @@ sudo timedatectl set-timezone UTC
 ##################################################
 # Add additional code here
 ##################################################
+##################################################
+sudo apt-get update -y
+sudo apt-get install -y collectd stress
+
+# Cloning source code examples for the book
+git clone https://github.com/turnbullpress/aom-code.git
+
+# Collectd config filees
+sudo cp -v /home/vagrant/aom-code/5-6/collectd/collectd.conf /etc
+sudo sudo cp -rv /home/vagrant/aom-code/5-6/collectd/collectd.d/*.conf /etc/collectd/collectd.conf.d
+# sudo sed -i 's/riemanna.exmaple.com/riemanna.example.com/g' /etc/collectd.d/write_riemann.conf
+sudo sed -i 's/Node "riemanna"/Node "tornado-web1"/g' /etc/collectd/collectd.conf.d/write_riemann.conf
+sudo sed -i 's/Tag "collectd"/Tag "collectd" "tornado"/g' /etc/collectd/collectd.conf.d/write_riemann.conf
+
+# Reload collectd service and start it at boot
+sudo systemctl enable collectd
+sudo systemctl stop collectd
+sudo systemctl daemon-reload
+sudo systemctl start collectd
