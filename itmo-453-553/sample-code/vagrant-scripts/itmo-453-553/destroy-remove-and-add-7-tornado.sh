@@ -35,43 +35,43 @@ vagrant box remove tornado-redis --force
 # Add newly built Vagrant boxes
 if [ -a  ../../itmo-453-553/build/tornado-proxy-virtualbox*.box ]
 then 
-    vagrant box add ../../itmo-453-553/build/tornado-proxy-virtualbox*.box --name ub-riemanna
+    vagrant box add ../../itmo-453-553/build/tornado-proxy-virtualbox*.box --name tornado-proxy
 else
    echo  "File ../../itmo-453-553/build/tornado-proxy-virtualbox*.box doesn't exist"
 fi
 if [ -a  ../../itmo-453-553/build/tornado-web1-virtualbox*.box ] 
 then
-    vagrant box add ../../itmo-453-553/build/tornado-web1-virtualbox*.box --name centos-riemannb
+    vagrant box add ../../itmo-453-553/build/tornado-web1-virtualbox*.box --name tornado-web1
 else
    echo  "File ../../itmo-453-553/build/tornado-web1-virtualbox*.box doesn't exist"
 fi
 if [ -a  ../../itmo-453-553/build/tornado-web2-virtualbox*.box ] 
 then
-    vagrant box add ../../itmo-453-553/build/tornado-web2-virtualbox*.box --name ub-riemannmc
+    vagrant box add ../../itmo-453-553/build/tornado-web2-virtualbox*.box --name tornado-web2
 else
    echo  "File ../../itmo-453-553/build/tornado-web2-virtualbox*.box doesn't exist"
 fi
 if [ -a  ../../itmo-453-553/build/tornado-api1-virtualbox*.box ] 
 then
-    vagrant box add ../../itmo-453-553/build/tornado-api1-virtualbox*.box --name ub-graphitea
+    vagrant box add ../../itmo-453-553/build/tornado-api1-virtualbox*.box --name tornado-api1
 else
    echo  "File ../../itmo-453-553/build/tornado-api1-virtualbox*.box doesn't exist"
 fi
 if [ -a  ../../itmo-453-553/build/tornado-api2-virtualbox*.box ] 
 then
-    vagrant box add ../../itmo-453-553/build/tornado-api2-virtualbox*.box --name centos-graphiteb
+    vagrant box add ../../itmo-453-553/build/tornado-api2-virtualbox*.box --name tornado-api2
 else
    echo  "File ../../itmo-453-553/build/tornado-api2-virtualbox*.box doesn't exist"
 fi
 if [ -a  ../../itmo-453-553/build/tornado-db-virtualbox*.box ] 
 then
-    vagrant box add ../../itmo-453-553/build/tornado-db-virtualbox*.box --name ub-graphitemc
+    vagrant box add ../../itmo-453-553/build/tornado-db-virtualbox*.box --name tornado-db
 else
    echo  "File ../../itmo-453-553/build/tornado-db-virtualbox*.box doesn't exist"
 fi
 if [ -a  ../../itmo-453-553/build/tornado-redis-virtualbox*.box ] 
 then
-    vagrant box add ../../itmo-453-553/build/tornado-redis-virtualbox*.box --name ub-graphitemc
+    vagrant box add ../../itmo-453-553/build/tornado-redis-virtualbox*.box --name tornado-redis
 else
    echo  "File ../../itmo-453-553/build/tornado-redis-virtualbox*.box doesn't exist"
 fi
