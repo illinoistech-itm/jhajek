@@ -29,13 +29,13 @@ cat << EOT >> /etc/hosts
 192.168.33.180 logstash logstash.example.com
 192.168.33.10 host1 host1.example.com
 192.168.33.11 host2 host2.example.com
-192.168.33.150 tornado-proxy torndao-proxy.example.com
-192.168.33.151 tornado-web1 torndao-web1.example.com
-192.168.33.152 tornado-web2 torndao-web2.example.com
-192.168.33.153 tornado-api1 torndao-api1.example.com
-192.168.33.154 tornado-api2 torndao-api2.example.com
-192.168.33.155 tornado-db torndao-db.example.com
-192.168.33.156 tornado-redis torndao-redis.example.com
+192.168.33.190 tornado-proxy torndao-proxy.example.com
+192.168.33.191 tornado-web1 torndao-web1.example.com
+192.168.33.192 tornado-web2 torndao-web2.example.com
+192.168.33.193 tornado-api1 torndao-api1.example.com
+192.168.33.194 tornado-api2 torndao-api2.example.com
+192.168.33.195 tornado-db torndao-db.example.com
+192.168.33.196 tornado-redis torndao-redis.example.com
 EOT
 
 sudo hostnamectl set-hostname tornado-web2
