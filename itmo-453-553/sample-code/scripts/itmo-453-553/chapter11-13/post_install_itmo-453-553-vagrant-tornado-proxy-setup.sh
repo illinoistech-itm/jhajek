@@ -63,3 +63,9 @@ sudo systemctl enable collectd
 sudo systemctl stop collectd
 sudo systemctl daemon-reload
 sudo systemctl start collectd
+
+# Install HAProxy
+
+sudo apt-get install -y haproxy
+
+sudo systemctl enable haproxy

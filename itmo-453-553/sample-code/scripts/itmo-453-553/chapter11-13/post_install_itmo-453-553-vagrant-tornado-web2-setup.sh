@@ -63,3 +63,9 @@ sudo systemctl enable collectd
 sudo systemctl stop collectd
 sudo systemctl daemon-reload
 sudo systemctl start collectd
+
+# Install Nginx
+
+sudo apt-get -y install nginx
+
+sudo systemctl enable nginx
