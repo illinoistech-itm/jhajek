@@ -27,4 +27,4 @@ pull-repo.sh
 *.pdf
 *.docx
 *.txt
-
+*~
