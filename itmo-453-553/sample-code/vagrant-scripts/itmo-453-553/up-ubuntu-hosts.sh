@@ -8,6 +8,4 @@ cd ../ub-riemanna
 vagrant up
 cd ../ub-riemannmc
 vagrant up
-cd ../host1
-vagrant up
 cd ../
