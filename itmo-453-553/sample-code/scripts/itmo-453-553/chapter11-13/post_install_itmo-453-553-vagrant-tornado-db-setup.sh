@@ -46,7 +46,13 @@ sudo timedatectl set-timezone UTC
 ##################################################
 ##################################################
 sudo apt-get update -y
-sudo apt-get install -y collectd stress
+sudo apt-get install -y collectd stress mysql-server python-mysqldb
+
+# Getting mysql plugin
+
+sudo mkdir /usr/lib/collectd/mysql
+cd /usr/lib/collectd/mysql
+wget https://raw.githubusercontent.com/turnbullpress/collectdpython-mysql/master/mysql.py
 
 # Cloning source code examples for the book
 git clone https://github.com/turnbullpress/aom-code.git
@@ -63,3 +69,7 @@ sudo systemctl enable collectd
 sudo systemctl stop collectd
 sudo systemctl daemon-reload
 sudo systemctl start collectd
+
+# Start mysql
+sudo systemctl enable mysql-server
+sudo systemctl start mysql-server

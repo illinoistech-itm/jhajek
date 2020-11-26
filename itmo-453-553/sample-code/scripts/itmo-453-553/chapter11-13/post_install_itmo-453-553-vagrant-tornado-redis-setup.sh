@@ -46,7 +46,7 @@ sudo timedatectl set-timezone UTC
 ##################################################
 ##################################################
 sudo apt-get update -y
-sudo apt-get install -y collectd stress
+sudo apt-get install -y collectd stress redis
 
 # Cloning source code examples for the book
 git clone https://github.com/turnbullpress/aom-code.git
