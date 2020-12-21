@@ -1,6 +1,6 @@
 {
   "variables": {
-  "mem-build-allocation": "1024",
+  "mem-build-allocation": "2048",
   "headless-val": "true"
 },
   "builders": [{
