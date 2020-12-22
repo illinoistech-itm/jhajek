@@ -38,7 +38,7 @@ sudo hostnamectl set-hostname docker1
 
 ##################################################
 sudo apt-get update
-sudo apt-get install -y python3-dev python3-pip python3-setuptools apt-transport-https \
+sudo apt-get install -y python-dev python-pip python-setuptools apt-transport-https \
     ca-certificates \
     curl \
     gnupg-agent \
@@ -72,7 +72,7 @@ sudo sed -i 's/Node "riemanna"/Node "docker1"/g' /etc/collectd/collectd.conf.d/w
 #git clone https://github.com/turnbullpress/docker-collectd-plugin.git
 git clone https://github.com/lebauce/docker-collectd-plugin.git
 rm -rvf docker-collectd-plugin/.git
-python3 -m pip install -r ~/docker-collectd-plugin/requirements.txt
+python -m pip install -r ~/docker-collectd-plugin/requirements.txt
 sudo mv -v /home/vagrant/docker-collectd-plugin/ /usr/share/collectd/docker/
 
 # Reload collectd service and start it at boot
