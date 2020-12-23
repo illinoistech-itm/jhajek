@@ -36,6 +36,7 @@ cat << EOT >> /etc/hosts
 192.168.33.194 tornado-api2 torndao-api2.example.com
 192.168.33.195 tornado-db torndao-db.example.com
 192.168.33.196 tornado-redis torndao-redis.example.com
+192.168.33.140 docker1 docker1.example.com
 EOT
 
 sudo hostnamectl set-hostname tornado-web1

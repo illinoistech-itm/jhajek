@@ -41,6 +41,7 @@ cat << EOT >> /etc/hosts
 192.168.33.180 logstash logstash.example.com
 192.168.33.10 host1 host1.example.com
 192.168.33.11 host2 host2.example.com
+192.168.33.140 docker1 docker1.example.com
 EOT
 
 sudo hostnamectl set-hostname riemannb
