@@ -76,7 +76,6 @@ sudo mv docker-collectd-plugin-master docker
 sudo rm master.zip
 cd /usr/lib/collectd/docker
 sudo pip install -r requirements.txt
-sudo mv -v /home/vagrant/docker-collectd-plugin/ /usr/share/collectd/docker/
 
 # Reload collectd service and start it at boot
 sudo systemctl stop collectd
