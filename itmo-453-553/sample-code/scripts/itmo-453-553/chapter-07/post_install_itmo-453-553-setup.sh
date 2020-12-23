@@ -69,8 +69,7 @@ sudo sudo cp -rv /home/vagrant/aom-code/7/collectd/collectd.d/*.conf /etc/collec
 sudo sed -i 's/Node "riemanna"/Node "docker1"/g' /etc/collectd/collectd.conf.d/write_riemann.conf
 
 # Adding docker collectd plugin
-#git clone https://github.com/turnbullpress/docker-collectd-plugin.git
-git clone https://github.com/lebauce/docker-collectd-plugin.git
+git clone https://github.com/turnbullpress/docker-collectd-plugin.git
 rm -rvf docker-collectd-plugin/.git
 python -m pip install -r ~/docker-collectd-plugin/requirements.txt
 sudo mv -v /home/vagrant/docker-collectd-plugin/ /usr/share/collectd/docker/
