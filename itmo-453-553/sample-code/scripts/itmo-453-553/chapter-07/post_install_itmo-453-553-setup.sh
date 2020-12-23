@@ -53,8 +53,6 @@ sudo dpkg -i docker-ce-cli_19.03.9~3-0~ubuntu-bionic_amd64.deb
 sudo dpkg -i containerd.io_1.4.3-1_amd64.deb
 sudo dpkg -i docker-ce_19.03.9~3-0~ubuntu-bionic_amd64.deb
 
-sudo systemctl enable docker
-
 ##################################################
 sudo apt-get update -y
 sudo apt-get install -y collectd stress
