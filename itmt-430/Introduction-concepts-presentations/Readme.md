@@ -2,7 +2,7 @@
 
 For this assignment watch both of the videos listed below and answer the questions in the space provided.
 
-The deliverable will be to create a folder called **intro-concepts** under your itmt-430 folder in the private GitHub repo provided.  Upload this file with the answers written in markdown to this folder, keeping the filename: Readme.md.  Assignment worth 100 points, 3 points per question.
+The deliverable will be to create a folder called **intro-concepts** under your itmt-430 folder in the private GitHub repo provided.  Push to GitHub this markdown file with the answers written in markdown to this folder, keeping the filename: Readme.md.  Assignment worth 10 points, .3 points per question.  Replace the words "answer here" with your answer.
 
 ## Presentation One
 
