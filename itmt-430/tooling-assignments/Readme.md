@@ -1,6 +1,6 @@
 # Tooling Setup Assignment
 
-In this assignment there will be a series of tools you need to install and complete small tutorials.  Copy this Markdown document and insert screenshots of the software installed.  Assignment worth 100 points 10 items, 10 points each.
+In this assignment there will be a series of tools you need to install and complete small tutorials.  Copy this Markdown document and insert screenshots of the software installed.  Assignment worth 10 points 10 items, 1 point each.
 
 ## Sign Up for a GitHub.com Account
 
