@@ -6,16 +6,28 @@ In this assignment there will be a series of tools you need to install and compl
 
 If you have not already signed up for a [GitHub.com](https://github.com "Github.com signup") account, do so.  We recommend using your name or some combination of your name, not your Hawk ID as this account is yours the rest of your life.  Once you have your ID, submit it on BlackBoard under Assignments > Tooling > GitHubID.  If you already have an ID, then just submit that ID.
 
-## Installation of PowerShell Core for Windows
-
-If you have a Windows 10 system, make sure that the native SSH client and [PowerShell Core 6](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.3 "PowerShell Core 6 Download") are installed.  Add screenshot of the output of: ```ssh -V``` and open the PowerShell 6 (darkblue screen) and the version is shown in the top line.   For Mac, you have Bash and SSH already installed, place a screenshot of the output of ```ssh -V``` and ```bash --version```
-
-This link provides information on installing Bash 5.0 on MacOS and activating it to replace Bash 3.x
-[https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/](https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/ "Replace bash 3 with 5 MacOS")
-
 ## Package Managers for Windows and MacOS
 
 Brew is the MacOS 3rd party package manager located at: [https://brew.sh/](https://brew.sh/ "brew installer page").  [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page") is the Windows 3rd party package manager.  Place screenshot of the version command output for: ```choco --version``` or ```brew --version```
+
+## Installation of PowerShell Core for Windows
+
+If you have a Windows 10 system, make sure that the native SSH client and [PowerShell Core 7.1.1](https://github.com/PowerShell/PowerShell/releases/tag/v7.1.1 "PowerShell Core 7 Download") are installed.  Add screenshot of the output of: ```ssh -V``` and open the PowerShell 7 (darkblue screen) and the version is shown in the top line.   For Mac, you have Bash and SSH already installed, place a screenshot of the output of ```ssh -V``` and ```bash --version```
+
+This link provides information on installing Bash 5.0+ on MacOS and activating it to replace Bash 3.x
+[https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/](https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/ "Replace bash 3 with 5 MacOS")
+
+## Installation of a Terminal for Windows
+
+A Terminal is a way to run multiple shell and cmd line windows in a single managed window.
+
+[Windows Terminal Microsoft Store Install](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab "Install Windows Terminal from Microsoft Store")
+
+## Installation of a Terminal for MacOS
+
+A Terminal is a way to run multiple shell and cmd line windows in a single managed window.  You can install iterm2 via Homebrew.
+
+[iterm2](https://iterm2.com/ "MacOS shell terminal")
 
 ## Install Git
 
@@ -32,20 +44,7 @@ git config --global user.email "<youremail@example.com>"
 
 ## Install VirtualBox
 
-If you do not already have VirtualBox 6.x installed, use the package manager to install VirtualBox.  Take a screenshot of the VirtualBox > Help > About VirtualBox output.  If you have 6.0.x at the moment, no need to upgrade.
-
-In chocolatey you can pin the virtualbox version with this syntax (it needs to be on a line by itself)
-```choco install virtualbox --version 6.0.16```
-
-Try to use 6.0.x until the two applications are compatible.  Here are the direct download links:
-
-* Windows 10 - [https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-Win.exe](https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-Win.exe "Direct win10 vbox download link")
-* MacOS - [https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-OSX.dmg](https://download.virtualbox.org/virtualbox/6.0.16/VirtualBox-6.0.16-135674-OSX.dmg "MacOS Vbox Download link")
-* Linux Ubuntu - [https://download.virtualbox.org/virtualbox/6.0.16/virtualbox-6.0_6.0.16-135674~Ubuntu~bionic_amd64.deb](https://download.virtualbox.org/virtualbox/6.0.16/virtualbox-6.0_6.0.16-135674~Ubuntu~bionic_amd64.deb "Ubuntu Direct Download")
-
-**Note** - there is some incompatibility with VirtualBox 6.1.x and Vagrant 2.2.6. There is currently a manual workaround at [https://blogs.oracle.com/scoter/getting-vagrant-226-working-with-virtualbox-61-ga](https://blogs.oracle.com/scoter/getting-vagrant-226-working-with-virtualbox-61-ga "VirtualBox manual Workaround").
-
-Version 6.x works with Vagrant 2.2.6
+If you do not already have VirtualBox 6.x installed, use the package manager to install VirtualBox.  Take a screenshot of the VirtualBox > Help > About VirtualBox output. You can use Chocolatey and Homebrew to install VirtualBox on MacOS and Windows.
 
 ## Install Vagrant
 
@@ -54,10 +53,6 @@ Using a package manager, install the latest version of [Vagrant](https://vagrant
 Complete the Vagrant tutorial located at [https://www.vagrantup.com/intro/getting-started/index.html](https://www.vagrantup.com/intro/getting-started/index.html "Vagrant tutorial"), up to the TEARDOWN step, skipping the SHARE step.  
 
 After completing this tutorial take a screenshot of the output of the command ```vagrant box list```
-
-**Note** - there is some incompatibility with VirtualBox 6.1.x and Vagrant 2.2.6. There is currently a manual workaround at [https://blogs.oracle.com/scoter/getting-vagrant-226-working-with-virtualbox-61-ga](https://blogs.oracle.com/scoter/getting-vagrant-226-working-with-virtualbox-61-ga "VirtualBox manual Workaround").
-
-Version 6.x works with Vagrant 2.2.6
 
 ## Install Packer.io
 
