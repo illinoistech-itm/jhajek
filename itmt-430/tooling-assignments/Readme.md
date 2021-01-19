@@ -15,7 +15,7 @@ Brew is the MacOS 3rd party package manager located at: [https://brew.sh/](https
 If you have a Windows 10 system, make sure that the native SSH client and [PowerShell Core 7.1.1](https://github.com/PowerShell/PowerShell/releases/tag/v7.1.1 "PowerShell Core 7 Download") are installed.  Add screenshot of the output of: ```ssh -V``` and open the PowerShell 7 (darkblue screen) and the version is shown in the top line.   For Mac, you have Bash and SSH already installed, place a screenshot of the output of ```ssh -V``` and ```bash --version```
 
 This link provides information on installing Bash 5.0+ on MacOS and activating it to replace Bash 3.x
-[https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/](https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/ "Replace bash 3 with 5 MacOS")
+[https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/](https://www.ioannispoulakas.com/2019/03/10/how-to-install-bash-5-on-macos/ "Replace Bash 3 with 5 MacOS")
 
 ## Installation of a Terminal for Windows
 
