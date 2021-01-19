@@ -58,9 +58,9 @@ After completing this tutorial take a screenshot of the output of the command ``
 
 ## Install Packer.io
 
-Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site").  If you have a version > 1.4.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  Place a screenshot of the output of the command: ```packer --version```
+Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site").  If you have a version > 1.6.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  Place a screenshot of the output of the command: ```packer --version```
 
-I have a series of samples that I use from Packer to build images.  Clone this sample repo to your computer: ```git clone https://github.com/jhajek/packer-vagrant-build-scripts```  navigate to the ```packer/vanilla-install``` directory from the command line.  Issue the command: ```packer build ubuntu18043-vanilla.json```
+I have a series of samples that I use from Packer to build images.  Clone this sample repo to your computer: ```git clone https://github.com/jhajek/packer-vagrant-build-scripts```  navigate to the ```packer/vanilla-install``` directory from the command line.  Issue the command: ```packer build ubuntu18045-vanilla.json```
 
 Take a screenshot of the output of the ```build``` directory showing the ```*.box``` file.  In the ```build``` directory, create a directory named **ubuntu-vanilla**.  ```cd``` into that directory and issue the ```vagrant init``` command:
 
