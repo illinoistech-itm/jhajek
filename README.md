@@ -6,7 +6,7 @@
 
 ## Where are you from
 
-From the Chicago suburbs, Lombard and Glen Ellyn (30 miles west of campus).
+From the Chicago suburbs, grew up in Lombard and now live in Glen Ellyn (30 miles west of campus).
 
 ## IT Interest
 
