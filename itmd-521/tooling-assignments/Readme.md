@@ -85,7 +85,7 @@ Post a screenshot of your completion badge (or dots) after you finish the tutori
 
 ## Create and Push your Readme.md
 
-Final step, is to clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it).  If you already have a private repo provided by the professor from a previous class, just create a new folder named **itmt-430**, no spaces! Ever! and push your new folder along with a Readme.md file and a folder named **images**.  
+Final step, is to clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it).  If you already have a private repo provided by the professor from a previous class, just create a new folder named **itmd-521** or **itd-872**, no spaces! Ever! and push your new folder along with a Readme.md file and a folder named **images**.  
 
 This Readme.md will contain these elements written in Markdown. This is a good [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
 
