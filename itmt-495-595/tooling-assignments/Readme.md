@@ -105,7 +105,7 @@ The document will include:
 
 Push this to your GitHub private account repo.
 
-Here is my own completed sample: [https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/Readme.md](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/Readme.md "Professor's GitHub Repo Sample").  **Note**, I will have more folders then you because I have sample code for more classes.
+Here is my own completed sample: [https://github.com/illinoistech-itm/jhajek/blob/master/README.md](https://github.com/illinoistech-itm/jhajek/blob/master/README.md "Professor's GitHub Repo Sample").  **Note**, I will have more folders then you because I have sample code for more classes.
 
 ## Final deliverable to Blackboard
 
