@@ -1,0 +1,17 @@
+Set-Location host1
+vagrant halt
+Set-Location ../host2
+vagrant halt
+Set-Location ../ub-riemanna
+vagrant halt
+Set-Location ../centos-riemannb
+vagrant halt
+Set-Location ../ub-riemannmc
+vagrant halt
+Set-Location ../ub-graphitea
+vagrant halt
+Set-Location ../centos-graphiteb
+vagrant halt
+Set-Location ../ub-graphitemc
+vagrant halt
+Set-Location ../
