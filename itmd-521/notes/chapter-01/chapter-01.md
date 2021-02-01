@@ -142,6 +142,7 @@
   - Twitter
 
 ## Spark History
+
 - Spark was a research paper released at UC Berkely in 2009
   - [Original Spark Paper](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf "Link to Original Spark Paper")
   - Matei Zaharia and Mosharaf Chowdhury
