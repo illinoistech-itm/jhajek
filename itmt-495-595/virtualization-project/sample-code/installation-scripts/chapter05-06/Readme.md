@@ -8,4 +8,5 @@
 # -force will delete any leftover artifacts on a rebuild
 packer build -parallel-builds=0 -var "mem-build-allocation=2048" -var "headless-val=true" -force ./aom-parallel-deploy-mixed-riemann-grafana-collectd.json
 packer build -parallel-builds=0 -var "mem-build-allocation=2048" -var "headless-val=true" -force ./aom-parallel-deploy-mixed-hosts.json
+packer build -parallel-builds=0 -var "mem-build-allocation=2048" -var "headless-val=false" -force ./aom-parallel-deploy-mixed-hosts.json
 ```
