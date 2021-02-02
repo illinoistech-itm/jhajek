@@ -22,9 +22,8 @@ Place report here
 
 ## User/Admin/Anonymous Story Goes here
 
-This is text inter-sparsed with mockups/screenshots
+This is text interspersed with mockups/screenshots (tell us a story and follow the flow of the application)
 
-## Atomic Goals for Sprint-02
+## Project Manager Report
 
-List atomic goals here in ordered list, minimum 3 per category
-
+Display the tasks and deadlines the Project Manager created and then display and discuss the actual completed percentages of tasks and describe the reasons for this percentage if necessary

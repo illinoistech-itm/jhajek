@@ -131,12 +131,3 @@ Each team will have different requirements but there are core requirements for a
 * Place these in your diagrams folder
 * ReadMd.md must have each team members name and contact email
 * Must include build instructions to automatically build the application from the command line including all necessary dependencies, instructions, and assumptions
-
-## Final project Report
-
-1. Create and summarize into a final report detailing the accomplishments of the 6 sprint reports.  
-2. Explain the overall accomplishments of the team based on the content of the 6 reports
-3. Analyze the completeness of the project in fulfilling the stated goals (self-assessment, how close did you get?)  
-a. Explain in detail from the textbook and resources – some features that were not implemented are ok if you can explain accurately why that happened.
-4. Explain your technology and stack choices
-5. Include your team’s backgrounds
