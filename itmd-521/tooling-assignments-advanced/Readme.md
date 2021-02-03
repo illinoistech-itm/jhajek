@@ -36,8 +36,8 @@
   * [https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04](https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04 "Install R package in Ubuntu")
 * Install Spark 3.x
   * [https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz](https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz "Apache Spark Download Link")
-* Install Hadoop 2.9.2
-  * [http://apache.mirrors.hoobly.com/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz](http://apache.mirrors.hoobly.com/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz "Apache Hadoop Download Link")
+* Install Hadoop 2.10.1
+  * [https://apache.claz.org/hadoop/common/hadoop-2.10.1/hadoop-2.10.1.tar.gz](https://apache.claz.org/hadoop/common/hadoop-2.10.1/hadoop-2.10.1.tar.gz "Apache Hadoop Download Link")
 * Display memory allocated to VagrantBox
   * ```free --giga```
 * Clone your private repository inside of the VirtualBox
