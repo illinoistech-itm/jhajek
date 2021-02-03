@@ -26,18 +26,22 @@
 * Change hostname of the system to include the course number and your initials
 * Configure `.bashrc` for PATH variables
   * Add: `export JAVA_HOME=/usr`
-  * Add: `export HADOOP_HOME=/home/vagrant/hadoop-2.9.2`
+  * Add: `export HADOOP_HOME=/home/vagrant/hadoop-2.10.1`
   * Add: `export SPARK_HOME=/home/vagrant/spark`
   * Add: ```export HADOOP_CLASSPATH=/usr/lib/jvm/java-8-openjdk-amd64/lib/tools.jar```
   * Add: `export PATH=$PATH:/$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$SPARK_HOME/bin`
 * Install MariaDB server
 * Install java 8 OpenJDK
+  * `sudo apt-get update`
+  * `sudo apt-get install openjdk-8-jdk`
 * Install R package
   * [https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04](https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04 "Install R package in Ubuntu")
 * Install Spark 3.x
   * [https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz](https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz "Apache Spark Download Link")
+  * `wget https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz`
 * Install Hadoop 2.10.1
   * [https://apache.claz.org/hadoop/common/hadoop-2.10.1/hadoop-2.10.1.tar.gz](https://apache.claz.org/hadoop/common/hadoop-2.10.1/hadoop-2.10.1.tar.gz "Apache Hadoop Download Link")
+  * `wget https://apache.claz.org/hadoop/common/hadoop-2.10.1/hadoop-2.10.1.tar.gz`
 * Display memory allocated to VagrantBox
   * ```free --giga```
 * Clone your private repository inside of the VirtualBox
