@@ -19,17 +19,17 @@
 
 * From the command line (non-admin) execute the command: `vagrant plugin install vagrant-vbguest`
   * This takes care a warning message from Vagrant about not being able to mount VirtualBox shared drives
+* Configure Vagrant Box memory to use at least 2 GB
+
+## Inside Vagrant Box Steps
+
+* Change hostname of the system to include the course number and your initials
 * Configure `.bashrc` for PATH variables
   * Add: `export JAVA_HOME=/usr`
   * Add: `export HADOOP_HOME=/home/vagrant/hadoop-2.9.2`
   * Add: `export SPARK_HOME=/home/vagrant/spark`
   * Add: ```export HADOOP_CLASSPATH=/usr/lib/jvm/java-8-openjdk-amd64/lib/tools.jar```
   * Demonstrate installation success with `--version` commands
-* Configure Vagrant Box memory to use at least 2 GB
-
-## Inside Vagrant Box Steps
-
-* Change hostname of the system to include the course number and your initials
 * Install MariaDB server
 * Install java 8 OpenJDK
 * Install R package
