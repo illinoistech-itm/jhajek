@@ -23,6 +23,8 @@
 
 ## Inside Vagrant Box Steps
 
+You will need to use the `wget` commandline tool to retrieve installation files for Hadoop and Spark.  You will need to use the `tar` command to extract the tarballs: `tar -xvzf` and the command `sudo apt-get update` to check for the latest packages and the command: `sudo apt-get install` to install additional packages like Java and MariaDB.
+
 * Change hostname of the system to include the course number and your initials
 * Configure `.bashrc` for PATH variables
   * Add: `export JAVA_HOME=/usr`
