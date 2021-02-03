@@ -29,7 +29,7 @@
   * Add: `export HADOOP_HOME=/home/vagrant/hadoop-2.9.2`
   * Add: `export SPARK_HOME=/home/vagrant/spark`
   * Add: ```export HADOOP_CLASSPATH=/usr/lib/jvm/java-8-openjdk-amd64/lib/tools.jar```
-  * Demonstrate installation success with `--version` commands
+  * Add: `export PATH=$PATH:/$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$SPARK_HOME/bin`
 * Install MariaDB server
 * Install java 8 OpenJDK
 * Install R package
