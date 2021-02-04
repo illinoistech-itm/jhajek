@@ -31,6 +31,7 @@ You will need to use the `wget` commandline tool to retrieve installation files 
   * Add: `export HADOOP_HOME=/home/vagrant/hadoop-2.10.1`
   * Add: `export SPARK_HOME=/home/vagrant/spark`
   * Add: ```export HADOOP_CLASSPATH=/usr/lib/jvm/java-8-openjdk-amd64/lib/tools.jar```
+  * Add: `export PYSPARK_PYTHON=python3`
   * Add: `export PATH=$PATH:/$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$SPARK_HOME/bin`
 * Install MariaDB server
 * Install java 8 OpenJDK
