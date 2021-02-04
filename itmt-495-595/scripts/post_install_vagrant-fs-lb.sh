@@ -61,7 +61,7 @@ sudo cp -v ./hajek/itmt-595/fullstack-app-code/nginx-lb/nginx.conf /etc/nginx/
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048  -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj "/C=US/ST=IL/L=Chicago/O=IIT/OU=SAT/CN=class.edu"
 
 # https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-18-04
-sudo cp ./hajek/itmt-595/fullstack-app-code/nginx-lb/self-signed.conf /etc/nginx/snippets
+sudo cp -v ./hajek/itmt-595/fullstack-app-code/nginx-lb/self-signed.conf /etc/nginx/snippets
 
 sudo systemctl daemon-reload
 sudo systemctl restart nginx
