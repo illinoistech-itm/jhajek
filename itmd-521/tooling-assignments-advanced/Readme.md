@@ -41,6 +41,7 @@ You will need to use the `wget` commandline tool to retrieve installation files 
 * Install Spark 3.x
   * [https://apache.claz.org/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz](https://apache.claz.org/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgzz "Apache Spark Download Link")
   * `wget https://apache.claz.org/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz`
+  * Move the extracted Spark directory:  `mv spark-3.0.1-bin-hadoop2.7 spark`
 * Install Hadoop 2.10.1
   * [https://apache.claz.org/hadoop/common/hadoop-2.10.1/hadoop-2.10.1.tar.gz](https://apache.claz.org/hadoop/common/hadoop-2.10.1/hadoop-2.10.1.tar.gz "Apache Hadoop Download Link")
   * `wget https://apache.claz.org/hadoop/common/hadoop-2.10.1/hadoop-2.10.1.tar.gz`
