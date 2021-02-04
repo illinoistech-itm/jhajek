@@ -1,0 +1,11 @@
+{
+    "load-balancer-ip": "192.168.33.x",
+    "webserver-one-ip": "192.168.33.x",
+    "webserver-two-ip": "192.168.33.x",
+    "webserver-three-ip": "192.168.33.x",
+    "redis-server-ip": "192.168.33.x",
+    "maria-master-ip": "192.168.33.x",
+    "maria-slave1-ip": "192.168.33.x",
+    "maria-slave2-ip": "192.168.33.x",
+    "maria-slave3-ip": "192.168.33.x"
+}

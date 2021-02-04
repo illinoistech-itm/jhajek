@@ -7,6 +7,9 @@ packer-cache/
 *.pem
 *~$
 *.ova
+output*/
+vagrant.d/
+*.iso
 
 variables.json
 .DS_Store
