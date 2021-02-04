@@ -8,27 +8,27 @@ Image goes here
 
 ## MariaDB Version
 
-Image goes here
+Execute command: `mysql -V`
 
 ## Java Version
 
 Image goes here
 
-## Spark Version
+## Spark Versions
 
-Image goes here
+Execute command: `pyspark` and `spark-shell` and take screenshots of each.
 
 ## Hadoop Version
 
-Image goes here
+Execute command: `hadoop version`
 
 ## R Version
 
-Image goes here
+Execute command: `R -v`
 
 ## Python Version
 
-Image goes here
+Execute command: `python -V`
 
 ## Result of Cloning Your Private Repository
 
