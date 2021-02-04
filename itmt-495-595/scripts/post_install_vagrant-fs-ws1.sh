@@ -48,12 +48,12 @@ sudo hostnamectl set-hostname ws1
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048  -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj "/C=US/ST=IL/L=Chicago/O=IIT/OU=SAT/CN=class.edu"
 sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 # https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-18-04
-sudo cp ./hajek/itmt-430/fullstack/nginx-ws/self-signed.conf /etc/nginx/snippets
+sudo cp ./hajek/itmt-595/fullstack-app-code/nginx-ws/self-signed.conf /etc/nginx/snippets
 
 # Nginx configurations
 # https://nginx.org/en/docs/beginners_guide.html
 # https://dev.to/guimg/how-to-serve-nodejs-applications-with-nginx-on-a-raspberry-jld
-sudo cp ./hajek/itmt-430/fullstack/nginx-ws/default /etc/nginx/sites-enabled
+sudo cp ./hajek/itmt-595/fullstack-app-code/nginx-ws/default /etc/nginx/sites-enabled
 sudo systemctl daemon-reload
 sudo systemctl reload nginx
 sudo systemctl restart nginx
@@ -83,7 +83,7 @@ sudo chown -R vagrant:vagrant ~/hajek
 
 # Change ownership of PM2 service that auto-starts our NodeJS app
 sudo chown -R vagrant:vagrant /home/vagrant/.pm2
-cp ./hajek/itmt-430/fullstack/nginx-ws/app.js /home/vagrant/project
+cp ./hajek/itmt-595/fullstack-app-code/nginx-ws/app.js /home/vagrant/project
 # Change the ownership of the NodeJS application files
 sudo chown -R vagrant:vagrant /home/vagrant/project
 pm2 start /home/vagrant/project/app.js
