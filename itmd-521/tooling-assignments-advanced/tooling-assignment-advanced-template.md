@@ -12,7 +12,7 @@ Execute command: `mysql -V`
 
 ## Java Version
 
-Image goes here
+Execute command: `java -version`
 
 ## Spark Versions
 
