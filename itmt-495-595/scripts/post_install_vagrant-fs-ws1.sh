@@ -53,6 +53,7 @@ sudo cp ./hajek/itmt-595/fullstack-app-code/nginx-ws/self-signed.conf /etc/nginx
 # Nginx configurations
 # https://nginx.org/en/docs/beginners_guide.html
 # https://dev.to/guimg/how-to-serve-nodejs-applications-with-nginx-on-a-raspberry-jld
+git clone git@github.com:illinoistech-itm/hajek.git
 sudo cp ./hajek/itmt-595/fullstack-app-code/nginx-ws/default /etc/nginx/sites-enabled
 sudo systemctl daemon-reload
 sudo systemctl reload nginx
