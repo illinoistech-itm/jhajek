@@ -48,6 +48,7 @@ sudo hostnamectl set-hostname lb
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048  -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj "/C=US/ST=IL/L=Chicago/O=IIT/OU=SAT/CN=class.edu"
 sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 # https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-18-04
+sudo cp ./hajek/itmt-595/fullstack-app-code/nginx-ws/default /etc/nginx/sites-enabled
 sudo cp -v /home/vagrant/hajek/itmt-595/fullstack-app-code/nginx-ws/self-signed.conf /etc/nginx/snippets
 
 # Nginx configurations
