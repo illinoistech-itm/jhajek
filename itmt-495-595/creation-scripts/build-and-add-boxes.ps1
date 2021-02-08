@@ -14,4 +14,4 @@ vagrant box add ./ws2-virtualbox*.box --name ws2
 # Add the Web Server 3 
 vagrant box add ./ws3-virtualbox*.box --name ws3
 
-Set-Location -path ../
+Set-Location -path ../../
