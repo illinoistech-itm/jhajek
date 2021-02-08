@@ -1,5 +1,6 @@
 # Shell script to build the virtual machines via Packer and add them to Vagrant
 
+Set-Location -path ..\professors-project-code
 # Script to build 4 instances in parallel
 packer build --var-file=.\variables.json .\web-application-parallel-build.json
 
