@@ -1,6 +1,6 @@
 # Shell script to build the virtual machines via Packer and add them to Vagrant
 
-packer build -var-file=.\variables.json .\web-application-parallel-build.json
+packer build --var-file=.\variables.json .\web-application-parallel-build.json
 
 # Change location to the build directory
 Set-Location -path ..\build\
