@@ -12,6 +12,6 @@ vagrant halt
 Set-Location -path ../ws2
 vagrant halt
 # Change location to the ws3 directory
-Set-Location -path ../ws3s
+Set-Location -path ../ws3
 vagrant halt
 Set-Location -path ../

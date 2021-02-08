@@ -15,12 +15,11 @@ Set-Location ../ws3
 vagrant destroy -f
 Remove-Item ./.vagrant -Recurse
 
-# Delete the original *.box files
-Set-Location ../
-Remove-Item *.box
 
 # Remove existing vagrant boxes
 vagrant box remove lb --force 
 vagrant box remove ws1 --force
 vagrant box remove ws2 --force 
 vagrant box remove ws3 --force 
+
+Set-Location -path ../

@@ -12,6 +12,6 @@ vagrant up
 Set-Location -path ../ws2
 vagrant up
 # Change location to the ws3 directory
-Set-Location -path ../ws3s
+Set-Location -path ../ws3
 vagrant up
 Set-Location -path ../
