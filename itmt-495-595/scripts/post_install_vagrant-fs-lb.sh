@@ -65,7 +65,6 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048  -keyout /etc/ssl/priva
 sudo cp -v /home/vagrant/hajek/itmt-595/fullstack-app-code/nginx-lb/self-signed.conf /etc/nginx/snippets
 
 sudo systemctl daemon-reload
-sudo systemctl restart nginx
 sudo systemctl status nginx
 sudo systemctl enable nginx
 
