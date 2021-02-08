@@ -54,7 +54,7 @@ sudo cp -v /home/vagrant/hajek/itmt-595/fullstack-app-code/nginx-ws/self-signed.
 # Nginx configurations
 # https://nginx.org/en/docs/beginners_guide.html
 # https://www.booleanworld.com/configure-nginx-load-balancer/
-sudo cp -v /home/vagrant/home/vagrant/hajek/itmt-595/fullstack-app-code/nginx-lb/default /etc/nginx/sites-enabled
+sudo cp -v /home/vagrant/hajek/itmt-595/fullstack-app-code/nginx-lb/default /etc/nginx/sites-enabled
 sudo cp -v /home/vagrant/hajek/itmt-595/fullstack-app-code/nginx-lb/nginx.conf /etc/nginx/
 
 # https://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl
