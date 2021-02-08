@@ -4,14 +4,14 @@ Set-Location -path ../build
 
 # Change location to the lb directory
 Set-Location -path ./lb
-vagrant up
+vagrant suspend
 # Change location to the ws1 directory
 Set-Location -path ../ws1
-vagrant up
+vagrant suspend
 # Change location to the ws2 directory
 Set-Location -path ../ws2
-vagrant up
+vagrant suspend
 # Change location to the ws3 directory
 Set-Location -path ../ws3s
-vagrant up
+vagrant suspend
 Set-Location -path ../

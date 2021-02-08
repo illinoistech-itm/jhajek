@@ -6,10 +6,10 @@ packer build -var-file=.\variables.json .\web-application-parallel-build.json
 Set-Location -path ..\build\
 
 # Add the Load Balancer Box 
-vagrant add ./lb/lb-virtualbox*.box --name lb
+vagrant box add ./lb-virtualbox*.box --name lb
 # Add the Web Server 1
-vagrant add ./ws1/ws1-virtualbox*.box --name ws1
+vagrant box add ./ws1-virtualbox*.box --name ws1
 # Add the Web Server 2 
-vagrant add ./ws2/ws2-virtualbox*.box --name ws2
+vagrant box add ./ws2-virtualbox*.box --name ws2
 # Add the Web Server 3 
-vagrant add ./ws3/ws3-virtualbox*.box --name ws3
+vagrant box add ./ws3-virtualbox*.box --name ws3
