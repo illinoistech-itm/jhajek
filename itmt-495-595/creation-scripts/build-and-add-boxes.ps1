@@ -1,9 +1,10 @@
 # Shell script to build the virtual machines via Packer and add them to Vagrant
 
-packer build --var-file=.\variables.json .\web-application-parallel-build.json
-
 # Change location to the build directory
 Set-Location -path ..\build\
+
+# Script to build 4 instances in parallel
+packer build --var-file=.\variables.json .\web-application-parallel-build.json
 
 # Add the Load Balancer Box 
 vagrant box add ./lb-virtualbox*.box --name lb
