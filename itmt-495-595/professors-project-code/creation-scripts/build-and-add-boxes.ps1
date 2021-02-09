@@ -1,8 +1,8 @@
 # Shell script to build the virtual machines via Packer and add them to Vagrant
 
-Set-Location -path ..\professors-project-code
+Set-Location -path ..\
 # Script to build 4 instances in parallel
-packer build --var-file=.\variables.json .\web-application-parallel-build.json
+packer build -force -var-file ./variables.json web-application-parallel-build.json
 
 # Change location to the build directory
 Set-Location -path ..\build\
@@ -16,4 +16,4 @@ vagrant box add ./ws2-virtualbox*.box --name ws2
 # Add the Web Server 3 
 vagrant box add ./ws3-virtualbox*.box --name ws3
 
-Set-Location -path ../../
+Set-Location -path ../professors-project-code/creation-scripts

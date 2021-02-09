@@ -32,15 +32,17 @@ ufw allow proto tcp to 0.0.0.0/0 port 80
 ufw allow proto tcp to 0.0.0.0/0 port 443
 
 # set the /etc/hosts file to match hostname
-echo "$LBIP     lb     lb.class.edu"   | sudo tee -a /etc/hosts
-echo "$WS1IP    ws1    ws1.class.edu"  | sudo tee -a /etc/hosts
-echo "$WS2IP     ws2  ws2.class.edu"   | sudo tee -a /etc/hosts
-echo "$WS3IP     ws3  ws3.class.edu"   | sudo tee -a /etc/hosts
-echo "$REDIP     redis  redis.class.edu" | sudo tee -a /etc/hosts
-echo "$MMIP     mm  mm.class.edu" | sudo tee -a /etc/hosts
-echo "$MS1IP     ms1  ms1.class.edu" | sudo tee -a /etc/hosts
-echo "$MS2IP     ms2  ms2.class.edu" | sudo tee -a /etc/hosts
-echo "$MS3IP     ms3  ms3.class.edu" | sudo tee -a /etc/hosts
+echo "$LBIP      lb    lb.class.edu"    | sudo tee -a /etc/hosts
+echo "$WS1IP     ws1   ws1.class.edu"   | sudo tee -a /etc/hosts
+echo "$WS2IP     ws2   ws2.class.edu"   | sudo tee -a /etc/hosts
+echo "$WS3IP     ws3   ws3.class.edu"   | sudo tee -a /etc/hosts
+echo "$REDIP     redis redis.class.edu" | sudo tee -a /etc/hosts
+echo "$MMIP      mm    mm.class.edu"    | sudo tee -a /etc/hosts
+echo "$MS1IP     ms1   ms1.class.edu"   | sudo tee -a /etc/hosts
+echo "$MS2IP     ms2   ms2.class.edu"   | sudo tee -a /etc/hosts
+echo "$MS3IP     ms3   ms3.class.edu"   | sudo tee -a /etc/hosts
+
+# Set hostname
 sudo hostnamectl set-hostname ws1
 
 # https://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl

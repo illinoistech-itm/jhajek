@@ -1,7 +1,7 @@
 # Shell script to build the virtual machines via Packer and add them to Vagrant
 
 # Change location to the build directory
-Set-Location -path ..\build\
+Set-Location -path ..\..\build\
 
 # Add the Load Balancer Box 
 vagrant box add ./lb-virtualbox*.box --name lb
@@ -12,4 +12,4 @@ vagrant box add ./ws2-virtualbox*.box --name ws2
 # Add the Web Server 3 
 vagrant box add ./ws3-virtualbox*.box --name ws3
 
-Set-Location -path ../
+Set-Location -path ../professors-project-code/creation-scripts
