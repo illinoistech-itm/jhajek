@@ -30,4 +30,14 @@ Teams will need to pick a project subject.  The project scope can be from existi
   * Coordinate department syllabi to be injected into application (will be provided)
   * Create voice syntax for querying via voice and receiving spoken responses
   * Focus on VI/VX (voice interface, voice experience) to make the service as friendly as possible
+* Item Swapping Site
+  * Site that allows students on a campus to put items available for pickup/trade/ or sale
+  * Allows students to make requests for items
+  * Keeps track of "karma" as people rate the seller and the transactions
+* Community Fix Platform
+  * Allows community members to post an image of something broken and people vote on what the priority to fix is
+  * Create a voting system and priority system and prevent gaming of the system
+  * Determine how long voting is open and what kind of votes people get
+    * Tiered system?  More you participate more votes?
+  * Decide if you want a down-vote system as well or what is the criteria to accept a project voting wise?
 * Other student defined projects
