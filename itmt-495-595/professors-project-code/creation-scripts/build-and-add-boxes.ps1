@@ -2,7 +2,7 @@
 
 Set-Location -path ..\
 # Script to build 4 instances in parallel
-packer build -force -var-file ./variables.json web-application-parallel-build.json
+packer build -force --var-file=./variables.json web-application-parallel-build.json
 
 # Change location to the build directory
 Set-Location -path ..\build\
