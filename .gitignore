@@ -31,3 +31,4 @@ pull-repo.sh
 *.docx
 *.txt
 *~
+chapter-*.html
