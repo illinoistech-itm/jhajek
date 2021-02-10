@@ -157,4 +157,15 @@ df.show(5)
 
 ## Summary
 
+- Spark is an analytics operating system
+  - You can use it to process workloads and algorithms in a distributed way
+  - You can use Spark for data transfer, massive data transformation, log analysis, and more
+- Spark supports SQL, Java, Scala, R, and Python
+- Spark’s internal main data storage is the dataframe
+  - The dataframe combines storage capacity with an API
+  - In Java, a dataframe is implemented as a `Dataset<Row>`
 
+## Next Steps
+
+- I will provide a recorded lecture with Chapter-02 content
+- With small lab by Thursday evening
