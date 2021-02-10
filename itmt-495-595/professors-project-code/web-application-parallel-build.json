@@ -240,37 +240,58 @@
       "cp -v /home/vagrant/config /home/vagrant/.ssh/",
       "cp -v /home/vagrant/config /root/.ssh/",
       "git clone git@github.com:illinoistech-itm/hajek.git"
-    ],
-    "environment_vars": [ 
-      "LBIP={{user `load-balancer-ip`}}",
-      "WS1IP={{user `webserver-one-ip`}}",
-      "WS2IP={{user `webserver-two-ip`}}",
-      "WS3IP={{user `webserver-three-ip`}}",
-      "REDIP={{user `redis-server-ip`}}"
     ]
   },  
   {
     "type": "shell",
     "execute_command" : "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
     "script": "../scripts/post_install_vagrant-fs-lb.sh",
+    "environment_vars": [ 
+      "LBIP={{user `load-balancer-ip`}}",
+      "WS1IP={{user `webserver-one-ip`}}",
+      "WS2IP={{user `webserver-two-ip`}}",
+      "WS3IP={{user `webserver-three-ip`}}",
+      "REDIP={{user `redis-server-ip`}}"
+    ],
     "only": ["lb"]
   },
   {
     "type": "shell",
     "execute_command" : "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
     "script": "../scripts/post_install_vagrant-fs-ws1.sh",
+    "environment_vars": [ 
+      "LBIP={{user `load-balancer-ip`}}",
+      "WS1IP={{user `webserver-one-ip`}}",
+      "WS2IP={{user `webserver-two-ip`}}",
+      "WS3IP={{user `webserver-three-ip`}}",
+      "REDIP={{user `redis-server-ip`}}"
+    ],
     "only": ["ws1"]
   },
   {
     "type": "shell",
     "execute_command" : "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
     "script": "../scripts/post_install_vagrant-fs-ws2.sh",
+    "environment_vars": [ 
+      "LBIP={{user `load-balancer-ip`}}",
+      "WS1IP={{user `webserver-one-ip`}}",
+      "WS2IP={{user `webserver-two-ip`}}",
+      "WS3IP={{user `webserver-three-ip`}}",
+      "REDIP={{user `redis-server-ip`}}"
+    ],
     "only": ["ws2"]
   },
   {
     "type": "shell",
     "execute_command" : "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
     "script": "../scripts/post_install_vagrant-fs-ws3.sh",
+    "environment_vars": [ 
+      "LBIP={{user `load-balancer-ip`}}",
+      "WS1IP={{user `webserver-one-ip`}}",
+      "WS2IP={{user `webserver-two-ip`}}",
+      "WS3IP={{user `webserver-three-ip`}}",
+      "REDIP={{user `redis-server-ip`}}"
+    ],
     "only": ["ws3"]
   }  
 ],
