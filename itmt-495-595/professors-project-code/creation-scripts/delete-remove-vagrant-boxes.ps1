@@ -2,15 +2,19 @@
 
 # Destroy existing vagrant boxes
 Set-Location ../../build
+
 Set-Location ./lb
 vagrant destroy -f
 Remove-Item -Verbose ./.vagrant -Recurse
+
 Set-Location ../ws1
 vagrant destroy -f
 Remove-Item -Verbose ./.vagrant -Recurse
+
 Set-Location ../ws2
 vagrant destroy -f
 Remove-Item -Verbose ./.vagrant -Recurse
+
 Set-Location ../ws3
 vagrant destroy -f
 Remove-Item -Verbose ./.vagrant -Recurse
