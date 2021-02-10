@@ -22,15 +22,15 @@ server {
         listen 443 default_server;
         listen [::]:443 default_server;
         include snippets/self-signed.conf;
-        
-		# intermediate configuration. tweak to your needs. 
-        # https://www.ssls.com/knowledgebase/how-to-install-an-ssl-certificate-on-a-nginx-server/
-        # don't forget to turn ssl on....
-		ssl on;
-		ssl_buffer_size 8k;
-		ssl_protocols TLSv1.3 TLSv1.2 TLSv1.1 TLSv1;
-		ssl_prefer_server_ciphers on;
-		ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
+# intermediate configuration. tweak to your needs.
+ # https://www.ssls.com/knowledgebase/how-to-install-an-ssl-certificate-on-a-nginx-server/
+ # don't forget to turn ssl on....
+ssl on;
+     ssl_buffer_size 8k;
+     ssl_protocols TLSv1.3 TLSv1.2 TLSv1.1 TLSv1;
+     ssl_prefer_server_ciphers on;
+     ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
+
 
         root /var/www/html;
         index index.html;
@@ -41,15 +41,10 @@ server {
                 # as directory, then fall back to displaying a 404.
                 #try_files $uri $uri/ =404;
                 try_files $uri $uri/ =404;
-
-				# Added by JRH 
-        		proxy_pass https://lb;
         }
 
 }
 
-# Default server configuration
-#
 server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
@@ -81,9 +76,50 @@ server {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		try_files $uri $uri/ =404;
-
-		# Added by JRH 
-        proxy_pass http://lb;
-    
 	}
+        location /app {
+                proxy_pass http://0.0.0.0:3000;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        } 
+	# pass PHP scripts to FastCGI server
+	#
+	#location ~ \.php$ {
+	#	include snippets/fastcgi-php.conf;
+	#
+	#	# With php-fpm (or other unix sockets):
+	#	fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+	#	# With php-cgi (or other tcp sockets):
+	#	fastcgi_pass 127.0.0.1:9000;
+	#}
+
+	# deny access to .htaccess files, if Apache's document root
+	# concurs with nginx's one
+	#
+	#location ~ /\.ht {
+	#	deny all;
+	#}
 }
+
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+#server {
+#	listen 80;
+#	listen [::]:80;
+#
+#	server_name example.com;
+#
+#	root /var/www/example.com;
+#	index index.html;
+#
+#	location / {
+#		try_files $uri $uri/ =404;
+#	}
+#}
