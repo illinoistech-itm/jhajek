@@ -74,9 +74,80 @@
 
 ## First Sample Code
 
-- On your virtual machine:
+- In your Ubuntu virtual machine:
 - Clone the sample code repo for chapter 01 at:
-  - [https://github.com/jgperrin/net.jgp.books.spark.ch01](https://github.com/jgperrin/net.jgp.books.spark.ch01 "GitHub repo for Chapter 01") in your class Vagrant box
+  - [https://github.com/jgperrin/net.jgp.books.spark.ch01](https://github.com/jgperrin/net.jgp.books.spark.ch01 "GitHub repo for Chapter 01")
+- Install `Maven` via `apt`
+  - `sudo apt-get install maven`
+  - mvn -version
+
+## 1.5.3 Running a Sample
+
+- Run this sample code from the command line:
+  - `mvn clean install exec:exec`
+
+## 1.5.4 Code in Java
+
+```Java
+package net.jgp.books.spark.ch01.lab100_csv_to_dataframe;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SparkSession;
+
+public class CsvToDataframeApp {
+ public static void main(String[] args) {
+ CsvToDataframeApp app = new CsvToDataframeApp();
+ app.start();
+ }
+ private void start() {
+ SparkSession spark = SparkSession.builder()
+ .appName("CSV to Dataset").master("local").getOrCreate();
+ Dataset<Row> df = spark.read().format("csv")
+ .option("header", "true").load("data/books.csv");
+ df.show(5);
+ }
+}
+```
+
+## 1.5.4 Description of Java Code
+
+- Entry point
+  - `main()` (like a normal Java Program)
+- `SparkSession()`
+  - Creates a local session (for now) of a Spark Class
+- Ingest data from a CSV
+  - Reads data from a CSV and stores a copy of the data in a DataFrame
+- Show
+  - `df.show(5)` is a transformation which displays first 5 records (LIMIT 5)
+
+## What does this accomplish?
+
+- Shows we Install all needed components for Spark
+- Created a SparkSession where code code be executed
+- Loaded a CSV file
+- Displayed 5 rows of output
+
+## Example Code in Python
+
+```python
+from pyspark.sql import SparkSession
+import os
+
+current_dir = os.path.dirname(__file__)
+relative_path = "../../../../data/books.csv"
+absolute_file_path = os.path.join(current_dir, relative_path)
+
+# Creates a session on a local master
+session = SparkSession.builder.appName("CSV to Dataset").master("local[*]").getOrCreate()
+
+# Reads a CSV file with header, called books.csv, stores it in a dataframe
+df = session.read.csv(header=True, inferSchema=True, path=absolute_file_path)
+
+# Shows at most 5 rows from the dataframe
+df.show(5)
+
+# Good to stop SparkSession at the end of the application
+```
 
 ## Summary
 
