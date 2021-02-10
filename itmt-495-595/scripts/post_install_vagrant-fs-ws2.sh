@@ -30,6 +30,7 @@ ufw --force enable
 ufw allow proto tcp to 0.0.0.0/0 port 22
 ufw allow proto tcp to 0.0.0.0/0 port 80
 ufw allow proto tcp to 0.0.0.0/0 port 443
+ufw allow proto tcp to 0.0.0.0/0 port 3000
 
 # set the /etc/hosts file to match hostname
 echo "$LBIP      lb    lb.class.edu"    | sudo tee -a /etc/hosts
