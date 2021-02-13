@@ -10,7 +10,7 @@
 
 ## Scientist Tech Help
 
-![*Scientist Tech Help*](images/scientist_tech_help.png "Scientist Tech Help Cartoon https://xkcd.com/2341/")
+![*Scientist Tech Help*](images/scientist_tech_help.png "Scientist Tech Help Cartoon")
 
 ## Objectives
 
@@ -41,6 +41,14 @@
   - Ingest columns from a CSV file
   - Modify the data
   - Store the results to an RDBMS
+  - You will need to install PostgreSQL (Pronounced Postgress) in your class Virtual Machine
+    - `sudo apt-get update` then `sudo apt-get install postgresql`
+
+## Figure 2-1
+
+![*Figure 2.1*](images/figure2-1.png "Mental Model of typical Spark task")
+
+## 
 
 ## Summary
 
