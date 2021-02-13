@@ -72,9 +72,13 @@
 
 - From the chapter 02 source code directory run:
   - `mvn clean install exec:exec`
-  - This will invoke Maven to fetch the Java package dependencies for the PostegreSQL JDBC driver
+  - This will invoke Maven to fetch the Java package dependencies for the PostgreSQL JDBC driver
   - Saves us much time
   - Found in the Pom.xml file
+
+## 2.2 Mental Model
+
+![*Figure 2.2*](images/figure2-2.png "Figure 2-2 what the application does")
 
 ## Summary
 
