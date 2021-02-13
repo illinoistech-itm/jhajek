@@ -43,12 +43,15 @@
   - Store the results to an RDBMS
   - You will need to install PostgreSQL (Pronounced Postgress) in your class Virtual Machine
     - `sudo apt-get update` then `sudo apt-get install postgresql`
+  - In the `README.md` in the chapter 02 source code there is instruction on how to create the user and tables for this lab
 
 ## Figure 2-1
 
 ![*Figure 2.1*](images/figure2-1.png "Mental Model of typical Spark task")
 
-## 
+## Installation of PostgreSQL
+
+![*Create a Table in PostegreSQL*](images/postgresql.png "How to create a Table in PostegreSQL")
 
 ## Summary
 
