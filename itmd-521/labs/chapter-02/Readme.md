@@ -2,6 +2,11 @@
 
 You will copy this template file to your own private GitHub repo provided.  Under your itmd-521 folder you will create a sub-folder named: **labs**.  Under that folder create a sub-folder named: **chapter-02**.  In that folder place this Readme.md
 
+## Objectives
+
+- Demonstrate configuration of needed tools and dependencies to ingest and transform data
+- Demonstrate successful execution of two different Spark applications  
+
 ## Your name goes here
 
 ### Successful PostgreSQL Table Creation
