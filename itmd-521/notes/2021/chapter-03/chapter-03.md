@@ -105,7 +105,7 @@
   - And remove uneeded fields
   - Ingestion and transformation of data
 
-## Figure 3-8
+## Figure 3.8 and 3.9
 
 ![*Figure 3.8*](images/figure3-8.png "Figure 3.8 Union of two datasets")
 ![*Figure 3.9*](images/figure3-9.png "Figure 3.9 All Fields")
@@ -114,14 +114,31 @@
 
 - Lets transform the dataframe so it matches our desired output state
   - By renaming and dropping columns
-  - ![*Figure 3.9*](images/figure3-9.png "First Five Rows of DataFrame")
+  - Lets look at the output of the Java Code
+  - We need to add code to the `pom.xml`
 
-## 
+## pom.xml additions
+
+```xml
+<plugin>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>exec-maven-plugin</artifactId>
+  <version>1.6.0</version>
+  <configuration>
+    <executable>java</executable>
+    <arguments>
+    <argument>-classpath</argument>
+      <classpath />
+      <argument>net.jgp.books.spark.ch03.lab200_ingestion_schema_manipulation/IngestionSchemaManipulationApp</argument>
+    </arguments>
+  </configuration>
+</plugin>
+```
 
 ## Summary
 
-- 
+- Place summary here
 
 ## Next Steps
 
-- Complete the PostgreSQL setup on your Vagrant Box
+- Run the labs
