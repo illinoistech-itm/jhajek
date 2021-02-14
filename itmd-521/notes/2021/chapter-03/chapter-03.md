@@ -102,10 +102,21 @@
 - The first ingestion is a list of restaurants in Wake County North Carolina
 - The second dataset consists of restaurants in Durham County, North Carolina
   - You will then transform the datasets so you can combine them via a union
+  - And remove uneeded fields
+  - Ingestion and transformation of data
 
 ## Figure 3-8
 
 ![*Figure 3.8*](images/figure3-8.png "Figure 3.8 Union of two datasets")
+![*Figure 3.9*](images/figure3-9.png "Figure 3.9 All Fields")
+
+## 3.2.1 - Setting Things Up
+
+- Lets transform the dataframe so it matches our desired output state
+  - By renaming and dropping columns
+  - ![*Figure 3.9*](images/figure3-9.png "First Five Rows of DataFrame")
+
+## 
 
 ## Summary
 
