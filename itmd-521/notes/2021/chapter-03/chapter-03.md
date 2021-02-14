@@ -98,8 +98,14 @@
 
 ## Figure 3-5 Ingestion of Data
 
-![*Figure 3.5*](images/figure3-5.png "Figure 3.5 Ingestion of Data")
+- ![*Figure 3.5*](images/figure3-5.png "Figure 3.5 Ingestion of Data")
+- The first ingestion is a list of restaurants in Wake County North Carolina
+- The second dataset consists of restaurants in Durham County, North Carolina
+  - You will then transform the datasets so you can combine them via a union
 
+## Figure 3-8
+
+![*Figure 3.8*](images/figure3-8.png "Figure 3.8 Union of two datasets")
 
 ## Summary
 
