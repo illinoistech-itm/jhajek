@@ -129,7 +129,9 @@
     <arguments>
       <argument>-classpath</argument>
       <classpath />
-      <argument>net.jgp.books.spark.ch03.lab200_ingestion_schema_manipulation/IngestionSchemaManipulationApp</argument>
+      <argument>net.jgp.books.spark.ch03
+      .lab200_ingestion_schema_manipulation
+      .IngestionSchemaManipulationApp</argument>
     </arguments>
   </configuration>
 </plugin>
