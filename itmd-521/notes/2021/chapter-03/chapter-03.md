@@ -86,6 +86,21 @@
 
 ![*Figure 3-3*](images/figure3-3.png "Figure 3.3 A Typical Data Flow")
 
+## Immutability Becomes Important
+
+- Immutability becomes really important when you think in a distributed way
+  - You store data, and each modification is done immediately on every node, as in a relational database
+  - You keep the data in sync over the nodes and share only the transformation recipe with the various nodes.
+- Spark uses the second solution, because it is faster to sync a recipe than all the data
+  - The name of the engine under the Spark-hood is Catalyst
+- We won't engage Catalyst
+  - Spark, like any good operating system, will handle the resources for you
+
+## Figure 3-5 Ingestion of Data
+
+![*Figure 3.5*](images/figure3-5.png "Figure 3.5 Ingestion of Data")
+
+
 ## Summary
 
 - 
