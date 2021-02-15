@@ -229,10 +229,51 @@ df = df.withColumn("id", concat(
   - But we need it in a unified state in order to do any data processing/analysis on
   - We won't cover how to write the new dataframe of data out, but essentially there is a `spark.save()` method
   - Figure 3-16 shows the two different datasets and their schemas
+  - This is This is lab #230 in package `net.jgp.books.spark.ch03.lab230_dataframe_union`
+- When doing a Union, there are two ways:
+  - `union()` and `unionByName()`
+
+## 3.3.1 - Reusing your POJOs
+
+- Using compiled languages like Scala and Java have an advantage over interpreted languages like Python and R
+  - In Spark they have an additional datatype beyond the `dataframe` called a `dataset`
+  - Type `dataset` allow you to use POJOs directly in Spark
+  - POJO is plain old Java Object
+- Why?
+  - You have existing code that already has data encapsulated or processed in its Object form
+  - Type `dataset` prevents you from having to covert Object attributes to text files
+  - Simplifies workflow
+  - A `dataset` can be converted to a `dataframe` via the `.toDF()` method so you can use the dataframe's capabilities
+
+## 3.3.3 - Converting back and forth
+
+- Let's learn how to convert a dataframe to a dataset and back
+  - This conversion is useful if you want to manipulate your existing POJOs and the extended API that apply to only the dataframe
+- Let's refer to the textbook and sample code for the remainder of the chapter
 
 ## Summary
 
-- Place summary here
+- Today we learned:
+  - A dataframe is an immutable distributed collection of data, organized into named columns
+  - A dataframe is implemented as a dataset of rows—or in code: `Dataset<Row>`
+  - A dataset is implemented as a dataset of anything except rows—or in code:
+    - `Dataset<String>`, `Dataset<Book>`, or `Dataset<SomePojo>`
+  - Dataframes can store columnar information, like a CSV file, and nested fields and arrays, like a JSON file--the dataframe API remains the same.
+  - In a JSON document, you can access nested fields by using a dot (.).
+  - The API for the dataframe can be found at http://mng.bz/qXYE
+  - The API for the static methods can be found at http://mng.bz/5AQD (and in appendix G)
+
+## Additional Summary
+
+- We learned:
+  - If you do not care about column names when you union two dataframes, use union()
+  - If you care about column names when you union two dataframes, use unionByName()
+  - You can reuse your POJOs directly in a dataset in Spark
+  - An object must be serializable if you want to have it as part of a `dataset`
+  - The dataset’s `drop()` method removes a column in the dataframe
+  - The dataset’s `col()` method returns a dataset’s column based on its name
+  - The `to_date()` static function transforms a date as a string to a date
+  - Catalyst is the transformation optimizer under the hood in Spark
 
 ## Next Steps
 
