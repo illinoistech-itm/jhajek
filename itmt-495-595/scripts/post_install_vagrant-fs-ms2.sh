@@ -82,15 +82,17 @@ ufw allow proto tcp to 0.0.0.0/0 port 22
 ufw allow from $ACCESSFROMIP to any port 3306
 
 # set the /etc/hosts file to match hostname
-echo "$LBIP     lb     lb.class.edu"   | sudo tee -a /etc/hosts
-echo "$WS1IP     ws1    ws1.class.edu"  | sudo tee -a /etc/hosts
-echo "$WS2IP     ws2  ws2.class.edu"   | sudo tee -a /etc/hosts
-echo "$WS3IP     ws3  ws3.class.edu"   | sudo tee -a /etc/hosts
-echo "$REDIP     redis  redis.class.edu" | sudo tee -a /etc/hosts
-echo "$MMIP     mm  mm.class.edu" | sudo tee -a /etc/hosts
-echo "$MS1IP     ms1  ms1.class.edu" | sudo tee -a /etc/hosts
-echo "$MS2IP     ms2  ms2.class.edu" | sudo tee -a /etc/hosts
-echo "$MS3IP     ms3  ms3.class.edu" | sudo tee -a /etc/hosts
+echo "$LBIP      lb    lb.class.edu"    | sudo tee -a /etc/hosts
+echo "$WS1IP     ws1   ws1.class.edu"   | sudo tee -a /etc/hosts
+echo "$WS2IP     ws2   ws2.class.edu"   | sudo tee -a /etc/hosts
+echo "$WS3IP     ws3   ws3.class.edu"   | sudo tee -a /etc/hosts
+echo "$REDIP     redis redis.class.edu" | sudo tee -a /etc/hosts
+echo "$MMIP      mm    mm.class.edu"    | sudo tee -a /etc/hosts
+echo "$MS1IP     ms1   ms1.class.edu"   | sudo tee -a /etc/hosts
+echo "$MS2IP     ms2   ms2.class.edu"   | sudo tee -a /etc/hosts
+echo "$MS3IP     ms3   ms3.class.edu"   | sudo tee -a /etc/hosts
+
+# Set system hostname
 sudo hostnamectl set-hostname ms2
 
 # https://stackoverflow.com/questions/8055694/how-to-execute-a-mysql-command-from-a-shell-script
@@ -98,4 +100,4 @@ sudo hostnamectl set-hostname ms2
 # #USERPASS and $BKPASS
 
 
-sudo mysql -u root < ~/hajek/itmt-430/db-samples/create-user-with-permissions-ms2.sql
+sudo mysql -u root < ~/hajek/itmt-595/db-samples/create-user-with-permissions-ms2.sql
