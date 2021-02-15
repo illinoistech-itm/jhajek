@@ -276,7 +276,3 @@ df = df.withColumn("id", concat(
   - The dataset’s `col()` method returns a dataset’s column based on its name
   - The `to_date()` static function transforms a date as a string to a date
   - Catalyst is the transformation optimizer under the hood in Spark
-
-## Next Steps
-
-- Run the labs
