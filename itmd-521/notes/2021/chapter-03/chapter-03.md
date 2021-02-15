@@ -184,9 +184,18 @@ df = df.withColumn("id", concat(
 
 ![*Figure 3.10*](images/figure3-10.png "Figure 3-10 how partitions store a dataframe")
 
-## 
+## How many partitions
 
-
+- Partitions are created by Spark for you
+  - Data is assigned to each partition automatically based on your infrastructure
+  - The number of nodes and size of the dataset
+  - Because of the size of this dataset and we have one node, only 1 partition is created
+  - Later on we can optimize these numbers based on the type of computation we are doing
+- You can find out how many partitions you have with the following code:
+  - ```System.out.println("*** Looking at partitions");```{.java}
+ ```Partition[] partitions = df.rdd().partitions();```{.java}
+ ```int partitionCount = partitions.length;```{.java}
+ ```System.out.println("Partition count before repartition: " + partitionCount);```{.java}
 
 ## Summary
 
