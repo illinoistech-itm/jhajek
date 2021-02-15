@@ -486,7 +486,9 @@
       "MS1IP={{user `maria-slave1-ip`}}",
       "MS2IP={{user `maria-slave2-ip`}}",
       "MS3IP={{user `maria-slave3-ip`}}",
-      "DBPASS={{user `database-root-pw`}}"
+      "DBPASS={{user `database-root-pw`}}",
+      "ACCESSFROMIP={{user `access-range-for-ip`}}",
+      "USERPASS={{user `user-database-password`}}"
     ],
     "only": ["mm"]
   },
@@ -504,7 +506,9 @@
       "MS1IP={{user `maria-slave1-ip`}}",
       "MS2IP={{user `maria-slave2-ip`}}",
       "MS3IP={{user `maria-slave3-ip`}}",
-      "DBPASS={{user `database-root-pw`}}"
+      "DBPASS={{user `database-root-pw`}}",
+      "ACCESSFROMIP={{user `access-range-for-ip`}}",
+      "USERPASS={{user `user-database-password`}}"
     ],
     "only": ["ms1"]
   },
@@ -522,7 +526,9 @@
       "MS1IP={{user `maria-slave1-ip`}}",
       "MS2IP={{user `maria-slave2-ip`}}",
       "MS3IP={{user `maria-slave3-ip`}}",
-      "DBPASS={{user `database-root-pw`}}"
+      "DBPASS={{user `database-root-pw`}}",
+      "ACCESSFROMIP={{user `access-range-for-ip`}}",
+      "USERPASS={{user `user-database-password`}}"
     ],
     "only": ["ms2"]
   }  
