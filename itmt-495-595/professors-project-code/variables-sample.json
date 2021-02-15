@@ -7,5 +7,6 @@
     "maria-master-ip": "192.168.33.x",
     "maria-slave1-ip": "192.168.33.x",
     "maria-slave2-ip": "192.168.33.x",
-    "maria-slave3-ip": "192.168.33.x"
+    "maria-slave3-ip": "192.168.33.x",
+    "database-root-pw": "letmein"
 }
