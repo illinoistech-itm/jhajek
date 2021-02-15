@@ -203,7 +203,8 @@ df = df.withColumn("id", concat(
 - You can repartition the dataframe to use four (or any number of) partitions by using the `repartition()` method. 
   - Repartitioning can increase performance:
  ```df = df.repartition(4);```{.java}
- ```System.out.println("Partition count after repartition: " +```{.java}
+ ```System.out.println("Partition count```{.java}
+ ```after repartition: " +```{.java}
  ```df.rdd().partitions().length);```{.java}
   - How do you think this would work?
 
