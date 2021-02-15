@@ -261,8 +261,8 @@ df = df.withColumn("id", concat(
     - `Dataset<String>`, `Dataset<Book>`, or `Dataset<SomePojo>`
   - Dataframes can store columnar information, like a CSV file, and nested fields and arrays, like a JSON file--the dataframe API remains the same.
   - In a JSON document, you can access nested fields by using a dot (.)
-  - The API for the dataframe can be found at http://mng.bz/qXYE
-  - The API for the static methods can be found at http://mng.bz/5AQD (and in appendix G)
+  - The API for the dataframe can be found at [http://mng.bz/qXYE](http://mng.bz/qXYE "Link to API for Spark dataframe")
+  - The API for the static methods can be found at [http://mng.bz/5AQD](http://mng.bz/5AQD "Link to API for Spark Static Methods") (and in appendix G)
 
 ## Additional Summary
 
