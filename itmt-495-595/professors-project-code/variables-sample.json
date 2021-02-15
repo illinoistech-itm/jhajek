@@ -9,7 +9,7 @@
     "maria-slave2-ip": "192.168.33.x",
     "maria-slave3-ip": "192.168.33.x",
     "database-root-pw": "letmein",
-    "access-range-for-ip": "192.168.x.x",
+    "access-range-for-ip": "192.168.33.%",
     "user-database-password": "letmeinnow",
     "replicant-database-password": "android"
 }
