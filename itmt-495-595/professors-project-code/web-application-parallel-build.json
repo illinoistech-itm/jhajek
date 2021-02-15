@@ -485,7 +485,8 @@
       "MMIP={{user `maria-master-ip`}}",
       "MS1IP={{user `maria-slave1-ip`}}",
       "MS2IP={{user `maria-slave2-ip`}}",
-      "MS3IP={{user `maria-slave3-ip`}}"
+      "MS3IP={{user `maria-slave3-ip`}}",
+      "DBPASS={{user `database-root-pw`}}"
     ],
     "only": ["mm"]
   },
@@ -502,7 +503,8 @@
       "MMIP={{user `maria-master-ip`}}",
       "MS1IP={{user `maria-slave1-ip`}}",
       "MS2IP={{user `maria-slave2-ip`}}",
-      "MS3IP={{user `maria-slave3-ip`}}"
+      "MS3IP={{user `maria-slave3-ip`}}",
+      "DBPASS={{user `database-root-pw`}}"
     ],
     "only": ["ms1"]
   },
@@ -519,7 +521,8 @@
       "MMIP={{user `maria-master-ip`}}",
       "MS1IP={{user `maria-slave1-ip`}}",
       "MS2IP={{user `maria-slave2-ip`}}",
-      "MS3IP={{user `maria-slave3-ip`}}"
+      "MS3IP={{user `maria-slave3-ip`}}",
+      "DBPASS={{user `database-root-pw`}}"
     ],
     "only": ["ms2"]
   }  
