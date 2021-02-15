@@ -195,7 +195,17 @@ df = df.withColumn("id", concat(
   - ```System.out.println("*** Looking at partitions");```{.java}
  ```Partition[] partitions = df.rdd().partitions();```{.java}
  ```int partitionCount = partitions.length;```{.java}
- ```System.out.println("Partition count before repartition: " + partitionCount);```{.java}
+ ```System.out.println("Partition count before repartition:```{.java}
+ ```" + partitionCount);```{.java}
+
+## Repartition
+
+- You can repartition the dataframe to use four (or any number of) partitions by using the `repartition()` method. 
+  - Repartitioning can increase performance:
+ ```df = df.repartition(4);```{.java}
+ ```System.out.println("Partition count after repartition: " +```{.java}
+ ```df.rdd().partitions().length);```{.java}
+  - How do you think this would work?
 
 ## Summary
 
