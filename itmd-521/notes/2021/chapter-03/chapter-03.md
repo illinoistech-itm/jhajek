@@ -250,6 +250,7 @@ df = df.withColumn("id", concat(
 - Let's learn how to convert a dataframe to a dataset and back
   - This conversion is useful if you want to manipulate your existing POJOs and the extended API that apply to only the dataframe
 - Let's refer to the textbook and sample code for the remainder of the chapter
+  - Lab 300, 310, 320, and 321
 
 ## Summary
 
@@ -259,7 +260,7 @@ df = df.withColumn("id", concat(
   - A dataset is implemented as a dataset of anything except rows—or in code:
     - `Dataset<String>`, `Dataset<Book>`, or `Dataset<SomePojo>`
   - Dataframes can store columnar information, like a CSV file, and nested fields and arrays, like a JSON file--the dataframe API remains the same.
-  - In a JSON document, you can access nested fields by using a dot (.).
+  - In a JSON document, you can access nested fields by using a dot (.)
   - The API for the dataframe can be found at http://mng.bz/qXYE
   - The API for the static methods can be found at http://mng.bz/5AQD (and in appendix G)
 
