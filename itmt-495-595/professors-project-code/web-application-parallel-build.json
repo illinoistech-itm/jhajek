@@ -430,7 +430,11 @@
       "WS1IP={{user `webserver-one-ip`}}",
       "WS2IP={{user `webserver-two-ip`}}",
       "WS3IP={{user `webserver-three-ip`}}",
-      "REDIP={{user `redis-server-ip`}}"
+      "REDIP={{user `redis-server-ip`}}",
+      "MMIP={{user `maria-master-ip`}}",
+      "MS1IP={{user `maria-slave1-ip`}}",
+      "MS2IP={{user `maria-slave2-ip`}}",
+      "MS3IP={{user `maria-slave3-ip`}}"
     ],
     "only": ["ws1"]
   },
@@ -443,7 +447,11 @@
       "WS1IP={{user `webserver-one-ip`}}",
       "WS2IP={{user `webserver-two-ip`}}",
       "WS3IP={{user `webserver-three-ip`}}",
-      "REDIP={{user `redis-server-ip`}}"
+      "REDIP={{user `redis-server-ip`}}",
+      "MMIP={{user `maria-master-ip`}}",
+      "MS1IP={{user `maria-slave1-ip`}}",
+      "MS2IP={{user `maria-slave2-ip`}}",
+      "MS3IP={{user `maria-slave3-ip`}}"
     ],
     "only": ["ws2"]
   },
@@ -456,9 +464,64 @@
       "WS1IP={{user `webserver-one-ip`}}",
       "WS2IP={{user `webserver-two-ip`}}",
       "WS3IP={{user `webserver-three-ip`}}",
-      "REDIP={{user `redis-server-ip`}}"
+      "REDIP={{user `redis-server-ip`}}",
+      "MMIP={{user `maria-master-ip`}}",
+      "MS1IP={{user `maria-slave1-ip`}}",
+      "MS2IP={{user `maria-slave2-ip`}}",
+      "MS3IP={{user `maria-slave3-ip`}}"
     ],
     "only": ["ws3"]
+  },
+  {
+    "type": "shell",
+    "execute_command" : "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
+    "script": "../scripts/post_install_vagrant-fs-mm.sh",
+    "environment_vars": [ 
+      "LBIP={{user `load-balancer-ip`}}",
+      "WS1IP={{user `webserver-one-ip`}}",
+      "WS2IP={{user `webserver-two-ip`}}",
+      "WS3IP={{user `webserver-three-ip`}}",
+      "REDIP={{user `redis-server-ip`}}",
+      "MMIP={{user `maria-master-ip`}}",
+      "MS1IP={{user `maria-slave1-ip`}}",
+      "MS2IP={{user `maria-slave2-ip`}}",
+      "MS3IP={{user `maria-slave3-ip`}}"
+    ],
+    "only": ["mm"]
+  },
+  {
+    "type": "shell",
+    "execute_command" : "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
+    "script": "../scripts/post_install_vagrant-fs-ms1.sh",
+    "environment_vars": [ 
+      "LBIP={{user `load-balancer-ip`}}",
+      "WS1IP={{user `webserver-one-ip`}}",
+      "WS2IP={{user `webserver-two-ip`}}",
+      "WS3IP={{user `webserver-three-ip`}}",
+      "REDIP={{user `redis-server-ip`}}",
+      "MMIP={{user `maria-master-ip`}}",
+      "MS1IP={{user `maria-slave1-ip`}}",
+      "MS2IP={{user `maria-slave2-ip`}}",
+      "MS3IP={{user `maria-slave3-ip`}}"
+    ],
+    "only": ["ms1"]
+  },
+  {
+    "type": "shell",
+    "execute_command" : "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
+    "script": "../scripts/post_install_vagrant-fs-ms2.sh",
+    "environment_vars": [ 
+      "LBIP={{user `load-balancer-ip`}}",
+      "WS1IP={{user `webserver-one-ip`}}",
+      "WS2IP={{user `webserver-two-ip`}}",
+      "WS3IP={{user `webserver-three-ip`}}",
+      "REDIP={{user `redis-server-ip`}}",
+      "MMIP={{user `maria-master-ip`}}",
+      "MS1IP={{user `maria-slave1-ip`}}",
+      "MS2IP={{user `maria-slave2-ip`}}",
+      "MS3IP={{user `maria-slave3-ip`}}"
+    ],
+    "only": ["ms2"]
   }  
 ],
   "post-processors": [
