@@ -104,6 +104,7 @@
   - You will then transform the datasets so you can combine them via a union
   - And remove uneeded fields
   - Ingestion and transformation of data
+  - Print the schema and count the number of records
 
 ## Figure 3.8 and 3.9
 
@@ -116,6 +117,7 @@
   - By renaming and dropping columns
   - Lets look at the output of the Java Code
   - We need to add code to the `pom.xml`
+  - The code is in the next slide, then we can build and execute this Java code via Maven
 
 ## pom.xml additions
 
@@ -136,6 +138,55 @@
   </configuration>
 </plugin>
 ```
+
+## Methods We Need
+
+- Before we can merge two files, we need to prepare this one file
+- Let’s look at the methods and functions you need now:
+  - `withColumn()` method—Creates a new column from an expression or a column
+  - `withColumnRenamed()` method—Renames a column
+  - `col()` method—Gets a column from its name. Some methods will take the column name as an argument, and some require a Column object
+  - `drop()` method—Drops a column from the dataframe. This method accepts an instance of a Column object or a column name
+  - `lit()` functions—Creates a column with a value; literally, a literal value
+  - `concat()` function—Concatenates the values in a set of columns
+
+## Modifications
+
+```java
+df = df.withColumn("county", lit("Wake"))
+ .withColumnRenamed("HSISID", "datasetId")
+ .withColumnRenamed("NAME", "name")
+ .withColumnRenamed("ADDRESS1", "address1")
+ .withColumnRenamed("ADDRESS2", "address2")
+ .withColumnRenamed("CITY", "city")
+ .withColumnRenamed("STATE", "state")
+ .withColumnRenamed("POSTALCODE", "zip")
+ .withColumnRenamed("PHONENUMBER", "tel")
+ .withColumnRenamed("RESTAURANTOPENDATE", "dateStart")
+ .withColumnRenamed("FACILITYTYPE", "type")
+ .withColumnRenamed("X", "geoX")
+ .withColumnRenamed("Y", "geoY")
+ .drop("OBJECTID")
+ .drop("PERMITID")
+ .drop("GEOCODESTATUS"); 
+```
+
+## Adding a Unique ID field
+
+```java
+df = df.withColumn("id", concat(
+ df.col("state"), lit("_"),
+ df.col("county"), lit("_"),
+ df.col("datasetId")));
+```
+
+## 3.2.2 - Data is stored in partitions
+
+![*Figure 3.10*](images/figure3-10.png "Figure 3-10 how partitions store a dataframe")
+
+## 
+
+
 
 ## Summary
 
