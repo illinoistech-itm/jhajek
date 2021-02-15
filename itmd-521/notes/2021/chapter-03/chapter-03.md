@@ -207,6 +207,29 @@ df = df.withColumn("id", concat(
  ```df.rdd().partitions().length);```{.java}
   - How do you think this would work?
 
+## 3.2.4 - A dataframe after a JSON ingestion
+
+- Now we ingest the JSON data
+  - JSON stands for JavaScript Object Notation
+  - Is an international standard
+  - Developed as a way to use text to create a representation of a structured OO object
+  - But could be passed and processes by languages that didn't have pure Objects (JavaScript)
+  - Text is a Universal Format it caught on
+  - You must pay the bracket tax
+  - JSON is good for computers, but not very human readable
+  - Has support for nested values, which CSV files do not
+  - When Spark displays the records, you will see nested values (arrays or lists)
+  - Let's look at the examples in the book
+
+## 3.2.5 - Combining two dataframes
+
+- So how would we go about ingesting these two files and transforming them to our new schema?
+  - This process is very common when dealing with disparate datasets
+  - Hard to know what format the data will arrive in
+  - But we need it in a unified state in order to do any data processing/analysis on
+  - We won't cover how to write the new dataframe of data out, but essentially there is a `spark.save()` method
+  - Figure 3-16 shows the two different datasets and their schemas
+
 ## Summary
 
 - Place summary here
