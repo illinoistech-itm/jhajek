@@ -18,7 +18,7 @@ id_rsa*
 id_rsa.pub
 .Vagrantfile*
 Vagrantfile~
-
+config.default.yml
 
 clone-pwrshell.ps1
 pull-repo.ps1
