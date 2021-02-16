@@ -97,7 +97,7 @@ sudo systemctl start mariadb.service
 # https://serverfault.com/questions/790143/ufw-enable-requires-y-prompt-how-to-automate-with-bash-script
 ufw --force enable
 ufw allow proto tcp to 0.0.0.0/0 port 22
-ufw allow from $ACCESSFROMIP to any port 3306
+ufw allow from $FIREWALLACCESS to any port 3306
 
 # https://stackoverflow.com/questions/8055694/how-to-execute-a-mysql-command-from-a-shell-script
 # This section uses the user environment variables declared in packer json build template
@@ -109,12 +109,12 @@ ufw allow from $ACCESSFROMIP to any port 3306
 # mysql -u root -e "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,DROP,INDEX,ALTER ON comments.* TO worker@'$ACCESSFROMIP' IDENTIFIED BY '$USERPASS'; flush privileges;"
 
 # This script will create the database named posts in the mariadb server
-sudo mysql -u root < ~/hajek/itmt-595/db-samples/create-database.sql
+sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/create-database.sql
 # This script will create the table named comments
-sudo mysql -u root < ~/hajek/itmt-595/db-samples/create-table.sql
+sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/create-table.sql
 # This script will create the non-root user named worker and the user for replication
-sudo mysql -u root < ~/hajek/itmt-595/db-samples/create-user-with-permissions-mm.sql
+sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/create-user-with-permissions-mm.sql
 # This script will insert 3 sample records to the table
-sudo mysql -u root < ~/hajek/itmt-595/db-samples/insert-records.sql
+sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/insert-records.sql
 # This script will select * from comments and print the contents to the screen to make sure it all worked
-sudo mysql -u root < ~/hajek/itmt-595/db-samples/sample-select.sql
+sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/sample-select.sql

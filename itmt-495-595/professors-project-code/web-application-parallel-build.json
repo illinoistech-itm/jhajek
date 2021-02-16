@@ -487,8 +487,9 @@
       "MS2IP={{user `maria-slave2-ip`}}",
       "MS3IP={{user `maria-slave3-ip`}}",
       "DBPASS={{user `database-root-pw`}}",
-      "ACCESSFROMIP={{user `access-range-for-ip`}}",
-      "USERPASS={{user `user-database-password`}}"
+      "ACCESSFROMIP={{user `database-access-range`}}",
+      "USERPASS={{user `user-database-password`}}",
+      "FIREWALLACCESS={{user `ubuntu-firewall-access-range`}}"
     ],
     "only": ["mm"]
   },
@@ -507,8 +508,9 @@
       "MS2IP={{user `maria-slave2-ip`}}",
       "MS3IP={{user `maria-slave3-ip`}}",
       "DBPASS={{user `database-root-pw`}}",
-      "ACCESSFROMIP={{user `access-range-for-ip`}}",
-      "USERPASS={{user `user-database-password`}}"
+      "ACCESSFROMIP={{user `database-access-range`}}",
+      "USERPASS={{user `user-database-password`}}",
+      "FIREWALLACCESS={{user `ubuntu-firewall-access-range`}}"
     ],
     "only": ["ms1"]
   },
@@ -527,8 +529,9 @@
       "MS2IP={{user `maria-slave2-ip`}}",
       "MS3IP={{user `maria-slave3-ip`}}",
       "DBPASS={{user `database-root-pw`}}",
-      "ACCESSFROMIP={{user `access-range-for-ip`}}",
-      "USERPASS={{user `user-database-password`}}"
+      "ACCESSFROMIP={{user `database-access-range`}}",
+      "USERPASS={{user `user-database-password`}}",
+      "FIREWALLACCESS={{user `ubuntu-firewall-access-range`}}"
     ],
     "only": ["ms2"]
   }  

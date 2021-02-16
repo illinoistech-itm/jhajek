@@ -79,7 +79,7 @@ sudo systemctl start mariadb.service
 # https://serverfault.com/questions/790143/ufw-enable-requires-y-prompt-how-to-automate-with-bash-script
 ufw --force enable
 ufw allow proto tcp to 0.0.0.0/0 port 22
-ufw allow from $ACCESSFROMIP to any port 3306
+ufw allow from $FIREWALLACCESS to any port 3306
 
 # set the /etc/hosts file to match hostname
 echo "$LBIP      lb    lb.class.edu"    | sudo tee -a /etc/hosts
@@ -99,5 +99,5 @@ sudo hostnamectl set-hostname ms1
 # This section uses the user environment variables declared in packer json build template
 # #USERPASS and $BKPASS
 
-sudo mysql -u root < ~/hajek/itmt-595/db-samples/create-user-with-permissions-ms1.sql
+sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/create-user-with-permissions-ms1.sql
 

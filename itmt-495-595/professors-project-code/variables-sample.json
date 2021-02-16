@@ -9,7 +9,8 @@
     "maria-slave2-ip": "192.168.33.x",
     "maria-slave3-ip": "192.168.33.x",
     "database-root-pw": "replaceme",
-    "access-range-for-ip": "192.168.33.%",
+    "database-access-range": "192.168.33.%",
     "user-database-password": "replaceme",
-    "replicant-database-password": "android"
+    "replicant-database-password": "android",
+    "ubuntu-firewall-access-range":"192.168.33.x/24"
 }
