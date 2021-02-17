@@ -26,6 +26,8 @@ See the `web-application-parallel-build.json` for an example and the Packer docu
 
 The above command will be executed along with the `vagrant add` command using the script: `build-and-add-boxes.ps1` located in the directory: `creation-scripts`
 
+You can pass positional parameters to the `build-and-add-boxes.ps1` script:  `.\build-and-add-boxes.ps1 -Headless true -Memory 1024`
+
 ## Accessing Application
 
 Open a web browser and navigate to http://192.168.33.200  and refresh browser multiple times you will see three messages as the NodeJS applications are rotated through.
