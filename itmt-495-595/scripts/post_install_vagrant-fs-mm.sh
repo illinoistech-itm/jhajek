@@ -108,6 +108,12 @@ ufw allow from $FIREWALLACCESS to any port 3306
 
 # mysql -u root -e "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,DROP,INDEX,ALTER ON comments.* TO worker@'$ACCESSFROMIP' IDENTIFIED BY '$USERPASS'; flush privileges;"
 
+# Using sed to replace variables in the scripts with the ENV variables passed
+sed -i "s/\$ACCESSFROMIP/$ACCESSFROMIP/g" ~/hajek/itmt-595/fullstack-app-code/db-samples/*.sql
+sed -i "s/\$USERPASS/$USERPASS/g" ~/hajek/itmt-595/fullstack-app-code/db-samples/*.sql
+sed -i "s/\$MMIP/$MMIP/g" ~/hajek/itmt-595/fullstack-app-code/db-samples/*.sql
+sed -i "s/\$MS1IP/$MS1IP/g" ~/hajek/itmt-595/fullstack-app-code/db-samples/*.sql
+sed -i "s/\$MS2IP/$MS2IP/g" ~/hajek/itmt-595/fullstack-app-code/db-samples/*.sql
 # This script will create the database named posts in the mariadb server
 sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/create-database.sql
 # This script will create the table named comments
