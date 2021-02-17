@@ -72,6 +72,8 @@ sudo systemctl start nginx
 sudo npm install redis
 # Installing the npm mysql package https://www.npmjs.com/package/mysql2
 sudo npm install --save mysql2
+# Adding NPM YML config reader https://www.npmjs.com/package/yml-config-reader
+sudo npm install yml-config-reader --save-dev
 
 sudo npm install pm2@latest -g
 # sudo pm2 startup systemd
