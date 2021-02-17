@@ -16,7 +16,7 @@ You can use the --only commandline flag to build only select boxes
 
 You can pass variables at runtime to dynamically change settings.  As the number of systems increase, you may want to go headless (no gui) or increase/reduce the amount of ram allocated at build time.
 
-`packer build --var-file=./variables.json -var 'headless=true' -var 'memory=2048' web-application-parallel-build.json`
+`packer build --var-file=./variables.json -var 'headless=true' -var 'memory=1024' web-application-parallel-build.json`
 
 Packer allows you to set defaults so if you don't pass any runtime values the script will still work.  This example will run the installs headless and give each virtual machine 2gb or 2048mb while being installed.
 

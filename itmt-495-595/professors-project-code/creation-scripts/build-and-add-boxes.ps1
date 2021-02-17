@@ -1,8 +1,15 @@
 # Shell script to build the virtual machines via Packer and add them to Vagrant
 
 Set-Location -path ..\
-# Script to build 4 instances in parallel
+# Script to build instances in parallel
+# https://morgantechspace.com/2014/12/How-to-pass-arguments-to-PowerShell-script.html
+if ($Args[0] -eq "headless") {
+    # add the argument headless on the commandline to build headless
+    packer build --var-file=./variables.json -var 'headless=true' -var "memory=1024" web-application-parallel-build.json
+} else {
+    # Build the Vagrant boxes headless false
 packer build -force --var-file=./variables.json web-application-parallel-build.json
+}
 
 # Change location to the build directory
 Set-Location -path ..\build\
