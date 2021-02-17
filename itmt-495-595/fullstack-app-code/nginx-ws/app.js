@@ -1,12 +1,12 @@
 const http = require('http');
 const host = require('os');
+const mysql = require('mysql2');
 // get the client
 const configReader = require('yml-config-reader')
 
 const config = configReader.getByFiles('config.default.yml')
 //console.log(config.db.userpass)
 
-const mysql = require('mysql2');
 const hostname = '0.0.0.0';
 const port = 3000;
 
