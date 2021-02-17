@@ -401,7 +401,13 @@
     "type": "file",
     "source": "./config",
     "destination": "/home/vagrant/"     
-  },  
+  },
+  {
+  "type": "file",
+  "source": "./config.default.yml",
+  "destination": "/home/vagrant/project",
+  "only": ["ws1","ws2","ws3"]
+  },
   {
     "type": "shell",
     "execute_command" : "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'", 
