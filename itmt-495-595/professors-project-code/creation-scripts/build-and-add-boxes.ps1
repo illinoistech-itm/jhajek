@@ -3,7 +3,7 @@
 param($Headless="false", $Memory="2048")
   "Headless: " + $Headless
   "Memory for VM: " + $Memory
-  
+
 Set-Location -path ..\
 # Script to build instances in parallel
 # https://morgantechspace.com/2014/12/How-to-pass-arguments-to-PowerShell-script.html
@@ -44,21 +44,21 @@ if (Test-Path -Path ./ws3-virtualbox*.box -PathType Leaf) {
 
 if (Test-Path -Path ./mm-virtualbox*.box -PathType Leaf) {
     # Add the Web Server 3 
-    vagrant box add ./mm-virtualbox*.box --name ws3
+    vagrant box add ./mm-virtualbox*.box --name mm
 } else {
     Write-Host "mm-virtualbox*.box build did not succeed as .box artifact isn't there..."
 }
 
 if (Test-Path -Path ./ms1-virtualbox*.box -PathType Leaf) {
     # Add the Web Server 3 
-    vagrant box add ./ms1-virtualbox*.box --name ws3
+    vagrant box add ./ms1-virtualbox*.box --name ms1
 } else {
     Write-Host "ms1-virtualbox*.box build did not succeed as .box artifact isn't there..."
 }
 
 if (Test-Path -Path ./ms2-virtualbox*.box -PathType Leaf) {
     # Add the Web Server 3 
-    vagrant box add ./ms2-virtualbox*.box --name ws3
+    vagrant box add ./ms2-virtualbox*.box --name ms2
 } else {
     Write-Host "ms2-virtualbox*.box build did not succeed as .box artifact isn't there..."
 }
