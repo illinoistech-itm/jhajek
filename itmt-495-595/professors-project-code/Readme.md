@@ -10,7 +10,7 @@ The `--var-file` option tells Packer to read the ENV variables set in this file 
 
 You can use the --only commandline flag to build only select boxes
 
-`packer build --var-file=./variables.json --only=mm,ms1.ms2 web-application-parallel-build.json`
+`packer build --var-file=./variables.json --only=mm,ms1,ms2 web-application-parallel-build.json`
 
 ## Packer User Variables
 
