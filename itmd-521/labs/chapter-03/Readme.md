@@ -65,7 +65,7 @@ Screenshot here
 
 #### Summary Project
 
-Using the two sample .csv files provided in this repo, add them to your own private repo and to your Virtual Machine.  Build a single Java or Python Spark program that will:
+Using the two sample .csv files provided in this repo, add them to your own private repo and to your Virtual Machine.  Place a screenshot below any of the elements asking to display results (`df.show()`). Build a single Java or Python Spark program that will:
 
 - Ingest company-data.csv to a dataframe
   - Use a `df.show()` command to display the content of the dataframe
