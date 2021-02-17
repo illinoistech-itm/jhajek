@@ -1,4 +1,8 @@
 {
+  "variables": {
+    "headless": "false",
+    "memory": "2048"
+  },
   "builders": [
     {
       "name": "lb",
@@ -39,6 +43,7 @@
       "iso_checksum": "sha256:8c5fc24894394035402f66f3824beb7234b757dd2b5531379cb310cedfdf0996",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
+      "headless": "{{user `headless`}}",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
@@ -50,7 +55,7 @@
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "2048"
+          "{{user `memory`}}"
         ]
       ]
       },
@@ -93,6 +98,7 @@
         "iso_checksum": "sha256:8c5fc24894394035402f66f3824beb7234b757dd2b5531379cb310cedfdf0996",
         "ssh_username": "vagrant",
         "ssh_password": "vagrant",
+        "headless": "{{user `headless`}}",        
         "ssh_port": 22,
         "ssh_wait_timeout": "10000s",
         "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
@@ -104,7 +110,7 @@
             "modifyvm",
             "{{.Name}}",
             "--memory",
-            "2048"
+            "{{user `memory`}}"
           ]
         ]
         },
@@ -147,6 +153,7 @@
           "iso_checksum": "sha256:8c5fc24894394035402f66f3824beb7234b757dd2b5531379cb310cedfdf0996",
           "ssh_username": "vagrant",
           "ssh_password": "vagrant",
+          "headless": "{{user `headless`}}",          
           "ssh_port": 22,
           "ssh_wait_timeout": "10000s",
           "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
@@ -158,7 +165,7 @@
               "modifyvm",
               "{{.Name}}",
               "--memory",
-              "2048"
+              "{{user `memory`}}"
             ]
           ]
           },
@@ -201,6 +208,7 @@
             "iso_checksum": "sha256:8c5fc24894394035402f66f3824beb7234b757dd2b5531379cb310cedfdf0996",
             "ssh_username": "vagrant",
             "ssh_password": "vagrant",
+            "headless": "{{user `headless`}}",            
             "ssh_port": 22,
             "ssh_wait_timeout": "10000s",
             "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
@@ -212,7 +220,7 @@
                 "modifyvm",
                 "{{.Name}}",
                 "--memory",
-                "2048"
+                "{{user `memory`}}"
               ]
             ]
             },
@@ -255,6 +263,7 @@
               "iso_checksum": "sha256:8c5fc24894394035402f66f3824beb7234b757dd2b5531379cb310cedfdf0996",
               "ssh_username": "vagrant",
               "ssh_password": "vagrant",
+              "headless": "{{user `headless`}}",              
               "ssh_port": 22,
               "ssh_wait_timeout": "10000s",
               "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
@@ -266,7 +275,7 @@
                   "modifyvm",
                   "{{.Name}}",
                   "--memory",
-                  "2048"
+                  "{{user `memory`}}"
                 ]
               ]
               },
@@ -309,6 +318,7 @@
                 "iso_checksum": "sha256:8c5fc24894394035402f66f3824beb7234b757dd2b5531379cb310cedfdf0996",
                 "ssh_username": "vagrant",
                 "ssh_password": "vagrant",
+                "headless": "{{user `headless`}}",                
                 "ssh_port": 22,
                 "ssh_wait_timeout": "10000s",
                 "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
@@ -320,7 +330,7 @@
                     "modifyvm",
                     "{{.Name}}",
                     "--memory",
-                    "2048"
+                    "{{user `memory`}}"
                   ]
                 ]
                 },
@@ -363,6 +373,7 @@
                   "iso_checksum": "sha256:8c5fc24894394035402f66f3824beb7234b757dd2b5531379cb310cedfdf0996",
                   "ssh_username": "vagrant",
                   "ssh_password": "vagrant",
+                  "headless": "{{user `headless`}}",                  
                   "ssh_port": 22,
                   "ssh_wait_timeout": "10000s",
                   "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
@@ -374,7 +385,7 @@
                       "modifyvm",
                       "{{.Name}}",
                       "--memory",
-                      "2048"
+                      "{{user `memory`}}"
                     ]
                   ]
                   }          

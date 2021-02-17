@@ -14,5 +14,14 @@ vagrant suspend
 # Change location to the ws3 directory
 Set-Location -path ../ws3
 vagrant suspend
+# Change location to the mm directory
+Set-Location -path ../mm
+vagrant suspend
+# Change location to the ms1 directory
+Set-Location -path ../ms1
+vagrant suspend
+# Change location to the ms2 directory
+Set-Location -path ../ms2
+vagrant suspend
 
 Set-Location -path ../../professors-project-code/creation-scripts
