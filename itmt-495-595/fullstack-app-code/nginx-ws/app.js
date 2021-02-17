@@ -16,9 +16,11 @@ const server = http.createServer((req, res) => {
           res.end('Hello World' + host.hostname());
 });
 
+var query_results = "";
+
 // create the connection to database
  const connection = mysql.createConnection({
-   host: '192.168.33.205',
+   host: config.db.mmip,
      user: 'worker',
      password: config.db.userpass,
      database: 'posts'
@@ -37,6 +39,7 @@ connection.connect((err) => {
  connection.query(
    'SELECT * FROM `comment`;',
      function(err, results, fields) {
+         query_results = results;
          console.log(results); // results contains rows returned by server
         // console.log(fields); // fields contains extra meta data about results, if available
          console.log(err); // return the error
@@ -46,4 +49,5 @@ connection.connect((err) => {
 
 server.listen(port, hostname, () => {
           console.log(`Server running at http://${hostname}:${port}/`);
+          console.log(results);
 });
