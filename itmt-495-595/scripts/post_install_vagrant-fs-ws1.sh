@@ -86,6 +86,7 @@ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -
 ###############################################################################
 
 mkdir -p /home/vagrant/project
+cp -v /home/vagrant/config.default.yml /home/vagrant/project
 sudo chown -R vagrant:vagrant ~/hajek
 
 # Change ownership of PM2 service that auto-starts our NodeJS app

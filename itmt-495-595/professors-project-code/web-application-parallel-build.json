@@ -405,7 +405,7 @@
   {
   "type": "file",
   "source": "./config.default.yml",
-  "destination": "/home/vagrant/project",
+  "destination": "/home/vagrant/",
   "only": ["ws1","ws2","ws3"]
   },
   {
