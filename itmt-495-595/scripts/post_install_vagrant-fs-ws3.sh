@@ -85,7 +85,8 @@ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -
 # Replace any occurance of hajek with the name of your own private repository #
 ###############################################################################
 
-#mkdir -p /home/vagrant/project
+mkdir -p /home/vagrant/project
+cp -v /home/vagrant/config.default.yml /home/vagrant/project
 sudo chown -R vagrant:vagrant ~/hajek
 
 # Change ownership of PM2 service that auto-starts our NojeJS app
