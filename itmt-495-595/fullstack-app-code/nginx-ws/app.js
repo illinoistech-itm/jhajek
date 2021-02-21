@@ -10,12 +10,6 @@ const config = configReader.getByFiles('config.default.yml')
 const hostname = '0.0.0.0';
 const port = 3000;
 
-const server = http.createServer((req, res) => {
-          res.statusCode = 200;
-          res.setHeader('Content-Type', 'text/plain');
-          res.end('Hello World' + host.hostname());
-});
-
 var query_results = "";
 
 // create the connection to database
@@ -46,8 +40,13 @@ connection.connect((err) => {
      }
             );
 
+  const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.write('The SQL query results are: ' + JSON.stringify(query_results));
+    res.end('Hello World' + host.hostname());
+  });
 
 server.listen(port, hostname, () => {
           console.log(`Server running at http://${hostname}:${port}/`);
-          console.log(query_results);
 });
