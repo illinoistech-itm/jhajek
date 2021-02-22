@@ -64,7 +64,29 @@ it processes data
 - Through transformations, you just created three columns of 2.5 million records, so about 7.5 million datasets, in 182 milliseconds
 - While performing the action, if you do not do any transformation, the action takes about 21 seconds. If you create three columns, the action takes 34 seconds. But if you create and then delete the columns, the action takes about 25 seconds. Isn’t that odd? As you already guessed, this is due to laziness
 
-## 
+## Steps to undertake
+
+- Experiment 1 - Load and collect
+- Experiment 2 - Load, create columns, and collect
+- Experiment 3 - Load, create columns, delete the columns, and collect
+- The NCHS dataset you are using contains birth rates for teens of ages 15 to 19 in the United States, divided by county, from 2003 to
+2015
+- The tone of this dataset is a bit serious the author wanted to use meaningful and real-life datasets
+
+## 4.2.2 Schema of Data
+
+| Column name in the dataset | Type | Comment |
+-----------------------------------------------------------
+| Year | Numeric |  |
+| State | String |  |
+| County | String |  |
+| State FIPS Code | Integer | State code in the US Federal Information Processing Standards |
+| County FIPS Code | Integer | County code in the US FIPS |
+| Combined FIPS Code | Integer Combination of the state and county FIPS code in one |
+| Birth Rate | Decimal | Teen birth rate: births per 1,000 females ages 15–19 in a given year |
+| Lower Confidence Limit | Decimal | Column renamed lcl later |
+| Upper Confidence Limit | Decimal | Column renamed ucl later |
+-----------------------------------------------------------
 
 ## Summary
 
