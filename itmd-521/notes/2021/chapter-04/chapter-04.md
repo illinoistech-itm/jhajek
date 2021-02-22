@@ -75,19 +75,53 @@ it processes data
 
 ## 4.2.2 Schema of Data
 
-| Column name in the dataset | Type | Comment |
------------------------------------------------------------
-| Year | Numeric |  |
-| State | String |  |
-| County | String |  |
-| State FIPS Code | Integer | State code in the US Federal Information Processing Standards |
-| County FIPS Code | Integer | County code in the US FIPS |
-| Combined FIPS Code | Integer Combination of the state and county FIPS code in one |
-| Birth Rate | Decimal | Teen birth rate: births per 1,000 females ages 15–19 in a given year |
-| Lower Confidence Limit | Decimal | Column renamed lcl later |
-| Upper Confidence Limit | Decimal | Column renamed ucl later |
------------------------------------------------------------
+Column name in the dataset | Type | Comment
+---------------------------| -----|-------------------------
+Year | Numeric | -
+State | String | -
+County | String | -
+State FIPS Code | Integer | State code in the US Federal Information Processing Standards
+County FIPS Code | Integer | County code in the US FIPS
+Combined FIPS Code | Integer | Combination of the state and county FIPS code in one
+Birth Rate | Decimal | Teen birth rate: births per 1,000 females ages 15–19 in a given year
+Lower Confidence Limit | Decimal | Column renamed lcl later
+Upper Confidence Limit | Decimal | Column renamed ucl later
+
+## 4.2.5 The timing behind actions
+
+- Lets refer to the text book P.80 in the printed page, as there is too much code to show it in a slide
+
+## 4.3 - Comparing to RDBMS and traditional applications
+
+- Lets refer to the text book P.83 in the printed page, as there is too much code to show it in a slide
+
+## 4.4 - Spark is amazing for data-focused applications
+
+- You can transform your data by using the following:
+  - The built-in methods on the dataframe, such as withColumn()
+  - The built-in column-level methods, such as expr() (refer to the list in appendix G)
+  - The lower-level methods, such as map(), union(), and more (see appendix I)
+  - Your own transformations using UDFs, detailed in chapter 16
+  - **Your transformations will be applied only when you call an action**
+
+## 4.5 - Catalyst is your app catalyzer
+
+- What Catalyst does is similar to what a query optimizer does with a query plan in the relational database world
+- To access the plan, you can use the `explain()` method of the dataframe to display it
+  - Let’s have a closer look at a Catalyst plan
+  - `df.explain()`
+  - See Listing 4.3: lab500_transformation_explain
+  - Page 88
+- Additional Reading:
+  - [Spark SQL: Relational Data Processing in Spark](http://people.csail.mit.edu/matei/papers/2015/sigmod_spark_sql.pdf "Spark SQL paper")
+  - [Understanding your Apache Spark Application Through Visualization](https://databricks.com/blog/2015/06/22/understanding-your-spark-application-through-visualization.html "Understanding Spark via Visualization presentation")
 
 ## Summary
 
-- Today we learned:
+- Spark is efficiently lazy: it will build the list of transformations as a directed acyclic graph (DAG), which it will optimize using Catalyst, Spark’s built-in optimizer
+- When you apply a transformation on a dataframe, the data is not modified
+- When you apply an action on a dataframe, all the transformations are executed, and, if it needs to be, the data will be modified
+- Modification of the schema is a natural operation within Spark. You can create columns as placeholders and perform operations on them
+- Spark works at the column level; there is no need to iterate over the data
+- Transformations can be done using the built-in functions (see appendix G), lower-level functions (appendix I), and dataframe methods.
+- You can print the query plan by using the dataframe’s explain() method
