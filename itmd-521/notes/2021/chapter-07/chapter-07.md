@@ -32,7 +32,7 @@
 - Which supported languages can use datasets in Spark?
 - Name 2 differences between using a CSV and a JSON file in Spark?
 - Spark is efficiently lazy: it will build the list of transformations as a what?
-- Is the data is not modified when you apply a transformation on a dataframe? Explain?
+- Is the data modified when you apply a transformation on a dataframe? Explain?
 - When is the data in a dataframe modified? When you apply an action or a transformations? Explain.
 - Within a Spark dataframe is it normal or difficult to modify the schema? Explain.
 - Does Spark work on the row level, column level, or individual record level? Explain.

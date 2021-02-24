@@ -3,7 +3,7 @@
 Set-Location -path ../../build
 
 # Change location to the ws3 directory
-Set-Location -path ../mm
+Set-Location -path ./mm
 vagrant up
 # Change location to the ws3 directory
 Set-Location -path ../ms1
