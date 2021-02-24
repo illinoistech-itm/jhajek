@@ -12,7 +12,7 @@ vagrant up
 Set-Location -path ../ms2
 vagrant up
 # Change location to the lb directory
-Set-Location -path ./lb
+Set-Location -path ../lb
 vagrant up
 # Change location to the ws1 directory
 Set-Location -path ../ws1
