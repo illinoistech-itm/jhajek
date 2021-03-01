@@ -24,8 +24,8 @@ You will write one Spark application, in Java or Python that will load the sampl
 For each of the six actions listed, in your program you will need to:
 
 - Print the screen which item you are printing
-- Print the schema
-- Print the count of the number of records
+- Print the schema for each dataframe
+- Print the count and display the the number of records for each dataframe
 
 #### Lab Screenshot
 
