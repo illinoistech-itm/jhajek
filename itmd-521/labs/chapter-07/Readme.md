@@ -55,11 +55,11 @@ You will write one Spark application, in Java or Python that will work with the 
 - Read CSV file - create custom schema with correct datatype for date fields
   - show number of records
   - show schema
-  - save as a new CSV file
-  - Read the new CSV file and printSchema to show that the date field is now correctly interpreted
+  - save as a new parquet file
+  - Read the new parquet file and printSchema to show that the date field is now correctly interpreted
 
-- Read CSV file - with the custom schema
-printSchema
+- Read CSV file - with a custom schema
+  - print the schema
   - Save to JSON file (name: new-1920-ncdc.json)
   - Save to JSON file with snappy compression (name: new-1920-ncdc-snappy.json)
   - [How to load and write xml files](http://www.thehadoopguy.com/2019/09/how-to-parse-xml-data-to-saprk-dataframe.html "How to laod xml driver")
