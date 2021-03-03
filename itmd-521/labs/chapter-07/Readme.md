@@ -12,24 +12,64 @@ You will copy this template file to your own private GitHub repo provided.  Unde
 
 ### Lab
 
-You will write one Spark application, in Java or Python that will load the sample data given from the NCDC for the decade of 1920s:
+You will write one Spark application, in Java or Python that will work with the sample data provided from the NCDC for the decade of 1920s:  The application will include these steps, place a screenshot of the output under each item.
 
-1) Parquet file (they are compressed by default)
-1) Singleline lz4 compressed json
-1) Singleline snappy compressed json
-1) CSV snappy compressed
-1) Json multiline (located in data directory, named 20m.json)
-1) CSV non-compressed
+- Read CSV file
+  - show number of records
+  - show schema
 
-For each of the six actions listed, in your program you will need to:
+- Read CSV file ncdc snappy compressed
+  - show number of records
+  - show schema
 
-- Print the screen which item you are printing
-- Print the schema for each dataframe
-- Print the count and display the the number of records for each dataframe
+- Read Json file singleline
+  - show number of records
+  - show schema
 
-#### Lab Screenshot
+- Read Json file multiline
+  - show number of records
+  - show schema
 
-Place screenshot of a successful execution output of the results here:
+- Read Json file bad single line
+  - show number of records
+  - show schema
+
+- Read Json file singleline compressed lz4
+  - show number of records
+  - show schema
+
+- Read Json file singleline compressed snappy
+  - show number of records
+  - show schema
+
+- Read xml file
+  - show number of records
+  - show schema
+
+- Read Parquet file
+  - show number of records
+  - show schema
+
+- Read CSV file - create custom schema with correct datatype for date fields
+  - show number of records
+  - show schema
+  - save as a new CSV file
+  - Read the new CSV file and printSchema to show that the date field is now correctly interpreted
+
+- Read CSV file - with the custom schema
+printSchema
+  - Save to JSON file (name: new-1920-ncdc.json)
+  - Save to JSON file with snappy compression (name: new-1920-ncdc-snappy.json)
+  - [How to load and write xml files](http://www.thehadoopguy.com/2019/09/how-to-parse-xml-data-to-saprk-dataframe.html "How to laod xml driver")
+  - [How to acquire the xml driver jar and use it](https://github.com/databricks/spark-xml "How to aquire the xml driver")
+
+- Read CSV file save as XML file with compression
+  - show number of records
+  - show schema
+
+- Read XML file
+  - show schema
+  - save as parquet
 
 #### Building Instructions
 
@@ -37,6 +77,6 @@ Place and instructions or assumptions needed to run your code and repeat the res
 
 ### Deliverable
 
-In your private repo you push the single Java or Python file you have written, and the sample data, and this Readme.md file to the directory under your private GitHub repo: labs > chapter-07.  
+In your private repo push the single Java or Python file you have written, any jars and the Readme.md document to the directory under your private GitHub repo: itmd-521 > labs > chapter-07.  
 
-Submit the URL to this page to Blackboard as your deliverable
+Submit the URL to this page to Blackboard as your deliverable.

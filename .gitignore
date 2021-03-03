@@ -36,3 +36,4 @@ chapter-*.html
 # For Spark
 ._SUCCESS*
 .part*
+*.crc
