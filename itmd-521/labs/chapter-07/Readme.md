@@ -6,13 +6,15 @@ You will copy this template file to your own private GitHub repo provided.  Unde
 
 - Demonstrate creating dataframe from various file formats
 - Demonstrate the advantages of "BigData" data types vs conventional text based types
-- Discuss the the application of compression and its advantages in dealing with large files
+- Demonstrate the the application of compression and its advantages in dealing with large files
 
 ## Your name goes here
 
 ### Lab
 
 You will write one Spark application, in Java or Python that will work with the sample data provided from the NCDC for the decade of 1920s:  The application will include these steps, place a screenshot of the output under each item.
+
+**Note:** include this line at the bottom of your .bashrc in the virtual machine: `export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native` -- this is needed to enable Spark to use native compression libraries.
 
 - Read CSV file
   - show number of records
