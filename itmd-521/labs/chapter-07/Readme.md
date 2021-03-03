@@ -1,6 +1,6 @@
 # ITMD-521 IT-D 872 Chapter-07 Lab
 
-You will copy this template file to your own private GitHub repo provided.  Under your itmd-521 folder you will create a sub-folder named: **labs**.  Under that folder create a sub-folder named: **chapter-03**.  In that folder place this Readme.md
+You will copy this template file to your own private GitHub repo provided.  Under your itmd-521 folder you will create a sub-folder named: **labs**.  Under that folder create a sub-folder named: **chapter-07**.  In that folder place this Readme.md
 
 ## Objectives
 
