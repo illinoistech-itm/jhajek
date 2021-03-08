@@ -113,3 +113,4 @@ sudo dpkg -i mongosh_0.8.0_amd64.deb
 
 # copy the new mongodb.conf over the old one
 sudo cp ~/hajek/itmt-595/fullstack-app-code/mongodb/m2/mongod.conf /etc
+sudo systemctl restart mongod.service

@@ -113,7 +113,7 @@ sudo dpkg -i mongosh_0.8.0_amd64.deb
 
 # copy the new mongodb.conf over the old one
 sudo cp ~/hajek/itmt-595/fullstack-app-code/mongodb/m3/mongod.conf /etc
-
+sudo systemctl restart mongod.service
 # initialize replicaSet Cluster
 mongosh --host 127.0.0.1 < ~/hajek/itmt-595/fullstack-app-code/mongodb/initiate-record-set.js
 mongosh --host 127.0.0.1 < ~/hajek/itmt-595/fullstack-app-code/mongodb/create-and-load-data.js
