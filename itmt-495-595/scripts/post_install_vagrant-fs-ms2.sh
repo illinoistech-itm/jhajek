@@ -80,6 +80,7 @@ sudo systemctl start mariadb.service
 ufw --force enable
 ufw allow proto tcp to 0.0.0.0/0 port 22
 ufw allow from $FIREWALLACCESS to any port 3306
+ufw allow 27017
 
 # set the /etc/hosts file to match hostname
 echo "$LBIP      lb    lb.class.edu"    | sudo tee -a /etc/hosts
