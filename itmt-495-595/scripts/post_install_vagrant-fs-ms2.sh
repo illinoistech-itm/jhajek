@@ -116,6 +116,7 @@ sudo systemctl start mongod.service
 sudo systemctl enable mongod.service
 sudo cp ~/hajek/itmt-595/fullstack-app-code/mongodb/m3/mongod.conf /etc
 sudo systemctl restart mongod.service
+sudo systemctl status mongod.service
 # initialize replicaSet Cluster
 mongosh --host $MS2IP < ~/hajek/itmt-595/fullstack-app-code/mongodb/initiate-record-set.js
 mongosh --host $MS2IP < ~/hajek/itmt-595/fullstack-app-code/mongodb/create-and-load-data.js
