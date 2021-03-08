@@ -114,6 +114,6 @@ sudo dpkg -i mongosh_0.8.0_amd64.deb
 sudo cp ~/hajek/itmt-595/fullstack-app-code/mongodb/m3/mongod.conf /etc
 
 # initialize replicaSet Cluster
-mongosh --host 127.0.0.1 < initiate-record-set.js
-mongosh --host 127.0.0.1 < create-and-load-data.js
-mongosh --host 127.0.0.1 < set-read-pref.js
+mongosh --host 127.0.0.1 < ~/hajek/itmt-595/fullstack-app-code/mongodb/initiate-record-set.js
+mongosh --host 127.0.0.1 < ~/hajek/itmt-595/fullstack-app-code/mongodb/create-and-load-data.js
+mongosh --host 127.0.0.1 < ~/hajek/itmt-595/fullstack-app-code/mongodb/set-read-pref.js
