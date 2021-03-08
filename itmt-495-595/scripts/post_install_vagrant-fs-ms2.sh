@@ -99,5 +99,21 @@ sudo hostnamectl set-hostname ms2
 # This section uses the user environment variables declared in packer json build template
 # #USERPASS and $BKPASS
 
-
 sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/create-user-with-permissions-ms2.sql
+
+# MongoDB install and configuration section
+
+wget https://repo.mongodb.org/apt/ubuntu/dists/bionic/mongodb-org/4.4/multiverse/binary-amd64/mongodb-org-server_4.4.4_amd64.deb
+sudo dpkg -i mongodb-org-server_4.4.4_amd64.deb
+# Install mongo shell
+##########################################
+wget https://downloads.mongodb.com/compass/mongosh_0.8.0_amd64.deb
+sudo dpkg -i mongosh_0.8.0_amd64.deb
+
+# copy the new mongodb.conf over the old one
+sudo cp ~/hajek/itmt-595/fullstack-app-code/mongodb/m3/mongod.conf /etc
+
+# initialize replicaSet Cluster
+mongosh --host 127.0.0.1 < initiate-record-set.js
+mongosh --host 127.0.0.1 < create-and-load-data.js
+mongosh --host 127.0.0.1 < set-read-pref.js

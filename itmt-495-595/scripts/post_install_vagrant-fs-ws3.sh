@@ -101,3 +101,5 @@ sudo chown -R vagrant:vagrant /home/vagrant/.pm2
 # You could add a line to remove the private key and the extranious code from the GitHub repo here
 sudo rm -v id_*
 
+# Install mongodb dependency for Mongoose
+sudo npm install mongoose

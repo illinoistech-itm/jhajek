@@ -1,6 +1,7 @@
 const http = require('http');
 const host = require('os');
 const mysql = require('mysql2');
+const mongoose = require('mongoose');
 // get the client
 const configReader = require('yml-config-reader')
 
@@ -44,8 +45,22 @@ connection.connect((err) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.write('The SQL query results are: ' + JSON.stringify(query_results));
+    res.write('Connection to Mongo status:' + conn_status)
     res.end('Hello World' + host.hostname());
+
   });
+
+  // create variable to display connection string
+  var conn_status="";
+  // mongo connection string
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://ms1/studentrecords', {useNewUrlParser: true, useUnifiedTopology: true});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  conn_status="We are connected to MongoDB!";
+});
 
 server.listen(port, hostname, () => {
           console.log(`Server running at http://${hostname}:${port}/`);

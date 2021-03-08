@@ -98,6 +98,7 @@ sudo systemctl start mariadb.service
 ufw --force enable
 ufw allow proto tcp to 0.0.0.0/0 port 22
 ufw allow from $FIREWALLACCESS to any port 3306
+ufw allow 27017
 
 # https://stackoverflow.com/questions/8055694/how-to-execute-a-mysql-command-from-a-shell-script
 # This section uses the user environment variables declared in packer json build template
@@ -124,3 +125,15 @@ sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/create-user-
 sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/insert-records.sql
 # This script will select * from comments and print the contents to the screen to make sure it all worked
 sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/sample-select.sql
+
+# MongoDB install and configuration section
+
+wget https://repo.mongodb.org/apt/ubuntu/dists/bionic/mongodb-org/4.4/multiverse/binary-amd64/mongodb-org-server_4.4.4_amd64.deb
+sudo dpkg -i mongodb-org-server_4.4.4_amd64.deb
+# Install mongo shell
+##########################################
+wget https://downloads.mongodb.com/compass/mongosh_0.8.0_amd64.deb
+sudo dpkg -i mongosh_0.8.0_amd64.deb
+
+# copy the new mongodb.conf over the old one
+sudo cp ~/hajek/itmt-595/fullstack-app-code/mongodb/m1/mongod.conf /etc

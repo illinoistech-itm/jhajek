@@ -101,3 +101,14 @@ sudo hostnamectl set-hostname ms1
 
 sudo mysql -u root < ~/hajek/itmt-595/fullstack-app-code/db-samples/create-user-with-permissions-ms1.sql
 
+# MongoDB install and configuration section
+
+wget https://repo.mongodb.org/apt/ubuntu/dists/bionic/mongodb-org/4.4/multiverse/binary-amd64/mongodb-org-server_4.4.4_amd64.deb
+sudo dpkg -i mongodb-org-server_4.4.4_amd64.deb
+# Install mongo shell
+##########################################
+wget https://downloads.mongodb.com/compass/mongosh_0.8.0_amd64.deb
+sudo dpkg -i mongosh_0.8.0_amd64.deb
+
+# copy the new mongodb.conf over the old one
+sudo cp ~/hajek/itmt-595/fullstack-app-code/mongodb/m2/mongod.conf /etc
