@@ -4,30 +4,37 @@
 Set-Location ../../build
 
 Set-Location ./lb
+vagrant halt
 vagrant destroy -f
 Remove-Item -Verbose -Force ./.vagrant -Recurse
 
 Set-Location ../ws1
+vagrant halt
 vagrant destroy -f
 Remove-Item -Verbose -Force ./.vagrant -Recurse
 
 Set-Location ../ws2
+vagrant halt
 vagrant destroy -f
 Remove-Item -Verbose -Force ./.vagrant -Recurse
 
 Set-Location ../ws3
+vagrant halt
 vagrant destroy -f
 Remove-Item -Verbose -Force ./.vagrant -Recurse
 
 Set-Location ../mm
+vagrant halt
 vagrant destroy -f
 Remove-Item -Verbose -Force ./.vagrant -Recurse
 
 Set-Location ../ms1
+vagrant halt
 vagrant destroy -f
 Remove-Item -Verbose -Force ./.vagrant -Recurse
 
 Set-Location ../ms2
+vagrant halt
 vagrant destroy -f
 Remove-Item -Verbose -Force ./.vagrant -Recurse
 
