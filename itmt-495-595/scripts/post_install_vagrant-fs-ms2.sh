@@ -115,5 +115,6 @@ sudo dpkg -i mongosh_0.8.0_amd64.deb
 sudo cp -v ~/hajek/itmt-595/fullstack-app-code/mongodb/m3/mongod.conf /etc/
 sudo systemctl start mongod.service
 sudo systemctl enable mongod.service
+sudo systemctl daemon-reload
+sudo systemctl restart mongod.service
 sudo systemctl status mongod.service
-sudo systemctl start mongod.service
