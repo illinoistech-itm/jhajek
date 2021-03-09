@@ -1,4 +1,4 @@
-{
+[{
 	"WeatherStation":"028360",
 	"WBAN":"99999",
 	"ObservationDate":"1920-01-03",
@@ -17,7 +17,7 @@
 	"DPQualityCode":9,
 	"AtmosphericPressure":963.4,
 	"APQualityCode":1
-}
+},
 {
 	"WeatherStation":"028360",
 	"WBAN":"99999",
@@ -37,4 +37,4 @@
 	"DPQualityCode":9,
 	"AtmosphericPressure":969.9,
 	"APQualityCode":1
-}
+}]
