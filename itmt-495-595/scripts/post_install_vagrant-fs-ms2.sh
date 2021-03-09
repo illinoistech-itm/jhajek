@@ -93,6 +93,8 @@ echo "$MS1IP     ms1   ms1.class.edu"   | sudo tee -a /etc/hosts
 echo "$MS2IP     ms2   ms2.class.edu"   | sudo tee -a /etc/hosts
 echo "$MS3IP     ms3   ms3.class.edu"   | sudo tee -a /etc/hosts
 
+# Fixing host name problem that Ubuntu creates
+sudo sed -i '/127.0.1.1/d' /etc/hosts
 # Set system hostname
 sudo hostnamectl set-hostname ms2
 
