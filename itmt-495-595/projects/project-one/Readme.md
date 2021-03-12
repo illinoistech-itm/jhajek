@@ -21,7 +21,7 @@ One Packer parallel build including 7 nodes
 
 ## Screenshots
 
-Place 3 load-balancing screenshots here from http://192.168.33.33:3000 to show that the load balancing is working and that the connection to the MySQL database is working and displaying the sample content.  This project will ignore the mongodb portion demonstrated in class.
+Place 3 load-balancing screenshots here from http://192.168.33.200:3000 to show that the load balancing is working and that the connection to the MySQL database is working and displaying the sample content.  This project will ignore the mongodb portion demonstrated in class.
 
 ### ws1
 
