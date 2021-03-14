@@ -47,7 +47,7 @@ You will write one Spark application, in Java or Python that will work with the 
 - Read xml file
   - show number of records
   - show schema
-  - [How to load and write xml files](http://www.thehadoopguy.com/2019/09/how-to-parse-xml-data-to-saprk-dataframe.html "How to laod xml driver")
+  - [How to load and write xml files](http://www.thehadoopguy.com/2019/09/how-to-parse-xml-data-to-saprk-dataframe.html "How to load xml driver")
   - [How to acquire the xml driver jar and use it](https://github.com/databricks/spark-xml "How to aquire the xml driver")
 
 - Read Parquet file
