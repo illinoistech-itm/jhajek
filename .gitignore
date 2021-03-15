@@ -32,6 +32,7 @@ pull-repo.sh
 *.txt
 *~
 chapter-*.html
+*.html
 
 # For Spark
 ._SUCCESS*
