@@ -212,7 +212,7 @@ sudo docker ps
 ## WordPress default ENV variables
 
 - Programs running inside containers can rely on the variables always being set
-  - WordPress observes the following environment variables:
+- WordPress observes the following environment variables:
   - WORDPRESS_DB_HOST  
   - WORDPRESS_DB_USER
   - WORDPRESS_DB_PASSWORD
@@ -225,6 +225,24 @@ sudo docker ps
   - WORDPRESS_SECURE_AUTH_SALT
   - WORDPRESS_LOGGED_IN_SALT
   - WORDPRESS_NONCE_SALT
+
+## Restart Flag
+
+- Docker also has to handle the state of the container
+  - What happens when a container crashes or fails?
+  - Never restart (default) (no)
+  - Attempt to restart when a failure is detected (always)
+  - Attempt for some predetermined time to restart when a failure is detected (--time n)
+  - Always restart the container regardless of the condition
+- [Docker Restart Documentation](https://docs.docker.com/config/containers/start-containers-automatically/ "Docker Restart Documentation")
+
+## 
+
+sudo docker create \
+ --env WORDPRESS_DB_HOST=<my database hostname> \
+ --env WORDPRESS_DB_USER=site_admin \
+ --env WORDPRESS_DB_PASSWORD=MeowMix42 \
+ wordpress:5.0.0-php7.2-apache
 
 ## Assignment
 
