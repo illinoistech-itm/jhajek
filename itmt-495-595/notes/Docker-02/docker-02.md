@@ -241,7 +241,8 @@ sudo docker ps
 - [MySQL at Docker Hub environment variables](https://hub.docker.com/_/mysql?tab=description&page=1&ordering=last_updated "docker mysql environment variables")
   - MYSQL_ROOT_PASSWORD
   - MYSQL_DATABASE
-  - MYSQL_USER, MYSQL_PASSWORD
+  - MYSQL_USER
+  - MYSQL_PASSWORD (for the user)
 - Docker has the ability to use a Linux built in Secrets method
 - `sudo docker run --name some-mysql -e MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql-root -d mysql:tag`
 
@@ -274,4 +275,20 @@ sudo docker ps
 
 ## Deliverable
 
-- Create a shell script to launch 
+- Create a shell script to:
+- Launch 1 MySQL container
+  - Use the `--name` flag giving the name: `mydb`
+  - Using `-e` to configure:
+  - MYSQL_ROOT_PASSWORD (letmein)
+  - MYSQL_USER (worker)
+  - MYSQL_PASSWORD (for the user) (replicant)
+- Launch 3 WordPress Apache containers
+  - add a `tmp` directory
+  - add `-v` flag for writable volume at `/run/apache2`
+  - add a flag for a read-only filesystem
+  - add a `--link` flag to mydb
+  - add `-e` flags for:
+    - WORDPRESS_DB_USER (worker)
+    - WORDPRESS_DB_PASSWORD (replicant)
+    - WORDPRESS_DB_NAME (appdb)
+  - Use the `-p` flag to pass port 80 guest to 8000, 8001, and 8002 host: `-p 8000:80`
