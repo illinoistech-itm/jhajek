@@ -239,7 +239,7 @@ sudo docker ps
 ## Cleaning up - 2.6
 
 - To see all containers: `sudo docker ps -a`
-  - To delete container instances: `sudo docker rm container-name`
+- To delete container instances: `sudo docker rm container-name`
 
 ## Summary
 
@@ -249,6 +249,10 @@ sudo docker ps
   - By default, every Docker container has its own PID namespace, isolating process information for each container
   - Docker identifies every container by its generated container ID, abbreviated container ID, or its human-friendly name
   - All containers are in any one of six distinct states: created, running, restarting, paused, removing, or exited
+
+## Summary continued
+
+- This chapter shows how you can use Docker for that purpose The ideas and features covered include the following:
   - The docker exec command can be used to run additional processes inside a running container
   - A user can pass input or provide additional configuration to a process in a container by specifying environment variables at container-creation time
   - Using the --read-only flag at container-creation time will mount the container filesystem as read-only and prevent specialization of the container
@@ -257,4 +261,8 @@ sudo docker ps
 
 ## Assignment
 
-- Blank
+![*Figure 2.4*](images/figure2-4.png "WordPress Structure")
+
+## Deliverable
+
+
