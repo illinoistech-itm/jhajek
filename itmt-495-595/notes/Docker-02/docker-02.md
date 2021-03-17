@@ -197,6 +197,35 @@ sudo docker ps
   - `sudo docker run -d --name wpdb -e MYSQL_ROOT_PASSWORD=ch2demo mysql:5.7`
   - `sudo docker run -d --name wp3 --link wpdb:mysql -p 8000:80 --read-only -v /run/apache2/ --tmpfs /tmp wordpress:5.0.0-php7.2-apache`
 
+## Environmental Variable Injection - 2.4.2
+
+- Software and Databases don't work right out of the box
+  - They have settings, passwords, and options that need to be configured
+  - Docker doesn't have the same filesystem abstractions we used in Packer to configure these settings
+- Environment variables are key/value pairs that are made available to programs through their execution context
+- Docker provides a way to set environment variables at run time
+  - Using the `--env` or `-e` to set ENVIRONMENT variables at run time
+- Docker from the beginning knows that these values need to be set
+  - Each container image creator has to set these up a head of time, they don't come for free =)
+  - But since we are not dealing with a machine, it is much simpler to set these environment variables
+
+## WordPress default ENV variables
+
+- Programs running inside containers can rely on the variables always being set
+  - WordPress observes the following environment variables:
+  - WORDPRESS_DB_HOST  
+  - WORDPRESS_DB_USER
+  - WORDPRESS_DB_PASSWORD
+  - WORDPRESS_DB_NAME
+  - WORDPRESS_AUTH_KEY
+  - WORDPRESS_SECURE_AUTH_KEY
+  - WORDPRESS_LOGGED_IN_KEY
+  - WORDPRESS_NONCE_KEY
+  - WORDPRESS_AUTH_SALT
+  - WORDPRESS_SECURE_AUTH_SALT
+  - WORDPRESS_LOGGED_IN_SALT
+  - WORDPRESS_NONCE_SALT
+
 ## Assignment
 
 - Blank
