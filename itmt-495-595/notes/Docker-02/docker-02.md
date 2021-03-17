@@ -236,6 +236,15 @@ sudo docker ps
   - Always restart the container regardless of the condition
 - [Docker Restart Documentation](https://docs.docker.com/config/containers/start-containers-automatically/ "Docker Restart Documentation")
 
+## MySQL Container Settings
+
+- [MySQL at Docker Hub environment variables](https://hub.docker.com/_/mysql?tab=description&page=1&ordering=last_updated "docker mysql environment variables")
+  - MYSQL_ROOT_PASSWORD
+  - MYSQL_DATABASE
+  - MYSQL_USER, MYSQL_PASSWORD
+- Docker has the ability to use a Linux built in Secrets method
+- `sudo docker run --name some-mysql -e MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql-root -d mysql:tag`
+
 ## Cleaning up - 2.6
 
 - To see all containers: `sudo docker ps -a`
@@ -265,4 +274,4 @@ sudo docker ps
 
 ## Deliverable
 
-
+- Create a shell script to launch 
