@@ -236,13 +236,24 @@ sudo docker ps
   - Always restart the container regardless of the condition
 - [Docker Restart Documentation](https://docs.docker.com/config/containers/start-containers-automatically/ "Docker Restart Documentation")
 
-## 
+## Cleaning up - 2.6
 
-sudo docker create \
- --env WORDPRESS_DB_HOST=<my database hostname> \
- --env WORDPRESS_DB_USER=site_admin \
- --env WORDPRESS_DB_PASSWORD=MeowMix42 \
- wordpress:5.0.0-php7.2-apache
+- To see all containers: `sudo docker ps -a`
+  - To delete container instances: `sudo docker rm container-name`
+
+## Summary
+
+- The primary focus of the Docker project is to enable users to run software in containers
+- This chapter shows how you can use Docker for that purpose The ideas and features covered include the following:
+  - Containers can be run with virtual terminals attached to the user’s shell or in detached mode
+  - By default, every Docker container has its own PID namespace, isolating process information for each container
+  - Docker identifies every container by its generated container ID, abbreviated container ID, or its human-friendly name
+  - All containers are in any one of six distinct states: created, running, restarting, paused, removing, or exited
+  - The docker exec command can be used to run additional processes inside a running container
+  - A user can pass input or provide additional configuration to a process in a container by specifying environment variables at container-creation time
+  - Using the --read-only flag at container-creation time will mount the container filesystem as read-only and prevent specialization of the container
+  - A container restart policy, set with the --restart flag at container-creation time, will help your systems automatically recover in the event of a failure
+  - Docker makes cleaning up containers with the docker rm command as simple as creating them
 
 ## Assignment
 
