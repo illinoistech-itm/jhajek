@@ -29,7 +29,7 @@
 
 ## Concept Review
 
-- From chapter 01
+- From chapter 01:
   - What are the two Linux concepts/features that make up a Linux Container?
   - Docker was created in what year/month?
   - Is the focus of Docker containers infrastructure or application deployment?
