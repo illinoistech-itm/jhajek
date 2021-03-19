@@ -2,11 +2,11 @@
 
 ## Grading Style
 
-The second sprint report will be defined by your own group.  The goals per person will be laid out based on your User Story and you will break the work into parts and based on your goals, you will essentially grade yourself.
+~~The second sprint report will be defined by your own group.  The goals per person will be laid out based on your User Story and you will break the work into parts and based on your goals, you will essentially grade yourself.~~
 
 ## Points
 
-The assignment will be 10 points cumulative.
+The assignment will be 10 points cumulative
 
 - 2 points for the UI/UX portion
 - 2 points for the Security Assumptions
