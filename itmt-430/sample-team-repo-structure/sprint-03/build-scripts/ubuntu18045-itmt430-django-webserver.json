@@ -94,7 +94,8 @@
       "DATABASENAME={{`database-name`}}",
       "DJANGO_SUPERUSER_PASSWORD={{`django-super-user-password`}}",
       "DJANGO_SUPERUSER_USERNAME={{`django-superuser-username`}}",
-      "DJANGO_SUPERUSER_EMAIL={{`django-superuser-email`}}"
+      "DJANGO_SUPERUSER_EMAIL={{`django-superuser-email`}}",
+      "DJANGOSECRETKEY={{`django-secret-key`}}"
     ]
   }
 ],

@@ -8,5 +8,6 @@
     "database-name": "Place-name-of-database-for-django",
     "django-super-user-password": "changeme",
     "django-superuser-username": "vagrant",
-    "django-superuser-email":"your-email-here"
+    "django-superuser-email":"your-email-here",
+    "django-secret-key": "enter unique key here"
 }
