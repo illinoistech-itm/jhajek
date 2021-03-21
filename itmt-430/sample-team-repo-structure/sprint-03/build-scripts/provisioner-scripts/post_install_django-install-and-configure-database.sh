@@ -13,6 +13,7 @@ sudo apt-get install -y python3-dev python3-pip python3-setuptools
 ########################################################################### 
 #https://pypi.org/project/django-dbbackup/
 python3 -m pip install django-dbbackup
+
 ########################################################################### 
 # Install Mariadb 
 ########################################################################### 
@@ -46,7 +47,7 @@ sudo systemctl start mariadb.service
 ########################################################################### 
 # If using mysql instead of MariaDB the path to the cnf file is /etc/mysql/mysql.conf.d/mysql.cnf
 # sudo sed -i "s/.*bind-address.*/bind-address = $DATABASESERVERIP/" /etc/mysql/mysql.conf.d/mysql.cnf
- 
+
 ##############################################################################################
 # CHANGE THE VALUES ~/2021-team-sample TO YOUR TEAM REPO AND ADJUST THE PATH ACCORDINGLY     #
 # Adjust the paths below in line 35-37, and 44 and 46                                        #
