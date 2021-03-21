@@ -1,0 +1,4 @@
+Host   github.com
+Hostname github.com
+IdentityFile  /home/vagrant/id_rsa_2021-sampleteam-deploy-key
+StrictHostKeyChecking no
