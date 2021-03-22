@@ -37,8 +37,11 @@
   - `GRANT SELECT,INSERT,UPDATE, DELETE, ON sakila.* TO worker@'localhost' IDENTIFIED BY 'Spark3Java';`
 - Set our ENV password: `export DB_PASSWORD=Spark3Java`
 - Compiled sample Java code with `mvn clean install`
-- Used compiled jar file to run samples
-- spark-submit --class net.jgp.books.spark.ch08.lab101_mysql_ingestion_env_variable.MySQLToDatasetApp --master "local[*]" ./target/spark-in-action2-chapter08-1.0.0-SNAPSHOT.jar
+- Used compiled jar file to run samples:
+`spark-submit --class`{.java}
+`net.jgp.books.spark.ch08.lab101_mysql_ingestion_env_variable.MySQLToDatasetApp`{.java}
+`--master "local[*]"`{.java}
+`./target/spark-in-action2-chapter08-1.0.0-SNAPSHOT.jar`{.java}
 
 ## Introduction
 
@@ -80,6 +83,43 @@
 - To read from a database one the connection is all setup:
 `Dataset<Row> df = spark.read()`{.java}
 `.jdbc(jdbcUrl, "actor", new Properties());`{.java}
+
+## Dialects - 8.2.1
+
+- The **dialect** is a small software component
+  - Often implemented in a single class, that bridges Apache Spark and the database
+![*Figure 8-3*](images/figure8-3.png "How dialects work diagram")
+
+## Dialects provided with Spark - 8.2.2
+
+- Spark comes with common RDBMS dialects by default
+  - IBM Db2
+  - Apache Derby
+  - MySQL
+  - Microsoft SQL Server
+  - Oracle
+  - PostgreSQL
+  - Teradata Database
+- There are plenty other plugins to be able to pull from NoSQL and Cloud Databases
+  - [https://spark-packages.org/?q=Data+Source](https://spark-packages.org/?q=Data+Source "Spark additional datasources webpage")
+
+## Advanced queries and ingestion - 8.3
+
+- Sometimes you don’t want to copy all the data from a table to a dataframe
+  - You know that you won’t use some data
+  - You don’t want to copy the rows you won’t use
+  - Because transfer is an expensive operation (time and maybe money if using the cloud)
+  - A typical use case would be to run analytics on yesterday’s sales, compare month-to-month sales, and so on
+- So we filter
+  - Let us look at lab 300, 310, and 311
+
+## Filtering by using a WHERE clause - 8.3.1
+
+- In SQL, one way to filter data is to use a WHERE clause as part of your SELECT statement
+  - Let’s see how to integrate such a clause in your ingestion mechanism
+  - Look at the source code for Lab300
+  - Printed page 180
+  - You will note that Spark does not transform the SQL query on the way to the JDBC driver
 
 ## Summary
 
