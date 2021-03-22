@@ -120,6 +120,22 @@
   - Look at the source code for Lab300
   - Printed page 180
   - You will note that Spark does not transform the SQL query on the way to the JDBC driver
+- Listing 8.6
+  - The following are important things to remember:
+    - You can nest parentheses in the select statement
+    - The table alias must not be an existing table in your database
+
+## Joining data in the database - 8.3.2
+
+- Joins...
+  - You might be thinking, I can use Spark to do joins between dataframes!
+  - For more information, see chapter 12 and appendix M
+  - For performance and optimization reasons, you may want to ask your database to perform the operation
+  - Lets look at lab310
+`SELECT actor.first_name, actor.last_name, film.title, film.description`{.sql}
+`FROM actor, film_actor, film`{.sql}
+`WHERE actor.actor_id = film_actor.actor_id`{.sql}
+`AND film_actor.film_id = film.film_id`{.sql}
 
 ## Summary
 
