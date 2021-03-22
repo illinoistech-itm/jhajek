@@ -132,10 +132,20 @@
   - For more information, see chapter 12 and appendix M
   - For performance and optimization reasons, you may want to ask your database to perform the operation
   - Lets look at lab310
-`SELECT actor.first_name, actor.last_name, film.title, film.description`{.sql}
+`SELECT actor.first_name, actor.last_name,`{.sql}
+`film.title, film.description`{.sql}
 `FROM actor, film_actor, film`{.sql}
 `WHERE actor.actor_id = film_actor.actor_id`{.sql}
 `AND film_actor.film_id = film.film_id`{.sql}
+
+## Performing Ingestion and partitioning - 8.3.3
+
+- Spark has an advanced feature when ingesting data from a database
+  - You can manually partition the data
+  - Remember what a partition is?
+  - The RDD is the data storage part of the dataframe (see chapter 3)
+![*Figure 8-6*](images/figure8-6.png "Image of RDD with 1 partition from database ingestion")
+![*Figure 8-7*](images/figure8-7.png "Image of RDD with 10 parititons from database ingestion")
 
 ## Summary
 
