@@ -58,9 +58,11 @@ sed -i "s/ALLOWED_HOSTS = []/ALLOWED_HOSTS = ['$WEBSERVERIP']/g" /home/vagrant/m
 python3 manage.py createsuperuser --noinput 
 
 ##############################################################################################
-# Create systemd start script to runserver at boot
+# Copy systemd start script to runserver at boot
 ##############################################################################################
-
+sudo cp -v ~/2021-team-sample/sprint-03/code/django/django-server.service /lib/systemctl/system/
+sudo systemctl enable django-server.service
+sudo systemctl start django-server.service
 
 ##############################################################################################
 # Set firewall section
