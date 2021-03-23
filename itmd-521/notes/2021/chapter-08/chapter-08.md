@@ -140,16 +140,83 @@
 
 ## Performing Ingestion and partitioning - 8.3.3
 
-- Spark has an advanced feature when ingesting data from a database
-  - You can manually partition the data
-  - Remember what a partition is?
-  - The RDD is the data storage part of the dataframe (see chapter 3)
+- Lab 320 shows us partitions with ingesting
 ![*Figure 8-6*](images/figure8-6.png "Image of RDD with 1 partition from database ingestion")
 ![*Figure 8-7*](images/figure8-7.png "Image of RDD with 10 parititons from database ingestion")
 
+## Performing Ingestion and partitioning
+
+- An advanced feature of Spark: ingesting from a database and automatically assigning data to the partitions
+  - Figure 8.6 and 8.7 illustrates the partitions in the resilient distributed dataset (RDD) in the dataframe after using partitions
+  - Do you remember what a Partition is?
+  - You may recall that the RDD is the data storage part of the dataframe (see chapter 3)
+  - Listing 8.9, 8.10, and 8.11 show partitioning
+- What is the advantage of partitioning the data?
+  - In relation to overall processing time?
+  - What are the constraints? Latency? Memory? CPU context switching?
+
+## NoSQL Elasticsearch - 8.4
+
+- Not all data is in a relational database like Oracle, MySQL, or SQL Server
+  - Much realtime data are in NoSQL databases
+  - Key/Value datastores created for specific purposes
+- Elasticsearch is a clusterable, indexable, search platform for log aggregations
+  - Application logs
+  - Server logs
+  - Any Logs
+- [https://www.elastic.co/elasticsearch/](https://www.elastic.co/elasticsearch/ "elastic search home page")
+
+## Data Flow - 8.4.1
+
+- ![*Figure 8-8*](images/figure8-8.png "Data flow of Elasticsearch into Spark")
+- We will now look at lab400
+
+## Install Elasticsearch
+
+- Appendix N in the book shows how to insert data to elastic once installed
+- Let us install Elasticsearch
+  - wget
+  - https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.1.deb
+  - `sudo dpkg -i elasticsearch-6.2.1.deb`
+- Issue the command: `sudo systemctl start elasticsearch` (this one takes a few minutes)
+- Issue the command: `sudo systemctl enable elasticsearch`
+- Issue the command: `sudo systemctl status elasticsearch`
+- Install links - a text based webbrowser
+  - `sudo apt-get install links`
+  - `links 127.0.0.1:9200` to test
+
+## Importing Data into Elasticsearch
+
+- See Index N.2 for specific instructions
+- Note the section noted for Edit the Configuration file path needs to be changed
+  - `sudo vim /etc/elasticsearch/elasticsearch.yml`
+  - Change the `/Users/jgp/` to `/home/vagrant/`
+  - Add `path.repo: ["/home/vagrant/data/elastic_restaurants/nyc_restaurants”]`
+    - Restart elastic: `sudo systemctl restart elastic`
+  - Watch the cut and paste that you don't forget any quotes
+  - Restarting Elastic takes a few minutes
+  - Running the check script makes sure to change the `/Users/jperrin` out for `/home/vagrant/`
+
+## Configuring Elasticsearch Data
+
+- Need to update file ownership: `sudo chown -R elasticsearch:elasticsearch elastic_restaurants/`
+- Run these commands to insert the data and count the number of records
+`curl -H "Content-Type: application/json" -XPUT 'http://localhost:9200/_snapshot/restaurants_backup' -d '{"type":"fs", "settings":{"location":"/home/vagrant/data/elastic_restaurants/nyc_restaurants/","compress":true,"max_snapshot_bytes_per_sec": "1000mb", "max_restore_bytes_per_sec": "1000mb"}}'`
+`curl -XPOST "localhost:9200/_snapshot/restaurants_backup/snapshot_1/_restore"`
+`curl -H "Content-Type: application/json" -XGET localhost:9200/nyc_restaurants/_count -d '{"query": { "match_all": {}}}'`
+
+## Command to run Elasticsearch Connection Code
+
+- There is a bug currently that prevents this from running
+`spark-submit --class`{.java}
+`net.jgp.books.spark.ch08..lab400_elasticsearch_Ingestion.ElasticsearchToData`{.java}
+`--master "local[*]"`{.java}
+`./target/spark-in-action2-chapter08-1.0.0-SNAPSHOT.jar`{.java}
+
 ## Summary
 
-- Place holder
+- There is a bug currently that prevents this from running
+  - We will fix this Wednesday
 
 ## Questions?
 
