@@ -44,7 +44,6 @@ django-admin startproject mysite
 sudo chown -R vagrant:vagrant ~/2021-team-sample
 
 sudo cp -v /home/vagrant/2021-team-sample/sprint-03/code/django/settings.py /home/vagrant/mysite/mysite/
-sudo cp -v /home/vagrant/2021-team-sample/sprint-03/code/django/apache2.conf /etc/apache2
 
 ##############################################################################################
 # Using sed to replace the blank settings value with the secret key
@@ -58,7 +57,7 @@ sed -i "s/SECRET_KEY = \'\'/SECRET_KEY = \'$DJANGOSECRETKEY\'/g" /home/vagrant/m
 python3 manage.py createsuperuser --noinput 
 
 ##############################################################################################
-# Configure Apache to serve Django via wsgi
+# Create systemd start script to runserver at boot
 ##############################################################################################
 
 
