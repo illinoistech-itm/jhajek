@@ -58,18 +58,18 @@ sudo chown -R vagrant:vagrant ~/2021-team-sample
 # Here we are going to use the sed command to do a find and replace of placeholder variables
 # This is so we can dynamically create usernames and passwords and not have to hardcode these values
 # Using sed to replace variables in the scripts with the ENV variables passed
-sed -i "s/\$ACCESSFROMIP/$ACCESSFROMIP/g" ~/2021-team-sample/sprint-03/code/db-samples/*.sql
-sed -i "s/\$USERPASS/$USERPASS/g" ~/2021-team-sample/sprint-03/code/db-samples/*.sql
-sed -i "s/\$DATABASENAME/$DATABASENAME/g" ~/2021-team-sample/sprint-03/code/db-samples/*.sql
+sed -i "s/\$ACCESSFROMIP/$ACCESSFROMIP/g" ~/2021-team-sample/sprint-03/code/db/*.sql
+sed -i "s/\$USERPASS/$USERPASS/g" ~/2021-team-sample/sprint-03/code/db/*.sql
+sed -i "s/\$DATABASENAME/$DATABASENAME/g" ~/2021-team-sample/sprint-03/code/db/*.sql
 ##############################################################################################
 # This next section will then execute the .sql files, with their placeholder values replaced, 
 # and execute the scripts that will create out database and create a user, with proper privilleges 
 # allowed
 ##############################################################################################
 # This script will create the database named posts in the mariadb server
-sudo mysql -u root < ~/2021-team-sample/sprint-03/code/db-samples/create-database.sql
+sudo mysql -u root < ~/2021-team-sample/sprint-03/code/db/create-database.sql
 # This script will create the non-root user named worker and the user for replication
-sudo mysql -u root < ~/2021-team-sample/sprint-03/code/db-samples/create-user-with-permissions.sql
+sudo mysql -u root < ~/2021-team-sample/sprint-03/code/db/create-user-with-permissions.sql
 
 ##############################################################################################
 # Set firewall section
