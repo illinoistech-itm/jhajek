@@ -1,8 +1,8 @@
 {
   "builders": [
     {
-      "name": "ubuntu-ws-18044-server",
-      "vm_name": "ubuntu-ws-18044-server",
+      "name": "django-webserver",
+      "vm_name": "django-webserver",
       "type": "virtualbox-iso",
       "boot_command": [
         "<esc><wait>",
@@ -22,7 +22,7 @@
         " keyboard-configuration/variant=USA<wait>",
         " locale=en_US<wait>",
         " netcfg/get_domain=vm<wait>",
-        " netcfg/get_hostname=vagrant<wait>",
+        " netcfg/get_hostname=django-webserver<wait>",
         " grub-installer/bootdev=/dev/sda<wait>",
         " noapic<wait>",
         " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed/preseed.cfg<wait>",
