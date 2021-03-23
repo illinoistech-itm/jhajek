@@ -30,11 +30,11 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 20000,
+      "disk_size": 10000,
       "guest_os_type": "Ubuntu_64",
       "http_directory" : ".",
       "http_port_min" : 9001,
-      "http_port_max" : 9001,
+      "http_port_max" : 9051,
       "iso_urls": "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.5-server-amd64.iso",
       "iso_checksum": "sha256:8c5fc24894394035402f66f3824beb7234b757dd2b5531379cb310cedfdf0996",
       "ssh_username": "vagrant",
