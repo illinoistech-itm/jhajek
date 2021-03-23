@@ -64,11 +64,11 @@
 - A mount point defines the location in the tree
   - The access properties to the data at that point (for example, writability)
   - The source of the data mounted at that point (for example, a specific hard disk, USB device, or memory-backed virtual disk)
-- Mount points allow software and users to use the file tree in a Linux environment
-  - Without knowing exactly how that tree is mapped into specific storage devices
 
 ## Mounts
 
+- Mount points allow software and users to use the file tree in a Linux environment
+  - Without knowing exactly how that tree is mapped into specific storage devices
 - Logic follows that if different storage devices can be mounted at various points in a file tree, we can mount nonimage-related storage at other points in a container file tree
 - That is exactly how containers get access to storage on the host filesystem and share storage between containers
 - The best place to start is by understanding the three most common types of storage mounted into containers:
@@ -84,7 +84,34 @@
   - Adds an in-memory tmpfs at `/tmp`
   - bind-mounts a configuration file from the host
   - writes logs into a Docker volume on the host
+
 ![*Figure4-2*](images/figure4-2.png "Diagram of common container storage mounts")
+
+## Bind mounts - 4.2
+
+- Bind mounts are mount points used to remount parts of a filesystem tree onto other locations
+  - Suppose you’re running a web server that depends on sensitive configuration on the host and emits access logs that need to be forwarded by your log-shipping system
+  - You could use Docker to launch the web server in a container
+  - Then bind-mount the configuration location as well as the location where you want the web server to write log
+  - In Figure 4.3, lets deploy a web server container
+  - Let us deploy an log forwarder software container (theoretical)
+  - Let us demonstrate how mounts work and how we can share a single file between two containers
+  
+## Figure 4.3
+
+![*Figure 4.3*](images/figure4-3.png "Host files shared as bind-mounts image")
+
+## Mount and Bind Options
+
+- Lets look at printed page 65, 66, and 67
+  - The main thing to capture here is that we are going to mount files from our local filesystem into the Docker Container
+  - Then we will set those conf files as read-only (for security)
+  - We will also enable the container to write a log file back to our local filesystem from the container
+  - But bind mounts are not optimal for general computing (say hosting a database file)
+
+## In-memory storage - 4.3
+
+- 
 
 ## Summary - Part 1 of 2
 
