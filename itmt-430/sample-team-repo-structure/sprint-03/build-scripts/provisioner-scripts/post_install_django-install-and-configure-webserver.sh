@@ -50,6 +50,7 @@ sudo cp -v /home/vagrant/2021-team-sample/sprint-03/code/django/settings.py /hom
 ##############################################################################################
 
 sed -i "s/SECRET_KEY = \'\'/SECRET_KEY = \'$DJANGOSECRETKEY\'/g" /home/vagrant/mysite/mysite/settings.py
+sed -i "s/ALLOWED_HOSTS = []/ALLOWED_HOSTS = ['$WEBSERVERIP']/g" /home/vagrant/mysite/mysite/settings.py
 
 ##############################################################################################
 # Create super user account from the ENV variables we passed in
