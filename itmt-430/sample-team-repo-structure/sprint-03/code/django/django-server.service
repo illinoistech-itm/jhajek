@@ -5,7 +5,7 @@ After=syslog.target network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /home/vagrant/mysite/manage.py runserver -h 192.168.33.33:8000
+ExecStart=/usr/bin/python3 /home/vagrant/mysite/manage.py runserver 192.168.33.33:8000
 Restart=on-failure
 RestartSec=5
 
