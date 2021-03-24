@@ -1,0 +1,30 @@
+\frametitle{Docker volumes - 4.3}
+\protect\hypertarget{docker-volumes---4.3}{}
+
+\begin{itemize}
+\tightlist
+\item
+  In VirtualBox we have virtual harddrives or sometimes called `volumes'
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This is not that
+  \end{itemize}
+\item
+  Docker volumes are named filesystem trees managed by Docker
+
+  \begin{itemize}
+  \tightlist
+  \item
+    All operations on Docker volumes can be accomplished using the
+    docker volume subcommand set
+  \item
+    \texttt{docker\ volume\ create}
+  \item
+    \texttt{docker\ volume\ inspect}
+  \end{itemize}
+\item
+  Let us look at some examples in 4.4.1
+\end{itemize}
+

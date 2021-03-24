@@ -111,20 +111,58 @@
 
 ## In-memory storage - 4.3
 
-- 
+- Where to store secret or sensitive information?
+  - Why not in-memory?
+  - Set the type option on the mount flag to tmpfs
+  - This is the easiest way to mount a memory-based filesystem into a container’s file tree
+  - You can set quotas on this in-memory filesystem
+
+## Sample of in-memory
+
+docker run --rm \
+ --mount type=tmpfs,dst=/tmp \
+ --entrypoint mount \
+ alpine:latest -v
+
+docker run --rm \
+ --mount type=tmpfs,dst=/tmp,tmpfs-size=16k,tmpfs-mode=1770 \
+ --entrypoint mount \
+ alpine:latest -v
+
+## Docker volumes - 4.3
+
+- In VirtualBox we have virtual harddrives or sometimes called 'volumes'
+  - This is not that
+- Docker volumes are named filesystem trees managed by Docker
+  - All operations on Docker volumes can be accomplished using the docker volume subcommand set
+  - `docker volume create`
+  - `docker volume inspect`
+- Let us look at some examples in 4.4.1
 
 ## Summary - Part 1 of 2
 
-- If not complete demonstrate the Wordpress 3 container MySQL 1 container node install project
+- This chapter covered mount points in depth, including the following:
+  - Mount points allow many filesystems from many devices to be attached to a single file tree. Every container has its own file tree
+  - Containers can use bind mounts to attach parts of the host filesystem into a container
+  - In-memory filesystems can be attached to a container file tree so that sensitive or temporary data is not written to disk
+  - Docker provides anonymous or named storage references called volumes
 
 ## Summary - Part 2 of 2
 
-- If not complete demonstrate the Wordpress 3 container MySQL 1 container node install project
+- Volumes can be created, listed, and deleted using the appropriate docker volume subcommand
+- Volumes are parts of the host filesystem that Docker mounts into containers at specified locations
+- Volumes have life cycles of their own and might need to be periodically cleaned up
+- Docker can provide volumes backed by network storage or other more sophisticated tools if the appropriate volume plugin is installed
 
 ## Deliverable
 
-- If not complete demonstrate the Wordpress 3 container MySQL 1 container node install project
-  
+- Using the Nginx Docker image [https://hub.docker.com/_/nginx](https://hub.docker.com/_/nginx "nginx docker image link")
+  - Create an Nginx load balancer
+  - Use a volume mount to mount the necessary configuration files into the container and mount as ro
+  - Add a tmpfs mount
+  - Create 3 additional Nginx webserver to display hello world sample code provided
+    - In the jhajek repo under itmt-495-595: container-lb-sample
+
 ## Questions
 
 Any questions?
