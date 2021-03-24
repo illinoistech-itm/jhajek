@@ -71,7 +71,7 @@ sudo systemctl start django-server.service
 # https://serverfault.com/questions/809643/how-do-i-use-ufw-to-open-ports-on-ipv4-only
 # https://serverfault.com/questions/790143/ufw-enable-requires-y-prompt-how-to-automate-with-bash-script
 ufw --force enable
-ufw allow proto tcp to 0.0.0.0/0 port 22
-ufw allow proto tcp to 80
-ufw allow proto tcp to 443
-ufw allow proto tcp to 8000
+ufw allow 22
+ufw allow 80
+ufw allow 443
+ufw allow 8000
