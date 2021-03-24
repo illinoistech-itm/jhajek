@@ -1,1 +1,0 @@
-\beamer@sectionintoc {1}{Working with storage and volumes}{2}{0}{1}

@@ -158,10 +158,11 @@ docker run --rm \
 
 - Using the Nginx Docker image [https://hub.docker.com/_/nginx](https://hub.docker.com/_/nginx "nginx docker image link")
   - Create an Nginx load balancer
-  - Use a volume mount to mount the necessary configuration files into the container and mount as ro
+  - Use a volume mount to mount the necessary configuration files into the container and mount as read only
   - Add a tmpfs mount
   - Create 3 additional Nginx webserver to display hello world sample code provided
-    - In the jhajek repo under itmt-495-595: container-lb-sample
+    - Name the three additional Nginx webserver: ws1, ws2, ws3
+- Sample Code is located in the jhajek repo under itmt-495-595: container-lb-sample
 
 ## Questions
 
