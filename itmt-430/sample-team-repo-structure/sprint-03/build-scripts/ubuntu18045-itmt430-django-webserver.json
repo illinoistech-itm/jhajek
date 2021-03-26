@@ -91,11 +91,11 @@
       "DATABASESERVERIP={{user `database-one-ip`}}",
       "DBPASS={{user `database-root-pw`}}",
       "USERPASS={{user `user-database-password`}}",
-      "DATABASENAME={{`database-name`}}",
-      "DJANGO_SUPERUSER_PASSWORD={{`django-super-user-password`}}",
-      "DJANGO_SUPERUSER_USERNAME={{`django-superuser-username`}}",
-      "DJANGO_SUPERUSER_EMAIL={{`django-superuser-email`}}",
-      "DJANGOSECRETKEY={{`django-secret-key`}}"
+      "DATABASENAME={{user `database-name`}}",
+      "DJANGO_SUPERUSER_PASSWORD={{user `django-super-user-password`}}",
+      "DJANGO_SUPERUSER_USERNAME={{user `django-superuser-username`}}",
+      "DJANGO_SUPERUSER_EMAIL={{user `django-superuser-email`}}",
+      "DJANGOSECRETKEY={{user `django-secret-key`}}"
     ]
   }
 ],
