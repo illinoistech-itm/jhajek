@@ -93,7 +93,7 @@
       "ACCESSFROMIP={{user `database-access-range`}}",
       "USERPASS={{user `user-database-password`}}",
       "FIREWALLACCESS={{user `ubuntu-firewall-access-range`}}",
-      "DATABASENAME={{`user database-name`}}"
+      "DATABASENAME={{user `database-name`}}"
     ]
   }
 ],
