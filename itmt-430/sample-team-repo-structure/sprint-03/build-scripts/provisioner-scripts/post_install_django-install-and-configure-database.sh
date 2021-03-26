@@ -6,8 +6,8 @@ echo "$WEBSERVERIP     frontend    frontend.class.edu"  | sudo tee -a /etc/hosts
 echo "$DATABASESERVERIP    backend    backend.class.edu"    | sudo tee -a /etc/hosts
 
 # Install python3 and pip3 for django database restoration
-sudo apt-get update
-sudo apt-get install -y python3-dev python3-pip python3-setuptools
+# sudo apt-get update
+# sudo apt-get install -y python3-dev python3-pip python3-setuptools
 
 ########################################################################### 
 # Install Mariadb 
