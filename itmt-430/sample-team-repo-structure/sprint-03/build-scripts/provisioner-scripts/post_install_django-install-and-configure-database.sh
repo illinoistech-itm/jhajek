@@ -8,11 +8,6 @@ echo "$DATABASESERVERIP    backend    backend.class.edu"    | sudo tee -a /etc/h
 # Install python3 and pip3 for django database restoration
 sudo apt-get update
 sudo apt-get install -y python3-dev python3-pip python3-setuptools
-###########################################################################
-# Django Backup and restore program
-########################################################################### 
-#https://pypi.org/project/django-dbbackup/
-python3 -m pip install django-dbbackup
 
 ########################################################################### 
 # Install Mariadb 
