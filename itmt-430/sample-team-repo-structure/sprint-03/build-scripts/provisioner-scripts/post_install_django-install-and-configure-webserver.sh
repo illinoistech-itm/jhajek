@@ -8,7 +8,7 @@ echo "$DATABASESERVERIP    backend    backend.class.edu"    | sudo tee -a /etc/h
 ##############################################################################################
 # Install Django pre-reqs
 ##############################################################################################
-sudo apt-get install -y apache2 libexpat1 apache2-utils ssl-cert libapache2-mod-wsgi python3-dev python3-pip python3-setuptools
+sudo apt-get install -y libexpat1 ssl-cert python3-dev python3-pip python3-setuptools
 
 ##############################################################################################
 # Install Django mysqlclient library pre-reqs
