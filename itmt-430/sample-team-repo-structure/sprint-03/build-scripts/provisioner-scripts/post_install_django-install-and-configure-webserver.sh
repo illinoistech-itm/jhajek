@@ -21,11 +21,11 @@ python3 -m pip install mysqlclient
 # Here we can construct the .my.cnf file and append the value to the .my.cnf file we will 
 # create in the home directory
 ##############################################################################################
-echo -e "[client]" >> /home/vagrant/.my.cnf
-echo -e "database = $DATABASENAME" >> /home/vagrant/.my.cnf
-echo -e "user = worker" >> /home/vagrant/.my.cnf
-echo -e "password = $DBPASS" >> /home/vagrant/.my.cnf
-echo -e "default-character-set = utf8" >> /home/vagrant/.my.cnf
+echo "[client]" >> /home/vagrant/.my.cnf
+echo "database = $DATABASENAME" >> /home/vagrant/.my.cnf
+echo "user = worker" >> /home/vagrant/.my.cnf
+echo "password = $DBPASS" >> /home/vagrant/.my.cnf
+echo "default-character-set = utf8" >> /home/vagrant/.my.cnf
 
 ##############################################################################################
 # Install Django
