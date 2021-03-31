@@ -128,7 +128,7 @@ sudo docker container run --rm \
 
 ## Configuring image attributes - 7.1.5
 
-- Of the parameters that can be set when a container is created, all the following will carry forward with an image created from the container:
+- Of the parameters that can be set when a container is created, all the following will carry forward with an image created from the container:
   - All environment variables
   - The working directory
   - The set of exposed ports
@@ -148,9 +148,19 @@ sudo docker container run --rm \
   
 ## Summary
 
-- Summary Here
+- New images are created when changes to a container are committed using the docker container commit command
+- When a container is committed, the configuration it was started with will be encoded into the configuration for the resulting image
+- An image is a stack of layers that’s identified by its top layer.
+- An image’s size on disk is the sum of the sizes of its component layers.
+- Images can be exported to and imported from a flat tarball representation by using the docker container export and docker image import commands
+- The docker image tag command can be used to assign several tags to a single repository
+- Repository maintainers should keep pragmatic tags to ease user adoption and migration control
+- Tag your latest stable build with the latest tag
+- Provide fine-grained and overlapping tags so that adopters have control of the scope of their dependency version creep
 
 ## Deliverable
+
+- NA
 
 ## Questions
 
