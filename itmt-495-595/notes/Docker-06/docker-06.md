@@ -1,14 +1,14 @@
 % Docker in Action: Second Edition
-% Chapter 05
-% Single Host Networking
+% Chapter 06
+% Limiting risk with resource controls
 
-# Single Host Networking
+# Limiting risk with resource controls
 
 ## Text Book
 
 ![*itmt 495/595 textbook*](images/cover.png "Docker In Action V2 Book Cover Image"){height=350px}
 
-## Chapter 05 - Objectives
+## Chapter 06 - Objectives
 
 - Discuss Docker networking background
 - Demonstrate creating Docker container networks
@@ -50,125 +50,62 @@
 - Are volumes separate or part of a Container (CID)?
 - Do volumes persist after a Container instance has been stopped?  Deleted?
 
+## Concept Review 5
+
+- Can Docker networks be created separate from containers?
+- Describe the default bridge network in Docker
+- How does Docker do name resolution?
+- How does Docker do IP addressing and routing?
+- Can there be multiple Docker networks per system?
+- What are the other two Docker network types?
+- What is a NodePort and how does it allow forwarded traffic from the host to a container?
+- Do Docker bridge networks provide any network firewall or access-control functionality?
+
 ## Introduction
 
-- Former Sun Microsystems CEO, Scott McNealy, once said, "The computer is not the computer, the network, is the computer."
-  - Everything is about networking
-  - Everything is attached to networking
-  - We need to create containers with proper network exposure
-- We need to understand how Docker networking interacts with the underlying host
+- The features covered in this chapter focus on managing or limiting the risks of running software
+  - These features prevent software from misbehaving
+  - Constrain a bug or attack from consuming resources that might leave your computer unresponsive
+  - Containers can help ensure that software only uses the computing resources and accesses the data you expect
+    - Similar in function to a virtual machine, but these controls are constrained in a different way
 
-## Basics: Protocols, interfaces, and ports - 5.1.1
+## How Docker is protected by namespaces
 
-- What is a network protocol?
-- What is a network interface (NIC)?
-  - How do we communicate with network interfaces?
-- What is a port?
-  - In relation to the network interface?
-- What is the default port for:
-  - http
-  - https
-  - MySQL
-  - MemCached
-  - MongoDB
-  - CassandraDB
-  - Redis
-  - NodeJS
+![*Figure 6.1*](images/figure6-1.png "Image of how Docker uses namespaces")
 
-## Bigger Networking Picture: Networks, NAT, and port forwarding - 5.1.2
+## Setting Resources Allowances - 6.1
 
-- Interfaces are single points in larger networks
-- Networks are defined in the way that interfaces are linked together, and that linkage determines an interface’s IP address
-  - Docker is concerned about two specific networks and the way containers are attached to them
-    - Your host network
-    - A bridged network
-- A bridge is an interface that connects multiple networks so that they can function as a single network
-![*Figure 5-3*](images/figure5-3.png "Diagram of a bridged network")
+- Virtual Machines have hard restrictions on the amount of CPU and Memory that can be accessed
+  - Due to their machine abstraction
+- Docker can use flags for CPU and Memory
+  - By default, Docker containers may use unlimited CPU, memory, and device I/O resources
+- Memory limits are the most basic restriction you can place on a container
+  - Using the  `-m` or `--memory` flag, unit = b, k, m or g
+  - `docker container run -d --name ch6 --memory 256m alpine:3.6`
+  - Quotas are NOT a reservation, but only overconsumption protection
+  - `sudo docker stats` will show you how much resources a container is using
+  - With overprovisioning memory, there are many soft ways software can fail -- be careful
 
-## Docker Container Networking - 5.2
+## CPU - 6.1.2
 
-- Docker abstracts the underlying host-attached network from containers
-  - Provides a degree of runtime environment agnosticism for the application
-  - A container attached to a Docker network will get a unique IP address that is routable from other containers attached to the same Docker network
-  - But how can the software inside the container then determine any other containers IP address?
-- Networks can be defined in Docker
-  - Multiple and separate networks -- all done automatically in software
-  - Let us run the `sudo docker network` command
-  - Let us run the `sudo docker network ls`{.bash} command
-
-## Three Default Networks
-
-- By default there are 3 drivers
-  - Host, bridge, and none
-- Bridge is the default driver that provides connectivity between each container running on the same machine
-- Host driver can be used to connect a container's networking directly to the host operating system
-- The null driver is a secure way to run a container for computation but not have any networking stack
-  - For now we will only focus on the `local` scope in chapter 9 we will focus on a larger multi-system scope
-
-## Creating a user-defined bridge network - 5.2.1
-
-- The Docker bridge network driver uses Linux namespaces, virtual Ethernet devices, and the Linux firewall to build a specific and customizable virtual network topology called a bridge
-  - You can see this by issuing the command `ip a sh`
-![*Figure 5-4*](images/figure5-4.png "Image of how docker bridge network works")
-
-## Build Your Own Network
-
-- The idea is that you will build individual networks per application
-
-```bash
-Build a new network with a single command:
-docker network create \
- --driver bridge \
- --label project=dockerinaction \
- --label chapter=5 \
- --attachable \
- --scope local \
- --subnet 10.0.42.0/24 \
- --ip-range 10.0.42.128/25 \
- user-network 
- ```
-
-## Exploring a bridge network - 5.2.2
-
-- See the text example
-
-## NodePort Publishing - 5.4
-
-- How to allow external traffic into our containers?
-  - This is called the NodePort, or `-p`, for example:
-    - 0.0.0.0:8080:8080/tcp
-    - 8080:8080/tcp
-    - 8080:8080
-- What is the difference between these three commands?
-  - `sudo docker run --rm -p 8080 alpine:3.8`
-  - `sudo docker run --rm -p 8088:8080/udp alpine:3.8`
-  - `sudo docker run --rm -p 127.0.0.1:8080:8080/tcp -p 127.0.0.1:3000:3000/tcp alpine:3.8`
-
-## No firewalls or network policies - 5.5.1
-
-- Docker container networks do not provide any access control or firewall mechanisms between containers
-- Docker uses a namespace model
-  - The namespace model solves resource access-control problems by transforming them into addressability problems
-  - This design decision impacts the way we have to architect internetwork service dependencies and model common service deployments
-  - Always deploy containers with proper access-control mechanisms between containers (bi-directional)
-
-## Custom DNS - 5.5.2
-
-- Docker provides a custom DNS system
-  - This mapping enables clients to decouple from a dependency on a specific host IP and instead depend on whatever host is referred to by a known name
-  - This is needed because each container has a private, dynamically assigned IP address, unless you are running DNS, you are in trouble
-  - This leads us to a larger problem: Network Discovery
+- Processing time is just as scarce as memory
+  - Docker lets you limit a container’s CPU resources in two ways:
+  - First, you can specify the relative weight of a container to other containers, a ratio
+    - Using the `--cpu-shares` flag in 512 unit increments you can assign relative priority or ratio of a container
+    - This ratio is only in place when there is CPU contention, otherwise containers can exceed this ratio -- NOT a cap
+  - Second, The `cpus` option allocates a quota of CPU resources the container may use by configuring the Linux Completely Fair Scheduler (CFS)
+    - This is a max cap
+- Another feature Docker exposes is the ability to assign a container to a specific CPU set
+  - A CPU set, `--cpuset-cpus 0`  or `--cpuset-cpus 0,1,2` restricts a container to the assigned cores (numeric count)
 
 ## Summary
 
-- Docker networks are first-class entities that can be created, listed, and removed just like containers, volumes, and images
-- Bridge networks are a special kind of network that allows direct intercontainer network communication with built-in container name resolution
-- Docker provides two other special networks by default: host and none
-- Networks created with the none driver will isolate attached containers from the network
-- A container on a host network will have full access to the network facilities and interfaces on the host
-- Forward network traffic to a host port into a target container and port with NodePort publishing
-- Docker bridge networks do not provide any network firewall or access-control functionality
-- The network name-resolution stack can be customized for each container
+- Docker can limit the amount of memory a container can use to prevent over consumption, not make a quota
+- CPUs can be shared/limited or rationed when there is resource contention
+
+## Deliverable
+
+- None
 
 ## Questions
 
