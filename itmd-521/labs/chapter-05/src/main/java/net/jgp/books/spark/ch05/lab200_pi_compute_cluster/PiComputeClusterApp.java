@@ -78,8 +78,10 @@ public class PiComputeClusterApp implements Serializable {
     long t0 = System.currentTimeMillis();
     SparkSession spark = SparkSession
         .builder()
-        .appName("JavaSparkPi on a cluster")
-        .master("spark://un:7077")
+        //.appName("JavaSparkPi on a cluster")
+        .appName("JavaSparkPi on a cluster - jrh")
+        //.master("spark://un:7077")
+        .master("spark://172.16.1.23:7077")
         .config("spark.executor.memory", "4g")
         // Uncomment the next block if you want to run your application from
         // the IDE - note that you will have to deploy the jar first to
