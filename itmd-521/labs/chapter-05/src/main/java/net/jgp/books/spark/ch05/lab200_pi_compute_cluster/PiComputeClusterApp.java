@@ -71,7 +71,7 @@ public class PiComputeClusterApp implements Serializable {
    * The processing code.
    */
   private void start(int slices) {
-    int numberOfThrows = 1000000 * slices;
+    int numberOfThrows = 100000 * slices;
     System.out.println("About to throw " + numberOfThrows
         + " darts, ready? Stay away from the target!");
 
