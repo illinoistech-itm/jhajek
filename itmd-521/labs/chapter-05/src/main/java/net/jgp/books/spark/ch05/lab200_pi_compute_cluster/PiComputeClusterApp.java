@@ -71,7 +71,7 @@ public class PiComputeClusterApp implements Serializable {
    * The processing code.
    */
   private void start(int slices) {
-    int numberOfThrows = 100000 * slices;
+    int numberOfThrows = 1000000 * slices;
     System.out.println("About to throw " + numberOfThrows
         + " darts, ready? Stay away from the target!");
 
@@ -85,6 +85,7 @@ public class PiComputeClusterApp implements Serializable {
 //        .config("spark.executor.memory", "1g")
         .config("spark.executor.cores", 1)
         .config("spark.submit.deployMode", "cluster")
+        .config("spark.driver.memory", "2g")
         // Uncomment the next block if you want to run your application from
         // the IDE - note that you will have to deploy the jar first to
         // *every* worker. Spark can share a jar from which it is launched -
