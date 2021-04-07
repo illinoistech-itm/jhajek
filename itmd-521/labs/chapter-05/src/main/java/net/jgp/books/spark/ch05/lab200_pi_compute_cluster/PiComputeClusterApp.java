@@ -82,8 +82,8 @@ public class PiComputeClusterApp implements Serializable {
         .appName("JavaSparkPi on a cluster - jrh")
         //.master("spark://un:7077")
         .master("spark://172.16.1.23:7077")
-        .config("spark.executor.memory", "1g")
-        .config("spark.executor.cores", 4)
+//        .config("spark.executor.memory", "1g")
+        .config("spark.executor.cores", 1)
         // Uncomment the next block if you want to run your application from
         // the IDE - note that you will have to deploy the jar first to
         // *every* worker. Spark can share a jar from which it is launched -
