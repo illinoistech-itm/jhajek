@@ -1,60 +1,85 @@
 # Sprint-04 Grading Rubric
 
-## Objectives
-
-- Display understanding and demonstration of the each of the five technical roles by deploying a working prototype of your application and infrastructure
-
-## Outcomes
-
-- Your team will deliver a written report written in markdown and placed on your team's private GitHub repo.
-  - In the location of: ```reports > sprint-04 > sprint-04.md```
-- The Project Manager of your team will give a live demonstration of requested site features
-  - Each team member will begin and demonstrate a clean build/deploy of the application and demonstrate a user login at the end of class
-  
 ## Points
 
-The assignment will be graded in two parts, 80 points for the report, 20 points for the presentation; 100 points cumulative.
+The assignment will be 10 points cumulative
+
+- 2 points for the UI/UX portion
+- 2 points for the Security Assumptions
+- 2 points for IT and Infrastructure Report
+- 2 points for Developer and Coding assumptions
+- 1 points for the cumulative report
+- 1 points for the Presentation style
+  
+  - The grading for the presentation will be a standard presentation
+  - Was there a clear opening?
+  - Was there a clear explanation of the entire report content (not read of the page)?
+  - Was there a clear conclusion?
+
+Each section will be graded on a Likert Scale:
+
+- Meets expectations
+- Somewhat meets expectations
+- Somewhat meets expectations, with a few missing items
+- Doesn't meet expectations
+- Non-effort
+- 2, 1.6, 1.5, 1.2, and .5 points respectively
+- 1, .8, .7, .6, and .5 points respectively
+
+## Content
+
+The deliverable will be a single file named **sprint-04.md** located in a folder named **reports** under the **sprint-04** folder in your team GitHub repo.
 
 ### Written Report Rubric
 
-16 points per item, 2 points off per item, containing **only** the following:
+### Operating Systems and IT Infrastructure
 
-- UI/UX & Testing portion
-  - List all tasks that you have completed along with the artifacts proving they are complete (GitHub commit URL and Project Management artifact screenshot)
-  - Show (screenshot with highlights) all UI/UX components added since sprint-03 for the User Story and give a short explanation of their function
-  - Show (screenshot with highlights) all UI/UX components added since sprint-03 for the Admin Story and/or Anonymous user and give a short explanation of their function
-- Infrastructure
-  - List all tasks that you have completed along with the artifacts proving they are complete (GitHub commit URL and Project Management artifact screenshot)
-  - Include in the *Diagrams* folder a diagram of all of the discrete servers and their IP addresses in your application (All systems need to be on a discrete server)
-  - Include a script that will build each of these discrete systems as virtual machines automatically, include instructions how to do this in the ```install.md``` located in the root directory
-  - Include a list of external packages being installed for this application via package manager
-- Developer
-  - List all tasks that you have completed along with the artifacts proving they are complete (GitHub commit URL and Project Management artifact screenshot)
-  - Show in the scripts required to build the Infrastructure, add the ability to clone application source code from your private repo to your local application
-  - Show the .sql schema file that creates your database.  If using MongoDB, show the JavaScript file.  Not a screen shot but put the code into the document.
-  - Show that https is enabled using local self-signed certs
-- Junior Developer
-  - List all tasks that you have completed along with the artifacts proving they are complete (GitHub commit URL and Project Management artifact screenshot)
-  - Add screenshot of a minimum of 5 additional GitHub issues/bugs reported and assigned
-- Project Manager
-  - Include a file  ```install.md``` in the root of the team GitHub Repo detailing all instructions to build and run your application
-  - List any detailed assumptions your team made explaining deliverable context as needed
+- Using Packer and Vagrant you will begin to break your monolithic application up into at least 2 servers (frontend and backend)
+  - Using the host only network declared via Vagrant
+    - 192.168.33 for frontend
+    - 192.168.33.34 for datastore/database
+  - Store your scripts in a **code** folder on your repo
+  - Update the `install.md` template file with build and install instructions  
+    - This will include automated provisioning of all assumptions and secrets defined in the first sprint (firewall rules, admin accounts, user accounts, secrets/passwords, etc, etc
+  - This will also require automated deployment of the ERD you created for your database and installation of the database product you chose.  All of these steps will be automated.
 
-### Presentation Rubric
+### Developer
 
-Presentation is worth 20 points and needs to **only** contain the following:
+With the Authentication proved working, now begin to complete the User Story by deploying:
 
-- Project Manager will show 5 actions on a working/deployed project: (Everyone comes to the class with the project pre-built):
-  - Live demonstration of a user logins (user one)
-  - Live demonstration of (user one) taking an action in your application (for example, place an order or buy a product), then logout
-  - Live demonstration of a user logins (user two)
-  - Live demonstration of (user two) taking an action in your application (for example, place an order or buy a product), then logout
-  - Each team member (excluding Project Manager), will do a live demonstration of a user login, take an action, and logout
+- Working user registration page and process
+- Working user login (at least 3 accounts demonstrated)
+- Create and identify to us at least 3 additional pages/functionalities
+  - For instance demonstrate the ability for a logged in user to add an item for sale
 
-### Written Report Deliverable
+### Junior Developer and Security
 
-The deliverable will be a single file named **sprint-04.md** located in a folder named **sprint-04** under the **reports** folder in your team GitHub repo.  Submit the URL to Blackboard under the ~~Sprint-03~~ Sprint-04 Assignment deliverable by the Project Manager as the report is a group submission.  Due date for the report is **9:35 AM the the day of your class lab time**, April 15 & 16 & 17.  Written report should follow the layout of document: ```written-report-submission-template.pdf```.
+For security you must create a non-root/admin user for the database activities following the concept of least privileges, that you define and explain.  You need to automate the creation of firewall rules using either (UFW or firewalld) on Ubuntu or Firewalld on CentOS and properly enable any services to start on boot--without manual intervention.
 
-## Presentation Deliverable
+You will now enable and restrict the firewall rules so that only the front end IP address can connect to the backend database.  
 
-There is no deliverable for the in-class presentation, that will be graded during the class based on the Presentation Rubric.
+- Create firewall rules
+- Work with Operation to include the creation of at least 3 user accounts
+  - Insert two items per test user (post an item, place a question, or answer a question)
+  - Insert these to your database via provisioner script in Packer
+
+### UI/UX
+
+Demonstrate and explain how the created artifacts by the Developer match the User Story UI/UX artifacts in your `diagrams` folder.  If these items do not match explain why and how this will be remedied.
+
+### Project Management
+
+You will be responsible for allocating resources and guiding your team to accomplish the goals in the short time you set out. Must make note in the written report of all finished or done Trello tasks and show any artifacts that match those tasks.  
+
+## Deliverable
+
+The Project Manager will submit the URL to the sprint-04.md on GitHub and a link to the recorded video presentation, it will be a group submission so only one is needed.  Don't forget!
+
+Video presentation should demonstrate the Developer requirements
+
+- Create two user accounts
+- Log into one of those accounts
+- Take an action
+- Log out
+- Log into the other account
+- Log out

@@ -268,7 +268,6 @@ CMD ["/var/log/mailer.log"]
   - Merge instructions to minimize the size of images and layer count when possible
   - Dockerfiles include instructions to set image metadata including the default user, exposed ports, default command, and entrypoint
   - Other Dockerfile instructions copy files from the local filesystem or a remote location into the produced images
-  - Downstream builds inherit build triggers that are set with ONBUILD instructions in an upstream Dockerfile
   - Dockerfile maintenance can be improved with multistage builds and the ARG instruction
   - Startup scripts should be used to validate the execution context of a container before launching the primary application
   - A valid execution context should have appropriate environment variables set, network dependencies available, and an appropriate user configuration
