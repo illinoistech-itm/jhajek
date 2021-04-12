@@ -199,6 +199,7 @@ services:
   - `sudo docker-compose down` deletes and stops containers
   - You can also use the NETWORK header in the docker-compose.yml
   - [https://github.com/compose-spec/compose-spec/blob/master/spec.md#networks-top-level-element](https://github.com/compose-spec/compose-spec/blob/master/spec.md#networks-top-level-element "docker-compose network example webpage")
+  - There is the ability to add a **deploy** option to create standby container images (for failover)
 
 ## Summary
 
@@ -211,6 +212,18 @@ services:
 - Complete the Wordpress Docker-Compose example
   - [https://docs.docker.com/compose/wordpress/](https://docs.docker.com/compose/wordpress/ "Wordpreses Docker-Compose website")
   - Do not use the default network, but add a network named **frontend** and **backend**
+  - Add these values to the Webserver declaration:
+
+```dockerfile
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: '512M'
+      restart_policy:
+        condition: on-failure
+```
 
 ## Questions
 
