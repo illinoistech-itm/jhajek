@@ -1,4 +1,4 @@
-FROM node:buster
+FROM node:lts-buster
 WORKDIR /code
 ENV FLASK_APP=app.js
 ENV FLASK_RUN_HOST=192.168.33.30
