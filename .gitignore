@@ -38,3 +38,6 @@ chapter-*.html
 ._SUCCESS*
 .part*
 *.crc
+
+# Docker
+.env

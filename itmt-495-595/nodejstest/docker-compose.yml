@@ -1,7 +1,23 @@
 version "3.9"
 
 services:
+    db:
+        image: mysql:5.7
+        volumes:
+          - db_data:/var/lib/mysql
+          - ./db/:/docker-entrypoint-initdb.d/:ro
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: letmein
+          MYSQL_DATABASE: comments
+          MYSQL_USER: worker
+          MYSQL_PASSWORD: replicant
+        networks:
+          - backend
     ws1:
-        images: node:stretch
+        depends_on:
+          - db
+        build: .
 
+    
         

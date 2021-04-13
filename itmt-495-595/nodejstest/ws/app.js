@@ -9,7 +9,7 @@ var query_results = "";
 
 // create the connection to database
  const connection = mysql.createConnection({
-   host: db,
+     host: db,
      user: 'worker',
      password: 'letmein',
      database: 'posts'
