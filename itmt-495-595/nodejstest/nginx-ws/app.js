@@ -9,7 +9,7 @@ var query_results = "";
 
 // create the connection to database
  const connection = mysql.createConnection({
-   host: config.db.mmip,
+   host: db,
      user: 'worker',
      password: 'letmein',
      database: 'posts'
