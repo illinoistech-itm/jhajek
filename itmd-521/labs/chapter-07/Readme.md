@@ -51,26 +51,47 @@ df2.withColumn('WeatherStation', df2['value'].substr(5, 6)) \
 .drop('value').write.format("csv").mode("overwrite").option("header","true").save("hdfs://namenode/user/controller/your-hawk-id-here/20/")
 ```
 
-1. Parse the initially assigned text file
-1. Save this as a .csv uncompressed to the location: `.save("hdfs://namenode/user/controller/your-hawk-id-here/20/")`  
-1. Open the newly saved CSV file for reading again and print the schema and .count() values
-1. Save the dataframe as a csv file compressed with snappy
-1. Open the newly saved compressed csv snappy file and print the schema and .count() values
-1. Save the dataframe as a JSON uncompressed file
-1. Open the newly saved JSON file for reading again and print the schema and .count() values
-1. Save the dataframe as a JSON file compressed with snappy
-1. Open the newly saved compressed JSON file and print the schema and .count() values
-1. Save the dataframe as an XML file
-1. Open the newly saved XML file for reading again and print the schema and .count() values
-1. Save the dataframe as a Parquet file
-1. Open the newly saved Parquet file for reading, create three additional columns splitting the **ObservationDate** column into, **year**, **month**, **date** columns
+- Parse the initially assigned text file
+- Save this as a .csv uncompressed to the location: `.save("hdfs://namenode/user/controller/your-hawk-id-here/20/")`  
+- Open the newly saved CSV file for reading again and print the schema and .count() values
+  - Place screenshot
+- Save the dataframe as a csv file compressed with snappy
+  - Place screenshot
+- Open the newly saved compressed csv snappy file and print the schema and .count() values
+  - Place screenshot
+- Save the dataframe as a JSON uncompressed file
+  - Place screenshot
+- Open the newly saved JSON file for reading again and print the schema and .count() values
+  - Place screenshot
+- Save the dataframe as a JSON file compressed with snappy
+  - Place screenshot
+- Open the newly saved compressed JSON file and print the schema and .count() values
+  - Place screenshot
+- Save the dataframe as an XML file
+  - Place screenshot
+- Open the newly saved XML file for reading again and print the schema and .count() values
+  - Place screenshot
+- Save the dataframe as a Parquet file
+  - Place screenshot
+- Open the newly saved Parquet file for reading, create three additional columns splitting the
+**ObservationDate** column into, **year**, **month**, **date** columns
+  - Place screenshot
+
+### Notes
 
 - [How to load and write xml files](http://www.thehadoopguy.com/2019/09/how-to-parse-xml-data-to-saprk-dataframe.html "How to load xml driver")
 - [How to acquire the xml driver jar and use it](https://github.com/databricks/spark-xml "How to aquire the xml driver")
 
 ### Building Instructions
 
-Place and instructions or assumptions needed to run your code and repeat the results here
+Place and instructions or assumptions needed to run your code in the `install.md` file
+
+When running your jobs, you can background the jobs using the following syntax:
+
+```bash
+
+nohup spark-submit --master spark://namenode:7077 --driver-cores 1 --total-executor-cores 4 --num-executors 4  --driver-memory 4g --executor-memory 4g demo-read-write-json-compression-lz4.py &
+```
 
 ### Deliverable
 
