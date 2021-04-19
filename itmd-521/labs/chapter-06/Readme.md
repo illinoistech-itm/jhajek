@@ -12,7 +12,7 @@ You will copy this template file to your own private GitHub repo provided.  Unde
 
 ### Lab
 
-You will write one Spark application, in Java or Python that will work with the sample data provided from the NCDC for the decade of 1920s:  
+You will write one Spark application, in Java or Python that will work with the sample data provided from the NCDC for the assigned decade:  
 
 - The application will include these steps, place a screenshot of the output under each item.  
 - Include a single source code file and instructions in an **install.md** file.
