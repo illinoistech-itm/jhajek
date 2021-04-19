@@ -39,7 +39,6 @@ connection.connect((err) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.write('The SQL query results are: ' + JSON.stringify(query_results));
-    res.write('Connection to Mongo status:' + conn_status)
     res.end('Hello World' + host.hostname());
 
   });
