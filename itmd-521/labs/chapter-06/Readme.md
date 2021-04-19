@@ -17,7 +17,7 @@ You will write one Spark application, in Java or Python that will work with the 
 - The application will include these steps, place a screenshot of the output under each item.  
 - Include a single source code file and instructions in an **install.md** file.
 - For the `SparkSession.builder.appName` use:
-  - `HAWKID - lab chapter 07`
+  - `HAWKID - lab chapter 06`
 - A-K use 50/50.txt L-Z last name use 60/60.txt for your source file
 
 ## Schema and Partial Sample
