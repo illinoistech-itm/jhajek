@@ -12,6 +12,7 @@ At the conclusion of this lab, you will have successfully deployed a 5 node appl
 `docker-compose.yml` includes 5 nodes
 
 - lb Nginx loadbalancer
+  - NodePort 80:80
 - ws1 nodejs webserver
   - create a Dockerfile to build and include an application
   - node:lts-buster
@@ -32,7 +33,7 @@ At the conclusion of this lab, you will have successfully deployed a 5 node appl
 
 ### Installation instructions
 
-Mention any instructions needed to run your code to produce the functioning WordPress application
+Mention any instructions needed to run your code to produce the functioning application
 
 ## Deliverables
 
