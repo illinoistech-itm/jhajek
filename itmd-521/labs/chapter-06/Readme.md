@@ -56,25 +56,21 @@ df2.withColumn('WeatherStation', df2['value'].substr(5, 6)) \
 - Open the newly saved CSV file for reading again and print the schema and .count() values
   - Place screenshot
 - Save the dataframe as a csv file compressed with snappy
-  - Place screenshot
 - Open the newly saved compressed csv snappy file and print the schema and .count() values
   - Place screenshot
 - Save the dataframe as a JSON uncompressed file
-  - Place screenshot
 - Open the newly saved JSON file for reading again and print the schema and .count() values
   - Place screenshot
 - Save the dataframe as a JSON file compressed with snappy
-  - Place screenshot
 - Open the newly saved compressed JSON file and print the schema and .count() values
   - Place screenshot
 - Save the dataframe as an XML file
-  - Place screenshot
 - Open the newly saved XML file for reading again and print the schema and .count() values
   - Place screenshot
 - Save the dataframe as a Parquet file
-  - Place screenshot
 - Open the newly saved Parquet file for reading, create three additional columns splitting the
-**ObservationDate** column into, **year**, **month**, **date** columns
+**ObservationDate** column into, **year**, **month**, **date** columns.
+  - Print the schema
   - Place screenshot
 
 ### Notes
