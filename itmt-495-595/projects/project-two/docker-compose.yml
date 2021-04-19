@@ -1,5 +1,18 @@
 version: "3.9"
 services:
+    db:
+        image: mysql:5.7
+        networks:
+          - db
+          - backend
+        volumes: 
+          - database-volume:/var/lib/mysql
+          - ./db:/docker-entrypoint-initdb.d
+        environment:
+          - MYSQL_ROOT_PASSWORD=letmein
+          - MYSQL_DATABASE=posts
+          - MYSQL_USER=worker
+          - MYSQL_PASSWORD=replicant
     lb: 
       image: nginx:latest
       networks:
@@ -10,34 +23,30 @@ services:
         - ./ws/default:/etc/nginx/sites-enabled
       ports:
         - 192.168.33.30:8000:80
+      depends_on:
+        - db
     ws1:
       build: .
       networks:
         - backend
         - db
+      depends_on:
+        - db        
     ws2:
       build: .
       networks:
         - backend        
+        - db
+      depends_on:
         - db
     ws3:
       build: .
       networks:
         - backend
         - db
-    db:
-      image: mysql:5.7
-      networks:
+      depends_on:
         - db
-        - backend
-      volumes: 
-        - database-volume:/var/lib/mysql
-        - ./db:/docker-entrypoint-initdb.d
-      environment:
-        - MYSQL_ROOT_PASSWORD=letmein
-        - MYSQL_DATABASE=posts
-        - MYSQL_USER=worker
-        - MYSQL_PASSWORD=replicant
+
       
 volumes:
     database-volume: {}
