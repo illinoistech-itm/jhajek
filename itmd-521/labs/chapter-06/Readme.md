@@ -52,7 +52,7 @@ df2.withColumn('WeatherStation', df2['value'].substr(5, 6)) \
 ```
 
 - Parse the initially assigned text file
-- Save this as a .csv uncompressed to the location: `.save("hdfs://namenode/user/controller/your-hawk-id-here/20/")`  
+- Save this as a .csv uncompressed to the location: `.save("hdfs://namenode/user/controller/your-hawk-id-here/00/save-file-action")`  (00 is whichever dataset you were assigned to)
 - Open the newly saved CSV file for reading again and print the schema and .count() values
   - Place screenshot
 - Save the dataframe as a csv file compressed with snappy
