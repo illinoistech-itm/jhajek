@@ -1,0 +1,6 @@
+FROM node:lts-buster
+WORKDIR /project-two
+COPY ./ws/app.js /project-two/app.js
+EXPOSE 3000
+RUN npm install mysql2
+CMD ["node", "app.js"]

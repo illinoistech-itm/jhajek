@@ -1,0 +1,44 @@
+version: "3.9"
+services:
+    lb: 
+      image: nginx:latest
+      networks:
+        - frontend
+        - backend
+      ports:
+        - 192.168.33.30:8000:80
+    ws1:
+      build: .
+      networks:
+        - backend
+        - db
+    ws2:
+      build: .
+      networks:
+        - backend        
+        - db
+    ws3:
+      build: .
+      networks:
+        - backend
+        - db
+    db:
+      image: mysql:5.7
+      networks:
+        - db
+        - backend
+      volumes: 
+        - database-volume:/var/lib/mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=letmein
+        - MYSQL_DATABASE=posts
+        - MYSQL_USER=worker
+        - MYSQL_PASSWORD=replicant
+
+volumes:
+    database-volume: {}
+        
+networks:
+    frontend:
+    backend:
+    db:
