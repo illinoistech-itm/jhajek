@@ -1,4 +1,4 @@
-# ITMD-521 IT-D 872 Chapter-07 Lab
+# ITMD-521 IT-D 872 Chapter-06 Lab
 
 You will copy this template file to your own private GitHub repo provided.  Under your itmd-521 folder you will create a sub-folder named: **labs**.  Under that folder create a sub-folder named: **chapter-06**.  In that folder place this Readme.md
 
