@@ -95,6 +95,6 @@ nohup spark-submit --master spark://namenode:7077 --driver-cores 1 --total-execu
 
 ### Deliverable
 
-In your private repo push the Java or Python code you have written, any jars, the Readme.md and install.md document to the directory under your private GitHub repo: itmd-521 > labs > chapter-07.  
+In your private repo push the Java or Python code you have written, any jars, the Readme.md and install.md document to the directory under your private GitHub repo: itmd-521 > labs > chapter-06.  
 
 Submit the URL to this page to Blackboard as your deliverable.
