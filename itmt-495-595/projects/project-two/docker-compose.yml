@@ -29,12 +29,13 @@ services:
         - backend
       volumes: 
         - database-volume:/var/lib/mysql
+        - ./db:/docker-entrypoint-initdb.d
       environment:
         - MYSQL_ROOT_PASSWORD=letmein
         - MYSQL_DATABASE=posts
         - MYSQL_USER=worker
         - MYSQL_PASSWORD=replicant
-
+      
 volumes:
     database-volume: {}
         
