@@ -11,7 +11,7 @@ var query_results = "";
  const connection = mysql.createConnection({
      host: db,
      user: 'worker',
-     password: 'letmein',
+     password: 'replicant',
      database: 'posts'
      });
 
