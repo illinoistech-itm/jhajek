@@ -22,7 +22,7 @@ services:
         - backend
       volumes: 
         - ./ws/nginx.conf:/etc/nginx/nginx.conf:ro
-        - ./ws/default:/etc/nginx/sites-enabled/default
+        - ./ws/default:/etc/nginx/sites-enabled/default:ro
       ports:
         - 192.168.33.30:8000:80
       depends_on:
