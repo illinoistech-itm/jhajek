@@ -16,6 +16,7 @@ services:
           - MYSQL_PASSWORD=replicant
     lb: 
       image: nginx:latest
+      container_name: lb
       networks:
         - frontend
         - backend
@@ -28,6 +29,7 @@ services:
         - db
     ws1:
       build: .
+      container_name: ws1
       networks:
         - backend
         - db
@@ -35,6 +37,7 @@ services:
         - db        
     ws2:
       build: .
+      container_name: ws2
       networks:
         - backend        
         - db
@@ -42,6 +45,7 @@ services:
         - db
     ws3:
       build: .
+      container_name: ws3
       networks:
         - backend
         - db
