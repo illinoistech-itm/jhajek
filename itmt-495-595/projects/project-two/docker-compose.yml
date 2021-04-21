@@ -33,6 +33,8 @@ services:
       networks:
         - backend
         - db
+      ports:
+        - 3000
       depends_on:
         - db        
     ws2:
@@ -41,11 +43,15 @@ services:
       networks:
         - backend        
         - db
+      ports:
+        - 3000
       depends_on:
         - db
     ws3:
       build: .
       container_name: ws3
+      ports:
+        - 3000
       networks:
         - backend
         - db
