@@ -26,11 +26,7 @@ server {
 		# intermediate configuration. tweak to your needs. 
         # https://www.ssls.com/knowledgebase/how-to-install-an-ssl-certificate-on-a-nginx-server/
         # don't forget to turn ssl on....
-		ssl on;
-		ssl_buffer_size 8k;
-		ssl_protocols TLSv1.3 TLSv1.2 TLSv1.1 TLSv1;
-		ssl_prefer_server_ciphers on;
-		ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
+
 
         root /var/www/html;
         index index.html;
