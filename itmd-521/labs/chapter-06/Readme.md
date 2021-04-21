@@ -48,11 +48,11 @@ df2.withColumn('WeatherStation', df2['value'].substr(5, 6)) \
 .withColumn('DPQualityCode', df2['value'].substr(99, 1).cast(IntegerType())) \
 .withColumn('AtmosphericPressure', df2['value'].substr(100, 5).cast('float')/ 10) \
 .withColumn('APQualityCode', df2['value'].substr(105, 1).cast(IntegerType())) \
-.drop('value').write.format("csv").mode("overwrite").option("header","true").save("hdfs://namenode/user/controller/your-hawk-id-here/20/")
+.drop('value').write.format("csv").mode("overwrite").option("header","true").save("hdfs://namenode/user/controller/output/your-hawk-id-here/20/")
 ```
 
 - Parse the initially assigned text file
-- Save this as a .csv uncompressed to the location: `.save("hdfs://namenode/user/controller/your-hawk-id-here/00/save-file-action")`  (00 is whichever dataset you were assigned to)
+- Save this as a .csv uncompressed to the location: `.save("hdfs://namenode/user/controller/output/your-hawk-id-here/00/save-file-action")`  (00 is whichever dataset you were assigned to)
 - Open the newly saved CSV file for reading again and print the schema and .count() values
   - Place screenshot
 - Save the dataframe as a csv file compressed with snappy
