@@ -21,7 +21,7 @@
 server {
         listen 443 default_server;
         listen [::]:443 default_server;
-        include snippets/self-signed.conf;
+        # include snippets/self-signed.conf;
         
 		# intermediate configuration. tweak to your needs. 
         # https://www.ssls.com/knowledgebase/how-to-install-an-ssl-certificate-on-a-nginx-server/
