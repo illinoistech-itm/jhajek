@@ -49,6 +49,7 @@ Assume that all deliverables from Sprint-03 have been delivered:
 ### UI/UX
 
 - Explain the steps you contributed to produce the Video deliverable listed at the end of this document
+  - Make sure all test accounts are real names and any images are real images (don't use the same one over and over)
 
 ### Project Management
 
