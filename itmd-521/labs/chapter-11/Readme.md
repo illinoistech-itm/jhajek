@@ -71,9 +71,8 @@ df2.withColumn('WeatherStation', df2['value'].substr(5, 6)) \
 
 ### Part II
 
-- Parse the **entire** initially assigned text file
-  - Load from original source txt (70-80 or 80-90)
-  - Create a dataframe that will:
+- Using the initial dataframe already created from the raw text source in part one:
+  - Create an additional dataframe that will:
     - Calculate and display: Showing AVG temperature per month per year and calculate the standard deviation of the 20 years of averages
     - Group by WeatherStation and sort by Longitude (Ascending)
     - Create any additional columns needed to satisfy these requirement and drop all uneeded columns
