@@ -57,7 +57,8 @@ df2.withColumn('WeatherStation', df2['value'].substr(5, 6)) \
   - Load from original source txt (70-80 or 80-90)
   - Reuse Schema created in last assignment
   - Create a dataframe that will:
-    - Calculate and display: The AVG air temperature per month per year and Min and Max air temperature per-month
+    - Calculate and display: The AVG air temperature per month per year
+    - Calculate and display: Min and Max air temperature per-month per-year
     - Group by WeatherStation and sort by Longitude (Ascending)
     - Create any additional columns needed to satisfy these requirement and drop all uneeded columns
     - You can use the date_format function to retrieve any part of the date
