@@ -25,7 +25,7 @@ You will write one Spark application, in Java or Python that will work with the 
 ```python
 # This is a partial example to show you the schema of the NCDC dataset
 # Though this is a partial Python example you can use Java as well -- your choice
-# A-K use 50/50.txt L-Z lastname use 60/60.txt
+# A-K use 70-80/70-80.txt L-Z lastname use 80-90/80-90.txt
 
 df2 = spark.read.text("hdfs://namenode/user/controller/ncdc/raw/20/20.txt")
 
