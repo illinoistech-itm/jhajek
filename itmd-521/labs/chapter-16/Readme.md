@@ -50,7 +50,7 @@ Reusing the logic (only) from part I of chapter 11 lab and you can reuse the sam
 
 - Use the `.repartition()` function to repartition your data frame
   - [https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.repartition.html?highlight=repartition](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.repartition.html?highlight=repartition "repartition API")
-  - Chose which Column to partition by, Weather_Station or Month - example `.repartition("month")`
+  - Chose which Column to partition by, Weather_Station or Observation_date - example `.repartition("month")`
   - Add code to count the number of partitions that are present after the repartition
   - Rerun you chapter 11 part I code after the repartition
   - Place screenshot (of just yours) here, noting the execution time
