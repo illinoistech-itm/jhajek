@@ -18,7 +18,7 @@ You will copy this template file to your own private GitHub repo provided.  Unde
 You will write one Spark application, in Java or Python that will work with the sample NCDC data provided
 
 - The application will include these steps, place a screenshot of the output under each item.  
-- Include a single source code file and instructions in an **install.md** file.
+- Include a discrete source code file for each of the parts listed below and instructions in an **install.md** file.
 - For the `SparkSession.builder.appName` use:
   - `HAWKID - lab chapter 16`  - not Anumber, for example: `ppatel108`  
 - You will reuse the Parquet dataset that you wrote out in the last step of lab 6 as your input data
@@ -38,42 +38,68 @@ Reusing the logic (only) from part I of chapter 11 lab:
   - Keep the variables the same: `--driver-cores 1 --total-executor-cores 4 --num-executors 4  --driver-memory 4g --executor-memory 4g`
   - .show(20) to the screen
   - No need to write or save the results out to a file, a we are interested in calculation times
+
+### Part II
+
+- Load the Parquet dataset that you wrote out in the last step of lab 6 as your input data
 - On your dataframe, execute a `.cache()` command after completing the previous steps
   - [https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.cache.html?highlight=cache](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.cache.html?highlight=cache "Spark Cache Command")
 - Repeat the above steps and place screenshot (of just yours) here, noting the execution time
   - Based on Chapter 16, explain the cache function and if it had a positive or negative impact on execution time, and why.
-  - Explain here...
+- Explain here...
 
-### Part II
+### Part III
 
-Reusing the logic (only) from part I of chapter 11 lab and you can reuse the same dataframe
-
+- Load the Parquet dataset that you wrote out in the last step of lab 6 as your input data
+- On your dataframe, execute a `.cache()` command after completing the previous steps
 - Use the `.repartition()` function to repartition your data frame
   - [https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.repartition.html?highlight=repartition](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.repartition.html?highlight=repartition "repartition API")
   - Chose which Column to partition by, Weather_Station or Observation_date - example `.repartition("month")`
   - Add code to count the number of partitions that are present after the repartition
+  - Execute the logic you used for Chapter 11 part I
   - Rerun you chapter 11 part I code after the repartition
   - Place screenshot (of just yours) here, noting the execution time
-  - Explain why you chose the column you did and the impact on performance relative to the last execution time from part I
+- Explain why you chose the column you did and the impact on performance relative to the last execution time from part I
+
+### Part IV
+
+- Load the Parquet dataset that you wrote out in the last step of lab 6 as your input data
+- On your dataframe, execute a `.cache()` command after completing the previous steps
 - Repeat the steps above, this time add an integer to force the number of partitions
   - Once for 8 partitions: `.repartition(8, "month")`
-  - Place screenshot (of just yours) here, noting the execution time
-  - Once for 32 partitions: `.repartition(32, "month")`
+  - Execute the logic you used for Chapter 11 part I
   - Place screenshot (of just yours) here, noting the execution time
 - Explain the impact of limiting partitions in the difference between the execution times and how changing the number of partitions effected these numbers
 
-### Part III
+### Part V
 
-Reusing the logic (only) from part I of chapter 11 lab and you can reuse the same dataframe
+- Load the Parquet dataset that you wrote out in the last step of lab 6 as your input data
+- On your dataframe, execute a `.cache()` command after completing the previous steps
+- Repeat the steps above, this time add an integer to force the number of partitions
+  - Once for 32 partitions: `.repartition(32, "month")`
+  - Execute the logic you used for Chapter 11 part I
+  - Place screenshot (of just yours) here, noting the execution time
+- Explain the impact of limiting partitions in the difference between the execution times and how changing the number of partitions effected these numbers
 
-- Rerun your code from Part I and II with the allotted resource allocations:
-  - `--driver-cores 1 --driver-memory 4g --num-executors 8 --executor-memory 4g`
+### Part VI
+
+- Load the Parquet dataset that you wrote out in the last step of lab 6 as your input data
+- On your dataframe, execute a `.cache()` command after completing the previous steps
+  - Execute the logic you used for Chapter 11 part I
+  - Use the below parameters:
+    - `--driver-cores 1 --driver-memory 4g --num-executors 8 --executor-memory 4g`
   - Take notice of differences in execution time
-  - Explain any differences when the number of executors is increased to 8
-- Rerun your code from Part I and II with the allotted resource allocations:
-  - `--driver-cores 1 --driver-memory 4g --num-executors 32 --executor-memory 4g`
+- Explain any differences when the number of executors is increased to 8
+
+### Part VII
+
+- Load the Parquet dataset that you wrote out in the last step of lab 6 as your input data
+- On your dataframe, execute a `.cache()` command after completing the previous steps
+  - Execute the logic you used for Chapter 11 part I
+  - Use the below parameters:
+    - `--driver-cores 1 --driver-memory 4g --num-executors 32 --executor-memory 4g`
   - Take notice of differences in execution time
-  - Explain any differences when the number of executors is increased to 8  
+- Explain any differences when the number of executors is increased to 8  
 
 ### Notes
 
