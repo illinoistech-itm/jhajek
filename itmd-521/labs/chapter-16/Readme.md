@@ -20,7 +20,7 @@ You will write one Spark application, in Java or Python that will work with the 
 - The application will include these steps, place a screenshot of the output under each item.  
 - Include a single source code file and instructions in an **install.md** file.
 - For the `SparkSession.builder.appName` use:
-  - `HAWKID - lab chapter 11`  - not Anumber, for example: `ppatel108`  
+  - `HAWKID - lab chapter 16`  - not Anumber, for example: `ppatel108`  
 - You will reuse the Parquet dataset that you wrote out in the last step of lab 6 as your input data
 - You will reuse the code logic from Part 1 of lab chapter 11
 - Use the this resource allocation:
