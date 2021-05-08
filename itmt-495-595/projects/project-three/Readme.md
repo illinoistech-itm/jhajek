@@ -1,4 +1,4 @@
-# Project Two - Docker Compose
+# Project Three - Kubernetes
 
 ## Objectives
 
