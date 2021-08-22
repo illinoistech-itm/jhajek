@@ -1,0 +1,1 @@
+This repo contains the markdown code for the syllabus for ITMO-356
