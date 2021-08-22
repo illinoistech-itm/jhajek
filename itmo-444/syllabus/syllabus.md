@@ -4,6 +4,8 @@
 
 Semester: Fall 2021 Professor Jeremy Hajek
 
+![*https://xkcd.com/908*](./syllabus/images/the_cloud.png "XCKD 908 image URL")
+
 ---------------- --------------------------------------------------------
   **Professor**: Jeremy Hajek
         Address: Department of Information Technology & Management,
@@ -87,8 +89,9 @@ Each successful student will be able to demonstrate building and running cloud-b
 
 **Required Textbook:**
 
-The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2, Thomas A. Limoncelli, Strata R. Chalup and Christina J. Hogan, 2014.
-ISB: 978-0321943187
+The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2, Thomas A. Limoncelli, Strata R. Chalup and Christina J. Hogan, 2014. ISBN: 978-0321943187
+
+You will be using an existing or creating an account at [Amazon Web Services](https://aws.amazon.com/ "AWS Web services URL").  This will require a Credit Card for registration purposes -- but there won't be any extra cost.
 
 **Readings:** Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should al-ready be familiar with. Completion of reading may be verified by quizzes. Specific readings are assigned by topic above.
 
@@ -102,7 +105,9 @@ ISB: 978-0321943187
 
 **Assignments:**
 
-Project/Examination: There will be 7 labs, 2 Mini Projects, 1 Final project, 1 Mid-term, 1 Final Exam
+Project/Examination: There will be 6 chapter review questions, 6 graded labs, 2 Mini Projects, 1 Final project, 1 Mid-term, 1 Final Exam
+
+All Work will be submitted to GitHub to a private repository that you will be given access to
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 
@@ -118,12 +123,13 @@ The final grade for the class will be calculated as follows: (example)
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-Review Questions (12):    18%        120
-Lab Questions (12):       18%        120
-Podcast Questions (12):   18%        120
-          Midterm Exam:   15%        100
-            Final Exam:   15%        100
-         Final Project:   15%        100
+  Review Questions (6):   15%        120
+               Lab (6):   15%        120
+          Midterm Exam:   13%        100
+            Final Exam:   13%        100
+                   MP1:   13%        100
+                   MP2:   13%        100
+         Final Project:   13%        100
             Attendance:    5%         30
 ----------------------- ------- ----------------
 
