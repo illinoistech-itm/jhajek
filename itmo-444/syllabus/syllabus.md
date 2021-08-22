@@ -18,73 +18,77 @@ Semester: Fall 2021 Professor Jeremy Hajek
 
 **Course Catalog Description:** Computing applications hosted on dynamically-scaled virtual resources available as services are considered. Collaborative and non-collaborative "cloud-resident" applications are analyzed with respect to cost, device/location independence, scalability, reliability, security, and sustainability. Commercial and local cloud architectures are examined. A group-based integration of course topics will result in a project employing various cloud computing technologies. [ITMO 444 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 444 Bulletin Description")
 
-**Prerequisites:** ITMD 321  Credit: Lab 3-0-3
+**Prerequisites:** ITMD 321, Credit: Lab 3-0-3
 
-**Lecture Day, Time & Place:** Monday and Wednesday in [John T. Rettaliata Engineering Center](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), room 032 on IIT’s Mies Campus in Chicago. 
+**Lecture Day, Time & Place:** Monday and Wednesday 3:35 pm - 4:50 pm in [John T. Rettaliata Engineering Center](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), room 032 on IIT’s Mies Campus in Chicago.
 
 **Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 08/23 | Introduction  | Understanding FOSS Ch 2
-2 | 08/25 | Introduction  | Understanding FOSS Ch 2
-3 | 08/30 | Chapter 2  | Understanding FOSS Ch 3
-4 | 09/01 | Chapter 2  | Understanding FOSS Ch 3
-5 | 09/06 | Chapter 3  | Understanding FOSS Ch 4
-6 | 09/08 | Chapter 3  | Understanding FOSS Ch 4
-7 | 09/13 | Chapter 4  | Understanding FOSS Ch 5
-8 | 09/15 | Chapter 4  | Understanding FOSS Ch 5
-9 | 09/20 | Chapter 5  | Understanding FOSS Ch 6
-10| 09/22 | Chapter 5 | Understanding FOSS Ch 6
-11| 09/27 | Chapter 6 | Understanding FOSS Ch 7
-12| 09/29 | Chapter 6 | Understanding FOSS Ch 7
-13| 10/04 | Chapter 7 | Understanding FOSS Ch 8
-14| 10/06 | Chapter 7 | Understanding FOSS Ch 8
+1 | 08/23 | Introduction  | Practice of Cloud System Admin 1
+2 | 08/25 | Tooling Lab 1  | Tooling Setup
+3 | 08/30 | Chapter 1  | Practice of Cloud System Admin 2
+4 | 09/01 | Lab 2  | Practice of Cloud System Admin 2
+5 | 09/06 | Chapter 2  | Practice of Cloud System Admin 3
+6 | 09/08 | Lab 3  | Practice of Cloud System Admin 3
+7 | 09/13 | Chapter 3  | Practice of Cloud System Admin 4
+8 | 09/15 | Lab 4  | Practice of Cloud System Admin 4
+9 | 09/20 | Chapter 4  | Practice of Cloud System Admin 5
+10| 09/22 | Lab 5 | Practice of Cloud System Admin 5
+11| 09/27 | Chapter 5 | Practice of Cloud System Admin 6
+12| 09/29 | Lab 6 | Practice of Cloud System Admin 6
+13| 10/04 | Chapter 6 | NA
+14| 10/06 | Lab 7 | NA
 15| 10/11 | NA | No Class - Fall Break
 16| 10/13 | NA | Midterm Exam
-17| 10/18 | Chapter 8 | Understanding FOSS Ch 9
-18| 10/20 | Chapter 8 | Understanding FOSS Ch 9
-19| 10/25 | Chapter 9 | Understanding FOSS Ch 10
-20| 10/27 | Chapter 9 | Understanding FOSS Ch 10
-21| 11/01 | Chapter 10 | Understanding FOSS Ch 11
-22| 11/03 | Chapter 10 | Understanding FOSS Ch 11
-23| 11/08 | Chapter 11 | Understanding FOSS Ch 12
-24| 11/10 | Chapter 11 | Understanding FOSS Ch 12
-25| 11/15 | Chapter 12 | Understanding FOSS Ch 13
-26| 11/17 | Chapter 12 | Understanding FOSS Ch 13
-27| 11/22 | Chapter 13 | NA - Final Project Assigned
+17| 10/18 | Mini Project 1 | MP1 Assigned
+18| 10/20 | Mini Project 1 | -
+19| 10/25 | Mini Project 1 | -
+20| 10/27 | Mini Project 1 | MP1 Due
+21| 11/01 | Mini Project 2 | MP2 Assigned
+22| 11/03 | Mini Project 2 | -
+23| 11/08 | Mini Project 2 | -
+24| 11/10 | Mini Project 2 | -
+25| 11/15 | Mini Project 2 | - Final Project Assigned
+26| 11/17 | Mini Project 2 | MP 2 Due
+27| 11/22 | Final Project | -
 28| 11/24 | NA       | Thanksgiving Break - No Class
-29| 11/29 | Final Project | NA
-30| 12/01 | Final Project | NA
+29| 11/29 | Final Project | -
+30| 12/01 | Final Project | Final Project Due
 31| 6-11  | Final Exam week
 
 **Course Outcomes:**
 
-* Describe the origins of and explain the philosophy of Open Source Software
-* Install, configure and administer an industry-standard distribution of the Linux operating system.
-* Troubleshoot and resolve Linux installation problems and common system problems
+Each successful student will be able to demonstrate building and running cloud-based services on a large scale. They will gain the knowledge of deploying and managing elastic and cloud-based applications on industry standard platforms as well as opensource platforms. Students will be prepared with knowledge of Cloud Based Operations and Application Development.
 
 **Course Student Outcomes:** Students completing this course will be able to:
 
-* Use and administer Linux as both a server and desktop operating system
-* Describe the GPL, GNU, and history of the Linux operating system
-* Install different Linux distributions with custom partitioning
-* Navigate the graphical interface of the Linux operating system
-* Navigate the filesystem using the command line
-* Interact with the Linux shell
-* Recall and use key Linux utilities
-* Install software for use with the Linux operating system
-* Use networking services and describe how to troubleshoot issues
-* Use SSH for remote admiration and create customer host firewall rules
-* Create shell scripts for use with automation
-* Design, implement, and evaluate a computing-based solution to meet a given set of computing requirements in the context of the program’s discipline (ABET Computing Criteria 3.2)
-* Identify and analyze user needs and take them into account in the selection, creation, evaluation and administration of computer-based systems discipline (ABET Computing Criteria 3.6)
+* Explain, document, and implement the fundamental aspects of IaaS, PaaS, SaaS
+* Use and administer industry standard cloud resources
+* Correctly identify cloud native operations and development methodologies
+* Build and deploy elastic scaling applications on a cloud platform
+* Design applications using a cloud native architecture
+* Describe and employ web technologies for software deployment
+
+**Topics to Be Covered**:
+
+* How to Think Cloud
+* Designing in a Distributed World
+* Designing for Operations/ Service Platforms
+* AWS Introduction
+* History of Cloud Computing
+* Application Architectures
+* Design Patterns for Scaling
+* Design Patterns for Resiliency
+* Operations in a Distributed World
+* Cloud Concepts w/AWS
+* Design Documents & Monitoring
 
 **Required Textbook:**
 
-* Self-published: Author Jeremy Hajek:
-  * Title:  Understanding Free and Opensource Operating Systems, The Technology and Philosophy Of
-* Free Download available: [https://github.com/jhajek/Linux-text-book-part-1/releases](https://github.com/jhajek/Linux-text-book-part-1/releases "Download of Understanding Free and Opensource Operating Systems, The Technology and Philosophy Of")
+The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2, Thomas A. Limoncelli, Strata R. Chalup and Christina J. Hogan, 2014.
+ISB: 978-0321943187
 
 **Readings:** Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should al-ready be familiar with. Completion of reading may be verified by quizzes. Specific readings are assigned by topic above.
 
@@ -98,7 +102,7 @@ Session # | Date | Topic | Reading |
 
 **Assignments:**
 
-Project/Examination: Detailed in Chapter 14.  It will be a comprehensive project testing all of the skills and tools we have gone over this semester in order to demonstrate mastery of these concepts.  The work can be done with a partner or done individually.
+Project/Examination: There will be 7 labs, 2 Mini Projects, 1 Final project, 1 Mid-term, 1 Final Exam
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 

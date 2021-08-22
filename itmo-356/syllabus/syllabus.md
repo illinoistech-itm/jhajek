@@ -20,7 +20,7 @@ Semester: Fall 2021 Professor Jeremy Hajek
 
 **Prerequisites:** None  Credit: Lab 2-2-3
 
-**Lecture Day, Time & Place:** Monday and Wednesday in room IIT Tower 6D6-1 (IIT Tower on the corner of 35th street) on IIT’s Mies Campus in Chicago.
+**Lecture Day, Time & Place:** Monday 9:40 to 11:00am and Wednesday 9:40 to 11:40am in room [IIT Tower](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL") 6D6-1 (IIT Tower on the corner of 35th street) on IIT’s Mies Campus in Chicago.
 
 **Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
 
