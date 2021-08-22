@@ -110,7 +110,7 @@ C | Satisfactory work meeting minimum expectations | 70-79.99%
 D | Substandard work not meeting expectations | 60-69.99%
 E | Unsatisfactory work |0-59.99%
 
-The final grade for the class will be calculated as follows: (example)
+The final grade for the class will be calculated as follows:
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------

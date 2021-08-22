@@ -1,4 +1,4 @@
-# ITMO 444 Cloud Computing Technologies
+# ITMO 553 Open Source System Administration
 
 ![](./syllabus/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
@@ -18,9 +18,9 @@ Semester: Fall 2021 Professor Jeremy Hajek
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
 
-**Course Catalog Description:** Computing applications hosted on dynamically-scaled virtual resources available as services are considered. Collaborative and non-collaborative "cloud-resident" applications are analyzed with respect to cost, device/location independence, scalability, reliability, security, and sustainability. Commercial and local cloud architectures are examined. A group-based integration of course topics will result in a project employing various cloud computing technologies. [ITMO 444 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 444 Bulletin Description")
+**Course Catalog Description:** Students learn to set up, configure, and administer an industry-standard open source server operating system including integration with client systems using a variety of operating systems in a mixed environment. Topics include hardware requirements; software compatibility; administrative and technical practices required for system security; process management; performance monitoring and tuning; storage management; back-up and restoration of data; and disaster recovery and prevention. Also addressed are configuration and administration of common network and server services such as DNS, DHCP, firewall, proxy, remote access, file and printer sharing, email, web, and web services as well as support issues for open source software. [ITMO 553 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 553 Bulletin Description")
 
-**Prerequisites:** ITMD 321, Credit: Lab 3-0-3
+**Prerequisites:** ITMO 556 & ITMO 540, Credit: Lab 3-0-3
 
 **Lecture Day, Time & Place:** Monday and Wednesday 3:35 pm - 4:50 pm in [John T. Rettaliata Engineering Center](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), room 032 on IIT’s Mies Campus in Chicago.
 
