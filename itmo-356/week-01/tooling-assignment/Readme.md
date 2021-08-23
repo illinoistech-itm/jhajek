@@ -34,6 +34,20 @@ git config --global user.name "<Your Name>"
 git config --global user.email "<youremail@example.com>"
 ```
 
+## Install IDE editor
+
+After installing an IDE editor of your choice, pick one of the listed or you can use another one, but it needs to have native Git support built into the editor.  Take a screenshot of output of the help > about button in the application.  You can install all or any of these via the package managers Chocolatey or Winget.
+
+* [VSCode from Microsoft](https://code.visualstudio.com/ "VSCode install")
+  * Cross platform and has direct shell integration
+* [atom.io](https://atom.io/ "Atom.io install")
+  * Built by GitHub for Git integration
+* [Sublime Text](http://www.sublimetext.com/ "Submlime Text installer site")
+  * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose.  Available for all platforms.
+* [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")
+  * Cross Platform development tool from Adobe
+* Or any other IDE that has native Git integration
+
 ## Packer Managers for MacOS
 
 Brew is the MacOS 3rd party package manager located at: [https://brew.sh/](https://brew.sh/ "brew installer page"). Place a screenshot of the output of ```brew --version```.
@@ -61,3 +75,17 @@ You will need to configure Git if you already haven't done so.  From a shell run
 git config --global user.name "<Your Name>"
 git config --global user.email "<youremail@example.com>"
 ```
+
+## Install IDE editor MacOS
+
+After installing an IDE editor of your choice, pick one of the listed or you can use another one, but it needs to have native Git support built into the editor.  Take a screenshot of output of the help > about button in the application.  You can install all or any of these via the package manager brew.
+
+* [VSCode from Microsoft](https://code.visualstudio.com/ "VSCode install")
+  * Cross platform and has direct shell integration
+* [atom.io](https://atom.io/ "Atom.io install")
+  * Built by GitHub for Git integration
+* [Sublime Text](http://www.sublimetext.com/ "Submlime Text installer site")
+  * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose.  Available for all platforms.
+* [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")
+  * Cross Platform development tool from Adobe
+* Or any other IDE that has native Git integration
