@@ -1,8 +1,8 @@
-# ITMO 444 Tooling Assignments
+# ITMO 544 Tooling Assignments
 
 In this exercise we will install tools needed to be able to accomplish our jobs during the semester.  The first thing we need to do is install a package manager for MacOS and or Windows 10. Then we will install modern opensource shell software and then the Git-SCM version control tool we will need for the semester to submit our work.  
 
-**Deliverable:** Complete the necessary install steps for either MacOS or Windows10 and supply the requested screenshots below each header.  To submit this Readme.md file, in your private repo provided to you, under the itmo-444 folder, create a folder named: **week-01**, then a folder under that named: **tooling-assignment**.  Push your Readme.md (this file) to that location.
+**Deliverable:** Complete the necessary install steps for either MacOS or Windows10 and supply the requested screenshots below each header.  To submit this Readme.md file, in your private repo provided to you, under the itmo-544 folder, create a folder named: **week-01**, then a folder under that named: **tooling-assignment**.  Push your Readme.md (this file) to that location.
 
 ## Package Managers for Windows
 
@@ -89,21 +89,3 @@ After installing an IDE editor of your choice, pick one of the listed or you can
 * [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")
   * Cross Platform development tool from Adobe
 * Or any other IDE that has native Git integration
-
----
-
-## Install VirtualBox
-
-If you do not already have VirtualBox 6.x installed, use the package manager to install VirtualBox.  Take a screenshot of the VirtualBox > Help > About VirtualBox output. You can use Chocolatey and Homebrew to install VirtualBox on MacOS and Windows.
-
-## Install Vagrant
-
-Using a package manager, install the latest version of [Vagrant](https://vagrantup.com "Vagrant download site").  If you have a version 2.2.x you will be ok.  Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  Place a screenshot of the output of the command: ```vagrant --version```
-
-Complete the Vagrant tutorial located at [https://learn.hashicorp.com/collections/vagrant/getting-started](https://learn.hashicorp.com/collections/vagrant/getting-started "Vagrant tutorial"), you can skip the INSTALL section as we are installing using a package manager and skip the SHARE ENVIRONMENT section.  
-
-After completing this tutorial take a screenshot of the output of the command ```vagrant box list```
-
-## Install Packer.io
-
-Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site").  If you have a version > 1.6.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  Place a screenshot of the output of the command: ```packer --version```
