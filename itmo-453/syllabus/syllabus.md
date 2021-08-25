@@ -1,10 +1,10 @@
-# ITMO 444 Cloud Computing Technologies
+# ITMO 453 Opensource Server Administration
 
 ![](./syllabus/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
 Semester: Fall 2021 Professor Jeremy Hajek
 
-![*https://xkcd.com/908*](./syllabus/images/the_cloud.png "XCKD 908 image URL")
+![*https://xkcd.com/350/*](./syllabus/images/network.png "XCKD 350 image URL")
 
 ---------------- --------------------------------------------------------
   **Professor**: Jeremy Hajek
@@ -18,9 +18,9 @@ Semester: Fall 2021 Professor Jeremy Hajek
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
 
-**Course Catalog Description:** Computing applications hosted on dynamically-scaled virtual resources available as services are considered. Collaborative and non-collaborative "cloud-resident" applications are analyzed with respect to cost, device/location independence, scalability, reliability, security, and sustainability. Commercial and local cloud architectures are examined. A group-based integration of course topics will result in a project employing various cloud computing technologies. [ITMO 444 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 444 Bulletin Description")
+**Course Catalog Description:** Students learn the administration topics and concepts of IT orchestration, automation, monitoring, and metric collection. Topics include configuring industry standard automation tooling and using scripting to achieve immutable infrastructure. Students will learn how to monitor and collect and present metrics in regards to the infrastructure they deploy. [ITMO 453 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 453 Bulletin Description")
 
-**Prerequisites:** ITMD 321, Credit: Lab 3-0-3
+**Prerequisites:** ITMP 340 and ITMO 356, Credit: Lab 3-0-3
 
 **Lecture Day, Time & Place:** Monday and Wednesday 3:35 pm - 4:50 pm in [John T. Rettaliata Engineering Center](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), room 032 on IIT’s Mies Campus in Chicago.
 
@@ -28,64 +28,62 @@ Semester: Fall 2021 Professor Jeremy Hajek
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 08/23 | Introduction  | Practice of Cloud System Admin 1
-2 | 08/25 | Tooling Lab 1  | Tooling Setup
-3 | 08/30 | Chapter 1  | Practice of Cloud System Admin 2
-4 | 09/01 | Lab 2  | Practice of Cloud System Admin 2
-5 | 09/06 | Chapter 2  | Practice of Cloud System Admin 3
-6 | 09/08 | Lab 3  | Practice of Cloud System Admin 3
-7 | 09/13 | Chapter 3  | Practice of Cloud System Admin 4
-8 | 09/15 | Lab 4  | Practice of Cloud System Admin 4
-9 | 09/20 | Chapter 4  | Practice of Cloud System Admin 5
-10| 09/22 | Lab 5 | Practice of Cloud System Admin 5
-11| 09/27 | Chapter 5 | Practice of Cloud System Admin 6
-12| 09/29 | Lab 6 | Practice of Cloud System Admin 6
-13| 10/04 | Chapter 6 | NA
-14| 10/06 | Lab 7 | NA
-15| 10/11 | NA | No Class - Fall Break
-16| 10/13 | NA | Midterm Exam
-17| 10/18 | Mini Project 1 | MP1 Assigned
-18| 10/20 | Mini Project 1 | -
+1 | 08/24 | Introduction  | Practice of Cloud System Admin 1
+2 | 08/26 | Tooling Lab 1  | Tooling Setup
+3 | 08/31 | Chapter 1  | Practice of Cloud System Admin 2
+4 | 09/02 | Lab 2  | Practice of Cloud System Admin 2
+5 | 09/07 | Chapter 2  | Practice of Cloud System Admin 3
+6 | 09/09 | Lab 3  | Practice of Cloud System Admin 3
+7 | 09/14 | Chapter 3  | Practice of Cloud System Admin 4
+8 | 09/16 | Lab 4  | Practice of Cloud System Admin 4
+9 | 09/21 | Chapter 4  | Practice of Cloud System Admin 5
+10| 09/23 | Lab 5 | Practice of Cloud System Admin 5
+11| 09/28 | Chapter 5 | Practice of Cloud System Admin 6
+12| 09/30 | Lab 6 | Practice of Cloud System Admin 6
+13| 10/05 | Chapter 6 | NA
+14| 10/07 | Lab 7 | NA
+15| 10/12 | NA | No Class - Fall Break
+16| 10/14 | NA | Midterm Exam
+17| 10/19 | Mini Project 1 | MP1 Assigned
+18| 10/21 | Mini Project 1 | -
 19| 10/25 | Mini Project 1 | -
-20| 10/27 | Mini Project 1 | MP1 Due
-21| 11/01 | Mini Project 2 | MP2 Assigned
-22| 11/03 | Mini Project 2 | -
-23| 11/08 | Mini Project 2 | -
-24| 11/10 | Mini Project 2 | -
-25| 11/15 | Mini Project 2 | - Final Project Assigned
-26| 11/17 | Mini Project 2 | MP 2 Due
-27| 11/22 | Final Project | -
-28| 11/24 | NA       | Thanksgiving Break - No Class
-29| 11/29 | Final Project | -
-30| 12/01 | Final Project | Final Project Due
+20| 10/28 | Mini Project 1 | MP1 Due
+21| 11/02 | Mini Project 2 | MP2 Assigned
+22| 11/04 | Mini Project 2 | -
+23| 11/09 | Mini Project 2 | -
+24| 11/11 | Mini Project 2 | -
+25| 11/16 | Mini Project 2 | - Final Project Assigned
+26| 11/18 | Mini Project 2 | MP 2 Due
+27| 11/23 | Final Project | -
+28| 11/25 | NA       | Thanksgiving Break - No Class
+29| 11/30 | Final Project | -
+30| 12/02 | Final Project | Final Project Due
 31| 6-11  | Final Exam week
 
 **Course Outcomes:**
 
-Each successful student will be able to demonstrate building and running cloud-based services on a large scale. They will gain the knowledge of deploying and managing elastic and cloud-based applications on industry standard platforms as well as opensource platforms. Students will be prepared with knowledge of Cloud Based Operations and Application Development.
+This course will enable students to be ready to design, build, and implement logging and metrics in monitored applications. Implementing these foundations will allow any system administrator to integrate logging and metric collection to correlate with business objectives.
 
 **Course Student Outcomes:** Students completing this course will be able to:
 
-* Explain, document, and implement the fundamental aspects of IaaS, PaaS, SaaS
-* Use and administer industry standard cloud resources
-* Correctly identify cloud native operations and development methodologies
-* Build and deploy elastic scaling applications on a cloud platform
-* Design applications using a cloud native architecture
-* Describe and employ web technologies for software deployment
+* Explain the difference between push and pull metrics
+* Explain the difference between logging and metrics
+* Describe event streams are and how they are used in monitoring and metric collection
+* Explain the use of logging and metrics in  regards to Operating System containers
+* Design, build, and implement logging and  metrics in monitored applications
 
 **Topics to Be Covered**:
 
-* How to Think Cloud
-* Designing in a Distributed World
-* Designing for Operations/ Service Platforms
-* AWS Introduction
-* History of Cloud Computing
-* Application Architectures
-* Design Patterns for Scaling
-* Design Patterns for Resiliency
-* Operations in a Distributed World
-* Cloud Concepts w/AWS
-* Design Documents & Monitoring
+* a. Intro - Monitoring & Measurement Framework
+* b. Managing events and Metrics & Graphing
+* c. Event Routing and Collection
+* d. Containers and Logs
+* e. Building an app & Notifications
+* f. Getting Started & Monitoring Nodes
+* g. Service Discovery
+* h. Alerting & Scaling and Reliability
+* i. Instrumenting Applications & Logging
+* j. Building Monitored Applications & Notification
 
 **Required Textbook:**
 
