@@ -105,9 +105,7 @@ You will be using an existing or creating an account at [Amazon Web Services](ht
 
 **Assignments:**
 
-Project/Examination: There will be 6 chapter review questions, 6 graded labs, 2 Mini Projects, 1 Final project, 1 Mid-term, 1 Final Exam
-
-All Work will be submitted to GitHub to a private repository that you will be given access to
+Project/Examination: There will be 6 chapter review questions, 6 graded labs, 2 Mini Projects, 1 Final project, and 1 Mid-term.  All Work will be pushed to GitHub a private repository that you will be given access to by the professor
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 
@@ -123,14 +121,13 @@ The final grade for the class will be calculated as follows:
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-  Review Questions (6):   15%        120
-               Lab (6):   15%        120
-          Midterm Exam:   13%        100
-            Final Exam:   13%        100
-                   MP1:   13%        100
-                   MP2:   13%        100
-         Final Project:   13%        100
-            Attendance:    5%         30
+  Review Questions (6):   18%        120
+               Lab (6):   18%        120
+          Midterm Exam:   15%        100
+                   MP1:   15%        100
+                   MP2:   15%        100
+         Final Project:   15%        100
+            Attendance:    4%         30
 ----------------------- ------- ----------------
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.
