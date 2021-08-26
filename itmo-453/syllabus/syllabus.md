@@ -95,7 +95,7 @@ This course will enable students to be ready to design, build, and implement log
 
 **Blackboard:** The course will make intensive use of Blackboard [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL") for communications, assignment submissions, group project coordination, providing online resources and administering examinations. All remote students will view the course lectures online via Blackboard, and online readings and other course material will be found on Blackboard.
 
-**Assignments:**
+**Assignments:**  There will be 2 Mini-Projects, 1 mid-term and 1 final project.
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 
@@ -111,14 +111,11 @@ The final grade for the class will be calculated as follows: (example)
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-  Review Questions (6):   15%        120
-               Lab (6):   15%        120
-          Midterm Exam:   13%        100
-            Final Exam:   13%        100
-                   MP1:   13%        100
-                   MP2:   13%        100
-         Final Project:   13%        100
-            Attendance:    5%         30
+          Midterm Exam:   23%        100
+                   MP1:   23%        100
+                   MP2:   23%        100
+         Final Project:   23%        100
+            Attendance:    8%         30
 ----------------------- ------- ----------------
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.
