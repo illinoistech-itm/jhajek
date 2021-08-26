@@ -22,43 +22,43 @@ Semester: Fall 2021 Professor Jeremy Hajek
 
 **Prerequisites:** ITMP 340 and ITMO 356, Credit: Lab 3-0-3
 
-**Lecture Day, Time & Place:** Monday and Wednesday 3:35 pm - 4:50 pm in [John T. Rettaliata Engineering Center](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), room 032 on IIT’s Mies Campus in Chicago.
+**Lecture Day, Time & Place:** Tuesday 9:40am to 10:55am and 9:40am to 11:55am in [Tech South 2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
 
 **Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 08/24 | Introduction  | Practice of Cloud System Admin 1
-2 | 08/26 | Tooling Lab 1  | Tooling Setup
-3 | 08/31 | Chapter 1  | Practice of Cloud System Admin 2
-4 | 09/02 | Lab 2  | Practice of Cloud System Admin 2
-5 | 09/07 | Chapter 2  | Practice of Cloud System Admin 3
-6 | 09/09 | Lab 3  | Practice of Cloud System Admin 3
-7 | 09/14 | Chapter 3  | Practice of Cloud System Admin 4
-8 | 09/16 | Lab 4  | Practice of Cloud System Admin 4
-9 | 09/21 | Chapter 4  | Practice of Cloud System Admin 5
-10| 09/23 | Lab 5 | Practice of Cloud System Admin 5
-11| 09/28 | Chapter 5 | Practice of Cloud System Admin 6
-12| 09/30 | Lab 6 | Practice of Cloud System Admin 6
-13| 10/05 | Chapter 6 | NA
-14| 10/07 | Lab 7 | NA
-15| 10/12 | NA | No Class - Fall Break
+1 | 08/24 | Introduction  | Tooling Setup
+2 | 08/26 | Tooling  | To Be Assigned
+3 | 08/31 | CLI review  | To Be Assigned
+4 | 09/02 | CLI review  | To Be Assigned
+5 | 09/07 | Monitoring and Measurement Frameworks  | To Be Assigned
+6 | 09/09 | Monitoring and Measurement Frameworks  | To Be Assigned
+7 | 09/14 | Managing Events and Metrics  | To Be Assigned
+8 | 09/16 | Managing Events and Metrics  | To Be Assigned
+9 | 09/21 | Introducing Graphite and Grafana  | To Be Assigned
+10| 09/23 | Introducing Graphite and Grafana | To Be Assigned
+11| 09/28 | Host Monitoring | MP1 Assigned
+12| 09/30 | Host Monitoring | -
+13| 10/05 | Collectd events | -
+14| 10/07 | Collectd events | -
+15| 10/12 | MP1 demonstration and due | MP1 due
 16| 10/14 | NA | Midterm Exam
-17| 10/19 | Mini Project 1 | MP1 Assigned
-18| 10/21 | Mini Project 1 | -
-19| 10/25 | Mini Project 1 | -
-20| 10/28 | Mini Project 1 | MP1 Due
-21| 11/02 | Mini Project 2 | MP2 Assigned
-22| 11/04 | Mini Project 2 | -
-23| 11/09 | Mini Project 2 | -
-24| 11/11 | Mini Project 2 | -
-25| 11/16 | Mini Project 2 | - Final Project Assigned
-26| 11/18 | Mini Project 2 | MP 2 Due
-27| 11/23 | Final Project | -
-28| 11/25 | NA       | Thanksgiving Break - No Class
-29| 11/30 | Final Project | -
-30| 12/02 | Final Project | Final Project Due
-31| 6-11  | Final Exam week
+17| 10/19 | Logs and Logging | MP2 Assigned
+18| 10/21 | Logs and Logging | -
+19| 10/25 | Building Monitored Applications | -
+20| 10/28 | Building Monitored Applications | -
+21| 11/02 | Notifications | -
+22| 11/04 | Notifications | MP2 Due - demonstrated in class
+23| 11/09 | Monitoring an Application | Final Project Assigned
+24| 11/11 | Monitoring an Application | -
+25| 11/16 | Class Work time | -
+26| 11/18 | Class Work time | -
+27| 11/23 | Class Work time | -
+28| 11/25 | Class Work time | -
+29| 11/30 | NA       | Thanksgiving Break - No Class
+30| 12/02 | Class Work time | -
+31| 6-11  | Final Exam week | Final Project Presented and Due
 
 **Course Outcomes:**
 

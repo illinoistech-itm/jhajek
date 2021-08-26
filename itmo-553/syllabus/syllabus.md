@@ -1,10 +1,10 @@
-# ITMO 553 Open Source System Administration
+# ITMO 553 Opensource Server Administration
 
 ![](./syllabus/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
 Semester: Fall 2021 Professor Jeremy Hajek
 
-![*https://xkcd.com/908*](./syllabus/images/the_cloud.png "XCKD 908 image URL")
+![*https://xkcd.com/350/*](./syllabus/images/network.png "XCKD 350 image URL")
 
 ---------------- --------------------------------------------------------
   **Professor**: Jeremy Hajek
@@ -18,82 +18,74 @@ Semester: Fall 2021 Professor Jeremy Hajek
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
 
-**Course Catalog Description:** Students learn to set up, configure, and administer an industry-standard open source server operating system including integration with client systems using a variety of operating systems in a mixed environment. Topics include hardware requirements; software compatibility; administrative and technical practices required for system security; process management; performance monitoring and tuning; storage management; back-up and restoration of data; and disaster recovery and prevention. Also addressed are configuration and administration of common network and server services such as DNS, DHCP, firewall, proxy, remote access, file and printer sharing, email, web, and web services as well as support issues for open source software. [ITMO 553 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 553 Bulletin Description")
+**Course Catalog Description:** Students learn the administration topics and concepts of IT orchestration, automation, monitoring, and metric collection. Topics include configuring industry standard automation tooling and using scripting to achieve immutable infrastructure. Students will learn how to monitor and collect and present metrics in regards to the infrastructure they deploy. [ITMO 553 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 553 Bulletin Description")
 
-**Prerequisites:** ITMO 556 & ITMO 540, Credit: Lab 3-0-3
+**Prerequisites:** ITMP 540 and ITMO 556, Credit: Lab 3-0-3
 
-**Lecture Day, Time & Place:** Monday and Wednesday 3:35 pm - 4:50 pm in [John T. Rettaliata Engineering Center](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), room 032 on IIT’s Mies Campus in Chicago.
+**Lecture Day, Time & Place:** Tuesday 9:40am to 10:55am and 9:40am to 11:55am in [Tech South 2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
 
 **Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 08/23 | Introduction  | Practice of Cloud System Admin 1
-2 | 08/25 | Tooling Lab 1  | Tooling Setup
-3 | 08/30 | Chapter 1  | Practice of Cloud System Admin 2
-4 | 09/01 | Lab 2  | Practice of Cloud System Admin 2
-5 | 09/06 | Chapter 2  | Practice of Cloud System Admin 3
-6 | 09/08 | Lab 3  | Practice of Cloud System Admin 3
-7 | 09/13 | Chapter 3  | Practice of Cloud System Admin 4
-8 | 09/15 | Lab 4  | Practice of Cloud System Admin 4
-9 | 09/20 | Chapter 4  | Practice of Cloud System Admin 5
-10| 09/22 | Lab 5 | Practice of Cloud System Admin 5
-11| 09/27 | Chapter 5 | Practice of Cloud System Admin 6
-12| 09/29 | Lab 6 | Practice of Cloud System Admin 6
-13| 10/04 | Chapter 6 | NA
-14| 10/06 | Lab 7 | NA
-15| 10/11 | NA | No Class - Fall Break
-16| 10/13 | NA | Midterm Exam
-17| 10/18 | Mini Project 1 | MP1 Assigned
-18| 10/20 | Mini Project 1 | -
-19| 10/25 | Mini Project 1 | -
-20| 10/27 | Mini Project 1 | MP1 Due
-21| 11/01 | Mini Project 2 | MP2 Assigned
-22| 11/03 | Mini Project 2 | -
-23| 11/08 | Mini Project 2 | -
-24| 11/10 | Mini Project 2 | -
-25| 11/15 | Mini Project 2 | - Final Project Assigned
-26| 11/17 | Mini Project 2 | MP 2 Due
-27| 11/22 | Final Project | -
-28| 11/24 | NA       | Thanksgiving Break - No Class
-29| 11/29 | Final Project | -
-30| 12/01 | Final Project | Final Project Due
-31| 6-11  | Final Exam week
+1 | 08/24 | Introduction  | Tooling Setup
+2 | 08/26 | Tooling  | To Be Assigned
+3 | 08/31 | CLI review  | To Be Assigned
+4 | 09/02 | CLI review  | To Be Assigned
+5 | 09/07 | Monitoring and Measurement Frameworks  | To Be Assigned
+6 | 09/09 | Monitoring and Measurement Frameworks  | To Be Assigned
+7 | 09/14 | Managing Events and Metrics  | To Be Assigned
+8 | 09/16 | Managing Events and Metrics  | To Be Assigned
+9 | 09/21 | Introducing Graphite and Grafana  | To Be Assigned
+10| 09/23 | Introducing Graphite and Grafana | To Be Assigned
+11| 09/28 | Host Monitoring | MP1 Assigned
+12| 09/30 | Host Monitoring | -
+13| 10/05 | Collectd events | -
+14| 10/07 | Collectd events | -
+15| 10/12 | MP1 demonstration and due | MP1 due
+16| 10/14 | NA | Midterm Exam
+17| 10/19 | Logs and Logging | MP2 Assigned
+18| 10/21 | Logs and Logging | -
+19| 10/25 | Building Monitored Applications | -
+20| 10/28 | Building Monitored Applications | -
+21| 11/02 | Notifications | -
+22| 11/04 | Notifications | MP2 Due - demonstrated in class
+23| 11/09 | Monitoring an Application | MP3 Assigned
+24| 11/11 | Monitoring an Application | -
+25| 11/16 | Class Work time | -
+26| 11/18 | Class Work time | MP3 Presentation due
+27| 11/23 | Class Work time | Final Project Assigned
+28| 11/25 | Class Work time | -
+29| 11/30 | NA       | Thanksgiving Break - No Class
+30| 12/02 | Class Work time | -
+31| 6-11  | Final Exam week | Final Project Presented and Due
 
 **Course Outcomes:**
 
-Each successful student will be able to demonstrate building and running cloud-based services on a large scale. They will gain the knowledge of deploying and managing elastic and cloud-based applications on industry standard platforms as well as opensource platforms. Students will be prepared with knowledge of Cloud Based Operations and Application Development.
+This course will enable students to be ready to design, build, and implement logging and metrics in monitored applications. Implementing these foundations will allow any system administrator to integrate logging and metric collection to correlate with business objectives.
 
 **Course Student Outcomes:** Students completing this course will be able to:
 
-* Explain, document, and implement the fundamental aspects of IaaS, PaaS, SaaS
-* Use and administer industry standard cloud resources
-* Correctly identify cloud native operations and development methodologies
-* Build and deploy elastic scaling applications on a cloud platform
-* Design applications using a cloud native architecture
-* Describe and employ web technologies for software deployment
+* Explain the difference between push and pull metrics
+* Explain the difference between logging and metrics
+* Describe event streams are and how they are used in monitoring and metric collection
+* Explain the use of logging and metrics in  regards to Operating System containers
+* Design, build, and implement logging and  metrics in monitored applications
 
 **Topics to Be Covered**:
 
-* How to Think Cloud
-* Designing in a Distributed World
-* Designing for Operations/ Service Platforms
-* AWS Introduction
-* History of Cloud Computing
-* Application Architectures
-* Design Patterns for Scaling
-* Design Patterns for Resiliency
-* Operations in a Distributed World
-* Cloud Concepts w/AWS
-* Design Documents & Monitoring
+* a. Intro - Monitoring & Measurement Framework
+* b. Managing events and Metrics & Graphing
+* c. Event Routing and Collection
+* d. Containers and Logs
+* e. Building an app & Notifications
+* f. Getting Started & Monitoring Nodes
+* g. Service Discovery
+* h. Alerting & Scaling and Reliability
+* i. Instrumenting Applications & Logging
+* j. Building Monitored Applications & Notification
 
 **Required Textbook:**
-
-The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2, Thomas A. Limoncelli, Strata R. Chalup and Christina J. Hogan, 2014. ISBN: 978-0321943187
-
-You will be using an existing or creating an account at [Amazon Web Services](https://aws.amazon.com/ "AWS Web services URL").  This will require a Credit Card for registration purposes -- but there won't be any extra cost.
-
-**Readings:** Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should al-ready be familiar with. Completion of reading may be verified by quizzes. Specific readings are assigned by topic above.
 
 **Course Notes:**  It is recommended to take notes from the oral discussion portion of the class.
 
@@ -103,11 +95,7 @@ You will be using an existing or creating an account at [Amazon Web Services](ht
 
 **Blackboard:** The course will make intensive use of Blackboard [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL") for communications, assignment submissions, group project coordination, providing online resources and administering examinations. All remote students will view the course lectures online via Blackboard, and online readings and other course material will be found on Blackboard.
 
-**Assignments:**
-
-Project/Examination: There will be 6 chapter review questions, 6 graded labs, 2 Mini Projects, 1 Final project, 1 Mid-term, 1 Final Exam
-
-All Work will be submitted to GitHub to a private repository that you will be given access to
+**Assignments:**  There will be 3 Mini-Projects, 1 mid-term and 1 final project.
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 
@@ -123,13 +111,11 @@ The final grade for the class will be calculated as follows: (example)
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-  Review Questions (6):   15%        120
-               Lab (6):   15%        120
-          Midterm Exam:   13%        100
-            Final Exam:   13%        100
-                   MP1:   13%        100
-                   MP2:   13%        100
-         Final Project:   13%        100
+          Midterm Exam:   19%        100
+                   MP1:   19%        100
+                   MP2:   19%        100
+                   MP3:   19%        100                   
+         Final Project:   19%        100
             Attendance:    5%         30
 ----------------------- ------- ----------------
 
@@ -145,4 +131,4 @@ The final grade for the class will be calculated as follows: (example)
 
 **Disabilities:** Reasonable accommodations will be made for students with documented disabilities.  In order to receive accommodations, students must obtain a letter of accommodation from the Center for Disability Resources and make an appointment to speak with me as soon as possible.  My office hours are listed on the first page of the syllabus. The Center for Disability Resources (CDR) is located in 3424 S. State St., room 1C3-2 (on the first floor), telephone 312 567.5744 or disabilities@iit.edu.
 
-**ARC Tutoring Center:** The university provides a free tutoring and study center called the [ARC](*https://www.iit.edu/arc "IIT Resource Center URL").  This is located newly in the basement of the Galvin Library and is open to all for walk in appointments as well as scheduled tutoring.
+**ARC Tutoring Center:** The university provides a free tutoring and study center called the [ARC](https://www.iit.edu/arc "IIT Resource Center URL").  This is located newly in the basement of the Galvin Library and is open to all for walk in appointments as well as scheduled tutoring.
