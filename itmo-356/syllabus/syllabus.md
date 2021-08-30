@@ -4,6 +4,8 @@
 
 Semester: Fall 2021 Professor Jeremy Hajek
 
+![*https://xkcd.com/456/*](./syllabus/images/cautionary.png "XCKD 456 image URL")
+
 ---------------- --------------------------------------------------------
   **Professor**: Jeremy Hajek
         Address: Department of Information Technology & Management,
