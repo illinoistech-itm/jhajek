@@ -26,34 +26,34 @@ Semester: Fall 2021 Professor Jeremy Hajek
 
 **Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
 
-Session # | Date | Topic | Reading |
+Session # | Date | Topic | Reading - Homework |
 ----------|------|:------|----------
-1 | 08/23 | Introduction  | Understanding FOSS Ch 2
-2 | 08/25 | Introduction  | Understanding FOSS Ch 2
-3 | 08/30 | Chapter 2  | Understanding FOSS Ch 3
-4 | 09/01 | Chapter 2  | Understanding FOSS Ch 3
-5 | 09/06 | Chapter 3  | Understanding FOSS Ch 4
-6 | 09/08 | Chapter 3  | Understanding FOSS Ch 4
-7 | 09/13 | Chapter 4  | Understanding FOSS Ch 5
-8 | 09/15 | Chapter 4  | Understanding FOSS Ch 5
-9 | 09/20 | Chapter 5  | Understanding FOSS Ch 6
-10| 09/22 | Chapter 5 | Understanding FOSS Ch 6
-11| 09/27 | Chapter 6 | Understanding FOSS Ch 7
-12| 09/29 | Chapter 6 | Understanding FOSS Ch 7
-13| 10/04 | Chapter 7 | Understanding FOSS Ch 8
-14| 10/06 | Chapter 7 | Understanding FOSS Ch 8
+1 | 08/23 | Introduction  | NA
+2 | 08/25 | Introduction  | NA
+3 | 08/30 | Tooling Setup  | NA
+4 | 09/01 | Tooling Setup  | Technology and Philosophy of FOSS Ch 2
+5 | 09/06 | Chapter 2  | Technology and Philosophy of FOSS Ch 3
+6 | 09/08 | Chapter 2  | Technology and Philosophy of FOSS Ch 3
+7 | 09/13 | Chapter 3  | Technology and Philosophy of FOSS Ch 4
+8 | 09/15 | Chapter 3  | Technology and Philosophy of FOSS Ch 4
+9 | 09/20 | Chapter 4  | Technology and Philosophy of FOSS Ch 5
+10| 09/22 | Chapter 4 | Technology and Philosophy of FOSS Ch 5
+11| 09/27 | Chapter 5 | Technology and Philosophy of FOSS Ch 6, 7
+12| 09/29 | Chapter 5 | Technology and Philosophy of FOSS Ch 6, 7
+13| 10/04 | Chapter 6 & 7 | Technology and Philosophy of FOSS Ch 8
+14| 10/06 | Chapter 6 & 7 | Technology and Philosophy of FOSS Ch 8
 15| 10/11 | NA | No Class - Fall Break
 16| 10/13 | NA | Midterm Exam
-17| 10/18 | Chapter 8 | Understanding FOSS Ch 9
-18| 10/20 | Chapter 8 | Understanding FOSS Ch 9
-19| 10/25 | Chapter 9 | Understanding FOSS Ch 10
-20| 10/27 | Chapter 9 | Understanding FOSS Ch 10
-21| 11/01 | Chapter 10 | Understanding FOSS Ch 11
-22| 11/03 | Chapter 10 | Understanding FOSS Ch 11
-23| 11/08 | Chapter 11 | Understanding FOSS Ch 12
-24| 11/10 | Chapter 11 | Understanding FOSS Ch 12
-25| 11/15 | Chapter 12 | Understanding FOSS Ch 13
-26| 11/17 | Chapter 12 | Understanding FOSS Ch 13
+17| 10/18 | Chapter 8 | Technology and Philosophy of FOSS Ch 9
+18| 10/20 | Chapter 8 | Technology and Philosophy of FOSS Ch 9
+19| 10/25 | Chapter 9 | Technology and Philosophy of FOSS Ch 10
+20| 10/27 | Chapter 9 | Technology and Philosophy of FOSS Ch 10
+21| 11/01 | Chapter 10 | Technology and Philosophy of FOSS Ch 11
+22| 11/03 | Chapter 10 | Technology and Philosophy of FOSS Ch 11
+23| 11/08 | Chapter 11 | Technology and Philosophy of FOSS Ch 12
+24| 11/10 | Chapter 11 | Technology and Philosophy of FOSS Ch 12
+25| 11/15 | Chapter 12 | Technology and Philosophy of FOSS Ch 13
+26| 11/17 | Chapter 12 | Technology and Philosophy of FOSS Ch 13
 27| 11/22 | Chapter 13 | NA - Final Project Assigned
 28| 11/24 | NA       | Thanksgiving Break - No Class
 29| 11/29 | Final Project | NA
@@ -85,8 +85,8 @@ Session # | Date | Topic | Reading |
 **Required Textbook:**
 
 * Self-published: Author Jeremy Hajek:
-  * Title:  Understanding Free and Opensource Operating Systems, The Technology and Philosophy Of
-* Free Download available: [https://github.com/jhajek/Linux-text-book-part-1/releases](https://github.com/jhajek/Linux-text-book-part-1/releases "Download of Understanding Free and Opensource Operating Systems, The Technology and Philosophy Of")
+  * Title:  Technology and Philosophy of Free and Opensource Operating Systems, The Technology and Philosophy Of
+* Free Download available: [https://github.com/jhajek/Linux-text-book-part-1/releases](https://github.com/jhajek/Linux-text-book-part-1/releases "Download of Technology and Philosophy of Free and Opensource Operating Systems, The Technology and Philosophy Of")
 
 **Readings:** Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should al-ready be familiar with. Completion of reading may be verified by quizzes. Specific readings are assigned by topic above.
 
@@ -116,12 +116,11 @@ The final grade for the class will be calculated as follows:
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-Review Questions (12):    18%        120
-Lab Questions (12):       18%        120
-Podcast Questions (12):   18%        120
-          Midterm Exam:   15%        100
-            Final Exam:   15%        100
-         Final Project:   15%        100
+Review Questions (12):    20%        120
+Lab Questions (12):       20%        120
+Podcast Questions (12):   20%        120
+          Midterm Exam:   17%        100
+         Final Project:   17%        100
             Attendance:    5%         30
 ----------------------- ------- ----------------
 
@@ -129,7 +128,7 @@ Podcast Questions (12):   18%        120
 
 **Academic Honesty:**  All work you submit in this course must be your own.
 
-**Plagiarism:** You must fully attribute all material directly quoted in papers and you must document all sources used in the preparation of the paper using complete, APA-style bibliographic entries. Including directly quoted material in an assignment without attribution or a bibliography entry for the source of the material is always plagiarism and will always be treated as such by me. No more than thirty-three percent of material included in any paper may be direct quotes. Students have submitted plagiarized material in seven of the last eight times I have taught this course and I will not tolerate it. If you submit plagiarized material you WILL receive a grade of ZERO for the assignment or exam question, an Academic Honesty Violation Report will be filed, and it may result in your expulsion from the course with a failing grade as per the IIT and ITM academic honesty policies. There is no excuse for not understanding this policy and if you do not understand it please let me know and I will be happy to discuss it with you until you do.
+**Plagiarism:** You must fully attribute all material directly quoted in papers and you must document all sources used in the preparation of the paper using complete, APA-style bibliographic entries. Including directly quoted material in an assignment without attribution or a bibliography entry for the source of the material is always plagiarism and will always be treated as such by me. No more than thirty-three percent of material included in any paper may be direct quotes. Students have submitted plagiarized material in seven of the last eight times I have taught this course and I will not tolerate it. If you submit plagiarized material you WILL receive a grade of ZERO for the assignment or exam question, an Academic Honesty Violation Report will be filed, and it may result in your expulsion from the course with a failing grade as per the IIT and ITM academic honesty policies. There is no excuse for not Technology and Philosophy of this policy and if you do not understand it please let me know and I will be happy to discuss it with you until you do.
 
 **Collaboration:** Students may only collaborate on assignments or projects that are explicitly designated as group assignments or projects. Students submitting work that is identical or in some cases even substantively the same will be asked to discuss the assignment with me. If one student admits to having copied the work, or if there is clear evidence who is guilty, the guilty student will be assigned a grade of zero. If no one admits to the offense or a reasonable determination of guilt cannot be made, each student involved will be assigned a grade of zero. In either case, an Academic Honesty Violation Report will be filed, and it may result in your expulsion from the course with a failing grade as per the IIT and ITM academic honesty policies.
 
