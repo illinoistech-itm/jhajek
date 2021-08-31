@@ -52,3 +52,5 @@ In the ```build``` directory, create a directory named **ubuntu-focal-2001-vanil
 ### Third Step
 
 To start the VM lets type the same command: ```vagrant up```.  Upon the vm starting succesfully, let us type the commmand: ```vagrant ssh``` to connect to the instance we built via SSH.
+
+***Deliverable*** Take a screenshot of the your VM right after you have completed the `vagrant ssh` command.
