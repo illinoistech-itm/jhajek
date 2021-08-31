@@ -66,24 +66,24 @@ This course will enable students to be ready to design, build, and implement log
 
 **Course Student Outcomes:** Students completing this course will be able to:
 
-* Explain the difference between push and pull metrics
-* Explain the difference between logging and metrics
+* Discuss the difference between push and pull metrics
+* Discuss the difference between logging and metrics
 * Describe event streams are and how they are used in monitoring and metric collection
-* Explain the use of logging and metrics in  regards to Operating System containers
-* Design, build, and implement logging and  metrics in monitored applications
+* Explain and expand upon the use of logging and metrics in regards to Operating System containers
+* Design, build, and implement logging and metrics in monitored applications
 
 **Topics to Be Covered**:
 
-* a. Intro - Monitoring & Measurement Framework
-* b. Managing events and Metrics & Graphing
-* c. Event Routing and Collection
-* d. Containers and Logs
-* e. Building an app & Notifications
-* f. Getting Started & Monitoring Nodes
-* g. Service Discovery
-* h. Alerting & Scaling and Reliability
-* i. Instrumenting Applications & Logging
-* j. Building Monitored Applications & Notification
+* Intro - Monitoring & Measurement Framework
+* Managing events and Metrics & Graphing
+* Event Routing and Collection
+* Containers and Logs
+* Building an app & Notifications
+* Getting Started & Monitoring Nodes
+* Service Discovery
+* Alerting & Scaling and Reliability
+* Instrumenting Applications & Logging
+* Building Monitored Applications & Notification
 
 **Required Textbook:**
 
