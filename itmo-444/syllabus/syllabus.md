@@ -22,26 +22,26 @@ Semester: Fall 2021 Professor Jeremy Hajek
 
 **Prerequisites:** ITMD 321, Credit: Lab 3-0-3
 
-**Lecture Day, Time & Place:** Monday and Wednesday 3:35 pm - 4:50 pm in [John T. Rettaliata Engineering Center](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), room 032 on IIT’s Mies Campus in Chicago.
+**Lecture Day, Time & Place:** Monday and Wednesday 3:35 pm - 4:50 pm in [Tech South Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), TS-2030 on IIT’s Mies Campus in Chicago.
 
 **Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 08/23 | Introduction  | Practice of Cloud System Admin 1
-2 | 08/25 | Tooling Lab 1  | Tooling Setup
-3 | 08/30 | Chapter 1  | Practice of Cloud System Admin 2
-4 | 09/01 | Lab 2  | Practice of Cloud System Admin 2
-5 | 09/06 | Chapter 2  | Practice of Cloud System Admin 3
-6 | 09/08 | Lab 3  | Practice of Cloud System Admin 3
-7 | 09/13 | Chapter 3  | Practice of Cloud System Admin 4
-8 | 09/15 | Lab 4  | Practice of Cloud System Admin 4
-9 | 09/20 | Chapter 4  | Practice of Cloud System Admin 5
-10| 09/22 | Lab 5 | Practice of Cloud System Admin 5
-11| 09/27 | Chapter 5 | Practice of Cloud System Admin 6
-12| 09/29 | Lab 6 | Practice of Cloud System Admin 6
-13| 10/04 | Chapter 6 | NA
-14| 10/06 | Lab 7 | NA
+1 | 08/23 | Introduction  | NA
+2 | 08/25 | Tooling Setup  | NA
+3 | 08/30 | Tooling Setup  | NA
+4 | 09/01 | Tooling Setup | Practice of Cloud System Admin 1
+5 | 09/06 | Chapter 1  | Practice of Cloud System Admin 2
+6 | 09/08 | Lab 1  | Practice of Cloud System Admin 2
+7 | 09/13 | Chapter 2 | Practice of Cloud System Admin 3
+8 | 09/15 | Lab 2  | Practice of Cloud System Admin 3
+9 | 09/20 | Chapter 3 | Practice of Cloud System Admin 4
+10| 09/22 | Lab 4 | Practice of Cloud System Admin 4
+11| 09/27 | Chapter 4 | Practice of Cloud System Admin 5, 6
+12| 09/29 | Lab 5 | Practice of Cloud System Admin 5, 6
+13| 10/04 | Chapter 5, 6 | NA
+14| 10/06 | Lab 6 | NA
 15| 10/11 | NA | No Class - Fall Break
 16| 10/13 | NA | Midterm Exam
 17| 10/18 | Mini Project 1 | MP1 Assigned
