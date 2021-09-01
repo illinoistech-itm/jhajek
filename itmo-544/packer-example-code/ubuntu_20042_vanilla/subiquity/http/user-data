@@ -1,0 +1,47 @@
+#cloud-config - https://raw.githubusercontent.com/nickcharlton/packer-ubuntu-2004/master/http/user-data
+autoinstall:
+  version: 1
+  identity:
+    hostname: ubuntu-server
+    password: '$6$ExJMC2Vf$WMzulvVD8.9zNHLi78wW.XlGj/R3nBZnLf6eV5cVUgxnzDSFlwzfqoG1d4mSdaCmd0jVaKmp1b3h6zzc6YpHv1'
+    username: ubuntu
+  storage:
+    layout:
+      name: direct
+  packages:
+    - ubuntu-standard
+    - bc
+    - curl
+    - wget
+    - git
+    - qemu-guest-agent
+    - ubuntu-server
+    - cryptsetup
+    - build-essential
+    - libssl-dev
+    - libreadline-dev
+    - zlib1g-dev
+    - linux-source
+    - dkms
+    - nfs-common
+    - software-properties-common
+  network:
+    network:
+      version: 2
+      ethernets:
+        enp0s3:
+          dhcp4: true
+          dhcp-identifier: mac
+  ssh:
+    allow-pw: true
+    install-server: true
+  late-commands:
+    - sed -i 's/^#*\(send dhcp-client-identifier\).*$/\1 = hardware;/' /target/etc/dhcp/dhclient.conf
+    - 'sed -i "s/dhcp4: true/&\n      dhcp-identifier: mac/" /target/etc/netplan/00-installer-config.yaml'
+    - "echo 'Defaults:ubuntu !requiretty' > /target/etc/sudoers.d/ubuntu"
+    - "echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' >> /target/etc/sudoers.d/ubuntu"
+    - "chmod 440 /target/etc/sudoers.d/ubuntu"
+    - 'echo "Port 2222" > /target/etc/ssh/sshd_config.d/packer-init.conf'
+
+
+
