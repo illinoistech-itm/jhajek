@@ -19,7 +19,7 @@ source "virtualbox-iso" "ubuntu-20042-live-server" {
   ssh_password            = "vagrant"
   ssh_port                = 2222
   ssh_timeout             = "20m"
-  ssh_username            = "ubuntu"
+  ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
   vm_name                 = "ubuntu-20042-live-server"
