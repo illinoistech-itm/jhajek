@@ -51,6 +51,6 @@ In the ```build``` directory, create a directory named **ubuntu-focal-2001-vanil
 
 ### Third Step
 
-To start the VM lets type the same command: ```vagrant up```.  Upon the vm starting succesfully, let us type the commmand: ```vagrant ssh``` to connect to the instance we built via SSH.
+To start the VM lets type the same command: ```vagrant up```.  Upon the vm starting succesfully, let us type the commmand: ```vagrant ssh``` to connect to the instance we built via SSH. Take a Screenshot of the output of this command.
 
-***Deliverable*** Complete all of the software installs and take the required screenshots.  Add them to this template document and push this to your private repo > itmo-444 > week-02
+***Deliverable*** Take a screenshot of the your VM right after you have completed the `vagrant ssh` command.
