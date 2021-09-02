@@ -3,8 +3,8 @@ autoinstall:
   version: 1
   identity:
     hostname: ubuntu-server
-    password: '$6$ExJMC2Vf$WMzulvVD8.9zNHLi78wW.XlGj/R3nBZnLf6eV5cVUgxnzDSFlwzfqoG1d4mSdaCmd0jVaKmp1b3h6zzc6YpHv1'
-    username: ubuntu
+    password: '$6$qoazpFv0h6$1i0uxiM32aszgrgyYjv/2FLq73.TV2DCHOGi6nuiZoazu36Bewgb4hKarG9J3vwHxTpkdLQ10zeEt1J5XHG.Z/'
+    username: vagrant
   storage:
     layout:
       name: direct
