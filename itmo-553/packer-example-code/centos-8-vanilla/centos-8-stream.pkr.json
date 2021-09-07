@@ -24,7 +24,7 @@
       "hard_drive_interface": "sata",
       "headless": false,
       "http_directory": "http",
-      "iso_checksum": "sha256:7f5c9eaf0b8364db195baa1200849c8175f5c4d2f2cb24a654c53390a906d02e",
+      "iso_checksum": "sha256:ecc199ad524f0451aae07bd873d65c86b4d4e1ad2f20bc28ad2ca3eaf3ce0009",
       "iso_urls": [
         "{{ user `iso_url` }}"
       ],
@@ -56,8 +56,7 @@
     [
       {
         "output": "{{ user `box_name` }}.box",
-        "type": "vagrant",
-        "vagrantfile_template": "Vagrantfile"
+        "type": "vagrant"
       }
     ]
   ],
