@@ -1,0 +1,89 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks/centos-8-stream.cfg<enter>",
+        "<wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>"
+      ],
+      "boot_wait": "10s",
+      "disk_size": 32768,
+      "guest_additions_mode": "{{ user `guest_additions` }}",
+      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+      "guest_os_type": "RedHat_64",
+      "hard_drive_interface": "sata",
+      "headless": false,
+      "http_directory": "http",
+      "iso_checksum": "sha256:7f5c9eaf0b8364db195baa1200849c8175f5c4d2f2cb24a654c53390a906d02e",
+      "iso_urls": [
+        "{{ user `iso_url` }}"
+      ],
+      "shutdown_command": "echo 'vagrant'| sudo -S /sbin/poweroff",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_timeout": "30m",
+      "ssh_username": "vagrant",
+      "type": "virtualbox-iso",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "2048"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "2"
+        ]
+      ],
+      "virtualbox_version_file": ".vbox_version"
+    }
+  ],
+  "description": "Build base CentOS 8 x86_64",
+  "post-processors": [
+    [
+      {
+        "output": "{{ user `box_name` }}.box",
+        "type": "vagrant",
+        "vagrantfile_template": "Vagrantfile"
+      }
+    ]
+  ],
+  "provisioners": [
+    {
+      "environment_vars": [
+        "http_proxy={{ user `proxy` }}",
+        "guest_additions_mode={{ user `guest_additions` }}"
+      ],
+      "override": {
+        "virtualbox-iso": {
+          "execute_command": "echo 'vagrant'|sudo -S {{ .Vars }} bash '{{.Path}}'"
+        }
+      },
+      "scripts": [
+        "../scripts/post_install_vagrant-centos-7.sh"
+      ],
+      "type": "shell"
+    }
+  ],
+  "variables": {
+    "guest_additions": "disable",
+    "iso_name": "CentOS-Stream-8-x86_64-20210126-boot.iso",
+    "iso_url": "http://bay.uchicago.edu/centos/8-stream/isos/x86_64/CentOS-Stream-8-x86_64-20210126-boot.iso",
+    "kickstart": "ks/centos-8-stream.cfg",
+    "proxy": "{{ env `http_proxy` }}"
+  }
+}
+
