@@ -36,7 +36,7 @@ source "virtualbox-iso" "centos-8-stream-vanilla" {
   http_directory          = "."
   http_port_min           = 9001
   http_port_max           = 9100
-  iso_checksum            = "sha256:ecc199ad524f0451aae07bd873d65c86b4d4e1ad2f20bc28ad2ca3eaf3ce0009"
+  iso_checksum            = "sha256:7f4c97e1d055ddfbad93fd04b22f5a170f20e04e51fd9aa5c482df485245cdac"
   iso_urls                = ["${var.iso_url}"]
   shutdown_command        = "echo 'vagrant'| sudo -S /sbin/poweroff"
   ssh_password            = "vagrant"
