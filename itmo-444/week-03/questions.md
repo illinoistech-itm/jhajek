@@ -1,15 +1,19 @@
-## Chapter 02 - Designing for Operations
+## Chapter 01 - Designing for a Distributed World
 
-1. Why is design for operations so important?
+1. What is distributed computing?
 
-2. How is automated configuration typically supported?
+2. Describe the three major composition patterns in distributed computing.
 
-3. List the important factors for redundancy through replication.
+3. What are the three patterns discussed for storing state?
 
-4. Give an example of a partially implemented process in your current environment. What would you do to fully implement it?
+4. Sometimes a master server does not reply with an answer but instead replies with where the answer can be found. What are the benefits of this method?
 
-5. Why might you not want to solve an issue by coding the solution yourself?
+5. Section 1.4 describes a distributed file system, including an example of how reading terabytes of data would work. How would writing terabytes of data work?
 
-6. Which type of problems should appear first on your priority list?
+6. Explain the CAP Principle. (If you think the CAP Principle is awesome, read “The Part-Time Parliament” (Lamport & Marzullo 1998) and “Paxos Made Simple” (Lamport 2001).)
 
-7. Which factors can you bring to an outside vendor to get the vendor to take your issue seriously?
+7. What does it mean when a system is loosely coupled? What is the advantage of these systems?
+
+8. How do we estimate how fast a system will be able to process a request such as retrieving an email message?
+
+9. In Section 1.7 three design ideas are presented for how to process email deletion requests. Estimate how long the request will take for deleting an email message for each of the three
