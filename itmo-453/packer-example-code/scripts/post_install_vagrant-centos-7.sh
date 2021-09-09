@@ -24,7 +24,8 @@ sudo mkdir -p /home/vagrant/.ssh
 sudo chown -R vagrant:vagrant /home/vagrant/.ssh
 cat ./vagrant.pub >> /home/vagrant/.ssh/authorized_keys
 sudo chown -R vagrant:vagrant /home/vagrant/.ssh/authorized_keys
-
+sudo chmod 700 /home/vagrant/.ssh
+sudo chmod 600 /home/vagrant/.ssh/authorized_keys
 #########################
 # Add customization here
 #########################

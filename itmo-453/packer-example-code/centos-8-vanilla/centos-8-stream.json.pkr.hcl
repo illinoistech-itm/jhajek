@@ -1,7 +1,7 @@
 
 variable "guest_additions" {
   type    = string
-  default = "disable"
+  default = "enable"
 }
 
 variable "iso_name" {
@@ -19,11 +19,8 @@ variable "kickstart" {
   default = "ks/centos-8-stream.cfg"
 }
 
-variable "proxy" {
-  type    = string
-  default = "${env("http_proxy")}"
-}
-
+# Centos 8 Latest Checksum URl 
+# http://bay.uchicago.edu/centos/8-stream/isos/x86_64/CHECKSUM
 source "virtualbox-iso" "centos-8-stream-vanilla" {
   boot_command            = ["<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks/centos-8-stream.cfg<enter>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>"]
   boot_wait               = "10s"
@@ -36,9 +33,9 @@ source "virtualbox-iso" "centos-8-stream-vanilla" {
   http_directory          = "."
   http_port_min           = 9001
   http_port_max           = 9100
-  iso_checksum            = "sha256:7f4c97e1d055ddfbad93fd04b22f5a170f20e04e51fd9aa5c482df485245cdac"
+  iso_checksum            = "7f4c97e1d055ddfbad93fd04b22f5a170f20e04e51fd9aa5c482df485245cdac"
   iso_urls                = ["${var.iso_url}"]
-  shutdown_command        = "echo 'vagrant'| sudo -S /sbin/poweroff"
+  shutdown_command        = "echo 'vagrant' | sudo -S /sbin/poweroff"
   ssh_password            = "vagrant"
   ssh_port                = 22
   ssh_timeout             = "30m"
@@ -53,7 +50,6 @@ build {
   sources = ["source.virtualbox-iso.centos-8-stream-vanilla"]
 
   provisioner "shell" {
-    environment_vars = ["http_proxy=${var.proxy}", "guest_additions_mode=${var.guest_additions}"]
     scripts          = ["../scripts/post_install_vagrant-centos-8.sh"]
   }
 

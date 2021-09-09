@@ -1,11 +1,11 @@
 
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
-source "virtualbox-iso" "ubuntu-20042-live-server" {
+source "virtualbox-iso" "ubuntu-20043-live-server" {
   boot_command            = ["<enter><enter><f6><esc><wait> ", "autoinstall ds=nocloud-net;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/", "<enter><wait>"]
   boot_wait               = "5s"
   disk_size               = 10000
-  guest_additions_mode    = "disable"
+  guest_additions_mode    = "enable"
   guest_additions_path    = "VBoxGuestAdditions_{{ .Version }}.iso"
   guest_os_type           = "Ubuntu_64"
   http_directory          = "subiquity/http"
@@ -22,12 +22,12 @@ source "virtualbox-iso" "ubuntu-20042-live-server" {
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
-  vm_name                 = "ubuntu-20042-live-server"
+  vm_name                 = "ubuntu-focal"
   headless                = "${var.headless_build}"
 }
 
 build {
-  sources = ["source.virtualbox-iso.ubuntu-20042-live-server"]
+  sources = ["source.virtualbox-iso.ubuntu-20043-live-server"]
 
   provisioner "shell" {
     #inline_shebang  =  "#!/usr/bin/bash -e"

@@ -1,6 +1,6 @@
 # What is Subiquity
 
-subiquity is the Ubuntu server’s new automated installer, which was introduced in 18.04. It is the server counterpart of ubiquity installer used by desktop live CD installation.
+Subiquity is the Ubuntu server’s new automated installer, which was introduced in 18.04. It is the server counterpart of ubiquity installer used by desktop live CD installation.
 
 Autoinstallation lets you answer all those configuration questions ahead of time with autoinstall config and lets the installation process run without any external interaction. The autoinstall config is provided via cloud-init configuration. Values are taken from the config file if set, else default values are used.
 

@@ -6,7 +6,7 @@ source "virtualbox-iso" "centos-7-vanilla" {
   boot_wait            = "5s"
   communicator         = "ssh"
   disk_size            = 10000
-  guest_additions_mode = "disable"
+  guest_additions_mode = "enable"
   guest_os_type        = "RedHat_64"
   hard_drive_interface = "sata"
   http_directory       = "."
