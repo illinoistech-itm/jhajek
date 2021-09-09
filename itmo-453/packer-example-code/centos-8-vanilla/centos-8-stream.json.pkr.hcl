@@ -1,9 +1,4 @@
 
-variable "guest_additions" {
-  type    = string
-  default = "enable"
-}
-
 variable "iso_name" {
   type    = string
   default = "CentOS-Stream-8-x86_64-latest-boot.iso"
@@ -25,7 +20,6 @@ source "virtualbox-iso" "centos-8-stream-vanilla" {
   boot_command            = ["<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks/centos-8-stream.cfg<enter>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>"]
   boot_wait               = "10s"
   disk_size               = 15000
-  guest_additions_mode    = "${var.guest_additions}"
   guest_additions_path    = "VBoxGuestAdditions_{{ .Version }}.iso"
   guest_os_type           = "RedHat_64"
   hard_drive_interface    = "sata"
