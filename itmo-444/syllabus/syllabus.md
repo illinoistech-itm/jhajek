@@ -33,26 +33,26 @@ Session # | Date | Topic | Reading |
 3 | 08/30 | Tooling Setup  | NA
 4 | 09/01 | Tooling Setup | Practice of Cloud System Admin 1
 5 | 09/06 | Chapter 1  | Practice of Cloud System Admin 2
-6 | 09/08 | Lab 1  | Practice of Cloud System Admin 2
+6 | 09/08 | NA  | Practice of Cloud System Admin 2
 7 | 09/13 | Chapter 2 | Practice of Cloud System Admin 3
-8 | 09/15 | Lab 2  | Practice of Cloud System Admin 3
+8 | 09/15 | Lab 1  | Practice of Cloud System Admin 3
 9 | 09/20 | Chapter 3 | Practice of Cloud System Admin 4
-10| 09/22 | Lab 4 | Practice of Cloud System Admin 4
+10| 09/22 | Lab 2 | Practice of Cloud System Admin 4
 11| 09/27 | Chapter 4 | Practice of Cloud System Admin 5, 6
-12| 09/29 | Lab 5 | Practice of Cloud System Admin 5, 6
+12| 09/29 | Lab 3 | Practice of Cloud System Admin 5, 6
 13| 10/04 | Chapter 5, 6 | NA
-14| 10/06 | Lab 6 | NA
+14| 10/06 | Lab 4 | NA
 15| 10/11 | NA | No Class - Fall Break
 16| 10/13 | NA | Midterm Exam
-17| 10/18 | Mini Project 1 | MP1 Assigned
-18| 10/20 | Mini Project 1 | -
-19| 10/25 | Mini Project 1 | -
-20| 10/27 | Mini Project 1 | MP1 Due
-21| 11/01 | Mini Project 2 | MP2 Assigned
-22| 11/03 | Mini Project 2 | -
-23| 11/08 | Mini Project 2 | -
-24| 11/10 | Mini Project 2 | -
-25| 11/15 | Mini Project 2 | - Final Project Assigned
+17| 10/18 | Lab 5 | -
+18| 10/20 | Lab 5 | -
+19| 10/25 | Lab 6 | -
+20| 10/27 | Lab 6 | -
+21| 11/01 | Mini Project 1 | MP1 Assigned
+22| 11/03 | Mini Project 1 | -
+23| 11/08 | Mini Project 1 | -
+24| 11/10 | Mini Project 2 | MP1 Due, MP2 Assigned
+25| 11/15 | Mini Project 2 | Final Project Assigned
 26| 11/17 | Mini Project 2 | MP 2 Due
 27| 11/22 | Final Project | -
 28| 11/24 | NA       | Thanksgiving Break - No Class

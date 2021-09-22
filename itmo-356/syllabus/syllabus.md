@@ -33,20 +33,20 @@ Session # | Date | Topic | Reading - Homework |
 2 | 08/25 | Introduction  | NA
 3 | 08/30 | Tooling Setup  | NA
 4 | 09/01 | Tooling Setup  | NA
-5 | 09/06 | No Class  | Technology and Philosophy of FOSS Ch 1
-6 | 09/08 | Chapter 1  | Technology and Philosophy of FOSS Ch 2
-7 | 09/13 | Chapter 1  | Technology and Philosophy of FOSS Ch 2
-8 | 09/15 | Chapter 1  | Technology and Philosophy of FOSS Ch 2
-9 | 09/20 | Chapter 2  | Technology and Philosophy of FOSS Ch 3
-10| 09/22 | Chapter 2 | Technology and Philosophy of FOSS Ch 3
-11| 09/27 | Chapter 3 | Technology and Philosophy of FOSS Ch 4
-12| 09/29 | Chapter 3 | Technology and Philosophy of FOSS Ch 4
-13| 10/04 | Chapter 4 | Technology and Philosophy of FOSS Ch 5
-14| 10/06 | Chapter 4 | Technology and Philosophy of FOSS Ch 5
+5 | 09/06 | No Class  | Technology and Philosophy of FOSS Ch 2
+6 | 09/08 | Chapter 2  | Technology and Philosophy of FOSS Ch 3
+7 | 09/13 | Chapter 2  | Technology and Philosophy of FOSS Ch 3
+8 | 09/15 | Chapter 2  | Technology and Philosophy of FOSS Ch 3
+9 | 09/20 | Chapter 3  | Technology and Philosophy of FOSS Ch 4
+10| 09/22 | Chapter 3 | Technology and Philosophy of FOSS Ch 4
+11| 09/27 | Chapter 4 | Technology and Philosophy of FOSS Ch 5
+12| 09/29 | Chapter 4 | Technology and Philosophy of FOSS Ch 5
+13| 10/04 | Chapter 5 | Technology and Philosophy of FOSS Ch 6
+14| 10/06 | Chapter 5 | Technology and Philosophy of FOSS Ch 6
 15| 10/11 | NA | No Class - Fall Break
-16| 10/13 | Chapter 5 | Technology and Philosophy of FOSS Ch 6 & 7
-17| 10/18 | Chapter 6 & 7 | Technology and Philosophy of FOSS Ch 8
-18| 10/20 | Chapter 6 & 7 | Technology and Philosophy of FOSS Ch 8
+16| 10/13 | Chapter 6 | Technology and Philosophy of FOSS Ch 7
+17| 10/18 | Chapter 7 | Technology and Philosophy of FOSS Ch 8
+18| 10/20 | Chapter 7 | Technology and Philosophy of FOSS Ch 8
 19| 10/25 | Chapter 8 | Technology and Philosophy of FOSS Ch 9 & 10
 20| 10/27 | Chapter 8 | Technology and Philosophy of FOSS Ch 9 & 10
 21| 11/01 | Midterm Exam | NA
