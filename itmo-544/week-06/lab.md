@@ -31,9 +31,9 @@ Create a folder named: week-06 under your class folder in the provided private r
 
 ### create-env.sh
 
-This is shell script will take commandline input dynamically via positional parameters ($1 $2 $3 and so on) via a file named `arguments.txt`.
+This is shell script will take commandline input dynamically via positional parameters ($1 $2 $3 and so on) via a file named `arguments.txt`.  For a refresh on positional parameters [see my text book](https://github.com/jhajek/Linux-text-book-part-1/releases/tag/2021-09-29 "Link to Linux Textbook")
 
-```./install-env.sh $(<arguments.dat)```
+```./install-env.sh $(<arguments.txt)```
 
 ### arguments.txt
 
