@@ -30,35 +30,35 @@ Session # | Date | Topic | Reading |
 ----------|------|:------|----------
 1 | 08/24 | Introduction  | Tooling Setup
 2 | 08/26 | Tooling  | To Be Assigned
-3 | 08/31 | CLI review  | To Be Assigned
-4 | 09/02 | CLI review  | To Be Assigned
-5 | 09/07 | Monitoring and Measurement Frameworks  | To Be Assigned
-6 | 09/09 | Monitoring and Measurement Frameworks  | To Be Assigned
-7 | 09/14 | Managing Events and Metrics  | To Be Assigned
-8 | 09/16 | Managing Events and Metrics  | To Be Assigned
-9 | 09/21 | Introducing Graphite and Grafana  | To Be Assigned
-10| 09/23 | Introducing Graphite and Grafana | To Be Assigned
-11| 09/28 | Host Monitoring | MP1 Assigned
-12| 09/30 | Host Monitoring | -
-13| 10/05 | Collectd events | -
-14| 10/07 | Collectd events | -
-15| 10/12 | MP1 demonstration and due | MP1 due
-16| 10/14 | NA | Midterm Exam
-17| 10/19 | Logs and Logging | MP2 Assigned
+3 | 08/31 | CLI review  | -
+4 | 09/02 | CLI review  | -
+5 | 09/07 | Monitoring and Measurement Frameworks  | -
+6 | 09/09 | Monitoring and Measurement Frameworks  | -
+7 | 09/14 | Managing Events and Metrics  | -
+8 | 09/16 | Managing Events and Metrics  | -
+9 | 09/21 | Managing Events and Metrics  | -
+10| 09/23 | Managing Events and Metrics | -
+11| 09/28 | Managing Events and Metrics | -
+12| 09/30 | Managing Events and Metrics | -
+13| 10/05 | Introducing Graphite and Grafana | -
+14| 10/07 | Introducing Graphite and Grafana | -
+15| 10/12 | Collectd events | MP1 Assigned
+16| 10/14 | Collectd events | -
+17| 10/19 | Logs and Logging | -
 18| 10/21 | Logs and Logging | -
-19| 10/25 | Building Monitored Applications | -
+19| 10/25 | Building Monitored Applications | MP1 Presented in Class, MP2 Assigned
 20| 10/28 | Building Monitored Applications | -
 21| 11/02 | Notifications | -
-22| 11/04 | Notifications | MP2 Due - demonstrated in class
-23| 11/09 | Monitoring an Application | MP3 Assigned
+22| 11/04 | Notifications | -
+23| 11/09 | Monitoring an Application | MP2 Presented in Class, MP3 Assigned
 24| 11/11 | Monitoring an Application | -
 25| 11/16 | Class Work time | -
-26| 11/18 | Class Work time | MP3 Presentation due
-27| 11/23 | Class Work time | Final Project Assigned
+26| 11/18 | Class Work time | -
+27| 11/23 | Class Work time | Final Presentation Assigned, MP3 Presented in class
 28| 11/25 | Class Work time | -
-29| 11/30 | NA       | Thanksgiving Break - No Class
+29| 11/30 | Thanksgiving Break - No Class | -
 30| 12/02 | Class Work time | -
-31| 6-11  | Final Exam week | Final Project Presented and Due
+31| 6-11  | Final Exam week | Final Project Presentation
 
 **Course Outcomes:**
 
@@ -87,6 +87,8 @@ This course will enable students to be ready to design, build, and implement log
 
 **Required Textbook:**
 
+None
+
 **Course Notes:**  It is recommended to take notes from the oral discussion portion of the class.
 
 **Attendance:** Undergrad attendance is expected and will be counted as part of your grade.  
@@ -95,7 +97,7 @@ This course will enable students to be ready to design, build, and implement log
 
 **Blackboard:** The course will make intensive use of Blackboard [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL") for communications, assignment submissions, group project coordination, providing online resources and administering examinations. All remote students will view the course lectures online via Blackboard, and online readings and other course material will be found on Blackboard.
 
-**Assignments:**  There will be 3 Mini-Projects, 1 mid-term and 1 final project.
+**Assignments:**  There will be 3 Mini-Projects, and 1 final project.
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 
@@ -104,19 +106,17 @@ Letter | Description | Percentage
 A | Outstanding work reflecting substantial effort | 90-100%
 B | Excellent work reflecting good effort | 80-89.99%
 C | Satisfactory work meeting minimum expectations | 70-79.99%
-D | Substandard work not meeting expectations | 60-69.99%
-E | Unsatisfactory work |0-59.99%
+E | Unsatisfactory work |0-69.99%
 
 The final grade for the class will be calculated as follows: (example)
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-          Midterm Exam:   19%        100
-                   MP1:   19%        100
-                   MP2:   19%        100
-                   MP3:   19%        100                   
-         Final Project:   19%        100
-            Attendance:    5%         30
+                   MP1:   24%        100
+                   MP2:   24%        100
+                   MP3:   24%        100                   
+         Final Project:   24%        100
+            Attendance:    4%         30
 ----------------------- ------- ----------------
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.

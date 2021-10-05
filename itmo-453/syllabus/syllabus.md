@@ -30,35 +30,35 @@ Session # | Date | Topic | Reading |
 ----------|------|:------|----------
 1 | 08/24 | Introduction  | Tooling Setup
 2 | 08/26 | Tooling  | To Be Assigned
-3 | 08/31 | CLI review  | To Be Assigned
-4 | 09/02 | CLI review  | To Be Assigned
-5 | 09/07 | Monitoring and Measurement Frameworks  | To Be Assigned
-6 | 09/09 | Monitoring and Measurement Frameworks  | To Be Assigned
-7 | 09/14 | Managing Events and Metrics  | To Be Assigned
-8 | 09/16 | Managing Events and Metrics  | To Be Assigned
-9 | 09/21 | Introducing Graphite and Grafana  | To Be Assigned
-10| 09/23 | Introducing Graphite and Grafana | To Be Assigned
-11| 09/28 | Host Monitoring | MP1 Assigned
-12| 09/30 | Host Monitoring | -
-13| 10/05 | Collectd events | -
-14| 10/07 | Collectd events | -
-15| 10/12 | MP1 demonstration and due | MP1 due
-16| 10/14 | NA | Midterm Exam
-17| 10/19 | Logs and Logging | MP2 Assigned
+3 | 08/31 | CLI review  | -
+4 | 09/02 | CLI review  | -
+5 | 09/07 | Monitoring and Measurement Frameworks  | -
+6 | 09/09 | Monitoring and Measurement Frameworks  | -
+7 | 09/14 | Managing Events and Metrics  | -
+8 | 09/16 | Managing Events and Metrics  | -
+9 | 09/21 | Managing Events and Metrics  | -
+10| 09/23 | Managing Events and Metrics | -
+11| 09/28 | Managing Events and Metrics | -
+12| 09/30 | Managing Events and Metrics | -
+13| 10/05 | Introducing Graphite and Grafana | -
+14| 10/07 | Introducing Graphite and Grafana | -
+15| 10/12 | Collectd events | MP1 Assigned
+16| 10/14 | Collectd events | -
+17| 10/19 | Logs and Logging | -
 18| 10/21 | Logs and Logging | -
-19| 10/25 | Building Monitored Applications | -
+19| 10/25 | Building Monitored Applications | MP1 Presented in Class, MP2 Assigned
 20| 10/28 | Building Monitored Applications | -
 21| 11/02 | Notifications | -
-22| 11/04 | Notifications | MP2 Due - demonstrated in class
-23| 11/09 | Monitoring an Application | Final Project Assigned
+22| 11/04 | Notifications | -
+23| 11/09 | Monitoring an Application | -
 24| 11/11 | Monitoring an Application | -
 25| 11/16 | Class Work time | -
 26| 11/18 | Class Work time | -
-27| 11/23 | Class Work time | -
+27| 11/23 | Class Work time | Final Presentation Assigned, MP2 Presented in Class
 28| 11/25 | Class Work time | -
-29| 11/30 | NA       | Thanksgiving Break - No Class
+29| 11/30 | Thanksgiving Break - No Class | -
 30| 12/02 | Class Work time | -
-31| 6-11  | Final Exam week | Final Project Presented and Due
+31| 6-11  | Final Exam week | Final Project Presentation
 
 **Course Outcomes:**
 
@@ -74,18 +74,20 @@ This course will enable students to be ready to design, build, and implement log
 
 **Topics to Be Covered**:
 
-* a. Intro - Monitoring & Measurement Framework
-* b. Managing events and Metrics & Graphing
-* c. Event Routing and Collection
-* d. Containers and Logs
-* e. Building an app & Notifications
-* f. Getting Started & Monitoring Nodes
-* g. Service Discovery
-* h. Alerting & Scaling and Reliability
-* i. Instrumenting Applications & Logging
-* j. Building Monitored Applications & Notification
+* Monitoring & Measurement Frameworks
+* Managing events and Metrics & Graphing
+* Event Routing and Collection
+* Containers and Logs
+* Building an app & Notifications
+* Getting Started & Monitoring Nodes
+* Service Discovery
+* Alerting & Scaling and Reliability
+* Instrumenting Applications & Logging
+* Building Monitored Applications & Notification
 
 **Required Textbook:**
+
+None
 
 **Course Notes:**  It is recommended to take notes from the oral discussion portion of the class.
 
@@ -95,7 +97,7 @@ This course will enable students to be ready to design, build, and implement log
 
 **Blackboard:** The course will make intensive use of Blackboard [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL") for communications, assignment submissions, group project coordination, providing online resources and administering examinations. All remote students will view the course lectures online via Blackboard, and online readings and other course material will be found on Blackboard.
 
-**Assignments:**  There will be 2 Mini-Projects, 1 mid-term and 1 final project.
+**Assignments:**  There will be 2 Mini-Projects, and 1 final project.
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 
@@ -111,11 +113,10 @@ The final grade for the class will be calculated as follows: (example)
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-          Midterm Exam:   23%        100
-                   MP1:   23%        100
-                   MP2:   23%        100
-         Final Project:   23%        100
-            Attendance:    8%         30
+                   MP1:   30%        100
+                   MP2:   30%        100
+         Final Project:   30%        100
+            Attendance:   10%         30
 ----------------------- ------- ----------------
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.

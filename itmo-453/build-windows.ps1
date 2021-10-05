@@ -8,19 +8,19 @@ $STAMP=Get-Date(Get-Date).ToUniversalTime()-uformat "%m%d%Y-%H%M%S"
 If (Test-Path "./output/pdf/itmo-453-fall-2021-cloud-computing-technologies*"){
   Remove-Item ./output/pdf/*.pdf -Verbose
 }Else{
-  Write-Output "./output/pdf/itmo-453-fall-2021-cloud-computing-technologies.pdf - File does not exist =("
+  Write-Output "./output/pdf/itmo-453-fall-2021-cloud-computing-technologies.pdf - does not exist, moving on..."
 }
 
 If (Test-Path "./output/docx/itmo-453-fall-2021-cloud-computing-technologies*"){
   Remove-Item ./output/docx/*.docx -Verbose
 }Else{
-  Write-Output "./output/docx/itmo-453-fall-2021-cloud-computing-technologies.docx - File does not exist =("
+  Write-Output "./output/docx/itmo-453-fall-2021-cloud-computing-technologies.docx - does not exist, moving on..."
 }
 
 If (Test-Path "./output/odt/itmo-453-fall-2021-cloud-computing-technologies*"){
   Remove-Item ./output/odt/*.odt -Verbose
 }Else{
-  Write-Output "./output/odt/itmo-453-fall-2021-cloud-computing-technologies.odt - File does not exist =("
+  Write-Output "./output/odt/itmo-453-fall-2021-cloud-computing-technologies.odt - does not exist, moving on..."
 }
 #######################################################################################################################
 # PDF - for e-reader 
