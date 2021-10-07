@@ -1,0 +1,4 @@
+Host github.com
+Hostname github.com
+IdentityFile C:\Users\palad\.ssh\id_rsa_itmo-453-github-deploy
+StrictHostKeyChecking no
