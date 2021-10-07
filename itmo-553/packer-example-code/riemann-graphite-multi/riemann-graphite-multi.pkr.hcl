@@ -149,6 +149,16 @@ source "virtualbox-iso" "ubuntu-graphitemc" {
 build {
   sources = ["source.virtualbox-iso.ubuntu-riemanna","source.virtualbox-iso.centos-riemannb","source.virtualbox-iso.ubuntu-riemannmc","source.virtualbox-iso.ubuntu-graphitea","source.virtualbox-iso.centos-graphiteb","source.virtualbox-iso.ubuntu-graphitemc"]
 
+provisioner "file" {
+  source           = "C:\Users\palad\.ssh\id_rsa_itmo-453-github-deploy"
+  destination      = "/home/vagrant/.ssh/id_rsa_itmo-453-github-deploy"
+}
+
+provisioner "file" {
+  source          = "config"
+  destination     = "/home/vagrant/.ssh/config"
+}
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     script          = "../scripts/post_install_ubuntu_2004_vagrant_riemanna.sh"
