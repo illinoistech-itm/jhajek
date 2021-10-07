@@ -151,8 +151,26 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    script          = "../scripts/post_install_ubuntu_2004_vagrant.sh"
-    only            = ["virtualbox-iso.ubuntu-graphitea","virtualbox-iso.ubuntu-graphitemc","virtualbox-iso.ubuntu-riemanna","virtualbox-iso.ubuntu-riemannmc"]
+    script          = "../scripts/post_install_ubuntu_2004_vagrant_riemanna.sh"
+    only            = ["virtualbox-iso.ubuntu-riemanna"]
+  }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    script          = "../scripts/post_install_ubuntu_2004_vagrant_riemannmc.sh"
+    only            = ["virtualbox-iso.ubuntu-riemannmc"]
+  }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    script          = "../scripts/post_install_ubuntu_2004_vagrant_graphitea.sh"
+    only            = ["virtualbox-iso.ubuntu-graphitea"]
+  }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    script          = "../scripts/post_install_ubuntu_2004_vagrant_graphitemc.sh"
+    only            = ["virtualbox-iso.ubuntu-graphitemc"]
   }
 
   provisioner "shell" {
