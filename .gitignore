@@ -10,6 +10,7 @@ packer-cache/
 output*/
 vagrant.d/
 *.iso
+variables.pkr.hcl
 
 variables.json
 .DS_Store
