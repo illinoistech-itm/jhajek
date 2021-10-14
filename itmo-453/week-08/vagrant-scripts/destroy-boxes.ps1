@@ -3,7 +3,7 @@ foreach ($box in $vagrantboxes)
 {
     write-host "Destroying: $($box)"
     Set-Location $box
-    vagrant stop
+    vagrant halt
     Remove-Item .vagrant -Recure -Force
     vagrant destroy -f
     write-host "Sleeping for 10 seconds..."
