@@ -149,10 +149,45 @@ source "virtualbox-iso" "ubuntu-graphitemc" {
 build {
   sources = ["source.virtualbox-iso.ubuntu-riemanna","source.virtualbox-iso.centos-riemannb","source.virtualbox-iso.ubuntu-riemannmc","source.virtualbox-iso.ubuntu-graphitea","source.virtualbox-iso.centos-graphiteb","source.virtualbox-iso.ubuntu-graphitemc"]
 
+provisioner "shell" {
+  inline          = ["mkdir -p /home/vagrant/.ssh"]
+}
+
+provisioner "file" {
+  # On MacOS and Linux use this Source Path, assuming your user is named: palad
+  # source           = "/Users/palad/.ssh/id_rsa_itmo-453-github-deploy"
+  # On Windows use this syntax
+  source           = "C:\Users\palad\.ssh\id_rsa_itmo-453-github-deploy"
+  destination      = "/home/vagrant/.ssh/id_rsa_itmo-453-github-deploy"
+}
+
+provisioner "file" {
+  source          = "config"
+  destination     = "/home/vagrant/.ssh/config"
+}
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    script          = "../scripts/post_install_ubuntu_2004_vagrant.sh"
-    only            = ["virtualbox-iso.ubuntu-graphitea","virtualbox-iso.ubuntu-graphitemc","virtualbox-iso.ubuntu-riemanna","virtualbox-iso.ubuntu-riemannmc"]
+    script          = "../scripts/post_install_ubuntu_2004_vagrant_riemanna.sh"
+    only            = ["virtualbox-iso.ubuntu-riemanna"]
+  }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    script          = "../scripts/post_install_ubuntu_2004_vagrant_riemannmc.sh"
+    only            = ["virtualbox-iso.ubuntu-riemannmc"]
+  }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    script          = "../scripts/post_install_ubuntu_2004_vagrant_graphitea.sh"
+    only            = ["virtualbox-iso.ubuntu-graphitea"]
+  }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    script          = "../scripts/post_install_ubuntu_2004_vagrant_graphitemc.sh"
+    only            = ["virtualbox-iso.ubuntu-graphitemc"]
   }
 
   provisioner "shell" {
