@@ -47,3 +47,4 @@ sudo gem install riemann-client riemann-tools riemann-dash
 sudo systemctl enable riemann
 sudo systemctl start riemann
 
+# Git clone command would go here
