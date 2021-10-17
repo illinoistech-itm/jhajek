@@ -47,8 +47,8 @@ sudo gem install riemann-client riemann-tools riemann-dash
 sudo systemctl enable riemann
 sudo systemctl start riemann
 
-git clone ssh://git@github.com/illinoistech-itm/sample-student.git
-
+#git clone ssh://git@github.com/illinoistech-itm/sample-student.git
+git clone git@github.com:illinoistech-itm/sample-student.git
 cp sample-student/itmo-453/week-07/riemanna/riemann.conf /etc/riemann/riemann.conf
 
 sudo systemctl stop riemann
