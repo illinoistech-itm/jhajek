@@ -47,7 +47,9 @@ sudo gem install riemann-client riemann-tools riemann-dash
 sudo systemctl enable riemann
 sudo systemctl start riemann
 
-#git clone ssh://git@github.com/illinoistech-itm/sample-student.git
+# Move the files that were uploaded via the file provisioners to their correct spot
+mv -v /tmp/config /home/vagrant/.ssh
+mv -v /tmp/id_rsa_itmo-453-github-deploy /home/vagrant/.ssh
 git clone git@github.com:illinoistech-itm/sample-student.git
 cp sample-student/itmo-453/week-07/riemanna/riemann.conf /etc/riemann/riemann.conf
 

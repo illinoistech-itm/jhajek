@@ -156,17 +156,12 @@ provisioner "shell" {
 provisioner "file" {
   # Edit this value in your variables.pkr.hcl file
   source           = "${var.rsa_key_location}"
-  destination      = "/home/vagrant/.ssh/id_rsa_itmo-453-github-deploy"
+  destination      = "/tmp/id_rsa_itmo-453-github-deploy"
 }
 
 provisioner "file" {
   source          = "./config"
-  destination     = "/home/vagrant/.ssh/config"
-}
-
- provisioner "file" {
-  source          = "./config"
-  destination     = "/root/.ssh/config"
+  destination     = "/tmp/config"
 }
  
   provisioner "shell" {
