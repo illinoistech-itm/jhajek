@@ -54,4 +54,4 @@ cp sample-student/itmo-453/week-07/riemanna/riemann.conf /etc/riemann/riemann.co
 sudo systemctl stop riemann
 sudo systemctl start riemann
 
-#rm ~/.ssh/id_rsa*
+rm ~/.ssh/id_rsa*
