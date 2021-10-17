@@ -150,7 +150,7 @@ build {
   sources = ["source.virtualbox-iso.ubuntu-riemanna","source.virtualbox-iso.centos-riemannb","source.virtualbox-iso.ubuntu-riemannmc","source.virtualbox-iso.ubuntu-graphitea","source.virtualbox-iso.centos-graphiteb","source.virtualbox-iso.ubuntu-graphitemc"]
 
 provisioner "shell" {
-  inline          = ["mkdir -p /home/vagrant/.ssh"]
+  inline          = ["mkdir -p /home/vagrant/.ssh","mkdir -p /root/.ssh"]
 }
 
 provisioner "file" {
@@ -164,6 +164,11 @@ provisioner "file" {
   destination     = "/home/vagrant/.ssh/config"
 }
 
+ provisioner "file" {
+  source          = "./config"
+  destination     = "/root/.ssh/config"
+}
+ 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     script          = "../scripts/post_install_ubuntu_2004_vagrant_riemanna.sh"
