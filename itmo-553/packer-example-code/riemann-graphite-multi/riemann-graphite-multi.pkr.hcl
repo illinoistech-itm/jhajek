@@ -160,8 +160,8 @@ provisioner "file" {
 }
 
 provisioner "file" {
-  source          = "config"
-  destination     = "/home/vagrant/.ssh/config"
+  source          = "./config"
+  destination     = "/home/vagrant/.ssh/"
 }
 
   provisioner "shell" {
