@@ -154,10 +154,8 @@ provisioner "shell" {
 }
 
 provisioner "file" {
-  # On MacOS and Linux use this Source Path, assuming your user is named: palad
-  # source           = "/Users/palad/.ssh/id_rsa_itmo-453-github-deploy"
-  # On Windows use this syntax
-  source           = "C:\Users\palad\.ssh\id_rsa_itmo-453-github-deploy"
+  # Edit this value in your variables.pkr.hcl file
+  source           = "${var.rsa_key_location}"
   destination      = "/home/vagrant/.ssh/id_rsa_itmo-453-github-deploy"
 }
 
