@@ -48,7 +48,7 @@ sudo systemctl enable riemann
 sudo systemctl start riemann
 
 git clone git@github.com:illinoistech-itm/sample-student.git
-cp sample-student/itmo-453/week-07/riemanna/riemann.conf /etc/riemann/riemann.conf
+cp sample-student/itmo-453/week-07/riemann/riemanna/riemann.conf /etc/riemann/riemann.conf
 
 sudo systemctl stop riemann
 sudo systemctl start riemann
