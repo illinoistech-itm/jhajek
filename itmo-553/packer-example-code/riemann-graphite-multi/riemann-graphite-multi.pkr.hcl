@@ -152,12 +152,12 @@ build {
 provisioner "file" {
   # Edit this value in your variables.pkr.hcl file
   source           = "${var.rsa_key_location}"
-  destination      = "/home/vagrant"
+  destination      = "/home/vagrant/"
 }
 
 provisioner "file" {
   source          = "./config"
-  destination     = "/home/vagrant"
+  destination     = "/home/vagrant/"
 }
  
   provisioner "shell" {
