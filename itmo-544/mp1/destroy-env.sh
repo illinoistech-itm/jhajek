@@ -4,7 +4,7 @@
 # Adding URLs of the syntax above each command
 
 # Example Script to dynamically terminate all running EC2 instances
-IDS=$(aws ec2 describe-instances --query 'Reservations[*].Instances[?State.Code==`Running`].InstanceId')
+IDS=$(aws ec2 describe-instances --query 'Reservations[*].Instances[?State.Name==`running`].InstanceId')
 
 aws ec2 terminate-instances --instance-ids $IDS
 
