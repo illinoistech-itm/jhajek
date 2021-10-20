@@ -39,6 +39,16 @@ This is shell script will take commandline input dynamically via positional para
 
 ```./create-env.sh $(<arguments.txt)```
 
+```bash
+# Hint on how to cycle through 2 arrays in one forloop in Bash
+#https://stackoverflow.com/questions/17403498/iterate-over-two-arrays-simultaneously-in-bash
+
+for i in "${!array[@]}"; do
+    printf "%s is in %s\n" "${array[i]}" "${array2[i]}"
+done
+
+```
+
 ### arguments.txt
 
 This is where you will pass the arguments (space delimited) as follows (order is **very** important)
