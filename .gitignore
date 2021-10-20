@@ -11,6 +11,7 @@ output*/
 vagrant.d/
 *.iso
 variables.pkr.hcl
+*.priv
 
 variables.json
 .DS_Store
