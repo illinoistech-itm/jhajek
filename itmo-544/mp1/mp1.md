@@ -50,22 +50,18 @@ This is where you will pass the arguments (space delimited) as follows (order is
 * user-data
 * Target-group name (use tg as a prefix )
 * Load-balancer name (us elb and your initial as a prefix)
-
+* DB instance identifier
+* DB instance class - choose db.t2.micro (free tier)
+* DB Engine (choose mariadb)
+* DB Master username
+* DB Master user password
+* DB allocated-storage (choose 20)
 
 I will grade your logic by running it with my account configuration information, no hard-coded values.
 
 ### install-env.sh
 
-This will contain the same content as last week's assignment:
-
-```bash
-#!/bin/bash
-
-sudo apt-get update
-sudo apt-get install -y apache2
-# Or if you would like to do nginx you can do that 
-# sudo apt-get install y nginx
-```
+This will contain the shell script to install the nginx webserver and the zfs-utils to format the EBS volumes
 
 ### destroy-env.sh
 
@@ -75,4 +71,6 @@ Using AWS CLI v2 filters filter the instance you created and destroy it.  A sing
 
 ## Final Deliverable
 
-Submit the URL to the week-06 folder to Blackboard.  Your week-06 repo will contain all three shell scripts but not the **arguments.txt** file.
+Submit the URL to your mp1 folder on Blackboard.  Your mp1 repo will contain all three shell scripts but not the **arguments.txt** file.
+
+I will grade your logic by running it with my account configuration information, no hard-coded values. **destroy-env.sh** must work!
