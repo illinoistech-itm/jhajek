@@ -1,15 +1,17 @@
-# Week-06 Lab
+# MP1 (Week-09) Lab
 
 ## Objectives
 
-* Create and Deploy a single-tier cloud application (section 4.1)
-* Implement a dynamic command positional parameter solution in your shell scripts
-* Create scripts to dynamically launch, install, and destroy your environment
-* Understand how to use AWS CLI Filters for querying ephemeral instance data
+* Create and deploy elastic infrastructure components on the AWS Cloud
+  * Including EC2, EBS, RDS, ELB, and Target Groups
+* Understand and demonstrate the security implications and enable the proper IAM permissions to use these resources
+* Understand and demonstrate the use of the Linux Commandline and AWS CLI tools for launching infrastructure
+* Understand and demonstrate the requirements for building a three-tier application
+* Understand and demonstrate the use of the AWS CLI tools for terminating/destroying all resources dynamically with a single command -- using queries and filters
 
 ## Outcomes
 
-At the conclusion of this Lab you will have successfully deployed and destroyed a single-tier cloud application via the AWS CLI and using positional parameters in a shell script.  You will have configured your application to use AWS CLI Filters and Queries to retrieve dynamic data about ephemeral instances.
+At the conclusion of this Lab you will have successfully and securely deployed a three-tier elastic application via cloud native methods.   You will have demonstrated the use of queries and filters for dynamically querying instance information for use in deployment and termination/destruction of said cloud resources.
 
 ## Assumptions
 
@@ -18,14 +20,16 @@ For this assignment you can make these assumptions
 * The I we are all using us-east-2 as our default region
 * That the access keys are already created and not needed in this script
 * That the security-group has been already created and all of the proper ports are open
+* That the proper IAM minimal user permissions are set in for your IAM user
 
 ## Deliverable
 
-Create a folder named: week-06 under your class folder in the provided private repo. In the folder there will be three shell scripts:
+Create a folder named: **mp1** under your class folder in the provided private repo. In the folder there will be three shell scripts:
 
 * A script named: `create-env.sh`
-  * This script will create an EC2 instance that installs an Apache Web Server on launch
-* A script named: `install-env.sh` will install the Apache 2 webserver
+  * This script will deploy, configure, and create all the AWS infrastructure our three-tier application needs
+* A script named: `install-app.sh`
+  * This script will install all the application components and format EBS volumes
 * A script named: `destroy-env.sh`
   * This script will terminate all infrastructure you have created
 
@@ -42,10 +46,11 @@ This is where you will pass the arguments (space delimited) as follows (order is
 * image-id
 * instance-type
 * count
-* subnet-id
 * key-name
-* security-group-ids
 * user-data
+* Target-group name (use tg as a prefix )
+* Load-balancer name (us elb and your initial as a prefix)
+
 
 I will grade your logic by running it with my account configuration information, no hard-coded values.
 

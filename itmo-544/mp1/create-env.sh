@@ -6,9 +6,11 @@
 aws ec2 run-instances --image-id $1 --instance-type $2 --count $3 --subnet-id $4 --key-name $5 --security-group-ids $6 --user-data $7
 
 # Need Code to create Target Groups and then dynamically attach instances (3) in this example
+# Need Code to register Targets to Target Group (your instance IDs)
 
 
-# Need code to create an ELB attach a target group and WAIT for the operation to complete
+# Need code to create an ELB 
+# Need to attach a target group to ELB and WAIT for the operation to complete
 
 
 # Need code to create an RDS instance with a read-replica
