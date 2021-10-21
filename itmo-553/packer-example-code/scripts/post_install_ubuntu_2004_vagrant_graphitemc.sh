@@ -89,7 +89,7 @@ sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/storage-schemas.
 sudo touch /etc/carbon/storage-aggregation.conf
 
 ## Ubuntu only - default file to start 2 carbon cache and 1 carbon-relay instances at boot time
-sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/graphite-carbon.default /etc/default/graphite-carbon
+sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/graphite-carbon.default /etc/default/graphite-carbon
 
 ## Command to create the graphite-api search index file
 sudo touch /var/lib/graphite/api_search_index
