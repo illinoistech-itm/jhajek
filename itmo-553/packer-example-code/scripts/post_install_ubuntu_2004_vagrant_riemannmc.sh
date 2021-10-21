@@ -31,6 +31,9 @@ cat << EOT >> /etc/hosts
 192.168.33.202  graphitemc graphitemc.example.com
 EOT
 
+## Command to change hostname
+sudo hostnamectl set-hostname riemannmc
+
 # Install software
 # 1 we will need openjdk-8-jre (java runtime) and ruby runtimes
 # Examples:

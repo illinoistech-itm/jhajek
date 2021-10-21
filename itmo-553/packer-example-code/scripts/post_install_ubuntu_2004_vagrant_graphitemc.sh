@@ -31,6 +31,9 @@ cat << EOT >> /etc/hosts
 192.168.33.202  graphitemc graphitemc.example.com
 EOT
 
+## Command to change hostname
+sudo hostnamectl set-hostname graphitemc
+
 # Commands to install graphite, carbon-cache and carbon-relay services,
 # and whisper flatfile database
 # http://askubuntu.com/questions/549550/installing-graphite-carbon-via-apt-unattended

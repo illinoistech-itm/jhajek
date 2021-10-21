@@ -31,3 +31,5 @@ cat << EOT >> /etc/hosts
 192.168.33.202  graphitemc graphitemc.example.com
 EOT
 
+## Command to change hostname
+sudo hostnamectl set-hostname graphitea
