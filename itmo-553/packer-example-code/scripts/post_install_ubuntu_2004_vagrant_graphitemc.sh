@@ -110,7 +110,7 @@ sudo systemctl enable carbon-relay@1.service
 
 ## Command to start and enable at boot the graphite-api--for Ubuntu running on port 8542
 ## you can check this by running the command:  ss -l
-sudo systemctl enable graphite-pai.service
+sudo systemctl enable graphite-api.service
 sudo systemctl start graphite-api.service
 
 # Command to start and enable the grafana-server, running on port 3000
