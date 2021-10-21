@@ -79,23 +79,23 @@ sudo cp -v ./sample-student/itmo-453/week-09/service-files/carbon-relay@.service
 sudo cp -v ./sample-student/itmo-453/week-09/service-files/graphite-api.service /lib/systemd/system/graphite-api.service
 
 ## Code to cp our carbon.conf configuration file we created and overwrite the default
-sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/carbon.conf /etc/carbon/carbon.conf
+sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitemc/carbon.conf /etc/carbon/carbon.conf
 
 ## Code to cp our storage aggregation configuration files and overwrite the default
-sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/storage-schemas.conf /etc/carbon/storage-schemas.conf
+sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitemc/storage-schemas.conf /etc/carbon/storage-schemas.conf
 
 ## Code to create a blank storage aggregation file (not needed at the moment) but will avoid warning message 
 # in the logs
 sudo touch /etc/carbon/storage-aggregation.conf
 
 ## Ubuntu only - default file to start 2 carbon cache and 1 carbon-relay instances at boot time
-sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/graphite-carbon.default /etc/default/graphite-carbon
+sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitemc/graphite-carbon.default /etc/default/graphite-carbon
 
 ## Command to create the graphite-api search index file
 sudo touch /var/lib/graphite/api_search_index
 
 ## Code to copy our customized Graphite parameter's file and overwrite the default one
-sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/graphite-api.yaml /etc/
+sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitemc/graphite-api.yaml /etc/
 
 ## Command to reload all of the daemons and start them
 # Daemon-reload must be run each time you change the content of a .service file
