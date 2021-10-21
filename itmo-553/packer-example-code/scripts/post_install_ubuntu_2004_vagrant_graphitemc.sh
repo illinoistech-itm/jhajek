@@ -37,7 +37,7 @@ EOT
 sudo apt-get update
 sudo apt-get install -y apt-transport-https
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get -y --allow-change-held-packages install graphite-carbon python3-whisper
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y --allow-change-held-packages install graphite-carbon python3-whisper
 
 ## Command to stop the carbon-cache and carbon-relay services, as we need to edit
 # edit their systemd service files later
