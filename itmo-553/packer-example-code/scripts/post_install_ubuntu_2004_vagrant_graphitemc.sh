@@ -59,10 +59,11 @@ sudo systemctl stop graphite-api.service
 
 ## Commands to delete the uneeded service files for graphite-api, carbon-cache, and carbon-relay
 ## Commmand can be typed verbosly or as a single command using {}:
-# sudo rm /lib/systemd/system/graphite-api.service
-# sudo rm /lib/systemd/system/carbon-relay@.service
-# sudo rm /lib/systemd/system/carbon-cache.service  
-sudo rm /lib/systemd/system/{carbon-cache,carbon-relay@,graphite-api}.service
+# sudo rm /lib/systemd/system/{carbon-cache,carbon-relay@,graphite-api}.service
+sudo rm /lib/systemd/system/graphite-api.service
+sudo rm /lib/systemd/system/carbon-relay@.service
+sudo rm /lib/systemd/system/carbon-cache.service  
+
 
 ## Command to install Grafana graphing tool
 wget https://dl.grafana.com/oss/release/grafana_7.3.6_amd64.deb
