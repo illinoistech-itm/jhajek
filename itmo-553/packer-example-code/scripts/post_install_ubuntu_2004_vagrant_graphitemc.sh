@@ -102,10 +102,10 @@ sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/graphite-api.yam
 sudo systemctl daemon-reload 
 
 # Command to start and enable at boot 2 instances of the carbon-cache
-sudo systemctl enable carbon-cache@1.service
-sudo systemctl enable carbon-cache@2.service
 sudo systemctl start carbon-cache@1.service
 sudo systemctl start carbon-cache@2.service
+sudo systemctl enable carbon-cache@1.service
+sudo systemctl enable carbon-cache@2.service
 
 ## Command to start and enable at boot 1 instance of carbon-relay
 sudo systemctl enable carbon-relay@1.service
