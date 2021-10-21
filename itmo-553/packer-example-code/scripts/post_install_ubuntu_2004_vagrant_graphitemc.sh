@@ -95,7 +95,7 @@ sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/graphite-carbon.
 sudo touch /var/lib/graphite/api_search_index
 
 ## Code to copy our customized Graphite parameter's file and overwrite the default one
-sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/graphite-api.yaml /etc/
+sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/graphite-api.yaml /etc/
 
 ## Command to reload all of the daemons and start them
 # Daemon-reload must be run each time you change the content of a .service file
