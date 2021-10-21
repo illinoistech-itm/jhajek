@@ -102,24 +102,19 @@ sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphitea/graphite-api.yam
 sudo systemctl daemon-reload 
 
 # Command to start and enable at boot 2 instances of the carbon-cache
-#sudo systemctl start carbon-cache@1.service
-#sudo systemctl start carbon-cache@2.service
-#sudo systemctl enable carbon-cache@1.service
-#sudo systemctl enable carbon-cache@2.service
-
+sudo systemctl enable carbon-cache@1.service
+sudo systemctl enable carbon-cache@2.service
+sudo systemctl start carbon-cache@1.service
+sudo systemctl start carbon-cache@2.service
 ## Command to start and enable at boot 1 instance of carbon-relay
-#sudo systemctl enable carbon-relay@1.service
-#sudo systemctl start carbon-relay@1.service
+sudo systemctl enable carbon-relay@1.service
+sudo systemctl start carbon-relay@1.service
 
 ## Command to start and enable at boot the graphite-api--for Ubuntu running on port 8542
 ## you can check this by running the command:  ss -l
-#sudo systemctl enable graphite-api
-#sudo systemctl start graphite-api
+sudo systemctl enable graphite-pai.service
+sudo systemctl start graphite-api.service
 
 # Command to start and enable the grafana-server, running on port 3000
-#sudo systemctl enable grafana-server
-#sudo systemctl start grafana-server
-
-
-
-
+sudo systemctl enable grafana-server
+sudo systemctl start grafana-server
