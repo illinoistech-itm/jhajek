@@ -34,6 +34,7 @@ EOT
 # Commands to install graphite, carbon-cache and carbon-relay services,
 # and whisper flatfile database
 # http://askubuntu.com/questions/549550/installing-graphite-carbon-via-apt-unattended
+sudo apt-get update
 sudo apt-get install -y apt-transport-https 
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y --allow-change-held-packages install graphite-carbon python3-whisper
