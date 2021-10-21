@@ -31,26 +31,4 @@ cat << EOT >> /etc/hosts
 192.168.33.202  graphitemc graphitemc.example.com
 EOT
 
-# Install software
-# 1 we will need openjdk-8-jre (java runtime) and ruby runtimes
-# Examples:
-sudo apt-get update -y
-sudo apt-get install -y openjdk-8-jre ruby ruby-dev
 
-# 2 we will need the rpm deb packages from riemann.io
-# Examples
-wget https://github.com/riemann/riemann/releases/download/0.3.6/riemann_0.3.6_all.deb
-sudo dpkg -i riemann_0.3.6_all.deb
-# 3 we will need some ruby gems 
-sudo gem install riemann-client riemann-tools riemann-dash 
-# 4 We need to ensure the services are enabled and start succesfully
-sudo systemctl enable riemann
-sudo systemctl start riemann
-
-git clone git@github.com:illinoistech-itm/sample-student.git
-cp -v sample-student/itmo-453/week-07/riemann/riemanna/riemann.config /etc/riemann/riemann.conf
-
-sudo systemctl stop riemann
-sudo systemctl start riemann
-
-rm ~/.ssh/id_rsa*

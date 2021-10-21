@@ -47,3 +47,10 @@ sudo gem install riemann-client riemann-tools riemann-dash
 sudo systemctl enable riemann
 sudo systemctl start riemann
 
+git clone git@github.com:illinoistech-itm/sample-student.git
+cp -v sample-student/itmo-453/week-07/riemann/riemanna/riemann.config /etc/riemann/riemann.conf
+
+sudo systemctl stop riemann
+sudo systemctl start riemann
+
+rm ~/.ssh/id_rsa*
