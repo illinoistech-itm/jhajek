@@ -19,5 +19,11 @@ variable "rsa_key_location" {
   # On Linux use this syntax, assuming your user is named: controller
   # default = "/home/controller/.ssh/id_rsa_itmo-453-github-deploy"
   default = "C:\\Users\\palad\\.ssh\\id_rsa_itmo-453-github-deploy"
+}
 
+variable "build_artifact_location" {
+  type = string
+  default = "../build/"
+  # This is the default path on the build-server to place the .box files for download via a webserver
+  #default = "../build/boxes/"
 }
