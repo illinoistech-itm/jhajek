@@ -31,6 +31,9 @@ cat << EOT >> /etc/hosts
 192.168.33.202  graphitemc graphitemc.example.com
 EOT
 
+## Command to change hostname
+sudo hostnamectl set-hostname riemanna
+
 # Install software
 # 1 we will need openjdk-8-jre (java runtime) and ruby runtimes
 # Examples:
@@ -47,4 +50,10 @@ sudo gem install riemann-client riemann-tools riemann-dash
 sudo systemctl enable riemann
 sudo systemctl start riemann
 
-# Git clone command would go here
+git clone git@github.com:illinoistech-itm/sample-student.git
+cp -v sample-student/itmo-453/week-07/riemann/riemanna/riemann.config /etc/riemann/riemann.conf
+
+sudo systemctl stop riemann
+sudo systemctl start riemann
+
+rm ~/.ssh/id_rsa*
