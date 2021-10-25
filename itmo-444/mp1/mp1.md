@@ -49,6 +49,22 @@ done
 
 ```
 
+```bash
+# Example to store returned values into a Bash array
+
+SUBNETARRAY=( $(aws ec2 describe-subnets --query "Subnets[*].SubnetId" --output text) )
+echo ${SUBNETARRAY[1]}
+subnet-d564ae98
+echo ${SUBNETARRAY[0]}
+subnet-589b1f23
+echo ${SUBNETARRAY[*]}
+subnet-589b1f23 subnet-d564ae98 subnet-97bdc3fe
+echo ${SUBNETARRAY[@]}
+subnet-589b1f23 subnet-d564ae98 subnet-97bdc3fe
+echo ${#SUBNETARRAY[@]}
+3
+```
+
 ### arguments.txt
 
 This is where you will pass the arguments (space delimited) as follows (order is **very** important)
