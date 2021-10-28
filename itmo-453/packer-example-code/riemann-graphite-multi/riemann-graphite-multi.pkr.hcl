@@ -149,22 +149,21 @@ source "virtualbox-iso" "ubuntu-graphitemc" {
 build {
   sources = ["source.virtualbox-iso.ubuntu-riemanna","source.virtualbox-iso.centos-riemannb","source.virtualbox-iso.ubuntu-riemannmc","source.virtualbox-iso.ubuntu-graphitea","source.virtualbox-iso.centos-graphiteb","source.virtualbox-iso.ubuntu-graphitemc"]
 
-provisioner "shell" {
-  inline          = ["mkdir -p /home/vagrant/.ssh"]
+provisioner "file" {
+  # Edit this value in your variables.pkr.hcl file
+  source           = "${var.rsa_key_location}"
+  destination      = "/home/vagrant/"
 }
 
 provisioner "file" {
-  # On MacOS and Linux use this Source Path, assuming your user is named: palad
-  # source           = "/Users/palad/.ssh/id_rsa_itmo-453-github-deploy"
-  # On Windows use this syntax
-  source           = "C:\Users\palad\.ssh\id_rsa_itmo-453-github-deploy"
-  destination      = "/home/vagrant/.ssh/id_rsa_itmo-453-github-deploy"
+  source          = "./config"
+  destination     = "/home/vagrant/"
 }
-
-provisioner "file" {
-  source          = "config"
-  destination     = "/home/vagrant/.ssh/config"
-}
+ 
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    inline          = ["mkdir -p /home/vagrant/.ssh", "mkdir -p /root/.ssh", "chmod 600 /home/vagrant/id_rsa_itmo-453-github-deploy", "cp -v /home/vagrant/id_rsa_itmo-453-github-deploy /home/vagrant/.ssh/", "cp -v /home/vagrant/config /home/vagrant/.ssh/", "cp -v /home/vagrant/config /root/.ssh/"]
+  }
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
