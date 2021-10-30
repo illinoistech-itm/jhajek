@@ -37,7 +37,7 @@ source "virtualbox-iso" "centos-riemannb" {
   http_directory          = "."
   http_port_min           = 9001
   http_port_max           = 9100
-  iso_checksum            = "7f4c97e1d055ddfbad93fd04b22f5a170f20e04e51fd9aa5c482df485245cdac"
+  iso_checksum            = "70005b2069934af9277b38601501f68fdbb7d340d4028262a9bbc1134d8271dd4"
   iso_urls                = ["http://bay.uchicago.edu/centos/8-stream/isos/x86_64/CentOS-Stream-8-x86_64-latest-boot.iso"]
   shutdown_command        = "echo 'vagrant' | sudo -S /sbin/poweroff"
   ssh_password            = "vagrant"
@@ -164,6 +164,7 @@ provisioner "file" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     inline          = ["mkdir -p /home/vagrant/.ssh", "mkdir -p /root/.ssh", "chmod 600 /home/vagrant/id_rsa_itmo-453-github-deploy", "cp -v /home/vagrant/id_rsa_itmo-453-github-deploy /home/vagrant/.ssh/", "cp -v /home/vagrant/config /home/vagrant/.ssh/", "cp -v /home/vagrant/config /root/.ssh/"]
   }
+
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
