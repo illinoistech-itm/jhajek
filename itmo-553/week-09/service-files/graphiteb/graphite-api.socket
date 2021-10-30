@@ -1,0 +1,9 @@
+[Unit]
+Description=graphite-api socket
+
+[Socket]
+ListenStream=/run/graphite-api.sock
+ListenStream=127.0.0.1:8888
+
+[Install]
+WantedBy=sockets.target
