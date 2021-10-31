@@ -169,7 +169,7 @@ source "virtualbox-iso" "ubuntu-graphitemc" {
 }
 
 build {
-  sources = ["source.virtualbox-iso.ubuntu-riemanna","source.virtualbox-iso.centos-riemannb","source.virtualbox-iso.ubuntu-riemannmc","source.virtualbox-iso.ubuntu-graphitea","source.virtualbox-iso.centos-graphiteb","source.virtualbox-iso.ubuntu-graphitemc"]
+  sources = ["source.virtualbox-iso.ubuntu-riemanna","source.virtualbox-iso.centos-riemannb","source.virtualbox-iso.ubuntu-riemannmc","source.virtualbox-iso.ubuntu-graphitea","source.virtualbox-iso.ubuntu-graphiteb","source.virtualbox-iso.ubuntu-graphitemc"]
 
 provisioner "file" {
   # Edit this value in your variables.pkr.hcl file
