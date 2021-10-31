@@ -44,7 +44,7 @@ source "virtualbox-iso" "centos-riemannb" {
   ssh_port                = 22
   ssh_timeout             = "30m"
   ssh_username            = "vagrant"
-  vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "2048"], ["modifyvm", "{{ .Name }}"]]
+  vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
   headless                = "${var.headless_build}"
 }
@@ -116,7 +116,7 @@ source "virtualbox-iso" "centos-graphiteb" {
   ssh_port                = 22
   ssh_timeout             = "30m"
   ssh_username            = "vagrant"
-  vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "2048"], ["modifyvm", "{{ .Name }}"]]
+  vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
   headless                = "${var.headless_build}"
 }
