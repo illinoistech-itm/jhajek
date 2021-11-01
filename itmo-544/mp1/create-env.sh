@@ -17,6 +17,3 @@ aws ec2 run-instances --image-id $1 --instance-type $2 --count $3 --subnet-id $4
 # Need code to create an RDS instance with a read-replica
 
 
-# Need to create 3 10 GB EC2 EBS Volumes and attach one to each of your EC2 instances
-# use xvdf as the device name for each volume
-
