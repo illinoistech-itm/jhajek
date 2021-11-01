@@ -29,7 +29,7 @@ Create a folder named: **mp1** under your class folder in the provided private r
 * A script named: `create-env.sh`
   * This script will deploy, configure, and create all the AWS infrastructure our three-tier application needs
 * A script named: `install-app.sh`
-  * This script will install all the application components and format EBS volumes
+  * This script will install all the application components
 * A script named: `destroy-env.sh`
   * This script will terminate all infrastructure you have created
 
@@ -87,7 +87,7 @@ I will grade your logic by running it with my account configuration information,
 
 ### install-env.sh
 
-This will contain the shell script to install the nginx webserver and the zfs-utils to format the EBS volumes
+This will contain the shell script to install the nginx webserver
 
 ### destroy-env.sh
 
@@ -96,6 +96,12 @@ Using AWS CLI v2 filters filter the instance you created and destroy it.  A sing
 [AWS Filters](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html "URL for AWS Filters")
 
 ## Final Deliverable
+
+Grading will break down into 3rds:
+
+* 33 points for create-env.sh successfully demonstrating all required Comments in the template
+* 33 points for the install-app.sh requirements, installing Nginx
+* 33 points for the destroy-env.sh successfully destroying all infrastructure you launched
 
 Submit the URL to your mp1 folder on Blackboard.  Your mp1 repo will contain all three shell scripts but not the **arguments.txt** file.
 
