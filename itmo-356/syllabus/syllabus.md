@@ -44,17 +44,17 @@ Session # | Date | Topic | Reading - Homework |
 13| 10/04 | Chapter 5 | Technology and Philosophy of FOSS Ch 6
 14| 10/06 | Chapter 5 | Technology and Philosophy of FOSS Ch 6
 15| 10/11 | NA | No Class - Fall Break
-16| 10/13 | Chapter 6 | Technology and Philosophy of FOSS Ch 7
-17| 10/18 | Chapter 7 | Technology and Philosophy of FOSS Ch 8
-18| 10/20 | Chapter 7 | Technology and Philosophy of FOSS Ch 8
-19| 10/25 | Chapter 8 | Technology and Philosophy of FOSS Ch 9 & 10
-20| 10/27 | Chapter 8 | Technology and Philosophy of FOSS Ch 9 & 10
-21| 11/01 | Midterm Exam | NA
-22| 11/03 | Chapter 9 & 10 | Technology and Philosophy of FOSS Ch 11
-23| 11/08 | Chapter 11 | Technology and Philosophy of FOSS Ch 12
-24| 11/10 | Chapter 11 | Technology and Philosophy of FOSS Ch 12
-25| 11/15 | Chapter 12 | Technology and Philosophy of FOSS Ch 13
-26| 11/17 | Chapter 12 | Technology and Philosophy of FOSS Ch 13
+16| 10/13 | Chapter 5 | Technology and Philosophy of FOSS Ch 6
+17| 10/18 | Chapter 6 | Technology and Philosophy of FOSS Ch 7
+18| 10/20 | Chapter 6 | Technology and Philosophy of FOSS Ch 7
+19| 10/25 | Chapter 7 | Technology and Philosophy of FOSS Ch 8
+20| 10/27 | Chapter 7 | Technology and Philosophy of FOSS Ch 8
+21| 11/01 | Chapter 8 | Technology and Philosophy of FOSS Ch 9 & 10
+22| 11/03 | Chapter 8 | Technology and Philosophy of FOSS Ch 9 & 10
+23| 11/08 | Midterm Exam | Technology and Philosophy of FOSS Ch 9 & 10
+24| 11/10 | Chapter 9 & 10 | Technology and Philosophy of FOSS Ch 11 & 12
+25| 11/15 | Chapter 11 & 12 | Technology and Philosophy of FOSS Ch 13
+26| 11/17 | Chapter 11 & 12 | Technology and Philosophy of FOSS Ch 13
 27| 11/22 | Chapter 13 | NA - Final Project Assigned
 28| 11/24 | NA       | Thanksgiving Break - No Class
 29| 11/29 | Final Project | NA
