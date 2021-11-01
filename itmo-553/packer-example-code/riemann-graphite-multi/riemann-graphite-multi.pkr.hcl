@@ -220,7 +220,7 @@ provisioner "file" {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts          = ["../scripts/post_install_vagrant-centos-8.sh"]
+    scripts          = ["../scripts/post_install_centos_2004_vagrant_riemannb.sh"]
     only             = ["virtualbox-iso.centos-riemannb"]
   }
 

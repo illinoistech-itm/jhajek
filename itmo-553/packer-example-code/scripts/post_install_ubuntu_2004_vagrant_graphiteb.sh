@@ -34,20 +34,53 @@ EOT
 ## Command to change hostname
 sudo hostnamectl set-hostname graphiteb
 
-sudo yum install -y epel-release git vim wget python3 python3-devel python3-setuptools python3-pip
+# Commands to install graphite, carbon-cache and carbon-relay services,
+# and whisper flatfile database
+# http://askubuntu.com/questions/549550/installing-graphite-carbon-via-apt-unattended
+sudo apt-get update
+sudo apt-get install -y apt-transport-https
 
-sudo yum install -y python3-gunicorn
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y --allow-change-held-packages install graphite-carbon python3-whisper
 
-sudo yum install -y cairo-devel python3-cairo python3-cairocffi
+## Command to stop the carbon-cache and carbon-relay services, as we need to edit
+# edit their systemd service files later
+sudo systemctl stop carbon-cache.service
+sudo systemctl stop carbon-relay@1.service
 
-sudo python3 -m pip install graphite
+## Command to install gunicorn, which is an applicaiton server which will servce 
+# our graphite api on port 8542 - https://gunicorn.org/
+sudo apt-get install -y gunicorn
 
-python3 -m pip install whisper carbon 
+# Dependencies needed to install graphite-api 
+# Since we are using the .deb package for graphite-api and not installing via apt-get
+# We need to manually retrieve all the dependencies
+sudo apt-get install -y python3-cairocffi python3-flask python3-pyparsing python3-tz python3-tzlocal libjs-sphinxdoc sphinx-rtd-theme-common
 
-sudo groupadd _graphite
-sudo useradd -c "Carbon Daemons" -g _graphite -d /var/lib/graphite -M -s /sbin/nologin _graphite
-sudo chown -R _graphite:_graphite /var/lib/graphite
-sudo chown -R _graphite:_graphite /var/log/carbon
+# These commands install the graphite-api version 1.1.3-6 which fixes our problems...
+# We will also install the latest version of python3-structlog which graphite-api 1.1.3-6 requires
+# from the Ubuntu 20.10 repo as well
+# Turns out the problem is the default package in Ubuntu 20.04 repository for graphite-api 1.1.3-5 
+# https://bugs.launchpad.net/ubuntu/+source/graphite-api/+bug/1879148
+# The solution was to grab the fixed package from the next version of Ubuntu 20.10, codenamed Groovy Gorilla
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=954600
+# Is this normal?  No but its only for the Ubuntu 20.04 Focal distro that this fix wasn't back ported to
+# https://packages.ubuntu.com/groovy/graphite-api
+# https://packages.ubuntu.com/focal/graphite-api
+
+wget http://archive.ubuntu.com/ubuntu/pool/universe/p/python-structlog/python3-structlog_20.1.0-1_all.deb
+sudo dpkg -i ./python3-structlog_20.1.0-1_all.deb
+wget http://archive.ubuntu.com/ubuntu/pool/universe/g/graphite-api/graphite-api_1.1.3-6_all.deb
+sudo dpkg -i ./graphite-api_1.1.3-6_all.deb
+
+## Command to stop the graphite api service as we need to change out the default
+## default graphite-api.service file with out own from our GitHub Repo
+sudo systemctl stop graphite-api.service
+
+## Commands to delete the uneeded service files for graphite-api, carbon-cache, and carbon-relay
+## Commmand can be typed verbosly or as a single command using {}:
+# sudo rm /lib/systemd/system/{carbon-cache,carbon-relay@}.service
+sudo rm /lib/systemd/system/carbon-relay@.service
+sudo rm /lib/systemd/system/carbon-cache.service  
 
 ## Command to install Grafana graphing tool
 wget https://dl.grafana.com/oss/release/grafana_7.3.6_amd64.deb
@@ -58,8 +91,8 @@ sudo dpkg -i grafana_7.3.6_amd64.deb
 git clone git@github.com:illinoistech-itm/sample-student.git
 
 ## Code to copy the new systemd service files from our GitHub repo code to the systemd service directory
-sudo cp -v ./sample-student/itmo-453/week-09/service-files/graphiteb/carbon-cache@.service /lib/systemd/system/carbon-cache@.service
-sudo cp -v ./sample-student/itmo-453/week-09/service-files/graphiteb/carbon-relay@.service /lib/systemd/system/carbon-relay@.service
+sudo cp -v ./sample-student/itmo-453/week-09/service-files/carbon-cache@.service /lib/systemd/system/carbon-cache@.service
+sudo cp -v ./sample-student/itmo-453/week-09/service-files/carbon-relay@.service /lib/systemd/system/carbon-relay@.service
 
 ## Code to cp our carbon.conf configuration file we created and overwrite the default
 sudo cp -v ./sample-student/itmo-453/week-09/graphite/graphiteb/carbon.conf /etc/carbon/carbon.conf
