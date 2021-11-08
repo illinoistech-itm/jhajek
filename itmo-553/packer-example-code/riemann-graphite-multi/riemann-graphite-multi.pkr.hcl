@@ -17,7 +17,7 @@ source "virtualbox-iso" "ubuntu-riemanna" {
   ssh_wait_timeout        = "1800s"
   ssh_password            = "vagrant"
   ssh_port                = 2222
-  ssh_timeout             = "20m"
+  ssh_timeout             = "50m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
@@ -42,7 +42,7 @@ source "virtualbox-iso" "centos-riemannb" {
   shutdown_command        = "echo 'vagrant' | sudo -S /sbin/poweroff"
   ssh_password            = "vagrant"
   ssh_port                = 22
-  ssh_timeout             = "30m"
+  ssh_timeout             = "50m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
@@ -65,7 +65,7 @@ source "virtualbox-iso" "ubuntu-riemannmc" {
   ssh_wait_timeout        = "1800s"
   ssh_password            = "vagrant"
   ssh_port                = 2222
-  ssh_timeout             = "20m"
+  ssh_timeout             = "50m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
@@ -89,7 +89,7 @@ source "virtualbox-iso" "ubuntu-graphitea" {
   ssh_wait_timeout        = "1800s"
   ssh_password            = "vagrant"
   ssh_port                = 2222
-  ssh_timeout             = "20m"
+  ssh_timeout             = "50m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
@@ -114,7 +114,7 @@ source "virtualbox-iso" "centos-graphiteb" {
   shutdown_command        = "echo 'vagrant' | sudo -S /sbin/poweroff"
   ssh_password            = "vagrant"
   ssh_port                = 22
-  ssh_timeout             = "30m"
+  ssh_timeout             = "50m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
@@ -136,7 +136,7 @@ source "virtualbox-iso" "ubuntu-graphiteb" {
   ssh_wait_timeout        = "1800s"
   ssh_password            = "vagrant"
   ssh_port                = 2222
-  ssh_timeout             = "20m"
+  ssh_timeout             = "50m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
@@ -160,7 +160,7 @@ source "virtualbox-iso" "ubuntu-graphitemc" {
   ssh_wait_timeout        = "1800s"
   ssh_password            = "vagrant"
   ssh_port                = 2222
-  ssh_timeout             = "20m"
+  ssh_timeout             = "50m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
