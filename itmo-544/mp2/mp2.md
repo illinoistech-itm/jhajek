@@ -3,6 +3,10 @@
 
 https://aws.amazon.com/ec2/vm-import
 
+## Software Pre-reqs
+
+* Need to install AWS CLI on your ho
+
 ## Pre-req steps to set up AWS configuration
 
 Follow these steps first to configure AWS to be ready to receive your OVA file:
