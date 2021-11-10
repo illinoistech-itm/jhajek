@@ -5,6 +5,10 @@
 sudo apt-get update
 sudo apt-get install -y nginx
 
+## Command to clone your own @hawk ID private repo with all the configuration files
+# We need to add
+git clone git@github.com:illinoistech-itm/sample-student.git
+
 # install zfsutils and format the additional volume to attached upon launch
 
 # Install Node.js
