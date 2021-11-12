@@ -4,7 +4,7 @@ locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 source "virtualbox-iso" "ubuntu-2004-ec2" {
   boot_command            = ["<enter><enter><f6><esc><wait> ", "autoinstall ds=nocloud-net;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/", "<enter><wait>"]
   boot_wait               = "5s"
-  disk_size               = 20000
+  disk_size               = 10000
   format                  = "ova"
   http_directory          = "subiquity/http"
   guest_additions_mode    = "disable"
