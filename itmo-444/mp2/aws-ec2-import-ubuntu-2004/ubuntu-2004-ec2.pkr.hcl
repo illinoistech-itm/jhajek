@@ -27,6 +27,11 @@ source "virtualbox-iso" "ubuntu-2004-ec2" {
 build {
   sources = ["source.virtualbox-iso.ubuntu-2004-ec2"]
 
+  provisioner "shell" {
+    #inline_shebang  =  "#!/usr/bin/bash -e"
+    inline          = ["echo 'Resetting SSH port to default!'", "sudo rm /etc/ssh/sshd_config.d/packer-init.conf"]
+    }
+
   provisioner "file" {
     destination = "/home/ubuntu/"
     source      = "./id_rsa_github_deploy_key"
