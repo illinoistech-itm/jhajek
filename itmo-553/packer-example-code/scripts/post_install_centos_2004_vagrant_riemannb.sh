@@ -91,4 +91,4 @@ sudo systemctl start collectd
 #######################################################
 # Using sed to find and replace riemanna in the write_riemann.conf collectd conf file
 #######################################################
-sed -i 's/"riemanna"/"riemannb"/' /etc/collectd/collectd.conf.d/write_riemann.conf
+sed -i 's/"riemanna"/"riemannb"/' /etc/collectd.conf.d/write_riemann.conf

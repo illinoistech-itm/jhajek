@@ -66,7 +66,7 @@ sudo systemctl stop collectd
 #####################################################
 # Copy the collectd configuration files from week-12
 #####################################################
-cp -v sample-student/itmo-453/week-12/riemanna/collectd.conf.d/* /etc/collectd/collectd.conf.d/
+cp -v sample-student/itmo-453/week-12/riemann/collectd.conf.d/* /etc/collectd/collectd.conf.d/
 
 cp -v sample-student/itmo-453/week-12/collectd.conf /etc/collectd/
 
