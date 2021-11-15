@@ -45,15 +45,35 @@ sudo apt-get install -y openjdk-8-jre ruby ruby-dev
 wget https://github.com/riemann/riemann/releases/download/0.3.6/riemann_0.3.6_all.deb
 sudo dpkg -i riemann_0.3.6_all.deb
 # 3 we will need some ruby gems 
-sudo gem install riemann-client riemann-tools riemann-dash 
+sudo gem install riemann-client riemann-tools
 # 4 We need to ensure the services are enabled and start succesfully
 sudo systemctl enable riemann
 sudo systemctl start riemann
 
 git clone git@github.com:illinoistech-itm/sample-student.git
-cp -v sample-student/itmo-453/week-07/riemann/riemannmc/riemann.config /etc/riemann/riemann.conf
+cp -v sample-student/itmo-453/week-07/riemann/riemannmc/riemann.config /etc/riemann/riemann.config
 
 sudo systemctl stop riemann
 sudo systemctl start riemann
 
-rm ~/.ssh/id_rsa*
+##################################################
+# Installation and cofiguration of collectd
+##################################################
+sudo apt-get update -y
+sudo apt-get install -y collectd
+sudo systemctl stop collectd
+
+#####################################################
+# Copy the collectd configuration files from week-12
+#####################################################
+cp -v sample-student/itmo-453/week-12/riemanna/collectd.conf.d/* /etc/collectd/collectd.conf.d/
+
+cp -v sample-student/itmo-453/week-12/collectd.conf /etc/collectd/
+
+sudo systemctl daemon-reload
+sudo systemctl start collectd
+
+#######################################################
+# Using sed to find and replace riemanna in the write_riemann.conf collectd conf file
+#######################################################
+sed -i 's/"riemanna"/"riemannb"/' write_riemann.conf
