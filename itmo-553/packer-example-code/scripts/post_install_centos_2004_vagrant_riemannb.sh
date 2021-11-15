@@ -80,7 +80,8 @@ sudo systemctl stop collectd
 #####################################################
 # Copy the collectd configuration files from week-12
 #####################################################
-cp -v sample-student/itmo-453/week-12/riemanna/collectd.conf.d/* /etc/collectd.conf.d/
+sudo mkdir -p /etc/collectd.conf.d/
+cp -v sample-student/itmo-453/week-12/riemann/collectd.conf.d/* /etc/collectd.conf.d/
 
 cp -v sample-student/itmo-453/week-12/collectd.conf /etc/
 
@@ -90,4 +91,4 @@ sudo systemctl start collectd
 #######################################################
 # Using sed to find and replace riemanna in the write_riemann.conf collectd conf file
 #######################################################
-sed -i 's/"riemanna"/"riemannb"/' write_riemann.conf
+sed -i 's/"riemanna"/"riemannb"/' /etc/collectd/collectd.conf.d/write_riemann.conf
