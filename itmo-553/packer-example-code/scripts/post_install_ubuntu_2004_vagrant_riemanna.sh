@@ -53,6 +53,21 @@ sudo systemctl start riemann
 git clone git@github.com:illinoistech-itm/sample-student.git
 cp -v sample-student/itmo-453/week-07/riemann/riemanna/riemann.config /etc/riemann/riemann.config
 
+####################################################
+# Make directory for *.clj files
+####################################################
+sudo mkdir -p /etc/riemann/examplecom/etc
+cp -v sample-student/itmo-453/week-09/examplecom/etc/*.clj /etc/riemann/examplecom/etc/
+
+#####################################################
+# Use sed to replace the default graphitea values in /etc/riemann/examplecom/etc/graphite.clj
+#####################################################
+# No need as this is the graphitea system
+
+#####################################################
+# Restart the Riemann service after the changes
+#####################################################
+
 sudo systemctl stop riemann
 sudo systemctl start riemann
 
