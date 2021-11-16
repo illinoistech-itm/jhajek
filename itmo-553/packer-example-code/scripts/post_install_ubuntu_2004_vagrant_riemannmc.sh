@@ -73,10 +73,12 @@ sudo systemctl stop riemann
 sudo systemctl start riemann
 
 ##################################################
-# Installation and cofiguration of collectd
+# Installation and cofiguration of collectd and mailutils to send emails
 ##################################################
 sudo apt-get update -y
-sudo apt-get install -y collectd
+# Command needed to pre-seed the answer to the mailutils configuration question
+echo "postfix postfix/main_mailer_type string 'No Configuration'" | sudo debconf-set-selections
+sudo apt-get install -y collectd mailutils
 sudo systemctl stop collectd
 
 #####################################################

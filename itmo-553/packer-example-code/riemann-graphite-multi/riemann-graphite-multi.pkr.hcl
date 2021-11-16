@@ -168,8 +168,52 @@ source "virtualbox-iso" "ubuntu-graphitemc" {
   headless                = "${var.headless_build}"
 }
 
+source "virtualbox-iso" "centos-host1" {
+  boot_command            = ["<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks/centos-8-stream.cfg<enter>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>"]
+  boot_wait               = "10s"
+  disk_size               = 15000
+  guest_additions_path    = "VBoxGuestAdditions_{{ .Version }}.iso"
+  guest_os_type           = "RedHat_64"
+  hard_drive_interface    = "sata"
+  http_directory          = "."
+  http_port_min           = 9001
+  http_port_max           = 9100
+  iso_checksum            = "53a62a72881b931bdad6b13bcece7c3a2d4ca9c4a2f1e1a8029d081dd25ea61f"
+  iso_urls                = ["https://download.rockylinux.org/pub/rocky/8/isos/x86_64/Rocky-8.4-x86_64-boot.iso"]
+  shutdown_command        = "echo 'vagrant' | sudo -S /sbin/poweroff"
+  ssh_password            = "vagrant"
+  ssh_port                = 22
+  ssh_timeout             = "50m"
+  ssh_username            = "vagrant"
+  vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
+  virtualbox_version_file = ".vbox_version"
+  headless                = "${var.headless_build}"
+}
+
+source "virtualbox-iso" "centos-host2" {
+  boot_command            = ["<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks/centos-8-stream.cfg<enter>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>"]
+  boot_wait               = "10s"
+  disk_size               = 15000
+  guest_additions_path    = "VBoxGuestAdditions_{{ .Version }}.iso"
+  guest_os_type           = "RedHat_64"
+  hard_drive_interface    = "sata"
+  http_directory          = "."
+  http_port_min           = 9001
+  http_port_max           = 9100
+  iso_checksum            = "53a62a72881b931bdad6b13bcece7c3a2d4ca9c4a2f1e1a8029d081dd25ea61f"
+  iso_urls                = ["https://download.rockylinux.org/pub/rocky/8/isos/x86_64/Rocky-8.4-x86_64-boot.iso"]
+  shutdown_command        = "echo 'vagrant' | sudo -S /sbin/poweroff"
+  ssh_password            = "vagrant"
+  ssh_port                = 22
+  ssh_timeout             = "50m"
+  ssh_username            = "vagrant"
+  vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
+  virtualbox_version_file = ".vbox_version"
+  headless                = "${var.headless_build}"
+}
+
 build {
-  sources = ["source.virtualbox-iso.ubuntu-riemanna","source.virtualbox-iso.centos-riemannb","source.virtualbox-iso.ubuntu-riemannmc","source.virtualbox-iso.ubuntu-graphitea","source.virtualbox-iso.ubuntu-graphiteb","source.virtualbox-iso.ubuntu-graphitemc"]
+  sources = ["source.virtualbox-iso.ubuntu-riemanna","source.virtualbox-iso.centos-riemannb","source.virtualbox-iso.ubuntu-riemannmc","source.virtualbox-iso.ubuntu-graphitea","source.virtualbox-iso.ubuntu-graphiteb","source.virtualbox-iso.ubuntu-graphitemc","source.virtualbox-iso.centos-host1","source.virtualbox-iso.centos-host2"]
 
 provisioner "file" {
   # Edit this value in your variables.pkr.hcl file
@@ -222,6 +266,18 @@ provisioner "file" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts          = ["../scripts/post_install_centos_2004_vagrant_riemannb.sh"]
     only             = ["virtualbox-iso.centos-riemannb"]
+  }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    scripts          = ["../scripts/post_install_centos_2004_vagrant_host1.sh"]
+    only             = ["virtualbox-iso.centos-host1"]
+  }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    scripts          = ["../scripts/post_install_centos_2004_vagrant_host2.sh"]
+    only             = ["virtualbox-iso.centos-host2"]
   }
 
   provisioner "shell" {
