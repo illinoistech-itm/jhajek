@@ -59,7 +59,7 @@ git clone git@github.com:illinoistech-itm/sample-student.git
 ############################################################################
 # Installation and cofiguration of collectd and load generation tool stress
 ############################################################################
-sudo yum install -y collectd stress 
+sudo yum install -y collectd stress collectd-write_riemann
 
 sudo systemctl stop collectd
 

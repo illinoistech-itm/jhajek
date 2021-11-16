@@ -38,7 +38,7 @@ sudo hostnamectl set-hostname riemanna
 # 1 we will need openjdk-8-jre (java runtime) and ruby runtimes
 # Examples:
 sudo apt-get update -y
-sudo apt-get install -y openjdk-8-jre ruby ruby-dev
+sudo apt-get install -y openjdk-8-jre ruby ruby-dev 
 
 # 2 we will need the rpm deb packages from riemann.io
 # Examples
@@ -75,7 +75,7 @@ sudo systemctl start riemann
 # Installation and cofiguration of collectd
 ##################################################
 sudo apt-get update -y
-sudo apt-get install -y collectd
+sudo apt-get install -y collectd 
 
 #####################################################
 # Copy the collectd configuration files from week-12

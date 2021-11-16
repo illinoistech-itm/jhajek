@@ -89,7 +89,7 @@ sudo systemctl start riemann
 ##################################################
 # Installation and cofiguration of collectd
 ##################################################
-sudo yum install -y collectd
+sudo yum install -y collectd collectd-write_riemann
 
 sudo systemctl stop collectd
 
