@@ -44,7 +44,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'ubuntu' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    inline          = ["mkdir -p /home/ubuntu/.ssh", "mkdir -p /root/.ssh", "chmod 600 /home/ubuntu/id_rsa_github_deploy_key", "cp -v /home/ubuntu/id_rsa_github_deploy_key /home/ubuntu/.ssh/","cp -v /home/ubuntu/config /home/ubuntu/.ssh/","chown -R ubuntu:ubuntu /home/ubuntu/.ssh/","cp -v /home/ubuntu/config /root/.ssh/"]
+    inline          = ["mkdir -p /home/ubuntu/.ssh", "mkdir -p /root/.ssh", "chmod 600 /home/ubuntu/id_rsa_github_deploy_key", "cp -v /home/ubuntu/id_rsa_github_deploy_key /home/ubuntu/.ssh/","cp -v /home/ubuntu/config /home/ubuntu/.ssh/","sudo touch /home/ubuntu/.ssh/authorized_keys","chown -R ubuntu:ubuntu /home/ubuntu/.ssh/","cp -v /home/ubuntu/config /root/.ssh/"]
   }
 
   provisioner "shell" {
