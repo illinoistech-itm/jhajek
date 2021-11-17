@@ -13,7 +13,7 @@ sudo usermod -a -G admin ubuntu
 # Add User customizations below here
 ##################################################
 # needed to disable password authentication via SSH
-sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
+sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 sudo systemctl enable ssh.service
 sudo systemctl start ssh.service
 
