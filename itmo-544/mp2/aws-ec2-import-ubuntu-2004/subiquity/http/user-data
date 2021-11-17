@@ -26,7 +26,8 @@ autoinstall:
   network:
     network:
       version: 2
-      ethernets: []
+        eth0:
+          dhcp4: true
   ssh:
     allow-pw: true
     install-server: true
