@@ -32,7 +32,7 @@ Your virtual machines need to be built using a packer build script and using a p
 
 * Using RockyLinux, install Riemann and all dependencies.  
 * Install Collectd and the default plugins provided in week-12 sample code folder for Riemann
-* Configure the write_riemann.conf collectd plugin to send metrics to Riemanna
+* Configure the write_riemann.conf collectd plugin to send metrics to Riemannb
 * Configure Riemann to send events down stream to Riemannmc
 * Configure the Graphite.clj plugin to send **tagged** collectd metrics to graphiteb
 * Configure the Firewall (firewalld to open only the needed ports, 22, 5555,5556, and 5557)
