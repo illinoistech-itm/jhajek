@@ -24,6 +24,7 @@ Your virtual machines need to be built using a packer build script and using a p
 * Using Ubuntu 20.04, install Riemann and all dependencies.  
 * Install Collectd and the default plugins provided in week-12 sample code folder for Riemann
 * Configure the write_riemann.conf collectd plugin to send metrics to Riemanna
+  * Change the nodename in the write_riemann.conf to riemanna
 * Configure Riemann to send events down stream to Riemannmc
 * Configure the Graphite.clj plugin to send **tagged** collectd metrics to graphitea
 * Configure the Firewall (firewalld to open only the needed ports, 22, 5555,5556, and 5557)
@@ -33,6 +34,7 @@ Your virtual machines need to be built using a packer build script and using a p
 * Using RockyLinux, install Riemann and all dependencies.  
 * Install Collectd and the default plugins provided in week-12 sample code folder for Riemann
 * Configure the write_riemann.conf collectd plugin to send metrics to Riemannb
+  * Change the nodename in the write_riemann.conf to riemannb
 * Configure Riemann to send events down stream to Riemannmc
 * Configure the Graphite.clj plugin to send **tagged** collectd metrics to graphiteb
 * Configure the Firewall (firewalld to open only the needed ports, 22, 5555,5556, and 5557)
@@ -42,6 +44,7 @@ Your virtual machines need to be built using a packer build script and using a p
 * Using Ubuntu 20.04, install Riemann and all dependencies.  
 * Install Collectd and the default plugins provided in week-12 sample code folder for Riemann
 * Configure the write_riemann.conf collectd plugin to send metrics to Riemannmc
+  * Change the nodename in the write_riemann.conf to riemannmc
 * Configure Riemann to send events down stream to Riemannmc
 * Configure the Graphite.clj plugin to send **tagged** collectd metrics to graphitemc
 * Configure the Firewall (firewalld to open only the needed ports, 22, 5555,5556, and 5557)
@@ -53,6 +56,7 @@ Your virtual machines need to be built using a packer build script and using a p
   * https://dl.grafana.com/oss/release/grafana_7.3.6_amd64.deb
 * Install Collectd and the default plugins in the week-12 sample code folder for Graphite (includes the carbon process monitor)
 * Configure the write_riemann.conf collectd plugin to send metrics to Riemanna
+  * Change the nodename in the write_riemann.conf to graphitea
 * Configure carbon.conf Relay Line Receiver and Pickle interface to listen on the systems public IP address
 * Overwrite the default files using the graphite configuration files provided in week-09 folder
 * Stop the default carbon-cache and carbon-relay@1 services and overwrite them with the default services files provided in the week-09/services directory
@@ -64,6 +68,7 @@ Your virtual machines need to be built using a packer build script and using a p
   * https://dl.grafana.com/oss/release/grafana_7.3.6_amd64.deb
 * Install Collectd and the default plugins in the week-12 sample code folder for Graphite (includes the carbon process monitor)
 * Configure the write_riemann.conf collectd plugin to send metrics to Riemannb
+  * Change the nodename in the write_riemann.conf to graphiteb
 * Configure carbon.conf Relay Line Receiver and Pickle interface to listen on the systems public IP address
 * Overwrite the default files using the graphite configuration files provided in week-09 folder
 * Stop the default carbon-cache and carbon-relay@1 services and overwrite them with the default services files provided in the week-09/services directory
@@ -75,10 +80,29 @@ Your virtual machines need to be built using a packer build script and using a p
   * https://dl.grafana.com/oss/release/grafana_7.3.6_amd64.deb
 * Install Collectd and the default plugins in the week-12 sample code folder for Graphite (includes the carbon process monitor)
 * Configure the write_riemann.conf collectd plugin to send metrics to Riemannmc
+  * Change the nodename in the write_riemann.conf to graphitemc
 * Configure carbon.conf Relay Line Receiver and Pickle interface to listen on the systems public IP address
 * Overwrite the default files using the graphite configuration files provided in week-09 folder
 * Stop the default carbon-cache and carbon-relay@1 services and overwrite them with the default services files provided in the week-09/services directory
 * Enable all services on boot
+
+#### Host1
+
+* Using RockyLinux, install Collectd and the Collectd plugins from week-12 (from the riemann folder in the sample code)
+* Configure the write_riemann.conf collectd plugin to send metrics to Riemanna
+* Note you will need to install the `epel-release` plugin and then on a separate line the `collectd-write_riemann` package via `yum`
+* Change the nodename in the write_riemann.conf to host1
+* **No** need to install Riemann
+* You can use the IP 192.168.33.10
+
+#### Host2
+
+* Using RockyLinux, install Collectd and the Collectd plugins from week-12 (from the riemann folder in the sample code)
+* Configure the write_riemann.conf collectd plugin to send metrics to Riemannb
+* Note you will need to install the `epel-release` plugin and then on a separate line the `collectd-write_riemann` package via `yum`
+* Change the nodename in the write_riemann.conf to host2
+* **No** need to install Riemann
+* You can use the IP 192.168.33.11
 
 ### Graphs for Grafana
 
