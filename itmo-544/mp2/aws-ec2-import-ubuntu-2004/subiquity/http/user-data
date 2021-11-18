@@ -26,6 +26,7 @@ autoinstall:
   network:
     network:
       version: 2
+      ethernets:
         eth0:
           dhcp4: true
   ssh:
@@ -38,7 +39,3 @@ autoinstall:
     - "echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' >> /target/etc/sudoers.d/ubuntu"
     - "chmod 440 /target/etc/sudoers.d/ubuntu"
     - 'echo "Port 2222" > /target/etc/ssh/sshd_config.d/packer-init.conf'
-
-
-
-
