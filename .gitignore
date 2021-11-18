@@ -4,6 +4,7 @@
 .vagrant/
 *console.log
 packer-cache/
+packer_cache/
 *.pem
 *~$
 *.ova
