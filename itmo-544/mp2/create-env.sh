@@ -18,4 +18,3 @@ aws dynamodb create-table --table-name ${10} \
 # Install ELB and EC2 instances here -- remember to add waiters and provide and --iam-instance-profile so that your EC2 instances have permission to access SNS, S3, and DynamoDB
 # Sample
 #  --iam-instance-profile Name=$8
-
