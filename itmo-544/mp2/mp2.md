@@ -28,12 +28,12 @@ There is a bit of manual preparation needed to be done here. Manually launch a s
 * Assuming you have no other instances running, issue this command to retrieve instance-id:
   * ```ID=$(aws ec2 describe-instances --query 'Reservations[*].Instances[?State.Name==\`running\`].InstanceId')```
 * Once the instance ID is retrieved, issue this command to create a custom AMI from the instance we just configured.
-  * `CUSTOM-AMI=$(aws ec2 create-image --instance-id $ID --name "JRH MP2 EC2 image")`
-  * Issue the command: `echo $CUSTOM-AMI` and note this AMI down.
+  * `CUSTOMAMI=$(aws ec2 create-image --instance-id $ID --name "JRH MP2 EC2 image")`
+  * Issue the command: `echo $CUSTOMAMI` and note this AMI down.
   * $CUSTOM-AMI will store the new AMI identifier generated -- you can see this under the AMI menu item in the EC2 section of the AWS Console
   * The `--name` field is a comment so you can change that value
 * Issue this command to give my account ID access to your instance (this is how I will run your instance)
-  * `aws ec2 modify-image-attribute --image-id $CUSTOM-AMI --launch-permission "Add=[{UserId=548002151864}]"`
+  * `aws ec2 modify-image-attribute --image-id $CUSTOMAMI --launch-permission "Add=[{UserId=548002151864}]"`
 * Update your `arguments.txt` file to use the value provided in $CUSTOM-AMI in place of the default AMI had been using
 * Open port 3000 in your security group
 
