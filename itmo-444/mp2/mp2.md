@@ -25,7 +25,7 @@ There is a bit of manual preparation needed to be done here. Manually launch a s
 * Execute the command: `sudo vim /home/root/.ssh/config`
   * Paste the content of the file named: `config` located in the jhajek sample code directory in the main mp2 folder
 * Assuming you have no other instances running, issue this command to retrieve instance-id:
-  * ```ID=$(aws ec2 describe-instances --query 'Reservations[*].Instances[?State.Name==`running`].InstanceId')```
+  * ```ID=$(aws ec2 describe-instances --query 'Reservations[*].Instances[?State.Name==\`running\`].InstanceId')```
 * Once the instance ID is retrieved, issue this command to create a custom AMI from the instance we just configured.
   * `CUSTOM-AMI=$(aws ec2 create-image --instance-id $ID --name "JRH MP2 EC2 image")`
   * Issue the command: `echo $CUSTOM-AMI` and note this AMI down.
