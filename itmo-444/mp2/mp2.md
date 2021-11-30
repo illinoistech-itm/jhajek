@@ -22,15 +22,17 @@ There is a bit of manual preparation needed to be done here. Manually launch a s
   * Hit enter to accept the default (blank) values for the passphrase questions.  
 * Execute the command: `cat /home/ubuntu/.ssh/id_rsa_github_deploy_key.pub`
   * Copy the value printed on the screen and add this as a Deploy Key in your private GitHub repo
-* Execute the command: `sudo vim /home/root/.ssh/config`
+* Execute the command: `sudo sh` to gain a root shell -- you will see a **#**
+  * While in the root shell, execute the command: `vim /root/.ssh/config`
   * Paste the content of the file named: `config` located in the jhajek sample code directory in the main mp2 folder
+  * Exit the root shell once these steps are complete
   * ~~Issue the command: `sudo poweroff` to turn off (but not terminate the instance)~~
 * Assuming you have no other instances running, issue this command to retrieve instance-id:
   * 
   ~~~bash
   ID=$(aws ec2 describe-instances --query 'Reservations[*].Instances[?State.Name==`running`].InstanceId')
   ~~~
-  
+
 * Once the instance ID is retrieved, issue this command to create a custom AMI from the instance we just configured.
   * `CUSTOMAMI=$(aws ec2 create-image --instance-id $ID --name "JRH MP2 EC2 image")`
   * Issue the command: `echo $CUSTOMAMI` and note this AMI down.
