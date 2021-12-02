@@ -22,6 +22,8 @@ var app = express(),
 // configure S3 parameters to send to the connection object
 app.use(bodyParser.json());
 
+// drop in S3 listing code
+
 // I hardcoded my S3 bucket name, this you need to determine dynamically
 var upload = multer({
     storage: multerS3({

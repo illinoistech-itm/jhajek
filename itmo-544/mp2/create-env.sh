@@ -21,4 +21,5 @@ aws sns create-topic --name $9
 
 # Install ELB and EC2 instances here -- remember to add waiters and provide and --iam-instance-profile so that your EC2 instances have permission to access SNS, S3, and DynamoDB
 # Sample
-#  --iam-instance-profile Name=$8
+#  
+aws ec2 run-instances --type $1 --count $2 --iam-instance-profile Name=$8
