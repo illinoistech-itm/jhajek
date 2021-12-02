@@ -61,6 +61,7 @@
           events)))
 
 (def email (mailer {:from "reimann@example.com"
+                    :localhost
                     :subject (fn [events] (format-subject events))
                     :body (fn [events] (format-body events))
                     }))
