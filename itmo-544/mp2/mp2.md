@@ -41,7 +41,7 @@ There is a bit of manual preparation needed to be done here. Manually launch a s
 * Issue this command to give my account ID access to your instance (this is how I will run your instance)
   * `aws ec2 modify-image-attribute --image-id $CUSTOMAMI --launch-permission "Add=[{UserId=548002151864}]"`
 * Update your `arguments.txt` file to use the value provided in $CUSTOMAMI in place of the default AMI had been using
-* Open port 3000 in your security group
+* Open port ~~3000~~ 3300 in your security group
 
 ## MP2 components
 
