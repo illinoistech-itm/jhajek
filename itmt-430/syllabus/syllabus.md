@@ -1,5 +1,7 @@
 # ITMT 430 Systems Integration
 
+![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
+
 Semester: Spring 2022 Professor Jeremy Hajek
 
 ![*https://xkcd.com/456/*](images/cautionary.png "XCKD 456 image URL")
