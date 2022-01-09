@@ -1,10 +1,8 @@
 # ITMT 430 Systems Integration
 
-![](./syllabus/images/CoC_horiz_lockup_2019.jpg "COC Logo")
-
 Semester: Spring 2022 Professor Jeremy Hajek
 
-![*https://xkcd.com/456/*](./syllabus/images/cautionary.png "XCKD 456 image URL")
+![*https://xkcd.com/456/*](images/cautionary.png "XCKD 456 image URL")
 
 ---------------- --------------------------------------------------------
   **Professor**: Jeremy Hajek
