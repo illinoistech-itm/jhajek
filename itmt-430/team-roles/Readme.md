@@ -1,4 +1,4 @@
-# Team Project Deliverables
+# Team Roles Descriptions
 
 You will form a team of 5 based on the Lab section you are in.  If the section has less than 20 people enrolled you will form teams of 4 people. There are 5 positions that you will rotate through in development sprints.  Each person will take a primary role—but that role is not exclusive.  Each team, starting week 1 in sprint 1, will outline a project plan of goals they aspire to accomplish.  At the end of the sprint the team will present their project to the entire class. There will be weekly check-ins with the project manager and early feedback.
 
