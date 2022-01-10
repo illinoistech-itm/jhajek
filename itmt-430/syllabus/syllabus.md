@@ -48,14 +48,14 @@ Session | Date | Topic | Reading - Homework |
 ----------|------|:------|----------
 1 | 01/10 | Introduction  | Tooling and Ethics Assignment
 2 | 01/17 | No Class MLK Jr Day  | NA
-3 | 01/24 | The Three Ways Ch 1-2 | Sprint 01 presentation
-4 | 01/31 | Where to Start Ch 3-4 | NA
+3 | 01/24 | The Three Ways Ch 1-2 | NA
+4 | 01/31 | Where to Start Ch 3-4 | Sprint 01 presentation
 5 | 02/07 | Where to Start Ch 5-6  | NA
-6 | 02/14 | Technical Practices of Flow Ch 7-10 | Sprint 02 presentation
-7 | 02/21 | Technical Practices of Flow Ch 11-13 | NA
+6 | 02/14 | Technical Practices of Flow Ch 7-10 | NA
+7 | 02/21 | Technical Practices of Flow Ch 11-13 | Sprint 02 presentation
 8 | 02/28 | Technical Practices of Feedback Ch 14-18 | NA
-9 | 03/07 | Technical Practices of Learning Ch 19-21 | Sprint 03 presentation
-NA | 03/14 | Spring Break Week | NA
+9 | 03/07 | Technical Practices of Learning Ch 19-21 | NA
+NA | 03/14 | Spring Break Week | Sprint 03 presentation
 10 | 03/21 | Technical Practices of InfoSec Ch 22-23 | NA
 11 | 03/28 | Accelerate Ch 1-3 | NA
 12 | 04/04 | Accelerate Ch 4-5 | Sprint 04 presentation
