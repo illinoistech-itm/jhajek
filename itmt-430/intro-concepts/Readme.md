@@ -28,7 +28,7 @@ The deliverable will be to create a folder called **intro-concepts** under your 
   * answer here
 * ~17:01 - In 2014, what was the ethical dilemma introduced by Uber in Portland Oregon and who were they deceiving?
   * answer here
-* ~19:07 - In 2015, what was the ethical dilemma introduced by Google Photos mis-labeling and how did AI contribute to it?
+* ~19:07 - In 2015, what was the ethical dilemma introduced by Google Photos mislabeling and how did AI contribute to it?
   * answer here
 * ~22:43 - In 2016, what was the ethical dilemma introduced by Tesla?
   * answer here

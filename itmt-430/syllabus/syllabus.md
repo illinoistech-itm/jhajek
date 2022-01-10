@@ -46,22 +46,22 @@ All readings should be done prior to class
 
 Session | Date | Topic | Reading - Homework |
 ----------|------|:------|----------
-1 | 01/10 | Introduction  | NA
+1 | 01/10 | Introduction  | Tooling and Ethics Assignment
 2 | 01/17 | No Class MLK Jr Day  | NA
-3 | 01/24 | The Three Ways Ch 1-2   | NA
-4 | 01/31 | Where to Start Ch 3-4   | NA
+3 | 01/24 | The Three Ways Ch 1-2 | Sprint 01 presentation
+4 | 01/31 | Where to Start Ch 3-4 | NA
 5 | 02/07 | Where to Start Ch 5-6  | NA
-6 | 02/14 | Technical Practices of Flow Ch 7-10 | NA
+6 | 02/14 | Technical Practices of Flow Ch 7-10 | Sprint 02 presentation
 7 | 02/21 | Technical Practices of Flow Ch 11-13 | NA
 8 | 02/28 | Technical Practices of Feedback Ch 14-18 | NA
-9 | 03/07 | Technical Practices of Learning Ch 19-21 | NA
+9 | 03/07 | Technical Practices of Learning Ch 19-21 | Sprint 03 presentation
 NA | 03/14 | Spring Break Week | NA
 10 | 03/21 | Technical Practices of InfoSec Ch 22-23 | NA
-11 | 03/28 | Accelerate Ch 1-3  | NA
-12 | 04/04 | Accelerate Ch 4-5 | NA
+11 | 03/28 | Accelerate Ch 1-3 | NA
+12 | 04/04 | Accelerate Ch 4-5 | Sprint 04 presentation
 13 | 04/11 | Accelerate Ch 6-7 | NA
 14 | 04/18 | Accelerate Ch 8-9 | NA
-15 | 04/25 | Accelerate Ch 10-11 & 16 | NA
+15 | 04/25 | Accelerate Ch 10-11 & 16 | Sprint 05 presentation
 16 | 05/02 | Final Exam Week | NA
 
 ## Course Student Outcomes
@@ -85,27 +85,31 @@ Students completing this course will be able to:
 
 ## Required Textbook
 
-![*DevOps Handbook](images/devops-handbook.png "DevOps Handbook cover image")
+![*DevOps Handbook*](images/devops-handbook.png "DevOps Handbook cover image")
+
 * DevOps Handbook - How to Create World-Class Agility, Reliability, & Security in Technology Organizations
   * Gene Kim, Patrick Debois, John Willis, Jez Humble,
   * ISBN-13:  9781942788003
   * Publisher:  IT Revolution Press
-* [http://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1121371901?ean=9781942788003](http://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1121371901?ean=9781942788003 "Link to DevOps Handbook")
+  * [http://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1121371901?ean=9781942788003](http://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1121371901?ean=9781942788003 "Link to DevOps Handbook")
+
+\newpage
 
 ![*Accelerate*](images/accelerate.png "Accelerate Cover Image")
+
 * Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations
   * Nicole Forsgren, PhD, Jez Humble, Gene Kim
   * ISBN-13:  9781942788331
   * Publisher:  IT Revolution Press
-* [https://www.barnesandnoble.com/w/accelerate-nicole-forsgren-phd/1127477199?ean=9781942788331#/](https://www.barnesandnoble.com/w/accelerate-nicole-forsgren-phd/1127477199?ean=9781942788331#/ "Link to Accelerate")
+  * [https://www.barnesandnoble.com/w/accelerate-nicole-forsgren-phd/1127477199?ean=9781942788331#/](https://www.barnesandnoble.com/w/accelerate-nicole-forsgren-phd/1127477199?ean=9781942788331#/ "Link to Accelerate")
 
-## Readings
+### Readings
 
 Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should already be familiar with.
 
 ### Course Notes
 
-It is recommended to take notes from the oral discussion portion of the class.
+It is recommended to take notes from the discussion portion of the class.
 
 ### Attendance
 
@@ -121,9 +125,11 @@ The course will make use of Blackboard [http://blackboard.iit.edu/](http://black
 
 * Software Sprint Report (x5)
   * Individual reports given by each team member per sprint demonstrating the objectives they completed
-* Initial tooling setup assignments
-  * These initial assignments will help you get your infrastructure setup and prepared for the semester
-* Weekly Chapter Student Presentations
+* Tooling assignment
+  * This initial assignment will help you get your infrastructure setup and prepared for the semester
+* Ethics assignment
+  * Short question and answer assignment dealing with computer ethics
+* Student Chapter Presentation
   * Each week there are scheduled lectures that will be given by the student teams during the main course section
 * Final exam consisting of review questions from student presentations
 
@@ -143,12 +149,12 @@ The final grade for the class will be calculated as follows:
 
 Name | Grade | Total Points
 ------------------|----------|-----------
-Sprint Report (5) | 20% | 120
-Chapter Presentation (1) | 20% | 120
-Tooling Assignment (1) | 17% | 100
-Ethics Assignment (1) | NA | NA
-Final Exam | 17% | 100
-Attendance | 5% | 30
+Sprint Report (5) | 38% | 20 points each
+Chapter Presentation (1) | 6% | 20 points
+Tooling Assignment (1) | 6% | 10 points
+Ethics Assignment (1) | 6% | 10 points
+Final Exam | 38% | 100 points
+Attendance | 6% | 20 points
 
 ### Late Submission
 
@@ -160,15 +166,13 @@ All work you submit in this course must be your own.
 
 ### Plagiarism
 
-You must fully attribute all material directly quoted in papers and you must document all sources used in the preparation of the paper using complete, APA-style bibliographic entries. Including directly quoted material in an assignment without attribution or a bibliography entry for the source of the material is always plagiarism and will always be treated as such by me. No more than thirty-three percent of material included in any paper may be direct quotes. Students have submitted plagiarized material in seven of the last eight times I have taught this course and I will not tolerate it. If you submit plagiarized material you WILL receive a grade of ZERO for the assignment or exam question, an Academic Honesty Violation Report will be filed, and it may result in your expulsion from the course with a failing grade as per the IIT and ITM academic honesty policies. There is no excuse for not Technology and Philosophy of this policy and if you do not understand it please let me know and I will be happy to discuss it with you until you do.
+Dealing with code -- you need to respect opensource licenses and in the absence of a clear license be careful cutting and pasting code without attributing source. A good metric would be to add a comment in your code with a link to the original source to protect yourself.
 
-### Collaboration
-
-Students may only collaborate on assignments or projects that are explicitly designated as group assignments or projects. Students submitting work that is identical or in some cases even substantively the same will be asked to discuss the assignment with me. If one student admits to having copied the work, or if there is clear evidence who is guilty, the guilty student will be assigned a grade of zero. If no one admits to the offense or a reasonable determination of guilt cannot be made, each student involved will be assigned a grade of zero. In either case, an Academic Honesty Violation Report will be filed, and it may result in your expulsion from the course with a failing grade as per the IIT and ITM academic honesty policies.
+This class won't be dealing with formal written papers.
 
 ### Our Contract
 
-This syllabus is my contract with you as to what I will deliver and what I expect from you. If I change the syllabus, I will issue a revised version of the syllabus; the latest version will always be available on Blackboard. Revisions to readings and assignments will be communicated via Blackboard
+This syllabus is my contract with you as to what I will deliver and what I expect from you. If I change the syllabus, I will issue a revised version of the syllabus; the latest version will always be available on Blackboard. Revisions to readings and assignments will be communicated via Blackboard and via version control in GitHub
 
 ### Disabilities
 
@@ -177,3 +181,23 @@ Reasonable accommodations will be made for students with documented disabilities
 ### ARC Tutoring Center
 
 The university provides a free tutoring and study center called the [ARC](https://www.iit.edu/arc "IIT Resource Center URL").  This is located newly in the basement of the Galvin Library and is open to all for walk in appointments as well as scheduled tutoring.
+
+### Illinois Tech Sexual Harassment and Discrimination Information
+
+Illinois Tech prohibits all sexual harassment, sexual misconduct, and gender discrimination by any member of our community. This includes harassment among students, staff, or faculty. Sexual harassment of a student by a faculty member or sexual harassment of an employee by a supervisor is particularly serious. Such conduct may easily create an intimidating, hostile, or offensive environment.
+
+Illinois Tech encourages anyone experiencing sexual harassment or sexual misconduct to speak with the Office of Title IX Compliance for information on support options and the resolution process. You can report sexual harassment electronically at [iit.edu/incidentreport](iit.edu/incidentreport "IIT Incident Report URL"), which may be completed anonymously. You may additionally report by contacting the Title IX Coordinator, Virginia Foster at foster@iit.edu or the Deputy Title IX Coordinator, Esther Espeland at eespeland@iit.edu.
+
+For confidential support, you may reach Illinois Tech’s Confidential Advisor at (773) 907-1062. You can also contact a licensed practitioner in Illinois Tech’s Student Health and Wellness Center at student.health@iit.edu or (312)567-7550
+
+For a comprehensive list of resources regarding counseling services, medical assistance, legal assistance and visa and immigration services, you can visit the Office of Title IX Compliance website at [https://www.iit.edu/title-ix/resources](https://www.iit.edu/title-ix/resources "IIT Title IX resources").
+
+### COVID-19 Precautions and Face Coverings in Class
+
+Illinois Tech students are required to be vaccinated, to have a booster as soon as you are eligible, and to wear face masks at all times when indoors. In general, individuals should spend as little time as practicable in closer proximity when doing so is necessary to achieve learning objectives. Students who are feeling ill or experiencing symptoms such as sneezing, coughing, or a higher than normal temperature will be excused from class and are expected to stay at home.
+
+Instructors have the right to ask those who are not complying with these requirements to leave class in the interest of everyone's health and safety. In the event that a student refuses to comply with instructor directions regarding face masks, the instructor has the right to ask the student to leave, and/or cancel class. A student who refuses to comply with these requirements will be referred to the Office of the Dean of Students for possible disciplinary action under the Student Code of Conduct.
+
+Additionally, as a reminder, following other simple practices such as frequent and thorough hand washing, wiping down desks and seats with disinfectant wipes when possible, not sharing personal items such as pens and cell phones, and avoiding crowded hallways and other enclosed spaces will promote good health in and out of the classroom.
+
+Visit iit.edu/COVID-19 for details on Illinois Tech’s response to coronavirus (COVID-19). For information from government authorities, please see the Centers for Disease Control and Prevention website at cdc.gov
