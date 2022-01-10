@@ -15,8 +15,6 @@ At the end of this assignment you will have become familiar with industry standa
 
 Complete the required installs in this document via a Package Manager and take a screenshot of the proper output to show a successful install. Place the screenshot into the document as mentioned in the last step.
 
-Assignment worth 9 points 9 items, 1 point each.
-
 ### Package Managers
 
 Package Managers are an essential tool, originally created for Linux Distributions, apt and yum, at the turn of the century, only in recent years have the major desktop operating systems, Windows and MacOS, created similar tools.  You may be more familiar with the term, "APP Store," the concept is the same either way.  
@@ -47,7 +45,11 @@ For Windows 10, place a screenshot of the version command output for: ```choco -
 
 **NOTE** if you have any of this software already installed, you do not need to reinstall it -- but it wouldn't hurt to upgrade everything so that we are all on the same versions.  Below I will describe what we are installing.
 
-For MacOS using Homebrew: `brew install --cask powershell --cask iterm2 git --cask visual-studio-code --cask atom --cask virtualbox  --cask vagrant packer`
+For MacOS using Homebrew: `brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask ; brew install virtualbox ; brew install --cask vagrant ; brew install packer`
+
+For M1 Macs you will run the same as above but without the  VirtualBox install:
+
+`brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask ; brew install --cask vagrant ; brew install packer`
 
 For Windows10 using Chocolatey: `choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell atom virtualbox vagrant packer`
 
