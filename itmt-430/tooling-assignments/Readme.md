@@ -49,7 +49,7 @@ For MacOS using Homebrew: `brew install --cask powershell ; brew install --cask 
 
 For M1 Macs you will run the same as above but without the  VirtualBox install:
 
-`brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask ; brew install --cask vagrant ; brew install packer`
+`brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask vagrant ; brew install packer`
 
 For Windows10 using Chocolatey: `choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell atom virtualbox vagrant packer`
 
