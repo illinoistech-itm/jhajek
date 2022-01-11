@@ -1,1 +1,0 @@
-pandoc -s -o ./cluster-read-write.pdf -V linkcolor=blue -V geometry:margin=.50in ./Readme.md
