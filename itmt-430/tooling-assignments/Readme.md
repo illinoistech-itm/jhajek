@@ -45,13 +45,18 @@ For Windows 10, place a screenshot of the version command output for: ```choco -
 
 **NOTE** if you have any of this software already installed, you do not need to reinstall it -- but it wouldn't hurt to upgrade everything so that we are all on the same versions.  Below I will describe what we are installing.
 
-For MacOS using Homebrew: `brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask ; brew install virtualbox ; brew install --cask vagrant ; brew install packer`
+For MacOS using Homebrew: 
+
+`brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask ; brew install virtualbox ; brew install --cask vagrant ; brew install packer`
 
 For M1 Macs you will run the same as above but without the  VirtualBox install:
 
 `brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask vagrant ; brew install packer`
 
-For Windows10 using Chocolatey: `choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell atom virtualbox vagrant packer`
+Once Vagrant and Parallels Pro Edition is installed: 
+For Windows10 using Chocolatey:
+
+`choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell atom virtualbox vagrant packer`
 
 ### Installation of a Modern Shell
 
