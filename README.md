@@ -18,8 +18,4 @@ My first computing device was a [Commodore 64](https://en.wikipedia.org/wiki/Com
 
 ## Something Interesting About You
 
-It doesn't look like it now, but I played American Football in high school and junior college.  I managed to register one tackle to my credit.
-
-## Git-IT Tutorial Badge
-
-![Git Tutorial](images/badge.png "Result")
+It doesn't look like it now, but I played American Football in high school and junior college.  I managed to register one tackle to my credit in college.
