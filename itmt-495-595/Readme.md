@@ -110,3 +110,11 @@ Here is my own completed sample: [https://github.com/illinoistech-itm/jhajek/blo
 ## Final deliverable to Blackboard
 
 Submit to Blackboard the URL to your GitHub private repo, so I can clone and see all these elements.  Make sure to push code as you go and push this edited Readme.md file under the tooling-assignments folder.
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
