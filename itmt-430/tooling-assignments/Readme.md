@@ -56,9 +56,10 @@ For M1 Macs you will run the same as above but without the  VirtualBox install:
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
   * [https://www.parallels.com/products/desktop/pro/](https://www.parallels.com/products/desktop/pro/ "Parallels Pro Edition")
   * The standard and education edition doesn't contain the commandline interface needed for automation.
-* Once Vagrant and Parallels Pro Edition is installed from the Terminal run the command: `vagrant plugin install vagrant-parallels`
-  * This will add the needed plugin to allow you to use Parallels from Vagrant
-  * This will also work if you have Parallels on a Intel Mac
+* Once Vagrant and Parallels Pro Edition is installed you need to also install the Parallels SDK from the Download Tab in your parallels.com account
+  * From the Terminal run the command: `vagrant plugin install vagrant-parallels`
+    * This will add the needed plugin to allow you to use Parallels from Vagrant
+    * This will also work if you have Parallels Pro Edition on an Intel Mac
 
 For Windows10 and 11 using Chocolatey:
 
@@ -123,11 +124,18 @@ git config --global user.name "Jeremy Hajek"
 git config --global user.email "hajek@iit.edu"
 ```
 
-### Install VirtualBox
+### Install VirtualBox or Parallels
 
 If you do not already have VirtualBox 6.x installed, use your package manager to install VirtualBox.  VirtualBox will be our virtualization platform we are using this semester.  It is a robust opensource product and can be used to create and host machines on our local systems.  It has integration with automation tools such as Packer and Vagrant from HashiCorp.
 
-Take a screenshot of the VirtualBox > Help > About VirtualBox output
+Take a screenshot of the VirtualBox > Help > About VirtualBox output or from the Terminal: `vboxmanage --version` (Windows or Intel MacOS)
+
+For those using an M1 Mac we will require a [Pro License from Parallels](https://www.parallels.com/products/desktop/pro/ "Pro License form parallels.com website").
+
+Take a screenshot of Parallels Desktop > About Parallels Desktop or from the terminal : `prlctl --version` (Works on any version of Parallels)
+
+**Note:** that you can use Parallels on an Intel MacOS as well -- you would need to make sure you have the Pro edition installed and the SDK installed as well.
+
 
 ### Install Vagrant
 
@@ -137,9 +145,9 @@ Using your package manager, install the latest version of [Vagrant](https://vagr
 
 Take a screenshot of the output of the command: ```vagrant --version```
 
-We will walk through together the Vagrant tutorial located at [https://learn.hashicorp.com/collections/vagrant/getting-started](https://learn.hashicorp.com/collections/vagrant/getting-started "Vagrant tutorial"), you can skip the INSTALL section as we are installing using a package manager and skip the SHARE ENVIRONMENT section.  
+~~We will walk through together the Vagrant tutorial located at [https://learn.hashicorp.com/collections/vagrant/getting-started](https://learn.hashicorp.com/collections/vagrant/getting-started "Vagrant tutorial"), you can skip the INSTALL section as we are installing using a package manager and skip the SHARE ENVIRONMENT section.~~
 
-After completing this tutorial take a screenshot of the output of the command ```vagrant box list```
+~~After completing this tutorial take a screenshot of the output of the command ```vagrant box list```~~
 
 ### Install Packer.io
 
