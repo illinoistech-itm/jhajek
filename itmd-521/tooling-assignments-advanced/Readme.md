@@ -33,7 +33,7 @@ If you are an operations engineer or DevOps engineer, Vagrant gives you a dispos
 
 If you are a designer, Vagrant will automatically set everything up that is required for that web app in order for you to focus on doing what you do best: design. Once a developer configures Vagrant, you do not need to worry about how to get that app running ever again. No more bothering other developers to help you fix your environment so you can test designs. Just check out the code, vagrant up, and start designing.
 
-#### Summary
+#### Vagrant Summary
 
 Vagrant is an abstraction layer -- that sits on top of any virtualization platform and streamlines the workflow
 
@@ -143,7 +143,6 @@ You will need to use the `wget` commandline tool to retrieve installation files 
   * [https://www.apache.org/dyn/closer.lua/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz](https://www.apache.org/dyn/closer.lua/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz "Apache Spark Download Link")
   * Use the `wget` tool to retrieve the executable
 
-## Deliverable
+## Summary
 
-* In the document, tooling-assignment-advanced-template-part-I.md, provide the required screenshots. Push a copy of this Markdown file in the private GitHub repo provided, under the itmd-521 folder and make an additional sub-folder named: **tooling-assignments-advanced**.  Submit the URL to your deliverable to Blackboard
-  
+Today we learned how to use Vagrant for managing virtual machine artifacts.  We learned how to extend our PCs capabilities by enabling us to install additional software.
