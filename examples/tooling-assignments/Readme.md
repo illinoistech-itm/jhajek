@@ -35,11 +35,15 @@ Homebrew is the MacOS 3rd party package manager located at: [https://brew.sh/](h
 
 If you have a Mac - install brew and provide a screenshot of the output of the command: `brew --version`
 
+![*Homebrew Version*](images/brew-install.png "brew version")
+
 ### Windows 10 21H1+
 
 The name of the third party Windows Package manager is Chocolatey.  The download is located at [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page").
 
 For Windows 10, place a screenshot of the version command output for: ```choco --version```.
+
+![*Choco Version*](images/choco-version.png "Choco version")
 
 ### Commands to run to install all the software
 
@@ -56,10 +60,9 @@ For M1 Macs you will run the same as above but without the  VirtualBox install:
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
   * [https://www.parallels.com/products/desktop/pro/](https://www.parallels.com/products/desktop/pro/ "Parallels Pro Edition")
   * The standard and education edition doesn't contain the commandline interface needed for automation.
-* Once Vagrant and Parallels Pro Edition is installed you need to also install the Parallels SDK from the Download Tab in your parallels.com account
-  * From the Terminal run the command: `vagrant plugin install vagrant-parallels`
-    * This will add the needed plugin to allow you to use Parallels from Vagrant
-    * This will also work if you have Parallels Pro Edition on an Intel Mac
+* Once Vagrant and Parallels Pro Edition is installed from the Terminal run the command: `vagrant plugin install vagrant-parallels`
+  * This will add the needed plugin to allow you to use Parallels from Vagrant
+  * This will also work if you have Parallels on a Intel Mac
 
 For Windows10 and 11 using Chocolatey:
 
@@ -71,9 +74,13 @@ For Windows we are going to install PowerShell Core, also known as PowerShell 7.
 
 Open PowerShell 7 and issue the command: `ssh -V` and take a screenshot of the PowerShell version output as well as the SSH version output.
 
+![*Powershell and SSH version*](images/powershell-ssh-version.png "Powershell and SSH version")
+
 For MacOS, newer versions use the Z shell.  This is due to Apple not using GPLv3+ software, which newer versions of BASH are licensed under.  This should be just fine and not require a new shell install.  If you want to experiment you can also install PowerShell 7 via Brew but it is not required.
 
 Open a terminal and type the commands: `zsh --version` and `ssh -V` and take a screenshot of the output
+
+![*Zsh and SSH Version*](images/zsh-ssh-version.png "Zsh and SSH Version")
 
 ### Installation of a Modern Terminal
 
@@ -83,9 +90,13 @@ On Windows, Microsoft provides a [Windows Terminal](https://www.microsoft.com/en
 
 Open the Windows Terminal and select from the drop down arrow, the ABOUT tab, and take a screenshot of the version output
 
+![*Windows Terminal Version*](images/windows-terminal-version.png "Windows Terminal Version")
+
 On MacOS, there is a terminal called [iterm2](https://iterm2.com/ "MacOS shell terminal")
 
 Open the iterm2 Terminal and from the File > About section take a screenshot of the version output
+
+![*item2 version*](images/iterm2-version.png "item2-version.png")
 
 ### Install IDE editor with native version control support
 
@@ -100,13 +111,21 @@ We will be installing an text editor or and IDE for all of our coding and config
 * [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")
   * Cross Platform development tool from Adobe
 
-Take a screenshot from the ABOUT tab in your IDE to show the installed version
+Take a screenshot from the ABOUT tab in your IDE to show the installed version or the use the commandline tool to get the version.
+
+![*Windows VSCode*](images/windows-vs-code-version.png "Windows VS Code")
+![*MacOS VSCode*](images/macos-vs-code-version.png "MacOS VS Code CLI")
+![*Atom Version*](images/windows-atom-version.png "Atom Version")
+![*Atom Version*](images/macos-atom-version.png "Atom Version")
 
 ### Install Git Client for Version Control
 
 Version Control is vital to modern software development and we will be using our Package Manger to install the Git Client for our respective operating systems. **Note**, this is different from the GitHub Desktop tool, which we will not be using this semester.
 
 Take a screenshot of the output of the command: ```git --version```
+
+![*Windows Git version*](images/windows-git-version.png "Windows Git Version")
+![*MacOS Git version*](images/macos-git-version.png "MacOS Git Version")
 
 #### Configure Git Client
 
@@ -124,15 +143,21 @@ git config --global user.name "Jeremy Hajek"
 git config --global user.email "hajek@iit.edu"
 ```
 
-### Install VirtualBox or Parallels
+### Install VirtualBox
 
 If you do not already have VirtualBox 6.x installed, use your package manager to install VirtualBox.  VirtualBox will be our virtualization platform we are using this semester.  It is a robust opensource product and can be used to create and host machines on our local systems.  It has integration with automation tools such as Packer and Vagrant from HashiCorp.
 
 Take a screenshot of the VirtualBox > Help > About VirtualBox output or from the Terminal: `vboxmanage --version` (Windows or Intel MacOS)
 
+![*VirtualBox Version*](images/windows-vbox-version.png "VirtualBox Version")
+![*VirtualBox Version from the CLI*](images/vbox-cli-version.png "VirtualBox Version from CLI")
+
 For those using an M1 Mac we will require a [Pro License from Parallels](https://www.parallels.com/products/desktop/pro/ "Pro License form parallels.com website").
 
 Take a screenshot of Parallels Desktop > About Parallels Desktop or from the terminal : `prlctl --version` (Works on any version of Parallels)
+
+![*M1 Parallels Version*](images/macos-m1-parallels-about.png "M1 Parallels Version")
+![*M1 Parallels CLI Version*](images/macos-m1-cli-parallels-about.png "M1 Parallels CLI Version")
 
 **Note:** that you can use Parallels on an Intel MacOS as well -- you would need to make sure you have the Pro edition installed and the SDK installed as well.
 
@@ -144,6 +169,9 @@ Using your package manager, install the latest version of [Vagrant](https://vagr
 
 Take a screenshot of the output of the command: ```vagrant --version```
 
+![*Windows Vagrant Version*](images/windows-vagrant-version.png "Vagrant Version")
+![*MacOS Vagrant Version*](images/macos-vagrant-version.png "MacOS Vagrant Version")
+
 ### Install Packer.io
 
 Packer is another automation tool from HashiCorp.  Whereas Vagrant was for running virtual machines, Packer's job is to build virtual machine images from a template language.  This tool allows fast infrastructure deployment, multi-provider portability, improved stability, and greater testability.
@@ -152,13 +180,16 @@ Using a package manager, install the latest version of [Packer](https://packer.i
 
 Take a screenshot of the output of the command: ```packer --version```
 
+![*Windows Packer Version*](images/windows-packer-version.png "Packer Version")
+![*MacOS Packer Version*](images/macos-packer-version.png "Packer Version")
+
 ## Tooling Assignment Part II
 
 Part II will explore some version control exercises and using getting familiar with Markdown
 
 ## Create and Push your Readme.md
 
-In this step you will clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it) to your local system.  In the root of this repo you will create a file named `Readme.md` and a folder named **images**. This `Readme.md` will contain the elements below written in Markdown. This is a good [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
+In this step you will clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it) to your local system.  In the root of this repo you will create a file named `Readme.md` and a folder named **images**. This `Readme.md` will contain the elements below written in Markdown. This is a good [Markdown cheat-sheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
 
 The document will include:
 
@@ -211,7 +242,7 @@ config.default.yml
 
 ### Adding Screenshots
 
-On your local system, clone the instructors sample code repo containing this assignment.  Issue the command: `git clone https://github.com/illinoistech-itm/jhajek.git` on your local system command line. **Note** - if you already have this repo clone just issue: `git pull` to update to the latest assignment. From your local system's file manager copy the document from the cloned repo: jhajek > itmd-521 > tooling-assignment > Readme.md and place the copied document into your own private repo on the local system under a root folder named: **itmd-521**.  In that itmd-521 directory, add an directory named: `images` and place all of your screenshots into that directory.
+On your local system, clone the instructors sample code repo containing this assignment.  Issue the command: `git clone https://github.com/illinoistech-itm/jhajek.git` on your local system command line. **Note** - if you already have this repo clone just issue: `git pull` to update to the latest assignment. From your local system's file manager copy the document from the cloned repo: jhajek > itmt-430 > tooling-assignment > Readme.md and place the copied document into your own private repo on the local system under a root folder named: **itmt-430**.  In that itmt-430 directory, add an directory named: `images` and place all of your screenshots into that directory.
 
 Open your private Repo using your IDE and now that we have worked with Markdown, I want you to go back, using the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet") and add image links under each of the screenshot statements in the assignment above.
 
