@@ -1,4 +1,4 @@
-# Tooling Assignment Advanced
+# Tooling Assignment Vagrant
 
 ## Objectives
 
@@ -122,26 +122,22 @@ If you want to reset your Vagrant Box after you installed a webserver.  Exit the
   * This takes care a warning message from Vagrant about not being able to mount VirtualBox shared drives
 * Configure Vagrant Box memory to use at least 2 GB
 
-## Inside Vagrant Box Steps
+## Tutorial Steps
 
-You will need to use the `wget` commandline tool to retrieve installation files for Hadoop and Spark.  You will need to use the `tar` command to extract the tarballs: `tar -xvzf` and the command `sudo apt-get update` to check for the latest packages and the command: `sudo apt-get install` to install additional packages like Java and MariaDB.
-
-* Change hostname of the system to include the course number and your initials
-* Configure `.bashrc` for PATH variables
-  * Add: `export JAVA_HOME=/usr`
-  * Add: `export SPARK_HOME=/home/vagrant/spark`
-  * Add: `export PYSPARK_PYTHON=python3`
-  * Add: `export PATH=$PATH:$SPARK_HOME/bin`
-* Install MariaDB server
-* Install the R Language
-* Install Java 11 OpenJDK
-  * `sudo apt-get update`
-  * `sudo apt-get install openjdk-8-jdk`
-* Install R package
-  * [https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-20-04-quickstart](https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-20-04-quickstart "Install R package in Ubuntu")
-* Install Spark 3.2
-  * [https://www.apache.org/dyn/closer.lua/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz](https://www.apache.org/dyn/closer.lua/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz "Apache Spark Download Link")
-  * Use the `wget` tool to retrieve the executable
+* Using the `vagrant init ubuntu/focal64` command, initialize a Vagrant Box (only has to be done once on a system)
+  * Or comparable Vagrant Box on an M1 Mac
+* Using the `vagrant up` command, start the virtual machine
+* Using the `vagrant ssh` command, connect to the virtual machine via SSH
+* Using the `sudo apt-get update` and `sudo apt-get install nginx` command, install the Nginx webserver (pronounced Engine X)
+  * Exit the ssh session.
+  * Edit the corresponding `Vagrantfile` to enable line 35 a private network interface
+  * Edit the corresponding `Vagrantfile` to uncomment line 52, 57, and 58 changing line 57 to 2048 or 4096
+* Using the command `vagrant reload --provision` restart the virtual machine
+* After the reload command has succeeded, without using the `vagrant ssh` command, open a web-browser on your Host OS to `http://192.168.33.10` to see the **Hello World** page being served from Nginx in your Vagrant Box
+* Using the `vagrant halt` to power off the virtual machine, then issue the `vagrant destroy` command to reset the Vagrant Box to its initial state (pre-webserver install)
+* Issue the `vagrant up` and `vagrant ssh` command and use the commmand in the Vagrant Box: `sudo systemctl status nginx` to show that the webserver is not installed.
+  * Exit the SSH session
+* Issue the command: `vagrant box list` to show that you have successfully gone through the tutorial
 
 ## Summary
 
