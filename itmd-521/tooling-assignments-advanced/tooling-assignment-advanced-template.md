@@ -35,3 +35,11 @@ Execute command: `python -V`
 No need to show the clone action -- just the results of the `ls` command
 
 Image goes here
+
+## Output of vagrant box list command
+
+After completing this tutorial take a screenshot of the output of the command ```vagrant box list```
+
+## Deliverable
+
+In the document, tooling-assignment-advanced-template.md, provide the required screenshots. Push a copy of this Markdown file in the private GitHub repo provided, under the itmd-521 folder and make an additional sub-folder named: **tooling-assignments-advanced**.  Submit the URL to your deliverable to Blackboard
