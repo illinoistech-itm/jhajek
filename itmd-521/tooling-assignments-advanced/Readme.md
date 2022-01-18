@@ -89,7 +89,9 @@ Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfi
 
 ### Start a Vagrant Box
 
-From our focal64 directory, let us start our first Vagrant Box.  From the Terminal type: ```vagrant up```.  What you will see is the Box file with the VirtualBox (or Parallels) vm being extracted and registered with your virtualization software.  Next the system will begin to boot.  The first install will take a bit longer as some additional drivers are being installed.  This only happens on first boot.  Once this step is successful, we need to SSH into the system.  We do this by the command: ```vagrant ssh```, and we are faced with an Ubuntu Server command prompt. What was the password?  What was the IP address?  You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the Fedora 35 box.
+From our focal64 directory, let us start our first Vagrant Box.  From the Terminal type: ```vagrant up```.  What you will see is the Box file with the VirtualBox (or Parallels) vm being extracted and registered with your virtualization software.  Next the system will begin to boot.  The first install will take a bit longer as some additional drivers are being installed.  This only happens on first boot.  
+
+Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: ```vagrant ssh```, and we are faced with an Ubuntu Server command prompt. What was the password?  What was the IP address?  You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the Fedora 35 box.
 
 ### Additional Vagrant Commands
 
@@ -97,6 +99,7 @@ From our focal64 directory, let us start our first Vagrant Box.  From the Termin
 * From the host OS, to restart a Vagrant Box you would type: `vagrant reload`
 * From the host OS, to pause or place into standby you would type: `vagrant susupend`
 * From the host OS, to bring out of standby your would type: `vagrant resume or vagrant up`
+* From the host OS, to poweroff your virtual machine you would type: `vagrant halt`
 * From the host OS, to remove all changes and reset the box to the status at first install you would type: `vagrant destroy`
 * From the host OS, to remove the Vagrant Box entirely from Vagrant's control you would type: `vagrant box remove <nameofbox>`
 * From the host OS, to list all of the boxes managed by Vagrant you would type: `vagrant box list`
