@@ -18,7 +18,6 @@ source "parallels-iso" "proxmox-rockylinux-85-arm" {
   ssh_port                = 22
   ssh_timeout             = "30m"
   ssh_username            = "vagrant"
-  headless                = "${var.headless_build}"
   parallels_tools_mode    = "upload"
   # Hint to fix the problem of "initramfs unpacking failed" error
   # https://askubuntu.com/questions/1269855/usb-installer-initramfs-unpacking-failed-decoding-failed
