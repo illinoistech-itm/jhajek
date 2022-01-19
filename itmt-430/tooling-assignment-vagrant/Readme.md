@@ -135,7 +135,7 @@ If you want to reset your Vagrant Box after you installed a webserver.  Exit the
 * Using the command `vagrant reload --provision` restart the virtual machine
 * After the reload command has succeeded, without using the `vagrant ssh` command, open a web-browser on your Host OS to `http://192.168.33.10` to see the **Hello World** page being served from Nginx in your Vagrant Box
 * Using the `vagrant halt` to power off the virtual machine, then issue the `vagrant destroy` command to reset the Vagrant Box to its initial state (pre-webserver install)
-* Issue the `vagrant up` and `vagrant ssh` command and use the commmand in the Vagrant Box: `sudo systemctl status nginx` to show that the webserver is not installed.
+* Issue the `vagrant up` and `vagrant ssh` command and use the command in the Vagrant Box: `sudo systemctl status nginx` to show that the webserver is not installed.
   * Exit the SSH session
 * Issue the command: `vagrant box list` to show that you have successfully gone through the tutorial
 
