@@ -2,7 +2,7 @@
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 source "parallels-iso" "proxmox-rockylinux-85-arm" {
-  boot_command            = ["<tab> text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/rockylinux-85.ks<enter>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>", "<wait10><wait10><wait10>"]
+  boot_command            = ["<cOn><cOff>", "<wait5>linux /casper/vmlinuz"," inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/rockylinux-85.ks","<enter>","initrd /casper/initrd <enter>","boot <enter>"]
   boot_wait               = "10s"
   disk_size               = 15000
   parallels_tools_flavor  = "lin"
