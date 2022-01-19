@@ -4,7 +4,7 @@ Provide the required screenshots to show that tooling has been properly installe
 
 ## WebServer Install
 
-Screenshot from the host OS of http://192.168.133.10
+Screenshot from the host OS of http://192.168.33.10
 
 ## Output of vagrant box list command
 
