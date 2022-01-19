@@ -1,5 +1,6 @@
 #version=RHEL8
-ignoredisk --only-use=sda
+#bootloader --location=mbr --driveorder=sda --append="rhgb quiet"
+#ignoredisk --only-use=sda
 autopart --type=lvm
 # Partition clearing information
 clearpart --all --initlabel
@@ -12,10 +13,10 @@ keyboard --vckeymap=us --xlayouts='us'
 lang en_US.UTF-8
 
 # Network information
-network  --bootproto=dhcp --device=enp0s3 --ipv6=no --activate
-network  --hostname=rocky-vagrant
+network  --bootproto=dhcp --device=ens18 --ipv6=no --activate
+network  --hostname=rockylinux85
 # Root password
-rootpw --iscrypted $6$ycZJnAFLmuBasgwU$h6YYhhFkJ6Gu2y5X6SeXopBCF.wrtfPapW9FVGRmvxVKAoRLzLOksyB8X2T9eUjErwaWlptw1l6E0gBeGfKHO.
+rootpw --iscrypted $6$qoazpFv0h6$1i0uxiM32aszgrgyYjv/2FLq73.TV2DCHOGi6nuiZoazu36Bewgb4hKarG9J3vwHxTpkdLQ10zeEt1J5XHG.Z/
 firewall --disabled
 selinux --disabled
 # Run the Setup Agent on first boot
@@ -31,8 +32,8 @@ user --groups=wheel --name=vagrant --password=$6$qoazpFv0h6$1i0uxiM32aszgrgyYjv/
 reboot
 
 %packages --ignoremissing
-@^minimal-environment
-#@standard
+#@^minimal-environment
+@standard
 kexec-tools
 
 # unnecessary firmware
@@ -81,7 +82,12 @@ echo "################################"
 echo "# Running Post Configuration   #"
 echo "################################"
 (
+# Needed to interact with the Proxmox VM
+/usr/bin/yum -y install qemu-guest-agent
+sudo systemctl enable qemu-guest-agent
+sudo systemctl start qemu-guest-agent
 /usr/bin/yum -y install drpm sudo
+/usr/bin/yum -y update
 echo "vagrant        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers.d/vagrant
 sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 
