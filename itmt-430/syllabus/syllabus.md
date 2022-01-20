@@ -46,8 +46,8 @@ All readings should be done prior to class
 
 Session | Date | Topic | Reading - Homework |
 ----------|------|:------|----------
-1 | 01/10 | Introduction  | Tooling and Ethics Assignment
-2 | 01/17 | No Class MLK Jr Day  | NA
+1 | 01/10 | Introduction  | ~~Tooling and Ethics Assignment~~
+2 | 01/17 | No Class MLK Jr Day  | Intro to Tooling
 3 | 01/24 | The Three Ways Ch 1-2 | NA
 4 | 01/31 | Where to Start Ch 3-4 | Sprint 01 presentation
 5 | 02/07 | Where to Start Ch 5-6  | NA
@@ -127,8 +127,10 @@ The course will make use of Blackboard [http://blackboard.iit.edu/](http://black
   * Individual reports given by each team member per sprint demonstrating the objectives they completed
 * Tooling assignment
   * This initial assignment will help you get your infrastructure setup and prepared for the semester
-* Ethics assignment
-  * Short question and answer assignment dealing with computer ethics
+* ~~Ethics assignment~~
+  * ~~Short question and answer assignment dealing with computer ethics~~
+* Advanced Tooling Assignments
+  * Covering Vagrant and Packer
 * Student Chapter Presentation
   * Each week there are scheduled lectures that will be given by the student teams during the main course section
 * Final exam consisting of review questions from student presentations
