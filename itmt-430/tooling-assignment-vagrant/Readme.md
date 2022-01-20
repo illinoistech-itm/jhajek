@@ -66,7 +66,7 @@ Assuming that the command `vagrant --version` gives us output, lets begin by ins
 
 Here we are going to create a directory to manage our artifact.  It is a good idea to create a directory per virtual machine that we will administer via Vagrant.  You can create a class directory and then sub-directories and or you can place this on a different disk. This I will leave up to you as it is your filesystem and your data--you are the one in charge.
 
-```mkdir itmd-521-2022 ; cd itmd-521-2022```
+```mkdir itmt-430-2022 ; cd itmt-430-2022```
 
 We will now use Vagrant to retrieve and Ubuntu 20.04 known as Focal and a Fedora 35 Virtual Machine:
 
@@ -78,7 +78,7 @@ For those using M1 Macs and Parallels you will need to replace the names of the 
 * mpasternak/focal64-arm
 * scottharwell/fedora-35-aarch64
 
-Once these commands are executed -- both under the `itmd-521-2022` directory, you will see a Vagrantfile that has been created.  Let us take a look at this file.  You can do so via using the commands on MacOS or Windows from the Terminal:
+Once these commands are executed -- both under the `itmt-430-2022` directory, you will see a Vagrantfile that has been created.  Let us take a look at this file.  You can do so via using the commands on MacOS or Windows from the Terminal:
 
 * ```code Vagrantfile```
 * ```atom Vagrantfile```
