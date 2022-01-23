@@ -21,15 +21,16 @@ Your team will provide:
 * An approximately 30 minute presentation covering the main themes of the material allotted
   * Presentation can be pre-recorded or done live
   * Presentation will submitted by the prior Thursday to your presentation day and involve a meeting with the professor to cover the material or make any adjustments
-  * All team members must participate or speak in the presentation
+  * All team members must participate and speak in the presentation
   * The presentation must clearly cover the main themes of your allotted material and clearly express them
+  * Teams will prepare at least 5 review questions of short answer and the answers for these questions
 
 In addition the grading rubric will look like this:
 
 Requirement | Points Possible | Notes |
 ----------|------|------
 Opening - was there a clear introduction and summary of what will be presented | 4 | -
-Material Presentation - was the spelling correct, did the presentation show effort | 4 | -
+Material Presentation - was the spelling correct, did the presentation show effort, did you read directly off the slides | 4 | -
 Summary of Material - did the presentation cover all relative material | 4 | -
 Review Questions - were at least 5 review questions presented and answer sufficiently | 1 | -
 Additional Resources - were at least three additional resources provided based on the chapter | 1 | -
@@ -38,3 +39,6 @@ Participation - did each member of the team participate | 2 | -
 
 ### Project Deliverables
 
+Your team will either do a live or a pre-recorded presentation.  If a pre-recorded, a link to the presentation must be submitted.  Submit which ever notes / presentation platform you have prepared and a second copy with the detailed answers provided to BlackBoard the Friday before your Monday's presentation.
+
+This will be a team grade, but individual submission--each person submits a copy of the material.

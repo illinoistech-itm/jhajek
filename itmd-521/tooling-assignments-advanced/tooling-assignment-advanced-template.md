@@ -8,7 +8,7 @@ Image goes here
 
 ## WebServer Install
 
-Screenshot from the host OS of http://192.168.133.10
+Screenshot from the host OS of http://192.168.33.10  or whichever private IP you assign to your Vagrant Box
 
 ## MariaDB Version
 
