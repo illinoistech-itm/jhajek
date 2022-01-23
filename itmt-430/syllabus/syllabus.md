@@ -88,10 +88,22 @@ Students completing this course will be able to:
 ![*DevOps Handbook*](images/devops-handbook.png "DevOps Handbook cover image")
 
 * DevOps Handbook - How to Create World-Class Agility, Reliability, & Security in Technology Organizations
-  * Gene Kim, Patrick Debois, John Willis, Jez Humble,
+  * Gene Kim, Patrick Debois, John Willis, Jez Humble
   * ISBN-13:  9781942788003
   * Publisher:  IT Revolution Press
   * [http://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1121371901?ean=9781942788003](http://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1121371901?ean=9781942788003 "Link to DevOps Handbook")
+
+\newpage
+
+![*DevOps Handbook*](images/devops-handbook-v2.png "DevOps Handbook cover image Version 2")
+
+* DevOps Handbook - How to Create World-Class Agility, Reliability, & Security in Technology Organizations
+  * Gene Kim, Patrick Debois, John Willis, Jez Humble, Dr. Nicole Forsgren
+  * ISBN-13: 9781950508402
+  * Publisher: IT Revolution Press
+  * Publication date: 11/30/2021
+  * Edition description: Second Edition
+  * [https://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1138718562?ean=9781950508402](https://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1138718562?ean=9781950508402 "DevOps Handbook second edition")
 
 \newpage
 
@@ -99,8 +111,8 @@ Students completing this course will be able to:
 
 * Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations
   * Nicole Forsgren, PhD, Jez Humble, Gene Kim
-  * ISBN-13:  9781942788331
-  * Publisher:  IT Revolution Press
+  * ISBN-13: 9781942788331
+  * Publisher: IT Revolution Press
   * [https://www.barnesandnoble.com/w/accelerate-nicole-forsgren-phd/1127477199?ean=9781942788331#/](https://www.barnesandnoble.com/w/accelerate-nicole-forsgren-phd/1127477199?ean=9781942788331#/ "Link to Accelerate")
 
 ### Readings
@@ -154,7 +166,8 @@ Name | Grade | Total Points
 Sprint Report (5) | 38% | 20 points each
 Chapter Presentation (1) | 6% | 20 points
 Tooling Assignment (1) | 6% | 10 points
-Ethics Assignment (1) | 6% | 10 points
+Tooling Assignment Advanced (2) | 6% | 5 points each
+~~Ethics Assignment (1) | 6% | 10 points~~
 Final Exam | 38% | 100 points
 Attendance | 6% | 20 points
 
