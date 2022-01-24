@@ -14,7 +14,7 @@ At the conclusion of each team's presentation, each team will have delivered a 3
 
 ### Make Sure You Have Signed Up for a Presentation Team
 
-This is the link: [https://docs.google.com/spreadsheets/d/1doWLgH_VBTXMgYV97oPLwrh71OaUK48anZHQ40-jcTs/edit?usp=sharing](Sign Up Google Doc "Link to sign up for team presentation"). Add your name to one of the squares available. There will be 4 people (2 teams of 2) per weekly presentation.  Those two teams will divide the allotted chapters between them.
+This is the link: [Sign Up Google Doc](https://docs.google.com/spreadsheets/d/1doWLgH_VBTXMgYV97oPLwrh71OaUK48anZHQ40-jcTs/edit?usp=sharing "Link to sign up for team presentation"). Add your name to one of the squares available. There will be 4 people (2 teams of 2) per weekly presentation.  Those two teams will divide the allotted chapters between them.
 
 Your team will provide:
 
@@ -39,6 +39,6 @@ Participation - did each member of the team participate | 2 | -
 
 ### Project Deliverables
 
-Your team will either do a live or a pre-recorded presentation.  If a pre-recorded, a link to the presentation must be submitted.  Submit which ever notes / presentation platform you have prepared and a second copy with the detailed answers provided to BlackBoard the Friday before your Monday's presentation.
+Your team will either do a live or a pre-recorded presentation.  If a pre-recorded, a link to the presentation must be submitted.  Submit which ever notes / presentation platform you have prepared and a second copy with the detailed answers provided to BlackBoard the ~~Friday~~ Thursday before your Monday's presentation.
 
 This will be a team grade, but individual submission--each person submits a copy of the material.
