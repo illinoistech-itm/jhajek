@@ -189,7 +189,8 @@ Every Git repository needs a `.gitignore` file.  This file tells Git to ignore c
 We will create a file named: `.gitignore` and place the following values into it and add, commit, and push the file to your private repo.
 
 ```bash
-#packer
+# Files, Folders, security keys, and Binaries to ignore
+
 *.vdi
 *.box
 .vagrant/

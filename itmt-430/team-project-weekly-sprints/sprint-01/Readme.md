@@ -79,6 +79,34 @@ In the **About.md** add a paragraph or two describing the general function of yo
 
 No programming or code design is required at this time.
 
+### Project .gitignore
+
+Create a .gitignore file in the root of your team repository with the below content
+
+```bash
+# Files, Folders, security keys, and Binaries to ignore
+
+*~
+*.vdi
+*.box
+.vagrant/
+*console.log
+packer-cache/
+packer_cache/
+*.pem
+*.ova
+output*/
+vagrant.d/
+*.iso
+variables.pkr.hcl
+*.priv
+.DS_Store
+id_rsa
+id_rsa*
+id_rsa.pub
+.Vagrantfile*
+```
+
 ### UI/UX Design
 
 In a folder in the team repository placed in the root the repo named **design**, place all the needed design documents.  These might be images or could be skeleton HTML.  The purpose of this directory is that the team needs to design the entire functionality on paper before coding anything.  This is commonly known as design document or requirements gathering.  Your team has to decide the use of colors, buttons, function of each page, and the data collection points (forms and textboxes). This document will be used in the future sprints to help the Project Managers to assign tasks and check that committed code matches the design documents.  Having this document is critical to success, otherwise all progress is an illusion if you don't know what you should be working towards.
