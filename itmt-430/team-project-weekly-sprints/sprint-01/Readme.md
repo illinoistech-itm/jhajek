@@ -47,7 +47,8 @@ While there are many solutions to the tools required I have provided a small set
 * Signup for Team Chat Tool
   * This will enable synchronous and asynchronous out of band communication between members and the professor if questions arise
     * Invite: **hajek@hawk.iit.edu**
-    * Recommendation: [Slack](https://slack.com "Slack website")
+    * Recommendations: [Slack](https://slack.com "Slack website")
+    * Recommendations: [Discord](https://discord.com "Discord website") -- need to have integrations with Chat and Project Management tools
   * Must have the ability to add notifications for Project Management boards and Git commits to the Chat tool
   * This will allow for a central pooling of resources and knowledge
   * Facebook Messenger and SMS are not adequate solutions
@@ -113,7 +114,7 @@ In a folder in the team repository placed in the root the repo named **design**,
 
 ### Entity Relationship Diagram
 
-Based on completing the UI/UX design you will be able to create an entire Entity Relationship diagram.  This will show the structure or schema of the database you end up working on. The ERD can be draw using a diagram tool and stored in the **desgin** folder for reference.  In addition, from the ERD you can generate SQL CREATE statements to generate this schema.  This will be used in Spring 2 but is required by the end of Sprint 01.
+Based on completing the UI/UX design you will be able to create an entire Entity Relationship diagram.  This will show the structure or schema of the database you end up working on. The ERD can be draw using a diagram tool and stored in the **design** folder for reference.  In addition, from the ERD you can generate SQL CREATE statements to generate this schema.  This will be used in t 2 but is required by the end of Sprint 01.
 
 ### Creation and Listing of Application Tasks
 
