@@ -39,6 +39,6 @@ Participation - did each member of the team participate | 2 | -
 
 ### Project Deliverables
 
-Your team will either do a live or a pre-recorded presentation.  If a pre-recorded, a link to the presentation must be submitted.  Submit which ever notes / presentation platform you have prepared and a second copy with the detailed answers provided to BlackBoard the ~~Friday~~ Thursday before your Monday's presentation.
+Your team will either do a live or a pre-recorded presentation.  If a pre-recorded, a link to the presentation must be submitted.  Submit which ever notes / presentation platform you have prepared and a second copy with the detailed answers provided to BlackBoard the ~~Friday~~ Thursday by 5:00 PM, so I have time to give you feedback before your Monday's presentation. Then we will meet as a team on Friday morning - you can book an appointment at [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Instructor Booking App") -- Note only one team member has to book a time.
 
 This will be a team grade, but individual submission--each person submits a copy of the material.
