@@ -66,25 +66,42 @@ One of the first steps the team will undertake is to determine which atomic acti
 
 In the Project Management tool the 25 points worth of tasks need to have the point value assigned to that task and also have a name that is primary responsible.  This is how your Project Manager will report progress and how you will write your own and group critique at the end of the sprint. The professor will check in weekly during the beginning of the Lab days to check the current progress to help see that things are on track.  
 
-**Note** -- this may require the group to *Swarm* on some initial items so that items that are blocking progress of the entire team don't hold up the entire project. Remember as a team-member it is your duty to swarm problems and solve them as a team not to let your team-members sink 
+**Note** -- this may require the group to *Swarm* on some initial items so that items that are blocking progress of the entire team don't hold up the entire project. Remember as a team-member it is your duty to swarm problems and solve them as a team not to let your team-members sink.
+
+### Required Artifacts
+
+The professor is prescribing a small number of required tasks to be selected amongst your 25 points
+
+* Login
+  * Use your @hawk accounts and Google OAuth for login authentication in your application code
+* Choice Server OS
+  * Ubuntu Server 20.04 or Rocky Linux 8.5 for the servers
+* Infrastructure
+  * Build each server as a Virtual Machines as Vagrant Boxes
+  * Packer as the tool for automating the creation of the Vagrant Boxes
+* 3 Tier Application
+  * First tier is a Load Balancer (suggestions: Nginx or HA proxy)
+  * Second tier is 3 webservers (suggestions: Nginx, Apache2/httpd, lighttpd)
+  * Third tier is a single datastore (suggestions: MariaDB, PostgreSQL, MongoDB, Sqlite3)
 
 ## Deliverables
 
-Upon the following Lab time, Jan 31st and February 2nd your teams project manager will give an approximate 20 minute presentation of the results of your teams first sprint.
+Upon the following Lab time, February 21st and February 23rd your team's project manager will give an approximate 20 minute presentation of the results of the sprint.
 
 ### Individual Deliverables
 
 The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work.  This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
 
-In the private repo provided to you (with your hawk ID), under the itmt-430 folder, create another folder that will be named for this sprint, **sprint-01**.  In this directory place a markdown based document named: **Report.md**
+In the private repo provided to you (with your hawk ID), under the itmt-430 folder, create another folder that will be named for this sprint, **sprint-02**.  In this directory place a markdown based document named: **Report.md**
 
-In the document **Report.md** include an H1 header called **Sprint-01** and then an H2 header: **Self-Critique** and detailing:
+In the document **Report.md** include an H1 header called **Sprint-02** and then an H2 header: **Self-Critique** and detailing:
 
 * Any roles or jobs you had for the sprint
 * Detail the work you accomplished and delivered
 * Self-Critique what you did and what could have gone better
+  * Make use of GitHub commits, Project Management board or the Chat Channel to add supporting documents for each artifact you list
 
-In the second part of the document, include and H2 header: **Group-Critique** and write a critique of the each team member's role, the contributions that made for the sprint, and any notes or improvements that could be done.  Make use of GitHub commits, Project Management board or the Chat Channel to find artifacts
+In the second part of the document, include and H2 header: **Group-Critique** and write a critique of the each team member's role, the contributions that they made for the sprint, and any notes or improvements that could be done.  Make use of GitHub commits, Project Management board or the Chat Channel to find artifacts if supporting documents are needed
 
 #### Points for Self-Critique
 
@@ -124,10 +141,10 @@ Topic | Points Range |
 Clear introduction and small summary of presentation | 1
 Clear conclusion and small summary of presentation | 1
 Introduction of your teammates | 1
-Demonstration your team Compact | 3
-Demonstration of project tooling | 3
-Demonstration of project overview from the About.md | 3
-Walk-through of your site | 3
+Demonstration of project management tool and explanation of the 25 build point items -- tell us what initially was assigned and what was accomplished | 3
+Demonstration of the Skeleton site with Login working | 3
+Demonstration of all team-members virtualized Vagrant Boxes on build server | 3
+UI/UX walk through explaining what was accomplished and what portions of the UI/UX are outstanding | 3
 
 #### Rubric for Project Manager Presentation
 
@@ -144,14 +161,6 @@ Walk-through of your site | 3
   * We need to see your face
   * If recorded, find a quiet place, focus on audio and or use head phones and make a quality recoding.
   * There are OTS recording studios in the basement of Stuart Building and I have recording equipment available in the Smart Lab as well.
-
-Demonstrate the implementations of the above requirements
-
-* Introduce your teammates
-* Demonstrate your team Compact
-* Show Project Management Tool, GitHub, and Chat tool integration and that each member is participating
-* Demonstrate your project overview form the About.md
-* Present a walk-through of your site's design documents, explaining its functionality
 
 ### What to Deliver to Blackboard
 
