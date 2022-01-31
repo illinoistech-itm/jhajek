@@ -54,7 +54,7 @@ Session | Date | Topic | Reading - Homework |
 6 | 02/14 | Technical Practices of Flow Ch 7-10 | NA
 7 | 02/21 | Technical Practices of Flow Ch 11-13 | Sprint 02 presentation
 8 | 02/28 | Technical Practices of Feedback Ch 14-18 | NA
-9 | 03/07 | Technical Practices of Learning Ch 19-21 | NA
+9 | 03/07 | Technical Practices of Learning Ch 19-21 | Sprint 03 presentation
 NA | 03/14 | Spring Break Week | ~~Sprint 03 presentation~~ NA
 10 | 03/21 | Technical Practices of InfoSec Ch 22-23 | NA
 11 | 03/28 | Accelerate Ch 1-3 | NA
