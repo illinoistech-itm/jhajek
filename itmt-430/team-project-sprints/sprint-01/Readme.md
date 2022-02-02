@@ -148,7 +148,7 @@ Topic | Points Range |
 ----------|------
 Clear Explanation of your own role | 3
 Did your listed accomplished work match what was describe? | 3
-Did you self-critique cover or mention any proposed deficiencies? | 3
+Did your self-critique cover or mention any proposed deficiencies? | 3
 Was your markdown proper and well formed HTML when rendered? | 1
 
 #### Points for Group Critique
