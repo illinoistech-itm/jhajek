@@ -165,4 +165,3 @@ UI/UX walk through explaining what was accomplished and what portions of the UI/
 ### What to Deliver to Blackboard
 
 Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day.  Feedback will be given on each submission.
-

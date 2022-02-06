@@ -18,12 +18,13 @@ This is the link: [Sign Up Google Doc](https://docs.google.com/spreadsheets/d/1d
 
 Your team will provide:
 
-* An approximately 30 minute presentation covering the main themes of the material allotted
+* An approximately ~~30~~ 25 minute presentation covering the main themes of the material allotted
   * Presentation can be pre-recorded or done live
-  * Presentation will submitted by the prior Thursday to your presentation day and involve a meeting with the professor to cover the material or make any adjustments
+  * Presentation will submitted by the prior Thursday by 5:00 pm to your presentation day and involve a meeting with the professor to cover the material or make any adjustments
   * All team members must participate and speak in the presentation
   * The presentation must clearly cover the main themes of your allotted material and clearly express them
   * Teams will prepare at least 5 review questions of short answer and the answers for these questions
+  * Provide three additional slides noting resources involving YouTube presentations from people mentioned in the chapter or based on topics in the chapter
 
 In addition the grading rubric will look like this:
 
