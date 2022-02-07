@@ -1,15 +1,15 @@
 # Tooling Assignment Vagrant
 
-Provide the required screenshots to show that tooling has been properly installed inside of your Ubuntu 20.04.3 Vagrant Box
+Provide the required screenshots to show the completion of the tutorial for the local Packer build and the remote Build Server build.
 
-## WebServer Install
+## Vagrant Box List
 
-Screenshot from the host OS of http://192.168.133.10
+Take a screenshot of the command: `vagrant box list` to show the ubuntu-vanilla and ubuntu-vanilla-build-server boxes are present on your system
 
-## Output of vagrant box list command
+## Screenshot of Build Server Web Site
 
-After completing this tutorial take a screenshot of the output of the command ```vagrant box list```
+Take a screenshot of the build server web page, showing your Vagrant box, with a highlight.
 
 ## Deliverable
 
-In the document, tooling-assignment-advanced-template.md, provide the required screenshots. Push a copy of this Markdown file in the private GitHub repo provided, under the itmt-430 folder and make an additional sub-folder named: **tooling-assignments-vagrant**.  Submit the URL to your deliverable to Blackboard
+In the document, `tooling-assignment-packer.md`, provide the required screenshots. Push a copy of this markdown file in the private GitHub repo provided, under the itmt-430 folder and make an additional sub-folder named: **tooling-assignments-packer**.  Submit the URL to your deliverable to Blackboard.

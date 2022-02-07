@@ -226,7 +226,69 @@ Now we need to add this *.box file to Vagrant so we can start, stop, and ssh to 
   * Issue the command: `vagrant box remove ubuntu-vanilla`
   * You can also use a `-f` flag to force the action
   * You will also need to manually delete the `.vagrant` directory left behind: `rm -rf ./.vagrant`
+* This may take anywhere from 10 to 25 minutes based on your system hardware
+  * Note the initial build will take longer as you have to download the installation ISO file
+  * It is cached for subsequent use
+  * Note that on Windows there is no download meter, it will appear the process is frozen, its not, just have to be patient
+
+## Now lets use the build server
+
+We have a central build server with lots of disk, CPU, and memory to allow you to build and retrieve your Vagrant Boxes
+
+The build server hardware:
+
+* 67 GB DDR4 2133 Mhz
+* Intel(R) Xeon(R) CPU E5-2620
+* 2 500 GB disks, with PCIe based NVMe ZFS write and read caches
+  * You can run the command: `zpool iostat -v` to watch the caches working
+
+* Each of you has access to this server on campus and remotely via the schools VPN software
+  * In order to access the Build Server from off campus you need to go to [https://vpn-1.iit.edu](https://vpn-1.iit.edu "School VPN software website") and use your Portal Authentication
+  * Install the Cisco VPN software
+  * Note you only need this if you are working off of the campus - inside the campus network VPN is not needed
+  * You would use your HAWK portal credentials to authenticate
+    * If you have an issue please post to Discussion Board
+* You need to generate one more Twisted Edward Curve key (Public/Private key) as you did in the previous section
+  * Name this key: `id_ed25519_HAWKID_key` -- replace HAWKID with your hawkID
+  * Submit the `id_ed25519_HAWKID_key.pub` key to Blackboard so I can add this to the account I made for you on the Build Server
+  * Once submitted and I add the key, you will be able to SSH via RSA key into the build server
+* From your Terminal issue the command: `ssh -i ~/.ssh/id_ed25519_HAWKID_key HAWKID@192.168.172.44`
+  * The HAWKID value is just the ID part, no @hawk.iit.edu
+  * Here you will have access to a command line
+* Within your home directory you can create another RSA keypair, add the public key to you GitHub repo, and create a `config` file on the BuildServer
+  * Follow the steps and content for the `config` file as you created in the prior steps
+* Test this by issuing the command: `git clone git@github.com:illinoistech-itm/jhajek.git`
+  * Replace jhajek with your Repo ID
+  * Now you will be able to run your Packer build commands using the faster build system hardware
+
+* On the build server, in the directory `packer-example-code` locate the file `template-for-variables.pkr.hcl`
+  * Rename this file to: `variables.pkr.hcl`
+  * Edit line 3 to say true -- the build server has no GUI, without this change there will be an error
+  * Edit line 15 to have the value: `vagrant` -- this is the default password I set
+  * Comment line 20 out -- this is only for building on your host OS
+  * Uncomment line 25, replacing the term: XYZ with your initials, team name, or other unique identifier.  The rest of the path is the required path to place the build artifact on a webserver for download
+* Upon completion of the Packer build command, on your Host OS open a web-browser and navigate to [http://192.168.172.44/boxes](http://192.168.172.44/boxes "internal URL for build server")
+* You will see your own Vagrant box artifact
+* Your team will use this process for Sprint 2 to build all 5 required boxes and each person will have access to the build artifacts
+
+### M1 Macs Note
+
+Due to the newness of M1 macs, I don't have any build hardware for the remote building of ARM based VMs, only x86. To continue the assignment you can switch to using the non-arm build template provided.  You should still build the artifact following the below steps, you just won't be able to run it on your M1 due to it being an x86 based artifact. The M1 is a fast machine, you will have to use your own system as a build server for this assignment.  When it is your turn as the IT Operations comes around you will still use the Build Server to build for everyone else.
+
+* Once your .box file has been downloaded to your Host OS, you can move it to the `build` directory where we first added the `ubuntu-vanilla` box
+  * Let's repeat those steps: issue the command: `mkdir ubuntu-vanilla-build-server`
+  * Issue the command: `vagrant box add ./XYZ-ubuntu-20043-live-server-20220207051528.box --name ubuntu-vanilla-build-server`
+  * Note that you want to make sure you add the correct box file
+  * Also once you have successfully added the Vagrant .box file, the actual .box file is no longer needed, think of it like the wrapping on a package, you can delete it
+  * `cd` into the `ubuntu-vanilla-build-server` and issue the command: `vagrant init ubuntu-vanilla-build-server`
+  * Issue the commands: `vagrant up; vagrant ssh`
+  * You will have now successfully have used remote build infrastructure to build the first of your projects Virtual Machines
+* Issue the command: `vagrant box list` to see the boxes that Vagrant manages
 
 ## Summary
 
+We went through using HashiCorp Packer and Vagrant to completely automate the building of Infrastructure to be used in the creation of our 3-tier application.  We covered using secure remote authentication to leverage build server infrastructure.  We provided you with a demonstration of how to use these tools and to leverage them to help automate tasks as well as version control them for audit and inspection.
 
+## Deliverable
+
+Submit the URL as designated in the file: `tooling-assignment-packer.md`
