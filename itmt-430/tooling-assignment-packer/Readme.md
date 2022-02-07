@@ -13,7 +13,7 @@
 
 At the conclusion of this lab you will have investigated using a virtualization platform (x86 VirtualBox and M1 Parallels) and demonstrated the ability to build your own custom virtualization artifacts.  You will have discussed the advantages of using Packer and Vagrant and you will have implemented and deployed your own custom virtual machine artifacts.
 
-### Packer
+### Packer - Part I
 
 Taken from [https://packer.io](https://packer.io "Packer webpage"): Why Packer?
 
@@ -186,11 +186,11 @@ To get a hold of the Packer Build Template samples, issue the command: `git pull
 * `cd` into the directory with the Packer build templates (ubuntu_20043_vanilla or ubuntu_20043_vanilla-arm)
   * Packer has a feature where instance variables can be declared and read in at run time.  This is helpful if you want to make a template and change variable values per instance -- this prevents you from having to have multiple copies of the same template for different variables.
   * You need to rename the variables template file to variables.  Issue the command: `mv template-for-variables.pkr.hcl variables.pkr.hcl`
-  * Using this convention, the file `variables.pkr.hcl` is ignored but the .gitignore file -- now you can distribute a template and then customize the variables and not have to worry about committing any sensitive configuration settings to your repo.
+  * Using this convention, the file `variables.pkr.hcl` is ignored but the `.gitignore` file -- now you can distribute a template and then customize the variables and not have to worry about committing any sensitive configuration settings to your repo.
   * You will need to change line 12 in the file `varialbes.pkr.hcl` to have the value: `vagrant` for that is the default password I setup
 * To build the artifact, issue the command: `packer validate .` and if all comes back positive, issue the command: `packer build .`
 
-### Working with Vagrant and the Output Artifact
+### Working with Vagrant and the Output Artifact - Part II
 
 Upon success from your terminal you will see dialog similar to this in your terminal:
 
