@@ -163,7 +163,7 @@ Upon finishing this step we will need to adjust our [Git Remote URL](https://dev
   * Issue the command: `git remote -v` to see that it has changed
 * In the `.ssh` directory on your host system you need to create a file named: `config`
   * This file will have overloads so that when you use Git the keys will be automatically configured
-  * The `config` file should have similar content (change my ID our to yours)
+  * The `config` file should have similar content (the User value is the GitHub ID of your account)
 
 ```bash
 Host github.com
