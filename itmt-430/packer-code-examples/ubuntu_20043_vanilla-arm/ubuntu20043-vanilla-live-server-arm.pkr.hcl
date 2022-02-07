@@ -4,19 +4,18 @@ locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 source "parallels-iso" "ubuntu-20043-live-server-arm" {
   # https://github.com/chef/bento/blob/main/packer_templates/ubuntu/ubuntu-20.04-arm64.json
   boot_command          = ["<esc>", "linux /casper/vmlinuz"," quiet"," autoinstall"," ds='nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/'","<enter>","initrd /casper/initrd <enter>","boot <enter>"]
-  boot_wait               = "5s"
+  boot_wait               = "15s"
   disk_size               = 15000
   parallels_tools_flavor  = "lin"
-  # prlctl create x --distribution list
   guest_os_type           = "ubuntu"
   http_directory          = "subiquity/http"
   http_port_max           = 9050
   http_port_min           = 9001
   iso_checksum            = "sha256:d6fea1f11b4d23b481a48198f51d9b08258a36f6024cb5cec447fe78379959ce"
   iso_urls                = ["https://cdimage.ubuntu.com/releases/20.04/release/ubuntu-20.04.3-live-server-arm64.iso"]
-  shutdown_command        = "echo 'ubuntu' | sudo -S shutdown -P now"
+  shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
   ssh_wait_timeout        = "1800s"
-  ssh_password            = "vagrant"
+  ssh_password            = "${var.SSHPW}"
   ssh_port                = 2222
   ssh_timeout             = "20m"
   ssh_username            = "vagrant"

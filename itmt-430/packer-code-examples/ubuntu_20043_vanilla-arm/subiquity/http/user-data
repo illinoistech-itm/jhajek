@@ -24,11 +24,12 @@ autoinstall:
           dhcp4: true
           dhcp-identifier: mac
   ssh:
-    allow-pw: true
+    allow-pw: false
     install-server: true
+    authorized-keys:
+      - 'ssh-rsa '  # RSA public key goes here for automatic insertion
   late-commands:
     - sed -i 's/^#*\(send dhcp-client-identifier\).*$/\1 = hardware;/' /target/etc/dhcp/dhclient.conf
-    #- 'sed -i "s/dhcp4: true/&\n      dhcp-identifier: mac/" /target/etc/netplan/00-installer-config.yaml'
     - "echo 'Defaults:vagrant !requiretty' > /target/etc/sudoers.d/vagrant"
     - "echo 'vagrant ALL=(ALL) NOPASSWD: ALL' >> /target/etc/sudoers.d/vagrant"
     - "chmod 440 /target/etc/sudoers.d/vagrant"
