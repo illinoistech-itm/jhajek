@@ -24,7 +24,7 @@ Your team will provide:
   * All team members must participate and speak in the presentation
   * The presentation must clearly cover the main themes of your allotted material and clearly express them
   * Teams will prepare at least 5 review questions of short answer and the answers for these questions
-  * Provide three additional slides noting resources involving YouTube presentations from people mentioned in the chapter or based on topics in the chapter
+  * Provide three additional slides linking to resources involving YouTube presentations from people mentioned in the chapter or based on topics in the chapter
 
 In addition the grading rubric will look like this:
 
@@ -34,7 +34,7 @@ Opening - was there a clear introduction and summary of what will be presented |
 Material Presentation - was the spelling correct, did the presentation show effort, did you read directly off the slides | 4 | -
 Summary of Material - did the presentation cover all relative material | 4 | -
 Review Questions - were at least 5 review questions presented and answer sufficiently | 1 | -
-Additional Resources - were at least three additional resources provided based on the chapter | 1 | -
+Additional Resources - were at least three additional resources linked to based on the chapter | 1 | -
 Closing - was there a clear transition to a conclusion with a summary of the material | 4 | -
 Participation - did each member of the team participate | 2 | -
 
