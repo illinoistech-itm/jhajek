@@ -167,6 +167,7 @@ Upon finishing this step we will need to adjust our [Git Remote URL](https://dev
 
 ```bash
 Host github.com
+  # The User value is your GitHub ID 
   User jhajek
   Hostname github.com
   IdentityFile ~/.ssh/id_ed25519_git_key
