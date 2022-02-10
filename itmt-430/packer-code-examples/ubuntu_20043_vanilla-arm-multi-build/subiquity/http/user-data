@@ -1,0 +1,40 @@
+#cloud-config - https://raw.githubusercontent.com/nickcharlton/packer-ubuntu-2004/master/http/user-data
+autoinstall:
+  version: 1
+  identity:
+    hostname: ubuntu-server
+    password: '$6$qoazpFv0h6$1i0uxiM32aszgrgyYjv/2FLq73.TV2DCHOGi6nuiZoazu36Bewgb4hKarG9J3vwHxTpkdLQ10zeEt1J5XHG.Z/'
+    username: vagrant
+  storage:
+    layout:
+      name: direct
+  packages:
+    - ubuntu-server
+    - bc
+    - curl
+    - wget
+    - uuid
+    - git
+    - build-essential
+  network:
+    network:
+      version: 2
+      ethernets:
+        enp0s5:
+          dhcp4: true
+          dhcp-identifier: mac
+  ssh:
+    allow-pw: false
+    install-server: true
+    authorized-keys:
+      - 'ssh-rsa '  # RSA public key goes here for automatic insertion
+  late-commands:
+    - sed -i 's/^#*\(send dhcp-client-identifier\).*$/\1 = hardware;/' /target/etc/dhcp/dhclient.conf
+    - "echo 'Defaults:vagrant !requiretty' > /target/etc/sudoers.d/vagrant"
+    - "echo 'vagrant ALL=(ALL) NOPASSWD: ALL' >> /target/etc/sudoers.d/vagrant"
+    - "chmod 440 /target/etc/sudoers.d/vagrant"
+    - 'echo "Port 2222" > /target/etc/ssh/sshd_config.d/packer-init.conf'
+
+
+
+
