@@ -14,7 +14,7 @@
 
 ## Assignment Details - Part I
 
-- Create a Pyspark application named:  assignment-02.py
+- Create a Pyspark application named: assignment-02.py
   - In that application code add seven comments (# pound sign) that types out the question from the text book
   - The schema is provided in the textbook on the preceding pages
   - Provide code to answer the questions below each header
