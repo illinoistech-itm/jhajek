@@ -4,6 +4,7 @@
 
 - Demonstrate the knowledge of constructing end-to-end DataFrame and Dataset Spark applications
 - Demonstrate working code and knowledge of statistics
+- Understand and utilize Pyspark and Spark Scala API Documentation
 
 ## Assignment Setup
 
