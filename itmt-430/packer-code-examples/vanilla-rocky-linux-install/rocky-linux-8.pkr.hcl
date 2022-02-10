@@ -30,7 +30,7 @@ source "virtualbox-iso" "rocky-linux-8-vanilla" {
   iso_checksum            = "5a0dc65d1308e47b51a49e23f1030b5ee0f0ece3702483a8a6554382e893333c"
   iso_urls                = ["${var.iso_url}"]
   shutdown_command        = "echo 'vagrant' | sudo -S /sbin/poweroff"
-  ssh_password            = "vagrant"
+  ssh_password            = "${var.SSHPW}"
   ssh_port                = 22
   ssh_timeout             = "30m"
   ssh_username            = "vagrant"
