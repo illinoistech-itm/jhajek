@@ -8,10 +8,9 @@
 
 ## Assignment Setup
 
-- Using the Fire_incidents.csv (.zip) file write a Pyspark application that answers the seven questions on Page 68 of the Text Book under the header **End-to-End DataFrame Examples**
+- Using the file `sf-fire-calls.csv`, file write a Pyspark application that answers the seven questions on Page 68 of the Text Book under the header **End-to-End DataFrame Examples**
   - Note do not use the notebook file provided, we want to challenge you to be able to build this yourself
   - All work will be done in your Vagrant Box
-  - The sample code is available in the jhajek sample code repo in itmd-521 > assignment-02 -- issue a git pull command inside your Vagrant Box
 
 ## Assignment Details - Part I
 
@@ -22,6 +21,8 @@
   - You can provide a single "read" of the source code at the top of the file into a DataFrame -- each question does not require a read()
   - Run the source code via Spark-Submit on your Vagrant Box
   - Once you have the answer to the question, go back and add a source code comment with the answer under the question
+  - Sample code is available in the book LearningSparkV2 sample code
+    - `~/LearningSparkV2/databricks-datasets/learning-spark-v2/sf-fire-calls.csv`
   - Make sure to commit and push code to GitHub continually.  Assignments that have the entire code submitted with none or little commit history will not be accepted.  Commit and push often.
   - Don't share the answers with others.  Your work is individual.
 
