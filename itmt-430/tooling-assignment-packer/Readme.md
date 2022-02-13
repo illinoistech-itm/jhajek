@@ -223,13 +223,19 @@ Now we need to add this *.box file to Vagrant so we can start, stop, and ssh to 
   * Remember to shut it down by issuing the command to exit the SSH session and then: `vagrant halt`
   * You can see the new box added to Vagrant by issuing the command: `vagrant box list`
 
-* To delete the box from the `ubuntu-vanilla` directory
-  * Issue the command: `vagrant box remove ubuntu-vanilla`
+### Additional Information on how to delete a vagrant box
+
+For this assignment, this step is optional, but I wanted to expose you to it as you will have to use this in your scripts to automate the deployment and recreation of your application. To delete the box from the `ubuntu-vanilla` directory:
+
+* Issue the command: `vagrant box remove ubuntu-vanilla`
   * You can also use a `-f` flag to force the action
   * You will also need to manually delete the `.vagrant` directory left behind: `rm -rf ./.vagrant`
-* This may take anywhere from 10 to 25 minutes based on your system hardware
-  * Note the initial build will take longer as you have to download the installation ISO file
-  * It is cached for subsequent use
+
+### Notes while build the Vagrant box via packer
+
+* The Packer build process may take anywhere from 10 to 25 minutes based on your system hardware
+  * Note the initial build will take longer as you have to download the Ubuntu/Rocky Linux installation ISO file
+  * It is cached for subsequent use in the local directory `./packer_cache`
   * Note that on Windows there is no download meter, it will appear the process is frozen, its not, just have to be patient
 
 ## Now lets use the build server
@@ -238,7 +244,7 @@ We have a central build server with lots of disk, CPU, and memory to allow you t
 
 The build server hardware:
 
-* 67 GB DDR4 2133 Mhz
+* 67 GB DDR4 2133 MHz
 * Intel(R) Xeon(R) CPU E5-2620
 * 2 500 GB disks, with PCIe based NVMe ZFS write and read caches
   * You can run the command: `zpool iostat -v` to watch the caches working
@@ -269,8 +275,10 @@ The build server hardware:
   * Comment line 20 out -- this is only for building on your host OS
   * Uncomment line 25, replacing the term: XYZ with your initials, team name, or other unique identifier.  The rest of the path is the required path to place the build artifact on a webserver for download
 * Upon completion of the Packer build command, on your Host OS open a web-browser and navigate to [http://192.168.172.44/boxes](http://192.168.172.44/boxes "internal URL for build server")
-* You will see your own Vagrant box artifact
-* Your team will use this process for Sprint 2 to build all 5 required boxes and each person will have access to the build artifacts
+* You will see your own Vagrant box artifact - which you can click on to download to your local system.
+  * We have not repeated the steps you did prior to build a Vagrant Box and add it to your system
+  * Repeat the steps you used in the section: **Working with Vagrant and the Output Artifact - Part II** to add the *.box file via Vagrant to your system
+* ~~Your team will use this process for Sprint 2 to build all 5 required boxes and each person will have access to the build artifacts~~
 
 ### M1 Macs Note
 
