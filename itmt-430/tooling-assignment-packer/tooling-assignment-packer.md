@@ -1,4 +1,4 @@
-# Tooling Assignment Vagrant
+# Tooling Assignment Packer
 
 Provide the required screenshots to show the completion of the tutorial for the local Packer build and the remote Build Server build.
 
