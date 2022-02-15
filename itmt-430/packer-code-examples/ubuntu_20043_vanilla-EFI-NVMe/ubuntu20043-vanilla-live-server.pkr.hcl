@@ -6,7 +6,7 @@ source "virtualbox-iso" "ubuntu-20043-live-server" {
   boot_command            = ["<esc><wait>","<esc><wait>","linux /casper/vmlinuz --- autoinstall ds=nocloud;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/","<enter><wait>","initrd /casper/initrd<enter><wait>","boot<enter>"]
   boot_wait               = "5s"
   disk_size               = 15000
-  hard_drive_interface    = virtio
+  hard_drive_interface    = "sata"
   guest_additions_path    = "VBoxGuestAdditions_{{ .Version }}.iso"
   guest_os_type           = "Ubuntu_64"
   http_directory          = "subiquity/http"
