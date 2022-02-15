@@ -8,6 +8,7 @@
 # Change XX to your team number with leading Zero
 # Create an array of system names
 $num=$Args[0]
+Write-Host "The team number you entered is $num"
 # $boxes="team$num-lb","team$num-ws1","team$num-ws2","team$num-ws3","team$num-db"
 $directories='lb','ws1','ws2','ws3','db'
 ######################################################################################
