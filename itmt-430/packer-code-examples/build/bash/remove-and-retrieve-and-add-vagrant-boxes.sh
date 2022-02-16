@@ -7,56 +7,55 @@
 
 # Change XX to your team number with leading Zero
 # Create an array of system names
-if ( $args.length -eq 1 )
-{ 
-$num=$Args[0]
-Write-Host "The team number you entered is $num"
+if [ $# -eq 1 ]
+then
+$num=$1
+echo "The team number you entered is $num"
 # $boxes="team$num-lb","team$num-ws1","team$num-ws2","team$num-ws3","team$num-db"
-$directories='lb','ws1','ws2','ws3','db'
+DIRECTORIES=( lb ws1 ws2 ws3 db )
 ######################################################################################
 # Logic to remove the previous iteration of the project - you only have one version
 # on your system at one time
 ######################################################################################
 # Setting initial directory location
-Write-Host "Setting initial directory location: "
-Set-Location -Path ../project
+echo "Setting initial directory location: "
+cd ../project
 
-foreach ($directory in $directories)
-{
-  Write-Host "Entering directory: $directory"
-  Set-Location -Path $directory
+for $DIRECTORY in ${DIRECTORIES[@]}
+do
+  echo "Entering directory: $DIRECTORY"
+  cd $DIRECTORY
   # Enter each directory and halt each machine
-  Write-Host "Halting $directory"
+  echo "Halting $DIRECTORY"
   vagrant halt -f
   # Issuing the vagrant box destroy command to remove any delta files
-  Write-Host "Destroying vagrant box $directory"
-  vagrant destroy -f $directory
+  echo "Destroying vagrant box: $DIRECTORY"
+  vagrant destroy -f $DIRECTORY
   # Removing the previously registered vagrant boxes from the system
-  Write-Host "Removing vagrant box $directory"
-  vagrant box remove -f $directory
+  echo "Removing vagrant box $DIRECTORY"
+  vagrant box remove -f $DIRECTORY
   # Removing meta file directory created when vagrant up was last run
-  Write-Host "Removing .vagrant directory"
-  Remove-Item ./.vagrant -Verbose -Recurse
-  Write-Host "Finished removing all previous Vagrant elements of your application"
+  echo "Removing .vagrant directory"
+  rf -rf ./.vagrant
+  echo "Finished removing all previous Vagrant elements of your application"
   # Resetting location up one levels
-  Set-Location -Path ../
+  cd ../
 }
  
 ######################################################################################
 # Logic to retrieve the vagrant *.box files for your application from the build-server
 # bring them to your local system and issue the vagrant box add command
 ######################################################################################
-foreach ($directory in $directories)
+foreach ($DIRECTORY in $DIRECTORIES)
 {
     # Running the command to add the vagrant boxes, you can put a URL and Vagrant 
     # will retrieve the box for you in addition to adding the box
-    Write-Host "Vagrant is retrieving and adding the box: team$num-$directory.box"
-    vagrant box add http://192.168.172.44/boxes/team$num-$directory.box --name $directory
+    echo "Vagrant is retrieving and adding the box: team$num-$DIRECTORY.box"
+    vagrant box add http://192.168.172.44/boxes/team$num-$DIRECTORY.box --name $DIRECTORY
 }
 # Show all the Vagrant boxes added properly
 vagrant box list 
-Write-Host "All finished!"
-} # end of if
-else {
-  Write-Host echo "To run the script you need to type: ./remove-and-retrieve-and-add-vagrant-boxes.ps1 XX -- where XX is your team number, with leading zero"
-}
+echo "All finished!"
+else
+  echo "To run the script you need to type: ./remove-and-retrieve-and-add-vagrant-boxes.sh XX -- where XX is your team number, with leading zero"
+fi  
