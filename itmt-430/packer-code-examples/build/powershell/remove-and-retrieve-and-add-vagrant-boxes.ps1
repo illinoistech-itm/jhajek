@@ -7,9 +7,13 @@
 
 # Change XX to your team number with leading Zero
 # Create an array of system names
-if ( $args.length -eq 1 )
-{ 
-$num=$Args[0]
+# https://stackoverflow.com/questions/59657293/how-to-check-number-of-arguments-in-powershell
+[CmdLetbinding()]
+param(
+    [Parameter()]
+    [String]$num
+)
+if ($PSBoundParameters.Count -eq 1) {
 Write-Host "The team number you entered is $num"
 # $boxes="team$num-lb","team$num-ws1","team$num-ws2","team$num-ws3","team$num-db"
 $directories='lb','ws1','ws2','ws3','db'
