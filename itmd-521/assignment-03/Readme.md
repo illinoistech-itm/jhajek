@@ -21,6 +21,9 @@
 
 Using the departuredelays.csv file, in a single file called assignment-03.py convert the remaining two Spark SQL queries from page 87 into Spark DataFrame APIs
 
+- Type the remaining Spark SQL examples on page 87 into your code
+- Run it to show the results limit 10 records
+- Then type the corresponding PySpark DataFrame API below to compare answers
 - The code must run and show the desired results
 
 ## Assignment Details - Part II
