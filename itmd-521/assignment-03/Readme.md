@@ -35,7 +35,7 @@ Using the departuredelays.csv file, in a single file called assignment-03.py con
 
 ### Deliverable
 
-- Once you have the answers, add it via a comment back to your source code.
+- Once you have the answers, add it via a commit back to your source code.
 - Make sure to commit and push code to GitHub continually.  Assignments that have the entire code submitted with none or little commit history will not be accepted.  Commit and push often.
 - Don't share the answers with others.  Your work is individual.
 
