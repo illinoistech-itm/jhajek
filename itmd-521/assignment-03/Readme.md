@@ -12,10 +12,24 @@
 - We will be using the departuredelays file located at:
   - `~/LearningSparkV2/databricks-datasets/learning-spark-v2/flights`
   - Copy this file to your Home directory ( ~ ) we will set all our code paths there
+  - See Python sample below for how to structure commandline input of datasources
   - Note do not use the notebook file provided, we want to challenge you to be able to build this yourself
   - All Code will be created on your local system, pushed to GitHub, and then pulled to your Vagrant Box
   - We will create one file named: assignment-03.py
   - You can use Scala if you want
+
+```python
+    if len(sys.argv) != 2:
+        print("Usage: Please input the file name and its path as an argument <file>", file=sys.stderr)
+        sys.exit(-1)
+    spark = (SparkSession.builder.appName("Assignment-XX").getOrCreate())
+    data_file = sys.argv[1]
+
+# Add additonal .option() as needed
+# Adjsut format as needed
+df = spark.read.format("csv").load(data_file)
+
+```
 
 ## Assignment Details - Part I
 
