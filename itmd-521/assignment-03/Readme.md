@@ -19,6 +19,7 @@
   - You can use Scala if you want
 
 ```python
+# From MnMCount sample on page 36
     if len(sys.argv) != 2:
         print("Usage: Please input the file name and its path as an argument <file>", file=sys.stderr)
         sys.exit(-1)
