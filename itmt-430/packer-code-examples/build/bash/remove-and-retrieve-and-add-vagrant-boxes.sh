@@ -21,7 +21,7 @@ DIRECTORIES=( lb ws1 ws2 ws3 db )
 echo "Setting initial directory location: "
 cd ../project
 
-for $DIRECTORY in ${DIRECTORIES[@]}
+for DIRECTORY in ${DIRECTORIES[@]}
 do
   echo "Entering directory: $DIRECTORY"
   cd $DIRECTORY
@@ -46,7 +46,7 @@ done
 # Logic to retrieve the vagrant *.box files for your application from the build-server
 # bring them to your local system and issue the vagrant box add command
 ######################################################################################
-for $DIRECTORY in ${DIRECTORIES[@]}
+for DIRECTORY in ${DIRECTORIES[@]}
 do
     # Running the command to add the vagrant boxes, you can put a URL and Vagrant 
     # will retrieve the box for you in addition to adding the box
