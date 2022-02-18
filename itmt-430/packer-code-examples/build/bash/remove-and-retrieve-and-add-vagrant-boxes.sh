@@ -9,7 +9,7 @@
 # Create an array of system names
 if [ $# -eq 1 ]
 then
-$num=$1
+num=$1
 echo "The team number you entered is $num"
 # $boxes="team$num-lb","team$num-ws1","team$num-ws2","team$num-ws3","team$num-db"
 DIRECTORIES=( lb ws1 ws2 ws3 db )
