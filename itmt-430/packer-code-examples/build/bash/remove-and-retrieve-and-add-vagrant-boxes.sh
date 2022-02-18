@@ -46,13 +46,13 @@ done
 # Logic to retrieve the vagrant *.box files for your application from the build-server
 # bring them to your local system and issue the vagrant box add command
 ######################################################################################
-foreach ($DIRECTORY in $DIRECTORIES)
-{
+for $DIRECTORY in ${DIRECTORIES[@]}
+do
     # Running the command to add the vagrant boxes, you can put a URL and Vagrant 
     # will retrieve the box for you in addition to adding the box
     echo "Vagrant is retrieving and adding the box: team$num-$DIRECTORY.box"
     vagrant box add http://192.168.172.44/boxes/team$num-$DIRECTORY.box --name $DIRECTORY
-}
+done
 # Show all the Vagrant boxes added properly
 vagrant box list 
 echo "All finished!"
