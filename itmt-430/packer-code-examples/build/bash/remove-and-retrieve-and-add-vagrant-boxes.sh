@@ -40,7 +40,7 @@ do
   echo "Finished removing all previous Vagrant elements of your application"
   # Resetting location up one levels
   cd ../
-}
+done
  
 ######################################################################################
 # Logic to retrieve the vagrant *.box files for your application from the build-server
