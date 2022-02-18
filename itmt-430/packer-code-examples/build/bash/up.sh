@@ -8,7 +8,7 @@ DIRECTORIES=( lb ws1 ws2 ws3 db )
 Write-Host "Setting initial directory location: "
 cd ../project
 
-for $DIRECTORY in ${DIRECTORIES[@]}
+for DIRECTORY in ${DIRECTORIES[@]}
 do
     echo "Entering directory: $DIRECTORY"
     cd $DIRECTORY
