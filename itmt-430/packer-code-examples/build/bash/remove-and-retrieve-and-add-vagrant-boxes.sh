@@ -36,7 +36,7 @@ do
   vagrant box remove -f $DIRECTORY
   # Removing meta file directory created when vagrant up was last run
   echo "Removing .vagrant directory"
-  rf -rf ./.vagrant
+  rm -rf ./.vagrant
   echo "Finished removing all previous Vagrant elements of your application"
   # Resetting location up one levels
   cd ../
