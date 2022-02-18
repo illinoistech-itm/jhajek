@@ -38,7 +38,7 @@ do
   echo "Removing .vagrant directory"
   rm -rf ./.vagrant
   echo "Finished removing all previous Vagrant elements of your application"
-  # Resetting location up one levels
+  # Resetting location up one level
   cd ../
 done
  
