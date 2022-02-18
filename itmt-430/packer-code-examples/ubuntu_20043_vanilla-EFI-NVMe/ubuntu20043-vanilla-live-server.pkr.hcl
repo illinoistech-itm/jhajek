@@ -2,9 +2,11 @@
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 source "virtualbox-iso" "ubuntu-20043-live-server" {
-  #boot_command            = ["<enter><enter><f6><esc><wait> ", "autoinstall ds=nocloud-net;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/", "<enter><wait>"]
-  boot_command            = ["<esc><wait>","<esc><wait>","linux /casper/vmlinuz --- autoinstall ds=nocloud;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/","<enter><wait>","initrd /casper/initrd<enter><wait>","boot<enter>"]
+  # Boot command fix for using EFI partitions using Ubuntu 20.04
+  # https://github.com/hashicorp/packer/issues/9115#issuecomment-758758327
+  boot_command            = ["<esc><esc><esc>","set gfxpayload=keep<enter>", "linux /casper/vmlinuz ",  "\"ds=nocloud-net;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/\" ","quiet autoinstall ---<enter><wait>","initrd /casper/initrd<enter><wait>","boot<enter>"]
   boot_wait               = "5s"
+  firmware                = "efi"
   disk_size               = 15000
   hard_drive_interface    = "sata"
   guest_additions_path    = "VBoxGuestAdditions_{{ .Version }}.iso"
