@@ -22,9 +22,9 @@ source "virtualbox-iso" "ubuntu-20043-live-server" {
   ssh_port                = 2222
   ssh_timeout             = "20m"
   ssh_username            = "vagrant"
-  vboxmanage              = [[ "modifyvm", "{{.Name}}", "--firmware", "EFI" ],["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
+  vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
-  vm_name                 = "ubuntu-focal"
+  vm_name                 = "ubuntu-focal-efi"
   headless                = "${var.headless_build}"
 }
 
