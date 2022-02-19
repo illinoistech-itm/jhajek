@@ -16,8 +16,8 @@ for DIRECTORY in ${DIRECTORIES[@]}
 do
     if [ -e ./team$num-$DIRECTORY-arm.box ]
     then
-      echo "Copying vagrant box: ../../ubuntu_20043)vanilla-arm-multi-build/team$num-$DIRECTORY-arm.box to remote build server..."
-      scp -i ~/.ssh/id_ed25519_$HAWKID_key ./team$num-$DIRECTORY-arm.box $HAWKID@192.168.172.44:/datadisk2/boxes/
+      echo "Copying vagrant box: ../team$num-$DIRECTORY-arm.box to remote build server..."
+      scp -i ~/.ssh/id_ed25519_$HAWKID_key ../team$num-$DIRECTORY-arm.box $HAWKID@192.168.172.44:/datadisk2/boxes/
       echo "Vagrant Box copied."
     else
       echo "Box ./team$num-$DIRECTORY-arm.box does not exist, perhaps you are in the wrong directory (../build)?"
