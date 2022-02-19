@@ -25,6 +25,6 @@ do
 done
 
 else
-  echo "To run the script you need to type: ./copy-parallels-M1-arm-box-files-to-build-server.sh XX HAWKID -- where XX is your team number, with leading zero and HAWKID is your hawk id, in lowercase"
+  echo "To run the script you need to type: ./copy-parallels-M1-arm-box-files-to-build-server.sh XX HAWKID -- where XX is your team number, with leading zero and HAWKID is your hawk id, in lowercase.  And this assumes your private key is named: id_ed25519_$HAWKID_key"
 fi  
 
