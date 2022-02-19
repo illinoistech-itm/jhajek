@@ -164,6 +164,6 @@ build {
 
   post-processor "vagrant" {
     keep_input_artifact = false
-    output              = "../build/{{ .BuildName }}.box"
+    output              = "../build/{{ .BuildName }}-arm.box"
   }
 }
