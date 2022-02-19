@@ -107,7 +107,6 @@ source "virtualbox-iso" "db" {
   shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
   ssh_wait_timeout        = "1800s"
   ssh_password            = "${var.SSHPW}"
-  ssh_port                = 2222
   ssh_timeout             = "20m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
@@ -118,11 +117,6 @@ source "virtualbox-iso" "db" {
 
 build {
   sources = ["source.virtualbox-iso.lb","source.virtualbox-iso.ws1","source.virtualbox-iso.ws2","source.virtualbox-iso.ws3","source.virtualbox-iso.db"]
-
-  provisioner "shell" {
-    #inline_shebang  =  "#!/usr/bin/bash -e"
-    inline          = ["echo 'Resetting SSH port to default!'", "sudo rm /etc/ssh/sshd_config.d/packer-init.conf"]
-    }
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
