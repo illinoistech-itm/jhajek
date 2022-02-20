@@ -8,7 +8,7 @@ set -v
 echo "%admin  ALL=NOPASSWD: ALL" | sudo tee -a /etc/sudoers.d/init-users
 sudo usermod -a -G sudo vagrant
 
-# Installing Vagrant keys
+# Installing Vagrant Public keys
 wget --no-check-certificate 'https://raw.githubusercontent.com/hashicorp/vagrant/main/keys/vagrant.pub'
 sudo mkdir -p /home/vagrant/.ssh
 sudo chown -R vagrant:vagrant /home/vagrant/.ssh
