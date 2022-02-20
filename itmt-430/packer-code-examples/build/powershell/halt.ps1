@@ -15,7 +15,8 @@ ForEach ($directory in $directories)
     # Start each virtual machine
     Write-Host "Starting vagrant box $directory"
     vagrant halt
-    Write-Host "Finished removing all previous Vagrant elements of your application"
+    Write-Host "Finished halting all previous Vagrant elements of your application"
     # Resetting location up one levels
     Set-Location -Path ../
 }
+Set-Location -Path ./powershell
