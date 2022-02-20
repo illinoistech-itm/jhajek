@@ -15,7 +15,6 @@ source "virtualbox-iso" "lb" {
   shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
   ssh_wait_timeout        = "1800s"
   ssh_password            = "${var.SSHPW}"
-  ssh_port                = 2222
   ssh_timeout             = "20m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
@@ -38,7 +37,6 @@ source "virtualbox-iso" "ws1" {
   shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
   ssh_wait_timeout        = "1800s"
   ssh_password            = "${var.SSHPW}"
-  ssh_port                = 2222
   ssh_timeout             = "20m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
@@ -61,7 +59,6 @@ source "virtualbox-iso" "ws2" {
   shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
   ssh_wait_timeout        = "1800s"
   ssh_password            = "${var.SSHPW}"
-  ssh_port                = 2222
   ssh_timeout             = "20m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
@@ -84,7 +81,6 @@ source "virtualbox-iso" "ws3" {
   shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
   ssh_wait_timeout        = "1800s"
   ssh_password            = "${var.SSHPW}"
-  ssh_port                = 2222
   ssh_timeout             = "20m"
   ssh_username            = "vagrant"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
