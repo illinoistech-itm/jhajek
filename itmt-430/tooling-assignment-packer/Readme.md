@@ -276,8 +276,8 @@ The build server hardware:
   * Uncomment line 25, replacing the term: XYZ with your initials, team name, or other unique identifier.  The rest of the path is the required path to place the build artifact on a webserver for download
 * Upon completion of the Packer build command, on your Host OS open a web-browser and navigate to [http://192.168.172.44/boxes](http://192.168.172.44/boxes "internal URL for build server")
 * You will see your own Vagrant box artifact - which you can click on to download to your local system.
-  * We have not repeated the steps you did prior to build a Vagrant Box and add it to your system
-  * Repeat the steps you used in the section: **Working with Vagrant and the Output Artifact - Part II** to add the *.box file via Vagrant to your system
+  * Repeat the steps you used in the section: **Working with Vagrant and the Output Artifact - Part II** to add the *.box file via Vagrant to your system, naming it `ubuntu-vanilla-build-server`
+
 * ~~Your team will use this process for Sprint 2 to build all 5 required boxes and each person will have access to the build artifacts~~
 
 ### M1 Macs Note
