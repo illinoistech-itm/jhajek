@@ -50,27 +50,27 @@ Session | Date | Topic | Reading - Homework |
 6 | 01/27 | Setting up Spark Ch 2 | NA
 7 | 02/01 | Structured APIs Ch 3 | NA
 8 | 02/03 | Structure APIs Ch 3 | Assignment-01
-9 | 02/08 | Introduction to Built-in Data Sources Ch 4 | Assignment-02
-10 | 02/10 | Introduction to Built-in Data Sources Ch 4 | NA
-11 | 02/15 | Interacting with External Data Sources Ch 5 | Assignment-03
-12 | 02/17 | Interacting with External Data Sources Ch 5 | NA
-13 | 02/22 | Spark SQL and DataSets Ch 6 | Assignment-04
-14 | 02/24 | Spark SQL and DataSets Ch 6 | NA
-15 | 03/01 | Tuning Spark Applications Ch 7 | Assignment-05
-16 | 03/03 | Tuning Spark Applications Ch 7 | NA
+9 | 02/08 |  Structure APIs Ch 3 | NA
+10 | 02/10 |  Structure APIs Ch 3 | Assignment-02
+11 | 02/15 | Introduction to Built-in Data Sources Ch 4 | Assignment-03
+12 | 02/17 | Introduction to Built-in Data Sources Ch 4 | NA
+13 | 02/22 | Interacting with External Data Sources Ch 5 | Assignment-04
+14 | 02/24 | Interacting with External Data Sources Ch 5 | NA
+15 | 03/01 | Spark SQL and DataSets Ch 6 | Assignment-05
+16 | 03/03 | Spark SQL and DataSets Ch 6 | NA
 17 | 03/08 | Mid-term preparation | NA
 18 | 03/10 | Mid-term Exam  | NA
-NA | 03/15 | Spring Break Week | Assignment-06
-NA | 03/17 | Spring Break Week | | NA
-19 | 03/22 | Structure Streaming Ch 8 | Assignment-07
-20 | 03/24 | Structure Streaming Ch 8 | NA
-21 | 03/29 | Data Lakes and Machine Learning Ch 9-10 | Assignment-08
-22 | 03/31 | Data Lakes and Machine Learning Ch 9-10 | NA
-23 | 04/05 | Data Lakes and Machine Learning Ch 9-10 | Assignment-09
+NA | 03/15 | Spring Break Week | NA
+NA | 03/17 | Spring Break Week | NA
+19 | 03/22 | Tuning Spark Applications Ch 7 | Assignment-06
+20 | 03/24 | Tuning Spark Applications Ch 7 | NA
+21 | 03/29 | Structure Streaming Ch 8 | Assignment-07
+22 | 04/01 | Structure Streaming Ch 8 | NA
+23 | 04/05 | Data Lakes and Machine Learning Ch 9-10 | Assignment-08
 24 | 04/07 | Data Lakes and Machine Learning Ch 9-10 | NA
-25 | 04/12 | Project work time | Assignment-10 and Final Project Assigned
-26 | 04/14 | Project work time | NA
-27 | 04/19 | Project work time | NA
+25 | 04/12 | Data Lakes and Machine Learning Ch 9-10 | Assignment-09
+26 | 04/14 | Data Lakes and Machine Learning Ch 9-10 | NA
+27 | 04/19 | Project work time | Assignment-10 and Final Project Assigned
 28 | 04/21 | Project work time | NA
 29 | 04/28 | Project work time | NA
 30 | 04/30 | Project work time | NA
