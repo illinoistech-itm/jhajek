@@ -80,6 +80,7 @@ Run the application with the command: `pyspark --jars ~/spark/jars/mysql-connect
 
 ### Deliverable
 
+- Make sure you have the proper imports, be careful of grabbing extra or uneeded imports
 - Once you have the answers, add it via a commit back to your source GitHub repo
 - Make sure to commit and push code to GitHub continually.  Assignments that have the entire code submitted with none or little commit history will not be accepted.  Commit and push often.
 - Don't share the answers with others.  Your work is individual.
