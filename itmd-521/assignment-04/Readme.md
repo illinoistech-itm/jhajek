@@ -31,7 +31,7 @@ You will make extensive use of the textbook and these documentation pages -- **a
   - Read the `Employees` table into a DataFrame
   - Display the count of the number of records in the DF
   - Display the schema of the Employees Table from the DF
-- Create a tempView of the top 10,000 salaried employees
+- Create a tempView of the top 10,000 salaried employees from the `salaries` table
   - Write the tempView back to database to a new table called: `aces`
 - Write the DF out to the local system as a CSV and save it to local system using snappy compression (see the CSV chart in Chapter 04)
 
