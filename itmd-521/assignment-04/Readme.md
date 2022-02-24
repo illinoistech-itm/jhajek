@@ -41,9 +41,9 @@ You will make extensive use of the textbook and these documentation pages -- **a
   - Create a PySpark query to add to the prior step's DataFrame a temp column stating if the senior engineer employee is still with the company (to_date = 9999-01-01) and has left (to_date value will be less than today's date)
   - Use the values: current || left
 - Issue a count of how many senior engineers have left and how many are current
-- Create a Pyspark SQL table of just the Senior Engineers information that have left the company
-- Create a Pyspark SQL tempView of just the Senior Engineers information that have left the company
-- Create a Pyspark DataFrame of just the Senior Engineers information that have left the company
+- Create a PySpark SQL table of just the Senior Engineers information that have left the company
+- Create a PySpark SQL tempView of just the Senior Engineers information that have left the company
+- Create a PySpark DataFrame of just the Senior Engineers information that have left the company
   - Write each of the three prior options back to the database using the DataFrame Writer (save) function creating a table named: `left-table`, `left-tempview`, and `left-df` respectively
 - Repeat the previous command that writes the DataFrame to the database, but set the mode type to `errorifexists` -- take a screenshot of the error message generated and place it here
 
