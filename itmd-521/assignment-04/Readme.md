@@ -6,6 +6,7 @@
 - Understand how Spark interacts with RDBMS via JDBC
 - Understand the process to read and write database tables via Spark
 - Explore how to convert SQL tables to different file formats
+- Understand the story of [Little Bobby Tables](https://xkcd.com/327/ "Bobby Tables Cartoon")
 
 ## Assignment Setup
 
