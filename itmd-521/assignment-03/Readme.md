@@ -46,7 +46,8 @@ Using the departuredelays.csv file, in a single file called assignment-03.py con
 - From page 90-92, you will create a Table named `us_delay_flights_tbl` from the departuredelay.csv
   - Create a `tempView` of all flights with an origin of Chicago (ORD)
   - Show the first 5 records of the tempView
-  - Use the Spark Catalog to list the columns of the tempView
+  - ~~Use the Spark Catalog to list the columns of the tempView~~
+  - Use the Spark Catalog to list the columns of table `us_delay_flights_tbl`
 
 ### Deliverable
 
