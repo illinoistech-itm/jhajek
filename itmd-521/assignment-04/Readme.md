@@ -16,7 +16,7 @@ This assignment will require the MySQL server you installed on your Vagrant Box.
 - Import the employees.sql file to build the database, tables, and insert the sample data
   - `sudo mysql < employees.sql`
   - Import the provided `create-user.sql` script as well to create a non-root user
-- Retrieve the latest JDBC driver for MySQL `8.0.27.jar` and add it to your `~/spark/jars` directory
+- Retrieve the latest JDBC driver for MySQL `8.0.x.jar` and add it to your `~/spark/jars` directory
 - The database contains about 300,000 employee records with 2.8 million salary entries.
 
 You will make extensive use of the textbook and these documentation pages -- **avoid** the internet as your first option and instead go to the API Documentation.
