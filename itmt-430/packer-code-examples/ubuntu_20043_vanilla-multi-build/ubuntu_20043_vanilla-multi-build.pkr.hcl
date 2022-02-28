@@ -114,6 +114,16 @@ source "virtualbox-iso" "db" {
 build {
   sources = ["source.virtualbox-iso.lb","source.virtualbox-iso.ws1","source.virtualbox-iso.ws2","source.virtualbox-iso.ws3","source.virtualbox-iso.db"]
 
+  provisioner "file" {
+    source = "./id_ed25519_github_deploy_key"
+    destination = "/home/vagrant/.ssh/"
+  }
+
+  provisioner "file" {
+    source = "./config"
+    destination = "/home/vagrant/.ssh/"
+  }
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     script          = "../scripts/post_install_ubuntu_2004_vagrant.sh"
