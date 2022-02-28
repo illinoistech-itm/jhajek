@@ -61,8 +61,8 @@ foreach ($directory in $directories)
 vagrant box list 
 Write-Host "All finished!"
 # Reseting path to the default start location
-Set-Location -Path ./powershell
+Set-Location -Path ../powershell
 } # end of if
 else {
-  Write-Host echo "To run the script you need to type: ./remove-and-retrieve-and-add-vagrant-boxes.ps1 XX -- where XX is your team number, with leading zero"
+  Write-Host "To run the script you need to type: ./remove-and-retrieve-and-add-vagrant-boxes.ps1 XX -- where XX is your team number, with leading zero"
 }

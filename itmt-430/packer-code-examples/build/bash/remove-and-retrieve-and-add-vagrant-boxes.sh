@@ -56,6 +56,8 @@ done
 # Show all the Vagrant boxes added properly
 vagrant box list 
 echo "All finished!"
+# Return to bash directory
+cd ../bash
 else
   echo "To run the script you need to type: ./remove-and-retrieve-and-add-vagrant-boxes.sh XX -- where XX is your team number, with leading zero"
 fi  

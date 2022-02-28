@@ -19,3 +19,5 @@ do
     # Resetting location up one levels
     cd ../
 done
+# Return to bash directory
+cd ../bash
