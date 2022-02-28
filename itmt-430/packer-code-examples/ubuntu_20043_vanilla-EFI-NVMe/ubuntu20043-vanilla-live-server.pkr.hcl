@@ -8,7 +8,8 @@ source "virtualbox-iso" "ubuntu-20043-live-server" {
   boot_wait               = "5s"
   firmware                = "efi"
   disk_size               = 15000
-  hard_drive_interface    = "sata"
+  iso_interface           = "sata"
+  #hard_drive_interface    = "sata"
   guest_additions_path    = "VBoxGuestAdditions_{{ .Version }}.iso"
   guest_os_type           = "Ubuntu_64"
   http_directory          = "subiquity/http"
