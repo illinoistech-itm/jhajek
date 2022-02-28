@@ -19,4 +19,4 @@ ForEach ($directory in $directories)
     # Resetting location up one levels
     Set-Location -Path ../
 }
-Set-Location -Path ./powershell
+Set-Location -Path ../powershell
