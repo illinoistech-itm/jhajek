@@ -129,6 +129,16 @@ source "parallels-iso" "db" {
 build {
   sources = ["source.parallels-iso.lb","source.parallels-iso.ws1","source.parallels-iso.ws2","source.parallels-iso.ws3","source.parallels-iso.db"]
 
+  provisioner "file" {
+    source = "./id_ed25519_github_deploy_key"
+    destination = "/home/vagrant/.ssh/"
+  }
+
+  provisioner "file" {
+    source = "./config"
+    destination = "/home/vagrant/.ssh/"
+  }
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     script          = "../scripts/post_install_ubuntu_2004_vagrant-arm.sh"
