@@ -5,6 +5,14 @@ autoinstall:
     hostname: ubuntu-server
     password: '$6$qoazpFv0h6$1i0uxiM32aszgrgyYjv/2FLq73.TV2DCHOGi6nuiZoazu36Bewgb4hKarG9J3vwHxTpkdLQ10zeEt1J5XHG.Z/'
     username: vagrant
+  early-commands:
+  # If we install the SSH server using the subiquity `ssh` configuration then port 22 gets opened up to packer _before_
+  # the requisite configuration has been done to allow Packer to SSH on to the guest O/S. This results in a failed build
+  # as Packer exceeds its SSH permitted number of SSH handshake attempts.
+  #
+  # To ensure this doesn't happen we stop the SSH service until right at the end when we re-enable it
+  # using a late-command.
+    - sudo systemctl stop ssh  
   storage:
     layout:
       name: direct
@@ -33,8 +41,7 @@ autoinstall:
     - "echo 'Defaults:vagrant !requiretty' > /target/etc/sudoers.d/vagrant"
     - "echo 'vagrant ALL=(ALL) NOPASSWD: ALL' >> /target/etc/sudoers.d/vagrant"
     - "chmod 440 /target/etc/sudoers.d/vagrant"
-    - 'echo "Port 2222" > /target/etc/ssh/sshd_config.d/packer-init.conf'
-
+    - sudo systemctl start ssh
 
 
 
