@@ -25,7 +25,7 @@ You will need to use the MySQL connector from the previous assignment
 
 - You will create a PySpark application named: `assignment-05.py` or `assignment-05.scala`
   - Create a DataFrame to read the content of the Assignment05 SQL table you just created
-  - Create a second DataFrame to select the content of the Assignments05b table you just created
+  - Create a second DataFrame to select the content of the Assignment05b table you just created
   - Issue a `.show()` to display the content of each DataFrame
   - Create tempViews for each DataFrame and issue a Union() command to join both DataFrames into one
   - Issue the command: `.show()` to display this new unioned content
