@@ -9,7 +9,7 @@
 
 ## Assignment Setup
 
-On the command line run this `.sql` file to create another database and table with the requisite temperature data. Import this via the command: `sudo mysql < created-database-and-table.sql`.
+On the command line run this `.sql` file to create another database and table with the requisite temperature data. Import this via the command: `sudo mysql < create-database-and-table.sql`.
 
 Then run the command: `sudo mysql < insert-records.sql`
 
