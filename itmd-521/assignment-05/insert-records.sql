@@ -9,3 +9,7 @@ USE Assignment05b;
 
 INSERT INTO temperatures (id, temperature) Values (0,'[21, 26, 44, 8, 20, 42, 38]');
 INSERT INTO temperatures (id, temperature) Values (0,'[28, 22, 30, 52, 58]');
+
+-- grant access to Assignment05 and b table
+GRANT SELECT,INSERT, CREATE, UPDATE, DELETE, DROP ON Assignment05.* TO worker@'localhost' IDENTIFIED BY 'cluster'; flush privileges;
+GRANT SELECT,INSERT, CREATE, UPDATE, DELETE, DROP ON Assignment05b.* TO worker@'localhost' IDENTIFIED BY 'cluster'; flush privileges;
