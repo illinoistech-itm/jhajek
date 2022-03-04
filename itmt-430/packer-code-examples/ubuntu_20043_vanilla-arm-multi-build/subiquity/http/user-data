@@ -15,7 +15,7 @@ autoinstall:
     - sudo systemctl stop ssh  
   storage:
     layout:
-      name: direct
+      name: lvm
   packages:
     - ubuntu-server
     - bc
