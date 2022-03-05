@@ -1,5 +1,7 @@
+#!/bin/bash
+
 ######################################################################################
-# This PowerShell script will retrieve your team's Vagrant Boxes from the build-server
+# This Bash script will retrieve your team's Vagrant Boxes from the build-server
 # http://192.168.172.44/boxes
 # As each team is numbered this will allow you to retrieve and to issue the 
 # vagrant box add command at the same time.

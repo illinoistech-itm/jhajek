@@ -12,7 +12,7 @@ for DIRECTORY in ${DIRECTORIES[@]}
 do
     echo "Entering directory: $DIRECTORY"
     cd $DIRECTORY
-    # Start each virtual machine
+    # Halting each virtual machine
     echo "Starting vagrant box: $DIRECTORY"
     vagrant halt
     echo "Finished removing all previous Vagrant elements of your application"
