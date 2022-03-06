@@ -15,7 +15,7 @@ do
     # Start each virtual machine
     echo "Starting vagrant box: $DIRECTORY"
     vagrant up
-    echo "Finished removing all previous Vagrant elements of your application"
+    echo "Finished starting all Vagrant Boxes for your application"
     # Resetting location up one levels
     cd ../
 done
