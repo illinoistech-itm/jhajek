@@ -56,8 +56,8 @@ Session | Date | Topic | Reading - Homework |
 8 | 02/28 | Technical Practices of Feedback Ch 14-18 | Sprint 02 presentation
 9 | 03/07 | Technical Practices of Learning Ch 19-21 | NA
 NA | 03/14 | Spring Break Week | ~~Sprint 03 presentation~~ NA
-10 | 03/21 | Technical Practices of InfoSec Ch 22-23 | Sprint 03 presentation
-11 | 03/28 | Accelerate Ch 1-3 | NA
+10 | 03/21 | Technical Practices of InfoSec Ch 22-23 | ~~Sprint 03 presentation~~ NA
+11 | 03/28 | Accelerate Ch 1-3 | Sprint 03 presentation
 12 | 04/04 | Accelerate Ch 4-5 | NA
 13 | 04/11 | Accelerate Ch 6-7 | Sprint 04 presentation
 14 | 04/18 | Accelerate Ch 8-9 | NA
