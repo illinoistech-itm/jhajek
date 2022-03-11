@@ -93,9 +93,9 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ## Deliverables
 
-* Monday Lab live presentation and critiques are due 8:30am March 21st
-* Wednesday Lab early section presentation and critiques are due 8:30am March 23rd
-* Wednesday Lab late section presentation and critiques are due 10:25am March 23rd
+* Monday Lab live presentation and critiques are due 8:30am March ~~21st~~ 28th
+* Wednesday Lab early section presentation and critiques are due 8:30am March ~~23rd~~ 30th
+* Wednesday Lab late section presentation and critiques are due 10:25am March ~~23rd~~ 30th
 
 ### Individual Deliverables
 
@@ -156,7 +156,7 @@ Topic | Points Range |
 Introduction of your teammates | 1
 Clear introduction and small summary of what will be presented with a clear transition | 1
 Demonstration of project management tool and explanation of the 25 build point items -- tell us what initially was assigned and what was accomplished | 3
-Demonstrate login of user, posting of a question, and answering of a question, on the Vagrant Infrastrucutre | 3
+Demonstrate login of user, posting of a question, and answering of a question, on the Vagrant Infrastructure | 3
 Demonstration of all team-members accomplishing the prior step | 3
 UI/UX walk through explaining what was accomplished and what portions of the UI/UX are outstanding | 3
 Clear transition to a conclusion and small summary of presentation | 1
