@@ -33,7 +33,7 @@ do
   vagrant destroy -f $DIRECTORY
   # Removing the previously registered vagrant boxes from the system
   echo "Removing vagrant box $DIRECTORY"
-  vagrant box remove -f $DIRECTORY
+  vagrant box remove -f 
   # Removing meta file directory created when vagrant up was last run
   echo "Removing .vagrant directory"
   rm -rf ./.vagrant
