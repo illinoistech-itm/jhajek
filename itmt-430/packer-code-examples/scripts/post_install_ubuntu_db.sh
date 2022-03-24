@@ -72,7 +72,7 @@ sudo sed -i "s/.*bind-address.*/bind-address = $(cat /etc/hosts | grep db | awk 
 #################################################################################
 sed -i "s/\$ACCESSFROMIP/$ACCESSFROMIP/g" ./db-samples/*.sql
 sed -i "s/\$USERPASS/$USERPASS/g" ./db-samples/*.sql
-sed -i "s/\$USERNAME/$USENAME/g" ./db-samples/*.sql
+sed -i "s/\$USERNAME/$USERNAME/g" ./db-samples/*.sql
 
 sudo mysql < /home/vagrant/team-00/code/db-samples/create-database.sql
 sudo mysql < /home/vagrant/team-00/code/db-samples/create-table.sql
