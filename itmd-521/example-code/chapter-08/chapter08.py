@@ -1,5 +1,6 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
+from pyspark.sql.streaming import *
 
 spark =     spark = (SparkSession
         .builder
