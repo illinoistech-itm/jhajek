@@ -6,7 +6,7 @@ spark =     spark = (SparkSession
         .appName("SocketListener")
         .getOrCreate())
 
-lines = (spark.readStream.format("socket").option("host", "localhost").option("port",3000).load())
+lines = (spark.readStream.format("socket").option("host", "127.0.0.1").option("port",3000).load())
 
 words = lines.select(split(col("value"),"\\s").alias("word"))
 counts = words.groupBy("word").count()
