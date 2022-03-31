@@ -18,3 +18,21 @@ variable "build_artifact_location" {
   # The teamXX can be replaced by your team number
   # default = "/datadisk2/boxes/teamXX-"
 }
+
+variable "non-root-user-for-database-password" {
+  type = string
+  sensitive = true
+  default = ""
+}
+
+variable "non-root-user-for-database-username" {
+  type = string
+  sensitive = true
+  default = ""
+}
+
+variable "restrict-firewall-access-to-this-ip-range" {
+  type = string
+  sensitive = true
+  default = ""
+}
