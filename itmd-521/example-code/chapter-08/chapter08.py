@@ -13,6 +13,7 @@ words = lines.select(split(col("value"),"\\s").alias("word"))
 counts = words.groupBy("word").count()
 #checkpointDir =""
 
-streamingQuery = (counts.writeStream.format("console").outputMode("complete").trigger(processingTime="1 second").start())
+#streamingQuery = (counts.writeStream.format("console").outputMode("complete").trigger(processingTime="1 second").start())
+streamingQuery = (counts.writeStream.format("csv").option("path","./").trigger(processingTime="20 seconds").start())
 
 streamingQuery.awaitTermination()
