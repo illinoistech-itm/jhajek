@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.sql.streaming import *
 
-spark =     spark = (SparkSession
+spark =  spark = (SparkSession
         .builder
         .appName("SocketListener")
         .getOrCreate())
@@ -13,7 +13,6 @@ words = lines.select(split(col("value"),"\\s").alias("word"))
 counts = words.groupBy("word").count()
 #checkpointDir =""
 
-#streamingQuery = (counts.writeStream.format("console").outputMode("complete").trigger(processingTime="1 second").start())
-streamingQuery = (counts.writeStream.format("csv").option("path","./").trigger(processingTime="20 seconds").start())
+streamingQuery = (counts.writeStream.format("console").outputMode("complete").trigger(processingTime="1 second").start())
 
 streamingQuery.awaitTermination()
