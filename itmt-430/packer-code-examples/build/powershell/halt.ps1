@@ -13,7 +13,7 @@ ForEach ($directory in $directories)
     Write-Host "Entering directory: $directory"
     Set-Location -Path $directory
     # Start each virtual machine
-    Write-Host "Starting vagrant box $directory"
+    Write-Host "Stopping vagrant box $directory"
     vagrant halt
     Write-Host "Finished halting all previous Vagrant elements of your application"
     # Resetting location up one levels
