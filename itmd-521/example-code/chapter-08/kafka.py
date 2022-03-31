@@ -2,6 +2,8 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.sql.streaming import *
 
+# Link to dependency to build spaprk-submit with kafka dependecy
+# https://spark.apache.org/docs/latest/structured-streaming-kafka-integration.html#deploying
 spark =  spark = (SparkSession
         .builder
         .appName("Kafka listener")
