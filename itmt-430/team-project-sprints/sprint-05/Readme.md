@@ -1,6 +1,6 @@
-# Sprint 04 Requirements and Deliverables
+# Sprint 05 Requirements and Deliverables
 
-This document contains the Sprint-04 requirements and deliverables
+This document contains the Sprint-05 requirements and deliverables
 
 ## Objectives
 
@@ -13,7 +13,7 @@ This document contains the Sprint-04 requirements and deliverables
 
 ## Outcomes
 
-At the conclusion of this sprint project you will have built upon the work in Sprint-03 and have added an additional cloud-based production environment. Your team will have deployed a working prototype of your site on two different platforms.  You will begin to explore functionality and usability issues.  Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working prototype of the project at the end of sprint-04.
+At the conclusion of this sprint project you will have built upon the work in Sprint-04 and have added an additional cloud-based production environment. Your team will have deployed a working prototype of your site on two different platforms.  You will begin to explore functionality and usability issues.  Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working prototype of the project at the end of sprint-05.
 
 ### Requirements
 
@@ -62,7 +62,7 @@ In the team repo their will need to be a few additional folders added. Keep the 
 
 ### Project Management Tool and Task Difficulty Estimation
 
-One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. Your team will use a scale of 1-5 points.  5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities.  For Sprint 04 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points.  If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
+One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. Your team will use a scale of 1-5 points.  5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities.  For Sprint 05 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points.  If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
 
 In the Project Management tool the 25 points worth of tasks need to have the point value assigned to that task and also have a name that is primary responsible and clearly marked.  This is how your Project Manager will report progress and how you will write your own and group critique at the end of the sprint. The professor will check in weekly during the beginning of the Lab days to check the current progress and help coordinate in anyway.  
 
@@ -89,13 +89,16 @@ The professor is prescribing a small number of **additional** required tasks to 
     * We can set up an additional nightly systemd timer script to add an nightly build task, if you are interested - ask me
   * Development on Localhost is not acceptable at this point
 * Usage of site
-  * Pre-seed your site with 5 "real test users" and have them "ask" 2 questions and answer 1 other persons questions
+  * Pre-seed your site with 50 "real test users" and have them "ask" 2 questions and answer 1 other persons questions
     * This is to show the search functionality and ability to store a complex discussion
   * Demonstrate a successful login of a user
   * Post a question
   * Answer that question
   * Answer another question
   * Logout that user
+* Test the system against SQL injection and XSS mitigation
+  * Find out if someone can own your site
+  * Show us how and show us what prevents common attacks
 * **BONUS**
   * For the cyber security co-terminals, each of the production environments for each team will be on the 192.168.172.55 -.254 range
     * Without being destructive, can you bring me a dump of their SQL Database?
@@ -103,17 +106,17 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ## Deliverables
 
-* Monday Lab live presentation and critiques are due 8:30am April 11th
-* Wednesday Lab early section presentation and critiques are due 8:30am April 13th
-* Wednesday Lab late section presentation and critiques are due 10:25am April 13th
+* Monday Lab live presentation and critiques are due 8:30am April 25th
+* Wednesday Lab early section presentation and critiques are due 8:30am April 27th
+* Wednesday Lab late section presentation and critiques are due 10:25am April 27th
 
 ### Individual Deliverables
 
 The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work.  This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
 
-In the private repo provided to you (with your hawk ID), under the itmt-430 folder, create another folder that will be named for this sprint, **sprint-04**.  In this directory place a markdown based document named: **Report.md**
+In the private repo provided to you (with your hawk ID), under the itmt-430 folder, create another folder that will be named for this sprint, **sprint-05**.  In this directory place a markdown based document named: **Report.md**
 
-In the document **Report.md** include an H1 header called **Sprint-04** and then an H2 header: **Self-Critique** and detailing:
+In the document **Report.md** include an H1 header called **Sprint-05** and then an H2 header: **Self-Critique** and detailing:
 
 * In detail, explain your role for the sprint and the general area you covered
 * Detail the tasks your were assigned and attach artifacts to show that they were completed (Kanban Cards, GitHub commits, screenshots of the application, etc. etc.)
@@ -168,9 +171,9 @@ Clear introduction and small summary of what will be presented with a clear tran
 Demonstration of project management tool and explanation of the 25 build point items -- tell us what initially was assigned and what was accomplished | 3
 Demonstrate deployment of full working applcation on the providied cloud environment
 Demonstrate login of user, posting of a question, and answering of a question, on the Vagrant Infrastructure | 3
-Demonstration of all team-members accomplishing the prior step | 2
+Demonstration of all team-members accomplishing the prior step | 3
 Professor will log into your production system and post a question and post an answer, unassisted | 1
-UI/UX walk through explaining what was accomplished and what portions of the UI/UX are outstanding | 3
+Demonstrate SQL and or XSS attacks upon your site and explain the mitigations you implemented | 2
 Clear transition to a conclusion and small summary of presentation | 1
 
 #### Rubric for Project Manager Presentation

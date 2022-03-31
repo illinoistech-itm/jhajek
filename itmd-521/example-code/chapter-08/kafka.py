@@ -8,6 +8,7 @@ spark =  spark = (SparkSession
         .getOrCreate())
 
 inputDF = (spark.readStream.format("kafka").option("kafka.bootstrap.servers","localhost:9092").option("subscribe","quickstart-events").load())
+#  .option("startingOffsets", "earliest")
 
 resultDF = inputDF.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
 #checkpointDir =""
