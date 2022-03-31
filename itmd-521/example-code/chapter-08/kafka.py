@@ -9,7 +9,7 @@ spark =  spark = (SparkSession
 
 inputDF = (spark.readStream.format("kafka").option("kafka.bootstrap.servers","localhost:9092").option("subscribe","quickstart-events").load())
 
-inputDF.show(5)
+inputDF.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
 #checkpointDir =""
 
 #streamingQuery = (counts.writeStream.format("console").outputMode("complete").trigger(processingTime="1 second").start())
