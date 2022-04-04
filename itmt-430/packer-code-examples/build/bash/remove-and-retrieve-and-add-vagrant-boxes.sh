@@ -30,10 +30,10 @@ do
   vagrant halt -f
   # Issuing the vagrant box destroy command to remove any delta files
   echo "Destroying vagrant box: $DIRECTORY"
-  vagrant destroy -f $DIRECTORY
+  vagrant destroy -f
   # Removing the previously registered vagrant boxes from the system
   echo "Removing vagrant box $DIRECTORY"
-  vagrant box remove -f 
+  vagrant box remove -f $DIRECTORY
   # Removing meta file directory created when vagrant up was last run
   echo "Removing .vagrant directory"
   rm -rf ./.vagrant
