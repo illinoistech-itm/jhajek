@@ -131,7 +131,7 @@ packer {
 # Build for Ubuntu Focal 20.04 Nginx LoadBalancer template
 # https://www.packer.io/docs/builders/proxmox/iso
 #################################################################
-source "proxmox-iso" "proxmox-focal-lb" {
+source "proxmox-iso" "lb" {
   boot_command = ["<enter><enter><f6><esc><wait> ", "autoinstall ds=nocloud-net;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/", "<enter><wait>"]
   boot_wait    = "5s"
   cores        = "${var.NUMBEROFCORES}"
@@ -183,7 +183,7 @@ source "proxmox-iso" "proxmox-focal-lb" {
 # Build for Ubuntu Focal 20.04 Nginx LoadBalancer
 # https://www.packer.io/docs/builders/proxmox/iso
 #################################################################
-source "proxmox-iso" "proxmox-focal-ws" {
+source "proxmox-iso" "ws" {
   boot_command = ["<enter><enter><f6><esc><wait> ", "autoinstall ds=nocloud-net;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/", "<enter><wait>"]
   boot_wait    = "5s"
   cores        = "${var.NUMBEROFCORES}"
@@ -235,7 +235,7 @@ source "proxmox-iso" "proxmox-focal-ws" {
 # Build for Ubuntu Focal 20.04 Database Server
 # https://www.packer.io/docs/builders/proxmox/iso
 #################################################################
-source "proxmox-iso" "proxmox-focal-db" {
+source "proxmox-iso" "db" {
   boot_command = ["<enter><enter><f6><esc><wait> ", "autoinstall ds=nocloud-net;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/", "<enter><wait>"]
   boot_wait    = "5s"
   cores        = "${var.NUMBEROFCORES}"
@@ -284,7 +284,7 @@ source "proxmox-iso" "proxmox-focal-db" {
 }
 
 build {
-  sources = ["source.virtualbox-iso.lb","source.virtualbox-iso.ws1","source.virtualbox-iso.ws2","source.virtualbox-iso.ws3","source.virtualbox-iso.db","source.proxmox-iso.proxmox-focal-lb", "source.proxmox-iso.proxmox-focal-ws", "source.proxmox-iso.proxmox-focal-db"]
+  sources = ["source.virtualbox-iso.lb","source.virtualbox-iso.ws1","source.virtualbox-iso.ws2","source.virtualbox-iso.ws3","source.virtualbox-iso.db","source.proxmox-iso.lb", "source.proxmox-iso.ws", "source.proxmox-iso.db"]
 
   provisioner "file" {
     source = "./id_ed25519_github_deploy_key"
