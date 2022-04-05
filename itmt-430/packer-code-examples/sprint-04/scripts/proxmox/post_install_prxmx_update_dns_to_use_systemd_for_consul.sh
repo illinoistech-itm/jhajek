@@ -16,6 +16,7 @@ sudo systemctl restart systemd-resolved
 cat << EOT >> /etc/systemd/system/post_install_iptables-dns-adjustment.service
 [Unit]
 After=network.service
+After=consul.service
 Before=nginx.service
 
 [Service]
