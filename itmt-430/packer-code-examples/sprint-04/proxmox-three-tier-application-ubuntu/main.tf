@@ -200,6 +200,12 @@ resource "proxmox_vm_qemu" "focal-lb" {
     size    = var.disk_size
   }
 
+    ###############################################################################################
+    # Added explicit dependency to make sure all resources started before the load balancer
+    # The DNS with Consul needs to be registered first or the load balancer will crash
+    ###############################################################################################
+    depends_on = [proxmox_vm_qemu.focal-ws, proxmox_vm_qemu.focal-db]
+
   provisioner "remote-exec" {
     # This inline provisioner is needed to accomplish the final fit and finish of your deployed
     # instance and condigure the system to register the FQDN with the Consul DNS system
@@ -218,11 +224,6 @@ resource "proxmox_vm_qemu" "focal-lb" {
       "sudo rm /opt/consul/node-id",
       "sudo systemctl restart consul"
     ]
-    ###############################################################################################
-    # Added explicit dependency to make sure all resources started before the load balancer
-    # The DNS with Consul needs to be registered first or the load balancer will crash
-    ###############################################################################################
-    depends_on = [proxmox_vm_qemu.focal-ws, proxmox_vm_qemu.focal-db]
 
     connection {
       type        = "ssh"
@@ -232,4 +233,5 @@ resource "proxmox_vm_qemu" "focal-lb" {
       port        = self.ssh_port
     }
   }
+
 }
