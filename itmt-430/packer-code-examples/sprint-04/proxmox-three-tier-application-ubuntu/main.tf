@@ -218,6 +218,11 @@ resource "proxmox_vm_qemu" "focal-lb" {
       "sudo rm /opt/consul/node-id",
       "sudo systemctl restart consul"
     ]
+    ###############################################################################################
+    # Added explicit dependency to make sure all resources started before the load balancer
+    # The DNS with Consul needs to be registered first or the load balancer will crash
+    ###############################################################################################
+    depends_on = [proxmox_vm_qemu.focal-ws, proxmox_vm_qemu.focal-db]
 
     connection {
       type        = "ssh"
