@@ -22,6 +22,8 @@
 * From the ubuntu_20043_vanilla-arm-multi-build directory
   * Issue the command: `packer build -parallel-builds=1 .`
   * This will build each of the Vagrant boxes in series
+* Copy the directory `M1-project` from the `build` directory
+  * Make sure this is at the same level as the `project` directory
 * Upon success `cd` into the `bash` directory
   * Issue the command: `chmod +x *.sh`
   * Execute the command: `./m1-remove-and-add-vagrant-boxes.sh`
