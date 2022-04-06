@@ -56,10 +56,17 @@ sudo firewall-cmd --reload
 # https://en.wikipedia.org/wiki/Sed
 #################################################################################
 
-# If using mysql instead of MariaDB the path to the cnf file is /etc/mysql/mysql.conf.d/mysql.cnf
-# The command: $(cat /etc/hosts | grep db | awk '{ print $1 }') will retrieve the IP address of the db from the /etc/hosts file, a bit of a hack...
-# sudo sed -i "s/.*bind-address.*/#bind-address = $(cat /etc/hosts | grep team-$NUMBER-db-vm0 | awk '{ print $1 }')/" /etc/mysql/mysql.conf.d/mysql.cnf
-sudo sed -i "s/.*bind-address.*/bind-address = $(cat /etc/hosts | grep team-$NUMBER-db-vm0 | awk '{ print $1 }')/" /etc/mysql/mariadb.conf.d/50-server.cnf
+if [ $IP != 172 ]
+then
+  # Detect if we are in the Vagrant environement (third IP octet will be 56) or Proxmox environment -- will be 172
+  # If using mysql instead of MariaDB the path to the cnf file is /etc/mysql/mysql.conf.d/mysql.cnf
+  # The command: $(cat /etc/hosts | grep db | awk '{ print $1 }') will retrieve the IP address of the db from the /etc/hosts file, a bit of a hack...
+  # sudo sed -i "s/.*bind-address.*/#bind-address = $(cat /etc/hosts | grep team-$NUMBER-db-vm0 | awk '{ print $1 }')/" /etc/mysql/mysql.conf.d/mysql.cnf
+  sudo sed -i "s/.*bind-address.*/bind-address = $(cat /etc/hosts | grep team-$NUMBER-db-vm0 | awk '{ print $1 }')/" /etc/mysql/mariadb.conf.d/50-server.cnf
+else
+  # Kind of a hack....
+  sudo sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mariadb.conf.d/50-server.cnf 
+fi
 
 #################################################################################
 # To execute .sql files to create tables, databases, and insert records
