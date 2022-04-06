@@ -53,8 +53,10 @@ variable "restrict-firewall-access-to-this-ip-range-proxmox" {
 
 // For those variables that you don't provide a default for, you must
 // set them from the command line, a var-file, or the environment.
-
+############################################################################################
 # This is the name of the node in the Cloud Cluster where to deploy the virtual instances
+# The NODENAME, USERNAME, PROXMOX_TOKEN, and URL will be provided to you in an email
+############################################################################################
 variable "NODENAME" {
   type    = string
   default = ""
@@ -77,7 +79,10 @@ variable "URL" {
   # https://x.x.x.x:8006/api2/json
   default = ""
 }
-
+############################################################################################
+# MEMORY, DISKSIZE, STORAGEPOOL, NUMBEROFCORES can all be left at default setting. These could
+# be edited to make large or more powerful templates.
+############################################################################################
 variable "MEMORY" {
   type    = string
   default = "4192"
@@ -85,7 +90,7 @@ variable "MEMORY" {
 
 variable "DISKSIZE" {
   type    = string
-  default = "25G"
+  default = "35G"
 }
 
 variable "STORAGEPOOL" {
@@ -97,38 +102,41 @@ variable "NUMBEROFCORES" {
   type    = string
   default = "1"
 }
-
-# This is the name of the Virtual Machine Template you want to create
-variable "VMNAME" {
-  type    = string
-  default = ""
-}
-
+############################################################################################
+# This is the name of the Public Key.  One more key pair you need to generate. 
+############################################################################################
 variable "KEYNAME" {
   type = string
-  # Name of public key to insert to the template 
+  # Name of public key to insert to the template - locate this key in the same directory as the
+  # packer build template
   default = ""
 }
 
 # This is the name of the Virtual Machine Template you want to create
 variable "LBNAME" {
+  # Use this standard and replace the XX with your team number
+  # teamXX-lb-template
   type    = string
   default = ""
 }
 
 # This is the name of the Virtual Machine Template you want to create
 variable "WSNAME" {
+  # Use this standard and replace the XX with your team number
+  # teamXX-ws-template
   type    = string
   default = ""
 }
 
 # This is the name of the Virtual Machine Template you want to create
 variable "DBNAME" {
+  # Use this standard and replace the XX with your team number
+  # teamXX-db-template
   type    = string
   default = ""
 }
 
-# Team Number with leading Zeros
+# Team Number with leading Zero
 variable "TEAMNUMBER" {
   type    = string
   default = ""
