@@ -44,7 +44,7 @@ done
 # Logic to cd to the local build directory on your M1 mac -- where the Parallel Boxes
 # are located
 ######################################################################################
-cd ../packer-build-templates/build
+cd ../build
 
 
 for DIRECTORY in ${DIRECTORIES[@]}
