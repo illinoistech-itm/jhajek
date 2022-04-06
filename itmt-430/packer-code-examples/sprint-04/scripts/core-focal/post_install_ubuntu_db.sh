@@ -40,10 +40,15 @@ cd team-00/code/
 # Open firewall port for port 3306/tcp
 sudo firewall-cmd --zone=public --add-port=3306/tcp --permanent 
 # Open firewall port to allow only connections from 192.168.56.0/24
-# For VirtualBox
-sudo firewall-cmd --zone=public --add-source=192.168.56.0/24 --permanent
-# For Proxmox
-sudo firewall-cmd --zone=public --add-source=192.168.172.0/24 --permanent
+if [ $IP != 172 ]
+then
+  # Detect if we are in the Vagrant environement (third IP octet will be 56) or Proxmox environment -- will be 172
+  # For VirtualBox
+  sudo firewall-cmd --zone=public --add-source=192.168.56.0/24 --permanent
+else
+  # For Proxmox
+  sudo firewall-cmd --zone=public --add-source=192.168.172.0/24 --permanent
+fi
 # Reload changes to firewall
 sudo firewall-cmd --reload
 
