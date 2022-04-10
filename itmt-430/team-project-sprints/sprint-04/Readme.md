@@ -49,7 +49,7 @@ For this sprint, there will be 5 team roles. For the teams with 4 - you can comb
 
 In the team repo their will need to be a few additional folders added. Keep the team repo clean -- add your code and scripts into the proper folder -- do not place them at the root of the repo.
 
-![*Git Seminar by Dr. Karl Stolley*](https://www.youtube.com/watch?v=ap7rqcD8uPs "Git Seminar by Dr. karl Stolley")
+[*Git Seminar by Dr. Karl Stolley*](https://www.youtube.com/watch?v=ap7rqcD8uPs "Git Seminar by Dr. karl Stolley")
 
 * A folder named: **code**
   * This will contain all application source code
@@ -166,11 +166,11 @@ Topic | Points Range |
 Introduction of your teammates | 1
 Clear introduction and small summary of what will be presented with a clear transition | 1
 Demonstration of project management tool and explanation of the 25 build point items -- tell us what initially was assigned and what was accomplished | 3
-Demonstrate deployment of full working applcation on the providied cloud environment
-Demonstrate login of user, posting of a question, and answering of a question, on the Vagrant Infrastructure | 3
+Demonstrate deployment of full working application on the provided cloud environment | 3
+Demonstrate login of user, posting of a question, and answering of a question, on the Vagrant Infrastructure | 2
 Demonstration of all team-members accomplishing the prior step | 2
 Professor will log into your production system and post a question and post an answer, unassisted | 1
-UI/UX walk through explaining what was accomplished and what portions of the UI/UX are outstanding | 3
+UI/UX walk through explaining what was accomplished and what portions of the UI/UX are outstanding | 2
 Clear transition to a conclusion and small summary of presentation | 1
 
 #### Rubric for Project Manager Presentation
