@@ -13,7 +13,7 @@ conf.set("spark.hadoop.fs.s3a.endpoint", "http://192.168.172.50:9000")
 
 spark = SparkSession.builder.appName("JRH convert 30.txt to csv").config(conf=conf).getOrCreate()
  
-df = spark.read.text('s3a://itmd521/30.txt')
+df = spark.read.csv('s3a://itmd521/30.txt')
 
 df.withColumn('WeatherStation', df['value'].substr(5, 6)) \
 .withColumn('WBAN', df['value'].substr(11, 5)) \
