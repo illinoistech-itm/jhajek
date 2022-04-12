@@ -7,9 +7,10 @@ conf.set('spark.hadoop.fs.s3a.aws.credentials.provider', 'org.apache.hadoop.fs.s
  
 conf.set('spark.hadoop.fs.s3a.access.key', "spark521")
 conf.set('spark.hadoop.fs.s3a.secret.key', "79a93eda-ba02-11ec-8a4c-54ee75516ff6")
+conf.set("spark.hadoop.fs.s3a.endpoint", "http://192.168.172.50:9000")
 
 spark = SparkSession.builder.config(conf=conf).getOrCreate()
  
-df = spark.read.csv('s3a://192.168.172.50:9000/itmd521/sf-fire-calls.csv', inferSchema=True)
+df = spark.read.csv('s3a://itmd521/sf-fire-calls.csv', inferSchema=True)
 
 df.printSchema()
