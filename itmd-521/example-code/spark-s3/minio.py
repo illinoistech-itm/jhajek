@@ -8,3 +8,5 @@ conf.set('spark.hadoop.fs.s3a.aws.credentials.provider', 'org.apache.hadoop.fs.s
 spark = SparkSession.builder.config(conf=conf).getOrCreate()
  
 df = spark.read.csv('s3a://noaa-ghcn-pds/csv/2020.csv', inferSchema=True)
+
+df.printSchema()
