@@ -15,25 +15,7 @@ spark = SparkSession.builder.appName("JRH convert 30.txt to csv").config(conf=co
  
 df = spark.read.csv('s3a://itmd521/30.txt')
 
-df.withColumn('WeatherStation', df['_c0'].substr(5, 6)) \
-.withColumn('WBAN', df['_c0'].substr(11, 5)) \
-.withColumn('ObservationDate',to_date(df['_c0'].substr(16,8), 'yyyyMMdd')) \
-.withColumn('ObservationHour', df['_c0'].substr(24, 4).cast(IntegerType())) \
-.withColumn('Latitude', df['_c0'].substr(29, 6).cast('float') / 1000) \
-.withColumn('Longitude', df['_c0'].substr(35, 7).cast('float') / 1000) \
-.withColumn('Elevation', df['_c0'].substr(47, 5).cast(IntegerType())) \
-.withColumn('WindDirection', df['_c0'].substr(61, 3).cast(IntegerType())) \
-.withColumn('WDQualityCode', df['_c0'].substr(64, 1).cast(IntegerType())) \
-.withColumn('SkyCeilingHeight', df['_c0'].substr(71, 5).cast(IntegerType())) \
-.withColumn('SCQualityCode', df['_c0'].substr(76, 1).cast(IntegerType())) \
-.withColumn('VisibilityDistance', df['_c0'].substr(79, 6).cast(IntegerType())) \
-.withColumn('VDQualityCode', df['_c0'].substr(86, 1).cast(IntegerType())) \
-.withColumn('AirTemperature', df['_c0'].substr(88, 5).cast('float') /10) \
-.withColumn('ATQualityCode', df['_c0'].substr(93, 1).cast(IntegerType())) \
-.withColumn('DewPoint', df['_c0'].substr(94, 5).cast('float')) \
-.withColumn('DPQualityCode', df['_c0'].substr(99, 1).cast(IntegerType())) \
-.withColumn('AtmosphericPressure', df['_c0'].substr(100, 5).cast('float')/ 10) \
-.withColumn('APQualityCode', df['_c0'].substr(105, 1).cast(IntegerType())).drop('_c0').write.format("csv").mode("overwrite").option("header","true").save("s3a://itmd521/30.csv")
+df.withColumn('WeatherStation', df['_c0'].substr(5, 6)).withColumn('WBAN', df['_c0'].substr(11, 5)).withColumn('ObservationDate',to_date(df['_c0'].substr(16,8), 'yyyyMMdd')).withColumn('ObservationHour', df['_c0'].substr(24, 4).cast(IntegerType())).withColumn('Latitude', df['_c0'].substr(29, 6).cast('float') / 1000).withColumn('Longitude', df['_c0'].substr(35, 7).cast('float') / 1000).withColumn('Elevation', df['_c0'].substr(47, 5).cast(IntegerType())).withColumn('WindDirection', df['_c0'].substr(61, 3).cast(IntegerType())).withColumn('WDQualityCode', df['_c0'].substr(64, 1).cast(IntegerType())).withColumn('SkyCeilingHeight', df['_c0'].substr(71, 5).cast(IntegerType())).withColumn('SCQualityCode', df['_c0'].substr(76, 1).cast(IntegerType())).withColumn('VisibilityDistance', df['_c0'].substr(79, 6).cast(IntegerType())).withColumn('VDQualityCode', df['_c0'].substr(86, 1).cast(IntegerType())).withColumn('AirTemperature', df['_c0'].substr(88, 5).cast('float') /10).withColumn('ATQualityCode', df['_c0'].substr(93, 1).cast(IntegerType())).withColumn('DewPoint', df['_c0'].substr(94, 5).cast('float')).withColumn('DPQualityCode', df['_c0'].substr(99, 1).cast(IntegerType())).withColumn('AtmosphericPressure', df['_c0'].substr(100, 5).cast('float')/ 10).withColumn('APQualityCode', df['_c0'].substr(105, 1).cast(IntegerType())).drop('_c0').write.format("csv").mode("overwrite").option("header","true").save("s3a://itmd521/30.csv")
 
 df.printSchema()
 df.show(5)
