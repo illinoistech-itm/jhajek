@@ -3,12 +3,18 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import IntegerType
 from pyspark.sql.functions import to_date
 
+# Removing hard coded password - using .env to import them
+import dotenv
+dotenv.load_dotenv()
+SECRETKEY = os.getenv('secret-key')
+ACCESSKEY = os.getenv('access-key')
+
 conf = SparkConf()
 conf.set('spark.jars.packages', 'org.apache.hadoop:hadoop-aws:3.2.0')
 conf.set('spark.hadoop.fs.s3a.aws.credentials.provider', 'org.apache.hadoop.fs.s3a.AnonymousAWSCredentialsProvider')
  
-conf.set('spark.hadoop.fs.s3a.access.key', "spark521")
-conf.set('spark.hadoop.fs.s3a.secret.key', "79a93eda-ba02-11ec-8a4c-54ee75516ff6")
+conf.set('spark.hadoop.fs.s3a.access.key', SECRETKEY)
+conf.set('spark.hadoop.fs.s3a.secret.key', ACCESSKEY)
 conf.set("spark.hadoop.fs.s3a.endpoint", "http://192.168.172.50:9000")
 
 spark = SparkSession.builder.appName("JRH convert 30.txt to csv").config(conf=conf).getOrCreate()
