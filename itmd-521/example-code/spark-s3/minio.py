@@ -14,3 +14,5 @@ spark = SparkSession.builder.config(conf=conf).getOrCreate()
 df = spark.read.csv('s3a://itmd521/sf-fire-calls.csv', inferSchema=True)
 
 df.printSchema()
+
+df.show(5)
