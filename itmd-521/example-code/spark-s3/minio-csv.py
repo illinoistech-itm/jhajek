@@ -33,8 +33,7 @@ df.withColumn('WeatherStation', df['_c0'].substr(5, 6)) \
 .withColumn('DewPoint', df['_c0'].substr(94, 5).cast('float')) \
 .withColumn('DPQualityCode', df['_c0'].substr(99, 1).cast(IntegerType())) \
 .withColumn('AtmosphericPressure', df['_c0'].substr(100, 5).cast('float')/ 10) \
-.withColumn('APQualityCode', df['_c0'].substr(105, 1).cast(IntegerType())) \
-.drop('_c0').write.format("csv").mode("overwrite").option("header","true").save("s3a://itmd521/30.csv")
+.withColumn('APQualityCode', df['_c0'].substr(105, 1).cast(IntegerType())).drop('_c0').write.format("csv").mode("overwrite").option("header","true").save("s3a://itmd521/30.csv")
 
 df.printSchema()
 df.show(5)
