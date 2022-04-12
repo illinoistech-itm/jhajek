@@ -5,8 +5,8 @@ conf = SparkConf()
 conf.set('spark.jars.packages', 'org.apache.hadoop:hadoop-aws:3.2.0')
 conf.set('spark.hadoop.fs.s3a.aws.credentials.provider', 'org.apache.hadoop.fs.s3a.AnonymousAWSCredentialsProvider')
  
-conf.set('spark.hadoop.fs.s3a.access.key', spark521)
-conf.set('spark.hadoop.fs.s3a.secret.key', 79a93eda-ba02-11ec-8a4c-54ee75516ff6)
+conf.set('spark.hadoop.fs.s3a.access.key', "spark521")
+conf.set('spark.hadoop.fs.s3a.secret.key', "79a93eda-ba02-11ec-8a4c-54ee75516ff6")
 
 spark = SparkSession.builder.config(conf=conf).getOrCreate()
  
