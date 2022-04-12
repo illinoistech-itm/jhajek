@@ -11,7 +11,7 @@ conf.set("spark.hadoop.fs.s3a.endpoint", "http://192.168.172.50:9000")
 
 spark = SparkSession.builder.config(conf=conf).getOrCreate()
  
-df = spark.read.csv('s3a://itmd521/sf-fire-calls.csv', inferSchema=True)
+df = spark.read.csv('s3a://itmd521/30.txt', inferSchema=True)
 
 df.printSchema()
 
