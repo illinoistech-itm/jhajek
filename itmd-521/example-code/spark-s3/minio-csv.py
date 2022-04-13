@@ -14,7 +14,7 @@ conf.set('spark.hadoop.fs.s3a.access.key', os.getenv('SECRETKEY'))
 conf.set('spark.hadoop.fs.s3a.secret.key', os.getenv('ACCESSKEY'))
 conf.set("spark.hadoop.fs.s3a.endpoint", "http://192.168.172.50:9000")
 
-spark = SparkSession.builder.appName("JRH convert 40.txt to csv").config(conf=conf).getOrCreate()
+spark = SparkSession.builder.appName("JRH convert 40.txt to csv").config('spark.driver.host','192.168.172.45').config(conf=conf).getOrCreate()
 
 df = spark.read.csv('s3a://itmd521/20.txt')
 
