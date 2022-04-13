@@ -5,6 +5,7 @@ from pyspark.sql.functions import to_date
 
 # Removing hard coded password - using os module to import them
 import os
+import sys
 
 conf = SparkConf()
 conf.set('spark.jars.packages', 'org.apache.hadoop:hadoop-aws:3.2.0')
