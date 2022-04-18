@@ -96,9 +96,9 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Answer that question
   * Answer another question
   * Logout that user
-* Test the system against SQL injection and XSS mitigation
-  * Find out if someone can own your site
-  * Show us how and show us what prevents common attacks
+* Show and explain steps taken in code that prevents common attacks
+  * ~~Find out if someone can own your site~~
+  * ~~Show us how and show us what prevents common attacks~~
 * **BONUS**
   * For the cyber security co-terminals, each of the production environments for each team will be on the 192.168.172.55 -.254 range
     * Without being destructive, can you bring me a dump of their SQL Database?
@@ -173,7 +173,7 @@ Demonstrate deployment of full working applcation on the providied cloud environ
 Demonstrate login of user, posting of a question, and answering of a question, on the Vagrant Infrastructure | 3
 Demonstration of all team-members accomplishing the prior step | 3
 Professor will log into your production system and post a question and post an answer, unassisted | 1
-Demonstrate SQL and or XSS attacks upon your site and explain the mitigations you implemented | 2
+~~Demonstrate SQL and or XSS attacks upon your site and explain the mitigations you implemented~~  Show and explain steps taken in code that prevents common attacks | 2
 Clear transition to a conclusion and small summary of presentation | 1
 
 #### Rubric for Project Manager Presentation
