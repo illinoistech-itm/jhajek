@@ -169,7 +169,7 @@ Topic | Points Range |
 Introduction of your teammates | 1
 Clear introduction and small summary of what will be presented with a clear transition | 1
 Demonstration of project management tool and explanation of the 25 build point items -- tell us what initially was assigned and what was accomplished | 3
-Demonstrate deployment of full working applcation on the providied cloud environment
+Demonstrate deployment of full working application on the provided cloud environment
 Demonstrate login of user, posting of a question, and answering of a question, on the Vagrant Infrastructure | 3
 Demonstration of all team-members accomplishing the prior step | 3
 Professor will log into your production system and post a question and post an answer, unassisted | 1
