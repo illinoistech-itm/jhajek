@@ -21,6 +21,22 @@ Semester: Spring 2022 Professor Jeremy Hajek
 
 This course covers reconfigurable intelligent devices programmed with modern high level languages focusing on design and integration to modern environments. The course will also cover the topic and deployment of wireless sensor networks and the use of rapid prototyping for commercial application. Students will discover hardware, software and firmware design trade-offs as well as best practices in current embedded systems development. A final project will integrate course topics into a system using an embeddable single-board microcontroller. [ITMT 492 Bulletin Description](http://bulletin.iit.edu/courses/itmt/ "ITMT 492 Bulletin Description")
 
+## Course Student Outcomes
+
+The student will be able to solve problems that involve the concepts of data collection, data transmission, and data presentation by using the technologies learned in the course.  This survey of Smart Technologies will cover small computers (Arduino) and sensors, wireless protocols, AR devices, voice assistants, solar powered and battery back sensor networks and cloud storage will give students a sufficient ability to create innovative solutions to problems they encounter across multiple fields.
+
+## Course Objectives
+
+1. Understand the principles of electricity and electronics that support embedded systems.
+2. Understand embedded systems diagrams and electronic symbols.
+3. Apply principles of electronics in operating electronic meters and testing voltage, amperage and resistance measurements.
+4. Understand the concepts of Data Collection, Data Transmission, and Data presentation using small computers (Arduino) and analog and digital sensors
+5. Understand how to use and deploy wireless communication standards: Bluetooth, NFC, xBee 802.15
+6. Understand the concepts and how to deploy solar panels and LiPo batteries
+7. Understand the basics of cloud data storage for smart technology
+8. Understand the basics of Augmented Reality devices
+9. Understand how to use and integrate voice assistants to project solutions
+
 ## Prerequisites
 
 No pre-reqs for this class - other than any basic coding experience - if you need a permit email hajek@iit.edu
@@ -76,22 +92,6 @@ NA | 09/22 | Data Transmission & Wireless technologies | NA
 29 | 11/31 | Final Project work | NA
 30 | 12/04 | Final Project work | NA
 31 | 12/06 | Final Exam Week | Final Project Presentation
-
-## Course Student Outcomes
-
-Learning outcomes for this course are described below. The student will be able to solve problems that involve the concepts of data collection, data transmission, and data presentation by using the technologies learned in the course.  This survey of Smart Technologies will cover small computers (Arduino) and sensors, wireless protocols, AR devices, voice assistants, solar powered and battery back sensor networks and cloud storage will give students a sufficient ability to create innovative solutions to problems they encounter across multiple fields.
-
-## Course Objectives
-
-1. Understand the principles of electricity and electronics that support embedded systems.
-2. Understand embedded systems diagrams and electronic symbols.
-3. Apply principles of electronics in operating electronic meters and testing voltage, amperage and resistance measurements.
-4. Understand the concepts of Data Collection, Data Transmission, and Data presentation using small computers and analogue and digital sensor networks
-5. Understand how to use and deploy wireless communication standards: Bluetooth, NFC, xBee 802.15
-6. Understand the concepts and how to deploy solar panels and LiPo batteries
-7. Understand the basics of cloud data storage for smart technology
-8. Understand the basics of Augmented Reality devices
-9. Understand how to use and integrate voice assistants to project solutions
 
 ## Required Textbook
 
