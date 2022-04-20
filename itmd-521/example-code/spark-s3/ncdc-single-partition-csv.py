@@ -52,7 +52,7 @@ if __name__ == "__main__":
     splitDF.printSchema()
     splitDF.show(5)
 
-    if (sys.argv[3] == "csv"):
-        splitDF.write.format(writeformat).mode("overwrite").option("header","true").save(s3dest)
-    else:
-        splitDF.write.format(writeformat).mode("overwrite").save(s3dest)
+    singlePartDF=splitDF.coalesce(1)
+    
+    singlePartDF.write.format("csv").mode("overwrite").option("header","true").save(s3dest)
+    
