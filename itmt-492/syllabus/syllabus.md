@@ -1,4 +1,4 @@
-# ITMT 492 Introduction to Smart Technology
+# ITMT 492 & ITMT 593 Introduction to Smart Technology
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
@@ -28,8 +28,11 @@ No pre-reqs for this class - other than any basic coding experience - if you nee
 ## Lecture Day, Time & Place
 
 * Tuesday and Thursday
-  * 1:50 pm to 3:30 pm 
+  * 1:50 pm to 3:30 pm
   * [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+* CRNs
+  * ITMT 492-01 - 15212
+  * ITMT 593-01 - 15237
 
 ## Directions to the Smart Lab TS-2030
 
