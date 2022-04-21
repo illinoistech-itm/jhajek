@@ -7,7 +7,7 @@ This will be the description and deliverable for the final project for ITMD 521
 * All commits and code must be placed in the private repo assigned at the beginning of the semester
   * Under the folder: `itmd-521` > `final`
   * Include a **Readme.md** file in the `final` directory with instructions and commands to run each of your scripts
-  * Create a sub-folder: `part-one`, `part-two`, `part-three`
+  * Create a sub-folder: `part-one`, `part-two`, `part-three`, `part-four`
   * In each sub-folder provide the PySpark `.py` files to accomplish the requirements
   * Create a Readme.md with the results (screenshot), if applicable for the output of a section
   * I will run this to check your work and compare output
