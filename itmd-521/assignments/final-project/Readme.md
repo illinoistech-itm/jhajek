@@ -36,13 +36,13 @@ The first part of the assignment you will be doing data engineering by convertin
 
 This part you will read the datasets you created back into your PySpark application and create schemas where necessary.
 
-* Read your partitioned csv into a DataFrame named: `csvdf`
+* Read your partitioned .csv into a DataFrame named: `csvdf`
   * Create a schema based on the sample given in the jhajek sample code, `minio-csv.py`
-* Show the first 10 records and print the schema
-* Read your partitioned csv into a DataFrame named: `jsondf`
+  * Show the first 10 records and print the schema
+* Read your partitioned .json into a DataFrame named: `jsondf`
   * Create a schema based on the sample given in the jhajek sample code, `minio-csv.py`
-* Show the first 10 records and print the schema
-* Read your partitioned csv into a DataFrame named: `parquetdf`
+  * Show the first 10 records and print the schema
+* Read your partitioned .parquet into a DataFrame named: `parquetdf`
   * Show the first 10 records and print the schema
 * Connect to the MariaDB server located at 192.168.172.31
   * Connect to the database `ncdc` and table `fifties`
