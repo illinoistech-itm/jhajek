@@ -49,6 +49,7 @@ This part you will read the datasets you created back into your PySpark applicat
   * Show the first 10 records and print the schema
   * Username: worker
   * Password: cluster
+* MySQL Connector/J is located at:  `--jars /opt/spark/jars/mysql-connector-java-8.0.28.jar`
 * Connect using the parameters like this:
 
 ```python
