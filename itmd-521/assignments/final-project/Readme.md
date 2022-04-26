@@ -44,7 +44,7 @@ This part you will read the datasets you created back into your PySpark applicat
   * Show the first 10 records and print the schema
 * Read your partitioned .parquet into a DataFrame named: `parquetdf`
   * Show the first 10 records and print the schema
-* Connect to the MariaDB server located at 192.168.172.31
+* Connect to the MariaDB server located at `192.168.172.31`
   * Connect to the database `ncdc` and table `fifties`
   * Show the first 10 records and print the schema
   * Username: worker
