@@ -52,7 +52,7 @@ This part you will read the datasets you created back into your PySpark applicat
 * Connect using the parameters like this:
 
 ```python
-(splitDF.read.format("jdbc").option("url","jdbc:mysql://192.168.172.31:3306/ncdc").option("driver","com.mysql.cj.jdbc.Driver").option("dbtable","fifties").option("user","worker").option("password", "cluster").load())
+(DF.read.format("jdbc").option("url","jdbc:mysql://192.168.172.31:3306/ncdc").option("driver","com.mysql.cj.jdbc.Driver").option("dbtable","fifties").option("user","worker").option("password", "cluster").load())
 ```
 
 ### Part-Three
