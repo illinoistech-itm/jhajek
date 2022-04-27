@@ -29,8 +29,8 @@ The first part of the assignment you will be doing data engineering by convertin
   * json
   * csv with lz4 compression
   * parquet
-  * csv with a single partition (need to adjust filename to not overwrite the first csv requirement)
-    * Name this for example:  20-single-part.csv
+  * ~~csv with a single partition (need to adjust filename to not overwrite the first csv requirement)~~
+    * ~~Name this for example:  20-single-part.csv~~
 
 ### Part Two
 
