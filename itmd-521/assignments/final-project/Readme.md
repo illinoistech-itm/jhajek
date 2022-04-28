@@ -58,7 +58,7 @@ This part you will read the datasets you created back into your PySpark applicat
 
 ### Part-Three
 
-In this section you will execute the same command 3 times and modify run time parameters and make note of the execution times and explain what the adjustments did. To do this create a PySpark application to read your prescribed decade .parquet file data and find all of the weather station ids that have registered days (count) of visibility less than 200 per year.
+In this section you will execute the same command 3 times and modify run time parameters and make note of the execution times and explain what the adjustments did. To do this create a PySpark application to read your prescribed decade .parquet file data and find all of the weather station ids that have registered days (count) of visibility (`VisibilityDistance`) less than 200 per year.
 
 Using these parameters:
 
