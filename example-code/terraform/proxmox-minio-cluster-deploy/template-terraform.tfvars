@@ -20,7 +20,7 @@ pm_log_file   = "terraform-plugin-proxmox.log" # (Optional; defaults to terrafor
 # FQDN -- this is needed for the gossip based DNS to work
 ###############################################################################
 yourinitials = "" # add a unique name or identifier to your instances
-numberofvms  = 4  # We want 4 nodes in our cluster
+numberofvms  = 1  # We want 4 nodes in our cluster
 desc         = "" # What is the purpose of this instance
 ###############################################################################
 # Name the template your created via Packer for Terraform to use to deploy
