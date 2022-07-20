@@ -17,7 +17,7 @@ resource "random_shuffle" "datadisk" {
 ###############################################################################################
 
 resource "proxmox_vm_qemu" "minio-node" {
-  count       = var.numberofvms-ws
+  count       = var.numberofvms
   name        = "${var.yourinitial}-vm${count.index}"
   desc        = var.desc
   target_node = var.target_node
@@ -96,7 +96,7 @@ resource "proxmox_vm_qemu" "minio-node" {
     inline = [
       "sudo hostnamectl set-hostname ${var.yourinitials}-vm${count.index}",
       "sudo sed -i 's/changeme/${random_id.id.dec}${count.index}/' /etc/consul.d/system.hcl",
-      "sudo sed -i 's/replace-name/${var.yourinitials-ws}-vm${count.index}/' /etc/consul.d/system.hcl",
+      "sudo sed -i 's/replace-name/${var.yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",
       "sudo sed -i 's/focal/${var.yourinitials}-vm${count.index}/' /etc/hosts",
       "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"rice-dc-1\"/' /etc/consul.d/consul.hcl",
       "echo 'retry_join = [\"${var.consulip}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
