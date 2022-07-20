@@ -37,22 +37,8 @@ variable "keypath" {}
 
 variable "consulip" {}
 
-variable "yourinitials-lb" {}
+variable "yourinitials" {}
 
-variable "yourinitials-ws" {}
+variable "desc" {}
 
-variable "yourinitials-db" {}
-
-variable "desc-lb" {}
-
-variable "desc-ws" {}
-
-variable "desc-db" {}
-
-variable "template_to_clone-lb" {}
-
-variable "template_to_clone-ws" {}
-
-variable "template_to_clone-db" {}
-
-variable "numberofvms-ws" {}
+variable "template_to_clone" {}

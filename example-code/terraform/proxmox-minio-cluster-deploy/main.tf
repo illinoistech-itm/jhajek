@@ -50,10 +50,44 @@ resource "proxmox_vm_qemu" "minio-node" {
     bridge = "vmbr2"
   }
 
+  ##################################################################################
+  # This the entry for the root disk
+  ##################################################################################
+
   disk {
     type    = "virtio"
     storage = random_shuffle.datadisk.result[0]
     size    = var.disk_size
+  }
+
+  ##################################################################################
+  # These are the entries to add the 4 additional datadisks needed for minio
+  # https://docs.min.io/minio/baremetal/installation/deploy-minio-distributed.html
+  # Datadisk 4 has 4 TB of storage, Datadisk 3 has 1.2 TB of storage
+  ##################################################################################
+
+  disk {
+    type    = "virtio"
+    storage = "datadisk4"
+    size    = "50G"
+  }
+
+  disk {
+    type    = "virtio"
+    storage = "datadisk4"
+    size    = "50G"
+  }
+
+  disk {
+    type    = "virtio"
+    storage = "datadisk4"
+    size    = "50G"
+  }
+
+  disk {
+    type    = "virtio"
+    storage = "datadisk4"
+    size    = "50G"
   }
 
   provisioner "remote-exec" {
