@@ -18,7 +18,7 @@ resource "random_shuffle" "datadisk" {
 
 resource "proxmox_vm_qemu" "minio-node" {
   count       = var.numberofvms
-  name        = "${var.yourinitial}-vm${count.index}"
+  name        = "${var.yourinitials}-vm${count.index}"
   desc        = var.desc
   target_node = var.target_node
   clone       = var.template_to_clone
