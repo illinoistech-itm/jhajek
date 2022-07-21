@@ -38,8 +38,8 @@ template_to_clone-db  = ""                    # The name of the template to clon
 # Customize instance hardware settings
 ###############################################################################
 memory             = 4096                  # Memory size of a VM
-cores              = 1                     # vCPU = cores * sockets
-sockets            = 3                     # vCPU = cores * sockets
+cores              = 2                     # vCPU = cores * sockets
+sockets            = 1                     # vCPU = cores * sockets
 disk_size          = "30G"                 # Disk size of a VM - min size must equal to the disk size of your clone image
 ###############################################################################
 # This is the consul dns master -- no need to edit this
