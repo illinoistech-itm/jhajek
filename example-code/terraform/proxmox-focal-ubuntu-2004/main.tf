@@ -12,6 +12,11 @@ resource "random_shuffle" "datadisk" {
   result_count = 1
 }
 
+variable "macaddr" {
+  type = map(string)
+  default = [ "04:9F:15:00:00:10", "04:9F:15:00:00:11", "04:9F:15:00:00:12","04:9F:15:00:00:13"]
+}
+
 ###############################################################################################
 # This launches an instance of the minio template
 ###############################################################################################
@@ -38,6 +43,8 @@ resource "proxmox_vm_qemu" "proxmox-focal-ubuntu-2004" {
   network {
     model  = "virtio"
     bridge = "vmbr0"
+    for_each = toset(var.macaddr)
+    mac = "${each.value}"
   }
 
   network {
