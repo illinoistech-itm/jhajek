@@ -239,7 +239,7 @@ build {
   }  
   
   ############################################################################################
-  # Script to install collectd dependencies for collecting hardware metrics
+  # Script to install telegraf dependencies for collecting hardware metrics
   #
   #############################################################################################
   

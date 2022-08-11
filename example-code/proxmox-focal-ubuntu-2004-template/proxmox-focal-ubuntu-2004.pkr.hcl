@@ -145,13 +145,13 @@ build {
   }  
   
   ############################################################################################
-  # Script to install collectd dependencies for collecting hardware metrics
+  # Script to install telegraf dependencies for collecting hardware metrics
   #
   #############################################################################################
   
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-focal/post_install_prxmx_ubuntu_install-collectd.sh"]
+    scripts         = ["../scripts/proxmox/core-focal/post_install_prxmx_ubuntu_install-telegraf.sh"]
   }  
 
   ########################################################################################################################
