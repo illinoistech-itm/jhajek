@@ -180,7 +180,7 @@ Download, extract, and execute the Git-it tutorial, located: [https://github.com
 
 Next we can download and extract the [Git-it Tutorial](https://github.com/jlord/git-it-electron/ "Git-it install Page"). Git-it is a desktop (Mac, Windows and Linux) app that teaches you how to use Git and GitHub on the command line.  Releases can be found under the [Release Tab](https://github.com/jlord/git-it-electron/releases "Git-it Download Releases").  Extract the file, execute the file `Git-it`. Upon a completion of the tutorial take a screenshot of your completion badge (or dots).
 
-![*Git-it Completion Badge*](images/badge.png "Image of Git-it Badge Completion")
+![*Git-it Completion Badge*](/images/badge.png "Image of Git-it Badge Completion")
 
 ## Tooling Assignment Part II
 
