@@ -2,9 +2,9 @@
 
 ![](./syllabus/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
-Semester: Fall 2021 Professor Jeremy Hajek
+Semester: Fall 2022 Professor Jeremy Hajek
 
-![*https://xkcd.com/908*](./syllabus/images/the_cloud.png "XCKD 908 image URL")
+![*https://xkcd.com/908*](./syllabus/images/the_cloud.png "XKCD 908 image URL")
 
 ---------------- --------------------------------------------------------
   **Professor**: Jeremy Hajek
@@ -13,8 +13,8 @@ Semester: Fall 2021 Professor Jeremy Hajek
       Telephone: 312.567.5937
           Email: hajek@iit.edu
          Office: Perlstein Hall Room 223A, 10 W. 33rd St.
-   Office Hours: Mies Campus: Monday-Wed 11:30 -3:00, Thursday 2:00-3:00, Friday 12:00 to 2:00
-         Online: book and appointment at:
+   Office Hours: Mies Campus: Monday-Friday 10:30-3:00
+         Online: Book and appointment at:
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
 
@@ -22,43 +22,46 @@ Semester: Fall 2021 Professor Jeremy Hajek
 
 **Prerequisites:** ITMO 556 & ITMD 510 or ITMD 514, Credit: Lab 3-0-3
 
-**Lecture Day, Time & Place:** Monday and Wednesday 3:35 pm - 4:50 pm in [Tech South Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), TS-2030 on IIT’s Mies Campus in Chicago.
+**Lecture Day, Time & Place:** Monday and Wednesday 3:15 pm - 4:30 pm in [Tech South Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), TS-2030 on IIT’s Mies Campus in Chicago.
+
+Smart Lab Location
+To get to the Smart Tech Lab - enter the IIT tower on 35th Street.  Swipe in at the desk and take the elevator up to the second floor.  Exit to the left and head north over the bridge from the Tower to the TS building.  The Floor turns from white tile to brown carpet.  Take a left at the intersection and the Smart Lab is directly ahead of you.
 
 **Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 08/23 | Introduction  | NA
-2 | 08/25 | Tooling Setup  | NA
-3 | 08/30 | Tooling Setup  | NA
-4 | 09/01 | Tooling Setup | Practice of Cloud System Admin 1
-5 | 09/06 | Chapter 1  | Practice of Cloud System Admin 2
-6 | 09/08 | NA  | Practice of Cloud System Admin 2
-7 | 09/13 | Chapter 2 | Practice of Cloud System Admin 3
-8 | 09/15 | Lab 1  | Practice of Cloud System Admin 3
-9 | 09/20 | Chapter 3 | Practice of Cloud System Admin 4
-10| 09/22 | Lab 2 | Practice of Cloud System Admin 4
-11| 09/27 | Chapter 4 | Practice of Cloud System Admin 5, 6
-12| 09/29 | Lab 3 | Practice of Cloud System Admin 5, 6
-13| 10/04 | Chapter 5, 6 | NA
-14| 10/06 | Lab 4 | NA
-15| 10/11 | NA | No Class - Fall Break
+1 | 08/22 | Introduction  | NA
+2 | 08/24 | Tooling Setup  | NA
+3 | 08/29 | Tooling Setup  | NA
+4 | 08/31 | Tooling Setup | Practice of Cloud System Admin 1
+5 | 09/05 | Chapter 1  | Practice of Cloud System Admin 2
+6 | 09/07 | NA  | Practice of Cloud System Admin 2
+7 | 09/12 | Chapter 2 | Practice of Cloud System Admin 3
+8 | 09/14 | Lab 1  | Practice of Cloud System Admin 3
+9 | 09/19 | Chapter 3 | Practice of Cloud System Admin 4
+10| 09/21 | Lab 2 | Practice of Cloud System Admin 4
+11| 09/26 | Chapter 4 | Practice of Cloud System Admin 5, 6
+12| 09/28 | Lab 3 | Practice of Cloud System Admin 5, 6
+13| 10/03 | Chapter 5, 6 | NA
+14| 10/05 | Lab 4 | NA
+15| 10/10 | NA | No Class - Fall Break
 16| 10/13 | NA | Midterm Exam
-17| 10/18 | Lab 5 | -
-18| 10/20 | Lab 5 | -
-19| 10/25 | Lab 6 | -
-20| 10/27 | Lab 6 | Mini Project 1 Assigned
-21| 11/01 | Mini Project 1 | -
-22| 11/03 | Mini Project 1 | MP1 Due MP2 Assigned
-23| 11/08 | Mini Project 2 | -
-24| 11/10 | Mini Project 2 | -
-25| 11/15 | Mini Project 2 | MP2 Due MP3 Assigned
-26| 11/17 | Mini Project 2 | -
-27| 11/22 | Final Project | MP3 Due Final project Assigned
-28| 11/24 | NA       | Thanksgiving Break - No Class
-29| 11/29 | Final Project | -
-30| 12/01 | Final Project | Final Project Due
-31| 6-11  | Final Exam week
+17| 10/17 | Lab 5 | -
+18| 10/19 | Lab 5 | -
+19| 10/24 | Lab 6 | -
+20| 10/26 | Lab 6 | Mini Project 1 Assigned
+21| 10/31 | Mini Project 1 | -
+22| 11/02 | Mini Project 1 | MP1 Due MP2 Assigned
+23| 11/07 | Mini Project 2 | -
+24| 11/09 | Mini Project 2 | -
+25| 11/14 | Mini Project 2 | MP2 Due MP3 Assigned
+26| 11/16 | Mini Project 2 | -
+27| 11/21 | Final Project | MP3 Due Final project Assigned
+28| 11/23 | NA       | Thanksgiving Break - No Class
+29| 11/28 | Final Project | -
+30| 11/30 | Final Project | Final Project Due
+31| 12/5-11 | Final Exam week - TBA
 
 **Course Outcomes:**
 
@@ -91,7 +94,7 @@ Each successful student will be able to demonstrate building and running cloud-b
 
 The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2, Thomas A. Limoncelli, Strata R. Chalup and Christina J. Hogan, 2014. ISBN: 978-0321943187
 
-You will be using an existing or creating an account at [Amazon Web Services](https://aws.amazon.com/ "AWS Web services URL").  This will require a Credit Card for registration purposes -- but there won't be any extra cost.
+You will be using an existing or creating an account at [Amazon Web Services](https://aws.amazon.com/ "AWS Web services URL"). This will require a Credit Card for registration purposes -- but there won't be any extra cost.
 
 **Readings:** Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should al-ready be familiar with. Completion of reading may be verified by quizzes. Specific readings are assigned by topic above.
 
