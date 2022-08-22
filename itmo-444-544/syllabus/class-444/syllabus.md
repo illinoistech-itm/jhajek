@@ -13,7 +13,7 @@ Semester: Fall 2022 Professor Jeremy Hajek
       Telephone: 312.567.5937
           Email: hajek@iit.edu
          Office: Perlstein Hall Room 223A, 10 W. 33rd St.
-   Office Hours: Mies Campus: Monday-Wed 11:30 -3:00, Thursday 2:00-3:00, Friday 12:00 to 2:00
+   Office Hours: Mies Campus: Monday-Friday 10:30 -3:00
          Online: book and appointment at:
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
