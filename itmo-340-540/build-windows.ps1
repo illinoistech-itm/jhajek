@@ -28,18 +28,18 @@ If (Test-Path "./output/odt/itmo-?40-intro-to-data-networking-*"){
 # If you want to create a PDF, you’ll need to have LaTeX installed. (See MacTeX on OS X, MiKTeX on Windows, or
 # install the texlive package in linux.) Then do                
 ########################################################################################################################
-pandoc -V geometry:margin=.75in -V paperwidth=6.14in -V paperheight=9.25in -V linkcolor=blue -V fontsize=10pt -V -s -t latex -o ./output/pdf/itmo-340-intro-to-data-networking-$STAMP.pdf ./syllabus/class-444/syllabus.md
+pandoc -V geometry:margin=.75in -V paperwidth=6.14in -V paperheight=9.25in -V linkcolor=blue -V fontsize=10pt -V -s -t latex -o ./output/pdf/itmo-340-intro-to-data-networking-$STAMP.pdf ./syllabus/class-340/syllabus.md
 
-pandoc -V geometry:margin=.75in -V paperwidth=6.14in -V paperheight=9.25in -V linkcolor=blue -V fontsize=10pt -V -s -t latex -o ./output/pdf/itmo-540-intro-to-data-networking-$STAMP.pdf ./syllabus/class-544/syllabus.md
+pandoc -V geometry:margin=.75in -V paperwidth=6.14in -V paperheight=9.25in -V linkcolor=blue -V fontsize=10pt -V -s -t latex -o ./output/pdf/itmo-540-intro-to-data-networking-$STAMP.pdf ./syllabus/class-540/syllabus.md
 #############################################################################################################################
 # DOCX - [Convert your Markdown file to Word (docx):](http://bob.yexley.net/generate-a-word-document-from-markdown-on-os-x/)#############################################################################################################################
-pandoc -V fontsize=10pt -V -s -o ./output/docx/itmo-340-intro-to-data-networking-$STAMP.docx -f markdown -t docx .\syllabus\class-444\syllabus.md
+pandoc -V fontsize=10pt -V -s -o ./output/docx/itmo-340-intro-to-data-networking-$STAMP.docx -f markdown -t docx .\syllabus\class-340\syllabus.md
 
-pandoc -V fontsize=10pt -V -s -o ./output/docx/itmo-540-intro-to-data-networking-$STAMP.docx -f markdown -t docx .\syllabus\class-544\syllabus.md
+pandoc -V fontsize=10pt -V -s -o ./output/docx/itmo-540-intro-to-data-networking-$STAMP.docx -f markdown -t docx .\syllabus\class-540\syllabus.md
 
 #####################
 # ODT
 #####################
-pandoc -V fontsize=10pt -s -o ./output/odt/itmo-340-intro-to-data-networking-$STAMP.odt -f markdown -t odt .\syllabus\class-444\syllabus.md
+pandoc -V fontsize=10pt -s -o ./output/odt/itmo-340-intro-to-data-networking-$STAMP.odt -f markdown -t odt .\syllabus\class-340\syllabus.md
 
-pandoc -V fontsize=10pt -s -o ./output/odt/itmo-540-intro-to-data-networking-$STAMP.odt -f markdown -t odt .\syllabus\class-544\syllabus.md
+pandoc -V fontsize=10pt -s -o ./output/odt/itmo-540-intro-to-data-networking-$STAMP.odt -f markdown -t odt .\syllabus\class-540\syllabus.md

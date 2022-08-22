@@ -1,6 +1,6 @@
 # ITMO 340 Introduction to Data Networking and the Internet
 
-![](./syllabus/class-444/images/CoC_horiz_lockup_2019.jpg "COC Logo")
+![](./syllabus/class-340/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
 Semester: Fall 2022 Professor Jeremy Hajek
 
@@ -18,7 +18,7 @@ Semester: Fall 2022 Professor Jeremy Hajek
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
 
-**Course Catalog Description:** This course covers current and evolving data network technologies, protocols, network components, and the networks that use them, focusing on the Internet and related LANs. The state of worldwide networking and its evolution will be discussed. 
+**Course Catalog Description:** This course covers current and evolving data network technologies, protocols, network components, and the networks that use them, focusing on the Internet and related LANs. The state of worldwide networking and its evolution will be discussed.
 
 This course covers the Internet architecture, organization, and protocols including Ethernet, 802.11, routing, the TCP/UDP/IP suite, DNS, SNMP, DHCP, and more. Students will be presented with Internet-specific networking tools for searching, testing, debugging, and configuring networks and network-connected host computers. There will be opportunities for network configuration and hands-on use of tools.. [ITMO 340 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 340 Bulletin Description")
 
@@ -49,7 +49,7 @@ Session # | Date | Topic | Reading |
 
 **Course Outcomes:**
 
-The course is a foundation course in the basics of Data Communications and Computer Networks. It is intent is to serve as a basis for practical studies in field of Computer Networking and Network Administration. Upon completion, a student should be able to understand how a Computer Network works from both a practical and theoretical perspective. They should understand OSI & TCP/IP Models, Various Networking Protocols, Data Circuits, Switches, and Routers. They will also have an understanding of troubleshooting and management of networks by usage of various tools.
+The course is a foundation course in the basics of Data Communications and Computer Networks. It is intent is to serve as a basis for practical studies in field of Computer Networking and Network Administration. Upon completion, a student should be able to understand how a Computer Network works from both a practical and theoretical perspective. They should understand OSI & TCP/IP Models, Various Networking Protocols, Data Circuits, Switches, and Routers. They will also have an understanding of troubleshooting and management of networks by usage of various tools.
 
 **Program Educational Objectives:**
 
