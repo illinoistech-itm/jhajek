@@ -18,7 +18,7 @@ Semester: Fall 2022 Professor Jeremy Hajek
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
 
-**Course Catalog Description:** Computing applications hosted on dynamically-scaled virtual resources available as services are considered. Collaborative and non-collaborative "cloud-resident" applications are analyzed with respect to cost, device/location independence, scalability, reliability, security, and sustainability. Commercial and local cloud architectures are examined. A group-based integration of course topics will result in a project employing various cloud computing technologies. [ITMO 444 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 444 Bulletin Description")
+**Course Catalog Description:** Computing applications hosted on dynamically-scaled virtual resources available as services are considered. Collaborative and non-collaborative "cloud-resident" applications are analyzed with respect to cost, device/location independence, scalability, reliability, security, and sustainability. Commercial and local cloud architectures are examined. A group-based integration of course topics will result in a project employing various cloud computing technologies.. [ITMO 444 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 444 Bulletin Description")
 
 **Prerequisites:** ITMD 321, Credit: Lab 3-0-3
 
