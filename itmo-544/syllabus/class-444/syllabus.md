@@ -1,10 +1,10 @@
 # ITMO 444 Cloud Computing Technologies
 
-![](./syllabus/images/CoC_horiz_lockup_2019.jpg "COC Logo")
+![](./syllabus/class-444/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
 Semester: Fall 2021 Professor Jeremy Hajek
 
-![*https://xkcd.com/908*](./syllabus/images/the_cloud.png "XCKD 908 image URL")
+![*https://xkcd.com/908*](./syllabus/class-444/images/the_cloud.png "XCKD 908 image URL")
 
 ---------------- --------------------------------------------------------
   **Professor**: Jeremy Hajek
@@ -92,6 +92,8 @@ Each successful student will be able to demonstrate building and running cloud-b
 The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2, Thomas A. Limoncelli, Strata R. Chalup and Christina J. Hogan, 2014. ISBN: 978-0321943187
 
 You will be using an existing or creating an account at [Amazon Web Services](https://aws.amazon.com/ "AWS Web services URL").  This will require a Credit Card for registration purposes -- but there won't be any extra cost.
+
+![*Cloud Computing Technologies Textbook*](./syllabus/class-444/images/book.png "Picture of the Textbook")
 
 **Readings:** Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should al-ready be familiar with. Completion of reading may be verified by quizzes. Specific readings are assigned by topic above.
 
