@@ -28,9 +28,9 @@ Semester: Fall 2022 Professor Jeremy Hajek
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 08/22 | Introduction  | NA
-2 | 08/24 | Tooling Setup  | NA
-3 | 08/29 | Tooling Setup  | NA
+1 | 08/22 | Introduction | NA
+2 | 08/24 | Tooling Setup | NA
+3 | 08/29 | Tooling Setup | NA
 4 | 08/31 | Tooling Setup | Practice of Cloud System Admin 1
 5 | 09/05 | Chapter 1  | Practice of Cloud System Admin 2
 6 | 09/07 | NA  | Practice of Cloud System Admin 2

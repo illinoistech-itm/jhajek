@@ -15,6 +15,10 @@ At the end of this assignment you will have become familiar with industry standa
 
 Complete the required installs in this document via a Package Manager and take a screenshot of the proper output to show a successful install. Place the screenshot into the document as mentioned in the last step.
 
+## Tooling Assignment Part I
+
+We will cover the initial installation of tools we will need for this semester.  If you have already completed this in a prior class, you could take the time to update your software or reach out and help a classmate.
+
 ### Package Managers
 
 Package Managers are an essential tool, originally created for Linux Distributions, apt and yum, at the turn of the century, only in recent years have the major desktop operating systems, Windows and MacOS, created similar tools.  You may be more familiar with the term, "APP Store," the concept is the same either way.  
@@ -35,23 +39,35 @@ Homebrew is the MacOS 3rd party package manager located at: [https://brew.sh/](h
 
 If you have a Mac - install brew and provide a screenshot of the output of the command: `brew --version`
 
-### Windows 10 21H1+
+### Windows 10 21H1+ or 11
 
 The name of the third party Windows Package manager is Chocolatey.  The download is located at [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page").
 
-For Windows 10, place a screenshot of the version command output for: ```choco --version```.
+```PowerShell
+Set-ExecutionPolicy Bypass -Scope Process -Force; `
+[System.Net.ServicePointManager]::SecurityProtocol `
+= [System.Net.ServicePointManager]::SecurityProtocol `
+-bor 3072; iex ((New-Object `
+System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+```
 
-### Commands to run to install all the software
+For Windows 10 or 11, place a screenshot of the version command output for: ```choco --version```.
+
+### Commands to run and install all the software
 
 **NOTE** if you have any of this software already installed, you do not need to reinstall it -- but it wouldn't hurt to upgrade everything so that we are all on the same versions.  Below I will describe what we are installing.
 
 For MacOS using Homebrew:
 
-`brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask ; brew install virtualbox ; brew install --cask vagrant ; brew install packer`
+```bash
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask ; brew install virtualbox ; brew install --cask vagrant ; brew install packer
+```
 
 For M1 Macs you will run the same as above but without the  VirtualBox install:
 
-`brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask vagrant ; brew install packer`
+```bash
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask vagrant ; brew install packer
+```
 
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
   * [https://www.parallels.com/products/desktop/pro/](https://www.parallels.com/products/desktop/pro/ "Parallels Pro Edition")
@@ -61,9 +77,11 @@ For M1 Macs you will run the same as above but without the  VirtualBox install:
     * This will add the needed plugin to allow you to use Parallels from Vagrant
     * This will also work if you have Parallels Pro Edition on an Intel Mac
 
-For Windows10 and 11 using Chocolatey:
+For Windows 10 and 11 using Chocolatey:
 
-`choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell atom virtualbox vagrant packer`
+```PowerShell
+choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell atom virtualbox vagrant packer
+```
 
 ### Installation of a Modern Shell
 
@@ -136,7 +154,6 @@ Take a screenshot of Parallels Desktop > About Parallels Desktop or from the ter
 
 **Note:** that you can use Parallels on an Intel MacOS as well -- you would need to make sure you have the Pro edition installed and the SDK installed as well.
 
-
 ### Install Vagrant
 
 Vagrant is a tool from [HashiCorp](https://hashicorp.com "HashiCorp website").  This tool is used to abstract away the VirtualBox interface and provide direct commandline access, increasing ease of use.  *Vagrant provides easy to configure, reproducible, and portable work environments built on top of industry-standard technology and controlled by a single consistent workflow to help maximize the productivity and flexibility of you and your team.*
@@ -157,11 +174,19 @@ Using a package manager, install the latest version of [Packer](https://packer.i
 
 Take a screenshot of the output of the command: ```packer --version```
 
+### Git-It Tutorial
+
+Download, extract, and execute the Git-it tutorial, located: [https://github.com/jlord/git-it-electron/releases](https://github.com/jlord/git-it-electron/releases "Git-it release tutorial").  The program runs as an executable so there is no installation needed and is cross platform.
+
+Next we can download and extract the [Git-it Tutorial](https://github.com/jlord/git-it-electron/ "Git-it install Page"). Git-it is a desktop (Mac, Windows and Linux) app that teaches you how to use Git and GitHub on the command line.  Releases can be found under the [Release Tab](https://github.com/jlord/git-it-electron/releases "Git-it Download Releases").  Extract the file, execute the file `Git-it`. Upon a completion of the tutorial take a screenshot of your completion badge (or dots).
+
+![*Git-it Completion Badge*](images/completed.png "Image of Git-it Badge Completion")
+
 ## Tooling Assignment Part II
 
-Part II will explore some version control exercises and using getting familiar with Markdown
+Part II will explore some version control exercises and getting familiar with Markdown
 
-## Create and Push your Readme.md
+### Create and Push your Readme.md
 
 In this step you will clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it) to your local system.  In the root of this repo you will create a file named `Readme.md` and a folder named **images**. This `Readme.md` will contain the elements below written in Markdown. This is a good [Markdown cheat-sheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
 
