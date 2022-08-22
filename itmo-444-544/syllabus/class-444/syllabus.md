@@ -52,9 +52,9 @@ Session # | Date | Topic | Reading |
 22| 11/02 | Mini Project 1 | MP1 Due MP2 Assigned
 23| 11/07 | Mini Project 2 | -
 24| 11/09 | Mini Project 2 | -
-25| 11/14 | Mini Project 2 | MP2 Due MP3 Assigned
+25| 11/14 | Mini Project 2 | MP2 Due
 26| 11/16 | Mini Project 2 | -
-27| 11/21 | Final Project | MP3 Due Final project Assigned
+27| 11/21 | Final Project | Final project Assigned
 28| 11/23 | NA       | Thanksgiving Break - No Class
 29| 11/28 | Final Project | -
 30| 11/30 | Final Project | Final Project Due
