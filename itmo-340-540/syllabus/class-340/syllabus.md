@@ -1,10 +1,10 @@
-# ITMO 444 Cloud Computing Technologies
+# ITMO 340 Introduction to Data Networking and the Internet
 
 ![](./syllabus/class-444/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
 Semester: Fall 2022 Professor Jeremy Hajek
 
-![*https://xkcd.com/908*](./syllabus/class-444/images/the_cloud.png "XCKD 908 image URL")
+![*https://xkcd.com/2259*](./syllabus/class-340/images/networking_problems.png "XCKD 2259 image URL")
 
 ---------------- --------------------------------------------------------
   **Professor**: Jeremy Hajek
@@ -13,87 +13,87 @@ Semester: Fall 2022 Professor Jeremy Hajek
       Telephone: 312.567.5937
           Email: hajek@iit.edu
          Office: Perlstein Hall Room 223A, 10 W. 33rd St.
-   Office Hours: Mies Campus: Monday-Wed 11:30 -3:00, Thursday 2:00-3:00, Friday 12:00 to 2:00
+   Office Hours: Mies Campus: Monday-Friday 10:30-3:00
          Online: book and appointment at:
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
 
-**Course Catalog Description:** Computing applications hosted on dynamically-scaled virtual resources available as services are considered. Collaborative and non-collaborative "cloud-resident" applications are analyzed with respect to cost, device/location independence, scalability, reliability, security, and sustainability. Commercial and local cloud architectures are examined. A group-based integration of course topics will result in a project employing various cloud computing technologies. [ITMO 444 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 444 Bulletin Description")
+**Course Catalog Description:** This course covers current and evolving data network technologies, protocols, network components, and the networks that use them, focusing on the Internet and related LANs. The state of worldwide networking and its evolution will be discussed. 
 
-**Prerequisites:** ITMD 321, Credit: Lab 3-0-3
+This course covers the Internet architecture, organization, and protocols including Ethernet, 802.11, routing, the TCP/UDP/IP suite, DNS, SNMP, DHCP, and more. Students will be presented with Internet-specific networking tools for searching, testing, debugging, and configuring networks and network-connected host computers. There will be opportunities for network configuration and hands-on use of tools.. [ITMO 340 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 340 Bulletin Description")
 
-**Lecture Day, Time & Place:** Monday and Wednesday 3:35 pm - 4:50 pm in [Tech South Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), TS-2030 on IIT’s Mies Campus in Chicago.
+**Prerequisites:** None, Credit: Lab 3-0-3
+
+**Lecture Day, Time & Place:** Wednesday 6:25 pm - 9:05 pm TBA Location on - IIT’s Mies Campus in Chicago.
 
 **Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 08/22 | Introduction  | NA
-2 | 08/24 | Tooling Setup  | NA
-3 | 08/29 | Tooling Setup  | NA
-4 | 08/31 | Tooling Setup | Practice of Cloud System Admin 1
-5 | 09/05 | Chapter 1  | Practice of Cloud System Admin 2
-6 | 09/07 | NA  | Practice of Cloud System Admin 2
-7 | 09/12 | Chapter 2 | Practice of Cloud System Admin 3
-8 | 09/14 | Lab 1  | Practice of Cloud System Admin 3
-9 | 09/19 | Chapter 3 | Practice of Cloud System Admin 4
-10| 09/21 | Lab 2 | Practice of Cloud System Admin 4
-11| 09/26 | Chapter 4 | Practice of Cloud System Admin 5, 6
-12| 09/28 | Lab 3 | Practice of Cloud System Admin 5, 6
-13| 10/03 | Chapter 5, 6 | NA
-14| 10/05 | Lab 4 | NA
-15| 10/10 | NA | No Class - Fall Break
-16| 10/13 | NA | Midterm Exam
-17| 10/17 | Lab 5 | -
-18| 10/19 | Lab 5 | -
-19| 10/24 | Lab 6 | -
-20| 10/26 | Lab 6 | Mini Project 1 Assigned
-21| 10/31 | Mini Project 1 | -
-22| 11/02 | Mini Project 1 | MP1 Due MP2 Assigned
-23| 11/07 | Mini Project 2 | -
-24| 11/09 | Mini Project 2 | -
-25| 11/14 | Mini Project 2 | MP2 Due MP3 Assigned
-26| 11/16 | Mini Project 2 | -
-27| 11/21 | Final Project | MP3 Due Final project Assigned
-28| 11/23 | NA       | Thanksgiving Break - No Class
-29| 11/28 | Final Project | -
-30| 11/30 | Final Project | Final Project Due
-31| 12/5-11 | Final Exam week - TBA
+01| 08/24 | - | -
+02| 08/31 | - | -
+03| 09/07 | - | -
+04| 09/14 | - | -
+05| 09/21 | - | -
+06| 09/28 | - | -
+07| 10/05 | - | -
+08| 10/13 | - | -
+09| 10/19 | - | -
+10| 10/26 | - | -
+11| 11/02 | - | -
+12| 11/09 | - | -
+13| 11/16 | - | -
+14| 11/23 | - | -
+15| 11/30 | - | -
+16| 12/5-11 | Final Exam week - TBA
 
 **Course Outcomes:**
 
-Each successful student will be able to demonstrate building and running cloud-based services on a large scale. They will gain the knowledge of deploying and managing elastic and cloud-based applications on industry standard platforms as well as opensource platforms. Students will be prepared with knowledge of Cloud Based Operations and Application Development.
+The course is a foundation course in the basics of Data Communications and Computer Networks. It is intent is to serve as a basis for practical studies in field of Computer Networking and Network Administration. Upon completion, a student should be able to understand how a Computer Network works from both a practical and theoretical perspective. They should understand OSI & TCP/IP Models, Various Networking Protocols, Data Circuits, Switches, and Routers. They will also have an understanding of troubleshooting and management of networks by usage of various tools.
+
+**Program Educational Objectives:**
+
+* Perform requirements analysis, design and administration of computer and network-based systems conforming to policy and best practices, and monitor and support continuing development of relevant policy and best practices as appropriate.
+* Apply current technical and mathematical concepts and practices in the core information technologies and recognize the need to engage in continuing professional development.
 
 **Course Student Outcomes:** Students completing this course will be able to:
 
-* Explain, document, and implement the fundamental aspects of IaaS, PaaS, SaaS
-* Use and administer industry standard cloud resources
-* Correctly identify cloud native operations and development methodologies
-* Build and deploy elastic scaling applications on a cloud platform
-* Design applications using a cloud native architecture
-* Describe and employ web technologies for software deployment
+* Outline the basics components of a computer network using both the TCP/IP protocol suite and the OSI model.
+* Identify the various types of network systems, including local area networks, metropolitan area networks, wide area networks, and voice/data delivery networks.
+* Enumerate the various transmission media commonly used in carrier systems, i.e. twisted pair, coaxial cable, fiber optic cable, terrestrial microwave, satellite, as well as other wireless technologies.
+* Recognize the basics of data communications, including data, signals, conversions between data and signals, encoding techniques, multiplexing, and modulation.
+* Identify the various types of error detection and error corrections schemes.
+* Identify the basics of T-carrier systems, frame relay, asynchronous transfer mode, DSL, and cable modems, and be able to compare and contrast their characteristics.
+* Describe the basic operating procedures of the Internet and how it relates to data and voice communications.
+* Enumerate the differences between the wireless telephone systems D-AMPS, TDMA, CDMA, GSM, and others.
+* Document the characteristics of local area networks, including hub and switch technologies.
+* Complete a case study in which, given a minimum set of requirements, you will recommend wide area network solutions.
+* Analyze a complex computing problem and to apply principles of computing and other relevant disciplines to identify solutions (ABET Computing Criterion 3.1)
+* Design, implement, and evaluate a computing-based solution to meet a given set of computing requirements in the context of the program’s discipline (ABET Computing Criterion 3.2)
+* Identify and analyze user needs and take them into account in the selection, creation, evaluation, and administration of computer-based systems (ABET IT Criterion 3.6)
 
 **Topics to Be Covered**:
 
-* How to Think Cloud
-* Designing in a Distributed World
-* Designing for Operations/ Service Platforms
-* AWS Introduction
-* History of Cloud Computing
-* Application Architectures
-* Design Patterns for Scaling
-* Design Patterns for Resiliency
-* Operations in a Distributed World
-* Cloud Concepts w/AWS
-* Design Documents & Monitoring
+* Explaining the OSI and TCP/IP Models
+* Explaining Properties of Network Traffic
+* Installing and Configuring Switched Networks
+* Configuring IP Networks
+* Installing and Configuring Routed Networks
+* Configuring and Monitoring Ports and Protocols
+* Explaining Network Applications and Storage Services
+* Monitoring and Troubleshooting Networks
+* Explaining Networking Attacks and Mitigations
+* Installing and Configuring Security Devices
+* Explaining Authentication and Access Control
+* Deploying and Troubleshooting Cabling Solutions
+* Implementing and Troubleshooting Wireless Technology
+* Comparing and Contrasting WAN Technologies
+* Using Remote Access Methods
+* Identifying Site Policies and Best Practice
 
 **Required Textbook:**
 
-The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2, Thomas A. Limoncelli, Strata R. Chalup and Christina J. Hogan, 2014. ISBN: 978-0321943187
-
-You will be using an existing or creating an account at [Amazon Web Services](https://aws.amazon.com/ "AWS Web services URL").  This will require a Credit Card for registration purposes -- but there won't be any extra cost.
-
-![*Cloud Computing Technologies Textbook*](./syllabus/class-444/images/book.png "Picture of the Textbook")
+NA
 
 **Readings:** Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should al-ready be familiar with. Completion of reading may be verified by quizzes. Specific readings are assigned by topic above.
 
@@ -107,7 +107,7 @@ You will be using an existing or creating an account at [Amazon Web Services](ht
 
 **Assignments:**
 
-Project/Examination: There will be 6 chapter review questions, 6 graded labs, 2 Mini Projects, 1 Final project, and 1 Mid-term.  All Work will be pushed to GitHub a private repository that you will be given access to by the professor
+NA
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 
