@@ -14,7 +14,7 @@ Semester: Fall 2022 Professor Jeremy Hajek
           Email: hajek@iit.edu
          Office: Perlstein Hall Room 223A, 10 W. 33rd St.
    Office Hours: Mies Campus: Monday-Friday 10:30 -3:00
-         Online: book and appointment at:
+         Online: book an appointment at:
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
 
@@ -109,7 +109,7 @@ You will be using an existing or creating an account at [Amazon Web Services](ht
 
 Project/Examination: There will be 6 chapter review questions, 6 graded labs, 2 Mini Projects, 1 Final project, and 1 Mid-term.  All Work will be pushed to GitHub a private repository that you will be given access to by the professor
 
-**Grading:** Grading criteria for (undergrad course number) students will be as follows:
+**Grading:** Grading criteria for students will be as follows:
 
 Letter | Description | Percentage
 -------|-------------|------------

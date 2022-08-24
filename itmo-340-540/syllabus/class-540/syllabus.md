@@ -14,7 +14,7 @@ Semester: Fall 2022 Professor Jeremy Hajek
           Email: hajek@iit.edu
          Office: Perlstein Hall Room 223A, 10 W. 33rd St.
    Office Hours: Mies Campus: Monday-Friday 10:30-3:00
-         Online: book and appointment at:
+         Online: book an appointment at:
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
 
@@ -24,28 +24,28 @@ This course covers the Internet architecture, organization, and protocols includ
 
 **Prerequisites:** None, Credit: Lab 3-0-3
 
-**Lecture Day, Time & Place:** Wednesday 6:25 pm - 9:05 pm TBA Location on - IIT’s Mies Campus in Chicago.
+**Lecture Day, Time & Place:** Wednesday 6:25 pm - 9:05 pm Class will be broadcast via Blackboard Collaborate
 
-**Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
+**Schedule of Topics:**
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-01| 08/24 | - | -
-02| 08/31 | - | -
-03| 09/07 | - | -
-04| 09/14 | - | -
-05| 09/21 | - | -
-06| 09/28 | - | -
-07| 10/05 | - | -
-08| 10/13 | - | -
-09| 10/19 | - | -
-10| 10/26 | - | -
-11| 11/02 | - | -
-12| 11/09 | - | -
-13| 11/16 | - | -
-14| 11/23 | - | -
-15| 11/30 | - | -
-16| 12/5-11 | Final Exam week - TBA
+01| 08/24 | Course Introduction | -
+02| 08/31 | Loss, Delay, Protocols, and History | -
+03| 09/07 | Principles of Network Applications | -
+04| 09/14 | Transport Layer | -
+05| 09/21 | The Network Layer Part I | -
+06| 09/28 | The Network Layer Part II | -
+07| 10/05 | The Network Layer Part III | -
+08| 10/13 | Midterm Exam | -
+09| 10/19 | The Link Layer and LANs Part I | -
+10| 10/26 | The Link Layer and LANs Part II | -
+11| 11/02 | Wireless and Mobile Networks part I | -
+12| 11/09 | Wireless and Mobile Networks part II | -
+13| 11/16 | Final Project Work and Discussion | -
+14| 11/23 | NA | Thanksgiving Break - No Class| -
+15| 11/30 | Security In Computer Networks | -
+16| 12/5-11 | Final Exam Week - TBA
 
 **Course Outcomes:**
 
@@ -58,19 +58,15 @@ The course is a foundation course in the basics of Data Communications and Compu
 
 **Course Student Outcomes:** Students completing this course will be able to:
 
-* Outline the basics components of a computer network using both the TCP/IP protocol suite and the OSI model.
-* Identify the various types of network systems, including local area networks, metropolitan area networks, wide area networks, and voice/data delivery networks.
+* Outline and explain the basics components of a computer network using both the TCP/IP protocol suite and the OSI model.
+* Identify and design the various types of network systems, including local area networks, metropolitan area networks, wide area networks, and voice/data delivery networks.
 * Enumerate the various transmission media commonly used in carrier systems, i.e. twisted pair, coaxial cable, fiber optic cable, terrestrial microwave, satellite, as well as other wireless technologies.
-* Recognize the basics of data communications, including data, signals, conversions between data and signals, encoding techniques, multiplexing, and modulation.
-* Identify the various types of error detection and error corrections schemes.
-* Identify the basics of T-carrier systems, frame relay, asynchronous transfer mode, DSL, and cable modems, and be able to compare and contrast their characteristics.
-* Describe the basic operating procedures of the Internet and how it relates to data and voice communications.
+* Recognize the ideas data communications, including data, signals, conversions between data and signals, encoding techniques, multiplexing, and modulation.
+* Identify and define the various types of error detection and error corrections schemes. 
+* Identify and define the basics of T-carrier systems, frame relay, asynchronous transfer mode, DSL, and cable modems, and be able to compare and contrast their characteristics.
+* Describe the operating procedures of the Internet and how it relates to data and voice communications.
 * Enumerate the differences between the wireless telephone systems D-AMPS, TDMA, CDMA, GSM, and others.
-* Document the characteristics of local area networks, including hub and switch technologies.
-* Complete a case study in which, given a minimum set of requirements, you will recommend wide area network solutions.
-* Analyze a complex computing problem and to apply principles of computing and other relevant disciplines to identify solutions (ABET Computing Criterion 3.1)
-* Design, implement, and evaluate a computing-based solution to meet a given set of computing requirements in the context of the program’s discipline (ABET Computing Criterion 3.2)
-* Identify and analyze user needs and take them into account in the selection, creation, evaluation, and administration of computer-based systems (ABET IT Criterion 3.6)
+* Document and analysis the characteristics of local area networks, including hub and switch technologies.
 
 **Topics to Be Covered**:
 
@@ -91,15 +87,13 @@ The course is a foundation course in the basics of Data Communications and Compu
 * Using Remote Access Methods
 * Identifying Site Policies and Best Practice
 
-**Required Textbook:**
+**Required Textbook:** NA
 
-NA
-
-**Readings:** Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should al-ready be familiar with. Completion of reading may be verified by quizzes. Specific readings are assigned by topic above.
+**Readings:** NA
 
 **Course Notes:**  It is recommended to take notes from the oral discussion portion of the class.
 
-**Attendance:** Undergrad attendance is expected and will be counted as part of your grade.  
+**Attendance:** Course is broadcast synchronously -- no attendance will be taken
 
 **Course Web Site:** [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL")
 
@@ -107,11 +101,9 @@ NA
 
 **Assignments:**
 
-Project/Examination: There will be 6 chapter review questions, 6 graded labs, 3 Mini Projects, 1 Final project, and 1 Mid-term.
+There will be 10 weekly questions and labs assigned, a midterm exam, a late term project and a final project for the course.
 
-All Work will be pushed to a GitHub private repository that you will be given access to by the professor.
-
-**Grading:** Grading criteria for (undergrad course number) students will be as follows:
+**Grading:** Grading criteria for students will be as follows:
 
 Letter | Description | Percentage
 -------|-------------|------------
@@ -124,14 +116,11 @@ The final grade for the class will be calculated as follows:
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-  Review Questions (6):   15%        120
-               Lab (6):   15%        120
-          Midterm Exam:   13%        100
-                   MP1:   13%        100
-                   MP2:   13%        100
-                   MP3:   13%        100
-         Final Project:   13%        100
-            Attendance:    5%         30
+  Review Questions (10):   20%        100
+               Lab (10):   20%        100
+          Midterm Exam:   20%        100
+                   MP1:   20%        100
+         Final Project:   20%        100
 ----------------------- ------- ----------------
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.

@@ -14,7 +14,7 @@ Semester: Fall 2022 Professor Jeremy Hajek
           Email: hajek@iit.edu
          Office: Perlstein Hall Room 223A, 10 W. 33rd St.
    Office Hours: Mies Campus: Monday-Friday 10:30-3:00
-         Online: book and appointment at:
+         Online: Book an appointment at:
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
 
@@ -24,28 +24,28 @@ This course covers the Internet architecture, organization, and protocols includ
 
 **Prerequisites:** None, Credit: Lab 3-0-3
 
-**Lecture Day, Time & Place:** Wednesday 6:25 pm - 9:05 pm TBA Location on - IIT’s Mies Campus in Chicago.
+**Lecture Day, Time & Place:** Wednesday 6:25 pm - 9:05 pm  Course will be broadcast live via Blackboard Collaborate.
 
-**Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
+**Schedule of Topics:**
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-01| 08/24 | - | -
-02| 08/31 | - | -
-03| 09/07 | - | -
-04| 09/14 | - | -
-05| 09/21 | - | -
-06| 09/28 | - | -
-07| 10/05 | - | -
-08| 10/13 | - | -
-09| 10/19 | - | -
-10| 10/26 | - | -
-11| 11/02 | - | -
-12| 11/09 | - | -
-13| 11/16 | - | -
-14| 11/23 | - | -
-15| 11/30 | - | -
-16| 12/5-11 | Final Exam week - TBA
+01| 08/24 | Course Introduction | -
+02| 08/31 | Loss, Delay, Protocols, and History | -
+03| 09/07 | Principles of Network Applications | -
+04| 09/14 | Transport Layer | -
+05| 09/21 | The Network Layer Part I | -
+06| 09/28 | The Network Layer Part II | -
+07| 10/05 | The Network Layer Part III | -
+08| 10/13 | Midterm Exam | -
+09| 10/19 | The Link Layer and LANs Part I | -
+10| 10/26 | The Link Layer and LANs Part II | -
+11| 11/02 | Wireless and Mobile Networks part I | -
+12| 11/09 | Wireless and Mobile Networks part II | -
+13| 11/16 | Final Project Work and Discussion | -
+14| 11/23 | NA | Thanksgiving Break - No Class| -
+15| 11/30 | Security In Computer Networks | -
+16| 12/5-11 | Final Exam Week - TBA
 
 **Course Outcomes:**
 
@@ -91,15 +91,13 @@ The course is a foundation course in the basics of Data Communications and Compu
 * Using Remote Access Methods
 * Identifying Site Policies and Best Practice
 
-**Required Textbook:**
+**Required Textbook:**  Material will be provided
 
-NA
-
-**Readings:** Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should al-ready be familiar with. Completion of reading may be verified by quizzes. Specific readings are assigned by topic above.
+**Readings:**  See above
 
 **Course Notes:**  It is recommended to take notes from the oral discussion portion of the class.
 
-**Attendance:** Undergrad attendance is expected and will be counted as part of your grade.  
+**Attendance:** Course will be taught synchronously no attendance will be taken
 
 **Course Web Site:** [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL")
 
@@ -107,9 +105,9 @@ NA
 
 **Assignments:**
 
-NA
+There will be weekly lab and homework question assignments.  These will be short answer from the lecture notes.  The labs will involve hands on exercises to cement the networking fundamentals discussed that week.  Submission style will be explained in class.
 
-**Grading:** Grading criteria for (undergrad course number) students will be as follows:
+**Grading:** Grading criteria for students will be as follows:
 
 Letter | Description | Percentage
 -------|-------------|------------
@@ -123,13 +121,10 @@ The final grade for the class will be calculated as follows:
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-  Review Questions (6):   18%        120
-               Lab (6):   18%        120
-          Midterm Exam:   15%        100
-                   MP1:   15%        100
-                   MP2:   15%        100
-         Final Project:   15%        100
-            Attendance:    4%         30
+  Review Questions (10):   25%        100
+              Labs (10):   25%        100
+          Midterm Exam:   25%        100
+         Final Project:   25%        100
 ----------------------- ------- ----------------
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.

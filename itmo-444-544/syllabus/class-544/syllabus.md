@@ -114,7 +114,7 @@ Project/Examination: There will be 6 chapter review questions, 6 graded labs, 3 
 
 All Work will be pushed to a GitHub private repository that you will be given access to by the professor.
 
-**Grading:** Grading criteria for (undergrad course number) students will be as follows:
+**Grading:** Grading criteria for students will be as follows:
 
 Letter | Description | Percentage
 -------|-------------|------------
