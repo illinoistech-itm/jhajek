@@ -67,7 +67,7 @@ The course is a foundation course in the basics of Data Communications and Compu
 * Describe the basic operating procedures of the Internet and how it relates to data and voice communications.
 * Enumerate the differences between the wireless telephone systems D-AMPS, TDMA, CDMA, GSM, and others.
 * Document the characteristics of local area networks, including hub and switch technologies.
-* Complete a case study in which, given a minimum set of requirements, you will recommend wide area network solutions.
+* ~~Complete a case study in which, given a minimum set of requirements, you will recommend wide area network solutions.~~
 * Analyze a complex computing problem and to apply principles of computing and other relevant disciplines to identify solutions (ABET Computing Criterion 3.1)
 * Design, implement, and evaluate a computing-based solution to meet a given set of computing requirements in the context of the program’s discipline (ABET Computing Criterion 3.2)
 * Identify and analyze user needs and take them into account in the selection, creation, evaluation, and administration of computer-based systems (ABET IT Criterion 3.6)

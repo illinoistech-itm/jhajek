@@ -62,7 +62,7 @@ The course is a foundation course in the basics of Data Communications and Compu
 * Identify and design the various types of network systems, including local area networks, metropolitan area networks, wide area networks, and voice/data delivery networks.
 * Enumerate the various transmission media commonly used in carrier systems, i.e. twisted pair, coaxial cable, fiber optic cable, terrestrial microwave, satellite, as well as other wireless technologies.
 * Recognize the ideas data communications, including data, signals, conversions between data and signals, encoding techniques, multiplexing, and modulation.
-* Identify and define the various types of error detection and error corrections schemes. 
+* Identify and define the various types of error detection and error corrections schemes.
 * Identify and define the basics of T-carrier systems, frame relay, asynchronous transfer mode, DSL, and cable modems, and be able to compare and contrast their characteristics.
 * Describe the operating procedures of the Internet and how it relates to data and voice communications.
 * Enumerate the differences between the wireless telephone systems D-AMPS, TDMA, CDMA, GSM, and others.
