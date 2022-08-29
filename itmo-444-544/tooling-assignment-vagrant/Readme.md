@@ -73,6 +73,8 @@ We will now use Vagrant to retrieve and Ubuntu 20.04 known as Focal and a Fedora
 * ```mkdir focal64 ; cd focal64 ; vagrant init ubuntu/focal64 ; ls```
 * ```mkdir fedora35 ; cd fedora35 ; vagrant init generic/fedora35 ; ls```
 
+#### M1 Macs Only
+
 For those using M1 Macs and Parallels you will need to replace the names of the Boxes in the demos with these two that have been prepared for M1 macs and parallels
 
 * mpasternak/focal64-arm
