@@ -32,8 +32,8 @@ Session # | Date | Topic | Reading |
 2 | 08/24 | Tooling Setup | NA
 3 | 08/29 | Tooling Setup | NA
 4 | 08/31 | Tooling Setup | Practice of Cloud System Admin 1
-5 | 09/05 | Chapter 1  | Practice of Cloud System Admin 2
-6 | 09/07 | NA  | Practice of Cloud System Admin 2
+5 | 09/05 | Labor Day No class | NA
+6 | 09/07 | Chapter 1  | Practice of Cloud System Admin 2
 7 | 09/12 | Chapter 2 | Practice of Cloud System Admin 3
 8 | 09/14 | Lab 1  | Practice of Cloud System Admin 3
 9 | 09/19 | Chapter 3 | Practice of Cloud System Admin 4
