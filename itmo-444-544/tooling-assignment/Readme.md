@@ -63,7 +63,7 @@ For MacOS using Homebrew:
 brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install virtualbox ; brew install --cask vagrant ; brew install packer
 ```
 
-For M1 Macs you will run the same as above but without the  VirtualBox install:
+For M1 Macs you will run the same as above but without the VirtualBox install:
 
 ```bash
 brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask vagrant ; brew install packer
