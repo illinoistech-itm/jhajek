@@ -208,8 +208,17 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts          = ["../path/to/your/shell/script.sh"]
+    scripts          = ["../scripts/proxmox/research/install-nginx.sh",
+                        "../scripts/proxmox/research/open-firewall-ws.sh"]
     only             = ["promox-iso.web-server"]
   }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    scripts          = ["../scripts/proxmox/research/install-mariadb.sh",
+                        "../scripts/proxmox/research/open-firewall-db.sh"]
+    only             = ["promox-iso.database"]
+  }
+
 
 }
