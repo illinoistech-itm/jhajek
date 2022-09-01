@@ -60,36 +60,6 @@ resource "proxmox_vm_qemu" "proxmox-focal-ubuntu-2004" {
     size    = var.disk_size
   }
 
-  ##################################################################################
-  # These are the entries to add the 4 additional datadisks needed for minio
-  # https://docs.min.io/minio/baremetal/installation/deploy-minio-distributed.html
-  # Datadisk 4 has 4 TB of storage, Datadisk 3 has 1.2 TB of storage
-  ##################################################################################
-
-  disk {
-    type    = "virtio"
-    storage = "datadisk4"
-    size    = "50G"
-  }
-
-  disk {
-    type    = "virtio"
-    storage = "datadisk4"
-    size    = "50G"
-  }
-
-  disk {
-    type    = "virtio"
-    storage = "datadisk4"
-    size    = "50G"
-  }
-
-  disk {
-    type    = "virtio"
-    storage = "datadisk4"
-    size    = "50G"
-  }
-
   provisioner "remote-exec" {
     # This inline provisioner is needed to accomplish the final fit and finish of your deployed
     # instance and condigure the system to register the FQDN with the Consul DNS system
