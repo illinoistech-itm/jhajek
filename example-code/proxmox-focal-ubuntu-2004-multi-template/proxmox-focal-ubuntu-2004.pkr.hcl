@@ -62,7 +62,7 @@ source "proxmox-iso" "web-server" {
   ssh_username             = "${var.SSHPW}"
   ssh_wait_timeout         = "1200s"
   template_description     = "A Packer template to create a Promox Template - Vanilla Ubuntu"
-  vm_name                  = "${var.VMNAME}"
+  vm_name                  = "jrh-ws-template"
 }
 
 source "proxmox-iso" "database" {
@@ -109,7 +109,7 @@ source "proxmox-iso" "database" {
   ssh_username             = "${var.SSHPW}"
   ssh_wait_timeout         = "1200s"
   template_description     = "A Packer template to create a Promox Template - Vanilla Ubuntu"
-  vm_name                  = "${var.VMNAME}"
+  vm_name                  = "jrh-db-template"
 }
 
 build {
