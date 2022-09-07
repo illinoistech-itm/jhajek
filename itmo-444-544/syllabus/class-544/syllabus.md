@@ -31,34 +31,34 @@ To get to the Smart Tech Lab - enter the IIT tower on 35th Street.  Swipe in at 
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 08/22 | Introduction  | NA
-2 | 08/24 | Tooling Setup  | NA
-3 | 08/29 | Tooling Setup  | NA
-4 | 08/31 | Tooling Setup | Practice of Cloud System Admin 1
+1 | 08/22 | Introduction | NA
+2 | 08/24 | Tooling Setup | NA
+3 | 08/29 | Tooling Setup | NA
+4 | 08/31 | Tooling Setup | ~~Practice of Cloud System Admin 1~~
 5 | 09/05 | Labor Day No class | NA
-6 | 09/07 | Chapter 1  | Practice of Cloud System Admin 2
-7 | 09/12 | Chapter 2 | Practice of Cloud System Admin 3
-8 | 09/14 | Lab 1  | Practice of Cloud System Admin 3
-9 | 09/19 | Chapter 3 | Practice of Cloud System Admin 4
-10| 09/21 | Lab 2 | Practice of Cloud System Admin 4
-11| 09/26 | Chapter 4 | Practice of Cloud System Admin 5, 6
-12| 09/28 | Lab 3 | Practice of Cloud System Admin 5, 6
-13| 10/03 | Chapter 5, 6 | NA
-14| 10/05 | Lab 4 | NA
+6 | 09/07 | History of Cloud Computing & Lab 1 | Practice of Cloud System Admin Pre-face and 1
+7 | 09/12 | Chapter 1 | Practice of Cloud System Admin 2
+8 | 09/14 | Lab 2  | NA
+9 | 09/19 | Chapter 2 | Practice of Cloud System Admin 3
+10| 09/21 | Lab 3 | NA
+11| 09/26 | Chapter 3 | Practice of Cloud System Admin 4
+12| 09/28 | Lab 4 | NA
+13| 10/03 | Chapter 4 | Practice of Cloud System Admin 5, 6
+14| 10/05 | Chapter 5, 6 | NA
 15| 10/10 | NA | No Class - Fall Break
 16| 10/13 | NA | Midterm Exam
-17| 10/17 | Lab 5 | -
-18| 10/19 | Lab 5 | -
-19| 10/24 | Lab 6 | -
-20| 10/26 | Lab 6 | Mini Project 1 Assigned
+17| 10/17 | Lab 4 | -
+18| 10/19 | Lab 4 | -
+19| 10/24 | Lab 5 | -
+20| 10/26 | Lab 5 | Mini Project 1 Assigned
 21| 10/31 | Mini Project 1 | -
 22| 11/02 | Mini Project 1 | MP1 Due MP2 Assigned
 23| 11/07 | Mini Project 2 | -
 24| 11/09 | Mini Project 2 | -
-25| 11/14 | Mini Project 2 | MP2 Due MP3 Assigned
+25| 11/14 | Mini Project 2 | MP2 Due
 26| 11/16 | Mini Project 2 | -
-27| 11/21 | Final Project | MP3 Due Final project Assigned
-28| 11/23 | NA       | Thanksgiving Break - No Class
+27| 11/21 | Final Project | Final project Assigned
+28| 11/23 | NA | Thanksgiving Break - No Class
 29| 11/28 | Final Project | -
 30| 11/30 | Final Project | Final Project Due
 31| 12/5-11 | Final Exam week - TBA
