@@ -1,11 +1,15 @@
-# Exercises - Chapter 03 Selecting a Service Platform
+# Chapter 2 Designing for Operations
 
-1. Compare IaaS, PaaS, and SaaS on the basis of cost, configurability, and control (hint make a chart)
+Place your answers below each question.  Answer are found directly in the text.
 
-2. What are the caveats to consider in adopting Software as a Service?
+1. Why is design for operations so important?
 
-3. List the key advantages of virtual machines.
+2. How is automated configuration typically supported?
 
-4. Why might you choose physical over virtual machines?
+3. List the important factors for redundancy through replication.
 
-5. Which factors might make you choose private over public cloud services?
+4. Why might you not want to solve an issue by coding the solution yourself?
+
+5. Which type of problems should appear first on your priority list?
+
+6. Which factors can you bring to an outside vendor to get the vendor to take your issue seriously?
