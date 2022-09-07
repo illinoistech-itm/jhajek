@@ -31,19 +31,19 @@ This course covers the Internet architecture, organization, and protocols includ
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
 01| 08/24 | Course Introduction | -
-02| 08/31 | Loss, Delay, Protocols, and History | -
-03| 09/07 | Principles of Network Applications | -
-04| 09/14 | Transport Layer | -
-05| 09/21 | The Network Layer Part I | -
-06| 09/28 | The Network Layer Part II | -
-07| 10/05 | The Network Layer Part III | -
-08| 10/13 | Midterm Exam | -
-09| 10/19 | The Link Layer and LANs Part I | -
-10| 10/26 | The Link Layer and LANs Part II | -
+02| 08/31 | What is the Internet? ~~Loss, Delay, Protocols, and Internet History~~ | -
+03| 09/07 | Tooling Setup | -
+04| 09/14 | Packet Loss, Delay, Protocols, and Internet History | -
+05| 09/21 | Principles of Network Applications | -
+06| 09/28 | Transport Layer | -
+07| 10/05 | The Network Layer Part I | -
+08| 10/13 | The Network Layer Part II | -
+09| 10/19 | Midterm Exam | -
+10| 10/26 | The Link Layer and LANs | -
 11| 11/02 | Wireless and Mobile Networks part I | -
 12| 11/09 | Wireless and Mobile Networks part II | -
 13| 11/16 | Final Project Work and Discussion | -
-14| 11/23 | NA | Thanksgiving Break - No Class| -
+14| 11/23 | NA | Thanksgiving Break - No Class | -
 15| 11/30 | Security In Computer Networks | -
 16| 12/5-11 | Final Exam Week - TBA
 
