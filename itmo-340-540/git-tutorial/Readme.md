@@ -1,4 +1,4 @@
-# Appendix D - Git Tutorial
+# Git Tutorial
 
 ![*Git commit messages--after developing this book I understand this completely*](images/Chapter-Header/Appendix-D/git_commit-2.png "Git Commit")
 
