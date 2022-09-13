@@ -224,7 +224,7 @@ Now that we have a public key generated, copy the displayed content. We will now
 
 The steps listed here will help add your Public Key to your GitHub account for authentication. To begin, select the circle icon in the upper right corner to expand the option menu.
 
-![*Log into your GitHub Account*](https://github.com/illinoistech-itm/jhajek/raw/master/itmo-340-540/git-tutorial/images/Appendix-D/github-menu.png "Your GitHub account settings")
+![*Log into your GitHub Account*](https://github.com/illinoistech-itm/jhajek/blob/master/itmo-340-540/images/Appendix-D/github-menu.png "Your GitHub account settings")
 
 In this new menu near the bottom of the list your will see the **Settings** option.
 
