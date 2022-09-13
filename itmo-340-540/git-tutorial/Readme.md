@@ -224,7 +224,7 @@ Now that we have a public key generated, copy the displayed content. We will now
 
 The steps listed here will help add your Public Key to your GitHub account for authentication. To begin, select the circle icon in the upper right corner to expand the option menu.
 
-![*Log into your GitHub Account*](./images/Appendix-D/output/github-menu.png "Your GitHub account settings")
+![*Log into your GitHub Account*](https://github.com/illinoistech-itm/jhajek/blob/master/itmo-340-540/git-tutorial/images/Appendix-D/output/github-menu.png "Your GitHub account settings")
 
 In this new menu near the bottom of the list your will see the **Settings** option.
 
@@ -233,8 +233,6 @@ In this new menu near the bottom of the list your will see the **Settings** opti
 A new set of settings options will appear, we want to select on the left-hand side middle of the page, **SSH and GPG Keys**.
 
 ![*Select the SSH and GPG Keys option*](./images/Appendix-D/output/ssh.png "Select the SSH and GPG Keys option")
-
-\newpage
 
 On the right hand side of the new page, there will be a green **New SSH Key** button.
 
@@ -247,8 +245,6 @@ You will be presented with two text-boxes. The first is a title -- this is a com
 Paste the contents of the *.pub* file into the box labeled **Key** and hit the submit button. Your public key is now associated with your GitHub account to be used for authentication. Submit the key by hitting the green **Add SSH key** button.
 
 ![*Paste the content of your Public key*](./images/Appendix-D/output/key.png "Paste the content of your Public key")
-
-\newpage
 
 #### Create the config file in your .ssh directory
 
