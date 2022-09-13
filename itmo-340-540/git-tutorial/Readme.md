@@ -1,6 +1,6 @@
 # Git Tutorial
 
-![*Git commit messages--after developing this book I understand this completely*](images/Chapter-Header/Appendix-D/git_commit-2.png "Git Commit")
+![*Git commit messages--after developing this book I understand this completely*](https://github.com/illinoistech-itm/jhajek/blob/master/itmo-340-540/images/Chapter-Header/Appendix-D/git_commit-2.png "Git Commit")
 
 This is a tutorial for installing Git and configuring GitHub on Windows 10/11 and macOS.  
 
@@ -224,7 +224,7 @@ Now that we have a public key generated, copy the displayed content. We will now
 
 The steps listed here will help add your Public Key to your GitHub account for authentication. To begin, select the circle icon in the upper right corner to expand the option menu.
 
-![*Log into your GitHub Account*](https://github.com/illinoistech-itm/jhajek/blob/master/itmo-340-540/git-tutorial/images/Appendix-D/output/github-menu.png "Your GitHub account settings")
+![*Log into your GitHub Account*](https://github.com/illinoistech-itm/jhajek/raw/master/itmo-340-540/git-tutorial/images/Appendix-D/output/github-menu.png "Your GitHub account settings")
 
 In this new menu near the bottom of the list your will see the **Settings** option.
 
