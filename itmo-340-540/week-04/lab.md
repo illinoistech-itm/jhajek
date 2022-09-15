@@ -4,9 +4,11 @@ This is the first lab for Introduction to Networking
 
 ## Outcome
 
+This assignment will expose the user and give them the ability to explain the process a packet takes across the internet via the `traceroute` tool.
+
 ## Questions
 
-Perform a Traceroute between source and destination on the same continent at three different hours of the day. Include a screenshot of the output you are using to answer the questions.
+Perform a Traceroute between source and destination on the same continent at three different hours of the day. Include a screenshot of the output you are using to answer the questions.  On Windows use: `tracert` on Mac use: `traceroute`.
 
 ## Screenshot 1
 
