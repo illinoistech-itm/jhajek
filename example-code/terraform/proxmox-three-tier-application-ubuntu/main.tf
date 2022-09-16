@@ -18,7 +18,7 @@ resource "random_shuffle" "datadisk" {
 
 resource "proxmox_vm_qemu" "focal-ws" {
   count           = var.numberofvms-ws
-  name            = "${var.yourinitials-ws}-vm${count.index}"
+  name            = "${var.yourinitials-ws}-vm${count.index}.service.consul"
   desc            = var.desc-ws
   target_node     = var.target_node
   clone           = var.template_to_clone-ws
@@ -90,7 +90,7 @@ resource "proxmox_vm_qemu" "focal-ws" {
 
 resource "proxmox_vm_qemu" "focal-db" {
   count           = var.numberofvms
-  name            = "${var.yourinitials-db}-vm${count.index}"
+  name            = "${var.yourinitials-db}-vm${count.index}.service.consul"
   desc            = var.desc-db
   target_node     = var.target_node
   clone           = var.template_to_clone-db
@@ -162,7 +162,7 @@ resource "proxmox_vm_qemu" "focal-db" {
 
 resource "proxmox_vm_qemu" "focal-lb" {
   count           = var.numberofvms
-  name            = "${var.yourinitials-lb}-vm${count.index}"
+  name            = "${var.yourinitials-lb}-vm${count.index}.service.consul"
   desc            = var.desc-lb
   target_node     = var.target_node
   clone           = var.template_to_clone-lb

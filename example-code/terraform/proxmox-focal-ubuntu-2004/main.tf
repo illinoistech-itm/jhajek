@@ -18,7 +18,7 @@ resource "random_shuffle" "datadisk" {
 
 resource "proxmox_vm_qemu" "proxmox-focal-ubuntu-2004" {
   count       = var.numberofvms
-  name        = "${var.yourinitials}-vm${count.index}"
+  name        = "${var.yourinitials}-vm${count.index}.service.consul"
   desc        = var.desc
   target_node = var.target_node
   clone       = var.template_to_clone

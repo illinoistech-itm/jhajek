@@ -12,8 +12,8 @@ keypath             = "name-of-your-private-key"     # The path to the private k
 # No need to change these values
 ###############################################################################
 pm_log_enable       = true                           # Optional; defaults to false) Enable debug logging, see the section below for logging details
-pm_parallel         = 4                              # (Optional; defaults to 4) Allowed simultaneous Proxmox processes (e.g. creating resources).
-pm_timeout          = 600                            # (Optional; defaults to 300) Timeout value (seconds) for proxmox API calls.
+pm_parallel         = 1                           # (Optional; defaults to 4) Allowed simultaneous Proxmox processes (e.g. creating resources).
+pm_timeout          = 300                            # (Optional; defaults to 300) Timeout value (seconds) for proxmox API calls.
 pm_log_file         = "terraform-plugin-proxmox.log" # (Optional; defaults to terraform-plugin-proxmox.log) If logging is enabled, the log file the provider will write logs to.
 ###############################################################################
 # This is a variable to append to your cloud instances so they have a unique
