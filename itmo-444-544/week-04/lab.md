@@ -10,13 +10,16 @@ Use the ubuntu/focal64 Vagrant box your created and configured your aws-cli on.
 
 ## Part 2
 
-Using the aws-cli, create a shell script that will do the following:
+~~Using the aws-cli, create a shell script that will do the following:~~
+
+Using the AWS Web Console:
 
 * Launch an ubuntu ec2 instance
 * type of t2.micro
-* Run a shell script named: `install-env.sh`
-  * This shell script will install Nginx and serve the "Hello World" page on port 80
+* SSH into the instance and using the apt package manager install `nginx`
 * Take a screenshot including the AWS URL and add to this document
+* Go back to the console and **terminate** the EC2 instance
+* Take a screenshot showing the EC2 instance is in the **terminated** state
 
 ### Deliverable
 
