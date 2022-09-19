@@ -16,4 +16,4 @@
 
 8. How do we estimate how fast a system will be able to process a request such as retrieving an email message?
 
-9. In Section 1.7 three design ideas are presented for how to process email deletion requests. Estimate how long the request will take for deleting an email message for each of the three
+9. In Section 1.7 three design ideas are presented for how to process email deletion requests. Estimate how long the request will take for deleting an email message for each of the three?  Use the updated numbers from the book located at: [Numbers Every Developer Needs to know](https://colin-scott.github.io/personal_website/research/interactive_latency.html "Link to numbers every developer needs to know") - update of Figure 1.10 in the book.
