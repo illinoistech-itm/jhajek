@@ -26,9 +26,7 @@ Place image here
 i)
 * Find the number of routers in the path at each of the three hours. Did the paths change during any of the hours?  
 i)
-* Try to identify the number of ISP networks that the Traceroute packets pass through from source to destination.  
-i)
-* Routers with similar names and/  or similar IP addresses should be considered as part of the same ISP.
+* Try to identify the number of ISP networks that the Traceroute packets pass through from source to destination. (Routers with similar names and/  or similar IP addresses should be considered as part of the same ISP.)  
 i)
 
 Kurose, James F.; Ross, Keith. Computer Networking (p. 72). Pearson Education. Kindle Edition.
