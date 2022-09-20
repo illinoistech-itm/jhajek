@@ -1,8 +1,10 @@
-#cloud-config - https://raw.githubusercontent.com/nickcharlton/packer-ubuntu-2004/master/http/user-data
+# File must be renamed to: user-data
 autoinstall:
   version: 1
   identity:
     hostname: ubuntu-server
+    # Replace the stock password of: vagrant
+    # mkpasswd -m sha-512 -S (8-18 characters of Salt)
     password: '$6$qoazpFv0h6$1i0uxiM32aszgrgyYjv/2FLq73.TV2DCHOGi6nuiZoazu36Bewgb4hKarG9J3vwHxTpkdLQ10zeEt1J5XHG.Z/'
     username: vagrant
   storage:
@@ -48,6 +50,7 @@ autoinstall:
   ssh:
     allow-pw: no
     install-server: true
+    # Place your public key here under authorized keys
     authorized-keys:
       - 'ssh-ed25519 '
   late-commands:
