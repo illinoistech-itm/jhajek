@@ -6,6 +6,7 @@
 - Explore common DataFrame and SQL Operations
 - Create full Spark Applications to accomplish our exploration via the JDBC drivers
 - Understand the story of [Little Bobby Tables](https://xkcd.com/327/ "Bobby Tables Cartoon")
+- Put objective here
 
 ## Assignment Setup
 
