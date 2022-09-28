@@ -50,11 +50,14 @@ This is where you will pass the arguments (space delimited) as follows (order is
 * key-name
 * security-group-ids
 * count (3)
-* subnet-id (1)
-* subnet-id (2)
 * availability-zone
 * elb name
 * target group name
+
+These values we will dynamically query for
+
+* subnet-id (1)
+* subnet-id (2)
 * vpc-id
 
 I will grade your logic by running it with my account configuration information, no hard-coded values.
