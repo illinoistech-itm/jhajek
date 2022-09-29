@@ -48,3 +48,6 @@ chapter-*.html
 # Node JS
 node_modules/
 arguments.txt
+
+config
+id_ed25519*
