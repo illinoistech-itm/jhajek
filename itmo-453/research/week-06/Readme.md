@@ -28,8 +28,8 @@ Create Shell script to install on Grafana server Grafana software
 ```bash
 # Steps needed to be included in install-grafana.sh
 sudo apt-get install -y adduser libfontconfig1
-wget https://dl.grafana.com/oss/release/grafana_9.2.0~beta1_amd64.deb
-sudo dpkg -i grafana_9.2.0~beta1_amd64.deb
+wget https://dl.grafana.com/oss/release/grafana_9.1.6_amd64.deb
+sudo dpkg -i grafana_9.1.6_amd64.deb
 ```
 
 ```bash
@@ -51,6 +51,11 @@ sudo apt-get update && sudo apt-get install -y telegraf
 ```bash
 sudo systemctl enable telegraf
 ```
+
+## Shell script to open firewall ports
+
+* One shell script to open TCP 5555 for riemann
+* One shell script to open TCP 3000 and TCP 8125 for Grafana
 
 ## Update Terraform
 
