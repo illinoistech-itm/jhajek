@@ -55,7 +55,7 @@ sudo systemctl enable telegraf
 ## Shell script to open firewall ports
 
 * One shell script to open TCP 5555 for riemann
-* One shell script to open TCP 3000 and TCP 8125 for Grafana
+* One shell script to open TCP 3000 and TCP 8542 for Grafana
 
 ## Update Terraform
 
