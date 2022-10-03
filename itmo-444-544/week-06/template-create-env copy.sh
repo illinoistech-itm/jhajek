@@ -33,6 +33,9 @@ aws elbv2 create-target-group \
     --target-type instance \
     --vpc-id $VPCID
 
+# Register target with the created target group
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/register-targets.html
+
 # create AWS elbv2 load-balancer
 aws elbv2 create-load-balancer \
     --name my-load-balancer \
