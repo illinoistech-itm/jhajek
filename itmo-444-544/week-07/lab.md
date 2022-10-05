@@ -74,6 +74,12 @@ These values we will dynamically query for
 * subnet-id (2)
 * vpc-id
 
+### How to filter for state running
+
+`aws ec2 describe-instances --filters Name=instance-state-name,Values=running`
+
+### Grading
+
 I will grade your logic by running it with my account configuration information, no hard-coded values.
 
 ### install-env.sh
