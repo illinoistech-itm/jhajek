@@ -76,7 +76,7 @@ These values we will dynamically query for
 
 ### How to filter for state running
 
-`aws ec2 describe-instances --filters Name=instance-state-name,Values=running`
+`aws ec2 describe-instances --filters Name=instance-state-name,Values=running` and can be combined with Queries.  Filters filter your results, query is what you ask Amazon to select for you.
 
 ### Grading
 
