@@ -1,10 +1,10 @@
 # Exercises - Chapter 04 Application Architecture
 
-1. Describe the single-machine, three-tier, and four-tier web application architectures.
+1. Describe the single-machine, three-tier, and four-tier web application architectures in detail.
 
 2. Describe how a single-machine web server, which uses a database to generate content, might evolve to a three-tier web server. How would this be done with minimal downtime?
 
-3. Describe the common web service architectures, in order from smallest to largest.
+3. Describe the common web service architectures, in order from smallest to largest (hint 4 of them remember the Cloud Scale or Cloud tier as number 4).
 
 4. Describe how different local load balancer types work and what their pros and cons are. You may choose to make a comparison chart.
 
@@ -18,8 +18,4 @@
 
 9. What is a message bus architecture and how might one be used?
 
-10. What is an SOA?
-
-11. Why are SOAs loosely coupled?
-
-12. Who was Christopher Alexander and what was his contribution to architecture?
+10. Who was Christopher Alexander and what was his contribution to architecture?

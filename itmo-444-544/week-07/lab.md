@@ -2,42 +2,54 @@
 
 ## Objectives
 
-* Install and Configure our NodeJS application allowing uploading of images
-* Create, install, and deploy a MariaDB database using Amazon RDS
-* Create and deploy additional storage using Amazon Elastic Block Storage
-* Create and deploy S3 based bucket storage
-* Clone an application from your private GitHub repo into an EC2 instance
-* Destroy all resources via single shell script -- using queries and filters to dynamically discover your resources
-* **Graduates** - Use the IAM profile to grant your EC2 instance permission to use other AWS resources on your behalf
+* Create and Implement logic to create and destroy a cloud-native three tier web-application
+* Deploy and demonstrate the concept of auto-scaling groups in relation to load-balancing
+* Integrate and discuss the nature of AWS RDS
+* Discuss the nature of Cloud Native state and demonstrate the concept using RDS Read-Replicas
+* Implement AWS query filters
 
 ## Outcomes
 
-At the conclusion of this 2-week lab you will have successfully deployed and destroyed a single-tier cloud application via the AWS CLI and using positional parameters in a shell script.  You will also experience using IAM profiles to create least privileges.  You will have configured your application to use AWS CLI Filters and Queries to retrieve dynamic data about ephemeral instances.
+At the conclusion of this Lab you will have successfully created and destroyed a cloud native three-tier application via the AWS CLI using positional parameters in a shell script. You will have deployed and interfaced with the concept of state in deploying Relational Database Services with Read-Replicas. Finally you will have concluded your cloud native development by working with Auto-Scaling groups in conjunction with load-balancers.
 
 ## Assumptions
 
 For this assignment you can make these assumptions
 
-* Start by copying any code from lab week-06 directly into week-07 and work from there
-* Add the filename `arguments.txt` to your `.gitignore` file
-* In this initial version we will hard-code the database password
+* Start by copying your code from week-06 into your week-07 directory
+  * `create-env.sh`, `destroy-env.sh`, and `install-env.sh`
+* We will all be using `us-east-2` as our default region - update this if needed in your `aws configure`
+* That the access keys are already created and not needed in this script
+* That the security-group has been already created and all of the proper ports are open
 
 ## Deliverable
 
-Create a folder named: week-06 under your class folder in the provided private repo. In the folder there will be three shell scripts:
+Create a folder named: week-07 under your class folder in the provided private repo. In the folder there will be three shell scripts. There will be modifications from your week-06 code, more features to add and some to remove. Try no to leave old code commented out in your week-07 folder.
 
 * A script named: `create-env.sh`
-  * This script will create an EC2 instance
-* A script named: `install-env.sh`
-  * This script installs an NodeJS ExpressJS server on launch
+  * In addition to the previous weeks requirements, you will need to deploy the following:
+  * 1 RDS instance
+    * size `db.t3.micro`
+    * engine `mariadb`
+    * master-user-password `cluster168`
+    * master username `wizard`
+    * --db-name `customers`
+  * Create 1 RDS read-replica
+  * One auto-scaling group
+    * 1 launch configuration
+    * Min 2, max 5, desired 3
 * A script named: `destroy-env.sh`
-  * This script will terminate all infrastructure you have created
+  * This script will terminate **all** infrastructure you have created and **must work**.
 
 ### create-env.sh
 
-This is shell script will take commandline input dynamically via positional parameters ($1 $2 $3 and so on) via a file named `arguments.txt`.  For a refresh on positional parameters [see my text book](https://github.com/jhajek/Linux-text-book-part-1/releases/tag/2021-09-29 "Link to Linux Textbook") starting on page 179 PDF.
+This is shell script will take commandline input dynamically via positional parameters ($1 $2 $3 and so on) via a file named `arguments.txt`. For a refresh on positional parameters [see my text book](https://github.com/jhajek/Linux-text-book-part-1/releases/tag/2021-09-29 "Link to Linux Textbook") starting on page 179 PDF.
 
-```./install-env.sh $(<arguments.txt)```
+You can access positional parameters after `$9` by using `${10}`. You can hard code the user-data flag to be the value: `file://install-env.sh`
+
+Run your script in this fashion:
+
+```./create-env.sh $(<arguments.txt)```
 
 ### arguments.txt
 
@@ -45,26 +57,28 @@ This is where you will pass the arguments (space delimited) as follows (order is
 
 * image-id
 * instance-type
-* count
-* subnet-id
 * key-name
 * security-group-ids
-* user-data
+* count (3)
+* availability-zone
+* elb name
+* target group name
+* auto-scaling group name
+* launch configuration name
+* db instance identifier (database name)
+* db instance identifier (for read-replica), append *-rpl*
+
+These values we will dynamically query for
+
+* subnet-id (1)
+* subnet-id (2)
+* vpc-id
 
 I will grade your logic by running it with my account configuration information, no hard-coded values.
 
 ### install-env.sh
 
 This will contain the same content as last week's assignment:
-
-```bash
-#!/bin/bash
-
-sudo apt-get update
-sudo apt-get install -y apache2
-# Or if you would like to do nginx you can do that 
-# sudo apt-get install y nginx
-```
 
 ### destroy-env.sh
 
@@ -74,4 +88,6 @@ Using AWS CLI v2 filters filter the instance you created and destroy it.  A sing
 
 ## Final Deliverable
 
-Submit the URL to the week-06 folder to Blackboard.  Your week-06 repo will contain all three shell scripts but not the **arguments.txt** file.
+**Note** the database launches and destroys will begin to take upwards of 5-15 minutes, meaning that each deploy with waiters could get to be 5-20 mins. Plan accordingly.
+
+Submit the URL to the week-07 folder to Blackboard. Your week-06 repo will contain all three shell scripts but not the **arguments.txt** file (add arguments.txt to your `.gitignore`)
