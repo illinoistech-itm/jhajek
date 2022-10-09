@@ -24,7 +24,7 @@ sequenceDiagram
     Host B-->>Host A: TCP SEQ X ACK 120 Len 0
 ```
 
-What happens if the first packet,seq 92 ACK never makes it back to Host A? What does the Host B do with the already received 8 bytes?
+What happens if the first packet, seq 92 ACK, never makes it back to Host A? What does the Host B do with the already received 8 bytes?
 
 ## Out of Order TCP Segment Arrival?
 
