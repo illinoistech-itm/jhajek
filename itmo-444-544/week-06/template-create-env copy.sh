@@ -25,7 +25,7 @@ VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
 # Need to launch 3 Ec2 instances. Create a target group, register EC2 instances with target group.  Attach Target group to Load balancer - via a listerner we will route requests via the LB to our instances in the TG
 
 # Launch 3 EC2 instnaces 
-EC2IDS=$(aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count $5 --placement $6 --user-data file://install-env.sh --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running)
+EC2IDS=$(aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count $5 --placement $6 --user-data file://install-env.sh --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running --no-cli-pager)
 
 echo "EC2IDS content: $EC2IDS"
 
@@ -43,7 +43,7 @@ TGARN=$(aws elbv2 create-target-group --name $8 --protocol HTTP --port 80 --targ
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/register-targets.html
 echo "Attaching EC2 targets to Target Group"
 # Assignes the value of $EC2IDS and places each element (seperated by a space) into an array element
-EC2IDS=($EC2IDSARRAY)
+EC2IDSARRAY=($EC2IDS)
 
 for EC2ID in ${EC2IDSARRAY[@]};
 do
@@ -53,19 +53,18 @@ echo "Targets are registered"
 
 # create AWS elbv2 load-balancer
 echo "creating load balancer"
-ELBARN=$(aws elbv2 create-load-balancer --name $7 --subnets $SUBNET2A $SUBNET2B --query='LoadBalancers[*].LoadBalancerArn')
+ELBARN=$(aws elbv2 create-load-balancer --security-groups $4 --name $7 --subnets $SUBNET2A $SUBNET2B --query='LoadBalancers[*].LoadBalancerArn')
 
 # AWS elbv2 wait for load-balancer available
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/load-balancer-available.html
-aws elbv2 wait load-balancer-available --load-balancer-arns arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188
-
+echo "waiting for load balancer to be available"
+aws elbv2 wait load-balancer-available --load-balancer-arns $ELBARN
+echo "Load balancer available"
 # create AWS elbv2 listener for HTTP on port 80
 #https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/create-listener.html
-aws elbv2 create-listener \
-    --load-balancer-arn arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188 \
-    --protocol HTTP \
-    --port 80 \
-    --default-actions Type=forward,TargetGroupArn=arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067
+aws elbv2 create-listener --load-balancer-arn $ELBARN --protocol HTTP --port 80 --default-actions Type=forward,TargetGroupArn=$TGARN
 
 # Retreive ELBv2 URL via aws elbv2 describe-load-balancers --query and print it to the screen
+#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/describe-load-balancers.html
+URL=$(aws elbv2 describe-load-balancers --output=json --load-balancer-arns $ELBARN --query='LoadBalancers[*].DNSName')
 echo $URL
