@@ -11,11 +11,14 @@
 # $7 elb name
 # $8 target group name
 ######################################################################
-
 # Tasks to accomplish
 
 # Get Subnet 1 ID
 # Get Subnet 2 ID
+SUBNET2A=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=
+availability-zone,Values=us-east-2a")
+SUBNET2B=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=
+availability-zone,Values=us-east-2b")
 # Get VPCID
 VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
 
