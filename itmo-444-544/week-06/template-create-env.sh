@@ -27,7 +27,7 @@ VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
 # Need to launch 3 Ec2 instances. Create a target group, register EC2 instances with target group.  Attach Target group to Load balancer - via a listerner we will route requests via the LB to our instances in the TG
 
 # Launch 3 EC2 instnaces 
-EC2IDS=$(aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count $5 --placement $6 --user-data file://install-env.sh --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running --no-cli-pager)
+EC2IDS=$(aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count $5 --placement $6 --user-data file://install-env.sh --query='Reservations[*].Instances[*].InstanceId' --filters Name=instance-state-name,Values=pending,running --no-cli-pager)
 
 echo "EC2IDS content: $EC2IDS"
 
