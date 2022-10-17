@@ -35,26 +35,29 @@ echo "EC2IDS content: $EC2IDS"
 echo "Waiting for instances to be in running state."
 aws ec2 wait instance-running --instance-ids $EC2IDS
 
+echo "Creating target group: $8"
 # Create AWS elbv2 target group (use default values for health-checks)
-aws elbv2 create-target-group \
-    --name my-targets \
-    --protocol HTTP \
-    --port 80 \
-    --target-type instance \
-    --vpc-id $VPCID
+TGARN=$(aws elbv2 create-target-group --name $8 --protocol HTTP --port 80 --target-type instance --vpc-id $VPCID --query="TargetGroups[*].TargetGroupArn")
 
-# Register target with the created target group
+# Register targets with the created target group
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/register-targets.html
+echo "Attaching EC2 targets to Target Group"
+# Assignes the value of $EC2IDS and places each element (seperated by a space) into an array element
+EC2IDS=($EC2IDSARRAY)
+
+for EC2ID in ${EC2IDSARRAY[@]};
+do
+aws elbv2 register-targets --target-group-arn $TGARN --targets Id=$EC2ID
+done
+echo "Targets are registered"
 
 # create AWS elbv2 load-balancer
-aws elbv2 create-load-balancer \
-    --name my-load-balancer \
-    --subnets subnet-b7d581c0 subnet-8360a9e7
+echo "creating load balancer"
+ELBARN=$(aws elbv2 create-load-balancer --name $7 --subnets $SUBNET2A $SUBNET2B --query='LoadBalancers[*].LoadBalancerArn')
 
 # AWS elbv2 wait for load-balancer available
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/load-balancer-available.html
-aws elbv2 wait load-balancer-available \
-    --load-balancer-arns arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188
+aws elbv2 wait load-balancer-available --load-balancer-arns arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188
 
 # create AWS elbv2 listener for HTTP on port 80
 #https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/create-listener.html
