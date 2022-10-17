@@ -25,13 +25,15 @@ VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
 # Need to launch 3 Ec2 instances. Create a target group, register EC2 instances with target group.  Attach Target group to Load balancer - via a listerner we will route requests via the LB to our instances in the TG
 
 # Launch 3 EC2 instnaces 
-EC2IDS=$(aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count $5 --placement $6 --user-data file://install-env.sh --query='Reservations[*].Instances[*].InstanceId --filter Name=instance-state-name,Values=pending,running)
+EC2IDS=$(aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count $5 --placement $6 --user-data file://install-env.sh --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running)
+
+echo "EC2IDS content: $EC2IDS"
 
 # Run EC2 wait until EC2 instances are in the running state
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/wait/index.html
 
 echo "Waiting for instances to be in running state."
-aws ec2 wait instance-running --instance-ids 
+aws ec2 wait instance-running --instance-ids $EC2IDS
 
 # Create AWS elbv2 target group (use default values for health-checks)
 aws elbv2 create-target-group \
