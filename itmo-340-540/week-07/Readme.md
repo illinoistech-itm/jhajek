@@ -26,9 +26,9 @@ i)
 i)
 8) True or False (if false correct the statement to be true): Suppose Host A sends one segment with sequence number 38 and 4  bytes of data over a TCP connection to Host B. In this same segment, the  acknowledgment number is necessarily 42.  
 i)
-9) True or False (if false correct the statement to be true): Suppose Host A sends two TCP segments back to back to Host B over a  TCP connection. The first segment has sequence number 90; the second has  sequence number 110. How much data is in the first segment?  
+9) Suppose Host A sends two TCP segments back to back to Host B over a  TCP connection. The first segment has sequence number 90; the second has  sequence number 110. How much data is in the first segment?  
 i)
-10) True or False (if false correct the statement to be true): Suppose that the first segment is lost but the second segment arrives at B. In the acknowledgment that Host B sends to Host A, what will be the acknowledgment number?  
+10) Suppose that the first segment is lost but the second segment, of the previous question, arrives at B. In the acknowledgment that Host B sends to Host A, what will be the acknowledgment number?  
 i)
 11) Fill in the blank: The Transport layer provides reliable ____________ between two logical hosts over an unreliable network.
 
