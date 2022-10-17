@@ -28,8 +28,11 @@ VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
 
 # Launch 3 EC2 instnaces 
 # --placement $6
-EC2IDS=$(aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count $5  --user-data file://install-env.sh --query='Reservations[*].Instances[*].InstanceId' --no-cli-pager)
+echo "launching EC2 instances of count: $5" 
+aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count $5  --user-data file://install-env.sh --no-cli-pager
 
+# This code will filter for the instance IDs
+EC2IDS=$(aws ec2 describe-instances --filters Name=instance-state-name,Values=running,pending --query='Reservations[*].Instances[*].InstanceId')
 echo "EC2IDS content: $EC2IDS"
 
 # Run EC2 wait until EC2 instances are in the running state
