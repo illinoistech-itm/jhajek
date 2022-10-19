@@ -49,6 +49,24 @@ VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
 
 aws autoscaling create-launch-configuration --launch-configuration-name ${10} --image-id $1 --instance-type $2 --key-name $3 --security-groups $4 --user-data file://install-env.sh
 
+echo "Creating target group: $8"
+# Create AWS elbv2 target group (use default values for health-checks)
+TGARN=$(aws elbv2 create-target-group --name $8 --protocol HTTP --port 80 --target-type instance --vpc-id $VPCID --query="TargetGroups[*].TargetGroupArn")
+
+# create AWS elbv2 load-balancer
+echo "creating load balancer"
+ELBARN=$(aws elbv2 create-load-balancer --security-groups $4 --name $7 --subnets $SUBNET2A $SUBNET2B --query='LoadBalancers[*].LoadBalancerArn')
+
+# AWS elbv2 wait for load-balancer available
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/load-balancer-available.html
+echo "waiting for load balancer to be available"
+aws elbv2 wait load-balancer-available --load-balancer-arns $ELBARN
+echo "Load balancer available"
+
+# create AWS elbv2 listener for HTTP on port 80
+#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/create-listener.html
+aws elbv2 create-listener --load-balancer-arn $ELBARN --protocol HTTP --port 80 --default-actions Type=forward,TargetGroupArn=$TGARN
+
 # Create autoscaling group
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/create-auto-scaling-group.html
 
@@ -57,16 +75,6 @@ aws autoscaling create-auto-scaling-group --auto-scaling-group-name ${9} --launc
 # This code will filter for the instance IDs
 EC2IDS=$(aws ec2 describe-instances --filters Name=instance-state-name,Values=running,pending --query='Reservations[*].Instances[*].InstanceId')
 echo "EC2IDS content: $EC2IDS"
-
-# Run EC2 wait until EC2 instances are in the running state
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/wait/index.html
-
-echo "Waiting for instances to be in running state."
-aws ec2 wait instance-running --instance-ids $EC2IDS
-
-echo "Creating target group: $8"
-# Create AWS elbv2 target group (use default values for health-checks)
-TGARN=$(aws elbv2 create-target-group --name $8 --protocol HTTP --port 80 --target-type instance --vpc-id $VPCID --query="TargetGroups[*].TargetGroupArn")
 
 # Register targets with the created target group
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/register-targets.html
@@ -80,18 +88,12 @@ aws elbv2 register-targets --target-group-arn $TGARN --targets Id=$EC2ID
 done
 echo "Targets are registered"
 
-# create AWS elbv2 load-balancer
-echo "creating load balancer"
-ELBARN=$(aws elbv2 create-load-balancer --security-groups $4 --name $7 --subnets $SUBNET2A $SUBNET2B --query='LoadBalancers[*].LoadBalancerArn')
 
-# AWS elbv2 wait for load-balancer available
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/load-balancer-available.html
-echo "waiting for load balancer to be available"
-aws elbv2 wait load-balancer-available --load-balancer-arns $ELBARN
-echo "Load balancer available"
-# create AWS elbv2 listener for HTTP on port 80
-#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/create-listener.html
-aws elbv2 create-listener --load-balancer-arn $ELBARN --protocol HTTP --port 80 --default-actions Type=forward,TargetGroupArn=$TGARN
+# Run EC2 wait until EC2 instances are in the running state
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/wait/index.html
+
+echo "Waiting for instances to be in running state."
+aws ec2 wait instance-running --instance-ids $EC2IDS
 
 # Retreive ELBv2 URL via aws elbv2 describe-load-balancers --query and print it to the screen
 #https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/describe-load-balancers.html
