@@ -35,11 +35,19 @@
 
 # Get Subnet 1 ID
 # Get Subnet 2 ID
-# Get VPCID
+SUBNET2A=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=
+availability-zone,Values=us-east-2a")
+SUBNET2B=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=
+availability-zone,Values=us-east-2b")
 VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
 
+# Create Launch Configuration
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/create-launch-configuration.html
+
+aws autoscaling create-launch-configuration --launch-configuration-name ${10} --image-id $1 --instance-type $2 --key-name $3 --security-groups $4 --user-data file://install-env.sh
+
 # Launch 3 EC2 instnaces 
-aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --user-data file://install-env.sh
+#aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --user-data file://install-env.sh
 
 # Run EC2 wait until EC2 instances are in the running state
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/wait/index.html

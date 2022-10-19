@@ -16,7 +16,7 @@ i)
 i)  
 1. List the available residential access technologies in your city. For each  type of access, provide the advertised downstream rate, upstream rate, and  monthly price.  
 i)
-1. What is the transmission rate of Ethernet LANs?  
+1. What are the ranges of transmission rate for Ethernet LANs?  
 i)
 1. What are some of the physical media that Ethernet can run over?  
 i)
@@ -30,7 +30,7 @@ i)
 i)
 1. Why will two ISPs at the same level of the hierarchy often peer with each other? How does an IXP earn money?  
 i)
-1. Some content providers have created their own networks. Describe Google’s  network. What motivates content providers to create these networks?  
+1. Some content providers have created their own networks. Describe what motivates content providers, like Netflix and Google, to create these networks?  
 i)
 1. Consider sending a packet from a source host to a destination host over a fixed route. List the delay components in the end-to-end delay. Which of these delays are constant and which are variable?  
 i)

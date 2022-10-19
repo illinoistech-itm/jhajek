@@ -46,7 +46,7 @@ i)
 i)
 18. Can a client open three or more simultaneous connections with a given server?  
 i)
-19. Either a server or a client may close a transport connection between them if either one detects the connection has been idle for some time. Is it possible that one side starts closing a connection while the other side is  transmitting data via this connection? Explain.
+19. Either a server or a client may close a transport connection between them if either one detects the connection has been idle for some time. Is it possible that one side starts closing a connection while the other side is transmitting data via this connection? Explain.
 i)
 
 ## Deliverables
