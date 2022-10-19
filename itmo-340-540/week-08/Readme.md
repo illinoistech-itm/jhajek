@@ -18,7 +18,7 @@ i)
 i)
 4. What are the two main values we see in the protocol field of a IP datagram?  
 i)
-5. What kind of decimal notation does IPv6 use?  
+5. What kind of ~~decimal~~ numerical notation does IPv6 use (binary, decimal, or hexadecimal)?  
 i)
 6. What is the value range for each octet of an IPv4 address?  
 i)
