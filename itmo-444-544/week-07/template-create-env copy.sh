@@ -14,6 +14,9 @@
 # ${10} launch configuration name
 # ${11} db instance identifier (database name)
 # ${12} db instance identifier (for read-replica), append *-rpl*
+# ${13} min-size = 2
+# ${14} max-size = 5
+# ${15} desired-capacity = 3
 ######################################################################
 
 ######################################################################
@@ -46,40 +49,51 @@ VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
 
 aws autoscaling create-launch-configuration --launch-configuration-name ${10} --image-id $1 --instance-type $2 --key-name $3 --security-groups $4 --user-data file://install-env.sh
 
-# Launch 3 EC2 instnaces 
-#aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --user-data file://install-env.sh
+# Create autoscaling group
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/create-auto-scaling-group.html
+
+aws autoscaling create-auto-scaling-group --auto-scaling-group-name ${9} --launch-configuration-name ${10} --min-size ${13} --max-size ${14} --desired-capacity ${15} --target-group-arns $TGARN  --health-check-type ELB --health-check-grace-period 600 
+
+# This code will filter for the instance IDs
+EC2IDS=$(aws ec2 describe-instances --filters Name=instance-state-name,Values=running,pending --query='Reservations[*].Instances[*].InstanceId')
+echo "EC2IDS content: $EC2IDS"
 
 # Run EC2 wait until EC2 instances are in the running state
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/wait/index.html
 
-# Create AWS elbv2 target group (use default values for health-checks)
-aws elbv2 create-target-group \
-    --name my-targets \
-    --protocol HTTP \
-    --port 80 \
-    --target-type instance \
-    --vpc-id $VPCID
+echo "Waiting for instances to be in running state."
+aws ec2 wait instance-running --instance-ids $EC2IDS
 
-# Register target with the created target group
+echo "Creating target group: $8"
+# Create AWS elbv2 target group (use default values for health-checks)
+TGARN=$(aws elbv2 create-target-group --name $8 --protocol HTTP --port 80 --target-type instance --vpc-id $VPCID --query="TargetGroups[*].TargetGroupArn")
+
+# Register targets with the created target group
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/register-targets.html
+echo "Attaching EC2 targets to Target Group"
+# Assignes the value of $EC2IDS and places each element (seperated by a space) into an array element
+EC2IDSARRAY=($EC2IDS)
+
+for EC2ID in ${EC2IDSARRAY[@]};
+do
+aws elbv2 register-targets --target-group-arn $TGARN --targets Id=$EC2ID
+done
+echo "Targets are registered"
 
 # create AWS elbv2 load-balancer
-aws elbv2 create-load-balancer \
-    --name my-load-balancer \
-    --subnets subnet-b7d581c0 subnet-8360a9e7
+echo "creating load balancer"
+ELBARN=$(aws elbv2 create-load-balancer --security-groups $4 --name $7 --subnets $SUBNET2A $SUBNET2B --query='LoadBalancers[*].LoadBalancerArn')
 
 # AWS elbv2 wait for load-balancer available
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/load-balancer-available.html
-aws elbv2 wait load-balancer-available \
-    --load-balancer-arns arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188
-
+echo "waiting for load balancer to be available"
+aws elbv2 wait load-balancer-available --load-balancer-arns $ELBARN
+echo "Load balancer available"
 # create AWS elbv2 listener for HTTP on port 80
 #https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/create-listener.html
-aws elbv2 create-listener \
-    --load-balancer-arn arn:aws:elasticloadbalancing:us-west-2:123456789012:loadbalancer/app/my-load-balancer/50dc6c495c0c9188 \
-    --protocol HTTP \
-    --port 80 \
-    --default-actions Type=forward,TargetGroupArn=arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067
+aws elbv2 create-listener --load-balancer-arn $ELBARN --protocol HTTP --port 80 --default-actions Type=forward,TargetGroupArn=$TGARN
 
 # Retreive ELBv2 URL via aws elbv2 describe-load-balancers --query and print it to the screen
+#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/describe-load-balancers.html
+URL=$(aws elbv2 describe-load-balancers --output=json --load-balancer-arns $ELBARN --query='LoadBalancers[*].DNSName')
 echo $URL
