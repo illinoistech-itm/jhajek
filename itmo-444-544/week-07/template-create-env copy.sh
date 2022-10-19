@@ -72,29 +72,6 @@ aws elbv2 create-listener --load-balancer-arn $ELBARN --protocol HTTP --port 80 
 
 aws autoscaling create-auto-scaling-group --auto-scaling-group-name ${9} --launch-configuration-name ${10} --min-size ${13} --max-size ${14} --desired-capacity ${15} --target-group-arns $TGARN  --health-check-type ELB --health-check-grace-period 600 
 
-# This code will filter for the instance IDs
-EC2IDS=$(aws ec2 describe-instances --filters Name=instance-state-name,Values=running,pending --query='Reservations[*].Instances[*].InstanceId')
-echo "EC2IDS content: $EC2IDS"
-
-# Register targets with the created target group
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/register-targets.html
-echo "Attaching EC2 targets to Target Group"
-# Assignes the value of $EC2IDS and places each element (seperated by a space) into an array element
-EC2IDSARRAY=($EC2IDS)
-
-for EC2ID in ${EC2IDSARRAY[@]};
-do
-aws elbv2 register-targets --target-group-arn $TGARN --targets Id=$EC2ID
-done
-echo "Targets are registered"
-
-
-# Run EC2 wait until EC2 instances are in the running state
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/wait/index.html
-
-echo "Waiting for instances to be in running state."
-aws ec2 wait instance-running --instance-ids $EC2IDS
-
 # Retreive ELBv2 URL via aws elbv2 describe-load-balancers --query and print it to the screen
 #https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/describe-load-balancers.html
 URL=$(aws elbv2 describe-load-balancers --output=json --load-balancer-arns $ELBARN --query='LoadBalancers[*].DNSName')
