@@ -4,7 +4,6 @@
 
 * Demonstrate how to convert number between decimal, hex, and binary
 * Demonstrate the application of Subnet Masks and CIDR blocks
-* 
 
 ### Questions
 
