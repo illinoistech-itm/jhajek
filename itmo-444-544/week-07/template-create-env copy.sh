@@ -70,6 +70,8 @@ aws elbv2 create-listener --load-balancer-arn $ELBARN --protocol HTTP --port 80 
 # Create autoscaling group
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/create-auto-scaling-group.html
 
+echo "Launch configuration name is: ${10}"
+
 aws autoscaling create-auto-scaling-group --auto-scaling-group-name ${9} --launch-configuration-name ${10} --min-size ${13} --max-size ${14} --desired-capacity ${15} --target-group-arns $TGARN  --health-check-type ELB --health-check-grace-period 600 
 
 # Retreive ELBv2 URL via aws elbv2 describe-load-balancers --query and print it to the screen
