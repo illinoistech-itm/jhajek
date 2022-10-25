@@ -23,33 +23,38 @@ The list of requirements will be determined by your team and as part of the proj
 
 For this sprint, there will be 5 team roles. For the teams with 4 - you can combine UI/UX with Dev2 and for the team with 6 you will add a Dev3. While these roles call for each person to focus an area -- **these roles are not exclusive**. Anyone can submit code for instance anyone can file a bug. The roles must rotate per sprint. This is an artificial inefficiency that I am introducing to allow all members to participate and experience each role.
 
-* Project Manager
-  * In charge of making sure that tasks are assigned, artifacts are being delivered, and project boards are updated accordingly.
-  * Project manager must actively manage the project, you are not the passive receiver of information the night before
-  * Must clearly document the state of the project at the start of the sprint so all of the work can be contrasted at the end
-  * Project Manager must make close recordings of what has changed from sprint to sprint
-  * Project Manager must also describe the task estimation process and describe what was completed and/or not completed
-  * Must manage the team members and facilitate communication and individual progress outside of class times
-* Developer 1 , 2, and 3
-  * Programmers responsible for implementing code, coordinating with the UI/UX developers and IT Operations to deploy code.
-  * Work with the developers to implement the designed UI/UX in code and CSS
-  * Implementation must match the design
-  * If your UI/UX design is incomplete need to complete it before any work can progress
-  * UI/UX design is a complete master blueprint of what your finished site will look like
-  * Help coordinate development into your team repo and using the provisioner scripts deploy your source code to your Vagrant Box environment
-* IT Orchestration and Security
-  * Responsible for designing and deploying all virtualized infrastructure templates (Vagrant and Packer)
-  * Responsible for working with Developers to configure login authentication
-  * Responsible for working with the team to coordinate the automated building of the entire application
-  * Responsible for creating any shell scripts required for automated deployment
-  * Responsible for training and teaching internal group members for deployment of infrastructure
-  * Responsible for noting and explaining all secrets management, firewall rules, and API security implemented
+Project Manager
+
+* In charge of making sure that tasks are assigned, artifacts are being delivered, and project boards are updated accordingly.
+* Project manager must actively manage the project, you are not the passive receiver of information the night before
+* Must clearly document the state of the project at the start of the sprint so all of the work can be contrasted at the end
+* Project Manager must make close recordings of what has changed from sprint to sprint
+* Project Manager must also describe the task estimation process and describe what was completed and/or not completed
+* Must manage the team members and facilitate communication and individual progress outside of class times
+
+Developer 1 , 2, and 3
+
+* Programmers responsible for implementing code, coordinating with the UI/UX developers and IT Operations to deploy code.
+* Work with the developers to implement the designed UI/UX in code and CSS
+* Implementation must match the design
+* If your UI/UX design is incomplete need to complete it before any work can progress
+* UI/UX design is a complete master blueprint of what your finished site will look like
+* Help coordinate development into your team repo and using the provisioner scripts deploy your source code to your Vagrant Box environment
+
+IT Orchestration and Security
+
+* Responsible for designing and deploying all virtualized infrastructure templates (Vagrant and Packer)
+* Responsible for working with Developers to configure login authentication
+* Responsible for working with the team to coordinate the automated building of the entire application
+* Responsible for creating any shell scripts required for automated deployment
+* Responsible for training and teaching internal group members for deployment of infrastructure
+* Responsible for noting and explaining all secrets management, firewall rules, and API security implemented
 
 ### Team Setup Items
 
 In the team repo their will need to be a few additional folders added. Keep the team repo clean -- add your code and scripts into the proper folder -- do not place them at the root of the repo.
 
-![*Git Seminar by Dr. Karl Stolley*](https://www.youtube.com/watch?v=ap7rqcD8uPs "Git Seminar by Dr. karl Stolley")
+[*Git Seminar by Dr. Karl Stolley*](https://www.youtube.com/watch?v=ap7rqcD8uPs "Git Seminar by Dr. karl Stolley")
 
 * A folder named: **code**
   * This will contain all application source code
