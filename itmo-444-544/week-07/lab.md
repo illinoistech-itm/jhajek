@@ -34,7 +34,7 @@ Create a folder named: week-07 under your class folder in the provided private r
     * master-user-password `cluster168`
     * master username `wizard`
     * --db-name `customers`
-  * Create 1 RDS read-replica
+  * ~~Create 1 RDS read-replica~~
   * One auto-scaling group
     * 1 launch configuration
     * Min 2, max 5, desired 3
