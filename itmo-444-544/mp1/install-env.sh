@@ -11,14 +11,14 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-ge
 # systemd service handler).
 # <https://pm2.keymetrics.io/docs/usage/quick-start/>. This will require
 # the install of PM2 via npm as well.
-
+cd /home/ubuntu
 sudo -u ubuntu npm install express aws-sdk multer multer-s3 pm2 
 
 # Command to clone your private repo via SSH usign the Private key 
 ####################################################################
 # Note - change "hajek.git" to be your private repo name (hawk ID) #
 ####################################################################
-cd /home/ubuntu
+
 sudo -u ubuntu git clone git@github.com:illinoistech-itm/hajek.git
 
 # Start the nodejs app where it is located via PM2
