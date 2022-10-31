@@ -47,10 +47,10 @@ Session # | Date | Topic | Reading |
 17| 10/17 | Lab 4 | -
 18| 10/19 | Lab 4 | -
 19| 10/24 | Lab 5 | -
-20| 10/26 | Lab 5 | Mini Project 1 Assigned
-21| 10/31 | Mini Project 1 | -
-22| 11/02 | Mini Project 1 | MP1 Due MP2 Assigned
-23| 11/07 | Mini Project 2 | -
+20| 10/26 | Lab 5 | -
+21| 10/31 | Mini Project 1 | Mini Project 1 Assigned
+22| 11/02 | Mini Project 1 | -
+23| 11/07 | Mini Project 2 | MP1 Due MP2 Assigned
 24| 11/09 | Mini Project 2 | -
 25| 11/14 | Mini Project 2 | MP2 Due
 26| 11/16 | Mini Project 2 | -
