@@ -36,8 +36,8 @@ Create a folder named: `mp1` under your class folder in the provided private rep
   * 1 RDS instance
     * size `db.t3.micro`
     * engine `mariadb`
-    * master-user-password `cluster168`
-    * master username `wizard`
+    * ~~master-user-password `cluster168`~~
+    * ~~master username `wizard`~~
     * --db-name `customers`
   * Create 1 RDS read-replica
   * One auto-scaling group
