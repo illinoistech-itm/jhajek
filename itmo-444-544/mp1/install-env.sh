@@ -18,6 +18,7 @@ sudo -u ubuntu npm install express aws-sdk multer multer-s3 pm2
 ####################################################################
 # Note - change "hajek.git" to be your private repo name (hawk ID) #
 ####################################################################
+cd /home/ubuntu
 sudo -u ubuntu git clone git@github.com:illinoistech-itm/hajek.git
 
 # Start the nodejs app where it is located via PM2
