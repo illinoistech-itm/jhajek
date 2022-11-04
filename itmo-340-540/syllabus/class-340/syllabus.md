@@ -38,10 +38,10 @@ Session # | Date | Topic | Reading |
 06| 09/28 | Transport Layer | -
 07| 10/05 | The Network Layer Part I | -
 08| 10/13 | The Network Layer Part II | -
-09| 10/19 | Midterm Exam | -
-10| 10/26 | The Link Layer and LANs | -
-11| 11/02 | Wireless and Mobile Networks part I | -
-12| 11/09 | Wireless and Mobile Networks part II | -
+09| 10/19 | ~~Midterm Exam~~ Network Layer Data Plane | -
+10| 10/26 | ~~The Link Layer and LANs~~ Midterm | -
+11| 11/02 | ~~Wireless and Mobile Networks part I~~ Network Layer Control Plane | -
+12| 11/09 | ~~Wireless and Mobile Networks part II~~ The Link Layer and LANs | -
 13| 11/16 | Final Project Work and Discussion | -
 14| 11/23 | NA | Thanksgiving Break - No Class | -
 15| 11/30 | Security In Computer Networks | -
