@@ -72,5 +72,5 @@ var id = uuidv4();
 });
 
 app.listen(80, function () {
-    console.log('Amazon s3 file upload app listening on port 3300');
+    console.log('Amazon s3 file upload app listening on port 80');
 });
