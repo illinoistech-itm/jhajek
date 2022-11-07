@@ -106,7 +106,7 @@ These values we will dynamically query for
 * subnet-id (1)
 * subnet-id (2)
 * vpc-id
-* The additional security groups created for RDS ingress and egress
+* ~~The additional security groups created for RDS ingress and egress~~
 
 ### How to filter for state running
 
