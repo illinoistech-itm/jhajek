@@ -91,18 +91,13 @@ This is where you will pass the arguments (space delimited) as follows (order is
 * launch configuration name
 * db instance identifier (database name)
 * db instance identifier (for read-replica), append *-rpl*
-* database engine (use mariadb)
-* db-name (use ~~`customers`~~ `company`)
-* Autoscaling group minimum
-* Autoscaling group maximum
-* Autoscaling group desired
-* ~~ingress security-group name~~
-* ~~egress security-group name~~
+* min-size = 2
+* ${14} max-size = 5
+* desired-capacity = 3
+* Database engine (use mariadb)
+* Database name ( use company )
 * s3 raw bucket name (use initials and -raw)
 * s3 finished bucket name (use initials and -fin)
-* ~~iam-policy-name~~
-* ~~iam-role-name~~
-* ~~db-subnet-group name~~
 * aws secret name
 
 These values we will dynamically query for
