@@ -22,6 +22,7 @@
 # ${18} s3 raw bucket name (use initials and -raw)
 # ${19} s3 finished bucket name (use initials and -fin)
 # ${20} aws secret name
+# ${21} iam-instance-profile
 ######################################################################
 
 ######################################################################

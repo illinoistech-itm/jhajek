@@ -99,6 +99,7 @@ This is where you will pass the arguments (space delimited) as follows (order is
 * s3 raw bucket name (use initials and -raw)
 * s3 finished bucket name (use initials and -fin)
 * aws secret name
+* iam-instance-profile
 
 These values we will dynamically query for
 
