@@ -63,21 +63,22 @@ Run your script in this fashion:
 ### New create-env.sh requirements
 
 * Create 2 S3 buckets
-* Create 2 additional security groups, one for `mariadb` ingress on port 3306 and one for egress on port 3306
-  * Allow access to your `security-group-id`
-  * Attach these security-group-ids as vpc-security-groups on your RDS instances
-* Create IAM profile `.json` for bucket access place the json file in your GitHub repo and name it: `iam.json`
-  * Create JSON IAM code to give write and read to your EC2 instance the raw and finished bucket
-* Update Launch Configuration to have additional security-group for RDS ingress
-* Attach IAM role to the Launch Configuration
-* Create db-subnet-group and add your subnets to this db-subnet
-  * Attach this db-subnet-group to your RDS instances
+* ~~Create 2 additional security groups, one for `mariadb` ingress on port 3306 and one for egress on port 3306~~
+  * ~~Allow access to your `security-group-id`~~
+  * ~~Attach these security-group-ids as vpc-security-groups on your RDS instances~~
+* ~~Create IAM profile `.json` for bucket access place the json file in your GitHub repo and name it: `iam.json`~~
+  * ~~Create JSON IAM code to give write and read to your EC2 instance the raw and finished bucket~~
+* ~~Update Launch Configuration to have additional security-group for RDS ingress~~
+* Attach IAM instance-profile-role to the Launch Configuration
+  * Premake this role using the IAM web console
+* ~~Create db-subnet-group and add your subnets to this db-subnet~~
+  * ~~Attach this db-subnet-group to your RDS instances~~
 * Create an AWS Secret Manager file
-  * use JSON template to enter your secrets for the mariadb file
+  * Use JSON template to enter your secrets for the mariadb.json file
 
 ### arguments.txt
 
-This is where you will pass the arguments (space delimited) as follows (order is **very** important)
+This is where you will pass the arguments (space delimited) as follows (order is **very** important). **Note:** updated arguments.txt order 11/07
 
 * image-id
 * instance-type
@@ -118,7 +119,7 @@ I will grade your logic by running it with my account configuration information,
 
 ### install-env.sh
 
-See provided template for installing Expressjs dependencies
+See provided template for installing expressJS dependencies
 
 ### destroy-env.sh
 
@@ -133,4 +134,3 @@ Using AWS CLI v2 filters filter the instance you created and destroy it.  A sing
 Submit the URL to the mp1 folder to Blackboard. Your week-06 repo will contain all three shell scripts but not the **arguments.txt** file (add arguments.txt to your `.gitignore`)
 
 Add two screenshots, one of the initial load-balancer site rendering. The other showing the content of the upload in the your raw bucket.  Add these screen captures to your GitHub Repo
-
