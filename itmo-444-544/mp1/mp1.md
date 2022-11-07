@@ -92,7 +92,7 @@ This is where you will pass the arguments (space delimited) as follows (order is
 * db instance identifier (database name)
 * db instance identifier (for read-replica), append *-rpl*
 * min-size = 2
-* ${14} max-size = 5
+* max-size = 5
 * desired-capacity = 3
 * Database engine (use mariadb)
 * Database name ( use company )
