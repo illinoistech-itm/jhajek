@@ -13,15 +13,13 @@ var express = require('express'),
 // https://www.npmjs.com/package/uuid
 const { v4: uuidv4 } = require('uuid');
 
-aws.config.update({
-    region: 'us-east-1'
-});
 
 // initialize an s3 connection object
 var app = express(),
     //s3 = new aws.S3();
-s3 = new S3Client();
-// configure S3 parameters to send to the connection object
+    const REGION = "us-east-1"; //e.g. "us-east-1"
+    // Create an Amazon S3 service client object.
+    const s3 = new S3Client({ region: REGION });
 app.use(bodyParser.json());
 
 ///////////////////////////////////////////////////////////////////////////
