@@ -15,7 +15,7 @@ const { v4: uuidv4 } = require('uuid');
 
 
 // initialize an s3 connection object
-var app = express(),
+var app = express();
     //s3 = new aws.S3();
     const REGION = "us-east-1"; //e.g. "us-east-1"
     // Create an Amazon S3 service client object.
