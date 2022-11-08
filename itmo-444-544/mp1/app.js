@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 var upload = multer({
     storage: multerS3({
         s3: s3,
-        bucket: 'fall2020-jrh',
+        bucket: 'jrh-itmo-raw',
         key: function (req, file, cb) {
             cb(null, file.originalname);
             }
@@ -50,7 +50,7 @@ app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 var fname = req.files[0].originalname;
 // Now we can construct the S3 URL since we already know the structure of S3 URLS and our bucket
 // For this sample I hardcoded my bucket, you can do this or retrieve it dynamically
-var s3url = "https://fall2020-jrh.s3.amazonaws.com/" + fname;
+var s3url = "https://jrh-itmo-raw.s3.amazonaws.com/" + fname;
 // Use this code to retrieve the value entered in the username field in the index.html
 var username = req.body['name'];
 // Use this code to retrieve the value entered in the email field in the index.html
