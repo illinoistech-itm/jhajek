@@ -4,7 +4,7 @@
 
 const { S3Client } = require('@aws-sdk/client-s3');
 var express = require('express'),
-    aws = require('aws-sdk'),
+
     bodyParser = require('body-parser'),
     multer = require('multer'),
     multerS3 = require('multer-s3');
