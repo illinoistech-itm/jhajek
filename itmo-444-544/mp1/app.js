@@ -2,6 +2,7 @@
 // Documentation for JavaScript AWS SDK v3
 // https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html
 
+const { S3Client } = require('@aws-sdk/client-s3');
 var express = require('express'),
     aws = require('aws-sdk'),
     bodyParser = require('body-parser'),
@@ -13,13 +14,13 @@ var express = require('express'),
 const { v4: uuidv4 } = require('uuid');
 
 aws.config.update({
-    region: 'us-east-2'
+    region: 'us-east-1'
 });
 
 // initialize an s3 connection object
 var app = express(),
-    s3 = new aws.S3();
-
+    //s3 = new aws.S3();
+s3 = new S3Client();
 // configure S3 parameters to send to the connection object
 app.use(bodyParser.json());
 
@@ -44,10 +45,11 @@ app.get('/', function (req, res) {
 
 // when some one hits the post button this will happen
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
-
+    
+res.send('Successfully uploaded ' + req.files.length + ' files!')
 // https://www.npmjs.com/package/multer
 // This retrieves the name of the uploaded file
-var fname = req.files[0].originalname;
+//var fname = req.files[0].originalname;
 // Now we can construct the S3 URL since we already know the structure of S3 URLS and our bucket
 // For this sample I hardcoded my bucket, you can do this or retrieve it dynamically
 var s3url = "https://jrh-itmo-raw.s3.amazonaws.com/" + fname;
@@ -62,10 +64,10 @@ var id = uuidv4();
 
 // Write output to the screen
         res.write(s3url + "\n");
-        res.write(username + "\n")
-        res.write(fname + "\n");
-        res.write(email + "\n");
-        res.write(phone + "\n");                
+     //   res.write(username + "\n")
+     //   res.write(fname + "\n");
+     //   res.write(email + "\n");
+     //   res.write(phone + "\n");                
         res.write("File uploaded successfully to Amazon S3 Bucket!" + "\n");
       
         res.end();
