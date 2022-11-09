@@ -29,20 +29,10 @@ For this assignment you can make these assumptions
 
 ## Deliverable
 
-Create a folder named: `mp1` under your class folder in the provided private repo.  Try not to leave uneeded files, samples, or old code commented out in your assignments. Make it clean.
+Create a folder named: `mp2` under your class folder in the provided private repo.  Try not to leave uneeded files, samples, or old code commented out in your assignments. Make it clean.
 
 * A script named: `create-env.sh`
   * In addition to the previous weeks requirements, you will need to deploy the following:
-  * 1 RDS instance
-    * size `db.t3.micro`
-    * engine `mariadb`
-    * ~~master-user-password `cluster168`~~
-    * ~~master username `wizard`~~
-    * --db-name `customers`
-  * Create 1 RDS read-replica
-  * One auto-scaling group
-    * 1 launch configuration
-    * Min 2, max 5, desired 3
 * A script named: `destroy-env.sh`
   * This script will terminate **all** infrastructure you have created and **must work**
 * A script named: `install-env.sh`
@@ -60,23 +50,22 @@ Run your script in this fashion:
 
 ```./create-env.sh $(<arguments.txt)```
 
+### Pre-reqs
+
+* Create a custom profile only allowing read and write access to the raw bucket and read only access to the finished bucket
+* Create your secrets in a file called `create-sec.sh`, run this before create-env.sh, pass the arguments.txt ignore all other values than secret ID
+
 ### New create-env.sh requirements
 
-* Create 2 S3 buckets
-* ~~Create 2 additional security groups, one for `mariadb` ingress on port 3306 and one for egress on port 3306~~
-  * ~~Allow access to your `security-group-id`~~
-  * ~~Attach these security-group-ids as vpc-security-groups on your RDS instances~~
-* ~~Create IAM profile `.json` for bucket access place the json file in your GitHub repo and name it: `iam.json`~~
-  * ~~Create JSON IAM code to give write and read to your EC2 instance the raw and finished bucket~~
-* ~~Update Launch Configuration to have additional security-group for RDS ingress~~
-* Attach IAM instance-profile-role to the Launch Configuration
-  * Premake this role using the IAM web console
-* ~~Create db-subnet-group and add your subnets to this db-subnet~~
-  * ~~Attach this db-subnet-group to your RDS instances~~
-* Create an AWS Secret Manager file
-  * Use JSON template to enter your secrets for the mariadb.json file
+* Deploy a SQL schema to your RDS instances (will be provided)
+  * In the index.html file, provide form fields for name, email, and phone number
+* In the app.js, upon upload of a file, place a record into the database of the transaction - use a UUID for the ID field
+* Implement the creation of a queue via SQS
+  * Place a message on the queue stating the UUID (transaction ID)
+* Create an additional `ec2 run-instances` command to launch an additional single ec2 instance to retrieve and modify our uploaded image 
+  * 
 
-### arguments.txt
+### Arguments.txt
 
 This is where you will pass the arguments (space delimited) as follows (order is **very** important). **Note:** updated arguments.txt order 11/07
 
@@ -101,6 +90,7 @@ This is where you will pass the arguments (space delimited) as follows (order is
 * s3 finished bucket name (use initials and -fin)
 * aws secret name
 * iam-instance-profile
+* sqs name
 
 These values we will dynamically query for
 
