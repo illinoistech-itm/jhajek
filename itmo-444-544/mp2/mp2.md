@@ -62,8 +62,12 @@ Run your script in this fashion:
 * In the app.js, upon upload of a file, place a record into the database of the transaction - use a UUID for the ID field
 * Implement the creation of a queue via SQS
   * Place a message on the queue stating the UUID (transaction ID)
-* Create an additional `ec2 run-instances` command to launch an additional single ec2 instance to retrieve and modify our uploaded image 
-  * 
+* Create an additional `ec2 run-instances` command to launch an additional single ec2 instance to retrieve and modify our uploaded image
+  * You will copy two files into the `/etc/systemd/system` diretory
+  * `check-for-new-objects.timer`
+  * `check-for-new-objects.service`
+* The `.timer` file will execute the `.service` file every two minutes
+  * The `.service` file will run a Python script to check for new messages on the SQS Queue
 
 ### Arguments.txt
 

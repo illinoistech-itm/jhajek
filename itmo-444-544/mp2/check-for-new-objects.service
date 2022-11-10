@@ -1,0 +1,12 @@
+[Unit]
+Description=This is a systemd service file to run a python script to check for new AWS SQS jobs periodicly
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+ExecStart=/usr/bin/python3 /home/ubuntu/check-for-new-objects.py
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

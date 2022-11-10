@@ -1,0 +1,11 @@
+[Unit]
+Description=This will run the check-for-new-objects.service file to check our S3 buckets to see if anything new has been uploaded
+
+[Timer]
+# The task will be executed every two minutes starting from the minute 0
+OnCalendar=*:0/2 
+AccuracySec=1ns
+Persistent=true
+
+[Install]
+WantedBy=timers.target
