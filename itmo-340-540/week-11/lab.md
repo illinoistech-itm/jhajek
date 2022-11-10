@@ -34,7 +34,7 @@ Open Wireshark: We will use the packet capture named: `dns.pcapng`. The packet c
 6. In packet 325 and 326 - both packets are DNS queries to resolve the hostname `http://www.ucla.edu`, in the packets, in the application layer DNS header, under the **Queries field**, one DNS record is of Type A and another of Type AAAA -- what do these values mean?  
 i.
 
-7. In packet 357 and 357 - what is the content of the Answer field?  And what are these?  
+7. In packet 357 and 358 - what is the content of the Answer field?  And what are these?  
 i.
 
 8. In packet 496 - there is a DNS query for YouTube.  At the Network layer - what is the source IP and the destination IP?  
