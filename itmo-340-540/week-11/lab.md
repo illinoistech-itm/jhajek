@@ -9,7 +9,7 @@
 
 ### Questions
 
-1. In general network packets are limited to 1,500 bytes due to the MTU (maximum transmission unit of the data-link layer). Assume a 20-byte IP header, how  many datagrams would be required to send an JPG file of 3 million bytes? **Hint** - the answer is not 3,0000,000 / 1500 bytes. Take a look at the IPv4 diagram posted in Discord, *notes-resources*, and pay attention to the header size value for each packet in this calculation.  
+1. In general network packets are limited to 1,500 bytes due to the MTU (maximum transmission unit of the data-link layer). Assume a 20-byte IP header, how many datagrams would be required to send an JPG file of 3 million bytes? **Hint** - the answer is not 3,0000,000 / 1500 bytes. Take a look at the IPv4 diagram posted in Discord, *notes-resources*, and pay attention to the header size value for each packet in this calculation.  
 i.
 
 2. Using the subnet (CIDR block) of 223.1.1.0/23 - how many IP addresses do you have? **Hint** - remember the subtraction formula I showed.  
