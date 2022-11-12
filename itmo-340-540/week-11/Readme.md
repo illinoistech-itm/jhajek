@@ -76,7 +76,7 @@ i.
 
 24. Fill in the blank: A collection of routers under the control of one company or organization is referred to as ______________ system.
 
-25. There are two primary routing protocols, OSPF (RFC 2328) and BGP (RFC 4271).  
+25. True or False. Correct if False. There are two primary routing protocols, OSPF (RFC 2328) and BGP (RFC 4271).  
 i.
 
 26. Which Routing Algorithm is used to propagate route updates between Autonomous Systems (AS)?  
