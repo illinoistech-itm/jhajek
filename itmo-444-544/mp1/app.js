@@ -2,12 +2,11 @@
 // Documentation for JavaScript AWS SDK v3
 // https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html
 
-const { S3Client } = require('@aws-sdk/client-s3');
-var express = require('express'),
-
-    bodyParser = require('body-parser'),
-    multer = require('multer'),
-    multerS3 = require('multer-s3');
+const { S3Client } = require('@aws-sdk/client-s3')
+const express = require('express')
+const bodyParser = require('body-parser')
+const multer = require('multer')
+const multerS3 = require('multer-s3')
 
 // needed to include to generate UUIDs
 // https://www.npmjs.com/package/uuid
@@ -15,24 +14,27 @@ const { v4: uuidv4 } = require('uuid');
 
 
 // initialize an s3 connection object
-var app = express();
+    const app = express();
     //s3 = new aws.S3();
     const REGION = "us-east-1"; //e.g. "us-east-1"
     // Create an Amazon S3 service client object.
     const s3 = new S3Client({ region: REGION });
-app.use(bodyParser.json());
+    app.use(bodyParser.json());
 
 ///////////////////////////////////////////////////////////////////////////
 // I hardcoded my S3 bucket name, this you need to determine dynamically
 // Using the AWS JavaScript SDK
 ///////////////////////////////////////////////////////////////////////////
-var upload = multer({
-    storage: multerS3({
+const upload = multer({
+     storage: multerS3({
         s3: s3,
         bucket: 'jrh-itmo-raw',
-        key: function (req, file, cb) {
-            cb(null, file.originalname);
-            }
+        metadata: function (req, file, cb) {
+            cb(null, {fieldName: file.fieldname});
+          },
+          key: function (req, file, cb) {
+            cb(null, Date.now().toString())
+        }
     })
 });
 
