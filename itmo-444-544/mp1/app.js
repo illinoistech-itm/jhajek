@@ -44,7 +44,7 @@ app.get('/', function (req, res) {
 });
 
 // when some one hits the post button this will happen
-app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
+app.post('/upload', upload.array('uploadFile',3), function (req, res, next) {
     
 res.send('Successfully uploaded ' + req.files.length + ' files!')
 // https://www.npmjs.com/package/multer
