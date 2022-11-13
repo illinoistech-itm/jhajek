@@ -31,10 +31,7 @@ const upload = multer({
         bucket: 'jrh-itmo-raw',
         metadata: function (req, file, cb) {
             cb(null, {fieldName: file.fieldname});
-          },
-          key: function (req, file, cb) {
-            cb(null, Date.now().toString())
-        }
+          }
     })
 });
 
