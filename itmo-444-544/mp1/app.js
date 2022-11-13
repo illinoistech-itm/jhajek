@@ -2,7 +2,8 @@
 // Documentation for JavaScript AWS SDK v3
 // https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html
 
-const { S3Client } = require('@aws-sdk/client-s3')
+//const { S3Client } = require('@aws-sdk/client-s3')
+const { S3Client } = require("@aws-sdk/client-s3")
 const express = require('express')
 const bodyParser = require('body-parser')
 const multer = require('multer')
@@ -18,7 +19,7 @@ const { v4: uuidv4 } = require('uuid');
     //s3 = new aws.S3();
     const REGION = "us-east-1"; //e.g. "us-east-1"
     // Create an Amazon S3 service client object.
-    const s3 = new S3Client({ region: REGION });
+    const s3handle = new S3Client({ region: REGION });
     app.use(bodyParser.json());
 
 ///////////////////////////////////////////////////////////////////////////
@@ -27,7 +28,7 @@ const { v4: uuidv4 } = require('uuid');
 ///////////////////////////////////////////////////////////////////////////
 const upload = multer({
      storage: multerS3({
-        s3: s3,
+        s3: s3handle,
         bucket: 'jrh-itmo-raw',
         metadata: function (req, file, cb) {
             cb(null, {fieldName: file.fieldname});
