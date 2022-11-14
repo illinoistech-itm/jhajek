@@ -18,3 +18,24 @@ aws s3api list-buckets
 LISTOFBUCKETS=$(aws s3api list-buckets --query 'Buckets[*].Name')
 
 # convert string list of buckets to an array, iterate through it (for each loop)
+
+##################################################################################
+# Sample code to iterate through all your buckets and delete any objects they contain
+# Then delete your buckets -- warning will delete everything in your S3 account
+#####################################################################################
+# Get a list of S3 buckets in your account
+BUCKETLIST=$(aws s3api list-buckets)
+# Convert the list to an Array
+BUCKETLISTARRAY=($BUCKETLIST)
+# Create two embedded for each loops to iterate through the buckets deleting and content
+for BUCKET in ${BUCKETLISTARRAY[@]};
+  do
+    OBJECTLIST=$(aws s3api list-objects-v2 --bucket $BUCKET
+    OBJECTLISTARRAY=($OBJECTLIST)
+    for OBJECT in ${OBJECTLISTARRAY[@]};
+      do
+        echo "Objects in bucket: $OBJECT"
+        aws s3api delete-object --bucket $BUCKET --key $OBJECT
+      done
+    aws s3api delete-bucket --bucket $BUCKET
+  done
