@@ -12,7 +12,6 @@ aws s3api delete-object --bucket jrh-itmo-raw --key $FILENAME
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/delete-bucket.html
 aws s3api delete-bucket --buket jrh-itmo-raw
 
-
 ##################################################################################
 # Sample code to iterate through all your buckets and delete any objects they contain
 # Then delete your buckets -- warning will delete everything in your S3 account
