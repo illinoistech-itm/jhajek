@@ -12,19 +12,13 @@ aws s3api delete-object --bucket jrh-itmo-raw --key $FILENAME
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/delete-bucket.html
 aws s3api delete-bucket --buket jrh-itmo-raw
 
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/list-buckets.html
-aws s3api list-buckets
-
-LISTOFBUCKETS=$(aws s3api list-buckets --query 'Buckets[*].Name')
-
-# convert string list of buckets to an array, iterate through it (for each loop)
 
 ##################################################################################
 # Sample code to iterate through all your buckets and delete any objects they contain
 # Then delete your buckets -- warning will delete everything in your S3 account
 #####################################################################################
 # Get a list of S3 buckets in your account
-BUCKETLIST=$(aws s3api list-buckets)
+BUCKETLIST=$(aws s3api list-buckets --query 'Buckets[*].Name')
 # Convert the list to an Array
 BUCKETLISTARRAY=($BUCKETLIST)
 # Create two embedded for each loops to iterate through the buckets deleting and content

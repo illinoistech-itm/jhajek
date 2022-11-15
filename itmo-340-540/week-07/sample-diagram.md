@@ -12,3 +12,11 @@ sequenceDiagram
     Client->>+Server: HTTP Get ACK X SEQ Y LEN 343
     Server-->>-Client: TCP ACK SEQ X ACK Y LEN 0
 ```
+
+<pre>
+0                             31
+|===============|==============|
+|1     |2   |Flow Label        |
+|4              |        |        |
+|===============|==============|
+</pre>
