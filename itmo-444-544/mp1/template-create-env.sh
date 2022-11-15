@@ -53,30 +53,19 @@ VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
 ######################################################################################################################
 # New MP1 requirements
 ######################################################################################################################
-# Modify the database launches to not have a public IP address - no pubic ip and conncet them to the same subnet as your EC2 instances so they can communicate securely
-# Remove your application layer security groups from the create-database, attach the two you set for ingress and egress
+# Create the aws secrets using the secretsmanager and the maria.json file
 
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/create-db-instance.html
-# --publicly-accessible | --no-publicly-accessible (boolean)
+# Read the secrets back out
+# This is a shell script to scrape the username and password out of the secret string that is returned
+# This is pretty awful, but that is due to every variable in BASH being text only
+# This script works only if there are two values - username and password in the .json file
+# You would adjust the AWK print filed (note that value has nothing to do with the positional parameters)
+USERVALUE=$(aws secretsmanager get-secret-value --secret-id ${20} --output=json | jq '.SecretString' | tr -s , ' ' | tr -s ['"'] ' ' | awk {'print $6'} |  tr -d '\\')
 
-# Attach to a db-subnet-group
-# --db-subnet-group-name
+PASSVALUE=$(aws secretsmanager get-secret-value --secret-id ${20} --output=json | jq '.SecretString' | tr -s } ' ' | tr -s ['"'] ' ' | awk {'print $12'} | tr -d '\\')
 
-# Create a db-subnet-group and add your subnets to it
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/create-db-subnet-group.html
-# --vpc-security-group-ids (list)
 
-#A list of Amazon EC2 VPC security groups to associate with this DB instance.
-#Attach two groups (see demo) -- one with ingress rules for 3306 and one with egress rules for 3306 and make the source your 
 
-# Create RDS subnet groups
-
-# Create IAM role
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-role.html
-
-# Create IAM policy
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/create-policy.html
-# https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html
 
 ######################################################################################################################
 # Week-07 template
