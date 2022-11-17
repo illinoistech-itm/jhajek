@@ -1,7 +1,9 @@
 [Unit]
 Description=Node Exporter
+Requires=consul.service
 Wants=network-online.target
 After=network-online.target
+After=consul.service
 
 [Service]
 User=node_exporter
