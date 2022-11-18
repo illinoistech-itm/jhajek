@@ -6,7 +6,7 @@ This project was commenced as a small group study to work with a hands on deploy
 
 ### Project Goal
 
-Define the project's goal
+Define the project's overall goal
 
 ### Project Platform
 
