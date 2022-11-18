@@ -65,7 +65,7 @@ The course is a foundation course in the basics of Data Communications and Compu
 * Identify the various types of error detection and error corrections schemes.
 * Identify the basics of T-carrier systems, frame relay, asynchronous transfer mode, DSL, and cable modems, and be able to compare and contrast their characteristics.
 * Describe the basic operating procedures of the Internet and how it relates to data and voice communications.
-* Enumerate the differences between the wireless telephone systems D-AMPS, TDMA, CDMA, GSM, and others.
+* ~~Enumerate the differences between the wireless telephone systems D-AMPS, TDMA, CDMA, GSM, and others.~~
 * Document the characteristics of local area networks, including hub and switch technologies.
 * ~~Complete a case study in which, given a minimum set of requirements, you will recommend wide area network solutions.~~
 * Analyze a complex computing problem and to apply principles of computing and other relevant disciplines to identify solutions (ABET Computing Criterion 3.1)

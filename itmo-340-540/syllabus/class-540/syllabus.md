@@ -65,7 +65,7 @@ The course is a foundation course in the basics of Data Communications and Compu
 * Identify and define the various types of error detection and error corrections schemes.
 * Identify and define the basics of T-carrier systems, frame relay, asynchronous transfer mode, DSL, and cable modems, and be able to compare and contrast their characteristics.
 * Describe the operating procedures of the Internet and how it relates to data and voice communications.
-* Enumerate the differences between the wireless telephone systems D-AMPS, TDMA, CDMA, GSM, and others.
+* ~~Enumerate the differences between the wireless telephone systems D-AMPS, TDMA, CDMA, GSM, and others.~~
 * Document and analysis the characteristics of local area networks, including hub and switch technologies.
 
 **Topics to Be Covered**:
