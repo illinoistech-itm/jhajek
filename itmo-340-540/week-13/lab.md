@@ -46,7 +46,7 @@ We need to edit one setting in each of the newly created `Vagrantfile`. You can 
 1. `code ~/Documents/itmo-340/debian11/Vagrantfile`
 1. `code ~/Documents/itmo-340/jammy/Vagrantfile`
 
-In the first three files - you will want to edit line **35**, first delete the `#` to uncomment the code to add a host-only network interface.  A **host-only** network creates a virtual network on your own PC between your Host Operating System (Windows and Mac) and your virtual machines. We will use this feature of VirtualBox to quickly configure a network on your own laptop/desktop. Each person will need to set a unique IP address for each line 35 in the `Vagrantfile`. I recommend to start with the date of your birthday and increment. My birthday is November 18th so I will modify the default IP address to be `192.168.33.18`. If your birthday is on the first - just add a zero and start from 10. My configuration file look like this:
+In the first three files - you will want to edit line **35**, first delete the `#` to uncomment the code to add a host-only network interface.  A **host-only** network creates a virtual network on your own PC between your Host Operating System (Windows and Mac) and your virtual machines. We will use this feature of VirtualBox to quickly configure a network on your own laptop/desktop. Each person will need to set a unique IP address for each line 35 in the `Vagrantfile`. I recommend to start with the date of your birthday and increment. My birthday is November 18th so I will modify the default IP address to be `192.168.33.18`. If your birthday is on the first - just add a zero and start from 10. My configuration file looks like this:
 
 #### Focal Ubuntu Configuration
 
@@ -72,7 +72,7 @@ In the first three files - you will want to edit line **35**, first delete the `
   config.vm.network "private_network", ip: "192.168.33.21"
 ```
 
-In addition, for The Ubuntu Jammy Linux, we will uncomment line 40 and give the virtual machine a bridged network. This will place the virtual machine on your network and request a DHCP address. You will need to execute this from your home network. For those who are on the University Network, this won't work, but there will be open lab hours where there is a network that doesn't need you to register and authenticate and you can quickly do this part of the lab.
+In addition, for The Ubuntu Jammy Linux, we will uncomment line 40 and give the virtual machine a bridged network. This will place the virtual machine on your network and request a DHCP address. You will need to execute this from your home network. For those who are on the University Network, the school requires you to register each machine on the network for tracking purposes. This won't work, but there will be open lab hours where there is a network that doesn't need you to register and authenticate and you can quickly do this part of the lab in the Tech South building - TS-2030.
 
 ```ruby
 config.vm.network "public_network"
@@ -80,7 +80,7 @@ config.vm.network "public_network"
 
 ### Getting the Virtual Machines Up and Running
 
-Now that we have created the configuration files and setup our networking correctly, we can now begin to download the pre-made virtual machines. They are pre-built VMs provided by the community and are part of the [Vagrant Cloud](https://app.vagrantup.com/boxes/search "web page to Vagrant Cloud"). To get each virtual machine started we need to change directory, using the `cd` command into the directories where the Vagrantfile resides for each server. For example these commands will bring the virtual machines to a running state. *NOTE* - the first time we run the `vagrant up` command will involve a virtual machine download which could take from 5 to 15 mins per machine. This is only needed once.
+Now that we have created the configuration files and setup our networking correctly, we can now begin to download the pre-made virtual machines. "*Vagrant boxes*" are pre-built VMs provided by the community and part of the [Vagrant Cloud](https://app.vagrantup.com/boxes/search "web page to Vagrant Cloud"). To get each virtual machine started we need to change directory, using the `cd` command into the directory where the `Vagrantfile` resides for each server. For example these commands will bring the virtual machines to a running state. *NOTE* - the first time we run the `vagrant up` command will involve a virtual machine download which could take from 5 to 15 mins per machine. This is only needed once.
 
 * `cd ~/Documents/itmo-340/focal`
   * then execute: `vagrant up`
@@ -93,7 +93,7 @@ Now that we have created the configuration files and setup our networking correc
 
 ### Connecting to the Virtual Machines
 
-You will need to open 4 terminal windows and execute each command in one terminal so that you can have connections to all 4 virtual machines at the same time. Using the `vagrant ssh` command will connect you via a remote shell to the command line terminal of each server. This will allow you to install software, execute commands, and inspect the network on each virtual machine - without needing an entire laboratory of computers and equipment for each student. Your laptop/pc is enough for now using VirtualBox and Vagrant.
+You will need to open four terminal windows and execute each command in one terminal so that you can have connections to all 4 virtual machines at the same time. Using the `vagrant ssh` command will connect you via a remote shell to the command line terminal of each server. This will allow you to install software, execute commands, and inspect the network on each virtual machine - without needing an entire laboratory of computers and equipment for each student. Your laptop/pc is enough for now using VirtualBox and Vagrant.
 
 1. `cd ~/Documents/itmo-340/focal` then execute: `vagrant ssh`
 1. `cd ~/Documents/itmo-340/freebsd13` then execute: `vagrant ssh`
@@ -102,7 +102,7 @@ You will need to open 4 terminal windows and execute each command in one termina
 
 ### Installing the Software
 
-There is a small amount of software we need to install on each virtual machine. Since these are Debian based Linux and one FreeBSD systems, they are all a bit different than MacOS and Windows. Here are the commands needed to execute the lab and answer the questions. We will install Web Servers and a commandline version of WireShark called T-Shark. In addition we will execute some network configuration commands and do some T-Shark captures.
+There is a small amount of software we need to install on each virtual machine. Since these are Debian based Linux and one FreeBSD systems, they are all a bit different than MacOS and Windows. Here are the commands needed to execute the lab and answer the questions. We will install Web Servers and a commandline version of WireShark called T-Shark. In addition we will execute some network configuration commands and do some T-Shark captures. The command `cat /etc/os-release` is just to print out the operating system version information to make sure you are on the correct server.
 
 * `Focal`
   * Display the operating system version: `cat /etc/os-release`
@@ -171,7 +171,7 @@ Using the above commands, on your host system and on each of the virtual machine
 Using the routing table information, find each systems default gateway or default route for the interface that you identified in the first step of this exercise. On Windows, Mac, and FreeBSD use the command `netstat -r`, Linux no longer supports the netstat command, use the `ip -r` command.
 
 | OS | Destination CIDR Block | Interface |
-| -- | ------|
+| -- | ------| ---- |
 | Your OS | - | - |
 | Your Virtual NIC | - | - |
 | Focal | - | - |
