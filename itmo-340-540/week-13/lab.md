@@ -284,6 +284,25 @@ When done with the lab or when done using these virtual machines you should powe
 * `cd ~/Documents/itmo-340/jammy`
   * then execute: `vagrant halt`
 
+#### Replacement Commands Table
+
+  Net-Tools Deprecated Commands           Ip2-route Replacement Commands
+---------------------------------   -----------------------------------------
+         ```arp```                        ```ip n``` (ip neighbor)
+       ```ifconfig```                     ```ip a``` (ip addr)
+                                          ```ip link```
+                                          ```ip s``` (ip -stats)
+        ```iptunnel```                    ```ip tunnel```
+        ```iwconfig```                     ```iw```
+        ```nameif```                       ```ip link``` or ```ifrename```
+        ```netstat```                      ```ss```
+                                           ```ip route``` (for netstat -r)
+                                           ```ip -s link``` (for netstat -i)
+                                           ```ip maddr``` (for netstat -g)
+         ```route```                       ```ip r``` (ip route)
+
+Table:  [Commands and Their Replacements](https://www.tecmint.com/deprecated-linux-networking-commands-and-their-replacements/ "Networking Commands and their replacements")
+
 ### Deliverable
 
 Follow the tutorial instructions and answer the outstanding questions in this document. Place this file along with the required WireShark capture to your GitHub repo under the week-13 folder. Submit the URL to Blackboard.
