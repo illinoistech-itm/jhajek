@@ -46,7 +46,7 @@ We need to edit one setting in each of the newly created `Vagrantfile`. You can 
 1. `code ~/Documents/itmo-340/debian11/Vagrantfile`
 1. `code ~/Documents/itmo-340/jammy/Vagrantfile`
 
-In the first three files - you will want to edit line **35**, first delete the `#` to uncomment the code to add a host-only network interface.  A **host-only** network creates a virtual network on your own PC between your Host Operating System (Windows and Mac) and your virtual machines. We will use this feature of VirtualBox to quickly configure a network on your own laptop/desktop. Each person will need to set a unique IP address for each line 35 in the `Vagrantfile`. I recommend to start with the date of your birthday and increment. My birthday is November 18th so I will modify the default IP address to be `192.168.33.18`. My configuration file look like this:
+In the first three files - you will want to edit line **35**, first delete the `#` to uncomment the code to add a host-only network interface.  A **host-only** network creates a virtual network on your own PC between your Host Operating System (Windows and Mac) and your virtual machines. We will use this feature of VirtualBox to quickly configure a network on your own laptop/desktop. Each person will need to set a unique IP address for each line 35 in the `Vagrantfile`. I recommend to start with the date of your birthday and increment. My birthday is November 18th so I will modify the default IP address to be `192.168.33.18`. If your birthday is on the first - just add a zero and start from 10. My configuration file look like this:
 
 #### Focal Ubuntu Configuration
 
