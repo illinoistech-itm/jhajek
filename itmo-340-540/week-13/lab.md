@@ -118,6 +118,16 @@ There is a small amount of software we need to install on each virtual machine. 
   * Install a webserver and tshark: `sudo apt update` and then `sudo apt install nginx tshark`
   * Display the ip address information: `ip a sh`
 
+## Lab Questions
+
+Information about each phase of the lab goes here along with answers
+
+* ARP
+* PING
+* HTTP
+* ipconfig ip a sh
+* DHCP
+
 ### Shutting Down the Virtual Machines
 
 When done with the lab or when done using these virtual machines you should power them off by issuing the `vagrant halt` command. Otherwise they will occupy disk and ram on your system when they don't need to be.
