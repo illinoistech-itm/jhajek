@@ -17,7 +17,7 @@ We will install 4 Linux virtual machines:
 * Ubuntu Jammy 22.04 server
 * Ubuntu Focal 20.04 server
 * FreeBSD 13 server
-* Debian Bullseye server
+* Debian 11 Bullseye server
 
 **Note** in this context the character **~** represents a shortcut to your user account's home directory. In my Windows system's case that would be: `C:\Users\palad`.  On my Mac Laptop it would be `/Users/jeremy` -- since everyone's account and OS is different the `~` is a universal short cut to represent whatever your user account's home directory. Also the `home directory` does not refer to `/home` in Linux either.
 
