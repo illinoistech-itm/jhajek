@@ -168,7 +168,7 @@ Using the above commands, on your host system and on each of the virtual machine
 | Jammy enp0s8 Subnet | - |
 | Jammy enp0s9 Subnet | - |
 
-Using the routing table information, find each systems default gateway or default route for the interface that you identified in the first step of this exercise. On Windows, Mac, and FreeBSD use the command `netstat -r`, Linux no longer supports the netstat command, use the `ip -r` command.
+Using the routing table information, find each systems *default gateway* or *default route* for the interface that you identified in the first step of this exercise. On Windows, Mac, and FreeBSD use the command `netstat -r`, Linux no longer supports the netstat command, use the `ip -r` command.
 
 | OS | Destination CIDR Block | Interface |
 | -- | ------| ---- |
