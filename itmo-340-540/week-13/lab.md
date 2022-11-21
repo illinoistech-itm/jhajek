@@ -68,7 +68,11 @@ In the first three files - you will want to edit line **35**, first delete the `
 
 #### Jammy Ubuntu Configuration
 
-For The Ubuntu Jammy Linux, we will uncomment line 40 and give the virtual machine a bridged network. This will place the virtual machine on your network and request a DHCP address. You will need to execute this from your home network. For those who are on the University Network, this won't work, but there will be open lab hours where there is a network that doesn't need you to register and authenticate and you can quickly do this part of the lab.
+```ruby
+  config.vm.network "private_network", ip: "192.168.33.21"
+```
+
+In addition, for The Ubuntu Jammy Linux, we will uncomment line 40 and give the virtual machine a bridged network. This will place the virtual machine on your network and request a DHCP address. You will need to execute this from your home network. For those who are on the University Network, this won't work, but there will be open lab hours where there is a network that doesn't need you to register and authenticate and you can quickly do this part of the lab.
 
 ```ruby
 config.vm.network "public_network"
@@ -103,34 +107,173 @@ There is a small amount of software we need to install on each virtual machine. 
 * `Focal`
   * Display the operating system version: `cat /etc/os-release`
   * Install a webserver and tshark: `sudo apt update` and then `sudo apt install nginx tshark`
-  * Display the ip address information: `ip a sh`
+  * Display the network information: `ip a sh`
 * `FreeBSD 13`
   * Display the operating system version: `cat /etc/os-release`
   * Install a webserver and tshark: `sudo pkg install nginx tshark`
   * Start the Nginx service: `sudo service nginx start`
-  * Display the ip address information: `ifconfig`
+  * Display the network information: `ifconfig`
 * `Debian 11`
   * Display the operating system version: `cat /etc/os-release`
   * Install a webserver and tshark: `sudo apt update` and then `sudo apt install nginx tshark`
-  * Display the ip address information: `ip a sh`
+  * Display the network information: `ip a sh`
 * `Jammy`
   * Display the operating system version: `cat /etc/os-release`
   * Install a webserver and tshark: `sudo apt update` and then `sudo apt install nginx tshark`
-  * Display the ip address information: `ip a sh`
+  * Display the network information: `ip a sh`
 
-## Lab Questions
+Not all four virtual machines need to be running always, you can start and stop them as needed. See the final section **Shutting Down the Virtual Machines** for details to halt your VMs.
 
-Information about each phase of the lab goes here along with answers
+## Lab Question One
 
-* ARP
-* PING
-* HTTP
-* ipconfig ip a sh
-* DHCP
+Our purpose here is to explore and discover commandline tools to find your Network Card information. Each system has many physical and virtual network interfaces to operate on. First step for your host system is to decide if you are using the WiFi interface or the Ethernet interface. Second step on your host system is to determine what your active virtual network interface is. The clue is to look for the ip of `192.168.33.1`. For the virtual machines we will be looking at interface `enp0s8`, on FreeBSD we will be looking for interface em1, and on Debian interface eth1. We will be using the following commands to do our discovery:
+
+* Windows: `ipconfig`
+* MacOS and FreeBSD: `ifconfig`
+* Linux: `ip`
+
+Using the above commands, on your host system and on each of the virtual machines execute the proper command (per operating system) and report the following information:
+
+| OS | Value |
+| -- | ------|
+| Your OS IP | - |
+| Your Virtual NIC | - |
+| Focal IP | - |
+| FreeBSD IP | - |
+| Debian IP | - |
+| Jammy enp0s8 IP | - |
+| Jammy enp0s9 IP | - |
+
+Using the above commands, on your host system and on each of the virtual machines execute the proper command (per operating system) and report the following information:
+
+| OS | Value |
+| -- | ------|
+| Your OS MAC | - |
+| Your Virtual NIC MAC | - |
+| Focal MAC | - |
+| FreeBSD MAC | - |
+| Debian MAC | - |
+| Jammy enp0s8 MAC | - |
+| Jammy enp0s9 MAC | - |
+
+Using the above commands, on your host system and on each of the virtual machines execute the proper command (per operating system) and report the following information:
+
+| OS | Value |
+| -- | ------|
+| Your OS Route | - |
+| Your Virtual NIC Route | - |
+| Focal Subnet | - |
+| FreeBSD Subnet | - |
+| Debian Subnet | - |
+| Jammy enp0s8 Subnet | - |
+| Jammy enp0s9 Subnet | - |
+
+Using the routing table information, find each systems default gateway or default route for the interface that you identified in the first step of this exercise. On Windows, Mac, and FreeBSD use the command `netstat -r`, Linux no longer supports the netstat command, use the `ip -r` command.
+
+| OS | Destination CIDR Block | Interface |
+| -- | ------|
+| Your OS | - | - |
+| Your Virtual NIC | - | - |
+| Focal | - | - |
+| FreeBSD | - | - |
+| Debian | - | - |
+| Jammy enp0s8 | - | - |
+| Jammy enp0s9 | - | - |
+
+## Lab Question Two
+
+For this exercise, ignore any packets relating to 239.255.255.250. We will be using the ICMP protocol to communicate with other systems on our network. The ICMP echo protocol was defined very early in [RFC 792](https://www.rfc-editor.org/rfc/rfc792 "webpage rfc 792"). This will also involve the [ARP protocol](https://www.rfc-editor.org/rfc/rfc1027 "webpage for rfc1027") and display how LANs operate -- at the link layer.
+
+Enter the Debian 11 virtual machine via the command: `vagrant ssh` if you are not already logged in. Issue the command `sudo tshark -i eth1 -c 14`, note that after the confirmation text, there is no output.
+
+Now in another terminal windows, in the directory for `focal64` enter the command: `vagrant ssh`. Once connected into the Focal virtual machine, issue the command: `ping -c 5 192.168.33.X` -- where X is the IP address of your Debian 11 system. In both cases the `-c N` is limiting the count of packets sent and captured. You can always use the key combo: `ctrl-c` to break out of the tshark capture if there are no more packets coming.
+
+Use the command: `ip n` to show the ARP tables of each system in between the triple tics after executing the previous commands.
+
+```
+Focal
+192.168.33.18 dev eth1 lladdr 08:00:27:4d:c2:00 STALE
+10.0.2.3 dev eth0 lladdr 52:54:00:12:35:03 STALE
+10.0.2.2 dev eth0 lladdr 52:54:00:12:35:02 DELAY
+```
+
+```
+Debian
+192.168.33.18 dev eth1 lladdr 08:00:27:4d:c2:00 STALE
+10.0.2.3 dev eth0 lladdr 52:54:00:12:35:03 STALE
+10.0.2.2 dev eth0 lladdr 52:54:00:12:35:02 DELAY
+```
+
+```
+Your samples here
+```
+
+1. Looking back at the output of the tshark capture on the Debian system, can you briefly explain why the first two packets captured are ARP packets?  
+i.
+
+1. Run the experiment again, this time the first two packets are not ARP packets -- why do you think this is the case?  
+i.
+
+## Lab Question Three
+
+This exercise will use the Wireshark capture on your host OS as we connect over our virtual network to a webserver running on one of our virtual machines. For this we will select the `FreeBSD 13` virtual machine. To make sure the Nginx webserver is running, make sure from the directory where you ran the `vagrant up` command, that you have executed, `vagrant ssh`. Run the command: `sudo service nginx start` to confirm that the service is running.
+
+Open WireShark on your host OS. Select the interface that is your virtual network interface (identified in Lab Question One). The capture will have no traffic when you start the capture, don't worry, it is much less chatty than your main WiFi or Ethernet connection. Open a browser tab on your host OS. Using **http** enter the address of the virtual machine into the browser address bar. Take note of the WireShark capture. Capture all the way until you see the connection termination (FIN - FIN/ACK) about 30 packets total.
+
+Save this capture file in WireShark as `week13-q3.pcapng` submit this along with the markdown lab.md document.
+
+Answer the following questions:
+
+1. Why are the first two packets (approximately) ARP packets?  
+i.
+
+1. What is the HTTP request type being sent for the `/` (index file)?  
+i.
+
+1. What is the HTTP response code sent back for this request and did it succeed?  
+i.
+
+1. The browser made and addition HTTP request - what additional file did it request?  
+i.
+
+1. What was the response code and did this request succeed?  
+i.
+
+## Lab Question Four
+
+This question will deal with the [DHCP protocol - RFC 2131](https://www.rfc-editor.org/rfc/rfc2131 "webpage rfc2131"). We will see forwarding decisions take place when communicating between hosts and over multiple switches. We will make use of the Jammy Linux and our host OS for this last question.
+
+On your host OS terminal execute the command: `ping -c 4 64.131.110.67` (where the IP is the IP of your primary network interface) and then execute the command:`ping -c 4 192.168.33.X` (where X is the IP of your Jammy Linux system). Answer the following questions:
+
+1. Why are both of these commands successful when they are two different networks?  
+i.
+
+1. Using the `netstat -r` command on your host OS and answers from question one, identify the routes on your computer that make this work.  
+i.
+
+On your host OS, Start a WireShark capture for your primary WiFi or Ethernet connection. Issue the command to release your IP address on your primary Ethernet or WiFi connection: `ipconfig /release Ethernet` or `ipconfig /release WiFi`. Now we will issue a DHCP request for a new IP address, with the WireShark capture still running issue the command: `ipconfig /renew Ethernet` or `ipconfig /renew WiFi`. The MacOS combines these into one command: `sudo ipconfig set en0 DHCP` for WiFi the interface name is traditionally `en1`. When this command returns successfully, you can stop the WireShark capture. You will want to use a WireShark filter (dhcp) to show only the packets we require.
+
+1. Looking in the WireShark capture, in the DHCP OFFER packet, at the application level, list all of the details of the option fields and give a quick explanation of each item. You can skip *Rebinding Time*  
+i.  
+i.  
+i.  
+i.  
+i.  
+i.  
+i.  
+i.  
+
+1. What are the four phases of acquiring an IP address via DHCP?  
+i.
+
+## Lab Question Five
+
+Using the Debian 11 virtual machines, issue the command `ping -c 4 google.com` and you will receive 4 ICMP echo replies from a Google.com server. Then issue the `ip r` command to look at the routing table for the virtual machine. Briefly explain how your ICMP packet (the ping command) makes it from your virtual machine to Google.com and back to your virtual machine, when the Virtual Machine has a private non-routable IP address (192.168.33.X).  
+i.
 
 ### Shutting Down the Virtual Machines
 
-When done with the lab or when done using these virtual machines you should power them off by issuing the `vagrant halt` command. Otherwise they will occupy disk and ram on your system when they don't need to be.
+When done with the lab or when done using these virtual machines you should power them off by issuing the `vagrant halt` command. Otherwise they will occupy CPU and RAM on your system.
 
 * `cd ~/Documents/itmo-340/focal`
   * then execute: `vagrant halt`
@@ -143,4 +286,4 @@ When done with the lab or when done using these virtual machines you should powe
 
 ### Deliverable
 
-What to turn in
+Follow the tutorial instructions and answer the outstanding questions in this document. Place this file along with the required WireShark capture to your GitHub repo under the week-13 folder. Submit the URL to Blackboard.
