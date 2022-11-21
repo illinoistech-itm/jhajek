@@ -160,8 +160,8 @@ Using the above commands, on your host system and on each of the virtual machine
 
 | OS | Value |
 | -- | ------|
-| Your OS Route | - |
-| Your Virtual NIC Route | - |
+| Your OS Subnet | - |
+| Your Virtual NIC Subnet | - |
 | Focal Subnet | - |
 | FreeBSD Subnet | - |
 | Debian Subnet | - |
