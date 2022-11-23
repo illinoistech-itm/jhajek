@@ -82,13 +82,13 @@ config.vm.network "public_network"
 
 Now that we have created the configuration files and setup our networking correctly, we can now begin to download the pre-made virtual machines. "*Vagrant boxes*" are pre-built VMs provided by the community and part of the [Vagrant Cloud](https://app.vagrantup.com/boxes/search "web page to Vagrant Cloud"). To get each virtual machine started we need to change directory, using the `cd` command into the directory where the `Vagrantfile` resides for each server. For example these commands will bring the virtual machines to a running state. *NOTE* - the first time we run the `vagrant up` command will involve a virtual machine download which could take from 5 to 15 mins per machine. This is only needed once.
 
-* `cd $HOME/Documents/itmo-340/focal`
+* `cd $HOME/Documents/itmo-340/focal64`
   * then execute: `vagrant up`
 * `cd $HOME/Documents/itmo-340/freebsd13`
   * then execute: `vagrant up`
 * `cd $HOME/Documents/itmo-340/debian11`
   * then execute: `vagrant up`
-* `cd $HOME/Documents/itmo-340/jammy`
+* `cd $HOME/Documents/itmo-340/jammy64`
   * then execute: `vagrant up`
 
 ### Connecting to the Virtual Machines
@@ -102,7 +102,7 @@ You will need to open four terminal windows and execute each command in one term
 
 ### Installing the Software
 
-There is a small amount of software we need to install on each virtual machine. Since these are Debian based Linux and one FreeBSD systems, they are all a bit different than MacOS and Windows. Here are the commands needed to execute the lab and answer the questions. We will install Web Servers and a commandline version of WireShark called T-Shark. In addition we will execute some network configuration commands and do some T-Shark captures. The command `cat /etc/os-release` is just to print out the operating system version information to make sure you are on the correct server.
+There is a small amount of software we need to install on each virtual machine. Since these are Debian based Linux and one FreeBSD systems, they are all a bit different than MacOS and Windows. Here are the commands needed to execute the lab and answer the questions. We will install Web Servers and a commandline version of WireShark called T-Shark. In addition we will execute some network configuration commands and do some TShark captures. The command `cat /etc/os-release` is just to print out the operating system version information to make sure you are on the correct server.
 
 * `Focal`
   * Display the operating system version: `cat /etc/os-release`
@@ -275,13 +275,13 @@ i.
 
 When done with the lab or when done using these virtual machines you should power them off by issuing the `vagrant halt` command. Otherwise they will occupy CPU and RAM on your system.
 
-* `cd $HOME/Documents/itmo-340/focal`
+* `cd $HOME/Documents/itmo-340/focal64`
   * then execute: `vagrant halt`
 * `cd $HOME/Documents/itmo-340/freebsd13`
   * then execute: `vagrant halt`
 * `cd $HOME/Documents/itmo-340/debian11`
   * then execute: `vagrant halt`
-* `cd $HOME/Documents/itmo-340/jammy`
+* `cd $HOME/Documents/itmo-340/jammy64`
   * then execute: `vagrant halt`
 
 ### Extra Notes
