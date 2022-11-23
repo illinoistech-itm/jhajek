@@ -95,10 +95,10 @@ Now that we have created the configuration files and setup our networking correc
 
 You will need to open four terminal windows and execute each command in one terminal so that you can have connections to all 4 virtual machines at the same time. Using the `vagrant ssh` command will connect you via a remote shell to the command line terminal of each server. This will allow you to install software, execute commands, and inspect the network on each virtual machine - without needing an entire laboratory of computers and equipment for each student. Your laptop/pc is enough for now using VirtualBox and Vagrant.
 
-1. `cd ~/Documents/itmo-340/focal` then execute: `vagrant ssh`
+1. `cd ~/Documents/itmo-340/focal64` then execute: `vagrant ssh`
 1. `cd ~/Documents/itmo-340/freebsd13` then execute: `vagrant ssh`
 1. `cd ~/Documents/itmo-340/debian11` then execute: `vagrant ssh`
-1. `cd ~/Documents/itmo-340/jammy` then execute: `vagrant ssh`
+1. `cd ~/Documents/itmo-340/jammy64` then execute: `vagrant ssh`
 
 ### Installing the Software
 
