@@ -19,7 +19,7 @@ We will install 4 Linux virtual machines:
 * FreeBSD 13 server
 * Debian 11 Bullseye server
 
-**Note** in this context the character **~** represents a shortcut to your user account's home directory. In my Windows system's case that would be: `C:\Users\palad`.  On my Mac Laptop it would be `/Users/jeremy` -- since everyone's account and OS is different the `~` is a universal short cut to represent whatever your user account's home directory. Also the `home directory` does not refer to `/home` in Linux either.
+**Note** in this context the character **$HOME** represents a shortcut to your user account's home directory. In my Windows system's case that would be: `C:\Users\palad`.  On my Mac Laptop it would be `/Users/jeremy` -- since everyone's account and OS is different the `$HOME` is a universal short cut to represent whatever your user account's home directory. Also the `home directory` does not refer to `/home` in Linux either.
 
 You will need to create a directory that is outside of your GitHub directory. I recommend to start in your Documents directory. Let's issue the command: `cd Documents`. Remember Windows is case INSENSITIVE and MacOS is case sensitive.
 
@@ -41,10 +41,10 @@ Finally issue the command: `cd ../debian11` to go up one directory and over into
 
 We need to edit one setting in each of the newly created `Vagrantfile`. You can edit files in place by using `VS Code` from the terminal via the `code` command (use the appropriate `itmo-340` or `itmo-540`).
 
-1. `code ~/Documents/itmo-340/focal64/Vagrantfile`
-1. `code ~/Documents/itmo-340/freebsd13/Vagrantfile`
-1. `code ~/Documents/itmo-340/debian11/Vagrantfile`
-1. `code ~/Documents/itmo-340/jammy64/Vagrantfile`
+1. `code $HOME/Documents/itmo-340/focal64/Vagrantfile`
+1. `code $HOME/Documents/itmo-340/freebsd13/Vagrantfile`
+1. `code $HOME/Documents/itmo-340/debian11/Vagrantfile`
+1. `code $HOME/Documents/itmo-340/jammy64/Vagrantfile`
 
 In the first three files - you will want to edit line **35**, first delete the `#` to uncomment the code to add a host-only network interface.  A **host-only** network creates a virtual network on your own PC between your Host Operating System (Windows and Mac) and your virtual machines. We will use this feature of VirtualBox to quickly configure a network on your own laptop/desktop. Each person will need to set a unique IP address for each line 35 in the `Vagrantfile`. I recommend to start with the date of your birthday and increment. My birthday is November 18th so I will modify the default IP address to be `192.168.33.18`. If your birthday is on the first - just add a zero and start from 10. My configuration file looks like this:
 
@@ -82,23 +82,23 @@ config.vm.network "public_network"
 
 Now that we have created the configuration files and setup our networking correctly, we can now begin to download the pre-made virtual machines. "*Vagrant boxes*" are pre-built VMs provided by the community and part of the [Vagrant Cloud](https://app.vagrantup.com/boxes/search "web page to Vagrant Cloud"). To get each virtual machine started we need to change directory, using the `cd` command into the directory where the `Vagrantfile` resides for each server. For example these commands will bring the virtual machines to a running state. *NOTE* - the first time we run the `vagrant up` command will involve a virtual machine download which could take from 5 to 15 mins per machine. This is only needed once.
 
-* `cd ~/Documents/itmo-340/focal`
+* `cd $HOME/Documents/itmo-340/focal`
   * then execute: `vagrant up`
-* `cd ~/Documents/itmo-340/freebsd13`
+* `cd $HOME/Documents/itmo-340/freebsd13`
   * then execute: `vagrant up`
-* `cd ~/Documents/itmo-340/debian11`
+* `cd $HOME/Documents/itmo-340/debian11`
   * then execute: `vagrant up`
-* `cd ~/Documents/itmo-340/jammy`
+* `cd $HOME/Documents/itmo-340/jammy`
   * then execute: `vagrant up`
 
 ### Connecting to the Virtual Machines
 
 You will need to open four terminal windows and execute each command in one terminal so that you can have connections to all 4 virtual machines at the same time. Using the `vagrant ssh` command will connect you via a remote shell to the command line terminal of each server. This will allow you to install software, execute commands, and inspect the network on each virtual machine - without needing an entire laboratory of computers and equipment for each student. Your laptop/pc is enough for now using VirtualBox and Vagrant.
 
-1. `cd ~/Documents/itmo-340/focal64` then execute: `vagrant ssh`
-1. `cd ~/Documents/itmo-340/freebsd13` then execute: `vagrant ssh`
-1. `cd ~/Documents/itmo-340/debian11` then execute: `vagrant ssh`
-1. `cd ~/Documents/itmo-340/jammy64` then execute: `vagrant ssh`
+1. `cd $HOME/Documents/itmo-340/focal64` then execute: `vagrant ssh`
+1. `cd $HOME/Documents/itmo-340/freebsd13` then execute: `vagrant ssh`
+1. `cd $HOME/Documents/itmo-340/debian11` then execute: `vagrant ssh`
+1. `cd $HOME/Documents/itmo-340/jammy64` then execute: `vagrant ssh`
 
 ### Installing the Software
 
@@ -275,13 +275,13 @@ i.
 
 When done with the lab or when done using these virtual machines you should power them off by issuing the `vagrant halt` command. Otherwise they will occupy CPU and RAM on your system.
 
-* `cd ~/Documents/itmo-340/focal`
+* `cd $HOME/Documents/itmo-340/focal`
   * then execute: `vagrant halt`
-* `cd ~/Documents/itmo-340/freebsd13`
+* `cd $HOME/Documents/itmo-340/freebsd13`
   * then execute: `vagrant halt`
-* `cd ~/Documents/itmo-340/debian11`
+* `cd $HOME/Documents/itmo-340/debian11`
   * then execute: `vagrant halt`
-* `cd ~/Documents/itmo-340/jammy`
+* `cd $HOME/Documents/itmo-340/jammy`
   * then execute: `vagrant halt`
 
 ### Extra Notes
