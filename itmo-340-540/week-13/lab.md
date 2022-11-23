@@ -286,7 +286,7 @@ When done with the lab or when done using these virtual machines you should powe
 
 ### Extra Notes
 
-| Net-Tools Deprecated Commands | Ip2-route Replacement Commands |
+| Net-Tools Deprecated Commands | [iproute2](https://baturin.org/docs/iproute2/ "webpage iproute2") Replacement Commands |
 | ----------------------------- | ------------------------------ |
 | `arp` | `ip n` (ip neighbor) |
 | `ifconfig` | `ip a` (ip addr) or `ip link` |
