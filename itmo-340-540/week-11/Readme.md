@@ -17,7 +17,7 @@ i.
 4. Give a brief explanation: In classical or traditional routing, how is the control plane logic determined?  
 i.
 
-5. Give a brief explanation: In SDN (Software Defined Networking) hos is the control plane logic managed and distributed?  
+5. Give a brief explanation: In SDN (Software Defined Networking) how is the control plane logic managed and distributed?  
 i.
 
 6. In an IPv4 packet (see the IPv4) diagram posted in the Discord Channel (*notes-resources*), What is the TTL fields purpose?  
