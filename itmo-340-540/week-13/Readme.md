@@ -33,7 +33,7 @@ i.
 9) Every host has a ___________  Interface Card  
 i.
 
-10) True or False: Correct if false - Your laptop will use the ARP protocol to tell a switch it is physically connected to its MAC and IP address mapping  
+10) True or False: Correct if false - Your laptop will use the ARP protocol to tell a switch it is physically connected and broadcast its MAC and IP address mapping  
 i.
 
 11) True or False: Correct if false - In the Ethernet Frame (see figure 6.20 in the Discord Notes and Resources channel) the Destination Address and Source Address are the source and destination IP addresses  
@@ -48,7 +48,7 @@ i.
 14) Describe the purpose of the ICMP packet as discussed in the class video (RFC 792)  
 i.
 
-15) What commandline tool uses ICMP to see if another host is responding to network traffic (not nslookup or tracert)?  
+15) What commandline tool uses ICMP to see if another host is responding to network traffic (not `nslookup` or `tracert`)?  
 i.
 
 16) True or false - a laptop computer cannot have more than one IP address  
