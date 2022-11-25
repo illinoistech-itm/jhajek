@@ -111,6 +111,7 @@ There is a small amount of software we need to install on each virtual machine. 
 * `FreeBSD 13`
   * Display the operating system version: `cat /etc/os-release`
   * Install a webserver and tshark: `sudo pkg install nginx tshark`
+  * Enable the Nginx service to start at boot: `sudo service nginx enable`
   * Start the Nginx service: `sudo service nginx start`
   * Display the network information: `ifconfig`
 * `Debian 11`
