@@ -79,12 +79,11 @@ i.
 25. True or False. Correct if False. There are two primary routing protocols, OSPF (RFC 2328) and BGP (RFC 4271).  
 i.
 
-26. Which Routing Algorithm is used to propagate route updates between Autonomous Systems (AS)?  
+26. From the class discussion, give an example of a Routing Algorithm used to propagate route updates *between* Autonomous Systems (AS)?  
 i.
 
-27. Which Routing Algorithm is used to propagate route updates inside Autonomous Systems (AS)?  
+27. From the class discussion, give an example of a Routing Algorithm used to propagate route updates *inside* an Autonomous System (AS)?  
 i.
 
 28. True or False. Correct if False.  The government distributes Autonomous Systems Numbers.
 i.  
-
