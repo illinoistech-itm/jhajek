@@ -1,21 +1,8 @@
-# Mermaid Sample
-
-Does this render as a diagram?
-
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Server
-    Client->>Server: TCP SYN SEQ 1 ACK 0 LEN 0
-    Server-->>Client: TCP SYN ACK SEQ 1 ACK 1 LEN 0
-    Client-->>Server: TCP ACK SEQ X ACK Y LEN Z
-    Client->>+Server: HTTP Get ACK X SEQ Y LEN 343
-    Server-->>-Client: TCP ACK SEQ X ACK Y LEN 0
-```
+# Project
 
 ## Information Table
 
-This is the information table your will need to fill out for the remaining questions of the assignment
+This is the information table your will need to fill out for the remaining questions of the assignment. Assume this information is the state of the network at the beginning of the questions -- various actions in the questions may change this state.
 
 ### ITM Network
 
