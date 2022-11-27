@@ -35,7 +35,7 @@ i.
 1. Explain your previous answer.  
 i.
 
-This is a DHCP Discover phase packet, replace the occurrence of XXX with their proper values (1 line in all).
+This is a DHCP Discover phase packet being sent from Computer A, replace the occurrence of XXX with their proper values (1 line in all).
 
 <pre>
 Dynamic Host Configuration Protocol (Discover)
@@ -51,11 +51,10 @@ Dynamic Host Configuration Protocol (Discover)
         Requested IP Address: 192.168.1.10  <-- take note of this IP address, you will need it in later DHCP phases.
 </pre>
 
-In response to the DHCP Discover a response is sent from the DHCP server. Answer the following questions and fill in the information replacing the XXXs where you see the (5 lines in all).
+When answering a DHCP Discover packet, a response is sent from the DHCP server. Answer the following questions and fill in the information replacing the XXXs where you see the (5 lines in all).
 
-1. T/F Correct if false, the DHCP Offer packer offers an IP address to the requesting computer  
+1. T/F Correct if false, the DHCP Offer packet offers an IP address to the requesting computer  
 i.
-1. 
 
 <pre>
 Dynamic Host Configuration Protocol (Offer)
@@ -94,6 +93,8 @@ Dynamic Host Configuration Protocol (Offer)
         Option End: 255
 </pre>
 
+When answering a DHCP Offer packet, the requestor can make a specific request for a preferred IP address (usually the one it had last time it was on the network). Reference the DHCP Discover Packet trace above for the requested IP address. Fill in the information replacing the XXXs where you see the (3 lines in all).
+
 <pre>
 Dynamic Host Configuration Protocol (Request)
     Option: (53) DHCP Message Type
@@ -113,6 +114,15 @@ Dynamic Host Configuration Protocol (Request)
         Length: 13
         Host Name: lenovo-laptop
 </pre>
+
+The final phase of the DHCP negotiation is the DHCP ACK. Answer the following questions and fill in the information replacing the XXXs where you see the (5 lines in all).
+
+1. How many phases of the process to request and IP address via the DHCP protocol?  
+i.
+1. T/F Correct if false. DHCP is a link-layer protocol  
+i.
+1. Who sends the DHCP ACK packet, the DHCP server or the computer requesting the DHCP address?  
+i.  
 
 <pre>
 Dynamic Host Configuration Protocol (ACK)
@@ -140,13 +150,13 @@ Dynamic Host Configuration Protocol (ACK)
         Domain Name Server: XXX.XXX.XXX.XXX
     Option: (3) Router
         Length: 4
-        Router: 172.16.0.1
+        Router: XXX.XXX.XXX.XXX
     Option: (1) Subnet Mask
         Length: 4
         Subnet Mask: XXX.XXX.XXX.XXX
 </pre>
 
-Complete this table with the values that you provided in the above packets
+Complete this table with the values that the DHCP server has provided to Computer A in the previous traces (4 XXXs in all).
 
 Computer A
 | Field | Value |
@@ -154,6 +164,7 @@ Computer A
 | IP Address | XXX.XXX.XXX.XXX |
 | Subnet | XXX.XXX.XXX.XXX |
 | Default Gateway | XXX.XXX.XXX.XXX |
+| DNS Server | XXX.XXX.XXX.XXX |
 | MAC Address | B4:74:9F:88:4E:43 |
 
 ### Link Layer Communication
