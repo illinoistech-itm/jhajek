@@ -41,6 +41,13 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
+// Request to /gallery will match this route and render this page
+app.get('/', function (req, res) {
+    res.send("You will find your bucket, list the content, and display the images here in a gallery")
+    res.end()
+});
+
+
 // when some one hits the post button this will happen
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
     
