@@ -1,6 +1,6 @@
-CREATE DATABASE orders;
+CREATE DATABASE company;
 
-USE orders;
+USE company;
 
 CREATE TABLE entries
 (

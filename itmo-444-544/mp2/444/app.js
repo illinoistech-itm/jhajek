@@ -38,7 +38,7 @@ app.get('/', function (req, res) {
 });
 
 // Request to /gallery will match this route and render this page
-app.get('/', function (req, res) {
+app.get('/gallery', function (req, res) {
     res.send("You will find your bucket, list the content, and display the images here in a gallery")
     res.end()
 });

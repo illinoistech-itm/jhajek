@@ -25,3 +25,9 @@
 # ${21} iam-instance-profile
 # ${22} sns topic name
 ######################################################################
+
+######################################################################
+# Start from your MP1 code
+# The only thing to add is the create SNS topic ${22}
+# All other coding takes place in the app.js file
+######################################################################

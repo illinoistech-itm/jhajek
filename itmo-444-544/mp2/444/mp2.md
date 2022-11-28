@@ -1,4 +1,4 @@
-# Week-11 Mini-Project 1
+# Final Project (MP2) ITMO 444
 
 ## Objectives
 
@@ -20,6 +20,7 @@ For this assignment you can make these assumptions
 * Start by copying your code from **mp1** into a directory named: **mp2**
   * `create-env.sh`, `destroy-env.sh`, and `install-env.sh`
   * Along with the provided `app.js` and `index.html`
+  * Adjust line 25 in `install-env.sh`
 * That the access keys are already created and not needed in this script
 * You will use the security-group has been already created and all of the proper ports are open
 
@@ -45,6 +46,18 @@ You can access positional parameters after `$9` by using `${10}`. You can hard c
 Run your script in this fashion:
 
 ```./create-env.sh $(<arguments.txt)```
+
+### app.js
+
+This file -- in addition to the `mp1` requirements. will make some modifications to the finished structure. This code you will dynamically detect the name of the S3 bucket. JavaScript has a `.startsWith()` function that can be used to find your `raw-` prefix
+
+1. Starting at Line 47 - the `/gallery` function you need to loop through the content of your raw bucket and using HTML display all the images in the bucket. Do this with the AWS JavaScript SDK and the `res.write()` to print to the screen
+2. Update line 57 to not have a hardcoded URL but the full URL of the item just posted.
+3. Starting line 69 create code to register the users phone (SMS) or email and receive a message with the S3 URL of the Photo
+
+### index.html
+
+1. Create the additional required Form fields listed in the comment
 
 ### Disclaimer
 
@@ -81,8 +94,8 @@ This is where you will pass the arguments (space delimited) as follows (order is
 1. desired-capacity = 3
 1. Database engine (use mariadb)
 1. Database name ( use company )
-1. s3 raw bucket name (use initials and -raw)
-1. s3 finished bucket name (use initials and -fin)
+1. s3 raw bucket name (raw-your initials)
+1. s3 finished bucket name (fin-your initials)
 1. aws secret name
 1. iam-instance-profile
 1. SNS topic name
@@ -95,7 +108,7 @@ These values we will dynamically query for
 
 ### How to filter for state running
 
-`aws ec2 describe-instances --filters Name=instance-state-name,Values=running` and can be combined with Queries.  Filters filter your results, query is what you ask Amazon to select for you.
+`aws ec2 describe-instances --filters Name=instance-state-name,Values=running` and can be combined with Queries. Filters are when you filter your results, A Query is what you ask Amazon to select for you.
 
 ### Grading
 
@@ -115,6 +128,4 @@ Using AWS CLI v2 filters filter the instance you created and destroy it.  A sing
 
 **Note** the database launches and destroys will begin to take upwards of 5-15 minutes, meaning that each deploy with waiters could get to be 5-20 mins. Plan accordingly.
 
-Submit the URL to the mp1 folder to Blackboard. Your week-06 repo will contain all three shell scripts but not the **arguments.txt** file (add arguments.txt to your `.gitignore`)
-
-Add two screenshots, one of the initial load-balancer site rendering. The other showing the content of the upload in the your raw bucket.  Add these screen captures to your GitHub Repo
+Submit the URL to the mp1 folder to Blackboard. Your `mp2` repo will contain all three shell scripts but not the **arguments.txt** file (add arguments.txt to your `.gitignore`)
