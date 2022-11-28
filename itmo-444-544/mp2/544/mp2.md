@@ -2,12 +2,12 @@
 
 ## Objectives
 
-* Deploy and explain the IAM permission hierarchy for S3 bucket access
-* Deploy and explain IAM profile instance attachments
 * Configure and explain VPC subnetting in the AWS Cloud
 * Deploy and configure a custom EC2 image
 * Deploy and explain how to clone application code via Git
 * Configure and explore Cloud Security using AWS Secrets management
+* Configure SNS service to send notifications via text or email
+* Explore and demonstrate the use of the AWS JavaScript SDK and interact with Cloud Services from the application level
 
 ## Outcomes
 

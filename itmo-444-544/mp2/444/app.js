@@ -4,23 +4,19 @@
 
 const { S3Client } = require('@aws-sdk/client-s3');
 var express = require('express'),
-
     bodyParser = require('body-parser'),
     multer = require('multer'),
     multerS3 = require('multer-s3');
-
+var app = express();
 // needed to include to generate UUIDs
 // https://www.npmjs.com/package/uuid
 const { v4: uuidv4 } = require('uuid');
 
-
 // initialize an s3 connection object
-var app = express();
-    //s3 = new aws.S3();
-    const REGION = "us-east-1"; //e.g. "us-east-1"
-    // Create an Amazon S3 service client object.
-    const s3 = new S3Client({ region: REGION });
-app.use(bodyParser.json());
+const REGION = "us-east-1"; //e.g. "us-east-1"
+// Create an Amazon S3 service client object.
+const s3 = new S3Client({ region: REGION });
+
 
 ///////////////////////////////////////////////////////////////////////////
 // I hardcoded my S3 bucket name, this you need to determine dynamically
@@ -29,7 +25,7 @@ app.use(bodyParser.json());
 var upload = multer({
     storage: multerS3({
         s3: s3,
-        bucket: 'jrh-itmo-raw',
+        bucket: 'raw-jrh-itmo',
         key: function (req, file, cb) {
             cb(null, file.originalname);
             }
@@ -47,7 +43,6 @@ app.get('/', function (req, res) {
     res.end()
 });
 
-
 // when some one hits the post button this will happen
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
     
@@ -56,8 +51,12 @@ res.send('Successfully uploaded ' + req.files.length + ' files!')
 // This retrieves the name of the uploaded file
 //var fname = req.files[0].originalname;
 // Now we can construct the S3 URL since we already know the structure of S3 URLS and our bucket
+//##############################################################################################
+// Dynamically detect this URL
 // For this sample I hardcoded my bucket, you can do this or retrieve it dynamically
 var s3url = "https://jrh-itmo-raw.s3.amazonaws.com/" + fname;
+//##############################################################################################
+
 // Use this code to retrieve the value entered in the username field in the index.html
 var username = req.body['name'];
 // Use this code to retrieve the value entered in the email field in the index.html
@@ -67,12 +66,15 @@ var phone = req.body['phone'];
 // generate a UUID for this action
 var id = uuidv4();
 
+// Register the users phone as an endpoint. Send an SMS to your phone with the URL of the Image
+// using the AWS Javascript SDK 
+
 // Write output to the screen
         res.write(s3url + "\n");
-     //   res.write(username + "\n")
-     //   res.write(fname + "\n");
-     //   res.write(email + "\n");
-     //   res.write(phone + "\n");                
+        res.write(username + "\n")
+        res.write(fname + "\n");
+        res.write(email + "\n");
+        res.write(phone + "\n");                
         res.write("File uploaded successfully to Amazon S3 Bucket!" + "\n");
       
         res.end();
