@@ -1,4 +1,4 @@
-# Questions
+# ITMO 540 Final Project Questions
 
 ## Background and Instructions
 
@@ -318,22 +318,26 @@ Based on the three networks detailed - create a forwarding table that includes p
 | - | - |
 | - | - |
 | - | - |
+| *otherwise* | 3 |
 
-In the Computer Science Network, 192.168.2.2 is running a webserver. If you make an HTTP request from Computer A in the ITM network to Computer B on the CS network:
+On the Netflix Router complete the forwarding table
 
-1. Which Output Port Interface will your packet be forwarded to?  
+| Network Prefix | Output Port |
+| -------------- | ----------- |
+| - | - |
+| *otherwise* | 3 |
+
+If you make an HTTP request from Computer A in the ITM Network to Computer A in the Netflix Network, http://netflix.com:
+
+1. Which Output Port Interface will your packet be forwarded to on the School Network Router?  
 i.
-1. For the TCP packet returning the ACK from Computer B to Computer A, which Output Port Interface will your packet be forwarded to?  
+1. For the TCP packet returning the ACK from Computer A in the Netflix Network to Computer A, which Output Port Interface will your packet be forwarded to on the School Router?  
 i.
 1. A HTTP request is sent from Computer A in the ITM network, for the IP address of 192.168.5.5. When this packet hits the router - explain what will happen?  
 i.
 1. When a packet reaches the router and the TTL is at 0, explain what will the router do with that packet.  
 i.
-1. In this example network are we using Classical Routing or Software Defined Networking?  
-i.
 1. Software Defined Networking can route based on fields in three layers, list these three layers and the 11 fields possible.  
-i.
-1. Briefly explain why SDN violates the Classical Routing model.  
 i.
 1. Briefly explain the difference between a switch and a router (assume the classical model).  
 i.
@@ -342,7 +346,7 @@ i.
 
 ### DNS Resolution
 
-Looking at the snippets of these two DNS packet queries (DNS query and DNS response) replace the values.  Computer A is making an http GET request to http://fusion.cs.iit.edu. Fill in the XXXs with the information contained in the A record -- see the Readme.md for details.
+Looking at the snippets of these two DNS packet queries (DNS query and DNS response) replace the values.  Computer A is making an http GET request to http://netflix.com. Fill in the XXXs with the information contained in the A record -- see the Readme.md for details.
 
 <pre>
 Domain Name System (query)

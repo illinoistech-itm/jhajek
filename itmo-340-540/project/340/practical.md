@@ -24,7 +24,7 @@ You will take a screen capture of you replacing the values as well as explaining
 This portion is worth 30 points.
 
 * 5 Points for formatting, sharing link, and having the correct sharing permissions
-* 5 Points for introducing yourself in the video and having the camera on the entire time
+* 5 Points for introducing yourself in the video and having the camera on
 * 20 Points for correct TCP sequencing information
 
 You can make use of any screen capture technology you would like and render the capture as a MP4 or OGG/Vorbis equivalent. Upload it to your IIT Google Drive, give permissions to share the video via link, and submit that shared link to Blackboard as the deliverable. Please test this.
