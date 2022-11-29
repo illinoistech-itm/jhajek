@@ -388,4 +388,4 @@ User Datagram Protocol
 
 ## Deliverable
 
-Create a folder named **project** under the provided GitHub repo under the **itmo-340** directory. Push the questions.md to this folder with the answers completely filled out - submit the URL to this document in Blackboard by Wednesday December 7th 6:30 PM CST (Chicago Time).
+Create a folder named **project** under the provided GitHub repo under the **itmo-340** directory. Push the questions.md to this folder with the answers completely filled out - submit the URL to this document in Blackboard by Wednesday December 3rd 6:25 PM CST (Chicago Time).
