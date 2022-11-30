@@ -1,8 +1,8 @@
-CREATE DATABASE company;
+CREATE DATABASE IF NOT EXISTS company;
 
 USE company;
 
-CREATE TABLE entries
+CREATE TABLE IF NOT EXISTS entries
 (
 ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 RecordNumber VARCHAR(64), -- This is the UUID
@@ -14,4 +14,4 @@ RAWS3URL VARCHAR(200), -- set the returned S3URL here
 FINSIHEDS3URL VARCHAR(200)
 );
 
-INSERT INTO jobs(RecordNumber,CustomerName,Email,Phone,Stat,S3URL) VALUES('00000',"NAME","email@iit.edu","000-000-0000",0,"http://");
+INSERT INTO entries(RecordNumber,CustomerName,Email,Phone,Stat,S3URL) VALUES('00000',"NAME","email@iit.edu","000-000-0000",0,"http://");
