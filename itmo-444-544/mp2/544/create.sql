@@ -14,4 +14,4 @@ RAWS3URL VARCHAR(200), -- set the returned S3URL here
 FINSIHEDS3URL VARCHAR(200)
 );
 
-INSERT INTO entries(RecordNumber,CustomerName,Email,Phone,Stat,S3URL) VALUES('00000',"NAME","email@iit.edu","000-000-0000",0,"http://");
+INSERT INTO entries(RecordNumber,CustomerName,Email,Phone,Stat,RAWS3URL) VALUES('00000',"NAME","email@iit.edu","000-000-0000",0,"http://");
