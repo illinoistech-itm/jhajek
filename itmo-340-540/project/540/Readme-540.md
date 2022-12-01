@@ -23,7 +23,7 @@ PC B
 | IP Address | 192.168.1.11 |
 | Subnet | 255.255.255.0 or /24 |
 | Default Gateway | 192.168.1.254 |
-| Default Gateway | 192.168.3.4 |
+| DNS Server | 192.168.3.4 |
 | MAC Address | B4:74:9F:88:4E:44 |
 
 PC C - DHCP Server
@@ -38,6 +38,7 @@ PC C - DHCP Server
 | DHCP Subnet | /24 or 255.255.255.0 |
 | DHCP Default Gateway | 192.168.1.254 |
 | DHCP Server Address | 192.168.1.3 |
+| DNS Server | 192.168.3.4 |
 
 ### Computer Science Network
 
