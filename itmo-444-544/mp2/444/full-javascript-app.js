@@ -417,7 +417,7 @@ app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 //(async () => { await sendMessageViaEmail() } ) ();
 
 
-app.listen(3000, function () {
+app.listen(80, function () {
     console.log('Amazon s3 file upload app listening on port 80');
    // (async () => console.log(await getSecretARN()))();
 });
