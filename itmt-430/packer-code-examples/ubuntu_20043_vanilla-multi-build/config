@@ -1,9 +1,0 @@
-# This key config file will not be used by the Build Server but inserted
-# into each of your 5 virtual machines so that you can clone your team repo
-# onto each Vagrant Box
-Host github.com
-  # The User value is your GitHub ID
-  User jhajek
-  Hostname github.com
-  StrictHostKeyChecking no
-  IdentityFile /home/vagrant/.ssh/id_ed25519_github_deploy_key
