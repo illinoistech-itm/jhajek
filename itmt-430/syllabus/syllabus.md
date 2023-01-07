@@ -1,23 +1,21 @@
-# ITMT 430 Systems Integration
+# ITMT 430 Systems Integration - Spring 2023
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
-Semester: Spring 2022 Professor Jeremy Hajek
+Semester: Spring 2023 - Professor Jeremy Hajek
 
-![*https://xkcd.com/456/*](images/cautionary.png "XCKD 456 image URL")
+![*https://xkcd.com/1700/*](images/new_bug.png "All Software Engineering...")
 
----------------- --------------------------------------------------------
-  **Professor**: Jeremy Hajek
-        Address: Department of Information Technology & Management,
-                 10 W. 33rd St., Chicago, IL 60616
-      Telephone: 312.567.5937
-          Email: hajek@iit.edu
-         Office: Perlstein Hall Room 223A, 10 W. 33rd St.
-   Office Hours: Mies Campus: Monday-Wed 12:30-3:00, Thursday 2:00-3:00, Friday 12:00 to 3:00
-       Location: Perlstein Hall 223 or Via Google meets
-                 book and appointment at:
-                 [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
----------------- --------------------------------------------------------
+| Category | Value |
+| --------- | ------------ |
+ **Professor** | Jeremy Hajek
+ Address | Department of Information Technology & Management 10 W. 33rd St., Chicago, IL 60616
+ Telephone | 312.567.5937
+ Email | hajek@iit.edu
+ Office | Perlstein Hall Room 223A, 10 W. 33rd St.
+ Office Hours | Mon 12:30 PM — 1:20 PM, Tue & Thu 10:00 AM — 2:40 PM, Wed 11:30 AM — 1:00 PM, Fri 11:00 AM — 2:00 PM
+ Location | Perlstein Hall 223 or Via Google Meets
+ URL | Book and appointment at: [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 
 ## Course Catalog Description
 
@@ -30,7 +28,7 @@ ITMD 321, ITMD 411, ITMD 361, ITMD 362, ITM 100, ITMM 471, ITMO 340, and ITMO 35
 ## Lecture Day, Time & Place
 
 * Main Lecture Class time
-  * Monday 8:35am to 10:15am - [Wishnick Hall 113](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+  * Monday 8:35am to 10:15am - [Galvin Tower ](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 * Lab Class Times
   * Lab 01 Monday 10:25am to 12:05pm [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
   * Lab 03 Wednesday 8:35am to 10:15am [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
@@ -85,35 +83,28 @@ Students completing this course will be able to:
 
 ## Required Textbook
 
-![*DevOps Handbook*](images/devops-handbook.png "DevOps Handbook cover image")
-
-* DevOps Handbook - How to Create World-Class Agility, Reliability, & Security in Technology Organizations
-  * Gene Kim, Patrick Debois, John Willis, Jez Humble
-  * ISBN-13:  9781942788003
-  * Publisher:  IT Revolution Press
-  * [http://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1121371901?ean=9781942788003](http://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1121371901?ean=9781942788003 "Link to DevOps Handbook")
-
-\newpage
-
-![*DevOps Handbook*](images/devops-handbook-v2.png "DevOps Handbook cover image Version 2")
+![*DevOps Handbook - Second Edition*](images/devops-handbook-v2.png "DevOps Handbook cover image Version 2")
 
 * DevOps Handbook - How to Create World-Class Agility, Reliability, & Security in Technology Organizations
   * Gene Kim, Patrick Debois, John Willis, Jez Humble, Dr. Nicole Forsgren
   * ISBN-13: 9781950508402
   * Publisher: IT Revolution Press
   * Publication date: 11/30/2021
-  * Edition description: Second Edition
+  * Edition description: **Second Edition**
   * [https://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1138718562?ean=9781950508402](https://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1138718562?ean=9781950508402 "DevOps Handbook second edition")
 
-\newpage
+![*Operations Anti-Patterns, DevOps Solutions*](images/dev-ops-anti-patterns.png "Operations Anti-Patterns, DevOps Solutions Cover Image")
 
-![*Accelerate*](images/accelerate.png "Accelerate Cover Image")
-
-* Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations
-  * Nicole Forsgren, PhD, Jez Humble, Gene Kim
-  * ISBN-13: 9781942788331
-  * Publisher: IT Revolution Press
-  * [https://www.barnesandnoble.com/w/accelerate-nicole-forsgren-phd/1127477199?ean=9781942788331#/](https://www.barnesandnoble.com/w/accelerate-nicole-forsgren-phd/1127477199?ean=9781942788331#/ "Link to Accelerate")
+* Operations Anti-Patterns, DevOps Solutions
+  * Jeffery D. Smith
+  * Publisher Manning (November 24, 2020)
+  * Language English
+  * Paperback 320 pages
+  * ISBN-10 1617296988
+  * ISBN-13 978-1617296987
+  * Item Weight 1.32 pounds
+  * Dimensions 7.38 x 0.7 x 9.25 inches
+  * [https://www.manning.com/books/operations-anti-patterns-devops-solutions](https://www.manning.com/books/operations-anti-patterns-devops-solutions "Operations Anti-Patterns book link")
 
 ### Readings
 
@@ -125,7 +116,7 @@ It is recommended to take notes from the discussion portion of the class.
 
 ### Attendance
 
-Undergrad attendance is expected and will be counted as part of your grade -- if you are not able to attend please email me
+Attendance is expected and will be counted as part of your grade -- if you are not able to attend please email me / contact on Discord
 
 ### Course Web Site
 
