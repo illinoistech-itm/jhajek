@@ -28,15 +28,15 @@ ITMD 321, ITMD 411, ITMD 361, ITMD 362, ITM 100, ITMM 471, ITMO 340, and ITMO 35
 ## Lecture Day, Time & Place
 
 * Main Lecture Class time
-  * Monday 8:35am to 10:15am - [Galvin Tower ](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+  * Monday 8:35am to 10:15am - [Michael Galvin Tower 1F6-1](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 * Lab Class Times
   * Lab 01 Monday 10:25am to 12:05pm [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
   * Lab 03 Wednesday 8:35am to 10:15am [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
-  * Lab 02 Wednesday 10:25am to 12:05pm [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+  * Lab 04 Online meeting TBA
 
 ## Directions to the Smart Lab TS-2030
 
-To get to the Smart Tech Lab - enter the IIT tower on 35th Street.  Swipe in at the desk and take the elevator up to the second floor.  Exit to the left and head north over the bridge from the Tower to the TS building.  The floor turns from white tile to brown carpet.  Take a left at the intersection and the Smart Lab is directly ahead of you.
+To get to the Smart Tech Lab - enter the IIT tower on 35th Street. Swipe in at the desk and take the elevator up to the second floor.  Exit to the left and head north over the bridge from the Tower to the TS building. The floor turns from white tile to brown carpet. Take a left at the intersection and the Smart Lab is directly ahead of you.
 
 ## Schedule of Topics/Readings
 
@@ -44,23 +44,23 @@ All readings should be done prior to class
 
 Session | Date | Topic | Reading - Homework |
 ----------|------|:------|----------
-1 | 01/10 | Introduction  | ~~Tooling and Ethics Assignment~~
-2 | 01/17 | No Class MLK Jr Day  | Intro to Tooling
-3 | 01/24 | The Three Ways Ch 1-2 | NA
-4 | 01/31 | Where to Start Ch 3-4 | Sprint 01 presentation
-5 | 02/07 | Where to Start Ch 5-6  | NA
-6 | 02/14 | Technical Practices of Flow Ch 7-10 | NA
-7 | 02/21 | Technical Practices of Flow Ch 11-13 | NA
-8 | 02/28 | Technical Practices of Feedback Ch 14-18 | Sprint 02 presentation
-9 | 03/07 | Technical Practices of Learning Ch 19-21 | NA
-NA | 03/14 | Spring Break Week | ~~Sprint 03 presentation~~ NA
-10 | 03/21 | Technical Practices of InfoSec Ch 22-23 | ~~Sprint 03 presentation~~ NA
-11 | 03/28 | Accelerate Ch 1-3 | Sprint 03 presentation
-12 | 04/04 | Accelerate Ch 4-5 | NA
-13 | 04/11 | Accelerate Ch 6-7 | Sprint 04 presentation
-14 | 04/18 | Accelerate Ch 8-9 | NA
-15 | 04/25 | Accelerate Ch 10-11 & 16 | Sprint 05 presentation
-16 | 05/02 | Final Exam Week | NA
+1 | 01/09 | Introduction | ~~Tooling and Ethics Assignment~~
+2 | 01/16 | No Class MLK Jr Day | Intro to Tooling
+3 | 01/23 | The Three Ways Ch 1-2 | NA
+4 | 01/30 | Where to Start Ch 3-4 | Sprint 01 presentation
+5 | 02/06 | Where to Start Ch 5-6  | NA
+6 | 02/13 | Technical Practices of Flow Ch 7-10 | NA
+7 | 02/20 | Technical Practices of Flow Ch 11-13 | NA
+8 | 02/27 | Technical Practices of Feedback Ch 14-18 | Sprint 02 presentation
+9 | 03/06 | Technical Practices of Learning Ch 19-21 | NA
+NA | 03/13 | Spring Break Week | ~~Sprint 03 presentation~~ NA
+10 | 03/20 | Technical Practices of InfoSec Ch 22-23 | ~~Sprint 03 presentation~~ NA
+11 | 03/27 | Accelerate Ch 1-3 | Sprint 03 presentation
+12 | 04/03 | Accelerate Ch 4-5 | NA
+13 | 04/10 | Accelerate Ch 6-7 | Sprint 04 presentation
+14 | 04/17 | Accelerate Ch 8-9 | NA
+15 | 04/24 | Accelerate Ch 10-11 & 16 | Sprint 05 presentation
+16 | 05/01 | Final Exam Week | NA
 
 ## Course Student Outcomes
 
@@ -197,13 +197,3 @@ Illinois Tech encourages anyone experiencing sexual harassment or sexual miscond
 For confidential support, you may reach Illinois Tech’s Confidential Advisor at (773) 907-1062. You can also contact a licensed practitioner in Illinois Tech’s Student Health and Wellness Center at student.health@iit.edu or (312)567-7550
 
 For a comprehensive list of resources regarding counseling services, medical assistance, legal assistance and visa and immigration services, you can visit the Office of Title IX Compliance website at [https://www.iit.edu/title-ix/resources](https://www.iit.edu/title-ix/resources "IIT Title IX resources").
-
-### COVID-19 Precautions and Face Coverings in Class
-
-Illinois Tech students are required to be vaccinated, to have a booster as soon as you are eligible, and to wear face masks at all times when indoors. In general, individuals should spend as little time as practicable in closer proximity when doing so is necessary to achieve learning objectives. Students who are feeling ill or experiencing symptoms such as sneezing, coughing, or a higher than normal temperature will be excused from class and are expected to stay at home.
-
-Instructors have the right to ask those who are not complying with these requirements to leave class in the interest of everyone's health and safety. In the event that a student refuses to comply with instructor directions regarding face masks, the instructor has the right to ask the student to leave, and/or cancel class. A student who refuses to comply with these requirements will be referred to the Office of the Dean of Students for possible disciplinary action under the Student Code of Conduct.
-
-Additionally, as a reminder, following other simple practices such as frequent and thorough hand washing, wiping down desks and seats with disinfectant wipes when possible, not sharing personal items such as pens and cell phones, and avoiding crowded hallways and other enclosed spaces will promote good health in and out of the classroom.
-
-Visit iit.edu/COVID-19 for details on Illinois Tech’s response to coronavirus (COVID-19). For information from government authorities, please see the Centers for Disease Control and Prevention website at cdc.gov
