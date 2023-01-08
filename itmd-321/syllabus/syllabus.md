@@ -1,10 +1,10 @@
-# ITMT 430 Systems Integration - Spring 2023
+# ITMD 321 Data Modeling and Applications - Spring 2023
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
 Semester: Spring 2023 - Professor Jeremy Hajek
 
-![*https://xkcd.com/1700/*](images/new_bug.png "All Software Engineering...")
+![*https://xkcd.com/327/*](images/exploits_of_a_mom.png "Little Bobby Tables we call him.")
 
 | Category | Value |
 | --------- | ------------ |
@@ -19,20 +19,17 @@ Semester: Spring 2023 - Professor Jeremy Hajek
 
 ## Course Catalog Description
 
-In this capstone course, students will identify, gather, analyze, and write requirements based on user needs and will then design, construct, integrate, and implement an information system as a solution to a business problem.  Students will document integration architecture, methodologies, and technologies using industry best practices.  User needs and user centered design will be applied in the selection, creation, evaluation, and administration of the resulting system.  The system design process will take into account professional, ethical, legal, security, and social issues and responsibilities and stress the local and global impact of computing on individuals, organizations, and society.  Discussion will also cover the need to engage in continuing professional development. [ITMT 430 Bulletin Description](http://bulletin.iit.edu/courses/itmt/ "ITMT 430 Bulletin Description")
+Basic data modeling concepts are introduced. Hands-on database design, implementation, and administration of single-user and shared multi-user database applications using a contemporary relational database management system. [ITMD 321 Bulletin Description](http://bulletin.iit.edu/courses/itmd/ "ITMD 321 Bulletin Description")
 
 ## Prerequisites
 
-ITMD 321, ITMD 411, ITMD 361, ITMD 362, ITM 100, ITMM 471, ITMO 340, and ITMO 356   Credit: 2-0-2 (lecture and Lab course) Semester Hours
+None. Credit: 3-0-3 Semester Hours
 
 ## Lecture Day, Time & Place
 
 * Main Lecture Class time
-  * Monday 8:35am to 10:15am - [Michael Galvin Tower 1F6-1](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
-* Lab Class Times
-  * Lab 01 Monday 10:25am to 12:05pm [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
-  * Lab 03 Wednesday 8:35am to 10:15am [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
-  * Lab 04 Online meeting TBA
+  * Monday and Wednesday 1:50pm to 3:05pm
+  * Location - [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 
 ## Directions to the Smart Lab TS-2030
 
@@ -64,47 +61,9 @@ NA | 03/13 | Spring Break Week | ~~Sprint 03 presentation~~ NA
 
 ## Course Student Outcomes
 
-At the completion of this course you will have experienced software application development in a team setting. You will understand the roles of the project manager, a software developer, security analyst, IT operations, and UI/UX developer.  You will have produced artifacts consistent with the nature of each job and applied the techniques and concepts learned in all of your pre-requisite courses.   The final measurable outcome will be a full deployment of a working application from scratch.  
-
-You will be familiar with DevOps terminology and development practices.  You will have integrated hardware and software into a complete information system to meet identified user needs as a solution to a defined business problem and demonstrated ethics, and an understanding of legal, security, and social issues and responsibilities of information systems.  You will have integrated hardware and software into a complete information system to meet identified user needs as a solution to a defined business problem. You will have demonstrated building world class reliable, agile, and secure cloud native applications.
-
 ## Course Objectives
 
-Students completing this course will be able to:
-
-* Identify, gather, analyze, and write information system requirements based on user needs
-* Document integration requirements using business process models
-* Design, construct, integrate, and implement an information system as a solution to a business problem
-* Apply key systems integration architecture, methodologies, and technologies in the construction of an information system using industry best practices
-* Based on identified user needs, demonstrate the use of user centered design in the selection, creation, evaluation, and administration of an information system
-* Recall and explain professional, ethical, legal, security, and social issues and responsibilities in information systems
-* Describe the local and global impact of computing on individuals, organizations, and society
-* Describe the need to engage in continuing professional development and explain how this may be achieved
-
 ## Required Textbook
-
-![*DevOps Handbook - Second Edition*](images/devops-handbook-v2.png "DevOps Handbook cover image Version 2")
-
-* DevOps Handbook - How to Create World-Class Agility, Reliability, & Security in Technology Organizations
-  * Gene Kim, Patrick Debois, John Willis, Jez Humble, Dr. Nicole Forsgren
-  * ISBN-13: 9781950508402
-  * Publisher: IT Revolution Press
-  * Publication date: 11/30/2021
-  * Edition description: **Second Edition**
-  * [https://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1138718562?ean=9781950508402](https://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1138718562?ean=9781950508402 "DevOps Handbook second edition")
-
-![*Operations Anti-Patterns, DevOps Solutions*](images/dev-ops-anti-patterns.png "Operations Anti-Patterns, DevOps Solutions Cover Image")
-
-* Operations Anti-Patterns, DevOps Solutions
-  * Jeffery D. Smith
-  * Publisher Manning (November 24, 2020)
-  * Language English
-  * Paperback 320 pages
-  * ISBN-10 1617296988
-  * ISBN-13 978-1617296987
-  * Item Weight 1.32 pounds
-  * Dimensions 7.38 x 0.7 x 9.25 inches
-  * [https://www.manning.com/books/operations-anti-patterns-devops-solutions](https://www.manning.com/books/operations-anti-patterns-devops-solutions "Operations Anti-Patterns book link")
 
 ### Readings
 
@@ -126,41 +85,7 @@ The course will make use of Blackboard [http://blackboard.iit.edu/](http://black
 
 ### Assignments
 
-* Software Sprint Report (x5)
-  * Individual reports given by each team member per sprint demonstrating the objectives they completed
-* Tooling assignment
-  * This initial assignment will help you get your infrastructure setup and prepared for the semester
-* ~~Ethics assignment~~
-  * ~~Short question and answer assignment dealing with computer ethics~~
-* Advanced Tooling Assignments
-  * Covering Vagrant and Packer
-* Student Chapter Presentation
-  * Each week there are scheduled lectures that will be given by the student teams during the main course section
-* Final exam consisting of review questions from student presentations
-
 ### Grading
-
-Grading criteria for (undergrad course number) students will be as follows:
-
-Letter | Description | Percentage
--------|-------------|------------
-A | Outstanding work reflecting substantial effort | 90-100%
-B | Excellent work reflecting good effort | 80-89.99%
-C | Satisfactory work meeting minimum expectations | 70-79.99%
-D | Substandard work not meeting expectations | 60-69.99%
-E | Unsatisfactory work |0-59.99%
-
-The final grade for the class will be calculated as follows:
-
-Name | Grade | Total Points
-------------------|----------|-----------
-Sprint Report (5) | 38% | 20 points each
-Chapter Presentation (1) | 6% | 20 points
-Tooling Assignment (1) | 6% | 10 points
-Tooling Assignment Advanced (2) | 6% | 5 points each
-~~Ethics Assignment (1) | 6% | 10 points~~
-Final Exam | 38% | 100 points
-Attendance | 6% | 20 points
 
 ### Late Submission
 
