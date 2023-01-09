@@ -21,7 +21,7 @@ We will cover the initial installation of tools we will need for this semester. 
 
 ## Sample Code
 
-Additional samples and tutorials are available at [https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430 "webpage for samples")
+Additional samples and tutorials are available at [https://github.com/illinoistech-itm/jhajek/tree/master/itmd-321](https://github.com/illinoistech-itm/jhajek/tree/master/itmd-321 "webpage for samples")
 
 ### Package Managers
 
@@ -240,9 +240,9 @@ config.default.yml
 
 ### Adding Screenshots
 
-On your local system, clone the instructors sample code repo containing this assignment.  Issue the command: `git clone https://github.com/illinoistech-itm/jhajek.git` on your local system command line. **Note** - if you already have this repo clone just issue: `git pull` to update to the latest assignment. From your local system's file manager copy the document from the cloned repo: jhajek > itmt-430 > tooling-assignment > Readme.md and place the copied document into your own private repo on the local system under a root folder named: **itmt-430**.  In that itmt-430 directory, add an directory named: `images` and place all of your screenshots into that directory.
+On your local system, clone the instructors sample code repo containing this assignment.  Issue the command: `git clone https://github.com/illinoistech-itm/jhajek.git` on your local system command line. **Note** - if you already have this repo clone just issue: `git pull` to update to the latest assignment. From your local system's file manager copy the document from the cloned repo: jhajek > itmd-321 > tooling-assignment > Readme.md and place the copied document into your own private repo on the local system under a root folder named: **itmd-321**.  In that itmd-321 directory, add an directory named: `images` and place all of your screenshots into that directory.
 
-Open your private Repo using your IDE and now that we have worked with Markdown, I want you to go back, using the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet") and add image links under each of the screenshot statements in the assignment above.
+Open your private Repo using your IDE and now that we have worked with Markdown, I want you to go back, using the [Markdown cheat sheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet") and add image links under each of the screenshot statements in the assignment above.
 
 Once complete, add, commit, and push your tooling assignment Readme.md to your GitHub Repo
 
