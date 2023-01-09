@@ -47,7 +47,7 @@ If you have a Mac - install brew and provide a screenshot of the output of the c
 
 The name of the third party Windows Package manager is Chocolatey. The download is located at [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page").
 
-From an Administrator Powershell 5 prompt:
+From an Administrator PowerShell 5 prompt:
 
 ```PowerShell
 Set-ExecutionPolicy Bypass -Scope Process -Force; `
