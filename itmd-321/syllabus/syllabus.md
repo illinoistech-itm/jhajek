@@ -91,24 +91,24 @@ At the conclusion of this course, each successful student will able to:
 
 ## Course Objectives
 
-a. Introduction to databases DBMS Concepts
-b. Introduction to Virtualization
-c. Relational Model ER – Modeling Intro to SQL
-d. Database Design More SQL Intro
-e. Data Definition Language Data Types and Constraints Normalization
-f. Schema Definition Table Creation SQL Queries
-g. SQL Intro
-h. Joins
-i. Server Administration
-j. Subqueries Grouping and Aggregates
-k. Advanced Joins
-l. Conditional Logic
-m. Transactions
-n. Indexes Constraints
-o. Views Metadata
-p. Programming/APIs SQLite
-q. Database Backup and Disaster Recovery
-r. Introduction to NoSQL databases and Big Data
+1. Introduction to databases DBMS Concepts
+1. Introduction to Virtualization
+1. Relational Model ER – Modeling Intro to SQL
+1. Database Design More SQL Intro
+1. Data Definition Language Data Types and Constraints Normalization
+1. Schema Definition Table Creation SQL Queries
+1. SQL Intro
+1. Joins
+1. Server Administration
+1. Subqueries Grouping and Aggregates
+1. Advanced Joins
+1. Conditional Logic
+1. Transactions
+1. Indexes Constraints
+1. Views Metadata
+1. Programming/APIs SQLite
+1. Database Backup and Disaster Recovery
+1. Introduction to NoSQL databases and Big Data
 
 ## Required Textbook
 
