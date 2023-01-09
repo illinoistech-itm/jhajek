@@ -1,8 +1,8 @@
-# ITMD 521 Client/Server Technologies and Applications
+# ITMD 521 Client/Server Technologies and Applications - Spring 2023
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
-Semester: Spring 2022 Professor Jeremy Hajek
+Semester: Spring 2023 Professor Jeremy Hajek
 
 ![*https://xkcd.com/2054/*](images/data_pipeline.png "XCKD 2054 image URL")
 
@@ -30,7 +30,8 @@ ITMD/S 514 and or ITMD 510 Credit: Normally 3-0-3 Semester Hours
 ## Lecture Day, Time & Place
 
 * Main Class time
-  * Monday 8:35am to 9:50am - [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+  * Tuesday and Wedneday 8:35am to 9:50am
+  * Location - [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 
 ## Directions to the Smart Lab TS-2030
 
@@ -42,38 +43,38 @@ All readings should be done prior to class
 
 Session | Date | Topic | Reading - Homework |
 ----------|------|:------|----------
-1 | 01/11 | Introduction | Tooling Assignment
-2 | 01/13 | Introduction | Tooling Assignment
-3 | 01/18 | Genesis of Spark Ch 1 | NA
-4 | 01/20 | Genesis of Spark Ch 1 | NA
-5 | 01/25 | Setting up Spark Ch 2 | NA
-6 | 01/27 | Setting up Spark Ch 2 | NA
-7 | 02/01 | Structured APIs Ch 3 | NA
-8 | 02/03 | Structure APIs Ch 3 | Assignment-01
-9 | 02/08 |  Structure APIs Ch 3 | NA
-10 | 02/10 |  Structure APIs Ch 3 | Assignment-02
-11 | 02/15 | Introduction to Built-in Data Sources Ch 4 | Assignment-03
-12 | 02/17 | Introduction to Built-in Data Sources Ch 4 | NA
-13 | 02/22 | Interacting with External Data Sources Ch 5 | Assignment-04
-14 | 02/24 | Interacting with External Data Sources Ch 5 | NA
-15 | 03/01 | Spark SQL and DataSets Ch 6 | Assignment-05
-16 | 03/03 | Spark SQL and DataSets Ch 6 | NA
-17 | 03/08 | Mid-term preparation | NA
-18 | 03/10 | Mid-term Exam  | NA
-NA | 03/15 | Spring Break Week | NA
-NA | 03/17 | Spring Break Week | NA
-19 | 03/22 | Tuning Spark Applications Ch 7 | Assignment-06
-20 | 03/24 | Tuning Spark Applications Ch 7 | NA
-21 | 03/29 | Structure Streaming Ch 8 | Assignment-07
-22 | 04/01 | Structure Streaming Ch 8 | NA
-23 | 04/05 | Data Lakes and Machine Learning Ch 9-10 | Assignment-08
-24 | 04/07 | Data Lakes and Machine Learning Ch 9-10 | NA
-25 | 04/12 | Data Lakes and Machine Learning Ch 9-10 | Assignment-09
-26 | 04/14 | Data Lakes and Machine Learning Ch 9-10 | NA
-27 | 04/19 | Project work time | Assignment-10 and Final Project Assigned
-28 | 04/21 | Project work time | NA
-29 | 04/28 | Project work time | NA
-30 | 04/30 | Project work time | NA
+1 | 01/10 | Introduction | Tooling Assignment
+2 | 01/12 | Introduction | Tooling Assignment
+3 | 01/17 | Genesis of Spark Ch 1 | NA
+4 | 01/19 | Genesis of Spark Ch 1 | NA
+5 | 01/24 | Setting up Spark Ch 2 | NA
+6 | 01/26 | Setting up Spark Ch 2 | NA
+7 | 01/31 | Structured APIs Ch 3 | NA
+8 | 02/01 | Structure APIs Ch 3 | Assignment-01
+9 | 02/07 |  Structure APIs Ch 3 | NA
+10 | 02/09 |  Structure APIs Ch 3 | Assignment-02
+11 | 02/14 | Introduction to Built-in Data Sources Ch 4 | Assignment-03
+12 | 02/16 | Introduction to Built-in Data Sources Ch 4 | NA
+13 | 02/21 | Interacting with External Data Sources Ch 5 | Assignment-04
+14 | 02/23 | Interacting with External Data Sources Ch 5 | NA
+15 | 02/28 | Spark SQL and DataSets Ch 6 | Assignment-05
+16 | 03/02 | Spark SQL and DataSets Ch 6 | NA
+17 | 03/07 | Mid-term preparation | NA
+18 | 03/09 | Mid-term Exam  | NA
+NA | 03/14 | Spring Break Week | NA
+NA | 03/16 | Spring Break Week | NA
+19 | 03/21 | Tuning Spark Applications Ch 7 | Assignment-06
+20 | 03/23 | Tuning Spark Applications Ch 7 | NA
+21 | 03/28 | Structure Streaming Ch 8 | Assignment-07
+22 | 03/30 | Structure Streaming Ch 8 | NA
+23 | 04/04 | Data Lakes and Machine Learning Ch 9-10 | Assignment-08
+24 | 04/06 | Data Lakes and Machine Learning Ch 9-10 | NA
+25 | 04/11 | Data Lakes and Machine Learning Ch 9-10 | Assignment-09
+26 | 04/13 | Data Lakes and Machine Learning Ch 9-10 | NA
+27 | 04/18 | Project work time | Assignment-10 and Final Project Assigned
+28 | 04/20 | Project work time | NA
+29 | 04/25 | Project work time | NA
+30 | 04/27 | Project work time | NA
 31 | 05/02 | Final Exam Week | NA
 
 ## Course Student Outcomes

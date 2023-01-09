@@ -61,7 +61,38 @@ NA | 03/13 | Spring Break Week | ~~Sprint 03 presentation~~ NA
 
 ## Course Student Outcomes
 
+At the conclusion of this course, each successful student will able to:
+
+* Describe the theoretical and physical concepts of a relational database
+* Explain the design methodology for databases and verify their structural correctness
+* Use query language, primarily SQL, and their database related supported software
+* Implement the theory behind the various database models and query languages.
+• Design and build a simple database management system and demonstrate competence with the fundamental tasks involved with modeling, designing, and implementing a DBMS
+* Outline essential DBMS concepts: database security, high availability, backup and recovery and SQL database tuning
+* Analyze a complex computing problem and to apply principles of computing and other relevant disciplines to identify solutions (ABET Computing Criterion 3.1)
+* Design, implement, and evaluate a computing-based solution to meet a given set of computing requirements in the context of the program’s discipline (ABET Computing Criterion 3.2)
+* Identify and analyze user needs and take them into account in the selection, creation, evaluation, and administration of computer-based systems (ABET IT Criterion 3.6)
+
 ## Course Objectives
+
+a. Introduction to databases DBMS Concepts
+b. Introduction to Virtualization
+c. Relational Model ER – Modeling Intro to SQL
+d. Database Design More SQL Intro
+e. Data Definition Language Data Types and Constraints Normalization
+f. Schema Definition Table Creation SQL Queries
+g. SQL Intro
+h. Joins
+i. Server Administration
+j. Subqueries Grouping and Aggregates
+k. Advanced Joins
+l. Conditional Logic
+m. Transactions
+n. Indexes Constraints
+o. Views Metadata
+p. Programming/APIs SQLite
+q. Database Backup and Disaster Recovery
+r. Introduction to NoSQL databases and Big Data
 
 ## Required Textbook
 

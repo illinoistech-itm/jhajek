@@ -50,23 +50,23 @@ Session | Date | Topic | Lab |
 4 | 01/30 | Where to Start Ch 5-6 | Sprint 01 presentation
 5 | 02/06 | Where to Start Ch 7-8 | NA
 6 | 02/13 | Technical Practices of Flow Ch 9-13 | NA
-7 | 02/20 | Technical Practices of Feedback Ch 14-18 | NA
-8 | 02/27 | Technical Practices of Learning Ch 19-21 | Sprint 02 presentation
+7 | 02/20 | Technical Practices of Feedback Ch 14-18 | Sprint 02 presentation
+8 | 02/27 | Technical Practices of Learning Ch 19-21 | NA
 9 | 03/06 | Technical Practices of InfoSec Ch 22-23 | NA
-NA | 03/13 | Spring Break Week | ~~Sprint 03 presentation~~ NA
-10 | 03/20 | DevOps Solutions 2-3 | ~~Sprint 03 presentation~~ NA
-11 | 03/27 | DevOps Solutions 4-5 | Sprint 03 presentation
+NA | 03/13 | Spring Break Week | NA
+10 | 03/20 | DevOps Solutions 2-3 | Sprint 03 presentation
+11 | 03/27 | DevOps Solutions 4-5 | NA
 12 | 04/03 | DevOps Solutions 6-7 | NA
 13 | 04/10 | DevOps Solutions 8-9 | Sprint 04 presentation
-14 | 04/17 | DevOps Solutions 10-11 | NA
-15 | 04/24 | DevOps Solutions 12 | Sprint 05 presentation
+14 | 04/17 | DevOps Solutions 10-12 | NA
+15 | 04/24 | Review and Wrap up | Sprint 05 presentation
 16 | 05/01 | Final Exam Week | NA
 
 ## Course Student Outcomes
 
-At the completion of this course you will have experienced software application development in a team setting. You will understand the roles of the project manager, a software developer, security analyst, IT operations, and UI/UX developer.  You will have produced artifacts consistent with the nature of each job and applied the techniques and concepts learned in all of your pre-requisite courses.   The final measurable outcome will be a full deployment of a working application from scratch.  
+At the completion of this course you will have experienced software application development in a team setting. You will understand the roles of the project manager, a software developer, security analyst, IT operations, and UI/UX developer. You will have produced artifacts consistent with the nature of each job and applied the techniques and concepts learned in all of your pre-requisite courses. The final measurable outcome will be a full deployment of a working application from scratch.
 
-You will be familiar with DevOps terminology and development practices.  You will have integrated hardware and software into a complete information system to meet identified user needs as a solution to a defined business problem and demonstrated ethics, and an understanding of legal, security, and social issues and responsibilities of information systems.  You will have integrated hardware and software into a complete information system to meet identified user needs as a solution to a defined business problem. You will have demonstrated building world class reliable, agile, and secure cloud native applications.
+You will be familiar with DevOps terminology and development practices. You will have integrated hardware and software into a complete information system to meet identified user needs as a solution to a defined business problem and demonstrated ethics, and an understanding of legal, security, and social issues and responsibilities of information systems. You will have integrated hardware and software into a complete information system to meet identified user needs as a solution to a defined business problem. You will have demonstrated building world class reliable, agile, and secure cloud native applications.
 
 ## Course Objectives
 
@@ -126,16 +126,16 @@ The course will make use of Blackboard [http://blackboard.iit.edu/](http://black
 
 ### Assignments
 
-* Software Sprint Report (x5)
+* Sprint Report (x5)
   * Individual reports given by each team member per sprint demonstrating the objectives they completed
 * Tooling assignment
   * This initial assignment will help you get your infrastructure setup and prepared for the semester
-* ~~Ethics assignment~~
-  * ~~Short question and answer assignment dealing with computer ethics~~
 * Advanced Tooling Assignments
   * Covering Vagrant and Packer
 * Student Chapter Presentation
   * Each week there are scheduled lectures that will be given by the student teams during the main course section
+* Student Chapter Review Questions
+  * Each group provides at least 2 questions per chapter covered
 * Final exam consisting of review questions from student presentations
 
 ### Grading
@@ -154,13 +154,13 @@ The final grade for the class will be calculated as follows:
 
 Name | Grade | Total Points
 ------------------|----------|-----------
-Sprint Report (5) | 38% | 20 points each
-Chapter Presentation (1) | 6% | 20 points
-Tooling Assignment (1) | 6% | 10 points
-Tooling Assignment Advanced (2) | 6% | 5 points each
-~~Ethics Assignment (1) | 6% | 10 points~~
-Final Exam | 38% | 100 points
-Attendance | 6% | 20 points
+Sprint Report (5) | 28% | 20 points each
+Chapter Presentation (1) | 15% | 50 points
+Chapter Weekly Review Questions (11) | 15% | 55 points
+Tooling Assignment (1) | 2% | 10 points
+Tooling Assignment Advanced (2) | 2% | 5 points each
+Final Exam | 28% | 100 points
+Attendance | 10% | 30 points
 
 ### Late Submission
 
@@ -175,6 +175,10 @@ All work you submit in this course must be your own.
 Dealing with code -- you need to respect opensource licenses and in the absence of a clear license be careful cutting and pasting code without attributing source. A good metric would be to add a comment in your code with a link to the original source to protect yourself.
 
 This class won't be dealing with formal written papers.
+
+### Communication
+
+We will be using a Discord channel to communicate questions in place of Teaching Assistants this semester.
 
 ### Our Contract
 
