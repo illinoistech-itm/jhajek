@@ -93,6 +93,8 @@ Students completing this course will be able to:
   * Edition description: **Second Edition**
   * [https://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1138718562?ean=9781950508402](https://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1138718562?ean=9781950508402 "DevOps Handbook second edition")
 
+\newpage
+
 ![*Operations Anti-Patterns, DevOps Solutions*](images/dev-ops-anti-patterns.png "Operations Anti-Patterns, DevOps Solutions Cover Image")
 
 * Operations Anti-Patterns, DevOps Solutions
