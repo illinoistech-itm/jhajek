@@ -112,7 +112,6 @@ r. Introduction to NoSQL databases and Big Data
 
 ## Required Textbook
 
-Database Concepts 9th Edition
 ![*Database Concepts 9th Edition*](images/database-concepts9.png "image of book cover")
 
 * Publisher : Pearson; 9th edition (April 23, 2019)
@@ -121,7 +120,8 @@ Database Concepts 9th Edition
 * ISBN-10 : 0135188148
 * ISBN-13: 978-0135188149
 
-Learning SQL, 3rd Edition
+\newpage
+
 ![*Learning SQL 3rd Edition*](images/learning-sql-3.png "Image of book cover")
 
 * Title: Learning SQL, 3rd Edition
@@ -150,7 +150,28 @@ The course will make use of Blackboard [http://blackboard.iit.edu/](http://black
 
 ### Assignments
 
+Each week there will a guided review question section and a lab exercise question. There will be 4 larger mini-projects (MPs) a midterm and a final project presentation.
+
 ### Grading
+
+Each assignment will be worth the following:
+
+* Weekly review questions: 10pts - x10
+* Weekly lab exercises: 10 pts - x10
+* Mini Projects - 25 points each x4
+* 1 midterm exam - 100 pts
+* 1 final project worth 50 points
+* Attendance 2 points per class 30 points
+
+Grading criteria for (undergrad course number) students will be as follows:
+
+Letter | Description | Percentage
+-------|-------------|------------
+A | Outstanding work reflecting substantial effort | 90-100%
+B | Excellent work reflecting good effort | 80-89.99%
+C | Satisfactory work meeting minimum expectations | 70-79.99%
+D | Substandard work not meeting expectations | 60-69.99%
+E | Unsatisfactory work |0-59.99%
 
 ### Late Submission
 
