@@ -38,11 +38,11 @@ Each Project will have additional specific details to be delivered once the exac
 * Second-Tier
   * Three Webservers
 * Third-Tier
-  * Master/Worker replicated database -- one for Reads and one for writes
+  * Master/Worker replicated database -- at least one for Reads and one for Writes
 
 ### Coding and Programming
 
-* Language with a package manager of your choice (ITM 311, ITM 312, ITMD 361 & 362, ITMD 411)
+* JavaScript based - ExpressJs NodeJS and an optional front-end (ITM 311, ITM 312, ITMD 361 & 362, ITMD 411)
 
 ### Infrastructure and IT
 
@@ -55,7 +55,7 @@ Each Project will have additional specific details to be delivered once the exac
 * Creation of Data Schema
   * ERD diagram
 * Creation of infrastructure diagram tool and work flow (ITM 301, ITMO 356)
-* Team must generate at least 15 real “test” users and proper data to test functionality of a system
+* Team must generate at least 35 real “test” users and proper data to test functionality of a system
   * No system is ever used “blank” always fill it up with real data.
 
 ### Security
@@ -64,7 +64,6 @@ Each Project will have additional specific details to be delivered once the exac
 * Use of https (ITMS 448, ITMO 356)
   * Self-signed certs
 * Login authentication mechanism. Google authentication for login, such as:
-  * [SQRL](https://www.grc.com/sqrl/sqrl.htm "SQRL introduction page")
   * [Google OAuth2](https://developers.google.com/identity/protocols/OAuth2 "Google OAuth2 authentication")
 
 ### UI/UX
@@ -90,7 +89,7 @@ Each Project will have additional specific details to be delivered once the exac
 
 * Management of project progress (ITMM 471)
   * Trello
-  * Slack
+  * Slack or Discord
   * GitHub
   * GitHub Issues to resolve bug posts from UI/UX tester
 * User story - how the user will experience the site
@@ -99,7 +98,7 @@ Each Project will have additional specific details to be delivered once the exac
 
 * Application needs to include:
   * A load balancer
-* Database needs to have 15 users with actual data contained at deploy time
+* Database needs to have 35 users with actual data contained at deploy time
 * Creation of Dev Environment on local laptop (ITMO 356) (ITM 301)
   * Application must always be in a working state
   * Each team member must be able to deploy the entire environment via script on their own hardware

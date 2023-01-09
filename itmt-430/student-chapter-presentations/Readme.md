@@ -14,11 +14,11 @@ At the conclusion of each team's presentation, each team will have delivered a 3
 
 ### Make Sure You Have Signed Up for a Presentation Team
 
-This is the link: [Sign Up Google Doc](https://docs.google.com/spreadsheets/d/1doWLgH_VBTXMgYV97oPLwrh71OaUK48anZHQ40-jcTs/edit?usp=sharing "Link to sign up for team presentation"). Add your name to one of the squares available. There will be 4 people (2 teams of 2) per weekly presentation.  Those two teams will divide the allotted chapters between them.
+This is the link: [Sign Up Google Doc](https://docs.google.com/spreadsheets/d/1Qv3kbjniDiEYbqpWJVCoySTo0Wj3PBs35ObSd6Gsd1Q/edit?usp=sharing "Link to sign up for team presentation"). Add your name to one of the squares available. There will be 4 people (2 teams of 2) per weekly presentation.  Those two teams will divide the allotted chapters between them.
 
 Your team will provide:
 
-* An approximately ~~30~~ 25 minute presentation covering the main themes of the material allotted
+* An approximately 25-35 minute presentation covering the main themes of the material allotted
   * Presentation can be pre-recorded or done live
   * Presentation will submitted by the prior Thursday by 5:00 pm to your presentation day and involve a meeting with the professor to cover the material or make any adjustments
   * All team members must participate and speak in the presentation
@@ -30,13 +30,13 @@ In addition the grading rubric will look like this:
 
 Requirement | Points Possible | Notes |
 ----------|------|------
-Opening - was there a clear introduction and summary of what will be presented | 4 | -
-Material Presentation - was the spelling correct, did the presentation show effort, did you read directly off the slides | 4 | -
-Summary of Material - did the presentation cover all relative material | 4 | -
-Review Questions - were at least 5 review questions presented and answer sufficiently | 1 | -
-Additional Resources - were at least three additional resources linked to based on the chapter | 1 | -
-Closing - was there a clear transition to a conclusion with a summary of the material | 4 | -
-Participation - did each member of the team participate | 2 | -
+Opening - was there a clear introduction and summary of what will be presented | 8 | -
+Material Presentation - was the spelling correct, did the presentation show effort, did you read directly off the slides | 8 | -
+Summary of Material - did the presentation cover all relative material | 8 | -
+Review Questions - were at least 5 review questions presented and answer sufficiently | 3 | -
+Additional Resources - were at least three additional resources linked to based on the chapter | 3 | -
+Closing - was there a clear transition to a conclusion with a summary of the material | 8 | -
+Participation - did each member of the team participate | 4 | -
 
 ### Project Deliverables
 
