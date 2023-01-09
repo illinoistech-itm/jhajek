@@ -39,25 +39,41 @@ To get to the Smart Tech Lab - enter the IIT tower on 35th Street. Swipe in at t
 
 All readings should be done prior to class
 
-Session | Date | Topic | Lab |
+Session | Date | Topic | Reading - Homework |
 ----------|------|:------|----------
-1 | 01/09 | Introduction | Intro to Tooling Part I
-2 | 01/16 | No Class MLK Jr Day | Intro to Tooling Part II
-3 | 01/23 | The Three Ways Ch 2-4 | NA
-4 | 01/30 | Where to Start Ch 5-6 | Sprint 01 presentation
-5 | 02/06 | Where to Start Ch 7-8 | NA
-6 | 02/13 | Technical Practices of Flow Ch 9-13 | NA
-7 | 02/20 | Technical Practices of Feedback Ch 14-18 | NA
-8 | 02/27 | Technical Practices of Learning Ch 19-21 | Sprint 02 presentation
-9 | 03/06 | Technical Practices of InfoSec Ch 22-23 | NA
-NA | 03/13 | Spring Break Week | ~~Sprint 03 presentation~~ NA
-10 | 03/20 | DevOps Solutions 2-3 | ~~Sprint 03 presentation~~ NA
-11 | 03/27 | DevOps Solutions 4-5 | Sprint 03 presentation
-12 | 04/03 | DevOps Solutions 6-7 | NA
-13 | 04/10 | DevOps Solutions 8-9 | Sprint 04 presentation
-14 | 04/17 | DevOps Solutions 10-11 | NA
-15 | 04/24 | DevOps Solutions 12 | Sprint 05 presentation
-16 | 05/01 | Final Exam Week | NA
+1 | 01/09 | Introduction | Tooling Assignment | NA
+2 | 01/11 | Introduction | Tooling Assignment | NA
+3 | 01/16 | No Class - MLK day | NA
+4 | 01/18 | Introduction to tooling | NA
+5 | 01/23 | History of Databases | NA
+6 | 01/25 | History of databases | NA
+7 | 01/30 | The Relational Model | NA
+8 | 02/01 | The Relational Model | NA
+9 | 02/06 | The Relational Model | NA
+10 | 02/08 | The Relational Model | NA
+11 | 02/13 | Learning SQL | NA
+12 | 02/15 | Learning SQL | NA
+13 | 02/20 | Learning SQL | NA
+14 | 02/22 | Learning SQL | NA
+15 | 02/27 | Data Modeling | NA
+16 | 03/01 | Data Modeling | NA
+17 | 03/06 | Mid-term preparation | NA
+18 | 03/08 | Mid-term Exam  | NA
+NA | 03/13 | Spring Break Week | NA
+NA | 03/15 | Spring Break Week | NA
+19 | 03/20 | Database Design | NA
+20 | 03/22 | Database Design | NA
+21 | 03/27 | Database Administration | NA
+22 | 03/29 | Database Administration | NA
+23 | 04/03 | Cloud Database | NA
+24 | 04/05 | Cloud Database | NA
+25 | 04/10 | NoSQL Database | NA
+26 | 04/12 | NoSQL Database | NA
+27 | 04/17 | Project work time | NA
+28 | 04/19 | Project work time | NA
+29 | 04/24 | Project work time | NA
+30 | 04/26 | Project work time | NA
+31 | 05/01 | Final Exam Week | NA
 
 ## Course Student Outcomes
 
@@ -95,6 +111,24 @@ q. Database Backup and Disaster Recovery
 r. Introduction to NoSQL databases and Big Data
 
 ## Required Textbook
+
+Database Concepts 9th Edition
+![*Database Concepts 9th Edition*](images/database-concepts9.png "image of book cover")
+
+* Publisher : Pearson; 9th edition (April 23, 2019)
+* Language : English
+* Paperback : 552 pages
+* ISBN-10 : 0135188148
+* ISBN-13: 978-0135188149
+
+Learning SQL, 3rd Edition
+![*Learning SQL 3rd Edition*](images/learning-sql-3.png "Image of book cover")
+
+* Title: Learning SQL, 3rd Edition
+* Author(s): Alan Beaulieu
+* Release date: March 2020
+* Publisher(s): O'Reilly Media, Inc.
+* ISBN: 9781492057611
 
 ### Readings
 
