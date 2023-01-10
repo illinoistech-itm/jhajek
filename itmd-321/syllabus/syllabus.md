@@ -13,7 +13,7 @@ Semester: Spring 2023 - Professor Jeremy Hajek
  Telephone | 312.567.5937
  Email | hajek@iit.edu
  Office | Perlstein Hall Room 223A, 10 W. 33rd St.
- Office Hours | Mon 12:30 PM — 1:20 PM, Tue & Thu 10:00 AM — 2:40 PM, Wed 11:30 AM — 1:00 PM, Fri 11:00 AM — 2:00 PM
+ Office Hours | Mon 12:30 PM — 1:20 PM, Tue & Thu 10:30 AM — 2:40 PM, Wed 11:30 AM — 1:00 PM, Fri 11:00 AM — 2:00 PM
  Location | Perlstein Hall 223 or Via Google Meets
  URL | Book and appointment at: [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 
