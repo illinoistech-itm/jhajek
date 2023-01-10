@@ -50,9 +50,9 @@ Session | Date | Topic | Reading - Homework |
 5 | 01/24 | Setting up Spark Ch 2 | NA
 6 | 01/26 | Setting up Spark Ch 2 | NA
 7 | 01/31 | Structured APIs Ch 3 | NA
-8 | 02/01 | Structure APIs Ch 3 | Assignment-01
-9 | 02/07 |  Structure APIs Ch 3 | NA
-10 | 02/09 |  Structure APIs Ch 3 | Assignment-02
+8 | 02/01 | Structured APIs Ch 3 | Assignment-01
+9 | 02/07 |  Structured APIs Ch 3 | NA
+10 | 02/09 | Structured APIs Ch 3 | Assignment-02
 11 | 02/14 | Introduction to Built-in Data Sources Ch 4 | Assignment-03
 12 | 02/16 | Introduction to Built-in Data Sources Ch 4 | NA
 13 | 02/21 | Interacting with External Data Sources Ch 5 | Assignment-04
@@ -69,8 +69,8 @@ NA | 03/16 | Spring Break Week | NA
 22 | 03/30 | Structure Streaming Ch 8 | NA
 23 | 04/04 | Data Lakes and Machine Learning Ch 9-10 | Assignment-08
 24 | 04/06 | Data Lakes and Machine Learning Ch 9-10 | NA
-25 | 04/11 | Data Lakes and Machine Learning Ch 9-10 | Assignment-09
-26 | 04/13 | Data Lakes and Machine Learning Ch 9-10 | NA
+25 | 04/11 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | Assignment-09
+26 | 04/13 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | NA
 27 | 04/18 | Project work time | Assignment-10 and Final Project Assigned
 28 | 04/20 | Project work time | NA
 29 | 04/25 | Project work time | NA
