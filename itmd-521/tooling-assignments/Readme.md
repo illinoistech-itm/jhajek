@@ -61,7 +61,7 @@ For M1 Macs you will run the same as above but without the  VirtualBox install:
     * This will add the needed plugin to allow you to use Parallels from Vagrant
     * This will also work if you have Parallels Pro Edition on an Intel Mac
 
-For Windows10 and 11 using Chocolatey:
+For Windows 10 and 11 using Chocolatey:
 
 `choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell atom virtualbox vagrant packer`
 
@@ -151,6 +151,14 @@ Packer is another automation tool from HashiCorp.  Whereas Vagrant was for runni
 Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site").  If you have a version > 1.6.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  
 
 Take a screenshot of the output of the command: ```packer --version```
+
+### Oh-My-Git Tutorial
+
+Download the proper [Oh My Git! tutorial](https://ohmygit.org/ "webpage for oh my git") the program runs as a self contained executable on your system (Windows Mac or Linux).
+
+Complete the tutorial and take screenshots of the completed sections (may need to take a few shots as the there are many sections).
+
+This Git tutorial is a good refresher for those who need it and a great introduction for those new to Version Control and need to learn it.
 
 ## Tooling Assignment Part II
 
