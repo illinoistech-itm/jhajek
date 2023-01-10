@@ -181,13 +181,3 @@ Illinois Tech encourages anyone experiencing sexual harassment or sexual miscond
 For confidential support, you may reach Illinois Tech’s Confidential Advisor at (773) 907-1062. You can also contact a licensed practitioner in Illinois Tech’s Student Health and Wellness Center at student.health@iit.edu or (312)567-7550
 
 For a comprehensive list of resources regarding counseling services, medical assistance, legal assistance and visa and immigration services, you can visit the Office of Title IX Compliance website at [https://www.iit.edu/title-ix/resources](https://www.iit.edu/title-ix/resources "IIT Title IX resources").
-
-### COVID-19 Precautions and Face Coverings in Class
-
-Illinois Tech students are required to be vaccinated, to have a booster as soon as you are eligible, and to wear face masks at all times when indoors. In general, individuals should spend as little time as practicable in closer proximity when doing so is necessary to achieve learning objectives. Students who are feeling ill or experiencing symptoms such as sneezing, coughing, or a higher than normal temperature will be excused from class and are expected to stay at home.
-
-Instructors have the right to ask those who are not complying with these requirements to leave class in the interest of everyone's health and safety. In the event that a student refuses to comply with instructor directions regarding face masks, the instructor has the right to ask the student to leave, and/or cancel class. A student who refuses to comply with these requirements will be referred to the Office of the Dean of Students for possible disciplinary action under the Student Code of Conduct.
-
-Additionally, as a reminder, following other simple practices such as frequent and thorough hand washing, wiping down desks and seats with disinfectant wipes when possible, not sharing personal items such as pens and cell phones, and avoiding crowded hallways and other enclosed spaces will promote good health in and out of the classroom.
-
-Visit iit.edu/COVID-19 for details on Illinois Tech’s response to coronavirus (COVID-19). For information from government authorities, please see the Centers for Disease Control and Prevention website at cdc.gov
