@@ -86,7 +86,9 @@ brew install --cask powershell ; brew install --cask iterm2 ; brew install git ;
 For Windows 10 and 11 using Chocolatey:
 
 ```PowerShell
-choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell "virtualbox --version 6.1.40" vagrant packer
+choco install powershell-core 
+choco install microsoft-windows-terminal git vscode vscode-powershell vagrant packer
+choco install "virtualbox --version 6.1.40"
 ```
 
 ### Installation of a Modern Shell

@@ -1,6 +1,6 @@
 # Tooling Assignment Advanced Template
 
-Provide the required screenshots to show that tooling has been properly installed inside of your Ubuntu 20.04.3 Vagrant Box
+Provide the required screenshots to show that tooling has been properly installed inside of your Ubuntu Jammy 22.04 Vagrant Box
 
 ## Hostname Change
 
