@@ -97,7 +97,7 @@ Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfi
 
 From our jammy64 directory, let us start our first Vagrant Box.  From the Terminal type: `vagrant up`.  What you will see is the Box file with the VirtualBox (or Parallels) vm being extracted and registered with your virtualization software.  Next the system will begin to boot.  The first install will take a bit longer as some additional drivers are being installed.  This only happens on first boot.
 
-Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: `vagrant ssh`, and we are faced with an Ubuntu Server command prompt. What was the password? What was the IP address?  You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the Fedora 35 box.
+Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: `vagrant ssh`, and we are faced with an Ubuntu Server command prompt. What was the password? What was the IP address?  You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the Alma Linux 9 box.
 
 ### Additional Vagrant Commands
 
