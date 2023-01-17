@@ -66,12 +66,12 @@ Assuming that the command `vagrant --version` gives us output, lets begin by ins
 
 Here we are going to create a directory to manage our artifact.  It is a good idea to create a directory per virtual machine that we will administer via Vagrant.  You can create a class directory and then sub-directories and or you can place this on a different disk. This I will leave up to you as it is your filesystem and your data--you are the one in charge.
 
-```mkdir itmd-521 ; cd itmd-521``
+```mkdir itmd-521 ; cd itmd-521```
 
 We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 22.04 known as Jammy and a [Alma Linux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpagte release notes for Alma Linux 9") (CentOS/Red Hat based) Virtual Machines:
 
 * ```mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls```
-* ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux9 ; ls```
+* ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls```
 
 For those using M1 Macs and Parallels you will need to replace the names of the Boxes in the demos with these two that have been prepared for M1 macs and parallels
 
