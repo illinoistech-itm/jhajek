@@ -49,7 +49,7 @@ If you are a designer, Vagrant will automatically set everything up that is requ
 
 ### Vagrant Basics
 
-Remember that Vagrant is an abstraction tool -- it doesn't control or create anything itself, only interacts with a Virtualization tool (VirtualBox or Parallels). 
+Remember that Vagrant is an abstraction tool -- it doesn't control or create anything itself, only interacts with a Virtualization tool (VirtualBox or Parallels).
 
 There are a few basic terms to remember when dealing with Vagrant:
 
