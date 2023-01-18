@@ -14,15 +14,15 @@ At the conclusion of each team's presentation, each team will have delivered an 
 
 ### Make Sure You Have Signed Up for a Presentation Team
 
-This is the link: [Sign Up Google Doc](https://docs.google.com/spreadsheets/d/1Qv3kbjniDiEYbqpWJVCoySTo0Wj3PBs35ObSd6Gsd1Q/edit?usp=sharing "Link to sign up for team presentation"). Add your name to one of the squares available. There will be 4 people (2 teams of 2) per weekly presentation.  Those two teams will divide the allotted chapters between them.
+See Blackboard > CONTENT for the sign up link add your name to one of the chapters (3 per week/team).
 
 Your team will provide:
 
-* An approximately 25-35 minute presentation covering the main themes of the material allotted
-  * Presentation can be pre-recorded or done live
+* An approximately 30-35 minute presentation covering the main themes of the material allotted
+  * Presentation will be done live either all in person or all online, but done live
   * Presentation will submitted by the prior Thursday by 5:00 pm to your presentation day and involve a meeting with the professor to cover the material or make any adjustments
   * All team members must participate and speak in the presentation
-  * The presentation must clearly cover the main themes of your allotted material and clearly express them
+  * The presentation must clearly cover the main themes of your allotted material and clearly express them, as well as discuss the case studies mentioned (if applicable).
   * Teams will prepare at least 5 review questions of short answer and the answers for these questions
   * Provide three additional slides linking to resources involving YouTube presentations from people mentioned in the chapter or based on topics in the chapter
 
@@ -30,16 +30,26 @@ In addition the grading rubric will look like this:
 
 Requirement | Points Possible | Notes |
 ----------|------|------
-Opening - was there a clear introduction and summary of what will be presented | 8 | -
-Material Presentation - was the spelling correct, did the presentation show effort, did you read directly off the slides | 8 | -
-Summary of Material - did the presentation cover all relative material | 8 | -
-Review Questions - were at least 5 review questions presented and answer sufficiently | 3 | -
-Additional Resources - were at least three additional resources linked to based on the chapter | 3 | -
-Closing - was there a clear transition to a conclusion with a summary of the material | 8 | -
-Participation - did each member of the team participate | 4 | -
+Opening - was there a clear introduction and summary of what will be presented | 7 | -
+Material Presentation - was the spelling correct, did the presentation show effort, did you read directly off the slides | 7 | -
+Summary of Material - did the presentation cover all relative material | 7 | -
+Review Questions - were at least 5 review questions presented and answer sufficiently | 7 | -
+Additional Resources - were at least three additional resources linked to based on the chapter | 7 | -
+Closing - was there a clear transition to a conclusion with a summary of the material | 7 | -
+Participation - did each member of the team participate | 7 | -
+
+### Non-Presenting Team's weekly role
+
+Each non-presenting team must prepare and additional one review, short answer question, per chapter covered and submit them to Blackboard by the Friday prior to the weeks presentation so that the team and the instructor have a chance to cover the material during the Monday presentation.
+
+### Submitted Questions
+
+All submitted questions will become part of a pool for the final exam
 
 ### Project Deliverables
 
-Your team will either do a live or a pre-recorded presentation.  If a pre-recorded, a link to the presentation must be submitted.  Submit which ever notes / presentation platform you have prepared and a second copy with the detailed answers provided to BlackBoard the ~~Friday~~ Thursday by 5:00 PM, so I have time to give you feedback before your Monday's presentation. Then we will meet as a team on Friday morning - you can book an appointment at [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Instructor Booking App") -- Note only one team member has to book a time.
+Submit which ever notes / presentation platform you have prepared and a second copy with the detailed answers provided to BlackBoard the Thursday by 5:00 PM, so I have time to give you feedback before your Monday's presentation. Then we will meet as a team on Friday morning - you can book an appointment at [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Instructor Booking App") -- Note only one team member has to book a time.
 
-This will be a team grade, but individual submission--each person submits a copy of the material.
+Presenting team will be a team submission only one submission is needed per team.
+
+Non-presenting teams will also submit their questions as a team submission.

@@ -30,14 +30,24 @@ Taken from [https://packer.io](https://packer.io "Packer webpage"): Why Packer?
 
 ## Packer HCL2 template
 
-Lets take a look and see how Packer is able to build virtual machines from a YAML based text file. For the sample code used in the next section you can issue the command `git pull` in the jhajek repo you cloned at the beginning of class to get the latest source code samples.  They will be located in the directory [packer-code-examples](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/packer-code-examples "website for packer code exmaple"). Let us look at the file named: `ubuntu20043-vanilla-live-server.pkr.hcl`
+Lets take a look and see how Packer is able to build virtual machines from a YAML based text file. For the sample code used in the next section you can issue the command `git pull` in the jhajek repo you cloned at the beginning of class to get the latest source code samples.  They will be located in the directory [packer-code-examples](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/packer-code-examples "website for packer code exmaple"). Let us look at the file named: `ubuntu-22041-live-server.pkr.hcl`
 
 ```hcl
 
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
-source "virtualbox-iso" "ubuntu-20043-live-server" {
-  boot_command            = ["<enter><enter><f6><esc><wait> ", "autoinstall ds=nocloud-net;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/", "<enter><wait>"]
+packer {
+  required_plugins {
+    virtualbox = {
+      version = ">= 1.0.4"
+      source  = "github.com/hashicorp/virtualbox"
+    }
+  }
+}
+
+source "virtualbox-iso" "ubuntu-22041-live-server" {
+  #boot_command            = ["<enter><enter><f6><esc><wait> ", "autoinstall ds=nocloud-net;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/", "<enter><wait>"]
+  boot_command          = ["<cOn><cOff>", "<wait5>linux /casper/vmlinuz"," quiet"," autoinstall"," ds='nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/'","<enter>","initrd /casper/initrd <enter>","boot <enter>"]
   boot_wait               = "5s"
   disk_size               = 15000
   guest_additions_path    = "VBoxGuestAdditions_{{ .Version }}.iso"
@@ -45,31 +55,24 @@ source "virtualbox-iso" "ubuntu-20043-live-server" {
   http_directory          = "subiquity/http"
   http_port_max           = 9200
   http_port_min           = 9001
-  iso_checksum            = "sha256:f8e3086f3cea0fb3fefb29937ab5ed9d19e767079633960ccb50e76153effc98"
-  iso_urls                = ["http://mirrors.kernel.org/ubuntu-releases/20.04.3/ubuntu-20.04.3-live-server-amd64.iso"]
+  iso_checksum            = "sha256:10f19c5b2b8d6db711582e0e27f5116296c34fe4b313ba45f9b201a5007056cb"
+  iso_urls                = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.1/ubuntu-22.04.1-live-server-amd64.iso"]
   shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
-  ssh_wait_timeout        = "1800s"
-  ssh_password            = "${var.SSHPW}"
-  ssh_port                = 2222
-  ssh_timeout             = "20m"
   ssh_username            = "vagrant"
+  ssh_password            = "${var.user-ssh-password}"
+  ssh_timeout             = "45m"
   vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
   virtualbox_version_file = ".vbox_version"
-  vm_name                 = "ubuntu-focal"
+  vm_name                 = "ubuntu-jammy"
   headless                = "${var.headless_build}"
 }
 
 build {
-  sources = ["source.virtualbox-iso.ubuntu-20043-live-server"]
-
-  provisioner "shell" {
-    #inline_shebang  =  "#!/usr/bin/bash -e"
-    inline          = ["echo 'Resetting SSH port to default!'", "sudo rm /etc/ssh/sshd_config.d/packer-init.conf"]
-    }
+  sources = ["source.virtualbox-iso.ubuntu-22041-live-server"]
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    script          = "../scripts/post_install_ubuntu_2004_vagrant.sh"
+    script          = "../scripts/post_install_ubuntu_2204_vagrant.sh"
   }
 
   post-processor "vagrant" {
@@ -93,7 +96,7 @@ The build section tells Packer what to build.  You can have multiple *source* se
 
 ### Provisioners
 
-[Provisioners](https://www.packer.io/docs/provisioners "Packer provisioners web-page") are an extra feature of Packer. This allows you to execute additional commands after the initial install is completed.  This allows you to separate the installation template and the ability to customize your artifacts.  You can reuse the same template to build many Ubuntu Server Virtual Machines, but use a single or multiple shell script to install different software in each virtual machine.  You can see the source code on the line that has **script**: `script = "../scripts/post_install_ubuntu_2004_vagrant.sh"`
+[Provisioners](https://www.packer.io/docs/provisioners "Packer provisioners web-page") are an extra feature of Packer. This allows you to execute additional commands after the initial install is completed.  This allows you to separate the installation template and the ability to customize your artifacts.  You can reuse the same template to build many Ubuntu Server Virtual Machines, but use a single or multiple shell script to install different software in each virtual machine.  You can see the source code on the line that has **script**: `script = "../scripts/post_install_ubuntu_2204_vagrant.sh"`
 
 You can also use inline shell commands for customizing your artifact.  Packer will manage all of this using an SSH session.
 
@@ -141,7 +144,7 @@ At the conclusion of our Packer build template we will have Packer export our Vi
 
 ## Tutorial Steps
 
-On your local system we will need to generate at least two Public/Private Keypairs.  This will enable us to replace using Personal Access Tokens and secure our source code deployment while automating it.
+On your local system we will need to generate at least two Public/Private Keypairs. This will enable us to replace using Personal Access Tokens and secure our source code deployment while automating it.
 
 ### SSH Setup Steps
 
@@ -155,14 +158,7 @@ On your local system we will need to generate at least two Public/Private Keypai
   * Click the Green **New SSH Key** button and paste the content into the new key
 * Go back to your main GitHub repo page and click the Green Clone button, but this time select the **SSH** tab and not *https*
   * Copy this URL to the clip board
-
-Upon finishing this step we will need to adjust our [Git Remote URL](https://devconnected.com/how-to-change-git-remote-origin/ "website to adjust git remote url").
-
-* Open a terminal (MacOS or Windows) and issue the command: `git remote -v`, note the output, it still points to https
-  * We need to change the remote URL value to be the git URL.  Issue this command: `git remote set-url origin git@github.com:illinoistech-itm/jhajek.git`
-  * Issue the command: `git remote -v` to see that it has changed
 * In the `.ssh` directory on your host system you need to create a file named: `config`
-  * This file will have overloads so that when you use Git the keys will be automatically configured
   * The `config` file should have similar content (the User value is the GitHub ID of your account)
 
 ```bash
@@ -178,7 +174,7 @@ Host github.com
 To get a hold of the Packer Build Template samples, issue the command: `git pull` from the jhajek repo directory you cloned previously.  Copy the packer-example-code directory over to your private repo under the `itmt-430` directory.
 
 * To setup the template to use the second RSA key you generated, issue the command: `cat ~/.ssh/id_ed25519_packer_key.pub` and copy that value.
-  * In the sample code you just copied to your own private repo, navigate to the directory ubuntu_20043_vanilla > subiquity > http > user-data.  
+  * In the sample code you just copied to your own private repo, navigate to the directory ubuntu_22041_vanilla > subiquity > http > user-data.  
   * Proceed to edit the `user-data` file, line 30, adding the contents of `id_ed25519_packer_key.pub` to the value
   * `- 'ssh-rsa '` would become `- 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDu9nNkiO5LiIK8SUKLq59DnVGjU3R6H+K5jMxJTGfW+ controller@lenovo-laptop'`
     * Your PUBLIC key will have a similar structure but different value
