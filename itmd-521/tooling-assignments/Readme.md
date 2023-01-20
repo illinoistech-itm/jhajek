@@ -64,8 +64,7 @@ For M1 Macs you will run the same as above but without the  VirtualBox install:
 For Windows 10 and 11 using Chocolatey:
 
 ```PowerShell
-choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell vagrant packer
-choco install "virtualbox --version 6.1.40"
+choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell vagrant packer virtualbox
 ```
 
 ### Installation of a Modern Shell
