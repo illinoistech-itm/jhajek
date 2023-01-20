@@ -87,8 +87,7 @@ For Windows 10 and 11 using Chocolatey:
 
 ```PowerShell
 choco install powershell-core 
-choco install microsoft-windows-terminal git vscode vscode-powershell vagrant packer
-choco install "virtualbox --version 6.1.40"
+choco install microsoft-windows-terminal git vscode vscode-powershell vagrant packer virtualbox
 ```
 
 ### Installation of a Modern Shell
