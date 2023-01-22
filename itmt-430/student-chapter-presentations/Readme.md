@@ -10,7 +10,7 @@ This document will explain the requirements and deliverables of your team chapte
 
 ## Outcomes
 
-At the conclusion of each team's presentation, each team will have delivered an ~30 minute presentation covering the topics and chapters assigned.  You will have highlighted major concepts and themes as well as covered the creation of review material that will be complied into the class final exam.
+At the conclusion of each team's presentation, each team will have delivered not less than a ~~an ~~30 minute presentation covering the topics and chapters assigned.  You will have highlighted major concepts and themes as well as covered the creation of review material that will be complied into the class final exam.
 
 ### Make Sure You Have Signed Up for a Presentation Team
 
@@ -18,12 +18,12 @@ See Blackboard > CONTENT for the sign up link add your name to one of the chapte
 
 Your team will provide:
 
-* An approximately 30-35 minute presentation covering the main themes of the material allotted
+* An approximately ~~30-35~~ 40 minute presentation covering the main themes of the material allotted
   * Presentation will be done live either all in person or all online, but done live
   * Presentation will submitted by the prior Thursday by 5:00 pm to your presentation day and involve a meeting with the professor to cover the material or make any adjustments
   * All team members must participate and speak in the presentation
   * The presentation must clearly cover the main themes of your allotted material and clearly express them, as well as discuss the case studies mentioned (if applicable).
-  * Teams will prepare at least 5 review questions of short answer and the answers for these questions
+  * Teams will prepare at least 3 review questions per chapter material covered ~~5 review questions of short answer~~ and the answers for these questions
   * Provide three additional slides linking to resources involving YouTube presentations from people mentioned in the chapter or based on topics in the chapter
 
 In addition the grading rubric will look like this:
