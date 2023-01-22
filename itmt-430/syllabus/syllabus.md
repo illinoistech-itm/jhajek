@@ -47,11 +47,11 @@ Session | Date | Topic | Lab |
 1 | 01/09 | Introduction | Intro to Tooling Part I
 2 | 01/16 | No Class MLK Jr Day | Intro to Tooling Part II
 3 | 01/23 | The Three Ways Ch 2-4 | NA
-4 | 01/30 | Where to Start Ch 5-6 | Sprint 01 presentation
-5 | 02/06 | Where to Start Ch 7-8 | NA
+4 | 01/30 | Where to Start Ch 5-6 | ~~Sprint 01 presentation~~ NA
+5 | 02/06 | Where to Start Ch 7-8 | ~~NA~~ Sprint 01 presentation
 6 | 02/13 | Technical Practices of Flow Ch 9-13 | NA
-7 | 02/20 | Technical Practices of Feedback Ch 14-18 | Sprint 02 presentation
-8 | 02/27 | Technical Practices of Learning Ch 19-21 | NA
+7 | 02/20 | Technical Practices of Feedback Ch 14-18 | ~~Sprint 02 presentation~~ NA
+8 | 02/27 | Technical Practices of Learning Ch 19-21 | ~~NA~~ Sprint 02 presentation
 9 | 03/06 | Technical Practices of InfoSec Ch 22-23 | NA
 NA | 03/13 | Spring Break Week | NA
 10 | 03/20 | DevOps Solutions 2-3 | Sprint 03 presentation
