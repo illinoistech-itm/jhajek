@@ -20,36 +20,45 @@ There are a long list of requirements that are unique to this Sprint that won't 
 
 ### Project Manager and Team Roles
 
-For the first sprints there are many jobs that need to be accomplished and the role other than the Project Manager will be loosely defined.  Other than the Project Manager, roles do not need to be directly defined, but the Project Manager is the leader of the team for the duration of the Sprint.  
+Each sprint will have 4-5 roles assigned that will be rotated each sprint (you only do one job once).  The roles are as follows:
+
+* Project Manager - ITMM 471
+  * Responsible for the accomplishment of work for the entire sprint. Active leader and assigner of tasks, directing flow.
+* Developer 1 - ITM 311, 313, ITMD 411, ITMD 361, ITMO 340, ITMD 321
+  * Both developers work together to deploy code that matches the tasks given to them by the team and through the project manager.
+* Developer 2 - ITM 311, 313, ITMD 411, ITMD 361, ITMO 340, ITMD 321
+* UI/UX and User Testing, ITMD 361, 362
+  * Responsible for designing the UI/UX and working with the developers to implement the design in code, and then test that code to see it performs as designed.
+* IT Operations and Security, ITM 301, ITMO 356, ITMS 448, ITMO 340, ITMD 321
+  * Responsible for building, automating, securing, and deploying the team code to production infrastructure
 
 ### Team Items to Setup
 
-Make sure each person has signed up to be on a team by Monday 01/23/22 -- See CONTENT section in BlackBoard for Signup Link
-
-While there are many solutions to the tools required I have provided a small set of sample and free tools that work together well.  Alternatives are welcome as long as they meet the specific requirements listed.
+While there are many solutions to the tooling required, I have provided a small set of sample and free tools that work well together. Alternatives are welcome as long as they meet the specific requirements listed.
 
 * The team needs to create a Project Management Kanban based tool
   * This needs to be a hosted web solution of your choice
-    * Recommendations: [Trello.com](https://trello.com/ "Trello web site") or [Basecamp](https://basecamp.com/ "Basecamp website")
+    * [Trello.com](https://trello.com/ "Trello web site")
+    * [Basecamp](https://basecamp.com/ "Basecamp website")
+    * [GitHub Projects](https://docs.github.com/issues/trying-out-the-new-projects-experience "website for GitHub projects")
   * Need to invite all team members to it
   * Need to invite the instructor to the project - **hajek@hawk.iit.edu**
   * Must be used during the entire project to reflect work-in-progress and work completed
   * Project Management tool needs to have Chat based notification integration
   * Google Docs is not a valid choice for a Project Management Tool as it does not meet the fist requirements
 
-* The team will use Trunk-based Git development
-  * This is a bit different than branched based development - but is widely used in industry, but requires some coordination
-  * Professor will invite each team-member to a team repo which you will have Admin access to (will be done 01/23/22)
+* The team will a Git development workflow
+  * Professor will invite each team-member to a team repo which you will have Admin access
   * This is to help the team focus on collaborating and understanding how code is developed and deployed
   * All design docs, instructions, code, diagrams, and tests will be updated and kept in the team repo
-  * Google Docs is not an adequate solution for team based Trunk Development
+  * Google Docs is not an adequate solution for team based Trunk Development - everything in the repository
 
 * Signup for Team Chat Tool
   * This will enable synchronous and asynchronous out of band communication between members and the professor if questions arise
     * Invite: **hajek@hawk.iit.edu**
     * Recommendations: [Slack](https://slack.com "Slack website")
     * Recommendations: [Discord](https://discord.com "Discord website") -- need to have integrations with Chat and Project Management tools
-  * Must have the ability to add notifications for Project Management boards and Git commits to the Chat tool
+  * Must have the ability to add notifications from Project Management boards and Git commits to the Chat tool
   * This will allow for a central pooling of resources and knowledge
   * Facebook Messenger and SMS are not adequate solutions
 
@@ -66,19 +75,17 @@ Place a markdown document named: **Compact.md** in the root of your team directo
 * Consequences
 * Restoration methods
 
-The document doesn't need to be extensive, but all parties need sign (place name and email below) and be in agreement.  If you need some help or advise I have some material that can help you or reference material from your Project Management class, ITMM 471.
+The document doesn't need to be extensive, but all parties need sign (place name and email below) and be in agreement. If you need some help or advice I have some material that can help you or reference your material from your Project Management class, ITMM 471.
 
 ### Team Readme.md
 
-In the root of the team repository provided in the Readme.md add a section noting which lab section and who are the members of the team.
+In the root of the team repository provided in the Readme.md add a section noting which lab section you are and who are the members of the team.
 
 ### Project About.md
 
-You will need to provide a markdown document named: **About.md** in the root of the team repository.  This document will describe the general scope and outline of the project.
+You will need to provide a markdown document named: **About.md** in the root of the team repository. This document will describe the general scope and outline of the project.
 
-In the **About.md** add a paragraph or two describing the general function of your proposed project. The default template will be a 3-tier, multi-user Q&A website -- similar to [StackOverflow](https://stackoverflow.com "Stackoverflow website"). Other ideas and proposals are welcome -- just run them by the instructor to make sure they are robust enough for the scope of the class.
-
-No programming or code design is required at this time.
+In the **About.md** add a paragraph or two describing the general function of your proposed project. No programming or code design is required at this time.
 
 ### Project .gitignore
 
@@ -98,6 +105,7 @@ packer_cache/
 *.ova
 output*/
 vagrant.d/
+.vagrant.d/
 *.iso
 variables.pkr.hcl
 *.priv
@@ -105,30 +113,31 @@ variables.pkr.hcl
 id_rsa
 id_rsa*
 id_rsa.pub
+id_ed25519*
 .Vagrantfile*
 ```
 
+## Decided on Team Project Idea
+
+The project will you will have to plan, build, deploy, manage, and secure a 3-tier webapp site. Your team will need to determine what the site will be/do. The team needs to keep in mind the site will be working by the end of sprint-02. Your team can choose a topic or subject for your site that you could use as a future resume piece. This will impact the rest of your sprint-01 deliverables.
+
 ### UI/UX Design
 
-In a folder in the team repository placed in the root the repo named **design**, place all the needed design documents.  These might be images or could be skeleton HTML.  The purpose of this directory is that the team needs to design the entire functionality on paper before coding anything.  This is commonly known as design document or requirements gathering.  Your team has to decide the use of colors, buttons, function of each page, and the data collection points (forms and textboxes). This document will be used in the future sprints to help the Project Managers to assign tasks and check that committed code matches the design documents.  Having this document is critical to success, otherwise all progress is an illusion if you don't know what you should be working towards.
+In a folder in the team repository placed in the root the repo named **design**, place all the needed design documents. These might be images or could be skeleton HTML. The purpose of this directory is that the team needs to design the entire functionality on paper before coding anything. This is commonly known as design document or requirements gathering. Your team has to decide the use of colors, buttons, function of each page, and the data collection points (forms and textboxes). This document will be used in the future sprints to help the Project Managers to assign tasks and check that committed code matches the design documents. Having this document is critical to success, otherwise all progress is an illusion if you don't know what you should be working towards.
 
 ### Entity Relationship Diagram
 
-Based on completing the UI/UX design you will be able to create an entire Entity Relationship diagram.  This will show the structure or schema of the database you end up working on. The ERD can be draw using a diagram tool and stored in the **design** folder for reference.  In addition, from the ERD you can generate SQL CREATE statements to generate this schema.  This will be used in t 2 but is required by the end of Sprint 01.
+Based on completing the UI/UX design you will be able to create an entire Entity Relationship diagram.  This will show the structure or schema of the database you end up working on. The ERD can be draw using a diagram tool and stored in the **design** folder for reference. In addition, from the ERD you can generate SQL CREATE statements to generate this schema. This will be used in sprint-02 but is required by the end of Sprint 01.
 
 ### Creation and Listing of Application Tasks
 
-Based on the creation of the UI/UX design, this will give your team a list of atomic tasks to accomplish.  These are things such as the login mechanism -- this is a good atomic task to start with.  *"Get the website working"* is not a very good atomic task -- when is it finished? The team will break all the tasks for the entire site down and then assign each task a card or a task.  This phase will just require the listing of all the atomic tasks to finish the project, no need to assign tasks yet, that will happen in Sprint 02.  This is a team task as the project is everyone's responsibility.
+Based on the creation of the UI/UX design, this will give your team a list of atomic tasks to accomplish.  These are things such as the login mechanism -- this is a good atomic task to start with. *"Get the website working"* is not a very good atomic task -- when is it finished? The team will break all the tasks for the entire site down and then assign each task a card or a task. This phase will just require the listing of all the atomic tasks to finish the project, no need to assign tasks yet, that will happen in Sprint 02. This is a team task as the project is everyone's responsibility.
 
 This will be accomplished on the teams Project Management tool, and notification will show in the Chat Channel
 
-## Deliverables
-
-Upon the following Lab time, Jan 31st and February 2nd your teams project manager will give an approximate 20 minute presentation of the results of your teams first sprint.
-
 ### Individual Deliverables
 
-The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work.  This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
+The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work. This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
 
 In the private repo provided to you (with your hawk ID), under the itmt-430 folder, create another folder that will be named for this sprint, **sprint-01**.  In this directory place a markdown based document named: **Report.md**
 
@@ -192,14 +201,14 @@ Walk-through of your site | 3
 
 ### Presentation Requirements
 
-* The presentation can be live or pre-recorded but only the Project Manager does the presenting
+* The presentation will be done in person for the live labs (L01 and L03), online class (L04) will have to pre-record
+  * Only the Project Manager does the presenting
   * Others need to help prepare it but only the PM will do the presenting
   * Presentation is not a slide show, but a verbal explaining and demonstration of the artifacts produced
   * We need to see your face
-  * If recorded, find a quiet place, focus on audio and or use head phones and make a quality recoding.
-  * There are OTS recording studios in the basement of Stuart Building and I have recording equipment available in the Smart Lab as well.
+  * If recorded, find a quiet place, focus on audio and or use head phones and make a quality recoding
 
-Demonstrate the implementations of the above requirements
+Demonstrate the implementations of the above requirements:
 
 * Introduce your teammates
 * Demonstrate your team Compact
@@ -209,4 +218,4 @@ Demonstrate the implementations of the above requirements
 
 ### What to Deliver to Blackboard
 
-Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day.  Feedback will be given on each submission.
+Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day. Feedback will be given on each submission.
