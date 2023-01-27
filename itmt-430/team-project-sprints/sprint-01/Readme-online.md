@@ -223,4 +223,4 @@ Demonstrate the implementations of the above requirements:
 
 Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day. Feedback will be given on each submission.
 
-The Project Manager will also submit a link to the recorded presentation on YouTube if fine or link to an mp4 due on the Friday of the Sprint week (Feb 02). Place your team name into the filename if delivering the mp4.s
+The Project Manager will also submit a link to the recorded presentation on YouTube if fine or link to an mp4 due on the Friday of the Sprint week (Feb 10 10 am). Place your team name into the filename if delivering the mp4.
