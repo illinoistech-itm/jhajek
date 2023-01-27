@@ -1,6 +1,6 @@
 # Sprint 01 Requirements and Deliverables
 
-This document contains the Sprint-01 requirements and deliverables
+This document contains the Sprint-01 requirements and deliverables for **Online L04 section** only.
 
 ## Objectives
 
