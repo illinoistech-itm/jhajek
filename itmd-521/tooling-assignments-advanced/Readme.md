@@ -135,11 +135,11 @@ This is handy because often you want a fresh server to install some tools, but d
 You will need to use the `wget` commandline tool to retrieve installation files for Hadoop and Spark.  You will need to use the `tar` command to extract the tarballs: `tar -xvzf` and the command `sudo apt-get update` to check for the latest packages and the command: `sudo apt-get install` to install additional packages like Java and MariaDB. For Alma Linux you will need to install additional tools: ```sudo dnf install epel-release vim rsync wget```
 
 * Change hostname of the system to include the course number and your initials
-* Configure your `.bashrc` Environment variables
-  * Add: `export JAVA_HOME=/usr`
-  * Add: `export SPARK_HOME=/home/vagrant/spark`
-  * Add: `export PYSPARK_PYTHON=python3`
-  * Add: `export PATH=$PATH:$SPARK_HOME/bin`
+* Add these values to your `.bashrc` file located in your Home directory: `/home/vagrant/.bashrc`
+  * `export JAVA_HOME=/usr`
+  * `export SPARK_HOME=/home/vagrant/spark`
+  * `export PYSPARK_PYTHON=python3`
+  * `export PATH=$PATH:$SPARK_HOME/bin`
 * Install MariaDB server
   * `mariadb-server`
 * Install Java 11 OpenJDK
