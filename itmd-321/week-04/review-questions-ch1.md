@@ -15,12 +15,6 @@ At the conclusion of this assignment you will have demonstrated a fundamental kn
 
 ### Review Questions
 
-Go through remaining case studies in class:
- 
-Submit last two as individual assignment deliverables
- 
-Review Questions:
-
 The questions relate to the components of a Relational Database.
 
 * Using the Relational Model how do we store data?
