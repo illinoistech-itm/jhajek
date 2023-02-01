@@ -21,8 +21,8 @@ Submit last two as individual assignment deliverables
  
 Review Questions:
 
-* The questions relate to the components of a Relational Database
-  * Answer Here
+The questions relate to the components of a Relational Database.
+
 * Using the Relational Model how do we store data?
   * Answer Here
 * Each Table has one ________  to describe the focus of that table.
