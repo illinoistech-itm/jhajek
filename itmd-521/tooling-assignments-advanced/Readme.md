@@ -116,7 +116,15 @@ The Vagrantfile is only processed the first time a system is initialized via `va
 
 Let us try this.  Choose the Ubuntu 22.04 jammy64 system's Vagrantfile and let us open it for editing.  Let us uncomment line 35 and let us uncommand line 52, 57, and 58, changing the value on line 57 to 4096 if you have the extra memory or 2048 at least.  If your jammy virtual machine is running, form the host OS issue the command: `vagrant reload --provision` or if powered off `vagrant up --provision`.
 
-To further check the results after the command `vagrant ssh` is issued from the Ubuntu CLI type the command: `free --giga` to see how much memory is in the system.  To test the private network, let us install a webserver by issuing the command: `sudo apt update; sudo apt-get install nginx`.  From your host OS, open a web-browser to `http://192.168.56.10` and you will be met by a Welcome to Nginx message.
+To further check the results after the command `vagrant ssh` is issued from the Ubuntu CLI type the command: `free --giga` to see how much memory is in the system.  To test the private network, let us install a webserver by issuing the command: `sudo apt update; sudo apt install nginx`.  From your host OS, open a web-browser to `http://192.168.56.10` and you will be met by a Welcome to Nginx message.
+
+If you are using M1 Apple Silicon - the private network settings are bit different.  Here is a link to the Paralles documentation for [setting a Private Network interface static IP](https://parallels.github.io/vagrant-parallels/docs/networking/private_network.html "webpage for Parallels Vagrant Private Networking").
+
+```
+Vagrant.configure("2") do |config|
+  config.vm.network "private_network", ip: "192.168.50.4"
+end
+```
 
 ### Reset a Virtual Machine
 
@@ -132,7 +140,7 @@ This is handy because often you want a fresh server to install some tools, but d
 
 ## Inside Vagrant Box Steps
 
-You will need to use the `wget` commandline tool to retrieve installation files for Hadoop and Spark.  You will need to use the `tar` command to extract the tarballs: `tar -xvzf` and the command `sudo apt-get update` to check for the latest packages and the command: `sudo apt-get install` to install additional packages like Java and MariaDB. For Alma Linux you will need to install additional tools: ```sudo dnf install epel-release vim rsync wget```
+You will need to use the `wget` commandline tool to retrieve installation files for Hadoop and Spark.  You will need to use the `tar` command to extract the tarballs: `tar -xvzf` and the command `sudo apt update` to check for the latest packages and the command: `sudo apt install` to install additional packages like Java and MariaDB. For Alma Linux you will need to install additional tools: ```sudo dnf install epel-release vim rsync wget```
 
 * Change hostname of the system to include the course number and your initials
 * Add these values to your `.bashrc` file located in your Home directory: `/home/vagrant/.bashrc`
@@ -143,8 +151,8 @@ You will need to use the `wget` commandline tool to retrieve installation files 
 * Install MariaDB server
   * `mariadb-server`
 * Install Java 11 OpenJDK
-  * `sudo apt-get update`
-  * `sudo apt-get install openjdk-11-jdk`
+  * `sudo apt update`
+  * `sudo apt install openjdk-11-jdk`
 * Install R package
   * Ubuntu - use `apt` to install `r-base`
   * AlmaLinux use: `sudo dnf config-manager --set-enabled crb; sudo dnf install R`
