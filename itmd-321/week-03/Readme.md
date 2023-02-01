@@ -29,7 +29,7 @@ In its place Ubuntu and Red Hat have you use the built in sudo command -- which 
 ```sql
 CREATE USER 'worker'@'192.168.56.0/24' IDENTIFIED BY 'letmeinnow';
 GRANT ALL ON *.* TO worker@'192.168.56.0/24';
-flush privileges;
+FLUSH PRIVILEGES;
 ```
 
 MySQL Documentation

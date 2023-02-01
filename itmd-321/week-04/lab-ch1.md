@@ -19,11 +19,7 @@ Use the last two case studies on Page 68 and 69 of the textbook: Database Fundam
 
 #### Item A
 
-| CustomerLastName | CustomerFirstName | Email | Phone | BillingAddress| PropertyType | Property Address | PropertyName |
-| ------ | -------- | ---------------------------- | ------- | ------ | -------- | ---------------------------- | ------- | 
-| Jones	| Athelney | Athelnet.Jones@outcampus.edu |	House |
-| Khan	| Abdullah | Abdullah.Khan@ourcampus.edu |	Townhouse |
-| Akbar	| Dohst | Dohst.Akbar@ourcampus.edu	| House |
+Answer here
 
 #### Item B
 
