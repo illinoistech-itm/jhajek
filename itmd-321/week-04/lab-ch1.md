@@ -27,15 +27,19 @@ Answer here
 
 #### Item C
 
+Student Information
+
 | Name | Rank | Serial Number |
 | ------------- | ------------- | ------------- |
 | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
 
-| First Header  | Second Header |
+Advisor Information
+
+| Advisor Name  | Advisor Email |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Susan Tiang  | stiang@outcampus.edu |
+| Bill Yeats  | byeats@ourcampus.edu |
 
 #### Item D
 
