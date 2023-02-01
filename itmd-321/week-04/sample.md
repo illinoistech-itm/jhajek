@@ -1,9 +1,13 @@
+# Sample HTML Table in markdown
+
 | First Header  | Second Header |
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 
+## Sample Names for Use
 
+Free Free to use these names if you need to make up some elements
 
 | SID |	StudentLastName | StudentFirstName | StudentEmail |	AdviserLastName | AdvisorEmail |
 | ----- | ------ | -------- | ---------------------------- | ------- | ---------------------------| 
