@@ -3,7 +3,7 @@ name := "main/scala/chapter2"
 // Version of our package
 version := "1.0"
 // Version of Scala
-scalaVersion := "2.12.10"
+scalaVersion := "2.12.15"
 
 // Spark library dependencies
 libraryDependencies ++= Seq(
