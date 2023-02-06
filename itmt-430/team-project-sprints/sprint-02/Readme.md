@@ -84,9 +84,8 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Build virtual machine templates of each system you will need in the 3-tier app as Virtual Machines using [Packer](https://packer.io "webpage for hashicorp packer")
   * Use of [Terraform](https://www.terraform.io/ "webpage for hashicorp terraform") for deploying virtual machine templates
 * You will be assigned API keys and access to an on prem University [Proxmox Cloud Platform Cluster](https://proxmox.com "webpage for proxmox virtualization platform")
-* 3 Tier Application - this sprint we will build just the last 2 tiers
-  * First tier is a Load Balancer (suggestions: Nginx or HA proxy)
-  * Second tier is 3 webservers (suggestions: Nginx, Apache2/httpd, lighttpd)
+* This sprint we will build just 2 of the 3 tiers
+  * Second tier is a single webserver (suggestions: Nginx, Apache2/httpd, lighttpd)
   * Third tier is a single datastore (suggestions: MariaDB, PostgreSQL, MongoDB, Sqlite3 - No Oracle)
 
 ## Deliverables
