@@ -173,7 +173,6 @@ Clear transition to a conclusion and small summary of presentation | 1
   * Presentation is not a slide show, but a verbal explaining and demonstration of the artifacts produced
   * We need to see your face
   * If recorded, find a quiet place, focus on audio and or use head phones and make a quality recoding.
-  * There are OTS recording studios in the basement of Stuart Building and I have recording equipment available in the Smart Lab as well.
 
 ### What to Deliver to Blackboard
 
