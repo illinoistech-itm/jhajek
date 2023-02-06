@@ -4,37 +4,37 @@ This document contains the Sprint-02 requirements and deliverables
 
 ## Objectives
 
-* Create a local virtualized test environment for your 3-tier application
+* Create a remote virtualized test environment for your 3-tier application
 * Integrate and document aspects of the Three Ways into your development process
 * Deploy your schema to a datastore for your application
 * Enable and create software deployment estimates to understand the nature of software production
-* Engage and understand the process moving from design into an initial prototype
+* Engage and understand the process moving from design in to an initial prototype
 * Discuss and deploy real-world security mitigations in your application
 
 ## Outcomes
 
-At the conclusion of this sprint project you will have worked in combination with your teammates to estimate the timing to deliver software artifacts.  You will have deployed your virtualized 3-tier application, applying your UI/UX design you created in sprint-01.  You will have integrated the Data Schema as well as addressed security concerns and have begun to assign and complete tasks you were assigned.  Your goal is to show a working skeleton of the project at the end of sprint-02.
+At the conclusion of this sprint you will have worked in combination with your teammates to estimate the timing to deliver software artifacts. You will have deployed your virtualized 3-tier application, applying your UI/UX design you created in sprint-01. You will have integrated the Data Schema as well as addressed security concerns and have begun to assign and complete tasks you were assigned.  Your goal is to show a working skeleton of the project at the end of sprint-02.
 
 ### Requirements
 
-There are again a long list of requirements. This will be a longer than usual sprint to make sure we have time to step through each of these steps and lay the ground work for our application. Each team member will be responsible for demonstrating the state of the project at the end of the sprint and the Project Manager will need to keep careful track of all the progress made.  The amount of the project to be finished will be determined by your team (with a few global items assigned by the professor).
+There will be a long list of requirements. This will be a longer than usual sprint to make sure we have time to step through each of these steps and lay the ground work for our application. Each team member will be responsible for demonstrating the state of the project at the end of the sprint and the Project Manager will need to keep careful track of all the progress made. The amount of the project to be finished will be determined by your team (with a few global items assigned by the professor).
 
 ### Team Roles
 
-For this sprint, there will be 5 team roles. For the teams with 4 - you can combine UI/UX with Dev2 and for the team with 6 you will add a Dev3. While these roles call for each person to focus an area -- these roles are not exclusive. Anyone can submit code for instance. The roles must rotate per sprint. This is an artificial inefficiency that I am introducing to allow all members to participate and experience each role.
+For this sprint, the roles are not exclusive. Anyone can submit code for instance. The roles must rotate per sprint. This is an artificial inefficiency that I am introducing to allow all members to participate and experience each role.
 
 * Project Manager
   * In charge of making sure that tasks are assigned, artifacts are being delivered, and project boards are updated accordingly.
   * Must clearly document the state of the project at the start of the sprint so all of the work can be contrasted at the end
-  * Project Manager must make close recordings of what has changed from sprint to sprint
+  * Project Manager must take close notes of what has changed from sprint to sprint
   * Project Manager must also describe the task estimation process and describe what was completed and/or not completed
   * Must manage the team members and facilitate communication and individual progress outside of class times
 * Developer 1 , 2, and 3
-  * Responsible for deciding on a programming language used, any APIs that will be created, and if any frameworks are implemented
+  * Responsible for deciding on a programming language framework used, any APIs that will be created, and if any frameworks are implemented
   * Once this is chosen -- it is locked in for the rest of the class
   * Language must have a package manager
-  * Use of Firebase is not acceptable for this project (its a great product though)
-  * Use of non-framework PHP is not acceptable
+  * Use of Firebase is not allowed for this project (its a great product though)
+  * Use of non-framework PHP is not allowed
   * Must begin to code and deploy the items decided upon by the Project Manager
 * UI/UX
   * Work with the developers to implement the designed UI/UX in code and css
@@ -47,7 +47,7 @@ For this sprint, there will be 5 team roles. For the teams with 4 - you can comb
   * Responsible for working with the team to coordinate the automated building of the entire application
   * Responsible for creating any shell scripts required for automated deployment
   * Responsible for training and teaching internal group members for deployment of infrastructure
-  * Responsible for implementing Ubuntu Server 20.04 or Rocky Linux 8.5 (CentOS)
+  * Responsible for implementing Ubuntu Server 22.04
   * Responsible for noting and explaining all secrets management, firewall rules, and API security implemented
 
 ### Team Setup Items
@@ -61,13 +61,13 @@ In the team repo their will need to be a few additional folders added.
   * This will contain Packer build templates for building Vagrant Boxes
   * This will contain Vagrantfiles for deploying the machines in a pre-configured state
   * This will contain Bash and or PowerShell scripts for single source of deploy, halt, and removal of the application on your local system
-  * This will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
+  * The build directory will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
 
 ### Project Management Tool and Task Difficulty Estimation
 
-One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. Your team will use a scale of 1-5 points.  5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities.  For Sprint 2 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points.  If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
+One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. Your team will use a scale of 1-5 points. 5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities. For Sprint 2 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points. If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
 
-In the Project Management tool the 25 points worth of tasks need to have the point value assigned to that task and also have a name that is primary responsible and clearly marked.  This is how your Project Manager will report progress and how you will write your own and group critique at the end of the sprint. The professor will check in weekly during the beginning of the Lab days to check the current progress and help coordinate in anyway.  
+In the Project Management tool the **25 points** worth of tasks need to have the point value assigned to that task and also have a name that is primary responsible and clearly marked.  This is how your Project Manager will report progress and how you will write your own and group critique at the end of the sprint. The professor will check in weekly during the beginning of the Lab days to check the current progress and help coordinate in anyway.  
 
 **Note** -- this may require the group to *Swarm* on some initial items so that items that are blocking progress of the entire application don't hold up the entire team. Remember as a team-member it is your duty to swarm problems and solve them as a team (Third Way).
 
@@ -76,24 +76,24 @@ In the Project Management tool the 25 points worth of tasks need to have the poi
 The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points
 
 * Login
-  * Use your @hawk accounts and Google OAuth for login authentication in your application code (there are other options -- check with me for approval first)
-  * Rolling your own Authentication system in 2022 is not a valid choice
+  * Use your @hawk accounts and Google OAuth for login authentication in your application code (there are other options -- check with the instructor for approval first)
+  * Rolling your own Authentication system in 2023 is not a valid choice
 * Choice of Server OS
-  * Ubuntu Server 20.04 or Rocky Linux 8.5 for the servers
-  * There are ARM versions available of Ubuntu Server 20.04 for the M1 mac, but not yet Rocky Linux (Red Hat)
+  * Ubuntu Server 22.04
 * Infrastructure
-  * Build each server needed in the 3-tier app as Virtual Machines using Vagrant and Packer
-  * Packer as the tool for automating the creation of the Vagrant Boxes
-* 3 Tier Application
+  * Build virtual machine templates of each system you will need in the 3-tier app as Virtual Machines using [Packer](https://packer.io "webpage for hashicorp packer")
+  * Use of [Terraform](https://www.terraform.io/ "webpage for hashicorp terraform") for deploying virtual machine templates
+* You will be assigned API keys and access to an on prem University [Proxmox Cloud Platform Cluster](https://proxmox.com "webpage for proxmox virtualization platform")
+* 3 Tier Application - this sprint we will build just the last 2 tiers
   * First tier is a Load Balancer (suggestions: Nginx or HA proxy)
   * Second tier is 3 webservers (suggestions: Nginx, Apache2/httpd, lighttpd)
-  * Third tier is a single datastore (suggestions: MariaDB, PostgreSQL, MongoDB, Sqlite3)
+  * Third tier is a single datastore (suggestions: MariaDB, PostgreSQL, MongoDB, Sqlite3 - No Oracle)
 
 ## Deliverables
 
-* Monday Lab live presentation and critiques are due 8:30am February 28th
-* Wednesday Lab early section presentation and critiques are due 8:30am March 2nd
-* Wednesday Lab late section presentation and critiques are due 10:25am March 2nd
+* Monday Lab live presentation and critiques are due 8:35am February 27th
+* Wednesday Lab presentation and critiques are due 8:35am March 1st
+* Online section recorded presentation and critiques due at 10 AM Friday March 3rd
 
 ### Individual Deliverables
 
