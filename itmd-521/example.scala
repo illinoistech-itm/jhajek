@@ -20,7 +20,7 @@ object Example3_7 {
             StructField("First", StringType, false),
             StructField("Last",StringType, false),
             StructField("Published",StringType, false),
-            StructType("Hits",IntegerType, false),
+            StructField("Hits",IntegerType, false),
             StructField("Campaigns", ArrayType(StringType), false)))
 
         val blogsDF = spark.read.schema(schema).json(jsonFile)
