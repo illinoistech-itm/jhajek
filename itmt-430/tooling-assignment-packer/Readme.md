@@ -46,7 +46,6 @@ packer {
 }
 
 source "virtualbox-iso" "ubuntu-22041-live-server" {
-  #boot_command            = ["<enter><enter><f6><esc><wait> ", "autoinstall ds=nocloud-net;seedfrom=http://{{ .HTTPIP }}:{{ .HTTPPort }}/", "<enter><wait>"]
   boot_command          = ["<cOn><cOff>", "<wait5>linux /casper/vmlinuz"," quiet"," autoinstall"," ds='nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/'","<enter>","initrd /casper/initrd <enter>","boot <enter>"]
   boot_wait               = "5s"
   disk_size               = 15000
@@ -144,48 +143,25 @@ At the conclusion of our Packer build template we will have Packer export our Vi
 
 ## Tutorial Steps
 
-On your local system we will need to generate at least two Public/Private Keypairs. This will enable us to replace using Personal Access Tokens and secure our source code deployment while automating it.
-
-### SSH Setup Steps
-
-* Execute the command: `ssh-keygen -t ed25519` ([Twisted Edwards Curve](https://en.wikipedia.org/wiki/Twisted_Edwards_curve "wiki site for Twisted Edwards Curve"))
-  * Store the key in the default location of the `.ssh` directory under your home directory and name it: `id_ed25519_git_key`
-  * Hit enter to skip the passphrase portion of the key creation
-* Create a second keypair named: `id_ed25519_packer_key`
-* Using the `cat` command, display the content of the `id_ed25519_git_key.pub` - copy this content to the clipboard
-  * In your GitHub private repo page open the icon in the upper right hand corner and click on SETTTINGS
-  * Click on the SSH and GPG keys left hand menu link
-  * Click the Green **New SSH Key** button and paste the content into the new key
-* Go back to your main GitHub repo page and click the Green Clone button, but this time select the **SSH** tab and not *https*
-  * Copy this URL to the clip board
-* In the `.ssh` directory on your host system you need to create a file named: `config`
-  * The `config` file should have similar content (the User value is the GitHub ID of your account)
-
-```bash
-Host github.com
-  # The User value is your GitHub ID 
-  User jhajek
-  Hostname github.com
-  IdentityFile ~/.ssh/id_ed25519_git_key
-```
+These steps will walk you through building a custom VirtualBox Image from a Packer Template. The objectives for doing this are to show you how you can build your own virtual machines with your custom setup of software. This is a quick way to setup a multi-node network and install the same software you will be using on your production Operating Systems.
 
 ### Acquiring the Packer Sample Templates
 
-To get a hold of the Packer Build Template samples, issue the command: `git pull` from the jhajek repo directory you cloned previously.  Copy the packer-example-code directory over to your private repo under the `itmt-430` directory.
+The first templates we will be building will be on your local systems. We will be creating a 2 VM node using VirtualBox. This assumes you are working on an x86 system. If using the Apple Silicon your instructions will be mostly the same, the templates will be different.
 
-* To setup the template to use the second RSA key you generated, issue the command: `cat ~/.ssh/id_ed25519_packer_key.pub` and copy that value.
-  * In the sample code you just copied to your own private repo, navigate to the directory ubuntu_22041_vanilla > subiquity > http > user-data.  
-  * Proceed to edit the `user-data` file, line 30, adding the contents of `id_ed25519_packer_key.pub` to the value
-  * `- 'ssh-rsa '` would become `- 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDu9nNkiO5LiIK8SUKLq59DnVGjU3R6H+K5jMxJTGfW+ controller@lenovo-laptop'`
-    * Your PUBLIC key will have a similar structure but different value
-* Upon completing the prior steps you can now build your first virtual machine with Packer
-  * Note if you are on an M1 Mac use the `ubuntu_20043_vanilla-arm` directory but otherwise all commands are the same
-* `cd` into the directory with the Packer build templates (ubuntu_20043_vanilla or ubuntu_20043_vanilla-arm)
-  * Packer has a feature where instance variables can be declared and read in at run time.  This is helpful if you want to make a template and change variable values per instance -- this prevents you from having to have multiple copies of the same template for different variables.
-  * You need to rename the variables template file to variables.  Issue the command: `mv template-for-variables.pkr.hcl variables.pkr.hcl`
-  * Using this convention, the file `variables.pkr.hcl` is ignored but the `.gitignore` file -- now you can distribute a template and then customize the variables and not have to worry about committing any sensitive configuration settings to your repo.
-  * You will need to change line 12 in the file `varialbes.pkr.hcl` to have the value: `vagrant` for that is the default password I setup
-* To build the artifact, issue the command: `packer validate .` and if all comes back positive, issue the command: `packer build .`
+The second step will be the IT Operations for your team deploying a Packer Build Tempalte to build the same software to our production cloud using Packer, Terraform, and Proxmox -- our Virtualization Platform. 
+
+You will find two folders, one for local VirtualBox build, the other for your team repo to build and deploy on our production server. Lets start with the first one
+
+### Acquiring the Packer Sample Templates to build VirtualBox VMs for Vagrant
+
+To get a hold of the Packer Build Template samples, you will need to clone an additional repo to your host systems (MacOS, Windows, or Linux). Issue the command: `git clone https://github.com/illinoistech-itm/jhajek`. There will be many directories with sample code from other classes, but all you are interested in is the `itmt-430` directory and the conent in the `example-code` folder. For the first part, copy the `packer-virtualbox-example` code directory out of the `example-code` directory and place a copy into your GitHub repo under the `itmt-430` folder -- **Note:** do not clone the `jhajek` repo directly into your own repo. Repos and not meant to be mixed together and can cause unexpected behavior.
+
+### Building Your Own Virtual Machines Using Packer and VirtualBox
+
+The sample code provided is heavily templated, to allow many people to use without hard-coding specific values or secrets into the template. There will be a few steps to and values that we need to fill out. Let's take a look at the file named: `ubuntu22041-server.pkr.hcl`.
+
+### Ubuntu 2204.1 Packer Template 
 
 ### Working with Vagrant and the Output Artifact - Part II
 
@@ -193,25 +169,25 @@ Upon success from your terminal you will see dialog similar to this in your term
 
 ```bash
 
-Build 'virtualbox-iso.ubuntu-20043-live-server' finished after 13 minutes 41 seconds.
+Build 'virtualbox-iso.ubuntu-22041-live-server' finished after 13 minutes 41 seconds.
 
-==> Wait completed after 13 minutes 41 seconds
+==> Wait completed after 25 minutes 41 seconds
 
 ==> Builds finished. The artifacts of successful builds are:
---> virtualbox-iso.ubuntu-20043-live-server: 'virtualbox' provider box: ../build/ubuntu-20043-live-server-20220207051528.box
+--> virtualbox-iso.ubuntu-22041-live-server: 'virtualbox' provider box: ../build/ubuntu-22041-live-server-20220207051528.box
 ```
 
 * The last line tells you were the Vagrant Box artifact is located.
-  * This location can be changed, it is defined on line 42 of the file: `ubuntu20043-vanilla-live-server.pkr.hcl`
+  * This location can be changed, it is defined on line 42 of the file: `ubuntu22041-vanilla-live-server.pkr.hcl`
   * Currently the location is set for: `../build/`
   * Let us issue the `cd` command into the `../build` directory and issue an `ls`, what do you see?
-  * There should be a file with a similar name: `ubuntu-20043-live-server-20220207051528.box`
+  * There should be a file with a similar name: `ubuntu-22041-live-server-20220207051528.box`
 
 Now we need to add this *.box file to Vagrant so we can start, stop, and ssh to it with Vagrant.
 
 * In the current directory issue the command: `mkdir ubuntu-vanilla`
   * This will be the directory where we store our `Vagrantfile`
-  * Issue the command: `vagrant box add ./ubuntu-20043-live-server-20220207051528.box --name ubuntu-vanilla`
+  * Issue the command: `vagrant box add ./ubuntu-22041-live-server-20220207051528.box --name ubuntu-vanilla`
   * Your file name will have different numbers (timestamp)
   * The --name option should match the directory name it helps keep track of things
   * `cd` into the `ubuntu-vanilla` directory and issue the command: `vagrant init ubuntu-vanilla`
@@ -282,7 +258,7 @@ Due to the newness of M1 macs, I don't have any build hardware for the remote bu
 
 * Once your .box file has been downloaded to your Host OS, you can move it to the `build` directory where we first added the `ubuntu-vanilla` box
   * Let's repeat those steps: issue the command: `mkdir ubuntu-vanilla-build-server`
-  * Issue the command: `vagrant box add ./XYZ-ubuntu-20043-live-server-20220207051528.box --name ubuntu-vanilla-build-server`
+  * Issue the command: `vagrant box add ./XYZ-ubuntu-22041-live-server-20220207051528.box --name ubuntu-vanilla-build-server`
   * Note that you want to make sure you add the correct box file
   * Also once you have successfully added the Vagrant .box file, the actual .box file is no longer needed, think of it like the wrapping on a package, you can delete it
   * `cd` into the `ubuntu-vanilla-build-server` and issue the command: `vagrant init ubuntu-vanilla-build-server`
