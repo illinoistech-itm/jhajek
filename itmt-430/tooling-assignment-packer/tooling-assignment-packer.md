@@ -4,11 +4,9 @@ Provide the required screenshots to show the completion of the tutorial for the 
 
 ## Vagrant Box List
 
-Take a screenshot of the command: `vagrant box list` to show the ubuntu-vanilla and ubuntu-vanilla-build-server boxes are present on your system
+Take a screenshot of the command: `vagrant box list` to show the ubuntu-server on your local host 
 
-## Screenshot of Build Server Web Site
-
-Take a screenshot of the build server web page, showing your Vagrant box, with a highlight.
+Take a screenshot of the Proxmox console showing your Packer Template and your Proxmox packer VM running
 
 ## Deliverable
 

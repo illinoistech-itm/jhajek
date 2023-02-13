@@ -1,4 +1,5 @@
 variable "headless_build" {
+  # allows you to suppress the VirtualBox GUI (hidden) if set to True
   type =  bool
   default = false
 }
@@ -10,18 +11,14 @@ variable "memory_amount" {
 
 variable "user-ssh-password" {
   type = string
-  default = "vagrant"
+  default = ""
   sensitive = true
 }
 
 variable "build_artifact_location" {
- 
- # If building on your local laptop use the ../build path
+  # Location on your local Filesystem when the built Vagrant .box file will be exported to
+  # The location is arbitrary, but it makes sense to put built artifacts into a directory named: build
   type = string
   default = "../build/"
-
- # If building on the school build-server use this default value
-  # This is the default path on the build-server to place the .box files for download via a webserver
-  # default = "/datadisk2/boxes/jrh-"
 
 }

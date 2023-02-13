@@ -159,112 +159,93 @@ To get a hold of the Packer Build Template samples, you will need to clone an ad
 
 ### Building Your Own Virtual Machines Using Packer and VirtualBox
 
-The sample code provided is heavily templated, to allow many people to use without hard-coding specific values or secrets into the template. There will be a few steps to and values that we need to fill out. Let's take a look at the file named: `ubuntu22041-server.pkr.hcl`.
+The sample code provided is heavily templated, to allow many people to use without hard-coding specific values or secrets into the template. There will be a few steps to and values that we need to fill out. Let's take a look at the file named: [ubuntu22041-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/packer-virtualbox-example/ubuntu_22041_vanilla/ubuntu22041-server.pkr.hcl "webpage showing the Packer syntax").
 
-### Ubuntu 2204.1 Packer Template 
+There are two files associated with this Packer Build Template, there is a file called: `template-for-variables.pkr.hcl`. This file allows you to define variables that will be applied to settings at run time. For this reason we will rename `template-for-variables.pkr.hcl` to `variables.pkr.hcl` as we have added the `variables.pkr.hcl` file to the `.gitignore` file in our repo.  This will allow us to make changes to our build tempalte and even add secure passwords, without hard coding them into files that are committed to version control -- possibly exposing critical secrets. Packer looks exclusively for a file named `variables.pkr.hcl`, so we must rename our template to that name or else there will be a build error.
 
-### Working with Vagrant and the Output Artifact - Part II
+[template-for-variables.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/packer-virtualbox-example/ubuntu_22041_vanilla/template-for-variables.pkr.hcl "webpage for template-for-variables.pkr.hcl")
 
-Upon success from your terminal you will see dialog similar to this in your terminal:
+### Modifying the Subiquity user-data
 
-```bash
+Starting in Ubuntu Server 20.04, Ubuntu replaced the Preseed tool for autoinstalls with a tool called [Subiquity or Cloud Init](https://ubuntu.com/server/docs/install/autoinstall "webpage for autoinstall"). This allowed local auto-install logic and Cloud based server installs (AWS, VMWare, Azure, etc.. etc..) to use the same tool. Which makes sense as single installs on local servers or local PCs give way to a cloud native way of deploying multiple pre-configured copies of servers.
 
-Build 'virtualbox-iso.ubuntu-22041-live-server' finished after 13 minutes 41 seconds.
+Under the directory, `ubuntu_22041_vanilla` > `subiquity` > `http` you will find another template named: `template-user-data`. This file needs to be renamed to: `user-data` and the file hierarchy under `subiquity` needs to be maintained. This `user-data` file contains all of the *answers* for auto-install questions. 
 
-==> Wait completed after 25 minutes 41 seconds
+This would be a place to configure timezone, harddrive size, software that is pre-installed, and configure SSH to accept Public Key based authentication. You would also create user accounts and passwords here. By default the system is setup for a username: `vagrant` and a password `vagrant`. If you choose to keep this pair then enter the SSH password `vagrant` in the value on line 14 of the `template-for-variables.pkr.hcl`.
 
-==> Builds finished. The artifacts of successful builds are:
---> virtualbox-iso.ubuntu-22041-live-server: 'virtualbox' provider box: ../build/ubuntu-22041-live-server-20220207051528.box
+[template-user-data](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/packer-virtualbox-example/ubuntu_22041_vanilla/subiquity/http/template-user-data "webpage for user-data")
+
+### Provisioning Scripts
+
+At the end of the `ubuntu22041-server.pkr.hcl` file there are two sections, `provisioners` and `post-processors`. Provisioners is a an additional feature of Packer that allows the Packer binary to reboot your installed virtual machine and run a provisioner script -- in this case a shell script -- for further custom installation.  
+
+This could be custom software, cloning of source code, or removal of keys used for authentication. You can run multiple provisioner scripts and people usually do this to keep there logic separated. The `provisioner` script for `ubuntu22041-server.pkr.hcl` is `post_install_ubuntu_2204_vagrant.sh`.
+
+### Intializing the Packer VagrantBox plugin
+
+Staring in 2021, Hashicorp moved to break the plugins for the various builders out of the main Packer binary and into community controlled plugins -- that can release in faster cycles. That is why you have these lines of code at the beginning of your build template.
+
+```hcl
+packer {
+  required_plugins {
+    virtualbox = {
+      version = ">= 1.0.4"
+      source  = "github.com/hashicorp/virtualbox"
+    }
+  }
+}
 ```
 
-* The last line tells you were the Vagrant Box artifact is located.
-  * This location can be changed, it is defined on line 42 of the file: `ubuntu22041-vanilla-live-server.pkr.hcl`
-  * Currently the location is set for: `../build/`
-  * Let us issue the `cd` command into the `../build` directory and issue an `ls`, what do you see?
-  * There should be a file with a similar name: `ubuntu-22041-live-server-20220207051528.box`
+You only have to run this once time before you run your first build to retrieve the plugin, from the directory where the `ubuntu22041-server.pkr.hcl` is located: `packer init .` -- this will initialize the VirtualBox Plugin for your local system.
 
-Now we need to add this *.box file to Vagrant so we can start, stop, and ssh to it with Vagrant.
+### Validation
 
-* In the current directory issue the command: `mkdir ubuntu-vanilla`
+To double check that you have configured everything properly, there is a command to check: `packer validate .` and any errors or missing values will be reported to you.
+
+### Building Virtual Machines
+
+Here is where the fun begins. You will now execute the command required to build a custom VirtualBox VM from a completely automated script. If the two previous commands completed succesfully then you can issue the command: `packer build .` and the virtual machine will begin to build. You will see the step by step process in the VirtualBox GUI as if you were manually installing, but there is no manual steps required if everything goes well. Depending on your laptops CPU and Harddisk the install can take as little as 10 minutes up to about 35-40 minutes on my 10 year old laptop. You will know things are succesful if you see similar output on your Terminal:
+
+```
+Build 'virtualbox-iso.ubuntu-22041-server' finished after 35 minutes 34 seconds.
+
+==> Wait completed after 35 minutes 34 seconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> virtualbox-iso.ubuntu-22041-server: 'virtualbox' provider box: ../build/ubuntu-22041-server-20230213020353.box
+```
+
+The last line of the output tells you where to find your artifact. If you issue the command: `cd ../build` and then the command: `ls` you will see a similarly named file: `ubuntu-22041-server-20230213020353.box`. This is the `post-processor` for Vagrant converting the built VirtualBox artifact into a prepared Vagrant .Box file.
+ 
+## Working with Vagrant and the Output Artifact - Part II
+
+We need to add this `*.box` file to Vagrant so we can start, stop, and ssh to it with Vagrant.
+
+* In the current directory issue the command: `mkdir ubuntu-server`
   * This will be the directory where we store our `Vagrantfile`
-  * Issue the command: `vagrant box add ./ubuntu-22041-live-server-20220207051528.box --name ubuntu-vanilla`
-  * Your file name will have different numbers (timestamp)
-  * The --name option should match the directory name it helps keep track of things
-  * `cd` into the `ubuntu-vanilla` directory and issue the command: `vagrant init ubuntu-vanilla`
+  * Issue the command: `vagrant box add ./ubuntu-22041-server-20230213020353.box --name ubuntu-server`
+    * Your file name will have different numbers (timestamp)
+  * The `--name` option should match the directory name it helps keep track of things
+  * `cd` into the `ubuntu-server` directory and issue the command: `vagrant init ubuntu-server`
   * Then issue the commands: `vagrant up ; vagrant ssh` and you will find yourself SSH'd into your Vagrant Box
   * Remember to shut it down by issuing the command to exit the SSH session and then: `vagrant halt`
   * You can see the new box added to Vagrant by issuing the command: `vagrant box list`
 
 ### Additional Information on how to delete a vagrant box
 
-For this assignment, this step is optional, but I wanted to expose you to it as you will have to use this in your scripts to automate the deployment and recreation of your application. To delete the box from the `ubuntu-vanilla` directory:
+For this assignment, this step is optional, but I wanted to expose you to it as you will have to use this in your scripts to automate the deployment and recreation of your application. To delete the box from the `ubuntu-server` directory:
 
-* Issue the command: `vagrant box remove ubuntu-vanilla`
+* Issue the command: `vagrant box remove ubuntu-server`
   * You can also use a `-f` flag to force the action
   * You will also need to manually delete the `.vagrant` directory left behind: `rm -rf ./.vagrant`
 
-### Notes while build the Vagrant box via packer
+### Notes while building the Vagrant box via Packer
 
-* The Packer build process may take anywhere from 10 to 25 minutes based on your system hardware
-  * Note the initial build will take longer as you have to download the Ubuntu/Rocky Linux installation ISO file
+* The Packer build process may take anywhere from 10 to 35 minutes based on your system hardware
   * It is cached for subsequent use in the local directory `./packer_cache`
   * Note that on Windows there is no download meter, it will appear the process is frozen, its not, just have to be patient
 
-## Now lets use the build server
-
-We have a central build server with lots of disk, CPU, and memory to allow you to build and retrieve your Vagrant Boxes
-
-The build server hardware:
-
-* 67 GB DDR4 2133 MHz
-* Intel(R) Xeon(R) CPU E5-2620
-* 2 500 GB disks, with PCIe based NVMe ZFS write and read caches
-  * You can run the command: `zpool iostat -v` to watch the caches working
-
-* Each of you has access to this server on campus and remotely via the schools VPN software
-  * In order to access the Build Server from off campus you need to go to [https://vpn-1.iit.edu](https://vpn-1.iit.edu "School VPN software website") and use your Portal Authentication
-  * Install the Cisco VPN software
-  * Note you only need this if you are working off of the campus - inside the campus network VPN is not needed
-  * You would use your HAWK portal credentials to authenticate
-    * If you have an issue please post to Discussion Board
-* You need to generate one more Twisted Edward Curve key (Public/Private key) as you did in the previous section
-  * Name this key: `id_ed25519_HAWKID_key` -- replace HAWKID with your hawkID
-  * Submit the `id_ed25519_HAWKID_key.pub` key to Blackboard so I can add this to the account I made for you on the Build Server
-  * Once submitted and I add the key, you will be able to SSH via RSA key into the build server
-* From your Terminal issue the command: `ssh -i ~/.ssh/id_ed25519_HAWKID_key HAWKID@192.168.172.44`
-  * The HAWKID value is just the ID part, no @hawk.iit.edu
-  * Here you will have access to a command line
-* Within your home directory you can create another RSA keypair, add the public key to you GitHub repo, and create a `config` file on the BuildServer
-  * Follow the steps and content for the `config` file as you created in the prior steps
-* Test this by issuing the command: `git clone git@github.com:illinoistech-itm/jhajek.git`
-  * Replace jhajek with your Repo ID
-  * Now you will be able to run your Packer build commands using the faster build system hardware
-
-* On the build server, in the directory `packer-example-code` locate the file `template-for-variables.pkr.hcl`
-  * Rename this file to: `variables.pkr.hcl`
-  * Edit line 3 to say true -- the build server has no GUI, without this change there will be an error
-  * Edit line 15 to have the value: `vagrant` -- this is the default password I set
-  * Comment line 20 out -- this is only for building on your host OS
-  * Uncomment line 25, replacing the term: XYZ with your initials, team name, or other unique identifier.  The rest of the path is the required path to place the build artifact on a webserver for download
-* Upon completion of the Packer build command, on your Host OS open a web-browser and navigate to [http://192.168.172.44/boxes](http://192.168.172.44/boxes "internal URL for build server")
-* You will see your own Vagrant box artifact - which you can click on to download to your local system.
-  * Repeat the steps you used in the section: **Working with Vagrant and the Output Artifact - Part II** to add the *.box file via Vagrant to your system, naming it `ubuntu-vanilla-build-server`
-
-* ~~Your team will use this process for Sprint 2 to build all 5 required boxes and each person will have access to the build artifacts~~
-
-### M1 Macs Note
-
-Due to the newness of M1 macs, I don't have any build hardware for the remote building of ARM based VMs, only x86. To continue the assignment you can switch to using the non-arm build template provided.  You should still build the artifact following the below steps, you just won't be able to run it on your M1 due to it being an x86 based artifact. The M1 is a fast machine, you will have to use your own system as a build server for this assignment.  When it is your turn as the IT Operations comes around you will still use the Build Server to build for everyone else.
-
-* Once your .box file has been downloaded to your Host OS, you can move it to the `build` directory where we first added the `ubuntu-vanilla` box
-  * Let's repeat those steps: issue the command: `mkdir ubuntu-vanilla-build-server`
-  * Issue the command: `vagrant box add ./XYZ-ubuntu-22041-live-server-20220207051528.box --name ubuntu-vanilla-build-server`
-  * Note that you want to make sure you add the correct box file
-  * Also once you have successfully added the Vagrant .box file, the actual .box file is no longer needed, think of it like the wrapping on a package, you can delete it
-  * `cd` into the `ubuntu-vanilla-build-server` and issue the command: `vagrant init ubuntu-vanilla-build-server`
-  * Issue the commands: `vagrant up; vagrant ssh`
-  * You will have now successfully have used remote build infrastructure to build the first of your projects Virtual Machines
-* Issue the command: `vagrant box list` to see the boxes that Vagrant manages
+## 
 
 ## Summary
 
