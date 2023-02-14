@@ -83,7 +83,7 @@ source "virtualbox-iso" "backend-database" {
 }
 
 build {
-  sources = ["source.virtualbox-iso.ubuntu-22041-server"]
+  sources = ["source.virtualbox-iso.frontend-webserver","source.virtualbox-iso.backend-database"]
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
