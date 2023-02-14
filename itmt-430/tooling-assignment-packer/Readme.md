@@ -221,6 +221,7 @@ The last line of the output tells you where to find your artifact. If you issue 
 
 We need to add this `*.box` file to Vagrant so we can start, stop, and ssh to it with Vagrant.
 
+* Lets `cd` into the newly created `build` directory: `cd ../build` 
 * In the current directory issue the command: `mkdir ubuntu-server`
   * This will be the directory where we store our `Vagrantfile`
   * Issue the command: `vagrant box add ./ubuntu-22041-server-20230213020353.box --name ubuntu-server`
@@ -231,7 +232,7 @@ We need to add this `*.box` file to Vagrant so we can start, stop, and ssh to it
   * Remember to shut it down by issuing the command to exit the SSH session and then: `vagrant halt`
   * You can see the new box added to Vagrant by issuing the command: `vagrant box list`
 
-### Additional Information on how to delete a vagrant box
+### Additional Information on how to delete a Vagrant box
 
 For this assignment, this step is optional, but I wanted to expose you to it as you will have to use this in your scripts to automate the deployment and recreation of your application. To delete the box from the `ubuntu-server` directory:
 
@@ -241,11 +242,9 @@ For this assignment, this step is optional, but I wanted to expose you to it as 
 
 ### Notes while building the Vagrant box via Packer
 
-* The Packer build process may take anywhere from 10 to 35 minutes based on your system hardware
+* The Packer build process may take anywhere from 10 to 35 minutes based on your system hardware and internet speeds
   * It is cached for subsequent use in the local directory `./packer_cache`
   * Note that on Windows there is no download meter, it will appear the process is frozen, its not, just have to be patient
-
-## 
 
 ## Summary
 
