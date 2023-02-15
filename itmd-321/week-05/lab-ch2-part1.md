@@ -13,27 +13,24 @@ At the conclusion of this assignment you will have taken business requirements a
 
 ## Lab Exercises
 
-Using Chapter 2 (P. 124 in the Kindle Book) Titled: `Working with Microsoft Access`, we will be creating the database and the relationships, keys, and constraints mentioned in the exercise using MySQL.
+Using Chapter 2 (P. 124-126 in the Kindle Book) Titled: `Working with Microsoft Access`, we will be creating the database and the relationships, keys, and constraints mentioned in the exercise using MySQL. To do this we will use Figure 2.27 - 2.31 to create the table schemas, relational constraints, and table data.
+
+**Note** that the schema and table data for the Employee Table is in the Working with Microsoft Access Exercises (section 1, P.65-66). The content and schema for the Employee Table is located in Chapter 1, P.65/66 Figure 1.37 and 1.38.
 
 Using the MySQL workbench and with your Ubuntu Jammy Linux box turned on, connect via the MySQL Workbench and you will begin to create the Database, or Schema, the tables, the keys, relations, and constraints.
 
-Create a schema named: `WP`
+## Deliverable
 
-Create the tables with the proper relations as follows.
+Using the MySQL Workbench, `Administration` tab > `Data Export` > Select `WP` > Export to Self-contained file. 
 
-* DEPARTMENT (<ins>DepartmentName</ins>), BudgetCode, OfficeNumber,  DepartmentPhone)  
-* EMPLOYEE (<ins>EmployeeNumber</ins>, FirstName, LastName, *Department*, Position,  Supervisor, OfficePhone, EmailAddress)  
-* PROJECT (<ins>ProjectID</ins>, ProjectName, *Department*, MaxHours, StartDate, EndDate)  
-* ASSIGNMENT (*<ins>ProjectID</ins>*, *<ins>EmployeeNumber</ins>*, HoursWorked)  
+![*Final Submission Steps*](./images/deliverable.png "image showing final deliverable steps")
 
-Create the proper relations, tables, primary and foreign keys, and constraints based on the above syntax.
-
-Use the book Figures 2.27, 2.29, and 2.31 for the schmeas of each table.
-
-Use the book Figures for 2.28 and 2.30 for inserting WP PROJECT Table data and WP DEPARTMENT Table data. Reference the live demo from 02/06 Blackboard Recording near the end of class.
-
-From the `Administration` Tab in MySQL workbench, select `Export Data` and select `Export to Self-Contained File` 
+Make sure to add your initials to the `*.sql` file so I can tell it is your own work.
  
-Final deliverable - export the entire database to an SQL file and place that file into week-05 directory. 
+Create a folder named: `week-05` under the `itmd-321` folder in your local repo and commit the `*.sql` file to your remote repo.
+
+Submit to Blackboard the URL to that file.  Assignment Due Feb 22nd 1:45 PM.
+
+### Sources
 
 Kroenke, David M.; Auer, David J.; Vandenberg, Scott L.; Vandenberg, Scott L.; Yoder, Robert C.; Yoder, Robert C.. Database Concepts (p. 124). Pearson Education. Kindle Edition. 
