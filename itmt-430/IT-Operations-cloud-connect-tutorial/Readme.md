@@ -475,7 +475,7 @@ Now I believe we are ready. You can execute the same three commands we ran for t
 * `packer validate .`
 * `packer build .`
 
-Sit back and watch you are about to become a cloud-native Ops Engineer.
+Sit back and watch: you are about to become a cloud-native Ops Engineer.
 
 ## Conclusion
 
