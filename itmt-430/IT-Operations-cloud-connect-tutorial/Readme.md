@@ -12,6 +12,8 @@ At the conclusion of this tutorial you will have succesfully connected to the re
 
 This tutorial is specifically for the IT/Operations person in your group for Sprint-02, but eventually everyone will be able to do this starting Sprint-03. Sample templates are provided in the [jhajek](https://github.com/illinoistech-itm/jhajek "github repo for 430 sample code") repo. If you cloned the sample code in the previous Packer exercise, issue the command: `git pull` from the repo directory to get any update.  
 
+**Note** you will need to upgrade your VirtualBox to 7.0.x if you have 6.1.x. You can do this from `choco upgrade virtualbox` on Windows or `brew upgrade virtualbox` on MacOS. This is due to modern Linux OSes cutting off support for older hardware -- which VirtualBox 6.1.x emulates. 
+
 ### Retrieving Template Examples
 
 * Make sure you have cloned your team repo to your local system. From the `jhajek` repo copy the `example-code` directory from the `jhajek` -> `itmt-430` directory into the `build` folder in your team repo.
