@@ -29,8 +29,8 @@ source "proxmox-iso" "backend-database" {
   boot_wait    = "5s"
   cores        = "${var.NUMBEROFCORES}"
   node         = "${var.NODENAME}"
-  username     = "${var.USERNAME}"
-  token        = "${var.PROXMOX_TOKEN}"
+  username     = "${var.TOKEN_ID}"
+  token        = "${var.TOKEN_SECRET}"
   cpu_type     = "host"
   disks {
     disk_size         = "${var.DISKSIZE}"
@@ -87,8 +87,8 @@ source "proxmox-iso" "frontend-webserver" {
   boot_wait    = "5s"
   cores        = "${var.NUMBEROFCORES}"
   node         = "${var.NODENAME}"
-  username     = "${var.USERNAME}"
-  token        = "${var.PROXMOX_TOKEN}"
+  username     = "${var.TOKEN_ID}"
+  token        = "${var.TOKEN_SECRET}"
   cpu_type     = "host"
   disks {
     disk_size         = "${var.DISKSIZE}"

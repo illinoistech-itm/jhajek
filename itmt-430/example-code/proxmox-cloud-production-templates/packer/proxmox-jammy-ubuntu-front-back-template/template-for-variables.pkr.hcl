@@ -9,13 +9,13 @@ variable "NODENAME" {
   default = ""
 }
 
-variable "USERNAME" {
+variable "TOKEN_ID" {
   sensitive = true
   type   = string
   default = ""
 }
 
-variable "PROXMOX_TOKEN" {
+variable "TOKEN_SECRET" {
   sensitive = true
   type   = string
   default = ""
