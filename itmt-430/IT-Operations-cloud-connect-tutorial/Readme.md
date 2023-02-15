@@ -2,6 +2,12 @@
 
 This tutorial will demonstrate how to use class build-server, provided API keys, and the Department Cloud Platform, running on [Proxmox](https://proxmox.com/en/ "webpage for Proxmox Virtualization Platform"), using [Hashicorp Packer](https://packer.io "webapge for Packer.io") and [Terraform](https://terraform.io "webpage for Terraform").
 
+## Overview
+
+This tutorial assumes you have completed the Vagrant-Tooling-Assigment and the Packer-Tooling-Assignment under Sprint-02 in Blackboard. It is critical to complete those first -- this tutorial builds upon those concepts.
+
+At the conclusion of this tutorial you will have succesfully connected to the remote buildserver and used Packer to build two virtual machine templates on the the Proxmox Virtualization Platform.
+
 ## Setup
 
 This tutorial is specifically for the IT/Operations person in your group for Sprint-02, but eventually everyone will be able to do this starting Sprint-03. Sample templates are provided in the [jhajek](https://github.com/illinoistech-itm/jhajek "github repo for 430 sample code") repo. If you cloned the sample code in the previous Packer exercise, issue the command: `git pull` from the repo directory to get any update.  
