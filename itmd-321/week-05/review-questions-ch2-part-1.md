@@ -60,4 +60,4 @@ The questions relate to the components of a Relational Database.
 
 Using this Markdown Template -- place your answers under each question where indicated.  In your GitHub repository create a folder named: `week-05` under the `itmd-321` folder. Push this template with the completed answers and push to your remote repo.
 
-Submit to Blackboard the URL to the deliverable in GitHub by **Wednesday Feburary 15th, 1:40 PM**.
+Submit to Blackboard the URL to the deliverable in GitHub by **Wednesday Feburary 22nd, 1:40 PM**.
