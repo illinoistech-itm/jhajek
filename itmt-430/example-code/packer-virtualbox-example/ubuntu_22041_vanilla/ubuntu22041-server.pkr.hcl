@@ -36,6 +36,7 @@ source "virtualbox-iso" "ubuntu-22041-server" {
   cpus                    = 2
   # https://www.virtualbox.org/manual/ch06.html
   nic_type                = "virtio"
+  hard_drive_interface    = "sata"
   memory                  = "${var.memory_amount}"
   # Add --nat-localhostreachable1 forced by https://github.com/hashicorp/packer/issues/12118
   vboxmanage              = [["modifyvm", "{{.Name}}", "--nat-localhostreachable1", "on"]]
