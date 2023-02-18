@@ -34,6 +34,7 @@ source "virtualbox-iso" "ubuntu-22041-server" {
   ssh_password            = "${var.user-ssh-password}"
   ssh_timeout             = "45m"
   cpus                    = 2
+  rtc_time_base           = "UTC"
   # https://www.virtualbox.org/manual/ch06.html
   nic_type                = "virtio"
   hard_drive_interface    = "sata"
