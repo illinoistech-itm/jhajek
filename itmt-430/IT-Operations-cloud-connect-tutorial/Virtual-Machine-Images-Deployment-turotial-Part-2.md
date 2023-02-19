@@ -183,7 +183,7 @@ output "proxmox_frontend_ip_address_default" {
 ```
 ### Provider.tf
 
-The `provider.tf` file is exactly like the `init` section of the Packer build template. It can be included in the `main.tf` but for separation purposes it is good to keep these two separate for ease if update and debug purpose.
+The `provider.tf` file is exactly like the `init` section of the Packer build template. It can be included in the `main.tf` but for separation purposes it is good to keep these two separate for ease if update and debug purpose. The first section is the required [Terraform provider](https://developer.hashicorp.com/terraform/language/providers "webpage listing Terraform Providers"). Terraform comes with providers out of the box for the most popular virtualization platforms, cloud and on-prem. We are telling Terraform to get the [Proxmox provider](https://registry.terraform.io/providers/Telmate/proxmox/latest/docs#argument-reference "webpage for Proxmox Terraform Provider"). These values setup debugging and logging, and tell the provider we will be using `token_id` and `token_secret` not username and password. No values here need to be updated or changed.
 
 ```hcl
 
@@ -222,5 +222,75 @@ provider "consul" {
   address    = "${var.consulip}:8500"
 }
 
+```
 
+### Teamplate for terraform.tfvars
+
+Similar to Packer, Terraform has a variables file for run-time values to be passed into your Plan. There are two files that serve this function: `terraform.tfvars` and `variables.tf` and they serve two different functions. Lets look at `terraform.tfvars` first. This file has to be renamed from `template-terraform.tfvars` to `terraform.tfvars` but **NOT** on your local system, only after the code is on the Buildserver. This is beacuse you will be passing `secrets` in this document. You don't want to be committing passwords or tokens into Version Control. The way we are doing this here is a step in the right direction, but utlimately not manageable and still has security issues. There is an additional product called [Hashicorp Vault](https://vault.io "webpage for Hashicorp Vault") we will be moving to in later sprints. For now this will work to give you exposure on how to deal with secrets. As always any of these varaible names can be edited, removed, or additional ones created. For now the first 10 are required as for authentication and to setup logging, the remaining are variables applied to each instance.
+
+The structure of my file might seem to get quickly out of hand, and there are more optimal ways to organize things, feel free to adapt these values, structures, and comments. The more elements of your Terraform Plan, the more variables you might have to specifically customize different instances. This is how terraform is designed.
+
+```hcl
+###############################################################################
+# These are your proxmox API token credentials (not username and password)
+# That will be provided to you
+###############################################################################
+pm_api_url          = ""                         # URL of your Proxmox cluster
+pm_api_token_id     = ""                         # This is an API token you have previously created for a specific user
+pm_api_token_secret = ""                         # This is a uuid that is only available when initially creating the token 
+target_node         = "proxmonsterX"             # Promox node to provision VMs
+keypath             = "name-of-your-private-key" # The path to the private key you need to communicate with your instances
+###############################################################################
+# Debugging information settings
+# No need to change these values
+###############################################################################
+pm_log_enable = true                           # Optional; defaults to false) Enable debug logging, see the section below for logging details
+pm_parallel   = 2                              # (Optional; defaults to 4) Allowed simultaneous Proxmox processes (e.g. creating resources).
+pm_timeout    = 600                            # (Optional; defaults to 300) Timeout value (seconds) for proxmox API calls.
+pm_log_file   = "terraform-plugin-proxmox.log" # (Optional; defaults to terraform-plugin-proxmox.log) If logging is enabled, the log file the provider will write logs to.
+###############################################################################
+# This is a variable to append to your cloud instances so they have a unique
+# FQDN -- this is needed for the gossip based DNS to work
+###############################################################################
+frontend-yourinitials = "" # initials to add to make unique systems
+frontend-numberofvms  = 1  # quantity of that template to launch
+frontend-desc         = "" # What is the purpose of the TF template
+backend-yourinitials  = "" # initials to add to make unique systems
+backend-numberofvms   = 1  # quantity of that template to launch
+backend-desc          = "" # What is the purpose of the TF template
+consul-service-tag-contact-email = "your-hawk-email-here" # Used as part of the consul service definition as a tag that can be queried
+###############################################################################
+# Name the template your created via Packer for Terraform to use to deploy
+# instances from
+###############################################################################
+frontend-template_to_clone = "" # The name of the template to clone
+backend-template_to_clone  = "" # The name of the template to clone
+###############################################################################
+# Customize instance hardware settings
+###############################################################################
+frontend-memory    = 4096  # Memory size of a VM
+frontend-cores     = 1     # vCPU = cores * sockets
+frontend-sockets   = 1     # vCPU = cores * sockets
+frontend-disk_size = "30G" # Disk size of a VM - min size must equal to the disk size of your clone image
+backend-memory     = 4096  # Memory size of a VM
+backend-cores      = 1     # vCPU = cores * sockets
+backend-sockets    = 1     # vCPU = cores * sockets
+backend-disk_size  = "30G" # Disk size of a VM - min size must equal to the disk size of your clone image
+
+```
+
+In the `variables.tf` file you will find a declaration of each variable you have in the `terraform.tfvars` file -- there needs to be a 1 to 1 match. This is where the variable is essentially declared, but also you can set default values and even provide commandline runtime overrride -- which can be useful in debugging various values. *Remember*, if you add a variable to the `terraform.tfvars` you need a corresponding declaration in the `variables.tf` file.
+
+```hcl
+
+variable "pm_log_enable" {}
+variable "pm_parallel" {}
+variable "pm_timeout" {}
+variable "pm_log_file" {}
+variable "clone_wait" {
+  default = 30
+}
+variable "pm_api_token_secret" {
+  sensitive = true
+}
 ```
