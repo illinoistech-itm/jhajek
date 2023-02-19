@@ -29,12 +29,12 @@ Terraform is an infrastructure as code tool that lets you build, change, and ver
 
 The core Terraform workflow consists of three stages:
 
-* Write: 
+* Write
   * You define resources, which may be across multiple cloud providers and services.
   * For example, you might create a configuration to deploy an application on virtual machines in a Virtual Private Cloud (VPC) network with security groups and a load balancer.
-* Plan: 
+* Plan
   * Terraform creates an execution plan describing the infrastructure it will create, update, or destroy based on the existing infrastructure and your configuration.
-* Apply: 
+* Apply
   * On approval, Terraform performs the proposed operations in the correct order, respecting any resource dependencies. 
   * For example, if you update the properties of a VPC and change the number of virtual machines in that VPC, Terraform will recreate the VPC before scaling the virtual machines.
 
@@ -57,3 +57,197 @@ There are four files to consider:
   * You will enter the Cloud Credentials the IT/Ops person received here
 * `variables.tf`
   * Every varialbe that exists in the terraform.tfvars file needs to exist here, this file is for assigning default values and allowing for a commandline runtime override of variables set in `terraform.tfvars`
+
+### Main.tf Structure
+
+Let us take a look at our Terraform Plan - main.tf.  You will notice many of the same constraints as a Packer build template and that is on purpose as Hashicorp wanted to unify their platforms syntax. [Terraform Plan](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/proxmox-cloud-production-templates/terraform/proxmox-jammy-ubuntu-front-back-template/main.tf "webpage for Terraform plan").
+
+The first section is initialization of some plugins and variables. Terraform allows for variables (almost like a programming language) but doesn't quite have full looping support.
+
+In this case we are generating a random_id of 8 bytes that will be used to assign a unique id to each virtual machine instance when it launches and registers itself with the [Consul](https://www.consul.io "webpage for consul service discovery") DNS service. The second variable is a provided array of values and Terraform will randomly select a hard disk name. This will be the underlying disk where your virtual machines are stored on the Proxmox server. Of course this level of detail is never exposed in AWS or Azure, but part of this cloud is to show you the insides so here I am exposing what happens under the hood and how I spread virtual machines out so disks don't fill up.
+
+```hcl
+
+  ###############################################################################################
+# This template demonstrates a Terraform plan to deploy one Ubuntu Focal 20.04 instance.
+# Run this by typing: terraform apply -parallelism=1
+###############################################################################################
+resource "random_id" "id" {
+  byte_length = 8
+}
+
+# https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/shuffle#example-usage
+resource "random_shuffle" "datadisk" {
+  input        = ["datadisk2", "datadisk3", "datadisk4", "datadisk5"]
+  result_count = 1
+}
+
+```
+
+```hcl
+
+###############################################################################
+# Terraform Plan for frontend webserver instances
+###############################################################################
+
+resource "proxmox_vm_qemu" "frontend-webserver" {
+  count       = var.frontend-numberofvms
+  name        = "${var.frontend-yourinitials}-vm${count.index}.service.consul"
+  desc        = var.frontend-desc
+  target_node = var.target_node
+  clone       = var.frontend-template_to_clone
+  os_type     = "cloud-init"
+  memory      = var.frontend-memory
+  cores       = var.frontend-cores
+  sockets     = var.frontend-sockets
+  scsihw      = "virtio-scsi-pci"
+  bootdisk    = "virtio0"
+  boot        = "cdn"
+  agent       = 1
+
+  ipconfig0 = "ip=dhcp"
+  ipconfig1 = "ip=dhcp"
+  ipconfig2 = "ip=dhcp"
+
+  network {
+    model  = "virtio"
+    bridge = "vmbr0"
+  }
+
+  network {
+    model  = "virtio"
+    bridge = "vmbr1"
+  }
+
+  network {
+    model  = "virtio"
+    bridge = "vmbr2"
+  }
+
+  disk {
+    type    = "virtio"
+    storage = random_shuffle.datadisk.result[0]
+    size    = var.frontend-disk_size
+  }
+
+  provisioner "remote-exec" {
+    # This inline provisioner is needed to accomplish the final fit and finish of your deployed
+    # instance and condigure the system to register the FQDN with the Consul DNS system
+    inline = [
+      "sudo hostnamectl set-hostname ${var.frontend-yourinitials}-vm${count.index}",
+      "sudo sed -i 's/changeme/${random_id.id.dec}${count.index}/' /etc/consul.d/system.hcl",
+      "sudo sed -i 's/replace-name/${var.frontend-yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",
+      "sudo sed -i 's/ubuntu-server/${var.frontend-yourinitials}-vm${count.index}/' /etc/hosts",
+      "sudo sed -i 's/FQDN/${var.frontend-yourinitials}-vm${count.index}.service.consul/' /etc/update-motd.d/999-consul-dns-message",
+      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"rice-dc-1\"/' /etc/consul.d/consul.hcl",
+      "echo 'retry_join = [\"${var.consulip}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
+      "sudo systemctl daemon-reload",
+      "sudo systemctl restart consul.service",
+      "sudo rm /opt/consul/node-id",
+      "sudo systemctl restart consul.service",
+      "sudo sed -i 's/0.0.0.0/${var.frontend-yourinitials}-vm${count.index}.service.consul/' /etc/systemd/system/node-exporter.service",
+      "sudo systemctl daemon-reload",
+      "sudo systemctl enable node-exporter.service",
+      "sudo systemctl start node-exporter.service",
+      "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
+    ]
+
+    connection {
+      type        = "ssh"
+      user        = "vagrant"
+      private_key = file("${path.module}/${var.keypath}")
+      host        = self.ssh_host
+      port        = self.ssh_port
+    }
+  }
+}
+
+output "proxmox_frontend_ip_address_default" {
+  description = "Current Pulbic IP"
+  value       = proxmox_vm_qemu.frontend-webserver.*.default_ipv4_address
+}
+
+
+###############################################################################
+# Terraform Plan for backend Database instances
+###############################################################################
+resource "proxmox_vm_qemu" "backend-database" {
+  count       = var.backend-numberofvms
+  name        = "${var.backend-yourinitials}-vm${count.index}.service.consul"
+  desc        = var.backend-desc
+  target_node = var.target_node
+  clone       = var.backend-template_to_clone
+  os_type     = "cloud-init"
+  memory      = var.backend-memory
+  cores       = var.backend-cores
+  sockets     = var.backend-sockets
+  scsihw      = "virtio-scsi-pci"
+  bootdisk    = "virtio0"
+  boot        = "cdn"
+  agent       = 1
+
+  ipconfig0 = "ip=dhcp"
+  ipconfig1 = "ip=dhcp"
+  ipconfig2 = "ip=dhcp"
+
+  network {
+    model  = "virtio"
+    bridge = "vmbr0"
+  }
+
+  network {
+    model  = "virtio"
+    bridge = "vmbr1"
+  }
+
+  network {
+    model  = "virtio"
+    bridge = "vmbr2"
+  }
+
+  disk {
+    type    = "virtio"
+    storage = random_shuffle.datadisk.result[0]
+    size    = var.backend-disk_size
+  }
+
+  provisioner "remote-exec" {
+    # This inline provisioner is needed to accomplish the final fit and finish of your deployed
+    # instance and condigure the system to register the FQDN with the Consul DNS system
+    inline = [
+      "sudo hostnamectl set-hostname ${var.backend-yourinitials}-vm${count.index}",
+      "sudo sed -i 's/changeme/${random_id.id.dec}${count.index}/' /etc/consul.d/system.hcl",
+      "sudo sed -i 's/replace-name/${var.backend-yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",
+      "sudo sed -i 's/ubuntu-server/${var.backend-yourinitials}-vm${count.index}/' /etc/hosts",
+      "sudo sed -i 's/FQDN/${var.backend-yourinitials}-vm${count.index}.service.consul/' /etc/update-motd.d/999-consul-dns-message",
+      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"rice-dc-1\"/' /etc/consul.d/consul.hcl",
+      "echo 'retry_join = [\"${var.consulip}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
+      "sudo sed -i 's/HAWKID/${var.consul-service-tag-contact-email}/' /etc/consul.d/node-exporter-consul-service.json",
+      "sudo systemctl daemon-reload",
+      "sudo systemctl restart consul.service",
+      "sudo rm /opt/consul/node-id",
+      "sudo systemctl restart consul.service",
+      "sudo sed -i 's/0.0.0.0/${var.backend-yourinitials}-vm${count.index}.service.consul/' /etc/systemd/system/node-exporter.service",
+      "sudo systemctl daemon-reload",
+      "sudo systemctl enable node-exporter.service",
+      "sudo systemctl start node-exporter.service",
+      "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
+    ]
+
+    connection {
+      type        = "ssh"
+      user        = "vagrant"
+      private_key = file("${path.module}/${var.keypath}")
+      host        = self.ssh_host
+      port        = self.ssh_port
+    }
+  }
+}
+
+output "proxmox_backend_ip_address_default" {
+  description = "Current Pulbic IP"
+  value       = proxmox_vm_qemu.backend-database.*.default_ipv4_address
+}
+
+```
+
