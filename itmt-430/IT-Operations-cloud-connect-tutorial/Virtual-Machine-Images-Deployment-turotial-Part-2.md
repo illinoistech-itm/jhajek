@@ -316,3 +316,75 @@ The final command to execute is: `terraform apply` which is what takes your Terr
 The final command is: `terraform destroy` which does exactly what is says. This will destroy -- meaning delete -- all of the virtual infrastructure you deployed in your plan. You will find that you will have to use the `destroy` command and `apply` often, along with the `packer build` commands as you fix bugs and re-create your templates.
 
 You might be tempted to just fix things on the fly, but that can be very dangerous as now problems are solved by a manual process and the knowledged is held only by you. Best to submit a bug report and rebuild the entire application so it is in a known-good state.
+
+### What Happens When You Terraform Apply?
+
+So what happens? Essentially all of the variables settings you have configured are processed, and the proper commandline commands are sent to Proxmox to request a launch of a virtual machine. This is exactly similar to what happens on your local system when Packer talks to VirtualBox and asks it to do the same.
+
+The first step of a `terraform apply` is an interactive Yes/No step that shows you the Plan, essentially a last check to make sure what Terraform thinks it is going to do is what you want it to do. You can type `Yes` to proceed.
+
+![*terraform apply output*](./images/terraform-apply.png "image of terraform initial apply output")
+
+At that point, you now can sit back and watch the CLI and or the Proxmox GUI to watch the process play out. Essentially at this point, Proxmox is copying the virtual machine templates from there hard drive location over to a new hard drive location on the Proxmox server where the Virtual Machine *instances* will live and reconfiguring the CPU, RAM, and Network along with enlarging the harddrive.
+
+![*terraform apply Proxmox Gui*](./images/terraform-apply-proxmox.png "image of terraform proxmox interface GUI")
+
+### How long does it take?
+
+Generally virtual machine templates take 6-12 minutes to deploy and deploy in parallel batches of 2. Essentially think of it as 5-6 minutes to copy and congfigure each virtual machine in a plan until its ready to use.
+
+### How do I know its done?
+
+You will see output like the figure below for each virtual machine instance you have the Terraform Plan create.
+
+![*terraform apply cli output*](./images/terraform-apply-output.png "image showing the completed state of the instance deployment")
+
+These values will be interspersed, especially in later sprints where we are deploying not just 2 instances, but say 8 to 12 instances.
+
+### What are my IP addressed?
+
+Since we are working on a platform and operating on Cloud Native principles, each time you launch instances, they will get a potentially new set of IP addresses. Each virtual machine instance will have three IP addresses, one on each network.
+
+* 192.168.172.0/24
+  * This is the *public* network and routable inside the IIT Network or externally via the VPN.
+  * Each IP address has an associated FQDN based in the last octet
+  * Example, if you IP address is 192.168.172.75 - then your FQDN is system75.rice.iit.edu
+* 10.0.0.0/16
+  * This is the non-routable network for running the Ubuntu package manger to get localized updates (not over the external network)
+  * This IP is ephemeral and is assigned by DHCP
+* 10.110.0.0/16
+  * This is the non-routable network used for service and application discovery
+  * Using [consul](https://consul/io "webpage for consul service discovery") and the gossip protocol each instance is assigned an ephemeral DHCP IP address.
+  * This IP is registered with the consul server and all the other nodes and will automatically resolve to the variable: `frontend-yourinitials`.service.consul 
+    * You can run the command from your instance CLI: `consul catalog nodes`
+  * This allows you to connect your frontend and backend without having to know any IP address or hard code IP addresses
+  * This is how cloud native and how applications are deployed
+
+At the end of the command `terraform apply` I have configured a convenience command that will aggregate all the IP addresses assigned during the plan and print them out in one place.
+
+![*terraform apply IP addresses upon completion*](./images/terraform-apply-ips.png "image of the IPs resulting from the terraform apply")
+
+### Can I manually connect to a Virtual Machine?
+
+Yes you can SSH into your instance using your private key and the IP or fully qualified domain name. Your default user is: `vagrant`
+
+### What happens if something goes wrong?
+
+In all such cases, this is not a professional operation with 1000s of developers working on it. Sometimes things go wrong, virtual machines fail to launch, or spit out cryptic errors. Not to worry, remember in the cloud native principle, the instance is not important, its the image. We will just detroy and recreate what we need. A few troubleshooting tips to take into account:
+
+* If you issue a `terraform destroy` command give the Proxmox system a few minutes, say 3-5 minutes, before doing a `terraform apply` so that commands clearing out resoruces have time to finish.
+* If any of the `terraform apply` fails to deploy, you can just issue `terraform apply` again and terraform will look for what is missing, without touching what is there, and launch the missing part to make the `plan` accurate
+* This goes too if you want to increase the number of instances say go from 3 to 1. Update your `terraform.tfvars` file `numberofvms` filed and issue a `terraform apply` (without a `destroy`) and terraform will increase the numbers of your instances.
+* Sometimes instances fail to launch, it happens, and you might be stuck with a non-booting image in the Proxmox GUI console, that Terraform can't delete. In this case you are able in the Proxmox GUI to highlight the virtual machine in question, and select the `Remove` option in the far corner and delete the instance in question
+  * You can select the two check boxes listed as well
+  * You will need to `stop` the virtual machine instance before removing it
+
+![*Proxmox Instance Stop*](./images/proxmox-instance-stop.png "image of how to stop a virtual machine instance")
+
+![*Proxmox Instance Remove*](./images/proxmox-instance-remove.png "image of how to completely remove virtual machine vestiges")
+
+![*Proxmox Instance Removal Completion*](./images/proxmox-instance-rm.png "image of how to completely remove virtual machine vestiges")
+
+## Conculsion
+
+Congratulations on getting this far. You have completed the second half of becoming a cloud native Ops Engineer. You are now able to end-to-end deploy Infrastucture as Code and begin now to focus on how to deploy the required applciation software and configure the needed items.
