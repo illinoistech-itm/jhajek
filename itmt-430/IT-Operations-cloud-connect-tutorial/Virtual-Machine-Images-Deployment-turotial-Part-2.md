@@ -374,7 +374,7 @@ In all such cases, this is not a professional operation with 1000s of developers
 
 * If you issue a `terraform destroy` command give the Proxmox system a few minutes, say 3-5 minutes, before doing a `terraform apply` so that commands clearing out resoruces have time to finish.
 * If any of the `terraform apply` fails to deploy, you can just issue `terraform apply` again and terraform will look for what is missing, without touching what is there, and launch the missing part to make the `plan` accurate
-* This goes too if you want to increase the number of instances say go from 3 to 1. Update your `terraform.tfvars` file `numberofvms` filed and issue a `terraform apply` (without a `destroy`) and terraform will increase the numbers of your instances.
+* This goes too if you want to increase the number of instances say go from 3 to 1. Update your `terraform.tfvars` file `numberofvms` field and issue a `terraform apply` (without a `destroy`) and terraform will increase the numbers of your instances.
 * Sometimes instances fail to launch, it happens, and you might be stuck with a non-booting image in the Proxmox GUI console, that Terraform can't delete. In this case you are able in the Proxmox GUI to highlight the virtual machine in question, and select the `Remove` option in the far corner and delete the instance in question
   * You can select the two check boxes listed as well
   * You will need to `stop` the virtual machine instance before removing it
@@ -384,6 +384,10 @@ In all such cases, this is not a professional operation with 1000s of developers
 ![*Proxmox Instance Remove*](./images/proxmox-instance-remove.png "image of how to completely remove virtual machine vestiges")
 
 ![*Proxmox Instance Removal Completion*](./images/proxmox-instance-rm.png "image of how to completely remove virtual machine vestiges")
+
+### I can't connect to my web-server or database
+
+As you saw in the demo video - my webserver failed to come up. That is because by default the firewall (firewalld) is locked down per-interface. You want to make sure that you have all the ports open you need when you build the Packer Proxmox template. My port 80 wasn't open in the virtual machine firewall.
 
 ## Conculsion
 
