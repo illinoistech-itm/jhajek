@@ -388,6 +388,21 @@ In all such cases, this is not a professional operation with 1000s of developers
 
 As you saw in the demo video - my webserver failed to come up. That is because by default the firewall (firewalld) is locked down per-interface. You want to make sure that you have all the ports open you need when you build the Packer Proxmox template. My port 80 wasn't open in the virtual machine firewall.
 
+### Firewalld Setup
+
+[Firewalld documentation](https://firewalld.org "webapge for firewalld documentation")
+
+Firewalld defines each network interface as a [zone](https://firewalld.org/documentation/zone/ "webpage for firewalld zones") There are three zones that has been created for our production cloud. 
+
+* Interface ens18
+  * zone=public
+* Interface ens19
+  * zone=metrics
+* Interface ens20
+  * zone=meta
+
+You can open firewall ports per zone as needed - by default everything is locked down.
+
 ## Conculsion
 
 Congratulations on getting this far. You have completed the second half of becoming a cloud native Ops Engineer. You are now able to end-to-end deploy Infrastucture as Code and begin now to focus on how to deploy the required applciation software and configure the needed items.
