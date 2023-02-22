@@ -4,9 +4,7 @@ Provide the required screenshots to show the completion of the tutorial for the 
 
 ## Vagrant Box List
 
-Take a screenshot of the command: `vagrant box list` to show the ubuntu-server on your local host 
-
-Take a screenshot of the Proxmox console showing your Packer Template and your Proxmox packer VM running
+Take a screenshot of the command: `vagrant box list` to show the ubuntu-server on your local host. ~~Take a screenshot of the Proxmox console showing your Packer Template and your Proxmox packer VM running~~
 
 ## Deliverable
 
