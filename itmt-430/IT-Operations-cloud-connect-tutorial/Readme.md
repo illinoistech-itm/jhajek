@@ -101,12 +101,14 @@ locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 packer {
   required_plugins {
     virtualbox = {
-      version = ">= 1.0.8"
+      version = "= 1.1.0"
       source  = "github.com/hashicorp/proxmox"
     }
   }
 }
 ```
+
+**Note** If you execute a `packer build .` command and receive a `501` error, it has to do with a bug in the the latest `packer-proxmox-plugin`. You will need to revert to a version before `1.1.1`. You can delete the plugin if you installed `1.1.1` by executing the command: `rm ~/.config/packer/plugins/github.com/hashicorp/proxmox/packer-plugin-proxmox_v1.1*` - the example code was updated 02/20 and the `packer init` block has been locked to `1.1.0`.
 
 ### Source Blocks
 
