@@ -30,6 +30,7 @@ Some of the answers call for you to create a table to represent data, other are 
 | ------------- | ------------- | ------------- |
 | Content Cell  | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  | Content Cell  |
+
 * Answer D
 </pre>
 
@@ -52,7 +53,6 @@ Would render this: PURCHASE (<ins>PurchaseItem</ins>, PurchasePrice, *PurchaseDa
   * sub-answer 5
   * sub-answer 6
   * sub-answer 7
-  * sub-answer 8
 * Answer C
 * Answer D
 
