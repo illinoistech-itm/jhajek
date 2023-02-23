@@ -6,6 +6,7 @@
 - Understand how to make tempViews from Tables
 - Understand how to make queries against tempViews
 - Understand how to use the Spark Catalog
+- Examine the use of the Spark DataFrameReader and Writer to manipulate file data
 
 ## Assignment Setup
 
@@ -53,7 +54,7 @@ Place screenshot here
 
 ## Assignment Details - Part III
 
-Using the file: `learning-spark-v2 > flights > departuredelays.csv
+Using the file: `learning-spark-v2 > flights > departuredelays.csv`
 
 Read the file into a dataframe, and apply the approriate schema (ie first column should be of a Date Type). Using a DataFrameWriter, write the content out:
 
@@ -78,10 +79,6 @@ Place screenshot here
 
 Create a sub-folder named: `week-07` under the `itmd-521` folder. Place all deliverables there.
 Submit to Blackboard the URL to the folder in your GitHub repo.  I will clone your code and run it to test the functionality. I don't need the datasets as I will have them already.
-
-Due at the **Start of class** February 23rd 8:30 am
-- Make sure to commit and push code to GitHub continually.  Assignments that have the entire code submitted with none or little commit history will not be accepted.  Commit and push often.
-- Don't share the answers with others.  Your work is individual.
 
 Submit to Blackboard the URL to the folder in your GitHub repo.  I will clone your code and run it to test the functionality. I don't need the datasets as I will have them configured in the example-data directory -- path is important.
 
