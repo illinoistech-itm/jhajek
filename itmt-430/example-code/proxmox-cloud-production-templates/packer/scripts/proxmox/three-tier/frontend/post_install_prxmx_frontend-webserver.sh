@@ -17,8 +17,9 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096  -keyout /etc/ssl/priva
 sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
 
 # Upgrade to latest NPM
-sudo npm install -g npm@9.4.2
+#sudo npm install -g npm@9.4.2
 
-# Install expressjs and pm2
-sudo npm install express pm2 ejs
+# Install expressjs and pm2 as the vagrant user
+sudo -u vagrant npm install express npm pm2
+
 
