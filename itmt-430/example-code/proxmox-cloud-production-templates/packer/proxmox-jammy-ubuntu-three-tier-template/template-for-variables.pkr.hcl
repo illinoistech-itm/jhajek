@@ -79,3 +79,13 @@ variable "SSHPW" {
   default = ""
   sensitive = true
 }
+
+variable "ISO-CHECKSUM" {
+  type    = string
+  default = "sha256:5e38b55d57d94ff029719342357325ed3bda38fa80054f9330dc789cd2d43931"
+}
+
+variable "ISO-URL" {
+  type    = string
+  default = "https://mirrors.edge.kernel.org/ubuntu-releases/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"
+}
