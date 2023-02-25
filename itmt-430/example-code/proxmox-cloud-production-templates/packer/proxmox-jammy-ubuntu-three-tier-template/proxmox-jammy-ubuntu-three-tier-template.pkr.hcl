@@ -66,8 +66,8 @@ source "proxmox-iso" "backend-database" {
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
-  ssh_password             = "vagrant"
-  ssh_username             = "${var.SSHPW}"
+  ssh_username             = "vagrant"
+  ssh_password            = "${var.SSHPW}"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for backend database"
   vm_name                  = "${var.backend-VMNAME}"
@@ -124,8 +124,8 @@ source "proxmox-iso" "frontend-webserver" {
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
-  ssh_password             = "vagrant"
-  ssh_username             = "${var.SSHPW}"
+  ssh_username             = "vagrant"
+  ssh_password             = "${var.SSHPW}"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for a frontend webserver"
   vm_name                  = "${var.frontend-VMNAME}"
@@ -182,8 +182,8 @@ source "proxmox-iso" "load-balancer" {
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
-  ssh_password             = "vagrant"
-  ssh_username             = "${var.SSHPW}"
+  ssh_username             = "vagrant"
+  ssh_password             = "${var.SSHPW}"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for a load-balancer"
   vm_name                  = "${var.loadbalancer-VMNAME}"
