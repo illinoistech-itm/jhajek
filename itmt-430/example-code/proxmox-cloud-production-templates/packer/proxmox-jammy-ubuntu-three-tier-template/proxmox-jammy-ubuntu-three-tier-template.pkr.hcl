@@ -99,8 +99,8 @@ source "proxmox-iso" "frontend-webserver" {
   http_directory   = "subiquity/http"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "sha256:10f19c5b2b8d6db711582e0e27f5116296c34fe4b313ba45f9b201a5007056cb"
-  iso_urls         = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.1/ubuntu-22.04.1-live-server-amd64.iso"]
+  iso_checksum     = "${var.ISO-CHECKSUM}"
+  iso_urls         = ["${var.ISO-URL}"]
   iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
@@ -157,8 +157,8 @@ source "proxmox-iso" "load-balancer" {
   http_directory   = "subiquity/http"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "sha256:10f19c5b2b8d6db711582e0e27f5116296c34fe4b313ba45f9b201a5007056cb"
-  iso_urls         = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.1/ubuntu-22.04.1-live-server-amd64.iso"]
+  iso_checksum     = "${var.ISO-CHECKSUM}"
+  iso_urls         = ["${var.ISO-URL}"]
   iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
