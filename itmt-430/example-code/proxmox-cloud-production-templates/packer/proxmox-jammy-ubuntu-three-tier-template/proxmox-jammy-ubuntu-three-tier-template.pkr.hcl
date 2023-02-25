@@ -194,6 +194,26 @@ build {
 
   ########################################################################################################################
   # Using the file provisioner to SCP this file to the instance 
+  # Copy the configured config file to the ~/.ssh directory so you can clone your GitHub account to the server
+  ########################################################################################################################
+
+  provisioner "file" {
+    source      = "./config"
+    destination = "/home/vagrant/.ssh/config"
+  }
+
+  ########################################################################################################################
+  # Using the file provisioner to SCP this file to the instance 
+  # Copy the private key used to clone your source code -- make sure the public key is in your GitHub account
+  ########################################################################################################################
+
+  provisioner "file" {
+    source      = "./config"
+    destination = "/home/vagrant/.ssh/config"
+  }
+
+  ########################################################################################################################
+  # Using the file provisioner to SCP this file to the instance 
   # Add .hcl configuration file to register an instance with Consul for dynamic DNS on the third interface
   ########################################################################################################################
 
@@ -311,6 +331,11 @@ build {
     scripts         = ["../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load-balancer-open-ports.sh",
                       "../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load_balancer.sh"]
     only            = ["proxmox-iso.proxmox-load-balancer"]
+  }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    scripts         = ["../scripts/proxmox/three-tier/clone-team-repo.sh"]
   }
 
   provisioner "shell" {
