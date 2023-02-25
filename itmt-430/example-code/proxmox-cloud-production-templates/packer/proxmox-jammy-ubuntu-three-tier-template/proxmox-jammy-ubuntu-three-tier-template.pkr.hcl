@@ -194,6 +194,21 @@ build {
 
   ########################################################################################################################
   # Using the file provisioner to SCP this file to the instance 
+  # Create the .ssh directory under the user account and set proper permissions - as it doesn't exist by default
+  ########################################################################################################################
+
+  provisioner "file" {
+    source      = "./config"
+    destination = "/home/vagrant/.ssh/config"
+  }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    inline          = ["mkdir -p /home/vagrant/.ssh"]
+  }
+
+  ########################################################################################################################
+  # Using the file provisioner to SCP this file to the instance 
   # Copy the configured config file to the ~/.ssh directory so you can clone your GitHub account to the server
   ########################################################################################################################
 
