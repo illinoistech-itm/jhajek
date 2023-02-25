@@ -194,21 +194,6 @@ build {
 
   ########################################################################################################################
   # Using the file provisioner to SCP this file to the instance 
-  # Create the .ssh directory under the user account and set proper permissions - as it doesn't exist by default
-  ########################################################################################################################
-
-  provisioner "file" {
-    source      = "./config"
-    destination = "/home/vagrant/.ssh/config"
-  }
-
-  provisioner "shell" {
-    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    inline          = ["mkdir -p /home/vagrant/.ssh"]
-  }
-
-  ########################################################################################################################
-  # Using the file provisioner to SCP this file to the instance 
   # Copy the configured config file to the ~/.ssh directory so you can clone your GitHub account to the server
   ########################################################################################################################
 
@@ -329,6 +314,11 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    scripts         = ["../scripts/proxmox/three-tier/clone-team-repo.sh"]
+  }
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-webserver.sh"]
     only            = ["proxmox-iso.proxmox-frontend-webserver"]
@@ -346,11 +336,6 @@ build {
     scripts         = ["../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load-balancer-open-ports.sh",
                       "../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load_balancer.sh"]
     only            = ["proxmox-iso.proxmox-load-balancer"]
-  }
-
-  provisioner "shell" {
-    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/three-tier/clone-team-repo.sh"]
   }
 
   provisioner "shell" {
