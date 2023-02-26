@@ -11,15 +11,10 @@ sudo apt-get install -y nginx curl rsync
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-# https://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl
-# https://ethitter.com/2016/05/generating-a-csr-with-san-at-the-command-line/
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096  -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt -subj "/C=US/ST=IL/L=Chicago/O=IIT/OU=rice/CN=iit.edu"
-sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
-
 # Upgrade to latest NPM
 #sudo npm install -g npm@9.4.2
 
 # Install expressjs and pm2 as the vagrant user
-sudo -u vagrant npm install express npm pm2
+sudo -u vagrant npm install express@4.17.1 ejs@3.1.6 pm2
 
 
