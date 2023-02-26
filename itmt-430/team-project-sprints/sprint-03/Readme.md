@@ -4,16 +4,17 @@ This document contains the Sprint-03 requirements and deliverables
 
 ## Objectives
 
-* Deploy a local virtualized test environment for your 3-tier application
+* Create and Deploy a third-tier -- load-balancer
 * Integrate and document aspects of the Three Ways into your development process
 * Deploy your schema to a datastore for your application
-* Enable and create software deployment estimates to understand the nature of software production
+* Create software deployment estimates to understand the nature of software production
 * Engage and understand the process moving from design into an initial prototype
 * Discuss and deploy real-world security mitigations in your application
+* Deploy two additional applciation features
 
 ## Outcomes
 
-At the conclusion of this sprint project you will have built upon the work in Sprint-02. Your team will have deployed a working prototype of your site.  You will begin to explore functionality and usability issues.  Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working prototype of the project at the end of sprint-03.
+At the conclusion of this sprint project you will have built upon the work in Sprint-02. Your team will have deployed a working prototype of your site. You will begin to explore functionality and usability issues. Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working prototype of the project at the end of sprint-03.
 
 ### Requirements
 
