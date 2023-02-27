@@ -327,13 +327,13 @@ build {
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-firewall-open-ports.sh",
-                      "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend_database.sh"]
+                      "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-database.sh"]
     only            = ["proxmox-iso.backend-database"]
   }
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load-balancer-open-ports.sh",
+    scripts         = ["../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load-balancer-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load_balancer.sh"]
     only            = ["proxmox-iso.load-balancer"]
   }
