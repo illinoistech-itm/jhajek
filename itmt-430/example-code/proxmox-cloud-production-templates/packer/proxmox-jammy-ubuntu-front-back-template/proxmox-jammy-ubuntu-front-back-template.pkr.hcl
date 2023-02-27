@@ -239,14 +239,14 @@ build {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
                       "../scripts/proxmox/frontend/post_install_prxmx_frontend-webserver.sh"]
-    only            = ["proxmox-iso.proxmox-frontend-webserver"]
+    only            = ["proxmox-iso.frontend-webserver"]
   }
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/backend/post_install_prxmx_backend-firewall-open-ports.sh",
                       "../scripts/proxmox/backend/post_install_prxmx_backend_database.sh"]
-    only            = ["proxmox-iso.proxmox-backend-database"]
+    only            = ["proxmox-iso.backend-database"]
   }
 
 }
