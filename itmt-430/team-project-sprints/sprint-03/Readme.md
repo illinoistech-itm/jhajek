@@ -37,6 +37,9 @@ Responsibility for team roles must be rotated imeediately after sprint-02 is pre
   * Implementation must match the design showed in Sprint-01
   * UI/UX design is a complete master blueprint of what your finished site will look like
   * Help coordinate development into your team repo and using the provisioner scripts deploy your source code
+* UI/UX 
+  * Site testing
+  * GitHub Issue posting
 * IT Orchestration and Security
   * Responsible for designing and deploying all virtualized infrastructure templates
   * Responsible for working with Developers to configure login authentication
@@ -86,6 +89,10 @@ The professor is prescribing a small number of **additional** required tasks to 
     * Configure database/datastore to listen for external connection of the meta-network (10.110.0.0/16)
     * Add **25** posts, 15 new posts and 10 replies - as according to your sites specific design
     * Have 4 different users signed up
+* User Testing
+  * Show use of GitHub Issues for placing tickets to fix bugs
+  * UI/UX should be testing the production system, logging in, posting items, etc, etc.
+  * Show all issues filed and corresponding GitHub artifact and note if it is fixed
 * Deployment
   * All work needs to be tested and developed in the Cloud Platform
      * You will have to build often as code changes
