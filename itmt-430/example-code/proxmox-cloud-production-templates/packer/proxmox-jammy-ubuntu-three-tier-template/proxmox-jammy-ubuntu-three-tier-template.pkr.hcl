@@ -192,81 +192,86 @@ source "proxmox-iso" "load-balancer" {
 build {
   sources = ["source.proxmox-iso.frontend-webserver","source.proxmox-iso.backend-database","source.proxmox-iso.load-balancer"]
 
-  ########################################################################################################################
+  #############################################################################
   # Using the file provisioner to SCP this file to the instance 
-  # Copy the configured config file to the ~/.ssh directory so you can clone your GitHub account to the server
-  ########################################################################################################################
+  # Copy the configured config file to the ~/.ssh directory so you can clone 
+  # your GitHub account to the server
+  #############################################################################
 
   provisioner "file" {
     source      = "./config"
     destination = "/home/vagrant/.ssh/config"
   }
 
-  ########################################################################################################################
+  #############################################################################
   # Using the file provisioner to SCP this file to the instance 
-  # Copy the private key used to clone your source code -- make sure the public key is in your GitHub account
-  ########################################################################################################################
+  # Copy the private key used to clone your source code -- make sure the public
+  # key is in your GitHub account
+  #############################################################################
 
   provisioner "file" {
     source      = "./id_ed25519"
     destination = "/home/vagrant/.ssh/id_ed25519"
   }
 
-  ########################################################################################################################
+  #############################################################################
   # Using the file provisioner to SCP this file to the instance 
-  # Add .hcl configuration file to register an instance with Consul for dynamic DNS on the third interface
-  ########################################################################################################################
+  # Add .hcl configuration file to register an instance with Consul for dynamic
+  # DNS on the third interface
+  #############################################################################
 
   provisioner "file" {
     source      = "./system.hcl"
     destination = "/home/vagrant/"
   }
 
-  ########################################################################################################################
-  # Copy the node-exporter-consul-service.json file to the instance move this file to /etc/consul.d/ 
-  # directory so that each node can register as a service dynamically -- which Prometheus can then 
+  #############################################################################
+  # Copy the node-exporter-consul-service.json file to the instance move this 
+  # file to /etc/consul.d/ directory so that each node can register as a 
+  # service dynamically -- which Prometheus can then 
   # scape and automatically find metrics to collect
-  ########################################################################################################################
+  #############################################################################
 
   provisioner "file" {
     source      = "../scripts/proxmox/jammy-services/node-exporter-consul-service.json"
     destination = "/home/vagrant/"
   }
 
-  ########################################################################################################################
-  # Copy the consul.conf file to the instance to update the consul DNS to look on the internal port of 8600 to resolve
-  # .consul domain lookups
-  ########################################################################################################################
+  #############################################################################
+  # Copy the consul.conf file to the instance to update the consul DNS to look 
+  # on the internal port of 8600 to resolve the .consul domain lookups
+  #############################################################################
 
   provisioner "file" {
     source      = "../scripts/proxmox/jammy-services/consul.conf"
     destination = "/home/vagrant/"
   }
 
-  ########################################################################################################################
-  # Copy the node_exporter service file to the template so that the instance can publish its own system metrics on the
-  # metrics interface
-  ########################################################################################################################
+  #############################################################################
+  # Copy the node_exporter service file to the template so that the instance 
+  # can publish its own system metrics on the metrics interface
+  #############################################################################
 
   provisioner "file" {
     source      = "../scripts/proxmox/jammy-services/node-exporter.service"
     destination = "/home/vagrant/"
   }
 
-  ########################################################################################################################
-  # This is the script that will open firewall ports needed for a node to function on the the School Cloud Platform
-  # and create the default firewalld zones.
-  ########################################################################################################################
+  #############################################################################
+  # This is the script that will open firewall ports needed for a node to 
+  # function on the the School Cloud Platform and create the default firewalld
+  # zones.
+  #############################################################################
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx-firewall-configuration.sh"]
   }
 
-  ########################################################################################################################
-  # These shell scripts are needed to create the cloud instances and register the instance with Consul DNS
-  # Don't edit this
-  ########################################################################################################################
+  #############################################################################
+  # These shell scripts are needed to create the cloud instances and register 
+  # the instance with Consul DNS --- Don't edit this
+  #############################################################################
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
@@ -276,41 +281,42 @@ build {
                        "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
   }
 
-  ########################################################################################################################
+  #############################################################################
   # Script to change the bind_addr in Consul to the dynmaic Go lang call to
   # Interface ens20
   # https://www.consul.io/docs/troubleshoot/common-errors
-  ########################################################################################################################
+  #############################################################################
   
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_change_consul_bind_interface.sh"]
   }
   
-  ############################################################################################
+  #############################################################################
   # Script to give a dynamic message about the consul DNS upon login
   #
   # https://ownyourbits.com/2017/04/05/customize-your-motd-login-message-in-debian-and-ubuntu/
-  #############################################################################################
+  #############################################################################
   
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_update_dynamic_motd_message.sh"]
   }  
   
-  ############################################################################################
+  #############################################################################
   # Script to install Prometheus Telemetry support
-  #############################################################################################
+  #############################################################################
   
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh"]
   } 
 
-  ########################################################################################################################
+  #############################################################################
   # Uncomment this block to add your own custom bash install scripts
-  # This block you can add your own shell scripts to customize the image you are creating
-  ########################################################################################################################
+  # This block you can add your own shell scripts to customize the image you 
+  # are creating
+  #############################################################################
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
