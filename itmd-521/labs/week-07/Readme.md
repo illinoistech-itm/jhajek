@@ -59,7 +59,7 @@ Using the file: `learning-spark-v2 > flights > departuredelays.csv`
 Read the file into a dataframe, and apply the approriate schema (ie first column should be of a Date Type). Using a DataFrameWriter, write the content out:
 
 * As a JSON 
-* A JSON using Snappy Compression
+* ~~A JSON using Snappy Compression~~ JSON as lz4
 * As a Parquet file
 
 For all files use `mode` as `overwrite` so that I can run your program and your work will overwrite any previous work. Keep the filename the same, `departuredelays`.
