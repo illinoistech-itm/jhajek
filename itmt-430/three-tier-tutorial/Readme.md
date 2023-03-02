@@ -42,29 +42,41 @@ For load-balancing there are many options. Most public cloud providers have thei
 * [Nginx](http://nginx.org/en/docs/http/load_balancing.html "webpage for Nginx load-balancer" )
 * [HAProxy](https://www.haproxy.org/ "webpage for HAProxy")
 
-We will be doing TLS termination and load-balancing via a self-signed certificate, due to us being on a private network. Looking at any cloud-native application, a load-balancer is the root of moving things forward. Adding a load-balancer changes the dynamics of a request. A load-balancer introduces the concept of `sticky-sessions` - how do you attach login session tokens to make sure each user request is sent to the same node, keeping someone logged in?
+We will be doing TLS termination and load-balancing via a self-signed certificate, due to the school network being a private network. Looking at any cloud-native application, a load-balancer is at the root.
+
+### Downsides of a Load-Balacner
+
+There is definately some potential downsides of a loadbalancer. The first thing to know is that now your HTTP requests are not going directly to a webserver, they are being proxied through a load-balancer, which can make debugging more difficult. 
+
+Load-blancers also introduce the problem of maintaining session or state across multiple nodes of the webserver tier. This concept is called `sticky-sessions` - how do you attach login session tokens to make sure each user request is sent to the same node, keeping someone logged in?
+
+Nginx provides [sticky sessions](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/ "webpage to nginx sticky sessions documents") via IP Hash Load-balancing.
+
+> *If your application requires basic session persistence (also known as sticky sessions), you can implement it in NGINX Open Source with the IP Hash load‑balancing algorithm.*
+
+> *With the IP Hash algorithm, for each request NGINX calculates a hash based on the client’s IP address, and associates the hash with one of the upstream servers. It sends all requests with that hash to that server, thus establishing session persistence.*
 
 ### WebServer Tier
 
 This tier's job is to handle requests from the load-balancer and return request data (generally webpages) to the load-balancer. Generally this level doesn't store any permanent state beyond any session data. This makes the hardware requirements for disk - very small as there is no data stored beyond the code needed to serve requests.
 
-There are many common webserver softwares. From stock choices such as:
+There are many common webserver softwares, such as:
 
-* Nginx (pronounced: Engine X)
+* Nginx (pronounced: Engine X) <-- recommended one
 * Apache
 * lighttpd
 
 Generally Nginx is preferred for any new infrastructure deployments. Often times these webservers will actually be used as proxies to server requests to the applciation servers on a standard port - 443 (https). In our cases this is an optional step but something to think about as an application grows in complexity.
 
-Such as:
+For Example:
 
 * Express/NodeJS running on port 3000
 * Tornado/Python running on port 8888
 * Tomcat/Glassfish Java running port 8080
 
-This is good for security reasons and good because 443 (https) is a standard single port that can be opened in the firewall. The downside of proxying is that you add another layer of abstraction which can make debugging edge cases more difficult -- more hand need to touch a packet. 
+This is good for security reasons and good because 443 (https) is a standard single port that can be opened in the firewall. The downside of proxying is that you add another layer of abstraction which can make debugging edge cases more difficult -- more hands need to touch a packet.
 
-Also creating a frontend-tier behind a load-balancers limits exposure of systems to the public internet--which is always good you can limit your security footprint. 
+Creating a frontend-tier behind a load-balancers limits exposure of systems to the public internet--which is always good you can limit your security footprint. 
 
 ### Database/Datastore Tier
 
@@ -127,7 +139,10 @@ The main principle is that each Packer source block in build templates have the 
 
 Consul is configured via the `shell provisioner`: `post_install_prxmx_update_dns_for_consul_service.sh` under `scripts` > `proxmox` > `core-jammy` to configure systemd-resolved, which is the systemd DNS resolver, to run a local DNS resolver on port 8600 internally (in addition to the normal 53) to listen for specific domain requests. Consul will then forward any requests to *.service.consul to port 8600. This port is open on the `meta-network firewalld zone` for all nodes and runs the Gossip protocol. The name implies, like real life, each node gossips to each other based on your domain name. This way each node knows who they are, and can resolve any known name to an IP via Consul on the `meta-network`
 
-The hostnames that appear in the Proxmox Consol are defined in the `main.tf` resource block, in the remote-exec section, the line: `"sudo sed -i 's/replace-name/${var.lb-yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",`. Here we are using the `sed` command to find and replace a place holder, `replace-name` with the value you defined in the var `lb.yourinitials` and append the vm count value to generate a unique FQDN.
+The hostnames that appear in the Proxmox Consol are defined in the `main.tf` resource block, in the remote-exec section, the line: 
+
+`"sudo sed -i 's/replace-name/${var.lb-yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",`
+Here we are using the `sed` command to find and replace a place holder, `replace-name` with the value you defined in the var `lb.yourinitials` and append the vm count value to generate a unique FQDN.
 
 For example if you system names are:
 

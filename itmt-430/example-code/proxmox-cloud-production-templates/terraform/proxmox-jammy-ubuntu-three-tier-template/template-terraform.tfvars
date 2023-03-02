@@ -39,15 +39,15 @@ lb-template_to_clone  = "" # The name of the template to clone
 ###############################################################################
 # Customize instance hardware settings
 ###############################################################################
-frontend-memory    = 4096  # Memory size of a VM
+frontend-memory    = 2048  # Memory size of a VM
 frontend-cores     = 1     # vCPU = cores * sockets
 frontend-sockets   = 1     # vCPU = cores * sockets
 frontend-disk_size = "30G" # Disk size of a VM - min size must equal to the disk size of your clone image
-backend-memory     = 4096  # Memory size of a VM
+backend-memory     = 2048  # Memory size of a VM
 backend-cores      = 1     # vCPU = cores * sockets
 backend-sockets    = 1     # vCPU = cores * sockets
 backend-disk_size  = "30G" # Disk size of a VM - min size must equal to the disk size of your clone image
-lb-memory    = 4096  # Memory size of a VM
+lb-memory    = 2048  # Memory size of a VM
 lb-cores     = 1     # vCPU = cores * sockets
 lb-sockets   = 1     # vCPU = cores * sockets
 lb-disk_size = "30G" # Disk size of a VM - min size must equal to the disk size of your clone image
