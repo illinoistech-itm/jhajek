@@ -47,7 +47,7 @@ Place required screenshot
   - Create a `tempView` of all flights with an origin of Chicago (ORD) and a month/day combo of between 03/01 and 03/15
   - Show the first 5 records of the tempView, taking a screenshot
   - Use the Spark Catalog to list the columns of table `us_delay_flights_tbl`
-- Add this line to your `spark-submit` command to overcome the database already exists error
+- **New** Add this line to your `spark-submit` command to overcome the database already exists error
   - `--conf spark.sql.catalogImplementation=hive`
   - Example: `spark-submit --conf spark.sql.catalogImplementation=hive assignment-03.py ./departuredelays.csv`
 
