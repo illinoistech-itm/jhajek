@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo firewall-cmd --zone=meta-network --add-service=https --permanent
+sudo firewall-cmd --zone=public --add-service=https --permanent
 
 sudo firewall-cmd --reload
