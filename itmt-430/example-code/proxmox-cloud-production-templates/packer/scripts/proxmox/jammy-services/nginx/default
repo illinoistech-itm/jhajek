@@ -41,7 +41,12 @@ server {
                 try_files $uri $uri/ =404;
 
 				# Added by JRH 
-        		proxy_pass https://backend;
+        		proxy_pass http://backend;
+                # If you wanted https/TLS between each node on the frontend - you would 
+                # enable https and then have to enable each frontend node to support TLS/SSL
+                # Which is a better idea, but a more moving parts
+                # proxy_pass https://backend;
+                proxy_ssl_server_name on;
         }
 
 }
