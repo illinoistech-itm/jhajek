@@ -241,7 +241,7 @@ resource "proxmox_vm_qemu" "backend-database" {
       "sudo systemctl enable node-exporter.service",
       "sudo systemctl start node-exporter.service",
       "sudo systemctl stop mariadb.service",
-      "sudo sed -i '1,$s/127.0.0.1/${var.backend-yourinitials}-vm${count.index}.service.consul/g /etc/mysql/mariadb.conf.d/50-server.cnf",
+      "sudo sed -i '1,$s/127.0.0.1/${var.backend-yourinitials}-vm${count.index}.service.consul/g' /etc/mysql/mariadb.conf.d/50-server.cnf",
       "sudo systemctl daemon-reload",
       "sudo systemctl start mariadb.service",
       "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
