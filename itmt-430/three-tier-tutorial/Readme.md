@@ -169,16 +169,16 @@ You can increase the number of deployed instances from 1 to and arbitrary amount
 
 Though in your internal network and for service discovery you do not and won't assign static IP addresses, your external network connections need an static IP so your URL can be found.
 
-| Team Number | MacAddr | Static IP |
-| ----------- | -------------| ------------- |
-| team 01m | 04:9F:15:00:00:11 | 192.168.172.60 |
-| team 02m | 04:9F:15:00:00:12 | 192.168.172.61 |
-| team 03m | 04:9F:15:00:00:13 | 192.168.172.62 |
-| team 04m | 04:9F:15:00:00:14 | 192.168.172.63 |
-| team 05w | 04:9F:15:00:00:15 | 192.168.172.64 |
-| team 05o | 04:9F:15:00:00:16 | 192.168.172.65 |
-| team 06o | 04:9F:15:00:00:17 | 192.168.172.66 |
-| team 07o | 04:9F:15:00:00:18 | 192.168.172.67 |
+| Team Number | MacAddr | Static IP | FQDN |
+| ----------- | -------------| ------------- | ----------------- |
+| team 01m | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
+| team 02m | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
+| team 03m | 04:9F:15:00:00:13 | 192.168.172.62 | system62.rice.iit.edu |
+| team 04m | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
+| team 05w | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
+| team 05o | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
+| team 06o | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
+| team 07o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
 
 All this requires is to modify the `resource` block of your load-balancer in your `main.tf`, the first `network` block.
 
