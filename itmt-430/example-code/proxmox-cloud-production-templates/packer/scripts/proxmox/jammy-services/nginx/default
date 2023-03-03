@@ -47,6 +47,8 @@ server {
                 # Which is a better idea, but a more moving parts
                 # proxy_pass https://backend;
                 proxy_ssl_server_name on;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
         }
 
 }
