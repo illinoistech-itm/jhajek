@@ -7,7 +7,7 @@ This will be a combination lecture/tutorial on how and why we are creating a thr
 * Discuss the concept of the three-tier web application
 * Explore the imperative nature of the three-tier application when dealing with cloud-native development
 * Discuss tooling needed to create a three-tier application
-* Discuss and explore the ramificaation of the modifications that modern operating systems require to become three-tier applications
+* Discuss and explore the ramifications of the modifications that modern operating systems require to become three-tier applications
 * Discuss and explore the security ramifications of implementing a three-tier web applcation
 
 ## Outcomes
@@ -16,7 +16,9 @@ At the conclusion of this lecture/tutorial you will have explored the main tenan
 
 ## Purpose of an Application
 
-When we look at a web application, we tend to look in the wrong way. When we 
+When we look at a web application, we tend to look in the wrong way. When we tend to think of Apps as a Server and a Database. Or we tend to think of an Application as a JavaScript or Android applciation. In a sense those are the things we are using and building in, but in relality an Applciation is very simple.
+
+An application is essentially listening for external connections via HTTP, called `requests` or `http GET requests` and your applcaition will receive them, and server or return data to the requestor. That is pretty much it. You use Javascript or Java or Android to create an application that is listening on a certain port for a connection -- then serve the response back. With that in mind, the choice of language platform because a style choice because all lanugages are doing the same thing, as we are communicating over HTTP.
 
 ## What is a Three-Tier Application?
 
