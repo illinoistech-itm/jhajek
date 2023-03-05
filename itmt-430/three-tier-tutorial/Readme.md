@@ -20,6 +20,8 @@ When we look at a web application, we tend to look in the wrong way. When we ten
 
 An application is essentially listening for external connections via HTTP, called `requests` or `http GET requests` and your applcaition will receive them, and server or return data to the requestor. That is pretty much it. You use Javascript or Java or Android to create an application that is listening on a certain port for a connection -- then serve the response back. With that in mind, the choice of language platform because a style choice because all lanugages are doing the same thing, as we are communicating over HTTP.
 
+When we create an application its for users/customers to use, interact with in a safe, secure, and fast environment. All features are geared towards serving the customer. Now there are layers of comlexity that can be added and security features due to application and session state, but these are implementation details.
+
 ## What is a Three-Tier Application?
 
 ![*Three-tier Application*](./images/three-tier.png "image of three tier application")
