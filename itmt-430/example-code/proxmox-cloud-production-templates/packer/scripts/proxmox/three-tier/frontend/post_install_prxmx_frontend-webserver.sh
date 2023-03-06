@@ -12,8 +12,8 @@ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Upgrade to latest NPM
-sudo npm install -g npm@9.4.2
+sudo npm install -g npm@9.4.2 express
 
 # Install expressjs and pm2
-sudo -u vagrant npm install express pm2 -g
+sudo -u vagrant npm install pm2 -g
 
