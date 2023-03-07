@@ -12,5 +12,8 @@ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Upgrade to latest NPM
-sudo -u vagrant npm install express ejs pm2
+sudo -u vagrant npm install -g express ejs pm2
+# pm2.io is an applcation service manager for Javascript applications
+sudo -u vagrant pm2 start server.js
+sudo -u vagrant pm2 save
 
