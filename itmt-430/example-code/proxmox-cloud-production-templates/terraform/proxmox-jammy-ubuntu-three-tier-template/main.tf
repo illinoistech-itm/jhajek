@@ -166,7 +166,6 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
       "sudo systemctl daemon-reload",
       "sudo systemctl enable node-exporter.service",
       "sudo systemctl start node-exporter.service",
-      "sudo systemctl restart nginx",
       "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
     ]
 
