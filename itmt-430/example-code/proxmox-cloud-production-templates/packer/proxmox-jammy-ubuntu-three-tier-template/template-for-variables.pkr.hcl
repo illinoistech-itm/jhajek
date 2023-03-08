@@ -89,3 +89,24 @@ variable "ISO-URL" {
   type    = string
   default = "https://mirrors.edge.kernel.org/ubuntu-releases/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"
 }
+
+# This will be the non-root user account name
+variable "DBUSER" {
+  type = string
+  sensitive = true
+  default = "REPLACE"
+}
+
+# This will be the Database user (non-root) password setup
+variable "DBPASS" {
+  type = string
+  sensitive = true
+  default = "REPLACE"
+}
+
+# This variable is the IP address range to allow your connections
+variable "CONNECTFROMIPRANGE" {
+  type = string
+  sensitive = true
+  default = "REPLACE"
+}
