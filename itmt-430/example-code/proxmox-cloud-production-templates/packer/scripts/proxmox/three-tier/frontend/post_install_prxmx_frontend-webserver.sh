@@ -10,6 +10,7 @@ sudo apt-get install -y curl rsync
 # https://github.com/nodesource/distributions/blob/master/README.md#using-ubuntu-2
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
+sudo npm install -g npm@9.6.0
 
 # Upgrade to latest NPM
 sudo npm install -g express ejs pm2
