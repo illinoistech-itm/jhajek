@@ -16,6 +16,6 @@ sudo npm install -g npm@9.6.0
 sudo npm install -g express ejs pm2
 # pm2.io is an applcation service manager for Javascript applications
 cd /home/vagrant/team-00/code/express-static-app/
-sudo -u vagrant pm2 start server.js
-sudo -u vagrant pm2 save
+sudo pm2 start server.js
+sudo pm2 save
 
