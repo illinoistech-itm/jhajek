@@ -11,7 +11,8 @@ sudo apt-get install -y mariadb-server
 # Change directory to the location of your JS code
 cd /home/vagrant/team-00/code/db-samples
 
-sudo mysql < ./create-user-with-permissions.sql
+# These sample files are located in the mysql directory but need to be part of 
+# your private team repo
 sudo mysql < ./create-database.sql
 sudo mysql < ./create-tables.sql
 sudo mysql < ./insert-records.sql
