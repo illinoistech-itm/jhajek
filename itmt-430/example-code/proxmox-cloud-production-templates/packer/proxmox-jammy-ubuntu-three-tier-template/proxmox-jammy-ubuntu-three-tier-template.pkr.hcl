@@ -354,13 +354,13 @@ build {
   #############################################################################
   # Using the variables you are passing via the variables.pkr.hcl file, you can
   # access those variables as Linux ENVIRONMENT variables, use find and replace
-  # via sed and inline execute a mysql command 
+  # via sed and inline execute an inline mysql command
+  # Albeit this looks a bit hacky -- but it allows us not to hard code 
+  # secrets into our systems when building your backend template 
   #############################################################################
 
   provisioner "shell" {
     inline          = ["sudo mysql -e 'GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '${USERNAME}'@'${IPRANGE}' IDENTIFIED BY '${USERPASS}';'"]
-    environment_var = ["USERNAME=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","USERPASS=${var.DBPASS}"]
+    environment_vars = ["USERNAME=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","USERPASS=${var.DBPASS}"]
     only            = ["proxmox-iso.backend-database"]
   }
-
-}
