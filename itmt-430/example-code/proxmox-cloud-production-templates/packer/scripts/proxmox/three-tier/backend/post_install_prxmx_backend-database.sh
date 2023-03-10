@@ -12,7 +12,7 @@ sudo apt-get install -y mariadb-server
 cd /home/vagrant/team-00/code/db-samples
 
 # Inline MySQL code that uses the secrets passed via the ENVIRONMENT VARIABLES to create a non-root user
-sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '${USERNAME}'@$'${IPRANGE}' IDENTIFIED BY '${USERPASS}';"
+sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '{$USERNAME}'@$'${IPRANGE}' IDENTIFIED BY '${USERPASS}';"
 
 # These sample files are located in the mysql directory but need to be part of 
 # your private team repo
