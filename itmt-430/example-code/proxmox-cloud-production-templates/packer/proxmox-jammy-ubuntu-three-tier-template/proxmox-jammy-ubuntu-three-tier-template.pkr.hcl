@@ -360,7 +360,7 @@ build {
   #############################################################################
 
   provisioner "shell" {
-    inline          = ["sudo mysql -e 'GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO $USERNAME@$IPRANGE IDENTIFIED BY $USERPASS;'"]
+    inline          = ["sudo mysql -e 'GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '{$USERNAME}'@'{$IPRANGE}' IDENTIFIED BY '{$USERPASS}';'"]
     environment_vars = ["USERNAME=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","USERPASS=${var.DBPASS}"]
     only            = ["proxmox-iso.backend-database"]
   }
