@@ -14,5 +14,5 @@ cd /home/vagrant/team-00/code/db-samples
 # These sample files are located in the mysql directory but need to be part of 
 # your private team repo
 sudo mysql < ./create-database.sql
-sudo mysql < ./create-tables.sql
+sudo mysql < ./create-table.sql
 sudo mysql < ./insert-records.sql
