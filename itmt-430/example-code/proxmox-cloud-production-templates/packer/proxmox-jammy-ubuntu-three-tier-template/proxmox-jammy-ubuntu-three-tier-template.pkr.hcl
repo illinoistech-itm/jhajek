@@ -335,6 +335,7 @@ build {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-database.sh"]
+    environment_vars = ["USERNAME=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","USERPASS=${var.DBPASS}"]
     only            = ["proxmox-iso.backend-database"]
   }
 
@@ -358,10 +359,11 @@ build {
   # Albeit this looks a bit hacky -- but it allows us not to hard code 
   # secrets into our systems when building your backend template 
   #############################################################################
-
+/*
   provisioner "shell" {
     inline          = ["sudo mysql -e 'GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO ${USERNAME}@${IPRANGE} IDENTIFIED BY ${USERPASS};'"]
     environment_vars = ["USERNAME=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","USERPASS=${var.DBPASS}"]
     only            = ["proxmox-iso.backend-database"]
   }
+  */
 }
