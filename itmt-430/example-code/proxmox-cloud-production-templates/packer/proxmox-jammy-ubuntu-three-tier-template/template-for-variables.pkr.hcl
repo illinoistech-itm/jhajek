@@ -105,7 +105,7 @@ variable "DBPASS" {
 }
 
 # This variable is the IP address range to allow your connections
-variable "CONNECTFROMIPRANGE" {
+variable "CONNECTIONFROMIPRANGE" {
   type = string
   sensitive = true
   default = "REPLACE"
