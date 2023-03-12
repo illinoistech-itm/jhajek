@@ -110,3 +110,17 @@ variable "CONNECTIONFROMIPRANGE" {
   sensitive = true
   default = "REPLACE"
 }
+
+# This will be the fully qualified domain name yourinitials.service.consul
+variable "FQDN" {
+  type = string
+  sensitive = true
+  default = "REPLACE"
+}
+
+# This will be the Database name you default to (like posts or comments or customers)
+variable "DATABASE" {
+  type = string
+  sensitive = true
+  default = "REPLACE"
+}

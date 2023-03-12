@@ -328,6 +328,7 @@ build {
     scripts         = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-webserver.sh",
                       "../scripts/proxmox/three-tier/frontend/application-start.sh"]
+    environment_vars = ["USERNAME=${var.DBUSER}","USERPASS=${var.DBPASS}","DATABASE=${var.DATABASE}","FQDN=${var.FQDN}"]                      
     only            = ["proxmox-iso.frontend-webserver"]
   }
 
@@ -351,19 +352,5 @@ build {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/three-tier/cleanup.sh"]
   }
-  
-  #############################################################################
-  # Using the variables you are passing via the variables.pkr.hcl file, you can
-  # access those variables as Linux ENVIRONMENT variables, use find and replace
-  # via sed and inline execute an inline mysql command
-  # Albeit this looks a bit hacky -- but it allows us not to hard code 
-  # secrets into our systems when building your backend template 
-  #############################################################################
-/*
-  provisioner "shell" {
-    inline          = ["sudo mysql -e 'GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO ${USERNAME}@${IPRANGE} IDENTIFIED BY ${USERPASS};'"]
-    environment_vars = ["USERNAME=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","USERPASS=${var.DBPASS}"]
-    only            = ["proxmox-iso.backend-database"]
-  }
-  */
+
 }

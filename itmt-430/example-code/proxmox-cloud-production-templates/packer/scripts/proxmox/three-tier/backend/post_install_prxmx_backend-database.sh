@@ -8,6 +8,14 @@ sudo apt-get install -y mariadb-server
 ## During the Terraform apply phase -- we will make some run time adjustments
 # to configure the database to listen on the meta-network interface only
 
+#############################################################################
+# Using the variables you are passing via the variables.pkr.hcl file, you can
+# access those variables as Linux ENVIRONMENT variables, use find and replace
+# via sed and inline execute an inline mysql command
+# Albiet this looks a bit hacky -- but it allows us not to hard code 
+# secrets into our systems when building your backend template 
+#############################################################################
+
 # Change directory to the location of your JS code
 cd /home/vagrant/team-00/code/db-samples
 

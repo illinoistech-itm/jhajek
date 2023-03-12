@@ -28,3 +28,14 @@ sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -
 # This saves which files we have already started -- so pm2 will 
 # restart them at boot
 sudo -u vagrant pm2 save
+
+###############################################################################
+# Using Find and Replace via sed to add in the secrets to connect to MySQL
+# There is a .env file containing an empty template of secrets -- essentially
+# this is a hack to pass environment variables into the vm instances
+###############################################################################
+
+sudo sed -i "s/FQDN=/FQDN=$FQDN/" /home/vagrant/team-00/code/express-static-app/.env
+sudo sed -i "s/USER=/USER=$DBUSER/" /home/vagrant/team-00/code/express-static-app/.env
+sudo sed -i "s/PASS=/PASS=$DBPASS/" /home/vagrant/team-00/code/express-static-app/.env
+sudo sed -i "s/DATABASE=/DATABASE=$DATABASE/" /home/vagrant/team-00/code/express-static-app/.env
