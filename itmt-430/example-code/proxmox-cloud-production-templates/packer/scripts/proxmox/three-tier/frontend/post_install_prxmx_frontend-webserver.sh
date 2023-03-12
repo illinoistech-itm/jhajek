@@ -14,7 +14,7 @@ sudo npm install -g npm@9.6.0
 
 # Use NPM package manager to install needed dependecies to run our EJS app
 # https://github.com/motdotla/dotenv -- create a .env file to pass environment variables
-sudo npm install -g express ejs pm2 dotenv
+sudo npm install -g express ejs pm2 dotenv mysql2
 # pm2.io is an applcation service manager for Javascript applications
 # Change directory to the location of your JS code
 cd /home/vagrant/team-00/code/express-static-app/
