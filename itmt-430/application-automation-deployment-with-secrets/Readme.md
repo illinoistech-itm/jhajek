@@ -174,6 +174,10 @@ sudo -u vagrant pm2 save
 
 This is the command that `pm2` uses to create the actual systemd `.service` file in the `/etc/systemd/system` directory that loads services at boot.
 
+### Seeding Secrets Using Environment Variables
+
+Linux has a feature that you can define variables that are accessible from anywhere in an environment. This is how we can pass values in that can be accessed by our code to seed our secrets for Database connection strings for instance.
+
 ```bash
 ###############################################################################
 # Using Find and Replace via sed to add in the secrets to connect to MySQL
@@ -225,7 +229,18 @@ How does this work then, again starting from line 326, we see a new Packer value
   <dd>(array of strings) - An array of key/value pairs to inject prior to the execute_command. The format should be key=value. Packer injects some environmental variables by default into the environment, as well, which are covered in the section below.</dd>
 </dl>
 
-You will ask, how can I access these variables. Packer has a simple context, you provide the Linux Environement variable name and then assign it the value from the `variables.pkr.hcl` file. Then that Linux Environment variable is accessible by your shellscript using the `$` nomenclature for bash shell variables. 
+You will ask, how can I access these variables. Packer has a simple context, you provide the Linux Environement variable name and then assign it the value from the `variables.pkr.hcl` file. Then that Linux Environment variable is accessible by your shellscript using the `$` nomenclature for bash shell variables. So when we see `environment_vars = ["DBUSER=${var.DBUSER}]` this allows the value set in the `variables.pkr.hcl` starting at line 94:
+
+```hcl
+# This will be the non-root user account name
+variable "DBUSER" {
+  type = string
+  sensitive = true
+  default = "REPLACE"
+}
+```
+
+To be read into the Linux environment variable also named `DBUSER` and therefore accessed within the Linux Virtual Machine via `$DBUSER`. Once the values added we can use the `sed` command to find the empty `.env` file and replace them with the actual values.
 
 ### application-start.sh
 
