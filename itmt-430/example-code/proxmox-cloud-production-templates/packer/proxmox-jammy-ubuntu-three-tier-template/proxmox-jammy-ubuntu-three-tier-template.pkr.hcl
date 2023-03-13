@@ -328,7 +328,7 @@ build {
     scripts         = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-webserver.sh",
                       "../scripts/proxmox/three-tier/frontend/application-start.sh"]
-    environment_vars = ["USERNAME=${var.DBUSER}","USERPASS=${var.DBPASS}","DATABASE=${var.DATABASE}","FQDN=${var.FQDN}"]                      
+    environment_vars = ["DBUSER=${var.DBUSER}","DBPASS=${var.DBPASS}","DATABASE=${var.DATABASE}","FQDN=${var.FQDN}"]                      
     only            = ["proxmox-iso.frontend-webserver"]
   }
 
@@ -336,7 +336,7 @@ build {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-database.sh"]
-    environment_vars = ["USERNAME=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","USERPASS=${var.DBPASS}"]
+    environment_vars = ["DBNAME=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","DBPASS=${var.DBPASS}"]
     only            = ["proxmox-iso.backend-database"]
   }
 

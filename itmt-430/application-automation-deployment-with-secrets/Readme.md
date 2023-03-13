@@ -96,7 +96,7 @@ Starting on line 326, we see the file provisioner that contains instructions to 
     scripts         = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-webserver.sh",
                       "../scripts/proxmox/three-tier/frontend/application-start.sh"]
-    environment_vars = ["USERNAME=${var.DBUSER}","USERPASS=${var.DBPASS}","DATABASE=${var.DATABASE}","FQDN=${var.FQDN}"]                      
+    environment_vars = ["DBUSER=${var.DBUSER}","DBPASS=${var.DBPASS}","DATABASE=${var.DATABASE}","FQDN=${var.FQDN}"]                      
     only            = ["proxmox-iso.frontend-webserver"]
   }
 ```
@@ -215,7 +215,7 @@ How does this work then, again starting from line 326, we see a new Packer value
     scripts         = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-webserver.sh",
                       "../scripts/proxmox/three-tier/frontend/application-start.sh"]
-    environment_vars = ["USERNAME=${var.DBUSER}","USERPASS=${var.DBPASS}","DATABASE=${var.DATABASE}","FQDN=${var.FQDN}"]                      
+    environment_vars = ["DBUSER=${var.DBUSER}","DBPASS=${var.DBPASS}","DATABASE=${var.DATABASE}","FQDN=${var.FQDN}"]                      
     only            = ["proxmox-iso.frontend-webserver"]
   }
 ```
@@ -225,7 +225,7 @@ How does this work then, again starting from line 326, we see a new Packer value
   <dd>(array of strings) - An array of key/value pairs to inject prior to the execute_command. The format should be key=value. Packer injects some environmental variables by default into the environment, as well, which are covered in the section below.</dd>
 </dl>
 
-
+You will ask, how can I access these variables. Packer has a simple context, you provide the Linux Environement variable name and then assign it the value from the `variables.pkr.hcl` file. Then that Linux Environment variable is accessible by your shellscript using the `$` nomenclature for bash shell variables. 
 
 ### application-start.sh
 
@@ -248,7 +248,7 @@ For other platforms you may want to remove or edit this -- for Django there is a
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-database.sh"]
-    environment_vars = ["USERNAME=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","USERPASS=${var.DBPASS}"]
+    environment_vars = ["DBUSER=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","DBPASS=${var.DBPASS}"]
     only            = ["proxmox-iso.backend-database"]
   }
 ```
