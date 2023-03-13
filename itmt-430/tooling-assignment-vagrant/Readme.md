@@ -58,7 +58,7 @@ There are a few basic terms to remember when dealing with Vagrant:
 * Vagrantfile
   * This is a file (note the capital 'V') that contains a virtual machines hardware configuration
 
-### Vagrant Commands
+### Vagrant Commands for VirtualBox x86
 
 Assuming that the command `vagrant --version` gives us output, lets begin by installing our first Vagrant Box. Open your terminal application and let us `cd` to the Documents directory
 
@@ -73,25 +73,37 @@ We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 22.04 known
 * ```mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls```
 * ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls```
 
-For those using M1 Macs and Parallels you will need to replace the names of the Boxes in the demos with these two that have been prepared for M1 macs and parallels
-
-* bento/debian-11.2-arm64
-* almalinux/9.aarch64
-
-### Additional Parallels M1 requirements
+### Vagrant Commands for Parallels on Apple Silicon
 
 Parallels is a Apple Silicon native virtualization solution, equal in all senses to VirtualBox on x86 hardware. It does require a couple of extra items detailed at this [KB 122843 article](https://kb.parallels.com/en/122843 "webpage for parallels kb article").
 
 Student discount price for [Parallels Pro edition -- one year license](https://www.parallels.com/landingpage/pd/education/ "webpage parallels pro edition").
 
-Once these commands are executed -- both under the `itmt-430` directory, you will see a Vagrantfile that has been created. Let us take a look at this file. You can do so via using the commands on MacOS or Windows from the Terminal:
+For those using Apple Silicon Macs and Parallels you will need to replace the names of the Boxes in the demos with these two that have been prepared for M1 macs and parallels. Documentation and installation [instructions provided by Parallels](https://parallels.github.io/vagrant-parallels/docs/usage.html "webpage for parallels and vagrant installation on M1 macs").
+
+Installation instructions 
+
+* From the Terminal you need to run the command once
+  * `vagrant plugin install vagrant-parallels`
+  * This will install the parallels provider for Vagrant
+
+We will now use Vagrant to retrieve 2 Linux Distributions, Debian 11 and an [Alma Linux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpagte release notes for Alma Linux 9") (CentOS/Red Hat based) Virtual Machines:
+
+* ```mkdir jammy64 ; cd jammy64 ; vagrant init bento/debian-11.2-arm64 ; ls```
+* ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9.aarch64 ; ls```
+
+This will retrieve already created vanilla server installs. All instructions from here on out are the same.
+
+### The Vagrantfile
+
+Once these commands are executed -- both under the `itmt-430` directory, you will see a file named: `Vagrantfile` that has been created. Let us take a look at this file. You can do so via using the commands on MacOS or Windows from the Terminal:
 
 * ```code Vagrantfile```
 * ```atom Vagrantfile```
 * ```vim Vagrantfile```
   * You can use chocolatey to install `vim` on Windows
 
-Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`. This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install. Line 52, 57, and 58 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb. For now lets not make any changes.
+This file is essentially your configuration file. In this abstraction, Vagrant will translate these values into the underlying `vboxmanage` or the `parallels` commandline commands. Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`. This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install. Line 52, 57, and 58 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb. For now lets not make any changes.
 
 ### Start a Vagrant Box
 
@@ -116,7 +128,7 @@ The Vagrantfile is only processed the first time a system is initialized via `va
 
 Let us try this. Choose the Ubuntu 22.04 jammy64 system's Vagrantfile and let us open it for editing. Let us uncomment line 35 and let us uncommand line 52, 57, and 58, changing the value on line 57 to 4096 if you have the extra memory or 2048 at least. If your Jammy virtual machine is running, form the host OS issue the command: `vagrant reload --provision` or if powered off `vagrant up --provision`.
 
-To further check the results after the command `vagrant ssh` is issued from the Ubuntu CLI type the command: `free --giga` to see how much memory is in the system. To test the private network, let us install a webserver by issuing the command: `sudo apt update; sudo apt-get install nginx`. From your host OS, open a web-browser to `http://192.168.56.10` and you will be met by a Welcome to Nginx message.
+To further check the results after the command `vagrant ssh` is issued from the Ubuntu CLI type the command: `free --giga` to see how much memory is in the system. To test the private network, let us install a webserver by issuing the command: `sudo apt update; sudo apt-get install nginx`. From your host OS, open a web-browser to `http://192.168.56.10` and you will be met by a Welcome to Nginx message. **Note:** your IP address could be different -- it depends on the value you set on line 34 in your `Vagrantfile`.
 
 ### Reset a Virtual Machine
 
