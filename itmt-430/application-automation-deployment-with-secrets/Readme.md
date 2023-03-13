@@ -281,11 +281,11 @@ Second we have a non-root username and password created, which needs to be creat
 cd /home/vagrant/team-00/code/db-samples
 
 # Inline MySQL code that uses the secrets passed via the ENVIRONMENT VARIABLES to create a non-root user
-sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '{$DBUSER}'@'{IPRANGE}' IDENTIFIED BY '{DBPASS}';"
+sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '${DBUSER}'@'${IPRANGE}' IDENTIFIED BY '${DBPASS}';"
 
 # Inline mysql command to allow the USERNAME you passed in via the variables.pkr.hcl file to access the Mariadb/MySQL commandline 
 # for debugging purposes only to connect via localhost (or the mysql CLI)
-sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '{$DBUSER}'@'localhost' IDENTIFIED BY '{DBPASS}';"
+sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '${DBUSER}'@'localhost' IDENTIFIED BY '${DBPASS}';"
 
 # These sample files are located in the mysql directory but need to be part of 
 # your private team repo
@@ -298,7 +298,7 @@ Third we restrict access to our database, not only via username and password, bu
 
 ```bash
 # Inline MySQL code that uses the secrets passed via the ENVIRONMENT VARIABLES to create a non-root user
-sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '{$DBUSER}'@'{IPRANGE}' IDENTIFIED BY '{DBPASS}';"
+sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '${DBUSER}'@'${IPRANGE}' IDENTIFIED BY '${DBPASS}';"
 ```
 
 Notice that I am granting limited privilleges to all the tables in the database named post: `posts.*` and then further limiting access to only a certain user, `$DBUSER` and that user connecting from a certain IP range, in this case the `meta-network` IP range of `10.110.0.0/16`. In the SQL syntax there is no CIDR block representation, so we need to use wildcard which are `%` signs in this case: `10.110.%.%`--this is defined in the `template-for-variables.pkr.hcl` file, line 108, CONNECTIONFROMIPRANGE, and give it the default value of `10.110.%.%`.
@@ -337,6 +337,8 @@ sudo systemctl daemon-reload
     scripts         = ["../scripts/proxmox/three-tier/cleanup.sh"]
   }
 ```
+
+In the final stages -- you want to clean up. This shells script is going to remove some of the download artifacts for the node_exporter metrics collector. Most importantly it will delete the private key used to `git clone` your team private repo. This does force you to rebuild everytime you have code changes, but also makes sure that you don't leave the keys to the kingdom lying around. Also reduce your security footprint and not leave a power private key laying around.
 
 ### Building Only a Certain Templates
 
