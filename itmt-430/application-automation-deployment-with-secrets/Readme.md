@@ -229,7 +229,7 @@ How does this work then, again starting from line 326, we see a new Packer value
   <dd>(array of strings) - An array of key/value pairs to inject prior to the execute_command. The format should be key=value. Packer injects some environmental variables by default into the environment, as well, which are covered in the section below.</dd>
 </dl>
 
-You will ask, how can I access these variables. Packer has a simple context, you provide the Linux Environement variable name and then assign it the value from the `variables.pkr.hcl` file. Then that Linux Environment variable is accessible by your shellscript using the `$` nomenclature for bash shell variables. So when we see `environment_vars = ["DBUSER=${var.DBUSER}]` this allows the value set in the `variables.pkr.hcl` starting at line 94:
+You will ask, how can I access these variables. Packer has a simple context, you provide the Linux Environement variable name and then assign it the value from the `variables.pkr.hcl` file. Then that Linux Environment variable is accessible by your shell script using the `$` nomenclature for bash shell variables. So when we see `environment_vars = ["DBUSER=${var.DBUSER}]` this allows the value set in the `variables.pkr.hcl` starting at line 94 for DBUSER:
 
 ```hcl
 # This will be the non-root user account name
@@ -268,6 +268,45 @@ For other platforms you may want to remove or edit this -- for Django there is a
   }
 ```
 
+This `shell privisoner` does the same thing as using the `environment_vars` as the frontend `shell provisoner` did. This time we are passing in the `DBUSER`, `IPRANGE`, and `DBPASS`. This is a bit tricky as we have multiple security levels when dealing with a database.
+
+First we have the IP level, meaning the firewall, which is configured via `post_install_prxmx_backend-firewall-open-ports.sh` to allow connections only on the `meta-network` internal interface, not exposing out database to the public network.
+
+```sudo firewall-cmd --zone=meta-network --add-port=3306/tcp --permanent``` adjust the port 3306 (MySQL/MariaDB) to your appropriate database port.
+
+Second we have a non-root username and password created, which needs to be created. We don't want our application using the `root` database user which lessens your attack surface and prevents serious explotation--we want to practice the principle of `least privilleges`. From the script: `post_install_prxmx_backend-database.sh` we see syntax for creating users and creating tables and prepopulating with data. Adjust as your team needs to.
+
+```bash
+# Change directory to the location of your JS code
+cd /home/vagrant/team-00/code/db-samples
+
+# Inline MySQL code that uses the secrets passed via the ENVIRONMENT VARIABLES to create a non-root user
+sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '{$DBUSER}'@'{IPRANGE}' IDENTIFIED BY '{DBPASS}';"
+
+# Inline mysql command to allow the USERNAME you passed in via the variables.pkr.hcl file to access the Mariadb/MySQL commandline 
+# for debugging purposes only to connect via localhost (or the mysql CLI)
+sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '{$DBUSER}'@'localhost' IDENTIFIED BY '{DBPASS}';"
+
+# These sample files are located in the mysql directory but need to be part of 
+# your private team repo
+sudo mysql < ./create-database.sql
+sudo mysql < ./create-table.sql
+sudo mysql < ./insert-records.sql
+```
+
+Third we restrict access to our database, not only via username and password, but restrict it by which IP address range can be allowed to connect and to which tables. This further tightens our access control and security.
+
+```bash
+# Inline MySQL code that uses the secrets passed via the ENVIRONMENT VARIABLES to create a non-root user
+sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '{$DBUSER}'@'{IPRANGE}' IDENTIFIED BY '{DBPASS}';"
+```
+
+Notice that I am granting limited privilleges to all the tables in the database named post: `posts.*` and then further limiting access to only a certain user, `$DBUSER` and that user connecting from a certain IP range, in this case the `meta-network` IP range of `10.110.0.0/16`. In the SQL syntax there is no CIDR block representation, so we need to use wildcard which are `%` signs in this case: `10.110.%.%`--this is defined in the `template-for-variables.pkr.hcl` file, line 108, CONNECTIONFROMIPRANGE, and give it the default value of `10.110.%.%`.
+
+### Moving Nginx Files for to Create a Load Balancer
+
+In this `shell privisoner` you will notice that there is now a `move-nginx-files.sh` which is needed to move the configuration files needed to turn Nginx from a webserver into a load-balancer. These files are located in the [team-00](https://github.com/illinoistech-itm/team-00 "git repo for sample code")] repo under the `nginx` folder.  You will need to make a few slight adjustments here, replacing my team named FQDNs with yours.
+
 ```hcl
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
@@ -278,11 +317,36 @@ For other platforms you may want to remove or edit this -- for Django there is a
   }
 ```
 
+```bash
+# Content of move-nginx-files.sh
+# This overrides the default nginx conf file enabling loadbalacning and 443 TLS only
+sudo cp -v /home/vagrant/team-00/code/nginx/nginx.conf /etc/nginx/
+sudo cp -v /home/vagrant/team-00/code/nginx/default /etc/nginx/sites-available/
+# This connects the TLS certs built in this script with the instances
+sudo cp -v /home/vagrant/team-00/code/nginx/self-signed.conf /etc/nginx/snippets/
+sudo systemctl daemon-reload
+```
+
+**Note:** if the frontend webservers fail to come up -- the load balacner won't start. Be default it needs all backends responding upon initial load-balancer start. You can troubleshoot the load-balancer by sshing into the `lb` instance and taking a look at the nginx error logs. Usally `tail /var/log/nginx/error.log` will show you the last few errors. Watch the timestamps, our servers are configured to `UTC` timezone, not local timezones.
+
+### Cleaning it all Up
+
 ```hcl
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/three-tier/cleanup.sh"]
   }
+```
+
+### Building Only a Certain Templates
+
+Sometimes you will find that you only need to rebuild one of the three packer templates, or perhaps two of the three. You can always rebuild all of them, there is no additional time required to build 1, 2, or 3 as they build in parallel. But there is a Packer option for this condition.
+
+```bash
+# Will build everything except proxmox-iso.load-balancer
+packer build -except='proxmox-iso.load-balancer' .
+# Will build only proxmox-iso.load-balancer
+packer build -only='proxmox-iso.load-balancer' .
 ```
 
 ## Summary and Conclusion
