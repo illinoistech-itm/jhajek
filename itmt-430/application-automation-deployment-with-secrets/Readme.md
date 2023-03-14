@@ -351,6 +351,10 @@ packer build -except='proxmox-iso.load-balancer' .
 packer build -only='proxmox-iso.load-balancer' .
 ```
 
+### Terraform main.tf
+
+List adjustements in the `remote-exec` portion
+
 ## Summary and Conclusion
 
 This sprint is a long one, but important as we are beginning to create an actual working cloud native application. Continue to make use of the principles we are learning in the DevOps handbook and keep working at this--soon you will see the fruits of your labors.
