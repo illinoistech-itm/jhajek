@@ -13,6 +13,21 @@ This tutorial will go over step by step the deployment and automation of a three
 
 At the conclusion of the review of this working end-to-end sample, you will have been exposed to the common problems when moving an application from a manual deployment to an automated deployment. You will have engaged with methods to pass secret and see their pros and cons, and finally you will have understood cloud-init and its permissions structure.
 
+## Overview
+
+What are we trying to solve in this document and sprint-03? We are reinforcing a few concepts regarding security, deployment, automation, and repeatability. This brings new questions:
+
+* How do we dynamically configure secrets in our application?
+  * Can you name some secrets your application has?
+  * Can you name components that have or need a secret value?
+* How will we know the IP addresses of our frontend and backend systems when they have an epehemeral DHCP address?
+  * Why do we have multiple networks? Why can't we just put everything on the public network or localhost?
+* How to we preseed our database with tables and data?
+* How do handle HTTP connections through a load-balancer?
+* Why are we deploying in an automated fashion with Packer and Terraform when we can just SSH in to a single server and configure everything manually?
+
+These questions and more will be answered via the provided sample code and concepts we will discuss in this tutorial.
+
 ### Sample Code Location
 
 Working code to demonstrate all of this is located in two places
@@ -353,7 +368,63 @@ packer build -only='proxmox-iso.load-balancer' .
 
 ### Terraform main.tf
 
-List adjustements in the `remote-exec` portion
+There are some coding adjustments you need to make to the Terraform `main.tf` file. Starting at line 42 of the `main.tf` you will have to give the first network interface a MAC address. This is so that your load balancer will always get the same public IP address, `192.168.172.0/24`. This is due to a DHCP lease that is linked to the MAC address--which I setup ahead of time.
+
+```hcl
+  network {
+    model  = "virtio"
+    bridge = "vmbr0"
+    # Replace this mac addr with your assigned Mac
+    # https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/three-tier-tutorial#how-to-assign-a-mac-address-to-get-a-static-ip
+    macaddr = "00:00:00:00:00:00"
+  }
+```
+Here is the chart for all the teams
+
+| Team Number | MacAddr | Static IP | FQDN |
+| ----------- | -------------| ------------- | ----------------- |
+| team 01m | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
+| team 02m | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
+| team 03m | 04:9F:15:00:00:13 | 192.168.172.62 | system62.rice.iit.edu |
+| team 04m | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
+| team 05w | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
+| team 05o | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
+| team 06o | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
+| team 07o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
+
+This change is the only change that needs to be made and can be pushed into your team private repo.
+
+
+ adjustements in the `remote-exec` portion
+
+```hcl
+provisioner "remote-exec" {
+    # This inline provisioner is needed to accomplish the final fit and finish of your deployed
+    # instance and condigure the system to register the FQDN with the Consul DNS system
+    inline = [
+      "sudo hostnamectl set-hostname ${var.backend-yourinitials}-vm${count.index}",
+      "sudo sed -i 's/changeme/${random_id.id.dec}${count.index}/' /etc/consul.d/system.hcl",
+      "sudo sed -i 's/replace-name/${var.backend-yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",
+      "sudo sed -i 's/ubuntu-server/${var.backend-yourinitials}-vm${count.index}/' /etc/hosts",
+      "sudo sed -i 's/FQDN/${var.backend-yourinitials}-vm${count.index}.service.consul/' /etc/update-motd.d/999-consul-dns-message",
+      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"rice-dc-1\"/' /etc/consul.d/consul.hcl",
+      "echo 'retry_join = [\"${var.consulip}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
+      "sudo sed -i 's/HAWKID/${var.consul-service-tag-contact-email}/' /etc/consul.d/node-exporter-consul-service.json",
+      "sudo systemctl daemon-reload",
+      "sudo systemctl restart consul.service",
+      "sudo rm /opt/consul/node-id",
+      "sudo systemctl restart consul.service",
+      "sudo sed -i 's/0.0.0.0/${var.backend-yourinitials}-vm${count.index}.service.consul/' /etc/systemd/system/node-exporter.service",
+      "sudo systemctl daemon-reload",
+      "sudo systemctl enable node-exporter.service",
+      "sudo systemctl start node-exporter.service",
+      "sudo systemctl stop mariadb.service",
+      "sudo sed -i '1,$s/127.0.0.1/${var.backend-yourinitials}-vm${count.index}.service.consul/g' /etc/mysql/mariadb.conf.d/50-server.cnf",
+      "sudo systemctl daemon-reload",
+      "sudo systemctl restart mariadb.service",
+      "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
+    ]
+```
 
 ## Summary and Conclusion
 
