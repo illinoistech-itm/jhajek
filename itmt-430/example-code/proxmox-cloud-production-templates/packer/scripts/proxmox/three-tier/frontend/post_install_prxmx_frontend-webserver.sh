@@ -38,6 +38,6 @@ sudo -u vagrant pm2 save
 ###############################################################################
 
 sudo sed -i "s/FQDN=/FQDN=$FQDN/" /home/vagrant/team-00/code/express-static-app/.env
-sudo sed -i "s/USER=/USER=$DBUSER/" /home/vagrant/team-00/code/express-static-app/.env
-sudo sed -i "s/PASS=/PASS=$DBPASS/" /home/vagrant/team-00/code/express-static-app/.env
+sudo sed -i "s/DBUSER=/DBUSER=$DBUSER/" /home/vagrant/team-00/code/express-static-app/.env
+sudo sed -i "s/DBPASS=/DBPASS=$DBPASS/" /home/vagrant/team-00/code/express-static-app/.env
 sudo sed -i "s/DATABASE=/DATABASE=$DATABASE/" /home/vagrant/team-00/code/express-static-app/.env
