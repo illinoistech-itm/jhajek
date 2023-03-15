@@ -147,11 +147,21 @@ Second you have to consider that all cloud-native applications live behind a loa
 
 In Linux using `systemd` there is the `journalctl` command, as well as the venerable `/var/log/` logs location and in addition service managers such as `pm2` have their own shortcut to applcation logs via the `pm2 logs` command. All of these will help you troubleshoot why applciation are not loading or installing.
 
-There is also the `firewall-cmd` syntax to interrogate your firewall. You can see the state of your firewall interfaces via these commands:
+Use the `firewall-cmd` syntax to interrogate your firewall. You can see the state of your firewall interfaces via these commands:
 
 * `sudo firewall-cmd --zone=public --list-all`
 * `sudo firewall-cmd --zone=meta-network --list-all`
 * [firewalld documentation](https://firewalld.org "webpage for firewalld documentation")
+
+Use the `journalctl`, `systemctl`, and the good old `/var/logs` tools to interrogate your services
+
+* `sudo systemctl status nginx`
+* `sudo journalctl -u nginx.service`
+* `sudo journalctl -u mariadb.service`
+  * `-u` means service name
+* `tail /var/log/nginx/error.log`
+* If using `pm2` it has a built in log feature that captures all the `console.log()` content
+  * `pm2 logs`
 
 ### post_install_prxmx_frontend-webserver.sh
 
