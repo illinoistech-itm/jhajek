@@ -170,6 +170,33 @@ You can also SSH in directly from the buildserver to your instances. Just use th
 * Try to resist using the Proxmox GUI - use as a last resort
   * Normally you won't have this console access anyway and the only way will be via SSH
 
+### SSH Errors and Warnings
+
+What happens if you try to `ssh` to a system you just deployed and you recieve this error?
+```
+hajek@newyorkphilharmonic:~/team-00/build/example-code/$ ssh -i ./id_ed25519_terraform_deploy_key vagrant@system107.rice.iit.edu
+```
+
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:7a2Ei1s54cU2f+N2kO32I9TIHXwL1VsWyHZnBNP/X5c.
+Please contact your system administrator.
+Add correct host key in /datadisk1/home/hajek/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /datadisk1/home/hajek/.ssh/known_hosts:102
+  remove with:
+  ssh-keygen -f "/datadisk1/home/hajek/.ssh/known_hosts" -R "system107.rice.iit.edu"
+ECDSA host key for system107.rice.iit.edu has changed and you have requested strict checking.
+Host key verification failed.
+```
+
+This is due to strict host key checking and is due to the nature that IP address are correlated with hostnames. This is simply stating that from a previous SSH connection the previous IP/hostname pair doesn't match. And if you deploy many times, this is bound to happen--our network is small only 192.168.172.0/24 IPs. The reason this doesn't happen on major cloud providers is that they have massive IP ranges and the chance of being assigned the same one is very small.
+
 ### post_install_prxmx_frontend-webserver.sh
 
 In this file, all the application dependencies are installed. This means that if we are using EJS via NodeJS -- served on ExpressJS we need to install those operating system libraries first. Let us take a look at some of the sample bash shell scripts to do this
