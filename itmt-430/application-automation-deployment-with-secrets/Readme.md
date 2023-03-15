@@ -41,7 +41,7 @@ Working code to demonstrate all of this is located in two places
   * SQL files for creating a database and populating it
 * Sample Packer and Terraform build scripts
   * Located in the [jhajek](https://github.com/illinoistech-itm/jhajek "Git repo for jhajek sample code") sample code repo
-  * If you have cloned in previously, issue a `git pull`
+  * If you have cloned previously, issue a `git pull` before starting this tutorial
   * Under the `itmt-430` directory, `example-code`
     * All artifacts located under the `proxmox-jammy-ubuntu-three-tier-template` folder
     
