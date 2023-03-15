@@ -28,6 +28,12 @@ What are we trying to solve in this document and sprint-03? We are reinforcing a
 
 These questions and more will be answered via the provided sample code and concepts we will discuss in this tutorial.
 
+## Plugins
+
+It is highly recommended to install the `HCL` syntax highlighting plugin in VSCode. Click the 4 squares icon and search for `HCL`
+
+![*HCL Syntax Highlighitng*](./images/hcl-plugin.png "image of VSCode HCL Plugin")
+
 ### Sample Code Location
 
 Working code to demonstrate all of this is located in two places
