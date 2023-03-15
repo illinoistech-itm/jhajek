@@ -11,20 +11,20 @@ variable "NODENAME" {
 
 variable "TOKEN_ID" {
   sensitive = true
-  type   = string
-  default = ""
+  type      = string
+  default   = ""
 }
 
 variable "TOKEN_SECRET" {
   sensitive = true
-  type   = string
-  default = ""
+  type      = string
+  default   = ""
 }
 
 variable "URL" {
   type = string
   # https://x.x.x.x:8006/api2/json
-  default = ""
+  default   = ""
   sensitive = true
 }
 
@@ -43,7 +43,7 @@ variable "DISKSIZE" {
 # This is the name of the disk the build template will be stored on in the 
 # Proxmox cloud -- No need to edit this
 variable "STORAGEPOOL" {
-  type = string
+  type    = string
   default = "datadisk5"
 }
 
@@ -63,8 +63,8 @@ variable "frontend-VMNAME" {
 # and replaced with Public Key Authentication at run time --
 # This is only for build time
 variable "frontend-SSHPW" {
-  type    = string
-  default = ""
+  type      = string
+  default   = ""
   sensitive = true
 }
 
@@ -79,7 +79,7 @@ variable "backend-VMNAME" {
 # and replaced with Public Key Authentication at run time --
 # This is only for build time
 variable "backend-SSHPW" {
-  type    = string
-  default = ""
+  type      = string
+  default   = ""
   sensitive = true
 }

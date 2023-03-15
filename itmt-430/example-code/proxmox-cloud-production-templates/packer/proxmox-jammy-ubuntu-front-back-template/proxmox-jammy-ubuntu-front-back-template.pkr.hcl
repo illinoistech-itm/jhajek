@@ -20,18 +20,18 @@ packer {
 ###########################################################################################
 source "proxmox-iso" "backend-database" {
   boot_command = [
-        "e<wait>",
-        "<down><down><down>",
-        "<end><bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
-        "<f10><wait>"
-      ]
-  boot_wait    = "5s"
-  cores        = "${var.NUMBEROFCORES}"
-  node         = "${var.NODENAME}"
-  username     = "${var.TOKEN_ID}"
-  token        = "${var.TOKEN_SECRET}"
-  cpu_type     = "host"
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_wait = "5s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${var.NODENAME}"
+  username  = "${var.TOKEN_ID}"
+  token     = "${var.TOKEN_SECRET}"
+  cpu_type  = "host"
   disks {
     disk_size         = "${var.DISKSIZE}"
     storage_pool      = "${var.STORAGEPOOL}"
@@ -41,8 +41,8 @@ source "proxmox-iso" "backend-database" {
   http_directory   = "subiquity/http"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "sha256:10f19c5b2b8d6db711582e0e27f5116296c34fe4b313ba45f9b201a5007056cb"
-  iso_urls         = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.1/ubuntu-22.04.1-live-server-amd64.iso"]
+  iso_checksum     = "sha256:5e38b55d57d94ff029719342357325ed3bda38fa80054f9330dc789cd2d43931"
+  iso_urls         = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"]
   iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
@@ -78,18 +78,18 @@ source "proxmox-iso" "backend-database" {
 ###########################################################################################
 source "proxmox-iso" "frontend-webserver" {
   boot_command = [
-        "e<wait>",
-        "<down><down><down>",
-        "<end><bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
-        "<f10><wait>"
-      ]
-  boot_wait    = "5s"
-  cores        = "${var.NUMBEROFCORES}"
-  node         = "${var.NODENAME}"
-  username     = "${var.TOKEN_ID}"
-  token        = "${var.TOKEN_SECRET}"
-  cpu_type     = "host"
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_wait = "5s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${var.NODENAME}"
+  username  = "${var.TOKEN_ID}"
+  token     = "${var.TOKEN_SECRET}"
+  cpu_type  = "host"
   disks {
     disk_size         = "${var.DISKSIZE}"
     storage_pool      = "${var.STORAGEPOOL}"
@@ -99,8 +99,8 @@ source "proxmox-iso" "frontend-webserver" {
   http_directory   = "subiquity/http"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "sha256:10f19c5b2b8d6db711582e0e27f5116296c34fe4b313ba45f9b201a5007056cb"
-  iso_urls         = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.1/ubuntu-22.04.1-live-server-amd64.iso"]
+  iso_checksum     = "sha256:5e38b55d57d94ff029719342357325ed3bda38fa80054f9330dc789cd2d43931"
+  iso_urls         = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"]
   iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
@@ -133,7 +133,7 @@ source "proxmox-iso" "frontend-webserver" {
 
 
 build {
-  sources = ["source.proxmox-iso.frontend-webserver","source.proxmox-iso.backend-database"]
+  sources = ["source.proxmox-iso.frontend-webserver", "source.proxmox-iso.backend-database"]
 
   ########################################################################################################################
   # Using the file provisioner to SCP this file to the instance 
@@ -193,10 +193,10 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_2204.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_start-cloud-init.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_install_hashicorp_consul.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
+    scripts = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_2204.sh",
+      "../scripts/proxmox/core-jammy/post_install_prxmx_start-cloud-init.sh",
+      "../scripts/proxmox/core-jammy/post_install_prxmx_install_hashicorp_consul.sh",
+    "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
   }
 
   ########################################################################################################################
@@ -204,31 +204,31 @@ build {
   # Interface ens20
   # https://www.consul.io/docs/troubleshoot/common-errors
   ########################################################################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_change_consul_bind_interface.sh"]
   }
-  
+
   ############################################################################################
   # Script to give a dynamic message about the consul DNS upon login
   #
   # https://ownyourbits.com/2017/04/05/customize-your-motd-login-message-in-debian-and-ubuntu/
   #############################################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_update_dynamic_motd_message.sh"]
-  }  
-  
+  }
+
   ############################################################################################
   # Script to install Prometheus Telemetry support
   #############################################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh"]
-  } 
+  }
 
   ########################################################################################################################
   # Uncomment this block to add your own custom bash install scripts
@@ -237,16 +237,16 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
-                      "../scripts/proxmox/frontend/post_install_prxmx_frontend-webserver.sh"]
-    only            = ["proxmox-iso.frontend-webserver"]
+    scripts = ["../scripts/proxmox/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
+    "../scripts/proxmox/frontend/post_install_prxmx_frontend-webserver.sh"]
+    only = ["proxmox-iso.frontend-webserver"]
   }
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/backend/post_install_prxmx_backend-firewall-open-ports.sh",
-                      "../scripts/proxmox/backend/post_install_prxmx_backend_database.sh"]
-    only            = ["proxmox-iso.backend-database"]
+    scripts = ["../scripts/proxmox/backend/post_install_prxmx_backend-firewall-open-ports.sh",
+    "../scripts/proxmox/backend/post_install_prxmx_backend_database.sh"]
+    only = ["proxmox-iso.backend-database"]
   }
 
 }
