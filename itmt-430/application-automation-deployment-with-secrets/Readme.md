@@ -145,7 +145,7 @@ Second you have to consider that all cloud-native applications live behind a loa
 
 ### Troubleshooting
 
-In Linux using `systemd` there is the `journalctl` command, as well as the venerable `/var/log/` logs location and in addition service managers such as `pm2` have their own shortcut to applcation logs via the `pm2 logs` command. All of these will help you troubleshoot why applciation are not loading or installing.
+In Linux using `systemd` there is the `journalctl` command, as well as the venerable `/var/log/` logs location and in addition service managers such as `pm2` have their own shortcut to applcation logs via the `pm2 logs` command. All of these will help you troubleshoot why applciation are not loading or installing on your Ubuntu Linux servers.
 
 Use the `firewall-cmd` syntax to interrogate your firewall. You can see the state of your firewall interfaces via these commands:
 
