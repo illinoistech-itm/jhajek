@@ -20,6 +20,7 @@ sudo apt-get install -y mariadb-server-10.6
 cd /home/vagrant/team-00/code/db-samples
 
 # Inline MySQL code that uses the secrets passed via the ENVIRONMENT VARIABLES to create a non-root user
+# IPRANGE is "10.110.%.%"
 echo "Executing inline mysql -e to create user..."
 sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '${DBUSER}'@'${IPRANGE}' IDENTIFIED BY '${DBPASS}';"
 
