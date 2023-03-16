@@ -50,7 +50,10 @@ Working code to demonstrate all of this is located in two places
   * If you have cloned previously, issue a `git pull` before starting this tutorial
   * Under the `itmt-430` directory, `example-code`
     * All artifacts located under the `proxmox-jammy-ubuntu-three-tier-template` folder
-    
+* View the application in action at [https://system59.rice.iit.edu/](https://system59.rice.iit.edu/ "webpage for exmaple application")
+  * Team000 - you can log into the systems and view any of the content via the GUI console
+  * Username and Password both `vagrant`
+
 ### Parts of the App
 
 For this example you will find a working prototype three-tier application that has:
