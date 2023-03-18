@@ -51,7 +51,7 @@ variable "frontend-disk_size" {}
 variable "backend-disk_size" {}
 variable "lb-disk_size" {}
 
-variable "keypath" {}
+variable "private_key_filename" {}
 
 variable "frontend-yourinitials" {}
 variable "backend-yourinitials" {}

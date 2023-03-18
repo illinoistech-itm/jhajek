@@ -20,18 +20,18 @@ packer {
 ###########################################################################################
 source "proxmox-iso" "backend-database" {
   boot_command = [
-        "e<wait>",
-        "<down><down><down>",
-        "<end><bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
-        "<f10><wait>"
-      ]
-  boot_wait    = "5s"
-  cores        = "${var.NUMBEROFCORES}"
-  node         = "${var.NODENAME}"
-  username     = "${var.TOKEN_ID}"
-  token        = "${var.TOKEN_SECRET}"
-  cpu_type     = "host"
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_wait = "5s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${var.NODENAME}"
+  username  = "${var.TOKEN_ID}"
+  token     = "${var.TOKEN_SECRET}"
+  cpu_type  = "host"
   disks {
     disk_size         = "${var.DISKSIZE}"
     storage_pool      = "${var.STORAGEPOOL}"
@@ -67,7 +67,7 @@ source "proxmox-iso" "backend-database" {
   cloud_init               = true
   cloud_init_storage_pool  = "local"
   ssh_username             = "vagrant"
-  ssh_password            = "${var.SSHPW}"
+  ssh_password             = "${var.SSHPW}"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for backend database"
   vm_name                  = "${var.backend-VMNAME}"
@@ -78,18 +78,18 @@ source "proxmox-iso" "backend-database" {
 ###########################################################################################
 source "proxmox-iso" "frontend-webserver" {
   boot_command = [
-        "e<wait>",
-        "<down><down><down>",
-        "<end><bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
-        "<f10><wait>"
-      ]
-  boot_wait    = "5s"
-  cores        = "${var.NUMBEROFCORES}"
-  node         = "${var.NODENAME}"
-  username     = "${var.TOKEN_ID}"
-  token        = "${var.TOKEN_SECRET}"
-  cpu_type     = "host"
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_wait = "5s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${var.NODENAME}"
+  username  = "${var.TOKEN_ID}"
+  token     = "${var.TOKEN_SECRET}"
+  cpu_type  = "host"
   disks {
     disk_size         = "${var.DISKSIZE}"
     storage_pool      = "${var.STORAGEPOOL}"
@@ -136,18 +136,18 @@ source "proxmox-iso" "frontend-webserver" {
 ###########################################################################################
 source "proxmox-iso" "load-balancer" {
   boot_command = [
-        "e<wait>",
-        "<down><down><down>",
-        "<end><bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
-        "<f10><wait>"
-      ]
-  boot_wait    = "5s"
-  cores        = "${var.NUMBEROFCORES}"
-  node         = "${var.NODENAME}"
-  username     = "${var.TOKEN_ID}"
-  token        = "${var.TOKEN_SECRET}"
-  cpu_type     = "host"
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_wait = "5s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${var.NODENAME}"
+  username  = "${var.TOKEN_ID}"
+  token     = "${var.TOKEN_SECRET}"
+  cpu_type  = "host"
   disks {
     disk_size         = "${var.DISKSIZE}"
     storage_pool      = "${var.STORAGEPOOL}"
@@ -190,7 +190,7 @@ source "proxmox-iso" "load-balancer" {
 }
 
 build {
-  sources = ["source.proxmox-iso.frontend-webserver","source.proxmox-iso.backend-database","source.proxmox-iso.load-balancer"]
+  sources = ["source.proxmox-iso.frontend-webserver", "source.proxmox-iso.backend-database", "source.proxmox-iso.load-balancer"]
 
   #############################################################################
   # Using the file provisioner to SCP this file to the instance 
@@ -275,10 +275,10 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_2204.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_start-cloud-init.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_install_hashicorp_consul.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
+    scripts = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_2204.sh",
+      "../scripts/proxmox/core-jammy/post_install_prxmx_start-cloud-init.sh",
+      "../scripts/proxmox/core-jammy/post_install_prxmx_install_hashicorp_consul.sh",
+    "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
   }
 
   #############################################################################
@@ -286,31 +286,31 @@ build {
   # Interface ens20
   # https://www.consul.io/docs/troubleshoot/common-errors
   #############################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_change_consul_bind_interface.sh"]
   }
-  
+
   #############################################################################
   # Script to give a dynamic message about the consul DNS upon login
   #
   # https://ownyourbits.com/2017/04/05/customize-your-motd-login-message-in-debian-and-ubuntu/
   #############################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_update_dynamic_motd_message.sh"]
-  }  
-  
+  }
+
   #############################################################################
   # Script to install Prometheus Telemetry support
   #############################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh"]
-  } 
+  }
 
   #############################################################################
   # Uncomment this block to add your own custom bash install scripts
@@ -325,27 +325,27 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
-                      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-webserver.sh",
-                      "../scripts/proxmox/three-tier/frontend/application-start.sh"]
-    environment_vars = ["DBUSER=${var.DBUSER}","DBPASS=${var.DBPASS}","DATABASE=${var.DATABASE}","FQDN=${var.FQDN}"]                      
-    only            = ["proxmox-iso.frontend-webserver"]
+    scripts = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
+      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-webserver.sh",
+    "../scripts/proxmox/three-tier/frontend/application-start.sh"]
+    environment_vars = ["DBUSER=${var.DBUSER}", "DBPASS=${var.DBPASS}", "DATABASE=${var.DATABASE}", "FQDN=${var.FQDN}"]
+    only             = ["proxmox-iso.frontend-webserver"]
   }
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-firewall-open-ports.sh",
-                      "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-database.sh"]
-    environment_vars = ["DBUSER=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","DBPASS=${var.DBPASS}"]
-    only            = ["proxmox-iso.backend-database"]
+    scripts = ["../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-firewall-open-ports.sh",
+    "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-database.sh"]
+    environment_vars = ["DBUSER=${var.DBUSER}", "IPRANGE=${var.CONNECTIONFROMIPRANGE}", "DBPASS=${var.DBPASS}"]
+    only             = ["proxmox-iso.backend-database"]
   }
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load-balancer-firewall-open-ports.sh",
-                      "../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load_balancer.sh",
-                      "../scripts/proxmox/three-tier/loadbalancer/move-nginx-files.sh"]
-    only            = ["proxmox-iso.load-balancer"]
+    scripts = ["../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load-balancer-firewall-open-ports.sh",
+      "../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load_balancer.sh",
+    "../scripts/proxmox/three-tier/loadbalancer/move-nginx-files.sh"]
+    only = ["proxmox-iso.load-balancer"]
   }
 
   provisioner "shell" {
