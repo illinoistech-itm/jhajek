@@ -91,7 +91,7 @@ resource "proxmox_vm_qemu" "load-balancer" {
     connection {
       type        = "ssh"
       user        = "vagrant"
-      private_key = file("${path.module}/${var.private_key_filename}")
+      private_key = file("${path.module}/${var.keypath}")
       host        = self.ssh_host
       port        = self.ssh_port
     }
@@ -172,7 +172,7 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
     connection {
       type        = "ssh"
       user        = "vagrant"
-      private_key = file("${path.module}/${var.private_key_filename}")
+      private_key = file("${path.module}/${var.keypath}")
       host        = self.ssh_host
       port        = self.ssh_port
     }
@@ -258,7 +258,7 @@ resource "proxmox_vm_qemu" "backend-database" {
     connection {
       type        = "ssh"
       user        = "vagrant"
-      private_key = file("${path.module}/${var.private_key_filename}")
+      private_key = file("${path.module}/${var.keypath}")
       host        = self.ssh_host
       port        = self.ssh_port
     }

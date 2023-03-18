@@ -2,11 +2,11 @@
 # These are your proxmox API token credentials (not username and password)
 # That will be provided to you
 ###############################################################################
-pm_api_url           = ""                         # URL of your Proxmox cluster
-pm_api_token_id      = ""                         # This is an API token you have previously created for a specific user
-pm_api_token_secret  = ""                         # This is a uuid that is only available when initially creating the token 
-target_node          = "proxmonsterX"             # Promox node to provision VMs
-private_key_filename = "name-of-your-private-key" # The path to the private key you need to communicate with your instances
+pm_api_url          = ""                         # URL of your Proxmox cluster
+pm_api_token_id     = ""                         # This is an API token you have previously created for a specific user
+pm_api_token_secret = ""                         # This is a uuid that is only available when initially creating the token 
+target_node         = "proxmonsterX"             # Promox node to provision VMs
+keypath             = "name-of-your-private-key" # The path to the private key you need to communicate with your instances
 ###############################################################################
 # Debugging information settings
 # No need to change these values
@@ -19,15 +19,15 @@ pm_log_file   = "terraform-plugin-proxmox.log" # (Optional; defaults to terrafor
 # This is a variable to append to your cloud instances so they have a unique
 # FQDN -- this is needed for the gossip based DNS to work
 ###############################################################################
-frontend-yourinitials            = ""                     # initials to add to make unique systems
-frontend-numberofvms             = 1                      # quantity of that template to launch
-frontend-desc                    = ""                     # What is the purpose of the TF template
-backend-yourinitials             = ""                     # initials to add to make unique systems
-backend-numberofvms              = 1                      # quantity of that template to launch
-backend-desc                     = ""                     # What is the purpose of the TF template
-lb-yourinitials                  = ""                     # initials to add to make unique systems
-lb-numberofvms                   = 1                      # quantity of that template to launch
-lb-desc                          = ""                     # What is the purpose of the TF template
+frontend-yourinitials = "" # initials to add to make unique systems
+frontend-numberofvms  = 1  # quantity of that template to launch
+frontend-desc         = "" # What is the purpose of the TF template
+backend-yourinitials  = "" # initials to add to make unique systems
+backend-numberofvms   = 1  # quantity of that template to launch
+backend-desc          = "" # What is the purpose of the TF template
+lb-yourinitials  = "" # initials to add to make unique systems
+lb-numberofvms   = 1  # quantity of that template to launch
+lb-desc          = "" # What is the purpose of the TF template
 consul-service-tag-contact-email = "your-hawk-email-here" # Used as part of the consul service definition as a tag that can be queried
 ###############################################################################
 # Name the template your created via Packer for Terraform to use to deploy
@@ -35,7 +35,7 @@ consul-service-tag-contact-email = "your-hawk-email-here" # Used as part of the 
 ###############################################################################
 frontend-template_to_clone = "" # The name of the template to clone
 backend-template_to_clone  = "" # The name of the template to clone
-lb-template_to_clone       = "" # The name of the template to clone
+lb-template_to_clone  = "" # The name of the template to clone
 ###############################################################################
 # Customize instance hardware settings
 ###############################################################################
@@ -47,7 +47,7 @@ backend-memory     = 2048  # Memory size of a VM
 backend-cores      = 1     # vCPU = cores * sockets
 backend-sockets    = 1     # vCPU = cores * sockets
 backend-disk_size  = "30G" # Disk size of a VM - min size must equal to the disk size of your clone image
-lb-memory          = 2048  # Memory size of a VM
-lb-cores           = 1     # vCPU = cores * sockets
-lb-sockets         = 1     # vCPU = cores * sockets
-lb-disk_size       = "30G" # Disk size of a VM - min size must equal to the disk size of your clone image
+lb-memory    = 2048  # Memory size of a VM
+lb-cores     = 1     # vCPU = cores * sockets
+lb-sockets   = 1     # vCPU = cores * sockets
+lb-disk_size = "30G" # Disk size of a VM - min size must equal to the disk size of your clone image
