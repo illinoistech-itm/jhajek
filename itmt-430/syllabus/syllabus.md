@@ -54,8 +54,8 @@ Session | Date | Topic | Lab |
 8 | 02/27 | Technical Practices of Learning Ch 19-21 | ~~NA~~ Sprint 02 presentation
 9 | 03/06 | Technical Practices of InfoSec Ch 22-23 | NA
 NA | 03/13 | Spring Break Week | NA
-10 | 03/20 | DevOps Solutions 2-3 | Sprint 03 presentation
-11 | 03/27 | DevOps Solutions 4-5 | NA
+10 | 03/20 | DevOps Solutions 2-3 | NA
+11 | 03/27 | DevOps Solutions 4-5 | Sprint 03 presentation
 12 | 04/03 | DevOps Solutions 6-7 | NA
 13 | 04/10 | DevOps Solutions 8-9 | Sprint 04 presentation
 14 | 04/17 | DevOps Solutions 10-12 | NA
