@@ -66,6 +66,6 @@ if __name__ == "__main__":
     FROM departureDelays
     WHERE origin IN ('SEA', 'SFO', 'JFK')
     AND destination IN ('SEA', 'SFO', 'JFK', 'DEN', 'ORD', 'LAX', 'ATL')
-    GROUP BY origin, destination;
+    GROUP BY origin, destination
     SELECT * FROM departureDelaysWindow
     """).show()
