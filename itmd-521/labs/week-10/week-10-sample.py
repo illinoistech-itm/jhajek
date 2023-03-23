@@ -2,6 +2,7 @@ import sys
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
 from pyspark.sql.functions import *
+from pyspark.sql.functions import expr
 
 if __name__ == "__name__":
     if(len(sys.argv) != 3):
