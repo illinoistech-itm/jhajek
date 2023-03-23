@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     # Pyspark DataFrameReaders to ingest datafiles from local system to DataFrame"""
     airports = spark.read.format("csv").option("header" ,"true").load(airportsnaFilePath)
-    departureDelays=spark.read.format("csv").options("header","true").load(tripdelaysFilePath)
+    departureDelays=spark.read.format("csv").option("header","true").load(tripdelaysFilePath)
 
     # Adding colums delay and distance and changing the datatype to INT
     departureDelays = (departureDelays
