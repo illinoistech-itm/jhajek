@@ -41,7 +41,7 @@ if __name__ == "__main__":
     bar = departureDelays.union(foo)
     bar.createOrReplaceTempView("bar")
 
-    bar.filter(expr("""orgin == 'SEA' AND destination == 'SFO'
+    bar.filter(expr("""origin == 'SEA' AND destination == 'SFO'
         AND date LIKE '01010%' AND delay > 0""")).show()
 
     spark.sql("""SELECT * FROM bar WHERE origin ='SEA' AND destination ='SFO' AND date like '01010%' AND delay > 0""").show()
