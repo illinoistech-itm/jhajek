@@ -18,7 +18,7 @@ if __name__ == "__main__":
     airportsnaFilePath = sys.argv[2]
 
     # Pyspark DataFrameReaders to ingest datafiles from local system to DataFrame"""
-    airports = spark.read.format("csv").option("header" ,"true").load(airportsnaFilePath)
+    airports = spark.read.format("csv").option("header" ,"true", sep="\t").load(airportsnaFilePath)
     departureDelays=spark.read.format("csv").option("header","true").load(tripdelaysFilePath)
 
     # Adding colums delay and distance and changing the datatype to INT
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     departureDelays.createOrReplaceTempView("departureDelays")
     airports.createOrReplaceTempView("airports")
     
-    foo = departureDelays.filter(expr("""origin == 'SEA' AND destination == 'SFO' AND date like '010101%' AND delay >0"""))
+    foo = departureDelays.filter(expr("""origin == 'SEA' AND destination == 'SFO' AND date like '01010%' AND delay > 0"""))
     foo.createOrReplaceTempView("foo") 
     
     spark.sql("SELECT * FROM departureDelays LIMIT 10").show()
