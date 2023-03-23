@@ -60,11 +60,12 @@ if __name__ == "__main__":
 
 
     spark.sql(""" 
-    DROP TABLE IF EXISTS departureDelaysWindow;
+    DROP TABLE IF EXISTS departureDelaysWindow
     CREATE TABLE departureDelaysWindow AS 
     SELECT origin, destination, SUM(delay) AS totalDelays
     FROM departureDelays
     WHERE origin IN ('SEA', 'SFO', 'JFK')
     AND destination IN ('SEA', 'SFO', 'JFK', 'DEN', 'ORD', 'LAX', 'ATL')
     GROUP BY origin, destination;
+    SELECT * FROM departureDelaysWindow
     """).show()
