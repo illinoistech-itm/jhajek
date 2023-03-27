@@ -110,9 +110,9 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ## Deliverables
 
-* Monday Lab live presentation and critiques are due 8:30am April 11th
-* Wednesday Lab early section presentation and critiques are due 8:30am April 13th
-* Wednesday Lab late section presentation and critiques are due 10:25am April 13th
+* Monday Lab live presentation and critiques are due 8:00 am April 10th
+* Wednesday Lab live presentation and critiques are due 8:00am April 13th
+* Online Lab presentation and critiques are due 10:25am April 15th (Friday)
 
 ### Individual Deliverables
 
@@ -129,7 +129,7 @@ In the document **Report.md** include an H1 header called **Sprint-04** and then
 
 In the second part of the document, include and H2 header: **Group-Critique** and write a critique of the each team member:
 
-* Explain each team-member's assigned role and what they were generally tasked to accomplish - using your project management board
+* Explain each team-member's assigned role and what they were generally tasked to accomplish - using your project management board and other artifacts
 * Explain which specific cards and tasks they were assigned and which they accomplished
   * If they were not able to accomplish their tasks give an explanation as to what happened
   * Make use of GitHub commits, the Project Management board or the Chat Channel to find supporting documents of your critique
@@ -189,12 +189,11 @@ Clear transition to a conclusion and small summary of presentation | 1
 
 ### Presentation Requirements
 
-* The presentation can be live or pre-recorded but only the Project Manager does the presenting
-  * Others need to help prepare it but only the PM will do the presenting
-  * Presentation is not a slide show, but a verbal explaining and demonstration of the artifacts produced
-  * We need to see your face
-  * If recorded, find a quiet place, focus on audio and or use head phones and make a quality recoding.
-  * There are OTS recording studios in the basement of Stuart Building and I have recording equipment available in the Smart Lab as well.
+* Must be done entirely by the Project Manager
+* Online - get a quality recording
+  * Find a quiet place
+  * Use a headset
+  * Use a recording software that allows for Picture in Picture recording, like [Open Broadcast Project, OBS](https://obsproject.com/ "webpage for OBS project")
 
 ### What to Deliver to Blackboard
 
