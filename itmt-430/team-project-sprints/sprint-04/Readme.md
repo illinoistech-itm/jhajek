@@ -15,9 +15,9 @@ At the conclusion of this sprint your team will have created a Secure Vault for 
 
 ### Requirements
 
-All code and development will be graded and judged on what is on the Production Proxmox cloud platform. No hard coded values or secrets, make use of Vault - samples provided in the `jhajek` > `example-code` repository. Sprint-04 assumes that all of Sprint-03 requirements are delivered.
+All code and development will be graded and judged on what is on the Production Proxmox cloud platform. No hard coded values or secrets, make use of Vault - samples provided in the `jhajek` > `example-code` repository. Sprint-04 assumes that all of Sprint-03 requirements are delivered. All team members need to rotate positions.
 
-All team members need to rotate positions.
+[Vault INtegration Tutorial](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/vault-integration-tutorial "webpage for Vault Integration")
 
 ### Team Roles
 
