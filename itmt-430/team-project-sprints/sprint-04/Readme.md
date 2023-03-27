@@ -4,20 +4,20 @@ This document contains the Sprint-04 requirements and deliverables
 
 ## Objectives
 
-* Add to your local Vagrant Deployment (dev) a production cloud environment (prod)
-* Integrate and document aspects of the Three Ways into your development process
-* Deploy your schema to a datastore for your application
-* Enable and create software deployment estimates to understand the nature of software production
-* Engage and understand the process moving from design into an initial prototype
-* Discuss and deploy real-world security mitigations in your application
+* Integrate secure secrets management with Hashicorp Vault
+* Integrate Database a database replica
+* Introduce S3-like Object Storage
+* Refine application feature deployment
 
 ## Outcomes
 
-At the conclusion of this sprint project you will have built upon the work in Sprint-03 and have added an additional cloud-based production environment. Your team will have deployed a working prototype of your site on two different platforms.  You will begin to explore functionality and usability issues.  Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working prototype of the project at the end of sprint-04.
+At the conclusion of this sprint your team will have created a Secure Vault for secrets management. You will have integrated Vault into your application deployment. You will have created a database read-only replica and continued your feature deployment.
 
 ### Requirements
 
-The list of requirements will be determined by your team and as part of the project management process.  There will be a few additional items I will require and are listed below.
+All code and development will be graded and judged on what is on the Production Proxmox cloud platform. No hard coded values or secrets, make use of Vault - samples provided in the `jhajek` > `example-code` repository. Sprint-04 assumes that all of Sprint-03 requirements are delivered.
+
+All team members need to rotate positions.
 
 ### Team Roles
 
@@ -27,7 +27,7 @@ For this sprint, there will be 5 team roles. For the teams with 4 - you can comb
   * In charge of making sure that tasks are assigned, artifacts are being delivered, and project boards are updated accordingly.
   * Project manager must actively manage the project, you are not the passive receiver of information the night before
   * Must clearly document the state of the project at the start of the sprint so all of the work can be contrasted at the end
-  * Project Manager must make close recordings of what has changed from sprint to sprint
+  * Project Manager must make close notes of what has changed from sprint to sprint
   * Project Manager must also describe the task estimation process and describe what was completed and/or not completed
   * Must manage the team members and facilitate communication and individual progress outside of class times
 * Developer 1 , 2, and 3
@@ -35,11 +35,13 @@ For this sprint, there will be 5 team roles. For the teams with 4 - you can comb
   * Work with the developers to implement the designed UI/UX in code and CSS
   * Implementation must match the design
   * If your UI/UX design is incomplete need to complete it before any work can progress
-  * UI/UX design is a complete master blueprint of what your finished site will look like
   * Help coordinate development into your team repo and using the provisioner scripts deploy your source code to your Vagrant Box environment
+* UI/UX and testing
+  * Must test the use of the site
+  * Demonstrate actions comencerate with the sites design, and report errors and bugs using the team's repo GitHub Issues tab
 * IT Orchestration and Security
-  * Responsible for designing and deploying all virtualized infrastructure templates (Vagrant and Packer)
-  * Responsible for working with Developers to configure login authentication
+  * Responsible for designing and deploying all virtualized infrastructure templates
+  * Responsible for creating a Hashicorp Vault containing all program secrets
   * Responsible for working with the team to coordinate the automated building of the entire application
   * Responsible for creating any shell scripts required for automated deployment
   * Responsible for training and teaching internal group members for deployment of infrastructure
@@ -58,6 +60,7 @@ In the team repo their will need to be a few additional folders added. Keep the 
   * This will contain Packer build templates for building Vagrant Boxes
   * This will contain Vagrantfiles for deploying the machines in a pre-configured state
   * This will contain Bash and or PowerShell scripts for single source of deploy, halt, and removal of the application on your local system
+  * Remove all uneeded sample code from your `build` folder
   * This will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
 
 ### Project Management Tool and Task Difficulty Estimation
@@ -66,7 +69,7 @@ One of the first steps the team will undertake is to determine which atomic task
 
 In the Project Management tool the 25 points worth of tasks need to have the point value assigned to that task and also have a name that is primary responsible and clearly marked.  This is how your Project Manager will report progress and how you will write your own and group critique at the end of the sprint. The professor will check in weekly during the beginning of the Lab days to check the current progress and help coordinate in anyway.  
 
-**Note** -- this may require the group to *Swarm* on some initial items so that items that are blocking progress of the entire application don't hold up the entire team. Remember as a team-member it is your duty to swarm problems and solve them as a team (Third Way).
+**Note** -- this may require the group to *Swarm* on some initial items so that items that are blocking progress of the entire application don't hold up the entire team. Remember as a team-member it is your duty to swarm problems and solve them as a team (Third Way). The sprint is short - everyone is busy - you cannot wait to get started.
 
 ### Required Artifacts
 
@@ -75,9 +78,10 @@ The professor is prescribing a small number of **additional** required tasks to 
 * Login
   * Use your @hawk accounts and Google OAuth (or appropriate authentication mechanism) for login authentication in your application code (there are other options -- check with me for approval first)
   * Rolling your own Authentication system in 2022 is not a valid choice
+  * SHow that your `sign up` feature works
+  * Login with that user
 * Infrastructure
-  * Build each server needed in the 3-tier app as Virtual Machines using Vagrant and Packer
-  * Use Packer as the tool for automating the creation of the Vagrant Boxes
+  * Demonstrate that the Vault KV pairs are stored -- show you setting a secret
   * Deploy your code to a production cloud environment at the same time using Packer and [Terraform](https://www.terraform.io/ "Hashicorp Terraform webpage")
 * 3 Tier Application
   * First tier is a Load Balancer
@@ -89,17 +93,20 @@ The professor is prescribing a small number of **additional** required tasks to 
     * We can set up an additional nightly systemd timer script to add an nightly build task, if you are interested - ask me
   * Development on Localhost is not acceptable at this point
 * Usage of site
-  * Pre-seed your site with 5 "real test users" and have them "ask" 2 questions and answer 1 other persons questions
+  * Demonstrate all of your team members signed up and making at least 1 post and 1 answer (as applicable)
+    * You do this live not -- pre-programmed via an `.sql` file
+  * Pre-seed your site with 100 posts from 20 additional `real` test users
+    * Have them "ask" 2 questions each and answer 1 other persons questions
     * This is to show the search functionality and ability to store a complex discussion
-  * Demonstrate a successful login of a user
-  * Post a question
-  * Answer that question
-  * Answer another question
+      * Must pre-seed this using an `.sql` file
   * Logout that user
-* **BONUS**
-  * For the cyber security co-terminals, each of the production environments for each team will be on the 192.168.172.55 -.254 range
-    * Without being destructive, can you bring me a dump of their SQL Database?
-    * This is **not a graded requirement** - just something extra
+* **Optioanal for Sprint-04**
+  * Make use of on prem S3-like Object Storage, using [min.io](https://min.io webpage for on-prem S3 storage min.io").
+  * Compatible with [Amazon S3 Object Storage](https://aws.amazon.com/s3/ "webpage for AWS S3") but on-premises storage 
+  * Credentials and tutorial will be provided
+* [Minio SDKs](https://min.io/docs/minio/linux/developers/minio-drivers.html "webpage for Minio SDKs"
+  * [JavaScript SDK](https://min.io/docs/minio/linux/developers/minio-drivers.html#javascript-sdk "webpage for JavaScript SDK")
+  * [Python SDK](https://min.io/docs/minio/linux/developers/minio-drivers.html#python-minio-py "webpage for Python SDK minio")
 
 ## Deliverables
 
