@@ -4,12 +4,15 @@ This document contains the Sprint-05 requirements and deliverables
 
 ## Objectives
 
-* Add to your local Vagrant Deployment (dev) a production cloud environment (prod)
-* Integrate and document aspects of the Three Ways into your development process
-* Deploy your schema to a datastore for your application
-* Enable and create software deployment estimates to understand the nature of software production
-* Engage and understand the process moving from design into an initial prototype
-* Discuss and deploy real-world security mitigations in your application
+* Unit tests
+* Optional Integrate Min.io for image/css/ and other static assests
+* Integrate database encryption at rest
+* Integrate static code analysis tool and generate a report
+* Integrate a Unit test framework and create at least 5 unit tests
+* Include an `about` page that details how your applciation works and all of the knowledge gained
+* Dashboards - Integration with Prometheus hardware metrics
+  * Software logs?
+
 
 ## Outcomes
 

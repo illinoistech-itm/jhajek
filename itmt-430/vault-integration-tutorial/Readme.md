@@ -70,11 +70,16 @@ path "secret/data/*" {
   * Token expires at that time
   * Copy down the token created here -- this will be used by Packer to authenticate
   * We don't want to use the `root` key -- as little as possible
+* Now login using your newly generated Vault key
+  * `vault login`
+  * NOT THE ROOT KEY!
 * Lets create some secrets
   * `vault kv put -mount=secret team00-db DBPASS=letmein DBUSER=controller FQDN=team000-fe.service.consul DATABASENAME=foo`
   * `vault kv put -mount=secret team00-ssh SSHPASS=vagrant`
+  * Replace team00 with your team name
 * You can seal up the Vault so that no one can use it
   * `vault operator seal`
+  * But no need to do so at this point
   * This shuts the vault down from answering any requests -- needs to be unsealed when you want to use it again
 
 ### Adjustments to your user account on the buildserver
