@@ -19,7 +19,7 @@ pm_log_file   = "terraform-plugin-proxmox.log" # (Optional; defaults to terrafor
 # This is a variable to append to your cloud instances so they have a unique
 # FQDN -- this is needed for the gossip based DNS to work
 ###############################################################################
-yourinitials = "vault-teamYYY" # 
+yourinitials = "vault-teamYYY" # Adjust your team name here
 numberofvms  = 1             # quantity of that template to launch
 desc         = ""            # What is the purpose of the TF template
 ###############################################################################
