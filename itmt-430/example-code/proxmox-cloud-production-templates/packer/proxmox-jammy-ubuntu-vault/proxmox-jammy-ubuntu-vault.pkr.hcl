@@ -183,7 +183,7 @@ build {
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts = ["../scripts/proxmox/three-tier/vault/post_install_prxmx_vault-firewall-open-ports.sh",
-      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_vault.sh"]
+      "../scripts/proxmox/three-tier/vault/post_install_prxmx_vault.sh"]
   }
 
 }
