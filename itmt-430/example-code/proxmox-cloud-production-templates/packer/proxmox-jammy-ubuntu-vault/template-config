@@ -1,5 +1,0 @@
-Host github.com
-  User YOUR-GITHUB-ID-HERE
-  Hostname github.com
-  IdentityFile PATH-TO-THE-PRIVATE-KEY
-  StrictHostKeyChecking no
