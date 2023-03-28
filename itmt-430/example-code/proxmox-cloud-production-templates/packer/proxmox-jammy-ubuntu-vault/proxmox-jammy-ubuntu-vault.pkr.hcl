@@ -70,7 +70,7 @@ source "proxmox-iso" "vault" {
   ssh_password             = "${var.SSHPW}"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for a Hashicorp Vault Node"
-  vm_name                  = "${var.backend-VMNAME}"
+  vm_name                  = "${var.vault-VMNAME}"
 }
 
 build {

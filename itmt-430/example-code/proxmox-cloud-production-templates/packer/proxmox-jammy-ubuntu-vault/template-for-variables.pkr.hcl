@@ -71,3 +71,8 @@ variable "ISO-URL" {
   type    = string
   default = "https://mirrors.edge.kernel.org/ubuntu-releases/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"
 }
+
+variable "vault-VMNAME" {
+  type = string
+  default = ""
+}
