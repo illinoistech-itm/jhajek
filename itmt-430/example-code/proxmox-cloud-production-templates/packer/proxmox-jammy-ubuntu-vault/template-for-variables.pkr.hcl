@@ -44,30 +44,12 @@ variable "DISKSIZE" {
 # Proxmox cloud -- No need to edit this
 variable "STORAGEPOOL" {
   type    = string
-  default = "datadisk5"
+  default = "datadisk2"
 }
 
 variable "NUMBEROFCORES" {
   type    = string
   default = "1"
-}
-
-# This is the name of the Virtual Machine Template you want to create
-variable "frontend-VMNAME" {
-  type    = string
-  default = ""
-}
-
-# This is the name of the Virtual Machine Template you want to create
-variable "backend-VMNAME" {
-  type    = string
-  default = ""
-}
-
-# This is the name of the Virtual Machine Template you want to create
-variable "loadbalancer-VMNAME" {
-  type    = string
-  default = ""
 }
 
 # This is the password set in the subiquity/http/user-data line 9,
@@ -88,39 +70,4 @@ variable "ISO-CHECKSUM" {
 variable "ISO-URL" {
   type    = string
   default = "https://mirrors.edge.kernel.org/ubuntu-releases/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"
-}
-
-# This will be the non-root user account name
-variable "DBUSER" {
-  type      = string
-  sensitive = true
-  default   = "REPLACE"
-}
-
-# This will be the Database user (non-root) password setup
-variable "DBPASS" {
-  type      = string
-  sensitive = true
-  default   = "REPLACE"
-}
-
-# This variable is the IP address range to allow your connections
-variable "CONNECTIONFROMIPRANGE" {
-  type      = string
-  sensitive = true
-  default   = "REPLACE"
-}
-
-# This will be the fully qualified domain name yourinitials.service.consul
-variable "FQDN" {
-  type      = string
-  sensitive = true
-  default   = "REPLACE"
-}
-
-# This will be the Database name you default to (like posts or comments or customers)
-variable "DATABASE" {
-  type      = string
-  sensitive = true
-  default   = "REPLACE"
 }
