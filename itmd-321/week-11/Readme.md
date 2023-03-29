@@ -20,7 +20,7 @@ For example this would be an appropriate answer
 ```sql
 -- What command will show the schema of the staff table?
 
-DESCRIBE STAFF;
+DESCRIBE staff;
 
 /*
 +-------------+----------------------+------+-----+---------------------+-------------------------------+
