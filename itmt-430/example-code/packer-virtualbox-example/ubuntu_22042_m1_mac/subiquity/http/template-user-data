@@ -31,7 +31,7 @@ autoinstall:
     network:
       version: 2
       ethernets:
-        enp0s3:
+        enp0s5:
           dhcp4: true
           dhcp-identifier: mac
   ssh:
