@@ -4,19 +4,14 @@ This document contains the Sprint-05 requirements and deliverables
 
 ## Objectives
 
-* Unit tests
-* Optional Integrate Min.io for image/css/ and other static assests
-* Integrate database encryption at rest
-* Integrate static code analysis tool and generate a report
-* Integrate a Unit test framework and create at least 5 unit tests
-* Include an `about` page that details how your applciation works and all of the knowledge gained
-* Dashboards - Integration with Prometheus hardware metrics
-  * Software logs?
-
+* Deploy and explain user applciation testing
+* Deploy and explain uses of Bug tracking and creation of GitHub issues
+* Deploy final CSS revisions - mathcing original site plan
+* Deploy and detail two working application features
 
 ## Outcomes
 
-At the conclusion of this sprint project you will have built upon the work in Sprint-04 and have added an additional cloud-based production environment. Your team will have deployed a working prototype of your site on two different platforms.  You will begin to explore functionality and usability issues.  Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working prototype of the project at the end of sprint-05.
+At the conclusion of this sprint project and the class you will have built upon the work in Sprint-04 and have added an additional cloud-based production environment. Your team will have deployed a working prototype.  You will be able to explain the evolution and the obstacles you overcame. Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working prototype of the project at the end of sprint-05.
 
 ### Requirements
 
@@ -26,7 +21,7 @@ The list of requirements will be determined by your team and as part of the proj
 
 For this sprint, there will be 5 team roles. For the teams with 4 - you can combine UI/UX with Dev2 and for the team with 6 you will add a Dev3. While these roles call for each person to focus an area -- **these roles are not exclusive**. Anyone can submit code for instance anyone can file a bug. The roles must rotate per sprint. This is an artificial inefficiency that I am introducing to allow all members to participate and experience each role.
 
-Project Manager
+#### Project Manager
 
 * In charge of making sure that tasks are assigned, artifacts are being delivered, and project boards are updated accordingly.
 * Project manager must actively manage the project, you are not the passive receiver of information the night before
@@ -35,18 +30,18 @@ Project Manager
 * Project Manager must also describe the task estimation process and describe what was completed and/or not completed
 * Must manage the team members and facilitate communication and individual progress outside of class times
 
-Developer 1 , 2, and 3
+#### Developer 1 , 2, and 3
 
 * Programmers responsible for implementing code, coordinating with the UI/UX developers and IT Operations to deploy code.
 * Work with the developers to implement the designed UI/UX in code and CSS
 * Implementation must match the design
 * If your UI/UX design is incomplete need to complete it before any work can progress
 * UI/UX design is a complete master blueprint of what your finished site will look like
-* Help coordinate development into your team repo and using the provisioner scripts deploy your source code to your Vagrant Box environment
+* Help coordinate development into your team repo and using the provisioner scripts deploy your source code to your Proxmox Box environment
 
-IT Orchestration and Security
+#### IT Orchestration and Security
 
-* Responsible for designing and deploying all virtualized infrastructure templates (Vagrant and Packer)
+* Responsible for designing and deploying all virtualized infrastructure templates (Proxmox and Packer)
 * Responsible for working with Developers to configure login authentication
 * Responsible for working with the team to coordinate the automated building of the entire application
 * Responsible for creating any shell scripts required for automated deployment
@@ -63,9 +58,7 @@ In the team repo their will need to be a few additional folders added. Keep the 
   * This will contain all application source code
 * A folder named: **build**
   * This will contain all instructions on how to build and deploy your application
-  * This will contain Packer build templates for building Vagrant Boxes
-  * This will contain `Vagrantfiles` for deploying the machines in a pre-configured state
-  * This will contain Bash and or PowerShell scripts for single source of deploy, halt, and removal of the application on your local system
+  * This will contain Packer build templates for building Proxmox virtual machine Templates
   * This will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
 
 ### Project Management Tool and Task Difficulty Estimation
@@ -84,18 +77,16 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Use your @hawk accounts and Google OAuth (or appropriate authentication mechanism) for login authentication in your application code (there are other options -- check with me for approval first)
   * Rolling your own Authentication system in 2022 is not a valid choice
 * Infrastructure
-  * Build each server needed in the 3-tier app as Virtual Machines using Vagrant and Packer
-  * Use Packer as the tool for automating the creation of the Vagrant Boxes
+  * Build each server needed in the 3-tier app as Virtual Machines using Proxmox via Packer and Terraform templates
+  * Use Packer as the tool for automating the creation of the Proxmox Images/Templates
   * Deploy your code to a production cloud environment at the same time using Packer and [Terraform](https://www.terraform.io/ "Hashicorp Terraform webpage")
 * 3 Tier Application
   * First tier is a Load Balancer
   * Second tier is 3 webservers
   * Third tier is a single datastore
 * Deployment
-  * All work needs to be tested and developed on your teams built Vagrant Boxes and in the production environment
-    * You will have to build often, perhaps daily/nightly
-    * We can set up an additional nightly systemd timer script to add an nightly build task, if you are interested - ask me
-  * Development on Localhost is not acceptable at this point
+  * You will have to build often, perhaps daily/nightly
+  * We can set up an additional nightly systemd timer script to add an nightly build task, if you are interested - ask me
 * Usage of site
   * Pre-seed your site with 50 "real test users" and have them "ask" 2 questions and answer 1 other persons questions
     * This is to show the search functionality and ability to store a complex discussion
@@ -104,19 +95,10 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Answer that question
   * Answer another question
   * Logout that user
-* Show and explain steps taken in code that prevents common attacks
-  * ~~Find out if someone can own your site~~
-  * ~~Show us how and show us what prevents common attacks~~
-* **BONUS**
-  * For the cyber security co-terminals, each of the production environments for each team will be on the 192.168.172.55 -.254 range
-    * Without being destructive, can you bring me a dump of their SQL Database?
-    * This is **not a graded requirement** - just something extra
 
 ## Deliverables
 
-* Monday Lab live presentation and critiques are due 8:30am April 25th
-* Wednesday Lab early section presentation and critiques are due 8:30am April 27th
-* Wednesday Lab late section presentation and critiques are due 10:25am April 27th
+* **All sections** critiques due on Sunday evening 11:59 PM April 23rd.
 
 ### Individual Deliverables
 
@@ -170,18 +152,16 @@ Was your markdown proper and well formed HTML when rendered? | 1
 
 #### Points for Project Manager Presentation
 
-The report will be worth 15 points and will be graded on a scale listed below.  In addition to the critique, the Project Manager must deliver the presentation and will be graded on a 15 point scale for items delivered and 5 points (2.5 points each for the self and group critique).
+The report will be worth 15 points and will be graded on a scale listed below. And will be done live in class Monday April 24th. In addition to the critique, the Project Manager must deliver the presentation and will be graded on a 15 point scale for items delivered and 5 points (2.5 points each for the self and group critique).
 
 Topic | Points Range |
 ----------|------
 Introduction of your teammates | 1
 Clear introduction and small summary of what will be presented with a clear transition | 1
-Demonstration of project management tool and explanation of the 25 build point items -- tell us what initially was assigned and what was accomplished | 3
-Demonstrate deployment of full working application on the provided cloud environment
-Demonstrate login of user, posting of a question, and answering of a question, on the Vagrant Infrastructure | 3
+Demonstration of project management tool and explanation of the 25 build point items -- tell us what initially was assigned and what was accomplished (show GitHub commit charts and Kanban Board) | 3
+Demonstrate deployment of full working application on the provided cloud environment with explanation of each component | 3
+Demonstrate login of user, posting of a question, and answering of a question | 3
 Demonstration of all team-members accomplishing the prior step | 3
-Professor will log into your production system and post a question and post an answer, unassisted | 1
-~~Demonstrate SQL and or XSS attacks upon your site and explain the mitigations you implemented~~  Show and explain steps taken in code that prevents common attacks | 2
 Clear transition to a conclusion and small summary of presentation | 1
 
 #### Rubric for Project Manager Presentation
