@@ -86,10 +86,11 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Third tier is a single datastore
 * Deployment
   * You will have to build often, perhaps daily/nightly
-  * We can set up an additional nightly systemd timer script to add an nightly build task, if you are interested - ask me
 * Usage of site
   * Pre-seed your site with 50 "real test users" and have them "ask" 2 questions and answer 1 other persons questions
     * This is to show the search functionality and ability to store a complex discussion
+  * Each member of your team needs to use the site and engage in making an account and at least 5 interaction
+  * Posts must be real -- not "test test"
   * Demonstrate a successful login of a user
   * Post a question
   * Answer that question
