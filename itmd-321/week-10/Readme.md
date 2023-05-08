@@ -1,6 +1,6 @@
 # Review Questions - Learning SQL Chapter 3 and 4
 
-Review Questions covering week-10 chapter 3 and 4 from Learning SQL textbook. Valid answers from the textbook, Learning SQL 3rd edition or from the [MYSQL 8.0 Developer site](https://dev.mysql.com/doc/refman/8.0/en/ "webpage for MySQL developer portal), no W3SChools!
+Review Questions covering week-10 chapter 3 and 4 from Learning SQL textbook. Valid answers from the textbook, Learning SQL 3rd edition or from the [MYSQL 8.0 Developer site](https://dev.mysql.com/doc/refman/8.0/en/ "webpage for MySQL developer portal"), no W3SChools!
 
 ## Objectives
 

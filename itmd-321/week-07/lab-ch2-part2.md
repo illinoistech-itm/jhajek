@@ -13,7 +13,7 @@ At the conclusion of this assignment you will have taken non-normalized tables a
 
 ## Lab Exercises
 
-Using Chapter 2 (P. 130-133 in the Text Book) Titled: `Working with Microsoft Access` and starting from the `james River Jewelry Project Questions` through `Queen Anne Curiosity Shop Projet Questions` you will be answering each sub-letter bullet point. Some questions require short-answer, some require you to create an Markdown Table to represent and Relational Database table. 
+Using Chapter 2 (P. 130-133 in the Text Book) Titled: `Working with Microsoft Access` and starting from the `james River Jewelry Project Questions` through `Queen Anne Curiosity Shop Project Questions` you will be answering each sub-letter bullet point. Some questions require short-answer, some require you to create an Markdown Table to represent and Relational Database table. 
 
 ### How to Insert a Table in a Bullet List
 
