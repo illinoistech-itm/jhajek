@@ -43,7 +43,7 @@ source "proxmox-iso" "backend-database" {
   http_port_min    = 9001
   iso_checksum     = "${var.ISO-CHECKSUM}"
   iso_urls         = "${var.ISO-URL}"
-  iso_storage_pool = "local"
+  iso_storage_pool = "${var.STORAGEPOOL}"
   memory           = "${var.MEMORY}"
 
   network_adapters {
@@ -101,7 +101,7 @@ source "proxmox-iso" "frontend-webserver" {
   http_port_min    = 9001
   iso_checksum     = "${var.ISO-CHECKSUM}"
   iso_urls         = "${var.ISO-URL}"
-  iso_storage_pool = "local"
+  iso_storage_pool = "${var.STORAGEPOOL}"
   memory           = "${var.MEMORY}"
 
   network_adapters {
@@ -159,7 +159,7 @@ source "proxmox-iso" "load-balancer" {
   http_port_min    = 9001
   iso_checksum     = "${var.ISO-CHECKSUM}"
   iso_urls         = "${var.ISO-URL}"
-  iso_storage_pool = "local"
+  iso_storage_pool = "${var.STORAGEPOOL}"
   memory           = "${var.MEMORY}"
 
   network_adapters {
