@@ -44,7 +44,7 @@ variable "DISKSIZE" {
 # Proxmox cloud -- No need to edit this
 variable "STORAGEPOOL" {
   type    = string
-  default = "datadisk5"
+  default = "datadisk1"
 }
 
 variable "NUMBEROFCORES" {
@@ -86,8 +86,8 @@ variable "ISO-CHECKSUM" {
 }
 
 variable "ISO-URL" {
-  type    = string
-  default = "https://mirrors.edge.kernel.org/ubuntu-releases/22.04.2/ubuntu-22.04.2-live-server-amd64.iso"
+  type    = list(string)
+  default = "[https://mirrors.edge.kernel.org/ubuntu-releases/22.04.2/ubuntu-22.04.2-live-server-amd64.iso","http://www.releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso"]
 }
 
 # This will be the non-root user account name
