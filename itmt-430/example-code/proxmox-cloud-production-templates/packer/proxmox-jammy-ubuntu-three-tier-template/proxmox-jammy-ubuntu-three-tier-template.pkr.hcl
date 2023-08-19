@@ -100,7 +100,7 @@ source "proxmox-iso" "frontend-webserver" {
   http_port_max    = 9200
   http_port_min    = 9001
   iso_checksum     = "${var.ISO-CHECKSUM}"
-  iso_urls         = ["${var.ISO-URL}"]
+  iso_urls         = "${var.ISO-URL}"
   iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
@@ -158,7 +158,7 @@ source "proxmox-iso" "load-balancer" {
   http_port_max    = 9200
   http_port_min    = 9001
   iso_checksum     = "${var.ISO-CHECKSUM}"
-  iso_urls         = ["${var.ISO-URL}"]
+  iso_urls         = "${var.ISO-URL}"
   iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
