@@ -33,17 +33,18 @@ source "proxmox-iso" "backend-database" {
   token     = "${var.TOKEN_SECRET}"
   cpu_type  = "host"
   disks {
-    disk_size         = "${var.DISKSIZE}"
-    storage_pool      = "${var.STORAGEPOOL}"
-    #storage_pool_type = "lvm"
-    type              = "virtio"
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    # storage_pool_type is deprecated and should be omitted, it will be removed in a later version of the proxmox plugin
+    # storage_pool_type = "lvm"
+    type = "virtio"
   }
   http_directory   = "subiquity/http"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "${var.ISO-CHECKSUM}"
-  iso_urls         = "${var.ISO-URL}"
-  iso_storage_pool = "${var.STORAGEPOOL}"
+  iso_checksum     = "${var.iso_checksum}"
+  iso_urls         = "${var.iso_urls}"
+  iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
   network_adapters {
@@ -66,11 +67,11 @@ source "proxmox-iso" "backend-database" {
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "${var.STORAGEPOOL}"
-  ssh_username             = "vagrant"
   ssh_password             = "${var.SSHPW}"
+  ssh_username             = "vagrant"
   ssh_timeout              = "28m"
-  template_description     = "A Packer template for backend database"
-  vm_name                  = "${var.backend-VMNAME}"
+  template_description     = "A Packer template for Ubuntu Jammy Database 3 tier" 
+  vm_name                  = "${var.VMNAME}"
 }
 
 ###########################################################################################
@@ -91,17 +92,18 @@ source "proxmox-iso" "frontend-webserver" {
   token     = "${var.TOKEN_SECRET}"
   cpu_type  = "host"
   disks {
-    disk_size         = "${var.DISKSIZE}"
-    storage_pool      = "${var.STORAGEPOOL}"
-    #storage_pool_type = "lvm"
-    type              = "virtio"
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    # storage_pool_type is deprecated and should be omitted, it will be removed in a later version of the proxmox plugin
+    # storage_pool_type = "lvm"
+    type = "virtio"
   }
   http_directory   = "subiquity/http"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "${var.ISO-CHECKSUM}"
-  iso_urls         = "${var.ISO-URL}"
-  iso_storage_pool = "${var.STORAGEPOOL}"
+  iso_checksum     = "${var.iso_checksum}"
+  iso_urls         = "${var.iso_urls}"
+  iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
   network_adapters {
@@ -124,11 +126,11 @@ source "proxmox-iso" "frontend-webserver" {
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "${var.STORAGEPOOL}"
-  ssh_username             = "vagrant"
   ssh_password             = "${var.SSHPW}"
+  ssh_username             = "vagrant"
   ssh_timeout              = "28m"
-  template_description     = "A Packer template for a frontend webserver"
-  vm_name                  = "${var.frontend-VMNAME}"
+  template_description     = "A Packer template for Ubuntu Jammy Frontend webserver"
+  vm_name                  = "${var.VMNAME}"
 }
 
 ###########################################################################################
@@ -149,17 +151,18 @@ source "proxmox-iso" "load-balancer" {
   token     = "${var.TOKEN_SECRET}"
   cpu_type  = "host"
   disks {
-    disk_size         = "${var.DISKSIZE}"
-    storage_pool      = "${var.STORAGEPOOL}"
-    #storage_pool_type = "lvm"
-    type              = "virtio"
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    # storage_pool_type is deprecated and should be omitted, it will be removed in a later version of the proxmox plugin
+    # storage_pool_type = "lvm"
+    type = "virtio"
   }
   http_directory   = "subiquity/http"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "${var.ISO-CHECKSUM}"
-  iso_urls         = "${var.ISO-URL}"
-  iso_storage_pool = "${var.STORAGEPOOL}"
+  iso_checksum     = "${var.iso_checksum}"
+  iso_urls         = "${var.iso_urls}"
+  iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
   network_adapters {
@@ -182,11 +185,11 @@ source "proxmox-iso" "load-balancer" {
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "${var.STORAGEPOOL}"
-  ssh_username             = "vagrant"
   ssh_password             = "${var.SSHPW}"
+  ssh_username             = "vagrant"
   ssh_timeout              = "28m"
-  template_description     = "A Packer template for a load-balancer"
-  vm_name                  = "${var.loadbalancer-VMNAME}"
+  template_description     = "A Packer template for Ubuntu Jammy"
+  vm_name                  = "${var.VMNAME}"
 }
 
 build {
