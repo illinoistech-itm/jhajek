@@ -35,7 +35,7 @@ source "proxmox-iso" "backend-database" {
   disks {
     disk_size         = "${var.DISKSIZE}"
     storage_pool      = "${var.STORAGEPOOL}"
-    storage_pool_type = "lvm"
+    #storage_pool_type = "lvm"
     type              = "virtio"
   }
   http_directory   = "subiquity/http"
@@ -65,7 +65,7 @@ source "proxmox-iso" "backend-database" {
   unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
-  cloud_init_storage_pool  = "local"
+  cloud_init_storage_pool  = "${var.STORAGEPOOL}"
   ssh_username             = "vagrant"
   ssh_password             = "${var.SSHPW}"
   ssh_timeout              = "28m"
@@ -93,7 +93,7 @@ source "proxmox-iso" "frontend-webserver" {
   disks {
     disk_size         = "${var.DISKSIZE}"
     storage_pool      = "${var.STORAGEPOOL}"
-    storage_pool_type = "lvm"
+    #storage_pool_type = "lvm"
     type              = "virtio"
   }
   http_directory   = "subiquity/http"
@@ -123,7 +123,7 @@ source "proxmox-iso" "frontend-webserver" {
   unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
-  cloud_init_storage_pool  = "local"
+  cloud_init_storage_pool  = "${var.STORAGEPOOL}"
   ssh_username             = "vagrant"
   ssh_password             = "${var.SSHPW}"
   ssh_timeout              = "28m"
@@ -151,7 +151,7 @@ source "proxmox-iso" "load-balancer" {
   disks {
     disk_size         = "${var.DISKSIZE}"
     storage_pool      = "${var.STORAGEPOOL}"
-    storage_pool_type = "lvm"
+    #storage_pool_type = "lvm"
     type              = "virtio"
   }
   http_directory   = "subiquity/http"
@@ -181,7 +181,7 @@ source "proxmox-iso" "load-balancer" {
   unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
-  cloud_init_storage_pool  = "local"
+  cloud_init_storage_pool  = "${var.STORAGEPOOL}"
   ssh_username             = "vagrant"
   ssh_password             = "${var.SSHPW}"
   ssh_timeout              = "28m"

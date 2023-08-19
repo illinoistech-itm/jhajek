@@ -2,7 +2,7 @@
 
 ![](./syllabus/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
-Semester: Fall 2021 Professor Jeremy Hajek
+Semester: Fall 2023
 
 ![*https://xkcd.com/350/*](./syllabus/images/network.png "XCKD 350 image URL")
 
@@ -28,37 +28,37 @@ Semester: Fall 2021 Professor Jeremy Hajek
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 08/24 | Introduction  | Tooling Setup
-2 | 08/26 | Tooling  | To Be Assigned
-3 | 08/31 | CLI review  | -
-4 | 09/02 | CLI review  | -
-5 | 09/07 | Monitoring and Measurement Frameworks  | -
-6 | 09/09 | Monitoring and Measurement Frameworks  | -
-7 | 09/14 | Managing Events and Metrics  | -
-8 | 09/16 | Managing Events and Metrics  | -
-9 | 09/21 | Managing Events and Metrics  | -
-10| 09/23 | Managing Events and Metrics | -
-11| 09/28 | Managing Events and Metrics | -
-12| 09/30 | Managing Events and Metrics | -
-13| 10/05 | Introducing Graphite and Grafana | -
-14| 10/07 | Introducing Graphite and Grafana | -
-15| 10/12 | Collectd events | MP1 Assigned
-16| 10/14 | Collectd events | -
-17| 10/19 | Logs and Logging | -
-18| 10/21 | Logs and Logging | -
-19| 10/25 | Building Monitored Applications | MP1 Presented in Class, MP2 Assigned
-20| 10/28 | Building Monitored Applications | -
-21| 11/02 | Notifications | -
-22| 11/04 | Notifications | -
-23| 11/09 | Monitoring an Application | -
-24| 11/11 | Monitoring an Application | -
-25| 11/16 | Class Work time | -
-26| 11/18 | Class Work time | -
-27| 11/23 | Class Work time | Final Presentation Assigned, MP2 Presented in Class
-28| 11/25 | Class Work time | -
-29| 11/30 | Thanksgiving Break - No Class | -
-30| 12/02 | Class Work time | -
-31| 6-11  | Final Exam week | Final Project Presentation
+1 | 08/21 | Introduction  | Tooling Setup
+2 | 08/23 | Tooling  | To Be Assigned
+3 | 08/28 | CLI review  | -
+4 | 08/30 | CLI review  | -
+5 | 09/04 | Monitoring and Measurement Frameworks  | -
+6 | 09/06 | Monitoring and Measurement Frameworks  | -
+7 | 09/11 | Managing Events and Metrics  | -
+8 | 09/13 | Managing Events and Metrics  | -
+9 | 09/18 | Managing Events and Metrics  | -
+10| 09/20 | Managing Events and Metrics | -
+11| 09/25 | Managing Events and Metrics | -
+12| 09/27 | Managing Events and Metrics | -
+13| 10/02 | Introducing Graphite and Grafana | -
+14| 10/04 | Introducing Graphite and Grafana | -
+15| 10/09 | Collectd events | MP1 Assigned
+16| 10/11 | Collectd events | -
+17| 10/16 | Logs and Logging | -
+18| 10/18 | Logs and Logging | -
+19| 10/23 | Building Monitored Applications | MP1 Presented in Class, MP2 Assigned
+20| 10/25 | Building Monitored Applications | -
+21| 10/30 | Notifications | -
+22| 11/01 | Notifications | -
+23| 11/06 | Monitoring an Application | -
+24| 11/08 | Monitoring an Application | -
+25| 11/13 | Class Work time | -
+26| 11/15 | Class Work time | -
+27| 11/20 | Class Work time | Final Presentation Assigned, MP2 Presented in Class
+28| 11/22 | Thanksgiving Break - No Class | -
+29| 11/27 | Class Work time | -
+30| 11/29 | Class Work time | -
+31| 04-08 | Final Exam week | Final Project Presentation
 
 **Course Outcomes:**
 
@@ -107,7 +107,7 @@ A | Outstanding work reflecting substantial effort | 90-100%
 B | Excellent work reflecting good effort | 80-89.99%
 C | Satisfactory work meeting minimum expectations | 70-79.99%
 D | Substandard work not meeting expectations | 60-69.99%
-E | Unsatisfactory work |0-59.99%
+E | Unsatisfactory work | 0-59.99%
 
 The final grade for the class will be calculated as follows: (example)
 
@@ -132,3 +132,11 @@ The final grade for the class will be calculated as follows: (example)
 **Disabilities:** Reasonable accommodations will be made for students with documented disabilities.  In order to receive accommodations, students must obtain a letter of accommodation from the Center for Disability Resources and make an appointment to speak with me as soon as possible.  My office hours are listed on the first page of the syllabus. The Center for Disability Resources (CDR) is located in 3424 S. State St., room 1C3-2 (on the first floor), telephone 312 567.5744 or disabilities@iit.edu.
 
 **ARC Tutoring Center:** The university provides a free tutoring and study center called the [ARC](https://www.iit.edu/arc "IIT Resource Center URL").  This is located newly in the basement of the Galvin Library and is open to all for walk in appointments as well as scheduled tutoring.
+
+**Illinois Tech’s Sexual Harassment and Discrimination Information:** Illinois Tech prohibits all sexual harassment, sexual misconduct, and gender discrimination by any member of our community. This includes harassment among students, staff, or faculty. Sexual harassment of a student by a faculty member or sexual harassment of an employee by a supervisor is particularly serious. Such conduct may easily create an intimidating, hostile, or offensive environment.
+
+Illinois Tech encourages anyone experiencing sexual harassment or sexual misconduct to speak with the Office of Title IX Compliance for information on support options and the resolution process. You can report sexual harassment electronically at iit.edu/incident report, which may be completed anonymously. You may additionally report by contacting the Title IX Coordinator, Virginia Foster at foster@iit.edu or the Deputy Title IX Coordinator at eespeland@iit.edu.
+
+For confidential support, you may reach Illinois Tech’s Confidential Advisor at (773) 907-1062. You can also contact a licensed practitioner in Illinois Tech’s Student Health and Wellness Center at student.health@iit.edu or (312)567-7550
+
+For a comprehensive list of resources regarding counseling services, medical assistance, legal assistance and visa and immigration services, you can visit the Office of Title IX Compliance website at [https://www.iit.edu/title-ix/resources](https://www.iit.edu/title-ix/resources "Title IX Compliance website").
