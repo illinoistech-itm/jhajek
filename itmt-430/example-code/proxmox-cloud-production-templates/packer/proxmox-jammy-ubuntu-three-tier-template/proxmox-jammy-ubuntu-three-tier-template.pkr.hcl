@@ -71,7 +71,7 @@ source "proxmox-iso" "backend-database" {
   ssh_username             = "vagrant"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for Ubuntu Jammy Database 3 tier" 
-  vm_name                  = "${var.VMNAME}"
+  vm_name                  = "${var.backend-VMNAME}"
 }
 
 ###########################################################################################
@@ -130,7 +130,7 @@ source "proxmox-iso" "frontend-webserver" {
   ssh_username             = "vagrant"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for Ubuntu Jammy Frontend webserver"
-  vm_name                  = "${var.VMNAME}"
+  vm_name                  = "${var.frontend-VMNAME}"
 }
 
 ###########################################################################################
@@ -189,7 +189,7 @@ source "proxmox-iso" "load-balancer" {
   ssh_username             = "vagrant"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for Ubuntu Jammy"
-  vm_name                  = "${var.VMNAME}"
+  vm_name                  = "${var.loadbalancer-VMNAME}"
 }
 
 build {

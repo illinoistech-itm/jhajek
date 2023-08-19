@@ -80,12 +80,12 @@ variable "SSHPW" {
   sensitive = true
 }
 
-variable "ISO-CHECKSUM" {
+variable "iso_checksum" {
   type    = string
   default = "sha256:5e38b55d57d94ff029719342357325ed3bda38fa80054f9330dc789cd2d43931"
 }
 
-variable "ISO-URL" {
+variable "iso_urls" {
   type    = list(string)
   default = ["https://old-releases.ubuntu.com/releases/22.04/ubuntu-22.04.2-live-server-arm64.iso", "http://www.releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso"]
 }
