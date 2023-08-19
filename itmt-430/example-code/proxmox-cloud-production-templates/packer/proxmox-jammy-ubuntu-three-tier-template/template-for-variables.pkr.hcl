@@ -87,7 +87,7 @@ variable "ISO-CHECKSUM" {
 
 variable "ISO-URL" {
   type    = list(string)
-  default = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.2/ubuntu-22.04.2-live-server-amd64.iso", "http://www.releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso"]
+  default = ["https://old-releases.ubuntu.com/releases/22.04/ubuntu-22.04.2-live-server-arm64.iso", "http://www.releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso"]
 }
 
 # This will be the non-root user account name
