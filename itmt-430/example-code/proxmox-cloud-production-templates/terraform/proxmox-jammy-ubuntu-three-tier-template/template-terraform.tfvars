@@ -28,6 +28,7 @@ backend-desc          = "" # What is the purpose of the TF template
 lb-yourinitials  = "" # initials to add to make unique systems
 lb-numberofvms   = 1  # quantity of that template to launch
 lb-desc          = "" # What is the purpose of the TF template
+lb-macaddr       = "" # Class assigned mac address for a public IP for your lb
 consul-service-tag-contact-email = "your-hawk-email-here" # Used as part of the consul service definition as a tag that can be queried
 ###############################################################################
 # Name the template your created via Packer for Terraform to use to deploy
