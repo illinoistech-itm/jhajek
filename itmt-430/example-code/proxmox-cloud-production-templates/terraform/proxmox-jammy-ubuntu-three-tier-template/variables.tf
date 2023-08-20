@@ -69,6 +69,15 @@ variable "clone_wait" {
 ###############################################################################
 # This is the consul dns master -- no need to edit this
 ###############################################################################
-variable "consulip" {
+variable "consulip-240-prod-system28" {
+  default = "10.110.0.59"
+}
+
+variable "consulip-240-student-system41" {
   default = "10.110.0.36"
 }
+
+variable "consulip-242-room" {
+  default = "10.110.0.38"
+}
+
