@@ -7,8 +7,13 @@ resource "random_id" "id" {
 
 # https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/shuffle#example-usage
 resource "random_shuffle" "datadisk" {
-  input        = ["datadisk2", "datadisk3", "datadisk4", "datadisk5"]
+  input        = ["datadisk2","datadisk3","datadisk4","datadisk1"]
   result_count = 1
+}
+
+resource "random_shuffle" "target_node" {
+  input         = ["system41","system42" ]
+result_count = 1
 }
 
 ###############################################################################
