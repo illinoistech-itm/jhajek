@@ -29,8 +29,6 @@ variable "frontend-desc" {}
 variable "backend-desc" {}
 variable "lb-desc" {}
 
-variable "target_node" {}
-
 variable "frontend-template_to_clone" {}
 variable "backend-template_to_clone" {}
 variable "lb-template_to_clone" {}
