@@ -28,6 +28,7 @@ variable "lb-numberofvms" {}
 variable "frontend-desc" {}
 variable "backend-desc" {}
 variable "lb-desc" {}
+variable "lb-macaddr" {}
 
 variable "frontend-template_to_clone" {}
 variable "backend-template_to_clone" {}
