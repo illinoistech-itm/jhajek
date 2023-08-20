@@ -7,13 +7,13 @@ resource "random_id" "id" {
 
 # https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/shuffle#example-usage
 resource "random_shuffle" "datadisk" {
-  input        = ["datadisk2","datadisk3","datadisk4","datadisk1"]
+  input        = ["datadisk2", "datadisk3", "datadisk4", "datadisk1"]
   result_count = 1
 }
 
 resource "random_shuffle" "target_node" {
-  input         = ["system41","system42" ]
-result_count = 1
+  input        = ["system41", "system42"]
+  result_count = 1
 }
 
 ###############################################################################
@@ -197,7 +197,7 @@ resource "proxmox_vm_qemu" "backend-database" {
   count       = var.backend-numberofvms
   name        = "${var.backend-yourinitials}-vm${count.index}.service.consul"
   desc        = var.backend-desc
-  target_node     = random_shuffle.target_node.result[0]
+  target_node = random_shuffle.target_node.result[0]
   clone       = var.backend-template_to_clone
   os_type     = "cloud-init"
   memory      = var.backend-memory
