@@ -13,7 +13,7 @@ Semester: Fall 2023 Professor Jeremy Hajek
       Telephone: 312.567.5937
           Email: hajek@iit.edu
          Office: Perlstein Hall Room 223A, 10 W. 33rd St.
-   Office Hours: Mies Campus: Monday-Friday 10:30-3:00
+   Office Hours: Mies Campus: Friday 10:00-2:00
          Online: Book and appointment at:
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
@@ -34,8 +34,8 @@ Monday and Wednesday 1:50 pm - 3:05 pm in [Galvin Tower room 67C1](https://www.i
 
 All readings should be done prior to class. Do the readings!  
 
-Session # | Date | Topic | Reading |
-----------|------|:------|----------
+Session | Date | Topic | Reading |
+--------|------|:------|----------
 01 | 08/21,23 | Introduction & Tooling Setup | Technology and Philosophy of FOSS Ch 2
 02 | 08/28,30 | History of Free and Open Source | Technology and Philosophy of FOSS Ch 3
 03 | 09/04,06 | Labor Day No class, Hardware and Linux Install | Technology and Philosophy of FOSS Ch 4
