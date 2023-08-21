@@ -2,7 +2,7 @@
 
 ![](./syllabus/class-544/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
-Semester: Fall 2022 Professor Jeremy Hajek
+Semester: Fall 2023 Professor Jeremy Hajek
 
 ![*https://xkcd.com/908*](./syllabus/class-544/images/the_cloud.png "XKCD 908 image URL")
 
@@ -13,7 +13,7 @@ Semester: Fall 2022 Professor Jeremy Hajek
       Telephone: 312.567.5937
           Email: hajek@iit.edu
          Office: Perlstein Hall Room 223A, 10 W. 33rd St.
-   Office Hours: Mies Campus: Monday-Friday 10:30-3:00
+   Office Hours: Mies Campus: Friday 10:30-2:00
          Online: Book and appointment at:
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
