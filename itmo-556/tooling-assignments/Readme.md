@@ -6,13 +6,13 @@ In this assignment there will be a series of tools you need to install to comple
 
 If you have not already signed up for a [GitHub.com](https://github.com "Github.com signup") account, do so.  We recommend using your name or some combination of your name, not your Hawk ID as this account is yours the rest of your life.  Once you have your ID, submit it on BlackBoard under Assignments >  Tooling Assignment and Setup > GitHub ID.  If you already have an ID, then just submit that ID.
 
-## Installation of Tools for Windows 10
+## Installation of Tools for Windows 10 or 11
 
 The following sections are for installation of tools on a Windows 10 PC, this is a list of the tools we will need installed on your laptop for this class:
 
 * git
 * VScode
-* VirtualBox 6.x
+* VirtualBox 7.x
 * powershell-core
 * (optional) vim
 
@@ -41,10 +41,10 @@ The following sections are for installation of tools on a Windows 10 PC, this is
 
 * git
 * VScode
-* VirtualBox 6.x
+* VirtualBox 7.x
 * vim
 
-[Homebrew](https://brew.sh/ "macOS Homebrew webpage") is a third party package manager available for macOS.  This functions as a needed package manager and a way to install needed packages via an automated fashion. Using a package manager allows for having scripted installations as well as a function to update software in place from the command line.
+[Homebrew](https://brew.sh/ "macOS Homebrew webpage") is a third party package manager available for macOS. This functions as a needed package manager and a way to install needed packages via an automated fashion. Using a package manager allows for having scripted installations as well as a function to update software in place from the command line.
 
 To install `Homebrew` or `brew` run the below command:
 
@@ -60,19 +60,15 @@ brew install git packer bash
 brew cask install visual-studio-code virtualbox vagrant
 ```
 
-## Git-It Tutorial
+### Oh-My-Git Tutorial
 
-Download, extract, and execute the Git-it tutorial, located: [https://github.com/jlord/git-it-electron/releases](https://github.com/jlord/git-it-electron/releases "Git-it release tutorial").  The program runs as an executable so there is no installation needed and is cross platform.
+Download the proper [Oh My Git! tutorial](https://ohmygit.org/ "webpage for oh my git") the program runs as a self contained executable on your system (Windows Mac or Linux).
 
-Next we can download and extract the [Git-it Tutorial](https://github.com/jlord/git-it-electron/ "Git-it install Page"). Git-it is a desktop (Mac, Windows and Linux) app that teaches you how to use Git and GitHub on the command line.  Releases can be found under the [Release Tab](https://github.com/jlord/git-it-electron/releases "Git-it Download Releases").  Extract the file, execute the file `Git-it`. Upon a completion of the tutorial take a screenshot of your completion badge (or dots).
+Complete the tutorial and take screenshots of the completed sections (may need to take a few shots as the there are many sections).
 
-![*Git-it Completion Badge*](images/completed.png "Image of Git-it Badge Completion")
+This Git tutorial is a good refresher for those who need it and a great introduction for those new to Version Control and want to learn it. You can leave the last section out, **Sandbox**, it is an open area for you to experiment in and no real way to "complete it."
 
-## Create and Push your Readme.md
-
-Final step, is to clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it).  If you already have a private repo provided by the professor from a previous class, just create a new folder named **itmo-556**, no spaces! Ever! and push your new folder along with a Readme.md file and a folder named **images**.  
-
-This Readme.md will contain these elements written in Markdown. This is a good [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
+In this step you will clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it) to your local system.  In the root of this repo you will create a file named `Readme.md` and a folder named **images**. This `Readme.md` will contain the elements below written in Markdown. This is a good [Markdown cheat-sheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
 
 The document will include:
 
@@ -81,17 +77,48 @@ The document will include:
   * a picture of something that describes you
 * h2 Where are you from?
   * Tell us where you are from
+* h2 What was your first computing device?
 * h2 IT Interests
   * Tell us what you IT Interests and or skills are
 * h2 Something Interesting About You
   * Tell us something interesting about you
-* h2 Git-It Badge
-  * Place your Git-It Tutorial badge image here.
 
 Push this to your GitHub private account repo.
 
-Here is my own completed sample: [https://github.com/illinoistech-itm/jhajek/blob/master/README.md](https://github.com/illinoistech-itm/jhajek/blob/master/README.md "Professor's GitHub Repo Sample").  
-**Note**, I will have more folders then you because I have sample code for more classes.
+Here is my own completed sample: [https://github.com/illinoistech-itm/jhajek/blob/master/README.md](https://github.com/illinoistech-itm/jhajek/blob/master/README.md "Professor's GitHub Repo Sample").  **Note**, I will have more folders then you because I have sample code for more classes.  If you have previously completed this assignment, no need to do anything unless you want to update the information.
+
+### Create a .gitignore file
+
+Every Git repository needs a `.gitignore` file.  This file tells Git to ignore certain files.  These are files that are too large, binary format, or things like security keys and passwords, that we don't want to be committing to our Git Repos.
+
+We will create a file named: `.gitignore` and place the following values into it and add, commit, and push the file to your private repo.
+
+```bash
+# Files, Folders, security keys, and Binaries to ignore
+
+*.vdi
+*.box
+.vagrant/
+*console.log
+packer-cache/
+packer_cache/
+*.pem
+*~$
+*.ova
+output*/
+vagrant.d/
+*.iso
+variables.pkr.hcl
+*.priv
+variables.json
+.DS_Store
+id_rsa
+id_rsa*
+id_rsa.pub
+.Vagrantfile*
+Vagrantfile~
+config.default.yml
+```
 
 ## Final deliverable to Blackboard
 

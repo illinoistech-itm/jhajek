@@ -170,13 +170,13 @@ Using a package manager, install the latest version of [Packer](https://packer.i
 
 Take a screenshot of the output of the command: ```packer --version```
 
-### Git-It Tutorial
+### Oh-My-Git Tutorial
 
-Download, extract, and execute the Git-it tutorial, located: [https://github.com/jlord/git-it-electron/releases](https://github.com/jlord/git-it-electron/releases "Git-it release tutorial").  The program runs as an executable so there is no installation needed and is cross platform.
+Download the proper [Oh My Git! tutorial](https://ohmygit.org/ "webpage for oh my git") the program runs as a self contained executable on your system (Windows Mac or Linux).
 
-Next we can download and extract the [Git-it Tutorial](https://github.com/jlord/git-it-electron/ "Git-it install Page"). Git-it is a desktop (Mac, Windows and Linux) app that teaches you how to use Git and GitHub on the command line.  Releases can be found under the [Release Tab](https://github.com/jlord/git-it-electron/releases "Git-it Download Releases").  Extract the file, execute the file `Git-it`. Upon a completion of the tutorial take a screenshot of your completion badge (or dots).
+Complete the tutorial and take screenshots of the completed sections (may need to take a few shots as the there are many sections).
 
-![*Git-it Completion Badge*](/images/badge.png "Image of Git-it Badge Completion")
+This Git tutorial is a good refresher for those who need it and a great introduction for those new to Version Control and want to learn it. You can leave the last section out, **Sandbox**, it is an open area for you to experiment in and no real way to "complete it."
 
 ## Tooling Assignment Part II
 
@@ -235,14 +235,6 @@ id_rsa.pub
 Vagrantfile~
 config.default.yml
 ```
-
-### Adding Screenshots
-
-On your local system, clone the instructors sample code repo containing this assignment.  Issue the command: `git clone https://github.com/illinoistech-itm/jhajek.git` on your local system command line. **Note** - if you already have this repo clone just issue: `git pull` to update to the latest assignment. From your local system's file manager copy the document from the cloned repo: jhajek > itmt-544-444 > tooling-assignments > Readme.md and place the copied document into your own private repo on the local system under a root folder named: **itmo-444** or **itmo-544**.  In that directory, add an additional directory named: `images` and place all of your screenshots into that directory.
-
-Open your private Repo using your IDE and now that we have worked with Markdown, I want you to go back, using the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet") and add image links under each of the screenshot statements in the assignment above.
-
-Once complete, add, commit, and push your tooling assignment Readme.md to your GitHub Repo
 
 ### Final deliverable to Blackboard
 
