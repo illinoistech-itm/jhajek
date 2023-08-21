@@ -148,15 +148,27 @@ git config --global user.name "Jeremy Hajek"
 git config --global user.email "hajek@iit.edu"
 ```
 
-### Install VirtualBox or Parallels
+### Install VirtualBox on Intel Macs or Windows
 
-If you do not already have VirtualBox 6.x installed, use your package manager to install VirtualBox.  VirtualBox will be our virtualization platform we are using this semester. It is a robust opensource product and can be used to create and host machines on our local systems.  It has integration with automation tools such as Packer and Vagrant from HashiCorp.
+If you do not already have VirtualBox 7.x installed, use your package manager to install VirtualBox.  VirtualBox will be our virtualization platform we are using this semester. It is a robust opensource product and can be used to create and host machines on our local systems. It has integration with automation tools such as Packer and Vagrant from HashiCorp.
 
 Take a screenshot of the VirtualBox > Help > About VirtualBox output or from the Terminal: `vboxmanage --version` (Windows or Intel MacOS)
 
-For those using an M1 Mac we will require a [Pro License from Parallels](https://www.parallels.com/products/desktop/pro/ "Pro License form parallels.com website").
+### Install Virtualization Solutions for M1/M2 Macs
 
-Take a screenshot of Parallels Desktop > About Parallels Desktop or from the terminal : `prlctl --version` (Works on any version of Parallels)
+There are 4 options:
+
+* Buying a Pro-license from Parallels 
+  * [Pro License from Parallels](https://www.parallels.com/products/desktop/pro/ "Pro License form parallels.com website").
+
+* Buy a license from VMware Fusion
+  * [VMWare Fusion for Apple Silicon](https://blogs.vmware.com/teamfusion/2022/11/fusion-13-pro-and-player-are-here.html "webpage for fusion 13")
+* Apple Native Silicon UTM
+  * [UTM](https://mac.getutm.app/ "webpage for apple sillicon framework")
+* Tart
+  * [Tart is a virtualization toolset](https://tart.run/ "webpage to install Tart") to build, run and manage macOS and Linux virtual machines on Apple Silicon.
+  
+Whichever solution you choose - take a screenshot showing the installed version.
 
 **Note:** that you can use Parallels on an Intel MacOS as well -- you would need to make sure you have the Pro edition installed and the SDK installed as well.
 
