@@ -2,7 +2,7 @@
 
 ![](./syllabus/class-556/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
-Semester: Fall 2022 Professor Jeremy Hajek
+Semester: Fall 2023 Professor Jeremy Hajek
 
 ![*Linux...*](./syllabus/class-556/images/linux.png "Dilbert Cartoon")
 
