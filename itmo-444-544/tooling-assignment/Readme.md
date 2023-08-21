@@ -2,14 +2,13 @@
 
 ## Objectives
 
-* Discuss and describe modern Cloud Native tooling
 * Learn and describe the advantage using modern package managers on Windows and MacOS for tooling install
 * Demonstrate the advantages of using version control for documentation distribution
 * Learn and discuss the use of Markdown for text based document creation
 
 ## Outcome
 
-At the end of this assignment you will have become familiar with industry standard package managers for Windows and MacOS and be able to install standard tooling used in Cloud Native application development.  This will be achieved by following a small demo and some small tutorials.
+At the end of this assignment you will have become familiar with industry standard package managers for Windows and MacOS and be able to install standard tooling used in Cloud Native application development. This will be achieved by following a small demo and some small tutorials.
 
 ## Overview
 
@@ -17,15 +16,19 @@ Complete the required installs in this document via a Package Manager and take a
 
 ## Tooling Assignment Part I
 
-We will cover the initial installation of tools we will need for this semester.  If you have already completed this in a prior class, you could take the time to update your software or reach out and help a classmate.
+We will cover the initial installation of tools we will need for this semester.  If you have already completed this in a prior class, you could take the time to update your software or reach out and help a classmate and take a note that there are a few changes.
+
+## Sample Code
+
+Additional samples and tutorials are available at [https://github.com/illinoistech-itm/jhajek/tree/master/itmto-444-544](https://github.com/illinoistech-itm/jhajek/tree/master/itmto-444-544 "webpage for samples")
 
 ### Package Managers
 
-Package Managers are an essential tool, originally created for Linux Distributions, apt and yum, at the turn of the century, only in recent years have the major desktop operating systems, Windows and MacOS, created similar tools.  You may be more familiar with the term, "APP Store," the concept is the same either way.  
+Package Managers are an essential tool, originally created for Linux Distributions, apt and yum, at the turn of the century for managing installing software and collecting the proper dependencies. Only in recent years have the major desktop operating systems, Windows and MacOS, created similar tools. You may be more familiar with the term, "APP Store," the concept is the same either way.
 
 Package Managers help by streamlining a few important items:
 
-* Package Managers provide a centralized location for installing application
+* Package Managers provide a centralized location for installing applications
   * This location is accessed through a Command Line tool
 * Package Managers take care of all dependency installations
   * Any additional pieces or software or libraries are automatically installed for you
@@ -41,7 +44,9 @@ If you have a Mac - install brew and provide a screenshot of the output of the c
 
 ### Windows 10 21H1+ or 11
 
-The name of the third party Windows Package manager is Chocolatey.  The download is located at [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page").
+The name of the third party Windows Package manager is Chocolatey. The download is located at [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page").
+
+From an Administrator PowerShell 5 prompt:
 
 ```PowerShell
 Set-ExecutionPolicy Bypass -Scope Process -Force; `
@@ -60,7 +65,7 @@ For Windows 10 or 11, place a screenshot of the version command output for: ```c
 For MacOS using Homebrew:
 
 ```bash
-brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install virtualbox ; brew install --cask vagrant ; brew install packer
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask ; brew install virtualbox ; brew install --cask vagrant ; brew install packer
 ```
 
 For M1 Macs you will run the same as above but without the VirtualBox install:
@@ -80,12 +85,13 @@ brew install --cask powershell ; brew install --cask iterm2 ; brew install git ;
 For Windows 10 and 11 using Chocolatey:
 
 ```PowerShell
-choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell atom virtualbox vagrant packer
+choco install powershell-core 
+choco install microsoft-windows-terminal git vscode vscode-powershell vagrant packer virtualbox
 ```
 
 ### Installation of a Modern Shell
 
-For Windows we are going to install PowerShell Core, also known as PowerShell 7.x. Windows includes PowerShell 5 (the lightblue icon), which has ceased development and doesn't have support for modern font display.  PowerShell 7 is opensource and cross-platform available.  Working on Windows, PowerShell 7 is a must.
+For Windows we are going to install PowerShell Core, also known as PowerShell 7.x. Windows includes PowerShell 5 (the light blue icon), which has ceased development and doesn't have support for modern font display.  PowerShell 7 is opensource and cross-platform available.  Working on Windows, PowerShell 7 is a must.
 
 Open PowerShell 7 and issue the command: `ssh -V` and take a screenshot of the PowerShell version output as well as the SSH version output.
 
@@ -144,7 +150,7 @@ git config --global user.email "hajek@iit.edu"
 
 ### Install VirtualBox or Parallels
 
-If you do not already have VirtualBox 6.x installed, use your package manager to install VirtualBox.  VirtualBox will be our virtualization platform we are using this semester.  It is a robust opensource product and can be used to create and host machines on our local systems.  It has integration with automation tools such as Packer and Vagrant from HashiCorp.
+If you do not already have VirtualBox 6.x installed, use your package manager to install VirtualBox.  VirtualBox will be our virtualization platform we are using this semester. It is a robust opensource product and can be used to create and host machines on our local systems.  It has integration with automation tools such as Packer and Vagrant from HashiCorp.
 
 Take a screenshot of the VirtualBox > Help > About VirtualBox output or from the Terminal: `vboxmanage --version` (Windows or Intel MacOS)
 
@@ -177,10 +183,6 @@ Download the proper [Oh My Git! tutorial](https://ohmygit.org/ "webpage for oh m
 Complete the tutorial and take screenshots of the completed sections (may need to take a few shots as the there are many sections).
 
 This Git tutorial is a good refresher for those who need it and a great introduction for those new to Version Control and want to learn it. You can leave the last section out, **Sandbox**, it is an open area for you to experiment in and no real way to "complete it."
-
-## Tooling Assignment Part II
-
-Part II will explore some version control exercises and getting familiar with Markdown
 
 ### Create and Push your Readme.md
 
@@ -235,6 +237,14 @@ id_rsa.pub
 Vagrantfile~
 config.default.yml
 ```
+
+### Adding Screenshots
+
+On your local system, clone the instructors sample code repo containing this assignment.  Issue the command: `git clone https://github.com/illinoistech-itm/jhajek.git` on your local system command line. **Note** - if you already have this repo clone just issue: `git pull` to update to the latest assignment. From your local system's file manager copy the document from the cloned repo: jhajek > itmto-444 or 544 > tooling-assignment > Readme.md and place the copied document into your own private repo on the local system under a root folder named: **itmto-444 or 544**.  In that itmto-444 or 544 directory, add an directory named: `images` and place all of your screenshots into that directory.
+
+Open your private Repo using your IDE and now that we have worked with Markdown, I want you to go back, using the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet") and add image links under each of the screenshot statements in the assignment above.
+
+Once complete, add, commit, and push your tooling assignment Readme.md to your GitHub Repo
 
 ### Final deliverable to Blackboard
 
