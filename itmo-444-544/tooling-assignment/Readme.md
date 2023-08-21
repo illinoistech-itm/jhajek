@@ -159,8 +159,7 @@ Take a screenshot of the VirtualBox > Help > About VirtualBox output or from the
 There are 4 options:
 
 * Buying a Pro-license from Parallels 
-  * [Pro License from Parallels](https://www.parallels.com/products/desktop/pro/ "Pro License form parallels.com website").
-
+  * [Pro License from Parallels](https://www.parallels.com/products/desktop/pro/ "Pro License form parallels.com website")
 * Buy a license from VMware Fusion
   * [VMWare Fusion for Apple Silicon](https://blogs.vmware.com/teamfusion/2022/11/fusion-13-pro-and-player-are-here.html "webpage for fusion 13")
 * Apple Native Silicon UTM
