@@ -13,7 +13,7 @@ Semester: Fall 2023 Professor Jeremy Hajek
       Telephone: 312.567.5937
           Email: hajek@iit.edu
          Office: Perlstein Hall Room 223A, 10 W. 33rd St.
-   Office Hours: Mies Campus: Friday 10:30-3:00
+   Office Hours: Mies Campus: Friday 10:30-2:00
          Online: book an appointment at:
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
@@ -99,15 +99,15 @@ Students completing this course will be able to:
 ![*Computer Networking 8th Edition*](./syllabus/images/book.png "Image of computer networking 8th edition")
 
 * Authors 
-  * James Kurose and Kieth Ross
-* ASIN
-  * B08KF4RQ5N
+  * James Kurose and Keith Ross
+* ISBN 13
+  * 9780136681557
 * Publisher
   * Pearson; 8th edition (September 13, 2020)
 * Publication date
   * September 13, 2020
 
-This book is digital only -- the bookstore is currently showing the wrong book, I would wait until tomorrow to purchase from them.  You can buy or rent the text -- but the Kindle edition now available is essentially just a scan of a physical book and not really good for reading.
+This book is digital only -- the bookstore is ther recommended place to get it -- buy or rent is fine.
 
 We will not be using TestOut or LabSim
 
@@ -144,11 +144,12 @@ The final grade for the class will be calculated as follows:
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-  Review Questions (10):   20%        100
-               Lab (10):   20%        100
-          Midterm Exam:   20%        100
-                   MP1:   20%        100
-         Final Project:   20%        100
+  Review Questions (10):  19%       100
+               Lab (10):  19%       100
+          Midterm Exam:   19%       100
+                   MP1:   19%       100
+         Final Project:   19%       100
+            Attendance:    5%        30
 ----------------------- ------- ----------------
 
 ### Late Submission  
