@@ -23,7 +23,7 @@ The following sections are for installation of tools on a Windows 10/11 PC, this
 
 * Git
 * VScode
-* VirtualBox 6.x
+* VirtualBox 7.x
 * Vagrant
 * Powershell-core (7.x)
 * Microsoft Terminal
@@ -53,7 +53,7 @@ The following sections are for installation of tools on a MacOS Laptop x86 and M
 
 * Git
 * VScode
-* VirtualBox 6.x
+* VirtualBox 7.x
 * Vagrant
 * iterm2
 * WireShark
