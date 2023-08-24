@@ -1,6 +1,6 @@
 # Git Tutorial
 
-![*Git commit messages--after developing this book I understand this completely*](./images/Chapter-Header/Appendix-D/git_commit-2.png "Git Commit")
+![*Git commit messages--after developing this book I understand this completely*](../images/Chapter-Header/Appendix-D/git_commit-2.png "Git Commit")
 
 This is a tutorial for configuring Git on Windows 10/11 and MacOS and assumes you have Git installed.
 
@@ -273,6 +273,7 @@ The document will include:
   * a picture of something that describes you
 * h2 Where are you from?
   * Tell us where you are from
+* h2 What was your first computing device?
 * h2 IT Interests
   * Tell us what you IT Interests and or skills are
 * h2 Something Interesting About You
