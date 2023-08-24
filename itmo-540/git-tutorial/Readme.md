@@ -1,6 +1,6 @@
 # Git Tutorial
 
-![*Git commit messages--after developing this book I understand this completely*](./images/Chapter-Header/Appendix-D/git_commit-2.png "Git Commit")
+![*Git commit messages--after developing this book I understand this completely*](../images/Chapter-Header/Appendix-D/git_commit-2.png "Git Commit")
 
 This is a tutorial for configuring Git on Windows 10/11 and MacOS and assumes you have Git installed.
 

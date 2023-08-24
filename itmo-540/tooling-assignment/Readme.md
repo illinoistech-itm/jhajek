@@ -197,7 +197,7 @@ This Git tutorial is a good refresher for those who need it and a great introduc
 
 ### Adding Screenshots
 
-Using the Readme.md template file provided under the Assignment Tab > Week-01 in Blackboard, add your screenshots to the `Readme.md` and commit and push the document to a folder named: `itmo-540` > `tooling-assignment`
+Using the `Readme.md` template file provided under the Assignment Tab > Week-01 in Blackboard, add your screenshots to the `Readme.md` and commit and push the document to a folder named: `itmo-540` > `tooling-assignment` inyour private GitHub repo
 
 Use the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
 
