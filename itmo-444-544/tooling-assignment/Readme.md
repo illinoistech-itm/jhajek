@@ -251,11 +251,9 @@ config.default.yml
 
 ### Adding Screenshots
 
-On your local system, clone the instructors sample code repo containing this assignment.  Issue the command: `git clone https://github.com/illinoistech-itm/jhajek.git` on your local system command line. **Note** - if you already have this repo clone just issue: `git pull` to update to the latest assignment. From your local system's file manager copy the document from the cloned repo: jhajek > itmto-444 or 544 > tooling-assignment > Readme.md and place the copied document into your own private repo on the local system under a root folder named: **itmto-444 or 544**.  In that itmto-444 or 544 directory, add an directory named: `images` and place all of your screenshots into that directory.
+Using the Readme.md template file provided under the Assignment Tab > Week-01 in Blackboard, add your screenshots to the `Readme.md` and commit and push the document to a folder named: `itmo-444` or `itmo-544` > `tooling-assignment`
 
-Open your private Repo using your IDE and now that we have worked with Markdown, I want you to go back, using the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet") and add image links under each of the screenshot statements in the assignment above.
-
-Once complete, add, commit, and push your tooling assignment Readme.md to your GitHub Repo
+Use the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
 
 ### Final deliverable to Blackboard
 
