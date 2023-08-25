@@ -30,7 +30,7 @@ None, Credit: Lab 3-0-3
 
 ### Lecture Day, Time & Place 
 
-Wednesday 6:25 pm - 9:05 pm Pritzker Science Building 31st Street and State on Mies Campus Chicago Illinois 60616
+Wednesday 6:25 pm - 9:05 pm Pritzker Science Building 31st Street Room 121. South corner of 31st and State on Mies Campus Chicago Illinois 60616
 
 ### Schedule of Topics
 
