@@ -107,7 +107,7 @@ Students completing this course will be able to:
 * Publication date
   * September 13, 2020
 
-This book is digital only -- the bookstore is ther recommended place to get it -- buy or rent is fine.
+This book is digital only -- the bookstore is ther recommended place to get it -- buy or rent is fine. Also note that the book is available from Amazon Kindle for the same price, but is just a scan of the physical textbook and not conducive for reading on a digital platform.
 
 We will not be using TestOut or LabSim
 
