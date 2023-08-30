@@ -44,4 +44,4 @@ Add screenshot here
 
 ### Deliverable
 
-Create a folder named: `week-02` under the itmo-444 (or 544) folder in the private repo provided to you. Use this markdown template and provide the required screenshots below the items. Submit to Blackboard just the URL to the markdown document.
+Create a folder named: `week-02` -> `lab` under the itmo-444 (or 544) folder in the private repo provided to you. Use this markdown template and provide the required screenshots below the items. Submit to Blackboard just the URL to the markdown document.
