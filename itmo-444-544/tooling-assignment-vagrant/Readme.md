@@ -68,32 +68,32 @@ Here we are going to create a directory to manage our artifact.  It is a good id
 
 ```mkdir itmt-430-2022 ; cd itmt-430-2022```
 
-We will now use Vagrant to retrieve and Ubuntu 20.04 known as Focal and a Fedora 35 Virtual Machine:
+We will now use Vagrant to retrieve and Ubuntu 22.04 known as Jammy and a AlmaLinux 9 Virtual Machine:
 
-* ```mkdir focal64 ; cd focal64 ; vagrant init ubuntu/focal64 ; ls```
-* ```mkdir fedora35 ; cd fedora35 ; vagrant init generic/fedora35 ; ls```
+* ```mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls```
+* ```mkdir almalinux ; cd almalinux ; vagrant init almalinux/9 ; ls```
 
 #### M1 Macs Only
 
 For those using M1 Macs and Parallels you will need to replace the names of the Boxes in the demos with these two that have been prepared for M1 macs and parallels
 
-* mpasternak/focal64-arm
-* scottharwell/fedora-35-aarch64
+* wesdemos/ubuntu2204-arm
+* almalinux/9.aarch64
 
-Once these commands are executed -- both under the `itmt-430-2022` directory, you will see a Vagrantfile that has been created.  Let us take a look at this file.  You can do so via using the commands on MacOS or Windows from the Terminal:
+Once these commands are executed -- both under the `jammy64` and `almalinux` directory, you will see a `Vagrantfile` that has been created.  Let us take a look at this file.  You can do so via using the commands on MacOS or Windows from the Terminal:
 
 * ```code Vagrantfile```
 * ```atom Vagrantfile```
 * ```vim Vagrantfile```
   * You can use chocolatey to install `vim` on Windows -- it works well I use it all the time
 
-Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/focal64"`.  This value came from the `vagrant init` command typed above.  Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install.  Line 52, 57, and 58 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb.  For now lets not make any changes.
+Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`.  This value came from the `vagrant init` command typed above.  Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install.  Line 52, 57, and 58 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb.  For now lets not make any changes.
 
 ### Start a Vagrant Box
 
-From our focal64 directory, let us start our first Vagrant Box.  From the Terminal type: ```vagrant up```.  What you will see is the Box file with the VirtualBox (or Parallels) vm being extracted and registered with your virtualization software.  Next the system will begin to boot.  The first install will take a bit longer as some additional drivers are being installed.  This only happens on first boot.  
+From our jammy64 directory, let us start our first Vagrant Box.  From the Terminal type: ```vagrant up```.  What you will see is the Box file with the VirtualBox (or Parallels) vm being extracted and registered with your virtualization software.  Next the system will begin to boot.  The first install will take a bit longer as some additional drivers are being installed.  This only happens on first boot.  
 
-Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: ```vagrant ssh```, and we are faced with an Ubuntu Server command prompt. What was the password?  What was the IP address?  You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the Fedora 35 box.
+Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: ```vagrant ssh```, and we are faced with an Ubuntu Server command prompt. What was the password?  What was the IP address?  You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the AlmaLinux box.
 
 ### Additional Vagrant Commands
 
@@ -110,7 +110,7 @@ Once this step is successful, we need to establish a connection to the virtual m
 
 The Vagrantfile is only processed the first time a system is initialized via `vagrant up`.  If you make a change you need to reboot or power down/up the machine and for the first time after the change you would add the flag `--provision` to the command to force Vagrant to reinitialize the hardware.
 
-Let us try this.  Choose the Ubuntu 20.04 Focal64 system's Vagrantfile and let us open it for editing.  Let us uncomment line 35 and let us uncommand line 52, 57, and 58, changing the value on line 57 to 4096 if you have the extra memory or 2048 at least.  If your Focal virtual machine is running, form the host OS issue the command: `vagrant reload --provision` or if powered off `vagrant up --provision`.
+Let us try this.  Choose the Ubuntu 22.04 jammy64 system's Vagrantfile and let us open it for editing.  Let us uncomment line 35 and let us uncommand line 52, 57, and 58, changing the value on line 57 to 4096 if you have the extra memory or 2048 at least.  If your Ubuntu virtual machine is running, form the host OS issue the command: `vagrant reload --provision` or if powered off `vagrant up --provision`.
 
 To further check the results after the command `vagrant ssh` is issued from the Ubuntu CLI type the command: `free --giga` to see how much memory is in the system.  To test the private network, let us install a webserver by issuing the command: `sudo apt update; sudo apt-get install nginx`.  From your host OS, open a web-browser to `http://192.168.33.10` and you will be met by a Welcome to Nginx message.
 
@@ -126,7 +126,7 @@ If you want to reset your Vagrant Box after you installed a webserver.  Exit the
 
 ## Tutorial Steps
 
-* Using the `vagrant init ubuntu/focal64` command, initialize a Vagrant Box (only has to be done once on a system)
+* Using the `vagrant init ubuntu/jammy64` command, initialize a Vagrant Box (only has to be done once on a system)
   * Or comparable Vagrant Box on an M1 Mac
 * Using the `vagrant up` command, start the virtual machine
 * Using the `vagrant ssh` command, connect to the virtual machine via SSH
