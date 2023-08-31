@@ -10,7 +10,7 @@
 
 At the end of this assignment you will have become familiar with industry standard package managers for Windows and MacOS and be able to install standard tooling used in Cloud Native application development. This will be achieved by following a small demo and some small tutorials.
 
-### Create and Push your Readme.md
+### Part 1 - Create and Push your Readme.md
 
 In this step you will clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it) to your local system.  In the root of this repo you will create a file named `Readme.md` and a folder named **images**. This `Readme.md` will contain the elements below written in Markdown. This is a good [Markdown cheat-sheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
 
@@ -31,7 +31,7 @@ Push this to your GitHub private account repo.
 
 Here is my own completed sample: [https://github.com/illinoistech-itm/jhajek/blob/master/README.md](https://github.com/illinoistech-itm/jhajek/blob/master/README.md "Professor's GitHub Repo Sample").  **Note**, I will have more folders then you because I have sample code for more classes.  If you have previously completed this assignment, no need to do anything unless you want to update the information.
 
-### Create a .gitignore file
+### Part 2 - Create a .gitignore file
 
 Every Git repository needs a `.gitignore` file.  This file tells Git to ignore certain files.  These are files that are too large, binary format, or things like security keys and passwords, that we don't want to be committing to our Git Repos.
 
@@ -66,7 +66,7 @@ config.default.yml
 
 ### Adding Screenshots
 
-Using the Readme.md template file provided under the Assignment Tab > Week-01 in Blackboard, add your screenshots to the `Readme.md` and commit and push the document to a folder named: `itmo-444` or `itmo-544` > `markdown-assignment`
+Using the `Readme.md` already provided to you in your private repo, clone the repo to your local system and edit that `Readme.md` to match part 1 requirements. Create a corresponding `images` folder at the root of your repo as well.  This will serve as the introduction for your portolio of work. Submit the URL to your private GitHub repo to Blackboard.  **Note:** if you built this for a previous class, no need to change it or redo it unless you want to update any information.
 
 Use the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
 
