@@ -2,7 +2,7 @@
 
 ## Objectives
 
-* Discuss and explore creating and managing public cloud service accounts
+* Discuss and explore creating and managing public cloud service accounts securely
 * Become familiar with Industry Standard Cloud Computing Console
 * Describe and explore the process to launch public cloud infrastructure resouces
 
@@ -14,8 +14,9 @@ At the conclusion of this lab, the user will have explored and experienced creat
 
 * Sign up for a full account at [aws.amazon.com](https://aws.amazon.com/ "AWS signup")
   * Warning - this requires a credit card and you to manage this
+  * Configure two factor authentication
 * Create a non-root user account
-* Take screenshot of the user ID information after logged in and add it to this document
+* Take screenshot of the user account ID information after logged in and add it to this document
 
 #### Part 1 Screenshot Here
 
@@ -44,4 +45,4 @@ Add screenshot here
 
 ### Deliverable
 
-Create a folder named: `week-02` -> `lab` under the itmo-444 (or 544) folder in the private repo provided to you. Use this markdown template and provide the required screenshots below the items. Submit to Blackboard just the URL to the markdown document.
+Create a folder named: `week-03` -> `lab` under the itmo-444 (or 544) folder in the private repo provided to you. Use this markdown template and provide the required screenshots below the items. Submit to Blackboard just the URL to the markdown document.
