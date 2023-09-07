@@ -53,6 +53,6 @@ i)
 
 ## Deliverable
 
-Download this template. In your local repo create a sub-folder named **week-03** under the **itmo-340** or **itmo-540** folder. Answer all the questions, placing your answers on the sub-bullet starting. Watch for spelling, grammar, and punctuation. Worth 10 points, .5 points per question.
+Download this template. In your local repo create a sub-folder named **week-03** under the **itmo-540** folder. Answer all the questions, placing your answers on the sub-bullet starting. Watch for spelling, grammar, and punctuation. Worth 10 points, .5 points per question.
 
 Due on Wednesday the 13th 6:00 PM Central Standard Time.

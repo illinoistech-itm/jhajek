@@ -33,4 +33,9 @@ i)
 
 Using either Brew or Chocolatey install Wireshark - launch Wireshark and place screenshot here showing its installation
 
+## Deliverable
+
+Download this template. In your local repo create a sub-folder named **week-03** under the **itmo-540** folder.
+Due on Wednesday the 13th 6:00 PM Central Standard Time.
+
 Kurose, James F.; Ross, Keith. Computer Networking (p. 72). Pearson Education. Kindle Edition.

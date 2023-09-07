@@ -117,8 +117,6 @@ We will be installing an text editor or and IDE for all of our coding and config
 
 * [VSCode from Microsoft](https://code.visualstudio.com/ "VSCode install")
   * Cross platform and has direct shell integration
-* [atom.io](https://atom.io/ "Atom.io install")
-  * Built by GitHub for Git integration
 * [Sublime Text](http://www.sublimetext.com/ "Submlime Text installer site")
   * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose.  Available for all platforms.
 * [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")
@@ -158,15 +156,11 @@ Take a screenshot of the VirtualBox > Help > About VirtualBox output or from the
 
 There are 4 options:
 
-* Buying a Pro-license from Parallels 
-  * [Pro License from Parallels](https://www.parallels.com/products/desktop/pro/ "Pro License form parallels.com website")
-* Buy a license from VMware Fusion
-  * [VMWare Fusion for Apple Silicon](https://blogs.vmware.com/teamfusion/2022/11/fusion-13-pro-and-player-are-here.html "webpage for fusion 13")
-* Apple Native Silicon UTM
-  * [UTM](https://mac.getutm.app/ "webpage for apple sillicon framework")
-* Tart
-  * [Tart is a virtualization toolset](https://tart.run/ "webpage to install Tart") to build, run and manage macOS and Linux virtual machines on Apple Silicon.
-  
+* Buying a Pro-license from Parallels (link for %50 student discount)
+  * [Pro License from Parallels](https://www.parallels.com/landingpage/pd/education/?cjevent=8130c1204d8811ee81ff00890a82b839&utm_source=CJ&utm_medium=AFFILIATES "Pro License form 
+* [UTM](https://mac.getutm.app/ "webpage for apple sillicon framework")
+  * Free download or purchase in the Mac App store
+
 Whichever solution you choose - take a screenshot showing the installed version.
 
 **Note:** that you can use Parallels on an Intel MacOS as well -- you would need to make sure you have the Pro edition installed and the SDK installed as well.
