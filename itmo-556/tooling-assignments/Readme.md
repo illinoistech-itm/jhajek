@@ -154,10 +154,10 @@ Take a screenshot of the VirtualBox > Help > About VirtualBox output or from the
 
 ### Install Virtualization Solutions for M1/M2 Macs
 
-There are 4 options:
+There are 2 options:
 
 * Buying a Pro-license from Parallels (link for %50 student discount)
-  * [Pro License from Parallels](https://www.parallels.com/landingpage/pd/education/?cjevent=8130c1204d8811ee81ff00890a82b839&utm_source=CJ&utm_medium=AFFILIATES "Pro License form 
+  * [Pro License from Parallels](https://www.parallels.com/landingpage/pd/education/?cjevent=8130c1204d8811ee81ff00890a82b839&utm_source=CJ&utm_medium=AFFILIATES "Pro License from Paralles")
 * [UTM](https://mac.getutm.app/ "webpage for apple sillicon framework")
   * Free download or purchase in the Mac App store
 
