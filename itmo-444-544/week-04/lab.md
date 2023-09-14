@@ -47,6 +47,8 @@ Arguments.txt file order of variables:
 * $5 count (3)
 * $6 path to user-data file
 
+Use this command to pass the positional parameters into the script. Order is vitally important. `./create-env.sh $(< arguments.txt)`
+
 ## Part 3
 
 * Create a Wordpress blog post using the content of the Readme.md (where you introduced yourself). Take a screenshot of a this blog post in Wordpress, properly formatted and showing the URL.
