@@ -10,7 +10,7 @@ Week-05 Review questions covering Application Layer Protocols and their function
 
 ## Questions
 
-1. Suppose you wanted to do a transaction from a remote client to a server as  fast as possible. Would you use UDP or TCP? Why?  
+1. Suppose you wanted to do a transaction from a remote client to a server as fast as possible. Would you use UDP or TCP? Why?  
 i)
 2. Recall that TCP can be enhanced with TLS to provide process-to-process  security services, including encryption. Does TLS operate at the transport  layer or the application layer? If the application developer wants TCP to be  enhanced with TLS, what does the developer have to do?  
 i)
@@ -51,6 +51,6 @@ i)
 
 ## Deliverables
 
-Place your answers to each question next to the *i)*. Copy this template into your own local private repo under the itmo-340 or itmo-540 folder. Create a subfolder called: `week-05` and place this document into that folder, push the code to GitHub and submit the URL to this document.
+Place your answers to each question next to the *i)*. Copy this template into your own local private repo under the itmo-540 folder. Create a subfolder called: `week-05` and place this document into that folder, push the code to GitHub and submit the URL to this document.
 
 Kurose, James F.; Ross, Keith. Computer Networking (p. 166). Pearson Education. Kindle Edition.

@@ -24,7 +24,7 @@ On Windows computer you can enter the following command at the command prompt: `
 * Open your Web browser and clear your browser cache.
 * Open Wireshark and enter ip.addr == <your_IP_address> into the display filter, where <your_IP_address> is the IPv4 address of your computer . With this filter, Wireshark will only display packets that either originate from, or are destined to, your host.
 * Start packet capture in Wireshark.
-* With your browser, visit the Web page: http://neverssl.com
+* With your browser, visit the Web page: http://highscalability.com
 * Stop packet capture.
 
 1. Locate the first DNS query message resolving the name neverssl.com. What is the packet number in the trace for the DNS query message?  Is this query message sent over UDP or TCP?  
