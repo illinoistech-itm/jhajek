@@ -1,6 +1,6 @@
 # Exercises - Chapter 05 Application Architecture
 
-1. What is scaling?
+1. Breifly explain the concept of scaling?
 
 2. What are the options for scaling a service that is CPU bound?
 

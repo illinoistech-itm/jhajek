@@ -1,8 +1,9 @@
-# Week-06 Lab
+# Week-05 Lab
 
 ## Objectives
 
-* Create and Deploy a single-tier cloud application
+* Create and Deploy a load-balancer with backend cloud application
+* Explore the cloud concept of target groups
 * Implement a dynamic command positional parameter solution in your shell scripts
 * Create scripts to dynamically launch, install, and destroy your environment
 * Understand how to use AWS CLI Filters for querying ephemeral instance data
@@ -33,7 +34,7 @@ Create a folder named: week-06 under your class folder in the provided private r
 
 ### create-env.sh
 
-This is shell script will take commandline input dynamically via positional parameters ($1 $2 $3 and so on) via a file named `arguments.txt`. For a refresh on positional parameters [see my text book](https://github.com/jhajek/Linux-text-book-part-1/releases/tag/2021-09-29 "Link to Linux Textbook") starting on page 179 PDF.
+This is shell script will take commandline input dynamically via positional parameters ($1 $2 $3 and so on) via a file named `arguments.txt`. For a refresh on positional parameters [see my text book](https://github.com/jhajek/Linux-text-book-part-1/releases/tag/2021-09-29 "Link to Linux Textbook") starting on page ~179 PDF.
 
 You can access positional parameters after `$9` by using `${10}`. You can hard code the user-data flag to be the value: `file://install-env.sh`
 
@@ -49,7 +50,7 @@ This is where you will pass the arguments (space delimited) as follows (order is
 * instance-type
 * key-name
 * security-group-ids
-* count (3)
+* count
 * availability-zone
 * elb name
 * target group name
@@ -64,7 +65,7 @@ I will grade your logic by running it with my account configuration information,
 
 ### install-env.sh
 
-This will contain the same content as last week's assignment:
+This application we will install Nginx and use the default index.html screen for our purposes.
 
 ### destroy-env.sh
 
@@ -74,4 +75,4 @@ Using AWS CLI v2 filters filter the instance you created and destroy it.  A sing
 
 ## Final Deliverable
 
-Submit the URL to the week-06 folder to Blackboard. Your week-06 repo will contain all three shell scripts but not the **arguments.txt** file (add arguments.txt to your `.gitignore`)
+Submit the URL to the week-05 folder to Blackboard. Your week-05 repo will contain all three shell scripts but NOT the **arguments.txt** file (add arguments.txt to your `.gitignore`)
