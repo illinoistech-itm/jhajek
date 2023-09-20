@@ -51,6 +51,7 @@ This is where you will pass the arguments (space delimited) as follows (order is
 * key-name
 * security-group-ids
 * count
+* user-data file name
 * availability-zone
 * elb name
 * target group name
