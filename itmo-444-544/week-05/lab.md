@@ -10,7 +10,7 @@
 
 ## Outcomes
 
-At the conclusion of this Lab you will have successfully deployed and destroyed a single-tier cloud application via the AWS CLI and using positional parameters in a shell script. You will have configured your application to use AWS CLI Filters and Queries to retrieve dynamic data about ephemeral instances.
+At the conclusion of this Lab you will have successfully deployed and destroyed your cloud application via the AWS CLI and using positional parameters in a shell script. You will have configured your application to use AWS CLI Filters and Queries to retrieve dynamic data about ephemeral instances.
 
 ## Assumptions
 
@@ -22,7 +22,7 @@ For this assignment you can make these assumptions
 
 ## Deliverable
 
-Create a folder named: week-06 under your class folder in the provided private repo. In the folder there will be three shell scripts:
+Create a folder named: week-05 under your class folder in the provided private repo. In the folder there will be three shell scripts:
 
 * A script named: `create-env.sh`
   * This script will create a ELB
