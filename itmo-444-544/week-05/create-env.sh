@@ -19,6 +19,7 @@ aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-
 # INSTANCEIDS=$(aws ec2 describe-instances --output=json | jq -r '.Reservations[].Instances[].InstanceId')
 
 # Using aws --query functions to query for the InstanceIds of only RUNNING instances
+# https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html 
 INSTANCEIDS=$(aws ec2 describe-instances --query 'Reservations[*].Instances[?State.Name==`running`].InstanceId')
 
 aws elbv2 create-load-balancer --name $8 --subnets $SUBNET
