@@ -27,7 +27,7 @@ On Windows computer you can enter the following command at the command prompt: `
 * With your browser, visit the Web page: http://highscalability.com
 * Stop packet capture.
 
-1. Locate the first DNS query message resolving the name neverssl.com. What is the packet number in the trace for the DNS query message?  Is this query message sent over UDP or TCP?  
+1. Locate the first DNS query message resolving the name **highscalability.com**. What is the packet number in the trace for the DNS query message?  Is this query message sent over UDP or TCP?  
 i)
 2. Now locate the corresponding DNS response to the initial DNS query. What is the packet number in the trace for the DNS response message?  Is this response message received via UDP or TCP?  
 i)
