@@ -8,14 +8,14 @@
 # Daniela Munoz 
 # Alex Schatz
 # Michael Martinez
-# Naga Prasath
+# Naga Prasath 
 # Amith Satyanarayan
 
 # VPCID=$(aws ec2 describe-vpcs --output=json | jq -r '.Vpcs[].VpcId') does the same as below
 VPCID=$(aws ec2 describe-vpcs --query "Vpcs[].VpcId")
 SUBNET=$(aws ec2 describe-subnets --output=json | jq -r '.Subnets[1,2].SubnetId')
 
-aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count ${5} --user-data file://$6 --availability-zone $7
+aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count ${5} --user-data file://$6 --placement AvailabilityZone=$7
 # Using jq from the command line
 # INSTANCEIDS=$(aws ec2 describe-instances --output=json | jq -r '.Reservations[].Instances[].InstanceId')
 
