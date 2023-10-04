@@ -16,9 +16,9 @@
 # ${12} launch configuration name
 # ${13} db instance identifier (database name)
 # ${14} db instance identifier (for read-replica), append -rpl to the database name
-# ${13} min-size = 2
-# ${14} max-size = 5
-# ${15} desired-capacity = 3
+# ${15} min-size = 2
+# ${16} max-size = 5
+# ${17} desired-capacity = 3
 ######################################################################
 
 ######################################################################
