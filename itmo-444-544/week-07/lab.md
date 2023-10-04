@@ -55,28 +55,40 @@ Run your script in this fashion:
 
 This is where you will pass the arguments (space delimited) as follows (order is **very** important)
 
-* image-id
-* instance-type
-* key-name
-* security-group-ids
-* count (3)
-* availability-zone
-* elb name
-* target group name
-* auto-scaling group name
-* launch configuration name
-* db instance identifier (database name)
-* db instance identifier (for read-replica), append *-rpl*
+
+1) image-id
+1) instance-type
+1) key-name
+1) security-group-ids
+1) count
+1) user-data file name
+1) availability-zone 1 (choose a)
+1) elb name
+1) target group name
+1) availability-zone 2 (choose b)
+1) auto-scaling group name
+1) launch configuration name
+1) db instance identifier (database name)
+1) db instance identifier (for read-replica), append *-rpl* to the database name
 
 These values we will dynamically query for
 
-* subnet-id (1)
-* subnet-id (2)
+* subnet-id (1) A
+* subnet-id (2) B
 * vpc-id
 
 ### How to filter for state running
 
 `aws ec2 describe-instances --filters Name=instance-state-name,Values=running` and can be combined with Queries.  Filters filter your results, query is what you ask Amazon to select for you.
+
+### Parameters Beyond 9
+
+In this case use \$\{\} for any parameter variable above 9, for example: ${11}
+
+### Links
+
+* [RDS](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/index.html "webpage RDS CLI")
+* [Auto-Scaling Groups](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/index.html "webpage auto-scaling groups")
 
 ### Grading
 
@@ -96,4 +108,6 @@ Using AWS CLI v2 filters filter the instance you created and destroy it.  A sing
 
 **Note** the database launches and destroys will begin to take upwards of 5-15 minutes, meaning that each deploy with waiters could get to be 5-20 mins. Plan accordingly.
 
-Submit the URL to the week-07 folder to Blackboard. Your week-06 repo will contain all three shell scripts but not the **arguments.txt** file (add arguments.txt to your `.gitignore`)
+There is a way to speed this up in RDS, can you figure it out from the SDK?
+
+Submit the URL to the week-07 folder to Blackboard. Your **week-07** repo will contain all three shell scripts but not the **arguments.txt** file (add arguments.txt to your `.gitignore`)
