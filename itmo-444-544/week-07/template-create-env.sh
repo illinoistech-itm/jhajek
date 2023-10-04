@@ -13,7 +13,7 @@
 # ${9} target group name
 # ${10} availability-zone 2 (choose b)
 # ${11} auto-scaling group name
-# ${12} launch configuration name
+# ${12} launch template name
 # ${13} db instance identifier (database name)
 # ${14} db instance identifier (for read-replica), append -rpl to the database name
 # ${15} min-size = 2
@@ -45,8 +45,29 @@ SUBNET2B=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' 
 VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
 SUBNET=$(aws ec2 describe-subnets --output=json | jq -r '.Subnets[1,2].SubnetId')
 
-# Create Launch Configuration
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/create-launch-configuration.html
+# Create RDS instances
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/index.html
+aws rds create-db-instance \
+    --db-instance-identifier Company123 \
+    --db-instance-class db.t3.micro \
+    --engine mysql \
+    --master-username wizard \
+    --master-user-password cluster168 \
+    --allocated-storage 20
+
+# Add wait command for db-instance available
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/wait/db-instance-available.html
+
+
+# Create Launch Tempalte
+# Now under EC2 not auto-scaling groups
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-launch-template.html
+# We think it has to do with a malformed JSON starting with a " instead of a '
+aws ec2 create-launch-template \
+    --launch-template-name ${12} \
+    --version-description AutoScalingVersion1 \
+    --launch-template-data "{ "NetworkInterfaces":[{"DeviceIndex":0, "AssociatePublicIpAddress":true, "Groups":["{$4}"], "DeleteOnTermination":true}], "ImageId":"${1}", "InstanceType":"${2}", "KeyName": "${3}", "UserData": "file://${6}", "Placement": {"AvailabilityZone": "${7}" } }" \
+        --region us-east-2
 
 # Create autoscaling group
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/create-auto-scaling-group.html
