@@ -70,6 +70,9 @@ This is where you will pass the arguments (space delimited) as follows (order is
 1) launch configuration name
 1) db instance identifier (database name)
 1) db instance identifier (for read-replica), append *-rpl* to the database name
+1) min-size = 2
+1) max-size = 5
+1) desired-capacity = 3
 
 These values we will dynamically query for
 
