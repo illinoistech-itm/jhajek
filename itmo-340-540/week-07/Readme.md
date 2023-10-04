@@ -34,6 +34,6 @@ i)
 
 ## Deliverables
 
-Place your answers to each question next to the *i)*. Copy this template into your own local private repo under the itmo-340 or itmo-540 folder. Create a subfolder called: `week-07` and place this document into that folder, push the code to GitHub and submit the URL to this document.
+Place your answers to each question next to the *i)*. Copy this template into your own local private repo under the itmo-540 folder. Create a subfolder called: `week-07` and place this document into that folder, push the code to GitHub and submit the URL to this document.
 
 Kurose, James F.; Ross, Keith. Computer Networking (p. 287). Pearson Education. Kindle Edition.
