@@ -61,7 +61,6 @@ aws rds create-db-instance \
 
 # Create Launch Tempalte
 # Now under EC2 not auto-scaling groups
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-launch-template.html
 # Need to convert the user-data file to a base64 string
 # https://en.wikipedia.org/wiki/Base64
 BASECONVERT=$(base64 < ${6})
@@ -69,7 +68,7 @@ BASECONVERT=$(base64 < ${6})
 aws ec2 create-launch-template \
     --launch-template-name ${12} \
     --version-description AutoScalingVersion1 \
-    --launch-template-data "{ "NetworkInterfaces":[{"DeviceIndex":0, "AssociatePublicIpAddress":true, "Groups":["{$4}"], "DeleteOnTermination":true}], "ImageId":"${1}", "InstanceType":"${2}", "KeyName": "${3}", "UserData": "file://${6}", "Placement": {"AvailabilityZone": "${7}" } }" \
+    --launch-template-data "{ "NetworkInterfaces":[{"DeviceIndex":0, "AssociatePublicIpAddress":true, "Groups":["{$4}"], "DeleteOnTermination":true}], "ImageId":"${1}", "InstanceType":"${2}", "KeyName": "${3}", "UserData": "$BASECONVERT", "Placement": {"AvailabilityZone": "${7}" } }" \
     --region us-east-2
 
 # Create autoscaling group
