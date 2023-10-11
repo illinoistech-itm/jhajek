@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 ######################################################################
@@ -61,6 +62,7 @@ aws rds create-db-instance \
 
 # Create Launch Tempalte
 # Now under EC2 not auto-scaling groups
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-launch-template.html
 # Need to convert the user-data file to a base64 string
 # https://en.wikipedia.org/wiki/Base64
 BASECONVERT=$(base64 < ${6})
@@ -71,10 +73,11 @@ aws ec2 create-launch-template \
     --launch-template-data "{ "NetworkInterfaces":[{"DeviceIndex":0, "AssociatePublicIpAddress":true, "Groups":["{$4}"], "DeleteOnTermination":true}], "ImageId":"${1}", "InstanceType":"${2}", "KeyName": "${3}", "UserData": "$BASECONVERT", "Placement": {"AvailabilityZone": "${7}" } }" \
     --region us-east-2
 
-# Create autoscaling group
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/create-auto-scaling-group.html
+# Launch Template Id 
+LAUNCHTEMPID=$(aws ec2 describe-launch-templates --output=json | jq -r '.LaunchTemplates[].LaunchTemplateId')   
 
-aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count ${5} --user-data file://$6 --placement AvailabilityZone=$7
+# AWS ec2 run-instances command no longer needed due to autoscaling group handling instance creation
+# aws ec2 run-instances --image-id $1 --instance-type $2 --key-name $3 --security-group-ids $4 --count ${5} --user-data file://$6 --placement AvailabilityZone=$7
 # Using jq from the command line
 # INSTANCEIDS=$(aws ec2 describe-instances --output=json | jq -r '.Reservations[].Instances[].InstanceId')
 
@@ -89,6 +92,20 @@ aws elbv2 wait load-balancer-available --load-balancer-arns $ELBARN
 
 #https://docs.aws.amazon.com/cli/latest/reference/elbv2/create-target-group.html
 TARGETARN=$(aws elbv2 create-target-group --name $9 --protocol HTTP --port 80 --target-type instance --vpc-id $VPCID --output=json | jq -r '.TargetGroups[].TargetGroupArn')
+
+# Create Autoscaling group ASG - needs to come after Target Group is created
+# Create autoscaling group
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/create-auto-scaling-group.html
+aws autoscaling create-auto-scaling-group \
+    --auto-scaling-group-name ${11} \
+    --launch-template LaunchTemplateID=$LAUNCHTEMPID \
+    --target-group-arns $TARGETARN \
+    --health-check-grace-period 600 \
+    --min-size ${15} \
+    --max-size ${16} \
+    --desired-capacity ${17} \
+    --availability-zones [ ${7}, ${10}] \
+    --health-check-type EC2
 
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/register-targets.html
 # For loop that goes takes every value in INSTANCEIDS and puts it in IIDS 
