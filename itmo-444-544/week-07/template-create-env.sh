@@ -49,7 +49,7 @@ SUBNET=$(aws ec2 describe-subnets --output=json | jq -r '.Subnets[1,2].SubnetId'
 # Create RDS instances
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/index.html
 aws rds create-db-instance \
-    --db-instance-identifier Company123 \
+    --db-instance-identifier ${13} \
     --db-instance-class db.t3.micro \
     --engine mysql \
     --master-username wizard \
@@ -59,8 +59,9 @@ aws rds create-db-instance \
 # Add wait command for db-instance available
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/wait/db-instance-available.html
 
+aws rds wait db-instance-available --db-instance-identifier ${13}
 
-# Create Launch Tempalte
+# Create Launch Template
 # Now under EC2 not auto-scaling groups
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-launch-template.html
 # Need to convert the user-data file to a base64 string
@@ -68,9 +69,9 @@ aws rds create-db-instance \
 BASECONVERT=$(base64 < ${6})
 
 aws ec2 create-launch-template \
-    --launch-template-name ${12} \
+    --launch-template-name ${12?Error: No value give} \
     --version-description AutoScalingVersion1 \
-    --launch-template-data "{ "NetworkInterfaces":[{"DeviceIndex":0, "AssociatePublicIpAddress":true, "Groups":["{$4}"], "DeleteOnTermination":true}], "ImageId":"${1}", "InstanceType":"${2}", "KeyName": "${3}", "UserData": "$BASECONVERT", "Placement": {"AvailabilityZone": "${7}" } }" \
+    --launch-template-data "{ "NetworkInterfaces":[{"DeviceIndex":0, "AssociatePublicIpAddress":true, "Groups":["{$4}"], "DeleteOnTermination":true}], "ImageId":"${1}", "InstanceType":"${2-t2.micro}", "KeyName": "${3}", "UserData": "$BASECONVERT", "Placement": {"AvailabilityZone": "${7}" } }" \
     --region us-east-2
 
 # Launch Template Id 
@@ -83,7 +84,8 @@ LAUNCHTEMPID=$(aws ec2 describe-launch-templates --output=json | jq -r '.LaunchT
 
 # Using aws --query functions to query for the InstanceIds of only RUNNING instances, not terminated IDs
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html 
-INSTANCEIDS=$(aws ec2 describe-instances --query 'Reservations[*].Instances[?State.Name==`running`].InstanceId')
+# Do not need due to the Auto Scaling Group handling instsance launch
+#INSTANCEIDS=$(aws ec2 describe-instances --query 'Reservations[*].Instances[?State.Name==`running`].InstanceId')
 
 aws elbv2 create-load-balancer --name $8 --subnets $SUBNET --type application --security-groups $4
 ELBARN=$(aws elbv2 describe-load-balancers --output=json | jq -r '.LoadBalancers[].LoadBalancerArn')
@@ -109,9 +111,10 @@ aws autoscaling create-auto-scaling-group \
 
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/register-targets.html
 # For loop that goes takes every value in INSTANCEIDS and puts it in IIDS 
-for IIDS in $INSTANCEIDS;
-do aws elbv2 register-targets --target-group-arn $TARGETARN --targets Id=$IIDS;
-done
+# do not need as AutoScaling Group is linked to the target group and will handle registration
+#for IIDS in $INSTANCEIDS;
+#do aws elbv2 register-targets --target-group-arn $TARGETARN --targets Id=$IIDS;
+#done
 
 #Attach target group to ELB listener
 #The listener is how AWS knows that a target group is accesible, without it the next wait target-in-service will not see anything and will be stuck
