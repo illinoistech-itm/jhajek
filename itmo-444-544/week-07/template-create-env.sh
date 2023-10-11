@@ -30,7 +30,7 @@
 ######################################################################
 
 # Create auto-scaling group
-# Attach Launch configuration to auto-scaling group
+# Attach Launch Template to auto-scaling group
 # Attach load-balancer to auto-scaling group
 # May have to change the logic of target group
 # Create RDS instance of mariadb (default values for now are fine)
@@ -106,7 +106,7 @@ aws autoscaling create-auto-scaling-group \
     --min-size ${15} \
     --max-size ${16} \
     --desired-capacity ${17} \
-    --availability-zones [ ${7}, ${10}] \
+    --availability-zones  ${7} ${10} \
     --health-check-type EC2
 
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/register-targets.html
