@@ -62,7 +62,10 @@ aws rds create-db-instance \
 # Create Launch Tempalte
 # Now under EC2 not auto-scaling groups
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-launch-template.html
-# We think it has to do with a malformed JSON starting with a " instead of a '
+# Need to convert the user-data file to a base64 string
+# https://en.wikipedia.org/wiki/Base64
+BASECONVERT=$(base64 < ${6})
+
 aws ec2 create-launch-template \
     --launch-template-name ${12} \
     --version-description AutoScalingVersion1 \
