@@ -68,12 +68,12 @@ aws rds wait db-instance-available --db-instance-identifier ${13}
 # https://en.wikipedia.org/wiki/Base64
 BASECONVERT=$(base64 < ${6})
 
-aws ec2 create-launch-template \
-    --launch-template-name ${12?Error: No value give} \
-    --version-description AutoScalingVersion1 \
-    --launch-template-data "{ "NetworkInterfaces":[{"DeviceIndex":0, "AssociatePublicIpAddress":true, "Groups":["{$4}"], "DeleteOnTermination":true}], "ImageId":"${1}", "InstanceType":"${2-t2.micro}", "KeyName": "${3}", "UserData": "$BASECONVERT", "Placement": {"AvailabilityZone": "${7}" } }" \
-    --region us-east-2
 
+aws ec2 create-launch-template \
+        --launch-template-name ${12} \
+        --version-description AutoScalingVersion1 \
+        --launch-template-data "{"NetworkInterfaces":[{"DeviceIndex": 0,"AssociatePublicIpAddress": true,"Groups": ["${4}"],"DeleteOnTermination": true}],"ImageId": "${1}","InstanceType": "${2}","KeyName": "${3}","UserData": "$BASECONVERT","Placement": {"AvailabilityZone": "${7}"}}" \
+        --region us-east-2
 # Launch Template Id 
 LAUNCHTEMPID=$(aws ec2 describe-launch-templates --output=json | jq -r '.LaunchTemplates[].LaunchTemplateId')   
 
