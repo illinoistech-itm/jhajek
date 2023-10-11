@@ -70,7 +70,7 @@ aws ec2 create-launch-template \
     --launch-template-name ${12} \
     --version-description AutoScalingVersion1 \
     --launch-template-data "{ "NetworkInterfaces":[{"DeviceIndex":0, "AssociatePublicIpAddress":true, "Groups":["{$4}"], "DeleteOnTermination":true}], "ImageId":"${1}", "InstanceType":"${2}", "KeyName": "${3}", "UserData": "file://${6}", "Placement": {"AvailabilityZone": "${7}" } }" \
-        --region us-east-2
+    --region us-east-2
 
 # Create autoscaling group
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/create-auto-scaling-group.html
