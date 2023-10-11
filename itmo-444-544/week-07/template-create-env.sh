@@ -61,6 +61,11 @@ aws rds create-db-instance \
 
 aws rds wait db-instance-available --db-instance-identifier ${13}
 
+
+aws rds create-db-instance-read-replica \
+    --db-instance-identifier ${14} \
+    --source-db-instance-identifier ${13}
+
 # Create Launch Template
 # Now under EC2 not auto-scaling groups
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-launch-template.html
