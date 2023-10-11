@@ -100,7 +100,7 @@ TARGETARN=$(aws elbv2 create-target-group --name $9 --protocol HTTP --port 80 --
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/create-auto-scaling-group.html
 aws autoscaling create-auto-scaling-group \
     --auto-scaling-group-name ${11} \
-    --launch-template LaunchTemplateID=$LAUNCHTEMPID \
+    --launch-template LaunchTemplateId=$LAUNCHTEMPID \
     --target-group-arns $TARGETARN \
     --health-check-grace-period 600 \
     --min-size ${15} \
