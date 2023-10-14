@@ -61,7 +61,6 @@ aws rds create-db-instance \
 
 aws rds wait db-instance-available --db-instance-identifier ${13}
 
-
 aws rds create-db-instance-read-replica \
     --db-instance-identifier ${14} \
     --source-db-instance-identifier ${13}
@@ -71,14 +70,47 @@ aws rds create-db-instance-read-replica \
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-launch-template.html
 # Need to convert the user-data file to a base64 string
 # https://en.wikipedia.org/wiki/Base64
-BASECONVERT=$(base64 < ${6})
+# https://stackoverflow.com/questions/38578528/base64-encoding-new-line
+# base64 will line wrap after 76 characters -- causing the aws ec2 create-launch-template to break
+# the -w 0 options will stop the line break from happening in the base64 output 
+#!/bin/bash
 
+BASECONVERT=$(base64 -w 0 < ${6})
+
+# This is the JSON object that is passed to the create template in a more readable form
+# We will save it to a variable here named JSON
+# Then write it out to a file -- and then attach it to the --launch-template-data option
+# Otherwise we are running into issues with the dynamic bash variables
+
+JSON="{
+    \"NetworkInterfaces\": [
+        {
+            \"DeviceIndex\": 0,
+            \"AssociatePublicIpAddress\": true,
+            \"Groups\": [
+                \"${4}\"
+            ],
+            \"DeleteOnTermination\": true
+        }
+    ],
+    \"ImageId\": \"${1}\",
+    \"InstanceType\": \"${2}\",
+    \"KeyName\": \"${3}\",
+    \"UserData\": \"$BASECONVERT\",
+    \"Placement\": {
+        \"AvailabilityZone\": \"${7}\"
+    }
+}"
+
+# Redirecting the content of our JSON to a file
+echo $JSON > ./config.json
 
 aws ec2 create-launch-template \
         --launch-template-name ${12} \
         --version-description AutoScalingVersion1 \
-        --launch-template-data "{"NetworkInterfaces":[{"DeviceIndex": 0,"AssociatePublicIpAddress": true,"Groups": ["${4}"],"DeleteOnTermination": true}],"ImageId": "${1}","InstanceType": "${2}","KeyName": "${3}","UserData": "$BASECONVERT","Placement": {"AvailabilityZone": "${7}"}}" \
+        --launch-template-data file://config.json \
         --region us-east-2
+
 # Launch Template Id 
 LAUNCHTEMPID=$(aws ec2 describe-launch-templates --output=json | jq -r '.LaunchTemplates[].LaunchTemplateId')   
 
