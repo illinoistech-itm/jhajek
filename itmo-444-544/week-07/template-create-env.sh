@@ -44,7 +44,7 @@
 SUBNET2A=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=availability-zone,Values=us-east-2a")
 SUBNET2B=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=availability-zone,Values=us-east-2b")
 VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
-SUBNET=$(aws ec2 describe-subnets --output=json | jq -r '.Subnets[1,2].SubnetId')
+SUBNET=$(aws ec2 describe-subnets --output=json | jq -r '.Subnets[0,1,2].SubnetId')
 
 # Create RDS instances
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/index.html
