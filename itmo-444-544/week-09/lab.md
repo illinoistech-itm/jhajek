@@ -105,7 +105,7 @@ I will grade your logic by running it with my account configuration information,
 
 This will contain the same content as last week's assignment. In addition you will add the following
 
-* Code to install nodejs 18, nginx, and npm
+* Code to install nodejs 18, expressJS, and npm
   * [NPM apt install instructions](https://github.com/nodesource/distributions#nodejs "GitHUb apt install instructions")
 * Code to install via NPM Multer-S3
   * [https://www.npmjs.com/package/multer-s3](https://www.npmjs.com/package/multer-s3 "npm page for multer-s3")
