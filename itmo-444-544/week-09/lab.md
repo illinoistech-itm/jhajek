@@ -108,7 +108,7 @@ This will contain the same content as last week's assignment. In addition you wi
 * Code to install nodejs 18, nginx, and npm
   * [NPM apt install instructions](https://github.com/nodesource/distributions#nodejs "GitHUb apt install instructions")
 * Code to install via NPM Multer-S3
-  * [https://www.npmjs.com/package/multer-s3](https://www.npmjs.com/package/multer-s3 "npm page for multer-s3)
+  * [https://www.npmjs.com/package/multer-s3](https://www.npmjs.com/package/multer-s3 "npm page for multer-s3")
 * Install the AWS v3 JavaScript SDK
   * [AWS v3 JavaScript SDK](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html
  "webpage for AWS JavaScript SDK")
