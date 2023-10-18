@@ -125,6 +125,21 @@ Using AWS CLI v2 filters filter the instance you created and destroy it. A singl
 
 Create a NodeJS application (names app.js) that presents a form and takes an upload of an image uploading it to an S3 bucket and prints the form information to the screen.
 
+### Generate a public/private key
+
+Use the command `ssh-keygen -t ed25519` to generate a key pair on the sample EC2 instance. Don't use a passphrase
+
+### SSH config file
+
+```Host github.com
+ # This value is your GitHub ID 
+ User jhajek
+ Hostname github.com
+ # Change this identityfile name to the path to the key you created
+ IdentityFile /home/ubuntu/.ssh/id_ed25519
+ StrictHostKeyChecking no
+ ```
+
 ## Final Deliverable
 
 **Note** the database launches and destroys will begin to take upwards of 5-15 minutes, meaning that each deploy with waiters could get to be 5-20 mins. Plan accordingly.
