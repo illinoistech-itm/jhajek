@@ -14,7 +14,7 @@ At the end of this lab you will have explored the concept of IAM, you will have 
 
 For this assignment you can make these assumptions
 
-* Start by copying your code from week-06 into your week-07 directory
+* Start by copying your code from week-07 into your week-09 directory
   * `create-env.sh`, `destroy-env.sh`, and `install-env.sh`
 * We will all be using `us-east-2` as our default region - update this if needed in your `aws configure`
 * That the access keys are already created and not needed in this script
