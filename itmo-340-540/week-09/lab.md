@@ -38,10 +38,10 @@ Consider a datagram network using 32-bit host addresses. Suppose a router  has f
 | ----------------------------------- | - |
 | 11100000 00000000 00000000 00000000 | 0 |
 | 11100000 00111111 11111111 11111111 | - |
-| 11100000 01000000 00000000 00000000 | 1 |
+| 11100000 00000000 00000000 00000000 | 1 |
 | 11100000 00000111 11111111 11111111 | - |
-| 11100000 01000001 00000000 00000000 | 2 |
-| 11100001 01111111 11111111 11111111 | - |
+| 11110000 00000000 00000000 00000000 | 2 |
+| 11110001 01111111 11111111 11111111 | - |
 | otherwise | 3 |
 
 Copy the table above and convert the binary to decimal, then instead of ranges, convert the forwarding table to be a prefix or CIDR block in the table below:
