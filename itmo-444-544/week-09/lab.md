@@ -140,6 +140,19 @@ Use the command `ssh-keygen -t ed25519` to generate a key pair on the sample EC2
  StrictHostKeyChecking no
  ```
 
+### Creating your EC2 image
+
+As part of the setup you will need to create a custom EC2 image you will need to define the values based on these parameters (makes it easier for me to find and grade)
+
+![*EC2 Create Image Details*](./images/create-ec2.png "Image showing details")
+
+* Image Name
+  * hajek-itmo444-fall2023 (hawk ID-class-semester/year)
+* Image Description
+  * *Custom EC2 Image for Week 09 lab*
+
+After creation - in the AWS GUI under EC2 select `AMI`, select the custom AMI you just created and right click selecting `Edit AMI Permissions`. In the **Shared Accounts** text box -- paste my AWS account ID: `548002151864` and select `SAVE CHANGES`, this will allow me to use your AMI when I run your create code.
+
 ## Final Deliverable
 
 **Note** the database launches and destroys will begin to take upwards of 5-15 minutes, meaning that each deploy with waiters could get to be 5-20 mins. Plan accordingly.
