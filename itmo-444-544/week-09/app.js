@@ -4,15 +4,15 @@
 const { S3Client,ListBucketsCommand } = require('@aws-sdk/client-s3');
 var express = require('express'),
 bodyParser = require('body-parser'),
-    multer = require('multer'),
-    multerS3 = require('multer-s3');
+multer = require('multer'),
+multerS3 = require('multer-s3');
 // needed to include to generate UUIDs
 // https://www.npmjs.com/package/uuid
 const { v4: uuidv4 } = require('uuid');
 // initialize an s3 connection object
 var app = express();
 //s3 = new aws.S3();
-const REGION = "us-east-1"; //e.g. "us-east-1"
+const REGION = "us-east-2"; //e.g. "us-east-2"
 // Create an Amazon S3 service client object.
 const s3 = new S3Client({ 
     region: REGION
