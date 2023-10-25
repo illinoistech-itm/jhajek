@@ -49,6 +49,19 @@ SUBNET2B=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' 
 VPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId')
 SUBNET=$(aws ec2 describe-subnets --output=json | jq -r '.Subnets[0,1,2].SubnetId')
 
+##############################################################################
+# Using AWS S3 cli to create raw and finished buckets
+# Use dashes in your name
+# AWS CLI S3API 
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/index.html
+#############################################################################
+echo "Creating S3 bucket ${19}"
+aws s3api create-bucket --bucket ${19}
+echo "Created S3 bucket ${19}"
+echo "Creating S3 bucket ${20}"
+aws s3api create-bucket --bucket ${20}
+echo "Created S3 bucket ${19}"
+#############################################################################
 # Create RDS instances
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/index.html
 aws rds create-db-instance \
@@ -100,6 +113,9 @@ JSON="{
     \"InstanceType\": \"${2}\",
     \"KeyName\": \"${3}\",
     \"UserData\": \"$BASECONVERT\",
+    \"IamInstanceProfile\": {
+      \"Name\": \"${18}\"
+     },
     \"Placement\": {
         \"AvailabilityZone\": \"${7}\"
     }

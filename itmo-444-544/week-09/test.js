@@ -15,6 +15,7 @@ const app = express();
   const command = new ListBucketsCommand({});
   try {
     const response = await client.send(command);
+       // console.log(); // print the JSON
      for ( element of response.Buckets ) {
              if ( element.Name.includes("raw") ) {
                      console.log(element.Name)
