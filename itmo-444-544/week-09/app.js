@@ -1,67 +1,78 @@
-// Install these packages via npm: npm install express aws-sdk multer multer-s3
-// Documentation for JavaScript AWS SDK v3
-// https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html
+// Initialize and AWS JavaScript SDK S3 Client connection
+// https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/s3/command/ListBucketsCommand/
 const { S3Client,ListBucketsCommand } = require('@aws-sdk/client-s3');
-var express = require('express'),
-bodyParser = require('body-parser'),
-multer = require('multer'),
-multerS3 = require('multer-s3');
-// needed to include to generate UUIDs
-// https://www.npmjs.com/package/uuid
-const { v4: uuidv4 } = require('uuid');
-// initialize an s3 connection object
-var app = express();
-//s3 = new aws.S3();
-const REGION = "us-east-2"; //e.g. "us-east-2"
-// Create an Amazon S3 service client object.
-const s3 = new S3Client({ 
-    region: REGION
-});
-app.use(bodyParser.json());
-///////////////////////////////////////////////////////////////////////////
-// I hardcoded my S3 bucket name, this you need to determine dynamically
-// Using the AWS JavaScript SDK
-///////////////////////////////////////////////////////////////////////////
-bucketName ='raw-mp1';
-var upload = multer({
-    storage: multerS3({
-        s3: s3,
-        bucket: bucketName ,
-        key: function (req, file, cb) {
-            cb(null, file.originalname);
-            }
-    })
-});
+const express = require('express');
+var multer = require('multer');
+var multerS3 = require('multer-s3');
+// Variable to store the S3 raw_bucket_name
+var bucket_name = "";
+// Initialize the express server -- the name app must match the .js file we are using
+// hence app.js
+const app = express();
+
+// code to list S3 buckets and retrieve name of the Raw Bucket
+
+(async () => {
+  const client = new S3Client({ region: "us-east-2", signatureVersion: 'v4'  });
+  const command = new ListBucketsCommand({});
+  try {
+    const response = await client.send(command);
+     for ( element of response.Buckets ) {
+             if ( element.Name.includes("raw") ) {
+                     console.log(element.Name)
+                     bucket_name = element.Name
+             } } // end of forloop
+
+  } catch (err) {
+    console.error(err);
+  }
+})();
+/*
+// async function to query DynamoDB Tables
+  const { DynamoDBClient, ListTablesCommand } = require( "@aws-sdk/client-dynamodb");
+(async function() {
+  const dbClient = new DynamoDBClient({ region: 'us-east-2' });
+  const command = new ListTablesCommand({});
+
+  try {
+    const results = await dbClient.send(command);
+    console.log(results.TableNames.join('\n'));
+  } catch (err) {
+    console.error(err);
+  }
+})();
+*/
+
+// Code from Multer-S3 sample page to help take the Image we are POSTing and push it to S3
+//https://www.npmjs.com/package/multer-s3
+ // instantiate an s3 connection object
+//const { S3Client } = require('@aws-sdk/client-s3')
+
+const s3 = new S3Client({  region: "us-east-2"});
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'raw-bucket-jrh',
+    metadata: function (req, file, cb) {
+      cb(null, {fieldName: file.fieldname});
+    },
+    key: function (req, file, cb) {
+      cb(null, Date.now().toString())
+    }
+  })
+})
+
 // Request to index.html or / express will match this route and render this page
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
-// when some one hits the post button this will happen
-app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
-res.send('Successfully uploaded ' + req.files.length + ' files!')
-// https://www.npmjs.com/package/multer
-// This retrieves the name of the uploaded file
-var fname = req.files[0].originalname;
-// Now we can construct the S3 URL since we already know the structure of S3 URLS and our bucket
-// For this sample I hardcoded my bucket, you can do this or retrieve it dynamically
-var s3url = "https://"+bucketName+".s3.amazonaws.com/" + fname;
-// Use this code to retrieve the value entered in the username field in the index.html
-var username = req.body['name'];
-// Use this code to retrieve the value entered in the email field in the index.html
-var email = req.body['email'];
-// Use this code to retrieve the value entered in the phone field in the index.html
-var phone = req.body['phone'];
-// generate a UUID for this action
-var id = uuidv4();
-// Write output to the screen
-res.write(s3url + "\n");
-res.write(username + "\n")
-res.write(fname + "\n");
-res.write(email + "\n");
-res.write(phone + "\n");
-res.write("File uploaded successfully to Amazon S3 Bucket!" + "\n");
-res.end();
-});
-app.listen(80, function () {
-console.log('Amazon s3 file upload app listening on port 80');
+
+// Instantiate a route /upload
+app.post('/upload', upload.array('uploadFile',1), function(req, res, next) {
+  res.send('Successfully uploaded ' + req.files.length + ' files!')
+})
+
+// Instantiate the Express Server and have it listen on port 80
+app.listen(3000, function () {
+console.log('Amazon s3 file upload app listening on port 3000');
 });
