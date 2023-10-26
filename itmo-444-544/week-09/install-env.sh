@@ -2,9 +2,25 @@
 
 ##############################################################################
 # Installing Git client from apt
+# Install Nginx webserver to proxy requests from port 80 to 3000
 ##############################################################################
 sudo apt update
-sudo apt install -y git build-essential
+sudo apt install -y git build-essential nginx
+
+##############################################################################
+# Enable and start Nginx service
+##############################################################################
+sudo systemctl enbale nginx
+sudo systemctl start nginx
+
+##############################################################################
+# Use the sed command to insert the location route for /upload
+# https://stackoverflow.com/questions/6537490/insert-a-line-at-specific-line-number-with-sed-or-awk
+##############################################################################
+sudo sed -i '54i location /upload {\n proxy_pass http://127.0.0.1:3000/upload/; \n }' /etc/nginx/sites-available/default
+# Reload the nginx config
+sudo systemctl daemon-reload
+sudo systemctl restart nginx
 
 ##############################################################################
 # Installing Node JS via DEB packages from 
