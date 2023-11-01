@@ -69,7 +69,7 @@ app.get('/', function (req, res) {
 });
 
 // Instantiate a route /upload
-app.post('/upload', upload.array('b',1), function(req, res, next) {
+app.post('/upload', upload.array('uploadFile',1), function(req, res, next) {
   res.send('Successfully uploaded ' + req.files.length + ' files!')
 })
 
