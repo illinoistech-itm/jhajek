@@ -17,7 +17,7 @@ sudo systemctl start nginx
 # Use the sed command to insert the location route for /upload
 # https://stackoverflow.com/questions/6537490/insert-a-line-at-specific-line-number-with-sed-or-awk
 ##############################################################################
-sudo sed -i '54i location /upload {\n proxy_pass http://127.0.0.1:3000/upload/; \n }' /etc/nginx/sites-available/default
+#sudo sed -i '54i location /upload {\n proxy_pass http://127.0.0.1:3000/upload/; \n }' /etc/nginx/sites-available/default
 
 # Reload the nginx config
 sudo systemctl daemon-reload
@@ -74,9 +74,9 @@ sudo -u ubuntu git clone git@github.com:illinoistech-itm/hajek.git
 # https://pm2.keymetrics.io/docs/usage/quick-start
 cd /home/ubuntu/YOUR-HAWKID/itmo-544/mp1/
 
-# sudo cp /home/ubuntu/YOUR_HAWK_ID/itmo-544/week-09/default /etc/nginx/sites-available/default
-# sudo systemctl daemon-reload
-# sudo systemctl restart nginx
+sudo cp /home/ubuntu/YOUR_HAWK_ID/itmo-544/week-09/default /etc/nginx/sites-available/default
+sudo systemctl daemon-reload
+sudo systemctl restart nginx
 
 
 sudo pm2 start app.js
