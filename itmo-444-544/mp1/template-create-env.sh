@@ -108,6 +108,17 @@ aws rds create-db-instance-read-replica \
     --db-instance-identifier ${14} \
     --source-db-instance-identifier ${13}
 
+###############################################################################
+# COnnect via mysql client
+###############################################################################
+#  mysql -u wizard --password=cluster168 -h company.ckiczsqz1fhj.us-east-2.rds.amazonaws.com
+sudo apt install -y mysql-client
+
+DBENDPOINT=$(aws rds describe-db-instances --output=json | jq -r '.DBInstances[0].Endpoint.Address')
+# DBENDPOINT=$(aws rds desscribe-db-instances --query 'DBInstances[0].Endpoint.Address') same thing with the query parameter <3
+mysql -u $USERVALUE --password=$PASSVALUE -h $DBENDPOINT < create.sql
+
+###############################################################################
 # Create Launch Template
 # Now under EC2 not auto-scaling groups
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-launch-template.html
@@ -116,7 +127,7 @@ aws rds create-db-instance-read-replica \
 # https://stackoverflow.com/questions/38578528/base64-encoding-new-line
 # base64 will line wrap after 76 characters -- causing the aws ec2 create-launch-template to break
 # the -w 0 options will stop the line break from happening in the base64 output 
-#!/bin/bash
+
 
 BASECONVERT=$(base64 -w 0 < ${6})
 
