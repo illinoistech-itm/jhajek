@@ -11,13 +11,13 @@
 
 ## Outcomes
 
-Building upon the previous labs accomplishments, at the conclusion of this Mini-Project (MP) you will have successfully created, deployed, and destroyed a cloud native three-tier application via the AWS CLI using positional parameters in a shell script. Our goals will include adding VPC subnetting for our database application, creating custom EC2 instances and, deploying a sample JavaScript Application.  We will further connect the application with S3 buckets, for storage of uploaded media. You will have deployed and interfaced with the concept of state in deploying Relational Database Services with Read-Replicas. Finally you will have concluded your cloud native development by working with Auto-Scaling groups in conjunction with load-balancers.
+Building upon the previous labs accomplishments, at the conclusion of this Mini-Project (MP) you will have successfully created, deployed, and destroyed a cloud native three-tier application via the AWS CLI using positional parameters in a shell script. Our goals will include adding VPC subnetting for our database application, creating custom EC2 instances and, deploying a sample JavaScript Application.  We will further connect the application with S3 buckets, for storage of uploaded media. You will have deployed and interfaced with the concept of state in deploying Relational Database Services with Read-Replicas. Finally you will have concluded your cloud Native development by working with Auto-Scaling groups in conjunction with load-balancers.
 
 ## Assumptions
 
 For this assignment you can make these assumptions
 
-* Start by copying your code from week-07 into a directory named: **mp1**
+* Start by copying your code from week-09 into a directory named: **mp1**
   * `create-env.sh`, `destroy-env.sh`, and `install-env.sh`
   * Along with the provided `app.js` and `index.html`
 * We will all be using `us-east-2` as our default region - update this if needed in your `aws configure`
@@ -62,52 +62,63 @@ Run your script in this fashion:
 
 ### New create-env.sh requirements
 
-* Create 2 S3 buckets
-* ~~Create 2 additional security groups, one for `mariadb` ingress on port 3306 and one for egress on port 3306~~
-  * ~~Allow access to your `security-group-id`~~
-  * ~~Attach these security-group-ids as vpc-security-groups on your RDS instances~~
-* ~~Create IAM profile `.json` for bucket access place the json file in your GitHub repo and name it: `iam.json`~~
-  * ~~Create JSON IAM code to give write and read to your EC2 instance the raw and finished bucket~~
-* ~~Update Launch Configuration to have additional security-group for RDS ingress~~
-* Attach IAM instance-profile-role to the Launch Configuration
-  * Premake this role using the IAM web console
-* ~~Create db-subnet-group and add your subnets to this db-subnet~~
-  * ~~Attach this db-subnet-group to your RDS instances~~
 * Create an AWS Secret Manager file
   * Use JSON template to enter your secrets for the mariadb.json file
+* Add new npm installs for `uuid4`, `@aws-sdk/client-rds` and `mysql2/promise`
+* Use the provided SQL file to create a database and a table via the install-env.sh script using *inline* MySQL commands (`mysql -e`)
+* Create JavaScript code in `app.js` that uses the AWS JavaScript SDK to
+  * Insert a record into your database using the data your have posted in your form
+  * Create a `/gallery` route that will display that images from your S3 buckets in the `app.js`
+* Create additional code using the JavaScript AWS SDK using these functions to retrieve the needed values
+  * listObjects
+  * insertRecords
+  * getDBIdentifier
+  * getSecrets
+
 
 ### arguments.txt
 
 This is where you will pass the arguments (space delimited) as follows (order is **very** important). **Note:** updated arguments.txt order 11/07
 
-* image-id
-* instance-type
-* key-name
-* security-group-ids
-* count (3)
-* availability-zone
-* elb name
-* target group name
-* auto-scaling group name
-* launch configuration name
-* db instance identifier (database name)
-* db instance identifier (for read-replica), append *-rpl*
-* min-size = 2
-* max-size = 5
-* desired-capacity = 3
-* Database engine (use mariadb)
-* Database name ( use company )
-* s3 raw bucket name (use initials and -raw)
-* s3 finished bucket name (use initials and -fin)
-* aws secret name
-* iam-instance-profile
+1) image-id
+1) instance-type
+1) key-name
+1) security-group-ids
+1) count
+1) user-data file name
+1) availability-zone 1 (choose a)
+1) elb name
+1) target group name
+1) availability-zone 2 (choose b)
+1) auto-scaling group name
+1) launch configuration name
+1) db instance identifier (database name)
+1) db instance identifier (for read-replica), append *-rpl* to the database name
+1) min-size = 2
+1) max-size = 5
+1) desired-capacity = 3
+1) iam-profile
+1) s3-raw-bucket-name
+1) s3-finished-bucket-name
+1) aws secret name
 
 These values we will dynamically query for
 
 * subnet-id (1)
 * subnet-id (2)
 * vpc-id
-* ~~The additional security groups created for RDS ingress and egress~~
+
+### Links
+
+* [RDS](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/index.html "webpage RDS CLI")
+* [Auto-Scaling Groups](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/index.html "webpage auto-scaling groups")
+* [AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html "webpage for AWS IAM")
+* [S3](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/index.html "webpage for S3 aws cli")
+ * [Secrets Manager](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/secretsmanager/index.html "documentation for AWS seecrets manager")
+
+### IAM permissions
+
+You will need to add new IAM permissions for your user (Secrets) and for your Role/IAM Profile (Secrets).
 
 ### How to filter for state running
 

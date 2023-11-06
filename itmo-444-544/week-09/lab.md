@@ -90,13 +90,6 @@ These values we will dynamically query for
 
 In this case use \$\{\} for any parameter variable above 9, for example: ${11}
 
-### Links
-
-* [RDS](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/rds/index.html "webpage RDS CLI")
-* [Auto-Scaling Groups](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/autoscaling/index.html "webpage auto-scaling groups")
-* [AWS IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html "webpage for AWS IAM")
-* [S3](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/index.html "webpage for S3 aws cli")
-
 ### Grading
 
 I will grade your logic by running it with my account configuration information, no hard-coded values.
