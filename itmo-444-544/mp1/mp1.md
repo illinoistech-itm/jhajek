@@ -1,4 +1,4 @@
-# Week-11 Mini-Project 1
+# Week-12 Mini-Project 1
 
 ## Objectives
 
@@ -11,13 +11,15 @@
 
 ## Outcomes
 
-Building upon the previous labs accomplishments, at the conclusion of this Mini-Project (MP) you will have successfully created, deployed, and destroyed a cloud native three-tier application via the AWS CLI using positional parameters in a shell script. Our goals will include adding VPC subnetting for our database application, creating custom EC2 instances and, deploying a sample JavaScript Application.  We will further connect the application with S3 buckets, for storage of uploaded media. You will have deployed and interfaced with the concept of state in deploying Relational Database Services with Read-Replicas. Finally you will have concluded your cloud Native development by working with Auto-Scaling groups in conjunction with load-balancers.
+Building upon the previous labs accomplishments, at the conclusion of this Mini-Project (MP) you will have successfully created, deployed, and destroyed a cloud native three-tier application via the AWS CLI using positional parameters in a shell script. Our goals will include adding VPC subnetting for our database application, creating custom EC2 instances and, deploying a sample JavaScript Application. 
+
+We will further connect the application with S3 buckets, for storage of uploaded media. You will have deployed and interfaced with the concept of state in deploying Relational Database Services with Read-Replicas. Finally you will have concluded your cloud Native development by working with Auto-Scaling groups in conjunction with load-balancers.
 
 ## Assumptions
 
 For this assignment you can make these assumptions
 
-* Start by copying your code from week-09 into a directory named: **mp1**
+* Start by copying your completed code from week-09 into a directory named: **mp1**
   * `create-env.sh`, `destroy-env.sh`, and `install-env.sh`
   * Along with the provided `app.js` and `index.html`
 * We will all be using `us-east-2` as our default region - update this if needed in your `aws configure`
@@ -60,12 +62,12 @@ Run your script in this fashion:
 
 ```./create-env.sh $(<arguments.txt)```
 
-### New create-env.sh requirements
+#### New create-env.sh requirements
 
 * Create an AWS Secret Manager file
   * Use JSON template to enter your secrets for the mariadb.json file
 * Add new npm installs for `uuid4`, `@aws-sdk/client-rds` and `mysql2/promise`
-* Use the provided SQL file to create a database and a table via the install-env.sh script using *inline* MySQL commands (`mysql -e`)
+* Use the provided SQL file to create a database and a table via the install-env.sh script ~~~using inline MySQL commands (`mysql -e`)~~~
 * Create JavaScript code in `app.js` that uses the AWS JavaScript SDK to
   * Insert a record into your database using the data your have posted in your form
   * Create a `/gallery` route that will display that images from your S3 buckets in the `app.js`
@@ -75,10 +77,9 @@ Run your script in this fashion:
   * getDBIdentifier
   * getSecrets
 
-
 ### arguments.txt
 
-This is where you will pass the arguments (space delimited) as follows (order is **very** important). **Note:** updated arguments.txt order 11/07
+This is where you will pass the arguments (space delimited) as follows (order is **very** important). **Note:** updated arguments.txt order 11/07 (1 new argument)
 
 1) image-id
 1) instance-type
@@ -118,7 +119,7 @@ These values we will dynamically query for
 
 ### IAM permissions
 
-You will need to add new IAM permissions for your user (Secrets) and for your Role/IAM Profile (Secrets).
+You will need to add new IAM permissions for your User Secrets and for your **Role/IAM Profile** -- Secrets and RDS.
 
 ### How to filter for state running
 
