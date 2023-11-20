@@ -20,7 +20,7 @@ aws rds create-db-instance-read-replica \
 echo "New DB instance replica creation: COMPLETED."
 
 # Fetching RDS address
-RDS_Address=$(aws rds describe-db-instances --db-instance-identifier $MYDBINSTANCE --query "DBInstances[*].Endpoint.Address")
+RDS_Address=$(aws rds describe-db-instances --db-instance-identifier $MYDBINSTANCE --query "DBInstances[0].Endpoint.Address")
 
 # Never do this in reality -- and don't tell them your professor told you to do it
 sudo mysql --user $USERVALUE --password=$PASSVALUE --host $RDS_Address < create.sql
