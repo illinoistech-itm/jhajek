@@ -12,7 +12,7 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-ge
 # <https://pm2.keymetrics.io/docs/usage/quick-start/>. This will require
 # the install of PM2 via npm as well.
 cd /home/ubuntu
-sudo -u ubuntu npm install @aws-sdk/client-s3@3.202.0 express multer multer-s3 @aws-sdk/client-rds mysql2/promise uuid
+sudo -u ubuntu npm install @aws-sdk/client-s3 @aws-sdk/client-sns @aws-sdk/client-rds @aws-sdk/client-secrets-manager express multer multer-s3 mysql2
 sudo npm install pm2 -g
 
 # Command to clone your private repo via SSH usign the Private key
@@ -23,7 +23,7 @@ sudo -u ubuntu git clone git@github.com:illinoistech-itm/jhajek.git
 
 # Start the nodejs app where it is located via PM2
 # https://pm2.keymetrics.io/docs/usage/quick-start
-cd /home/ubuntu/jhajek/itmo-444-544/mp1/
+cd /home/ubuntu/jhajek/itmo-544/mp2/
 
 sudo pm2 start app.js
 
