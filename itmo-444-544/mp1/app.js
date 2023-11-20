@@ -186,7 +186,7 @@ const listAndCacheBuckets = async () => {
 		const results = await client.send(command);
 		//console.log("List Buckets Results: ", results.Buckets[0].Name);
 		const params = {
-			Bucket: 'raw-vjs-mp1'
+			Bucket: 'raw-jrh-mp1'
 		}
 		return params;
 } catch (err) {
