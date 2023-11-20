@@ -159,7 +159,7 @@ const sendMessageViaEmail = async (req,res) => {
     }
 	let snsTopicArn = await getListOfSnsTopics();
 	const params = {
-		Subject: "Your imgage is ready!",
+		Subject: "Your image is ready!",
 		Message: s3URL,
 		TopicArn: snsTopicArn.Topics[0].TopicArn
 	};
@@ -448,10 +448,10 @@ app.get('/db', function (req,res) {
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 
 (async () => { await getPostedData(req,res) } ) (); 
-(async () => { await getListOfSnsTopics(); })();
-(async () => { await getSnsTopicArn() })();
-(async () => { await subscribeEmailToSNSTopic() } ) ();
-(async () => { await sendMessageViaEmail(req,res) } ) ();
+//(async () => { await getListOfSnsTopics(); })();
+//(async () => { await getSnsTopicArn() })();
+//(async () => { await subscribeEmailToSNSTopic() } ) ();
+//(async () => { await sendMessageViaEmail(req,res) } ) ();
 (async () => { await insertRecord(req,res) } ) ();
 });
 
