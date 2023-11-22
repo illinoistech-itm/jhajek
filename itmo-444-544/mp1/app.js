@@ -32,7 +32,7 @@ var bucketName = 'raw-jrh-mp1';
         storage: multerS3({
         s3: s3,
         bucket: bucketName,
-        acl: 'public-read',
+        //acl: 'public-read',
         key: function (req, file, cb) {
             cb(null, file.originalname);
             }

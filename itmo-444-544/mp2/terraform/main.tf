@@ -8,7 +8,6 @@ resource "random_shuffle" "az" {
   result_count = 2
 }
 
-
 variable "vpc_id" {}
 
 data "aws_vpc" "selected" {
