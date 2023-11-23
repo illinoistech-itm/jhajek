@@ -204,7 +204,7 @@ const listBuckets = async () => {
 	try {
 		const results = await client.send(command);
 		//console.log("List Buckets Results: ", results.Buckets[0].Name);
-                for ( element of response.Buckets ) {
+                for ( element of results.Buckets ) {
                         if ( element.Name.includes("raw") ) {
                                 console.log(element.Name)
                                 bucket_name = element.Name
