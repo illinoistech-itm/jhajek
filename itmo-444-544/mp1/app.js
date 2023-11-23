@@ -243,7 +243,7 @@ const getPostedData = async (req,res) => {
 	let s3URLs = await listObjects(req,res);
     const fname = req.files[0].originalname;
     var s3URL = "URL not generated due to technical issue.";
-    for (let i = 0; i < s3URLs.length; i++) {
+    for (let i = 0; i < s3URLs.length; i++) {g
         if(s3URLs[i].includes(fname)){
             s3URL = s3URLs[i];
         break
@@ -455,8 +455,7 @@ app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 (async () => { await insertRecord(req,res) } ) ();
 });
 
-app.listen(80, function () {
-    console.log('Amazon s3 file upload app listening on port 80');
-   // (async () => console.log(await getSecretARN()))();
+app.listen(3000, function () {
+    console.log('Amazon s3 file upload app listening on port 3000');
 });
 
