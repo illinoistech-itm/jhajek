@@ -196,15 +196,22 @@ const listAndCacheBuckets = async () => {
 //////////////////////////////////////////////////////////
 // Add S3 ListBucket code here
 //
+var bucket_name = "";
 const listBuckets = async () => {
 
-	const client = new S3Client({region: "us-east-1" });
+	const client = new S3Client({region: "us-east-2" });
         const command = new ListBucketsCommand({});
 	try {
 		const results = await client.send(command);
 		//console.log("List Buckets Results: ", results.Buckets[0].Name);
-		const params = {
-			Bucket: results.Buckets[0].Name
+                for ( element of response.Buckets ) {
+                        if ( element.Name.includes("raw") ) {
+                                console.log(element.Name)
+                                bucket_name = element.Name
+                        } }
+                
+                const params = {
+			Bucket: bucket_name
 		}
 		return params;
 	
