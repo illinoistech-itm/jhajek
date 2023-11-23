@@ -180,7 +180,7 @@ const sendMessageViaEmail = async (req,res) => {
 //
 const listAndCacheBuckets = async () => {
 
-	const client = new S3Client({region: "us-east-1" });
+	const client = new S3Client({region: "us-east-2" });
         const command = new ListBucketsCommand({});
 	try {
 		const results = await client.send(command);
@@ -225,7 +225,7 @@ const listBuckets = async () => {
 // https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-s3/interfaces/listobjectscommandoutput.html
 // 
 const listObjects = async (req,res) => {
-	const client = new S3Client({region: "us-east-1" });
+	const client = new S3Client({region: "us-east-2" });
 	const command = new ListObjectsCommand(await listBuckets());
 	try {
 		const results = await client.send(command);
