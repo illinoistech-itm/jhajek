@@ -2,7 +2,11 @@
 
 # Install dependecies here:
 
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-get install -y nodejs
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+
+NODE_MAJOR=20
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt install -y nginx 
 
 # Run NPM to install the NPM Node packages needed for the code
 # You will start this NodeJS script by executing the command: node app.js
@@ -21,9 +25,16 @@ sudo npm install pm2 -g
 ####################################################################
 sudo -u ubuntu git clone git@github.com:illinoistech-itm/jhajek.git
 
+#######################################################################################
+# Copy over your default Nginx configuration file to provide routes for /db /gallery and /upload
+sudo cp /home/ubuntu/jhajek/ITMO-544/week-09/default /etc/nginx/sites-available/default
+# Reload the nginx config with your changes
+sudo systemctl daemon-reload
+sudo systemctl restart nginx
+
 # Start the nodejs app where it is located via PM2
 # https://pm2.keymetrics.io/docs/usage/quick-start
-cd /home/ubuntu/jhajek/itmo-544/mp2/
+cd /home/ubuntu/jhajek/itmo-544/mp1/
 
 sudo pm2 start app.js
 
