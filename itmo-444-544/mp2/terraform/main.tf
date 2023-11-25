@@ -52,16 +52,8 @@ resource "aws_lb" "test" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
-  for_each           = toset(data.aws_subnets.subnets.ids)
+  for_each           = toset(data.aws_subnets.subnets.ids[0-2])
   subnets            = [each.value]
-
-
- listener {
-   instance_port     = 80
-   instance_protocol = "http"
-   lb_port           = 80
-   lb_protocol       = "http"
-  }
 
   enable_deletion_protection = true
 
@@ -69,7 +61,6 @@ resource "aws_lb" "test" {
     Environment = "production"
   }
 }
-
 
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group
