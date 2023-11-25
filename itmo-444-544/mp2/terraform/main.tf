@@ -17,8 +17,10 @@ data "aws_availability_zones" "available" {
 ##############################################################################
 
 resource "random_shuffle" "az" {
-  input        = [for z in data.aws_availability_zones.available.names : z.names]
-  result_count = 2
+
+  for_each           = toset(data.aws_availability_zones.available.names)
+  input              = [each.value]
+  result_count       = 2
 }
 
 ##############################################################################
