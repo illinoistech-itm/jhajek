@@ -44,7 +44,7 @@ output "subnet_cidr_blocks" {
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/5.26.0/docs/resources/lb
 ##############################################################################
-resource "aws_lb" "test" {
+resource "aws_lb" "alb" {
   name               = var.elb-name
   internal           = false
   load_balancer_type = "application"
@@ -64,7 +64,7 @@ variable "lb_arn" {
   default = ""
 }
 
-data "aws_lb" "test" {
+data "aws_lb" "alb" {
   arn  = var.lb_arn
 }
 
