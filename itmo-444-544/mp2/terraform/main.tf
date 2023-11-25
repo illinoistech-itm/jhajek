@@ -59,8 +59,13 @@ resource "aws_lb" "test" {
   }
 }
 
+variable "lb_arn" {
+  type    = string
+  default = ""
+}
+
 data "aws_lb" "test" {
-  arn  = aws_lb.test.arn
+  arn  = var.lb_arn
 }
 
 ##############################################################################
