@@ -21,16 +21,19 @@ resource "random_shuffle" "az" {
   result_count = 2
 }
 
+##############################################################################
+# https://stackoverflow.com/questions/69498813/how-to-filter-aws-subnets-in-terraform
+##############################################################################
 variable "vpc_id" {}
 
 data "aws_vpc" "selected" {
-  id = var.vpc_id
+  default = true
 }
 
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets
 ##############################################################################
-data "aws_subnets" "public" {
+data "aws_subnets" "subnets" {
   filter {
     name   = "vpc-id"
     values = [var.vpc_id]
@@ -49,24 +52,15 @@ resource "aws_lb" "test" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
-  for_each           = toset(data.aws_subnets.public.ids)
+  for_each           = toset(data.aws_subnets.subnets.ids)
   subnets            = [each.value]
 
-  subnet_mapping {
-    subnet_id     = aws_subnet.example1.id
-    allocation_id = aws_eip.example1.id
-  }
 
-  subnet_mapping {
-    subnet_id     = aws_subnet.example2.id
-    allocation_id = aws_eip.example2.id
-  }
-
-  listener {
-    instance_port     = 80
-    instance_protocol = "http"
-    lb_port           = 80
-    lb_protocol       = "http"
+ listener {
+   instance_port     = 80
+   instance_protocol = "http"
+   lb_port           = 80
+   lb_protocol       = "http"
   }
 
   enable_deletion_protection = true
