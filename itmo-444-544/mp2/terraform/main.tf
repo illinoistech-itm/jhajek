@@ -1,10 +1,23 @@
 # Terraform for MP2
 
 ##############################################################################
+# https://developer.hashicorp.com/terraform/tutorials/configuration-language/data-source
+##############################################################################
+data "aws_availability_zones" "available" {
+  state = "available"
+
+  filter {
+    name   = "zone-type"
+    values = ["availability-zone"]
+  }
+}
+
+##############################################################################
 # https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/shuffle#example-usage
 ##############################################################################
+
 resource "random_shuffle" "az" {
-  input        = ["us-east-2a","us-east-2b","us-east-2c"]
+  input        = [aws_availability_zones]
   result_count = 2
 }
 
