@@ -17,10 +17,8 @@ data "aws_availability_zones" "available" {
 ##############################################################################
 
 resource "random_shuffle" "az" {
-
-  for_each           = toset(data.aws_availability_zones.available.names)
-  input              = [each.value]
-  result_count       = 2
+  input        = [data.aws_availability_zones.available.names[0],data.aws_availability_zones.available.names[1],data.aws_availability_zones.available.names[2]]
+  result_count = 2
 }
 
 ##############################################################################
@@ -60,7 +58,7 @@ resource "aws_lb" "test" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
-  for_each           = toset(data.aws_subnets.subnets.ids)
+  for_each           = toset(data.aws_subnets.subnets.ids[0-2])
   subnets            = [each.value]
 
   enable_deletion_protection = true
@@ -118,8 +116,7 @@ resource "aws_launch_template" "foo" {
 #  }
 
   placement {
-    #availability_zone = random_shuffle.az.result[0]
-    availability_zone = random_shuffle.az[0]
+    availability_zone = random_shuffle.az.result[0]
   }
 
   vpc_security_group_ids = [var.vpc_security_group_ids]
