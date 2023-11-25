@@ -59,19 +59,10 @@ resource "aws_lb" "alb" {
   }
 }
 
-variable "lb_arn" {
-  type    = string
-  default = ""
-}
-
-data "aws_lb" "alb" {
-  arn  = var.lb_arn
-}
-
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group
 ##############################################################################
-resource "aws_lb_target_group" "test" {
+resource "aws_lb_target_group" "alb" {
   name     = var.asg-name
   port     = 80
   protocol = "HTTP"
@@ -80,6 +71,15 @@ resource "aws_lb_target_group" "test" {
 
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
+}
+
+variable "lb_tg_arn" {
+  type    = string
+  default = ""
+}
+
+data "aws_lb_target_group" "alb" {
+  arn  = var.lb_tg_arn
 }
 
 
@@ -134,7 +134,7 @@ resource "aws_autoscaling_group" "bar" {
   min_size           = var.min
   health_check_grace_period = 300
   health_check_type         = "ELB"
-  target_group_arns         = data.aws_lb.alb.arn
+  target_group_arns         = data.aws_lb_target_group.alb.arn
 
   launch_template {
     id      = aws_launch_template.foo.id
