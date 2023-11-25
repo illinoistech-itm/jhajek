@@ -59,6 +59,10 @@ resource "aws_lb" "test" {
   }
 }
 
+data "aws_lb" "test" {
+  arn  = aws_lb.test.arn
+}
+
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group
 ##############################################################################
@@ -125,7 +129,7 @@ resource "aws_autoscaling_group" "bar" {
   min_size           = var.min
   health_check_grace_period = 300
   health_check_type         = "ELB"
-  target_group_arns         = aws_autoscaling_group.bar.arn
+  target_group_arns         = data.aws_lb.test.arn
 
   launch_template {
     id      = aws_launch_template.foo.id
