@@ -73,16 +73,6 @@ resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 }
 
-variable "lb_tg_arn" {
-  type    = string
-  default = ""
-}
-
-data "aws_lb_target_group" "alb" {
-  arn  = var.lb_tg_arn
-}
-
-
 ##############################################################################
 # Create launch template
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/launch_template
@@ -134,7 +124,7 @@ resource "aws_autoscaling_group" "bar" {
   min_size           = var.min
   health_check_grace_period = 300
   health_check_type         = "ELB"
-  target_group_arns         = data.aws_lb_target_group.alb.arn
+  #target_group_arns         = data.aws_lb_target_group.alb.arn
 
   launch_template {
     id      = aws_launch_template.foo.id
