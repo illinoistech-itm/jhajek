@@ -149,5 +149,5 @@ resource "aws_autoscaling_group" "bar" {
 
 resource "aws_autoscaling_attachment" "example" {
   autoscaling_group_name = aws_autoscaling_group.bar.id
-  lb_target_group_arn    = aws_lb_target_group.test.arn
+  lb_target_group_arn    = aws_lb_target_group.alb.arn
 } 
