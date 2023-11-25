@@ -24,10 +24,10 @@ resource "random_shuffle" "az" {
 ##############################################################################
 # https://stackoverflow.com/questions/69498813/how-to-filter-aws-subnets-in-terraform
 ##############################################################################
-variable "vpc_id" {}
 
 data "aws_vpc" "selected" {
   default = true
+  id = var.vpc_id
 }
 
 ##############################################################################
@@ -36,12 +36,9 @@ data "aws_vpc" "selected" {
 data "aws_subnets" "subnets" {
   filter {
     name   = "vpc-id"
-    values = [var.vpc_id]
+    values = data.aws_vpc.id
   }
 
-  tags = {
-    Tier = "public"
-  }
 }
 
 ##############################################################################
