@@ -24,21 +24,30 @@ resource "random_shuffle" "az" {
 ##############################################################################
 # https://stackoverflow.com/questions/69498813/how-to-filter-aws-subnets-in-terraform
 ##############################################################################
-
+/*
 data "aws_vpc" "selected" {
   default = true
   id = var.vpc_id
 }
-
+*/
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets
 ##############################################################################
 data "aws_subnets" "subnets" {
   filter {
     name   = "vpc-id"
-    values = data.aws_vpc.selected.id
+    values = [var.vpc_id]
   }
 
+}
+
+data "aws_subnet" "example" {
+  for_each = toset(data.aws_subnets.example.ids)
+  id       = each.value
+}
+
+output "subnet_cidr_blocks" {
+  value = [for s in data.aws_subnet.example : s.cidr_block]
 }
 
 ##############################################################################
