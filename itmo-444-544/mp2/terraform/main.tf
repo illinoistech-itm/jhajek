@@ -91,11 +91,6 @@ resource "aws_launch_template" "foo" {
   name_prefix = "foo"
   #name = var.lt-name
 
-  disable_api_stop        = true
-  disable_api_termination = true
-
-  ebs_optimized = true
-
   iam_instance_profile {
     name = var.iam-profile
   }
@@ -109,11 +104,6 @@ resource "aws_launch_template" "foo" {
   monitoring {
     enabled = false
   }
-
-#  network_interfaces {
-#    associate_public_ip_address = true
-#    security_groups = [var.vpc_security_group_ids]
-#  }
 
   placement {
     availability_zone = random_shuffle.az.result[0]
