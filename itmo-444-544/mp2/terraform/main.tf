@@ -63,7 +63,7 @@ resource "aws_lb" "alb" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group
 ##############################################################################
 resource "aws_lb_target_group" "alb" {
-  name     = var.asg-name
+  name     = var.tg-name
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.main.id
