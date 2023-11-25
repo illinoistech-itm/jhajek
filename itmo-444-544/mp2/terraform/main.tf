@@ -119,7 +119,7 @@ resource "aws_launch_template" "foo" {
 
   placement {
     #availability_zone = random_shuffle.az.result[0]
-    availability_zone = random_shuffle.az[each.key]
+    availability_zone = random_shuffle.az[0]
   }
 
   vpc_security_group_ids = [var.vpc_security_group_ids]
