@@ -22,15 +22,6 @@ resource "random_shuffle" "az" {
 }
 
 ##############################################################################
-# https://stackoverflow.com/questions/69498813/how-to-filter-aws-subnets-in-terraform
-##############################################################################
-/*
-data "aws_vpc" "selected" {
-  default = true
-  id = var.vpc_id
-}
-*/
-##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets
 ##############################################################################
 data "aws_subnets" "subnets" {
@@ -134,6 +125,7 @@ resource "aws_autoscaling_group" "bar" {
   min_size           = var.min
   health_check_grace_period = 300
   health_check_type         = "ELB"
+  target_group_arns         = aws_autoscaling_group.bar.arn
 
   launch_template {
     id      = aws_launch_template.foo.id
