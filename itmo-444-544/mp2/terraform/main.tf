@@ -48,7 +48,7 @@ resource "aws_lb" "alb" {
   name               = var.elb-name
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [var.vpc_security_group_ids]
+  security_groups    = [for vpc-id in data.aws_availability_zones.available : vpc-id.zone_ids]
   subnets            = [for subnet in data.aws_subnet.example : subnet.id]
 
   enable_deletion_protection = true
