@@ -77,7 +77,7 @@ resource "aws_vpc" "main" {
 # Create launch template
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/launch_template
 ##############################################################################
-resource "aws_launch_template" "foo" {
+resource "aws_launch_template" "mp1-lt" {
   name_prefix = "foo"
   #name = var.lt-name
 
@@ -143,3 +143,27 @@ resource "aws_autoscaling_attachment" "example" {
   lb_target_group_arn    = aws_lb_target_group.alb.arn
 } 
 */
+
+
+resource "aws_autoscaling_group" "mp1" {
+  name                      = var.asg-name
+  # We want this to explicitly depend on the launch config above
+  depends_on = [aws_launch_template.mp1-lt]
+  health_check_grace_period = 60
+  health_check_type         = "ELB"
+  desired_capacity   = var.desired
+  max_size           = var.max
+  min_size           = var.min
+
+  launch_template {
+    id      = aws_launch_template.mp1-lt
+    version = "$Latest"
+  }
+
+  vpc_zone_identifier       = [random_shuffle.az.result[0],random_shuffle.az.result[1]]
+}
+
+resource "aws_autoscaling_attachment" "asg_attachment_elb" {
+  autoscaling_group_name = aws_autoscaling_group.mp1
+  lb_target_group_arn = aws_lb_target_group.alb
+}
