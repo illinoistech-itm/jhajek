@@ -49,7 +49,7 @@ resource "aws_lb" "alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
-  for_each           = toset(data.aws_subnets.subnets.id)
+  for_each           = toset(data.aws_subnets.subnets.ids)
   subnets            = [each.value]
 
   enable_deletion_protection = true
@@ -149,6 +149,7 @@ resource "aws_autoscaling_group" "mp1" {
   name                      = var.asg-name
   # We want this to explicitly depend on the launch config above
   depends_on = [aws_launch_template.mp1-lt]
+  availability_zones = [random_shuffle.az.result[0],random_shuffle.az.result[1]]
   health_check_grace_period = 60
   health_check_type         = "ELB"
   desired_capacity   = var.desired
