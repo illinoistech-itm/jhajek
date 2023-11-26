@@ -25,25 +25,12 @@ resource "random_shuffle" "az" {
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets
 ##############################################################################
+variable subnet_id {}
+
 data "aws_subnets" "subnets" {
   filter {
-    name   = "vpc-id"
-    values = ["vpc-id"]
-  }
-
-}
-
-data "aws_subnet" "az0-subnet0" {
-  filter {
-    name = "availability-zone-id"
-    values = ["us-east-2a"]
-  }
-}
-
-data "aws_subnet" "az1-subnet1" {
-  filter {
-    name = "availability-zone-id"
-    values = ["us-east-2b"]
+    name   = "subnet-id"
+    values = [var.subnet_id]
   }
 }
 
@@ -53,7 +40,7 @@ data "aws_subnet" "example" {
 }
 
 output "azs" {
-  value = [for s in data.aws_subnet.example : s.availability_zone]
+  value = [for s in data.aws_subnet.example : s.data.aws_subnet.example]
 }
 
 ##############################################################################
@@ -65,7 +52,7 @@ resource "aws_lb" "alb" {
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
   #subnets            = [for subnet in data.aws_subnet.example : subnet.id]
-  subnets            = [data.aws_subnet.az0-subnet0,data.aws_subnet.az1-subnet1]
+  subnets            = [var.subnet_id[0],var.subnet_id[1]]
 
   enable_deletion_protection = true
 
