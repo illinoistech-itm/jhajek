@@ -175,6 +175,6 @@ resource "aws_autoscaling_attachment" "asg_attachment_elb" {
 
 resource "aws_lb_target_group_attachment" "mp1-alb-to-tg" {
   target_group_arn = aws_lb_target_group.alb.arn
-  target_id        = aws_lb.alb[0].arn
+  target_id        = aws_lb.alb[each.key].arn
   
 }
