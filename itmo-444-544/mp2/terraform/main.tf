@@ -33,6 +33,20 @@ data "aws_subnets" "subnets" {
 
 }
 
+data "aws_subnet" "az0-subnet0" {
+  filter {
+    name = "availablity_zone"
+    values = "us-east-2a"
+  }
+}
+
+data "aws_subnet" "az1-subnet1" {
+  filter {
+    name = "availablity_zone"
+    values = "us-east-2b"
+  }
+}
+
 data "aws_subnet" "example" {
   for_each = toset(data.aws_subnets.subnets.ids)
   id       = each.value
@@ -50,7 +64,8 @@ resource "aws_lb" "alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
-  subnets            = [for subnet in data.aws_subnet.example : subnet.id]
+  #subnets            = [for subnet in data.aws_subnet.example : subnet.id]
+  subnets            = [data.aws_subnet.az0-subnet0.subnet.id,data.aws_subnet.az1-subnet1.subnet.id]
 
   enable_deletion_protection = true
 
