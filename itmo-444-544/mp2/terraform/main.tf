@@ -116,6 +116,7 @@ resource "aws_launch_template" "foo" {
 # Create autoscaling group
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group
 ##############################################################################
+/* 
 resource "aws_autoscaling_group" "bar" {
   name = var.asg-name
   availability_zones = [random_shuffle.az.result[0],random_shuffle.az.result[1]]
@@ -131,13 +132,14 @@ resource "aws_autoscaling_group" "bar" {
     version = "$Latest"
   }
 }
-
+*/ 
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment
 ##############################################################################
 # Create a new ALB Target Group attachment
-
+/* 
 resource "aws_autoscaling_attachment" "example" {
   autoscaling_group_name = aws_autoscaling_group.bar.id
   lb_target_group_arn    = aws_lb_target_group.alb.arn
 } 
+*/
