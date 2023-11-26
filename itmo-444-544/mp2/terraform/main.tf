@@ -65,7 +65,7 @@ resource "aws_lb" "alb" {
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
   #subnets            = [for subnet in data.aws_subnet.example : subnet.id]
-  subnets            = [data.aws_subnets.subneta.ids,data.aws_subnets.subnetb.ids]
+  subnets            = [data.aws_subnets.subneta.ids[0],data.aws_subnets.subnetb.ids[0]]
 
   enable_deletion_protection = true
 
