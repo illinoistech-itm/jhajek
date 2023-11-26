@@ -36,7 +36,7 @@ data "aws_subnets" "subnets" {
 data "aws_subnet" "az0-subnet0" {
   filter {
     name = "availablity_zones"
-    values = "us-east-2a"
+    values = "all"
   }
 }
 
