@@ -164,6 +164,6 @@ resource "aws_autoscaling_group" "mp1" {
 }
 
 resource "aws_autoscaling_attachment" "asg_attachment_elb" {
-  autoscaling_group_name = aws_autoscaling_group.mp1
-  lb_target_group_arn = aws_lb_target_group.alb
+  autoscaling_group_name = aws_autoscaling_group.mp1.name
+  lb_target_group_arn = aws_lb_target_group.alb.arn
 }
