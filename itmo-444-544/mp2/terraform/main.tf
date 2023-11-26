@@ -161,7 +161,7 @@ resource "aws_autoscaling_group" "mp1" {
     version = "$Latest"
   }
 
-  vpc_zone_identifier       = [random_shuffle.az.result[0],random_shuffle.az.result[1]]
+  #vpc_zone_identifier       = [random_shuffle.az.result[0],random_shuffle.az.result[1]]
 }
 
 resource "aws_autoscaling_attachment" "asg_attachment_elb" {
