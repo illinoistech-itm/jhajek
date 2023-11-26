@@ -52,7 +52,7 @@ data "aws_subnet" "example" {
   id       = each.value
 }
 
-output "subnet_cidr_blocks" {
+output "azs" {
   value = [for s in data.aws_subnet.example : s.availability_zone]
 }
 
@@ -65,7 +65,7 @@ resource "aws_lb" "alb" {
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
   #subnets            = [for subnet in data.aws_subnet.example : subnet.id]
-  subnets            = [data.aws_subnet.az0-subnet0.subnet.id,data.aws_subnet.az1-subnet1.subnet.id]
+  subnets            = [data.aws_subnet.az0-subnet0[0],data.data.aws_subnet.az1-subnet1[0]]
 
   enable_deletion_protection = true
 
