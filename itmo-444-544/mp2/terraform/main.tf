@@ -49,7 +49,7 @@ resource "aws_lb" "alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
-  for_each           = toset(data.aws_subnets.subnets.ids)
+  for_each           = toset(data.aws_subnets.subnets.id)
   subnets            = [each.value]
 
   enable_deletion_protection = true
