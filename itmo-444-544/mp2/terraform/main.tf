@@ -25,22 +25,35 @@ resource "random_shuffle" "az" {
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets
 ##############################################################################
-variable subnet_id {}
 
-data "aws_subnets" "subnets" {
+data "aws_subnets" "subneta" {
   filter {
-    name   = "subnet-id"
-    values = [var.subnet_id]
+    name   = "availabilityZone"
+    values = ["us-east-2a"]
   }
 }
 
+data "aws_subnets" "subnetb" {
+  filter {
+    name   = "availabilityZone"
+    values = ["us-east-2b"]
+  }
+}
+
+data "aws_subnets" "subnetc" {
+  filter {
+    name   = "availabilityZone"
+    values = ["us-east-2c"]
+  }
+}
+/*
 data "aws_subnet" "example" {
   for_each = toset(data.aws_subnets.subnets.ids)
   id       = each.value
 }
-
-output "azs" {
-  value = [for s in data.aws_subnet.example : s.data.aws_subnet.example]
+*/
+output "subnetid-2a" {
+  value = [data.aws_subnets.subneta.ids]
 }
 
 ##############################################################################
