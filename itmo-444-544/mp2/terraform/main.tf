@@ -156,7 +156,7 @@ resource "aws_autoscaling_group" "mp1" {
   min_size           = var.min
 
   launch_template {
-    id      = aws_launch_template.mp1-lt
+    id      = aws_launch_template.mp1-lt.id
     version = "$Latest"
   }
 
