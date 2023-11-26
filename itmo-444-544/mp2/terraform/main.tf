@@ -49,7 +49,7 @@ resource "aws_lb" "alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
-  subnets            = [data.aws_subnets.subnets.ids[0],data.aws_subnets.subnets.ids[1]]
+  subnets            = [data.aws_subnets.subnets.id[0],data.aws_subnets.subnets.id[1]]
 
   enable_deletion_protection = true
 
