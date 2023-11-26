@@ -49,8 +49,7 @@ resource "aws_lb" "alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
-  for_each           = toset(data.aws_subnets.subnets.ids)
-  subnets            = [each.value]
+  subnets            = [data.aws_subnets.subnets.ids[0],data.aws_subnets.subnets.ids[1]]
 
   enable_deletion_protection = true
 
@@ -175,6 +174,6 @@ resource "aws_autoscaling_attachment" "asg_attachment_elb" {
 
 resource "aws_lb_target_group_attachment" "mp1-alb-to-tg" {
   target_group_arn = aws_lb_target_group.alb.arn
-  target_id        = aws_lb.alb[each.key].arn
+  target_id        = aws_lb.alb.arn
   
 }
