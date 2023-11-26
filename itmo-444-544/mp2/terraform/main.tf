@@ -36,14 +36,14 @@ data "aws_subnets" "subnets" {
 data "aws_subnet" "az0-subnet0" {
   filter {
     name = "availablity_zones"
-    values = "all"
+    values = ["us-east-2a"]
   }
 }
 
 data "aws_subnet" "az1-subnet1" {
   filter {
     name = "availablity_zones"
-    values = "b"
+    values = ["us-east-2b"]
   }
 }
 
