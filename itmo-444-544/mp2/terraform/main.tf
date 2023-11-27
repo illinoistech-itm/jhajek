@@ -8,7 +8,7 @@
 data "aws_vpcs" "main" {
    filter {
     name = "is-default"
-    values = ["True"]
+    values = [True]
    }
 }
 
