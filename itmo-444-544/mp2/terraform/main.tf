@@ -317,15 +317,6 @@ resource "aws_dynamodb_table_item" "insert-sample-record" {
 ITEM
 }
 
-resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket"
-}
-
-resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
-  bucket = aws_s3_bucket.example.id
-  policy = data.aws_iam_policy_document.allow_access_from_another_account.json
-}
-
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
