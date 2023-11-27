@@ -1,6 +1,16 @@
 # Terraform for MP2
 
 ##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/vpc
+##############################################################################
+
+variable "vpc_id" {}
+
+data "aws_vpc" "main" {
+  id = var.vpc_id
+}
+
+##############################################################################
 # https://developer.hashicorp.com/terraform/tutorials/configuration-language/data-source
 ##############################################################################
 data "aws_availability_zones" "available" {
@@ -83,7 +93,7 @@ resource "aws_lb_target_group" "alb-lb-tg" {
   target_type = "alb"
   port        = 80
   protocol    = "TCP"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = data.aws_vpc.main.id
 }
 
 ##############################################################################
