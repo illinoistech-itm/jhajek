@@ -73,3 +73,33 @@ resource "aws_lb" "alb" {
     Environment = "production"
   }
 }
+
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group
+##############################################################################
+
+resource "aws_lb_target_group" "alb-lb-tg" {
+  name        = var.tg-name
+  target_type = "alb"
+  port        = 80
+  protocol    = "TCP"
+  vpc_id      = aws_vpc.main.id
+}
+
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/5.26.0/docs/resources/lb_listener
+##############################################################################
+
+resource "aws_lb_listener" "front_end" {
+  load_balancer_arn = aws_lb.alb.arn
+  port              = "80"
+  protocol          = "HTTP"
+  #ssl_policy        = "ELBSecurityPolicy-2016-08"
+  #certificate_arn   = "arn:aws:iam::187416307283:server-certificate/test_cert_rab3wuqwgja25ct3n4jdj2tzu4"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.alb-lb-tg.arn
+  }
+}
+
