@@ -265,7 +265,7 @@ const getPostedData = async (req,res) => {
 	// Use this code to retrieve the value entered in the phone field in the index.html
 	var phone = req.body['phone'];
 	// Write output to the screen
-       // res.write(s3url + "\n");
+        // res.write(s3url + "\n");
         res.write(username + "\n");
 	res.write(s3URL + "\n");
         res.write(email + "\n");
