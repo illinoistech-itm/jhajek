@@ -5,7 +5,12 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/vpcs
 ##############################################################################
 
-data "aws_vpcs" "main" {}
+data "aws_vpcs" "main" {
+   filter {
+    name = "is-default"
+    values = "Yes"
+   }
+}
 
 output "vpcs" {
   value = data.aws_vpcs.main.ids
