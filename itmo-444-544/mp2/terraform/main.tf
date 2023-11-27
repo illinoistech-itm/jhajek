@@ -71,7 +71,7 @@ output "subnetid-2a" {
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/5.26.0/docs/resources/lb
 ##############################################################################
-resource "aws_lb" "alb" {
+resource "aws_lb" "lb" {
   name               = var.elb-name
   internal           = false
   load_balancer_type = "application"
@@ -173,6 +173,6 @@ resource "aws_autoscaling_group" "bar" {
 resource "aws_autoscaling_attachment" "example" {
   autoscaling_group_name = aws_autoscaling_group.bar.id
   #lb_target_group_arn    = aws_lb_target_group.alb-lb-tg.arn
-  elb                   = aws_lb.alb.id
+  elb                   = aws_lb.lb.id
 } 
 
