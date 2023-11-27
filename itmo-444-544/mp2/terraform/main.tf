@@ -242,17 +242,17 @@ resource "aws_dynamodb_table" "mp2-dynamodb-table" {
     name = "RecordNumber"
     type = "S"
   }
-
+/*
   attribute {
     name = "CustomerName"
     type = "N"
   }
-
+*/
   attribute {
     name = "Email"
     type = "S"
   }
-
+/*
   attribute {
     name = "Phone"
     type = "S"
@@ -272,7 +272,7 @@ resource "aws_dynamodb_table" "mp2-dynamodb-table" {
     name = "FINSIHEDS3URL"
     type = "S"
   }
-
+*/
   ttl {
     attribute_name = "TimeToExist"
     enabled        = false
