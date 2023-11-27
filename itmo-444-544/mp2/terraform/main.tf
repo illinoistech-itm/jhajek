@@ -143,3 +143,24 @@ resource "aws_launch_template" "mp1-lt" {
   }
   user_data = filebase64("./install-env.sh")
 }
+
+##############################################################################
+# Create autoscaling group
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group
+##############################################################################
+ 
+resource "aws_autoscaling_group" "bar" {
+  name = var.asg-name
+  availability_zones = [random_shuffle.az.result[0],random_shuffle.az.result[1]]
+  desired_capacity   = var.desired
+  max_size           = var.max
+  min_size           = var.min
+  health_check_grace_period = 300
+  health_check_type         = "EC2"
+  #target_group_arns         = data.aws_lb_target_group.alb.arn
+
+  launch_template {
+    id      = aws_launch_template.foo.id
+    version = "$Latest"
+  }
+}
