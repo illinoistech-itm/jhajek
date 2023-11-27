@@ -157,7 +157,7 @@ resource "aws_autoscaling_group" "bar" {
   min_size           = var.min
   health_check_grace_period = 300
   health_check_type         = "EC2"
-  target_group_arns         = aws_lb_target_group.alb-lb-tg.arn
+  target_group_arns         = [aws_lb_target_group.alb-lb-tg.arn]
 
   launch_template {
     id      = aws_launch_template.mp1-lt.id
