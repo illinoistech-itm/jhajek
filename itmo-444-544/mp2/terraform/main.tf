@@ -277,7 +277,7 @@ resource "aws_dynamodb_table" "mp2-dynamodb-table" {
     attribute_name = "TimeToExist"
     enabled        = false
   }
-
+/*
   global_secondary_index {
     name               = "GameTitleIndex"
     hash_key           = "GameTitle"
