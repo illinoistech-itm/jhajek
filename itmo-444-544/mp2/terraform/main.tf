@@ -331,12 +331,12 @@ resource "aws_s3_bucket" "finished-bucket" {
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-raw" {
-  bucket = aws_s3_bucket.raw-s3-bucket.id
+  bucket = aws_s3_bucket.raw-bucket.id
   policy = data.aws_iam_policy_document.allow_access_from_another_account-raw.json
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-finished" {
-  bucket = aws_s3_bucket.raw-s3-bucket.id
+  bucket = aws_s3_bucket.finished-bucket.id
   policy = data.aws_iam_policy_document.allow_access_from_another_account-finished.json
 }
 
