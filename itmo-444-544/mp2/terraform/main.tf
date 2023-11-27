@@ -82,6 +82,17 @@ resource "aws_lb_target_group" "alb" {
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.main.id
+  health_check {
+    enabled = true
+    healthy_threshold = 3
+    interval = 10
+    matcher = 200
+    path = "/"
+    port = "traffic-port"
+    protocol = "HTTP"
+    timeout = 3
+    unhealthy_threshold = 2
+  }
 }
 
 resource "aws_vpc" "main" {
@@ -95,35 +106,25 @@ resource "aws_vpc" "main" {
 resource "aws_launch_template" "mp1-lt" {
   name_prefix = "foo"
   #name = var.lt-name
-
   iam_instance_profile {
     name = var.iam-profile
   }
-
   image_id = var.imageid
-
   instance_initiated_shutdown_behavior = "terminate"
-
   instance_type = var.instance-type
-
   monitoring {
     enabled = false
   }
-
   placement {
     availability_zone = random_shuffle.az.result[0]
   }
-
   vpc_security_group_ids = [var.vpc_security_group_ids]
-
   tag_specifications {
     resource_type = "instance"
-
     tags = {
       Name = "mp1-project"
     }
   }
-
   user_data = filebase64("./install-env.sh")
 }
 
