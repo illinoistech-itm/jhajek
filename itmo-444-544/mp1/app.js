@@ -250,7 +250,7 @@ const getPostedData = async (req,res) => {
 	let s3URLs = await listObjects(req,res);
     const fname = req.files[0].originalname;
     var s3URL = "URL not generated due to technical issue.";
-    for (let i = 0; i < s3URLs.length; i++) {g
+    for (let i = 0; i < s3URLs.length; i++) {
         if(s3URLs[i].includes(fname)){
             s3URL = s3URLs[i];
         break
