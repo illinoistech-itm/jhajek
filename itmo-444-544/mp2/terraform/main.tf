@@ -187,8 +187,9 @@ resource "aws_autoscaling_attachment" "asg_attachment_elb" {
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group_attachment
 ##############################################################################
-
+/*
 resource "aws_lb_target_group_attachment" "mp1-alb-to-tg" {
   target_group_arn = aws_lb_target_group.alb.arn
   target_id        = aws_lb.alb.id  
 }
+*/
