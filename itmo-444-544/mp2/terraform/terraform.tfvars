@@ -1,0 +1,15 @@
+imageid                =
+instance-type          = 
+key-name               = 
+vpc_security_group_ids = 
+cnt                    = 
+install-env-file       = 
+elb-name               = 
+tg-name                = 
+asg-name               = 
+lt-name                = 
+db-name                = 
+db-name-rpl            = 
+iam-profile            = 
+sns-topic              = 
+dynamodb-table-name    = 
