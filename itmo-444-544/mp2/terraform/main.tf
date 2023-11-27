@@ -299,6 +299,7 @@ resource "aws_dynamodb_table" "mp2-dynamodb-table" {
 ##############################################################################
 
 resource "aws_dynamodb_table_item" "insert-sample-record" {
+  depends_on = [aws_dynamodb_table.mp2-dynamodb-table]
   table_name = aws_dynamodb_table.mp2-dynamodb-table.name
   hash_key   = aws_dynamodb_table.mp2-dynamodb-table.hash_key
 
