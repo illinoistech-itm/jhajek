@@ -174,7 +174,7 @@ resource "aws_autoscaling_group" "bar" {
   health_check_grace_period = 300
   health_check_type         = "EC2"
   target_group_arns         = [aws_lb_target_group.alb-lb-tg.arn]
-  availability_zones        = [data.aws_availability_zones.primary.zone-ids,data.aws_availability_zones.secondary.zone-ids]
+  availability_zones        = [data.aws_availability_zones.primary.names,data.aws_availability_zones.secondary.names]
 
   launch_template {
     id      = aws_launch_template.mp1-lt.id
