@@ -28,3 +28,5 @@ variable "min" { default = 2 }
 variable "max" { default = 5 }
 variable "desired" { default = 3 }
 variable "iam-profile" {}
+variable "sns-topic" {}
+variable "dynamodb-table-name" {}

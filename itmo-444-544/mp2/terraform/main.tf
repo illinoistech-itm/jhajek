@@ -206,3 +206,86 @@ output "alb-lb-tg-arn" {
 output "alb-lb-tg-id" {
   value = aws_lb_target_group.alb-lb-tg.id
 }
+
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic
+##############################################################################
+
+resource "aws_sns_topic" "user_updates" {
+  name = var.sns-topic
+}
+
+output "sns-topic" {
+   value = aws_sns_topic
+}
+
+resource "aws_dynamodb_table" "mp2-dynamodb-table" {
+  name           = var.dynamodb-table-name
+  billing_mode   = "PROVISIONED"
+  read_capacity  = 20
+  write_capacity = 20
+  hash_key       = "Email"
+  range_key      = "RecordNumber"
+
+/* We won't need UserId as that is a Relational Database Concept
+  attribute {
+    name = "UserId"
+    type = "S"
+  }
+*/
+  # This will be the UUID and how we uniquely identify records
+  attribute {
+    name = "RecordNumber"
+    type = "S"
+  }
+
+  attribute {
+    name = "CustomerName"
+    type = "N"
+  }
+
+  attribute {
+    name = "Email"
+    type = "S"
+  }
+
+  attribute {
+    name = "Phone"
+    type = "S"
+  }
+
+  attribute {
+    name = "Stat"
+    type = "N"
+  }
+
+  attribute {
+    name = "RAWS3URL"
+    type = "S"
+  }
+
+  attribute {
+    name = "FINSIHEDS3URL"
+    type = "S"
+  }
+
+  ttl {
+    attribute_name = "TimeToExist"
+    enabled        = false
+  }
+/*
+  global_secondary_index {
+    name               = "GameTitleIndex"
+    hash_key           = "GameTitle"
+    range_key          = "TopScore"
+    write_capacity     = 10
+    read_capacity      = 10
+    projection_type    = "INCLUDE"
+    non_key_attributes = ["UserId"]
+  }
+*/
+  tags = {
+    Name        = "dynamodb-table-1"
+    Environment = "production"
+  }
+}
