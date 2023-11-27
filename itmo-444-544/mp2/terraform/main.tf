@@ -103,7 +103,7 @@ resource "aws_lb_target_group" "alb-lb-tg" {
 ##############################################################################
 
 resource "aws_lb_listener" "front_end" {
-  load_balancer_arn = aws_lb.alb.arn
+  load_balancer_arn = aws_lb.lb.arn
   port              = "80"
   protocol          = "HTTP"
   #ssl_policy        = "ELBSecurityPolicy-2016-08"
