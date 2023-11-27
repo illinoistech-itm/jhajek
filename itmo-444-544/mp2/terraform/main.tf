@@ -160,7 +160,7 @@ resource "aws_autoscaling_group" "bar" {
   #target_group_arns         = data.aws_lb_target_group.alb.arn
 
   launch_template {
-    id      = aws_launch_template.foo.id
+    id      = aws_launch_template.mp1-lt.id
     version = "$Latest"
   }
 }
