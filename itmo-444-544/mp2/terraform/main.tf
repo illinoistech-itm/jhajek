@@ -98,6 +98,10 @@ resource "aws_lb" "lb" {
   }
 }
 
+output "url" {
+  value = aws_lb.lb.dns_name
+}
+
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group
 ##############################################################################
@@ -170,7 +174,7 @@ resource "aws_autoscaling_group" "bar" {
   health_check_grace_period = 300
   health_check_type         = "EC2"
   target_group_arns         = [aws_lb_target_group.alb-lb-tg.arn]
-  availability_zones        = [data.aws_availability_zones.primary.zone-name,data.aws_availability_zones.secondary.zone-name]
+  availability_zones        = [data.aws_availability_zones.primary,data.aws_availability_zones.secondary]
 
   launch_template {
     id      = aws_launch_template.mp1-lt.id
