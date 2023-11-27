@@ -8,7 +8,7 @@
 data "aws_vpcs" "main" {
    filter {
     name = "is-default"
-    values = [True]
+    values = ["True"]
    }
 }
 
@@ -98,7 +98,7 @@ resource "aws_lb_target_group" "alb-lb-tg" {
   target_type = "alb"
   port        = 80
   protocol    = "TCP"
-  vpc_id      = data.aws_vpcs.main.ids
+  #vpc_id      = data.aws_vpcs.main.ids
 }
 
 ##############################################################################
