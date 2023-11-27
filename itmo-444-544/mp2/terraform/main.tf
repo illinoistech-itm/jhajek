@@ -148,6 +148,7 @@ resource "aws_launch_template" "mp1-lt" {
   image_id                             = var.imageid
   instance_initiated_shutdown_behavior = "terminate"
   instance_type                        = var.instance-type
+  key_name                             = var.key-name
   monitoring {
     enabled = false
   }
