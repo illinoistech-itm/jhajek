@@ -216,8 +216,12 @@ resource "aws_sns_topic" "user_updates" {
 }
 
 output "sns-topic" {
-   value = aws_sns_topic
+   value = aws_sns_topic.user_updates.id
 }
+
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table
+##############################################################################
 
 resource "aws_dynamodb_table" "mp2-dynamodb-table" {
   name           = var.dynamodb-table-name
@@ -288,4 +292,25 @@ resource "aws_dynamodb_table" "mp2-dynamodb-table" {
     Name        = "dynamodb-table-1"
     Environment = "production"
   }
+}
+
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table_item
+##############################################################################
+
+resource "aws_dynamodb_table_item" "insert-sample-record" {
+  table_name = aws_dynamodb_table.mp2-dynamodb-table.name
+  hash_key   = aws_dynamodb_table.mp2-dynamodb-table.hash_key
+
+  item = <<ITEM
+{
+  "Email": {"S": "hajek@iit.edu"},
+  "RecordNumber": {"S": "9e8091b0-8d53-11ee-95e6-035fc6c6cfb4"},
+  "CustomerName": {"S": "Jeremy Hajek"},
+  "Phone": {"S": "6306389708"},
+  "Stat": {"N": "0"},
+  "RAWS3URL": {"S": ""},
+  "FINSIHEDS3URL": {"S": ""}
+}
+ITEM
 }
