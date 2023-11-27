@@ -277,8 +277,8 @@ resource "aws_dynamodb_table" "mp2-dynamodb-table" {
     attribute_name = "TimeToExist"
     enabled        = false
   }
-/*
-  global_secondary_index {
+ 
+global_secondary_index {
     name               = "GameTitleIndex"
     hash_key           = "GameTitle"
     range_key          = "TopScore"
@@ -315,4 +315,72 @@ resource "aws_dynamodb_table_item" "insert-sample-record" {
   "FINSIHEDS3URL": {"S": ""}
 }
 ITEM
+}
+
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-bucket"
+}
+
+resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
+  bucket = aws_s3_bucket.example.id
+  policy = data.aws_iam_policy_document.allow_access_from_another_account.json
+}
+
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
+##############################################################################
+
+resource "aws_s3_bucket" "raw-bucket" {
+  bucket = var.raw-s3-bucket
+}
+
+resource "aws_s3_bucket" "finished-bucket" {
+  bucket = var.finished-s3-bucket
+}
+
+resource "aws_s3_bucket_policy" "allow_access_from_another_account-raw" {
+  bucket = aws_s3_bucket.raw-s3-bucket.id
+  policy = data.aws_iam_policy_document.allow_access_from_another_account-raw.json
+}
+
+resource "aws_s3_bucket_policy" "allow_access_from_another_account-finished" {
+  bucket = aws_s3_bucket.raw-s3-bucket.id
+  policy = data.aws_iam_policy_document.allow_access_from_another_account-finished.json
+}
+
+data "aws_iam_policy_document" "allow_access_from_another_account-raw" {
+  statement {
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+
+    actions = [
+      "s3:GetObject"
+    ]
+
+    resources = [
+      aws_s3_bucket.raw-bucket.arn,
+      "${aws_s3_bucket.raw-bucket.arn}/*",
+    ]
+  }
+}
+
+data "aws_iam_policy_document" "allow_access_from_another_account-raw" {
+  statement {
+    principals {
+      type        = "AWS"
+      identifiers = ["*"]
+    }
+
+    actions = [
+      "s3:GetObject"
+    ]
+
+    resources = [
+      aws_s3_bucket.finished-bucket.arn,
+      "${aws_s3_bucket.finished-bucket.arn}/*",
+    ]
+  }
 }

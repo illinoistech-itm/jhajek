@@ -30,3 +30,5 @@ variable "desired" { default = 3 }
 variable "iam-profile" {}
 variable "sns-topic" {}
 variable "dynamodb-table-name" {}
+variable "raw-s3-bucket" {}
+variable "finished-s3-bucket" {}
