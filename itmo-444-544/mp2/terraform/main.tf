@@ -163,7 +163,7 @@ resource "aws_launch_template" "mp1-lt" {
  
 resource "aws_autoscaling_group" "bar" {
   name = var.asg-name
-  availability_zones = [random_shuffle.az.result[0],random_shuffle.az.result[1]]
+  #availability_zones = [random_shuffle.az.result[0],random_shuffle.az.result[1]]
   desired_capacity   = var.desired
   max_size           = var.max
   min_size           = var.min
