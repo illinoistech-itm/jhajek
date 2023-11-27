@@ -302,7 +302,7 @@ resource "aws_dynamodb_table_item" "insert-sample-record" {
   depends_on = [aws_dynamodb_table.mp2-dynamodb-table]
   table_name = aws_dynamodb_table.mp2-dynamodb-table.name
   hash_key   = aws_dynamodb_table.mp2-dynamodb-table.hash_key
-  range_key  = aws_dynamodb_table.mp2-dynamodb-table.range_key
+  #range_key  = aws_dynamodb_table.mp2-dynamodb-table.range_key
 
   item = <<ITEM
 {
@@ -310,7 +310,7 @@ resource "aws_dynamodb_table_item" "insert-sample-record" {
   "RecordNumber": {"S": "9e8091b0-8d53-11ee-95e6-035fc6c6cfb4"},
   "CustomerName": {"S": "Jeremy Hajek"},
   "Phone": {"S": "6306389708"},
-  "Stat": {"N": "0"},
+  "Stat": {"N": 0},
   "RAWS3URL": {"S": ""},
   "FINSIHEDS3URL": {"S": ""}
 }
