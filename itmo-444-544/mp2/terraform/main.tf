@@ -100,8 +100,7 @@ resource "aws_vpc" "main" {
 }
 
 data "aws_lb_target_group" "tg-aws-lb-arn" {
-  arn  = aws_lb.alb.id
-  #name = var.lb_tg_name
+
 }
 
 ##############################################################################
