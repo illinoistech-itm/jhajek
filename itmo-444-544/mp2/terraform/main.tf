@@ -67,7 +67,7 @@ resource "aws_lb" "alb" {
   #subnets            = [for subnet in data.aws_subnet.example : subnet.id]
   subnets            = [data.aws_subnets.subneta.ids[0],data.aws_subnets.subnetb.ids[0]]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Environment = "production"
