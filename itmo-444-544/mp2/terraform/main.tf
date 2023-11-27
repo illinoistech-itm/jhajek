@@ -98,7 +98,7 @@ resource "aws_lb_target_group" "alb-lb-tg" {
   target_type = "alb"
   port        = 80
   protocol    = "TCP"
-  vpc_id      = data.aws_vpcs.main[0].id
+  vpc_id      = data.aws_vpcs.main.id
 }
 
 ##############################################################################
