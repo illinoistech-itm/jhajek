@@ -176,7 +176,7 @@ resource "aws_autoscaling_group" "mp1" {
   desired_capacity   = var.desired
   max_size           = var.max
   min_size           = var.min
-  target_group_arns = data.aws_lb_target_group.tg-aws-lb-arn.arn
+  target_group_arns = [data.aws_lb_target_group.tg-aws-lb-arn.arn]
 
   launch_template {
     id      = aws_launch_template.mp1-lt.id
