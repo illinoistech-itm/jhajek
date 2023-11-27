@@ -99,6 +99,11 @@ resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 }
 
+data "aws_lb_target_group" "tg-aws-lb-arn" {
+  arn  = aws_lb.alb.id
+  #name = var.lb_tg_name
+}
+
 ##############################################################################
 # Create launch template
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/launch_template
@@ -171,6 +176,7 @@ resource "aws_autoscaling_group" "mp1" {
   desired_capacity   = var.desired
   max_size           = var.max
   min_size           = var.min
+  target_group_arns = data.aws_lb_target_group.tg-aws-lb-arn.arn
 
   launch_template {
     id      = aws_launch_template.mp1-lt.id
