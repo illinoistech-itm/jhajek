@@ -88,7 +88,7 @@ resource "aws_lb" "lb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
-  #subnets            = [for subnet in data.aws_subnet.example : subnet.id]
+
   subnets            = [data.aws_subnets.subneta.ids[0],data.aws_subnets.subnetb.ids[0]]
 
   enable_deletion_protection = false
@@ -167,7 +167,6 @@ resource "aws_launch_template" "mp1-lt" {
  
 resource "aws_autoscaling_group" "bar" {
   name = var.asg-name
-  #availability_zones = [random_shuffle.az.result[0],random_shuffle.az.result[1]]
   desired_capacity   = var.desired
   max_size           = var.max
   min_size           = var.min
@@ -190,6 +189,5 @@ resource "aws_autoscaling_group" "bar" {
 resource "aws_autoscaling_attachment" "example" {
   autoscaling_group_name = aws_autoscaling_group.bar.id
   lb_target_group_arn    = aws_lb_target_group.alb-lb-tg.arn
-  #elb                   = aws_lb.lb.arn
 } 
 
