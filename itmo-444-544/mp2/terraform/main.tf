@@ -107,6 +107,7 @@ output "url" {
 ##############################################################################
 
 resource "aws_lb_target_group" "alb-lb-tg" {
+  depends_on = [aws_lb_target_group.alb-lb-tg]
   name        = var.tg-name
   target_type = "instance"
   port        = 80
@@ -188,7 +189,6 @@ resource "aws_autoscaling_group" "bar" {
 # Create a new ALB Target Group attachment
  
 resource "aws_autoscaling_attachment" "example" {
-  depends_on = [aws_lb_target_group.alb-lb-tg]
   autoscaling_group_name = aws_autoscaling_group.bar.id
   lb_target_group_arn    = aws_lb_target_group.alb-lb-tg.arn
 } 
