@@ -13,7 +13,7 @@ data "aws_vpcs" "main" {
 }
 
 output "vpcs" {
-  value = data.aws_vpcs.main.arn
+  value = data.aws_vpcs.main.ids
 }
 ##############################################################################
 # https://developer.hashicorp.com/terraform/tutorials/configuration-language/data-source
@@ -98,7 +98,7 @@ resource "aws_lb_target_group" "alb-lb-tg" {
   target_type = "alb"
   port        = 80
   protocol    = "TCP"
-  vpc_id      = data.aws_vpcs.main.arn
+  vpc_id      = data.aws_vpcs.main.ids
 }
 
 ##############################################################################
