@@ -6,7 +6,7 @@
 ##############################################################################
 
 data "aws_vpc" "main" {
-    default = true
+  default = true
 }
 
 output "vpcs" {
@@ -17,7 +17,7 @@ output "vpcs" {
 ##############################################################################
 data "aws_availability_zones" "available" {
   state = "available"
-/*
+  /*
   filter {
     name   = "zone-type"
     values = ["availability-zone"]
@@ -47,7 +47,7 @@ data "aws_availability_zones" "secondary" {
 ##############################################################################
 
 resource "random_shuffle" "az" {
-  input        = [data.aws_availability_zones.available.names[0],data.aws_availability_zones.available.names[1],data.aws_availability_zones.available.names[2]]
+  input        = [data.aws_availability_zones.available.names[0], data.aws_availability_zones.available.names[1], data.aws_availability_zones.available.names[2]]
   result_count = 2
 }
 
@@ -89,7 +89,7 @@ resource "aws_lb" "lb" {
   load_balancer_type = "application"
   security_groups    = [var.vpc_security_group_ids]
 
-  subnets            = [data.aws_subnets.subneta.ids[0],data.aws_subnets.subnetb.ids[0]]
+  subnets = [data.aws_subnets.subneta.ids[0], data.aws_subnets.subnetb.ids[0]]
 
   enable_deletion_protection = false
 
@@ -107,7 +107,7 @@ output "url" {
 ##############################################################################
 
 resource "aws_lb_target_group" "alb-lb-tg" {
-  depends_on = [aws_lb_.lb]
+  depends_on  = [aws_lb.lb]
   name        = var.tg-name
   target_type = "instance"
   port        = 80
@@ -142,9 +142,9 @@ resource "aws_launch_template" "mp1-lt" {
   iam_instance_profile {
     name = var.iam-profile
   }
-  image_id = var.imageid
+  image_id                             = var.imageid
   instance_initiated_shutdown_behavior = "terminate"
-  instance_type = var.instance-type
+  instance_type                        = var.instance-type
   monitoring {
     enabled = false
   }
@@ -165,17 +165,17 @@ resource "aws_launch_template" "mp1-lt" {
 # Create autoscaling group
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group
 ##############################################################################
- 
+
 resource "aws_autoscaling_group" "bar" {
-  name = var.asg-name
-  depends_on = [aws_launch_template.mp1-lt]
-  desired_capacity   = var.desired
-  max_size           = var.max
-  min_size           = var.min
+  name                      = var.asg-name
+  depends_on                = [aws_launch_template.mp1-lt]
+  desired_capacity          = var.desired
+  max_size                  = var.max
+  min_size                  = var.min
   health_check_grace_period = 300
   health_check_type         = "EC2"
   target_group_arns         = [aws_lb_target_group.alb-lb-tg.arn]
-  availability_zones        = [data.aws_availability_zones.primary.names[0],data.aws_availability_zones.secondary.names[0]]
+  availability_zones        = [data.aws_availability_zones.primary.names[0], data.aws_availability_zones.secondary.names[0]]
 
   launch_template {
     id      = aws_launch_template.mp1-lt.id
@@ -187,9 +187,9 @@ resource "aws_autoscaling_group" "bar" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment
 ##############################################################################
 # Create a new ALB Target Group attachment
- 
+
 resource "aws_autoscaling_attachment" "example" {
   autoscaling_group_name = aws_autoscaling_group.bar.id
   lb_target_group_arn    = aws_lb_target_group.alb-lb-tg.arn
-} 
+}
 
