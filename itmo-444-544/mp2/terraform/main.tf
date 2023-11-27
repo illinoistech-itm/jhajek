@@ -26,6 +26,23 @@ data "aws_availability_zones" "available" {
 }
 
 ##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones
+##############################################################################
+data "aws_availability_zones" "primary" {
+  filter {
+    name   = "zone-name"
+    values = ["us-east-2a"]
+  }
+}
+
+data "aws_availability_zones" "secondary" {
+  filter {
+    name   = "zone-name"
+    values = ["us-east-2b"]
+  }
+}
+
+##############################################################################
 # https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/shuffle#example-usage
 ##############################################################################
 
@@ -58,12 +75,7 @@ data "aws_subnets" "subnetc" {
     values = ["us-east-2c"]
   }
 }
-/*
-data "aws_subnet" "example" {
-  for_each = toset(data.aws_subnets.subnets.ids)
-  id       = each.value
-}
-*/
+
 output "subnetid-2a" {
   value = [data.aws_subnets.subneta.ids]
 }
@@ -158,6 +170,7 @@ resource "aws_autoscaling_group" "bar" {
   health_check_grace_period = 300
   health_check_type         = "EC2"
   target_group_arns         = [aws_lb_target_group.alb-lb-tg.arn]
+  availability_zones        = [data.aws_availability_zones.primary.zone-name,data.aws_availability_zones.secondary.zone-name]
 
   launch_template {
     id      = aws_launch_template.mp1-lt.id
