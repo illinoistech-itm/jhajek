@@ -4,10 +4,11 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/vpc
 ##############################################################################
 
-variable "vpc_id" {}
-
 data "aws_vpc" "main" {
-  id = var.vpc_id
+  filter {
+    name = "vpc-id"
+    values = ["default"]
+  }
 }
 
 ##############################################################################
