@@ -54,7 +54,7 @@ resource "random_shuffle" "az" {
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets
 ##############################################################################
-
+# The data value is essentially a query and or a filter to retrieve values
 data "aws_subnets" "subneta" {
   filter {
     name   = "availabilityZone"
@@ -98,6 +98,7 @@ resource "aws_lb" "lb" {
   }
 }
 
+# output will print a value out to the screen
 output "url" {
   value = aws_lb.lb.dns_name
 }
@@ -107,6 +108,8 @@ output "url" {
 ##############################################################################
 
 resource "aws_lb_target_group" "alb-lb-tg" {
+  # depends_on is effectively a waiter -- it forces this resource to wait until the listed
+  # resource is ready
   depends_on  = [aws_lb.lb]
   name        = var.tg-name
   target_type = "instance"
@@ -193,3 +196,10 @@ resource "aws_autoscaling_attachment" "example" {
   lb_target_group_arn    = aws_lb_target_group.alb-lb-tg.arn
 }
 
+output "alb-lb-tg-arn" {
+  value = aws_lb_target_group.alb-lb-tg.arn
+}
+
+output "alb-lb-tg-id" {
+  value = aws_lb_target_group.alb-lb-tg.id
+}
