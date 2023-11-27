@@ -6,11 +6,11 @@
 ##############################################################################
 
 data "aws_vpc" "main" {
-    default = "True"
+    default = true
 }
 
 output "vpcs" {
-  value = data.aws_vpcs.main.id
+  value = data.aws_vpc.main.id
 }
 ##############################################################################
 # https://developer.hashicorp.com/terraform/tutorials/configuration-language/data-source
@@ -95,7 +95,7 @@ resource "aws_lb_target_group" "alb-lb-tg" {
   target_type = "alb"
   port        = 80
   protocol    = "TCP"
-  vpc_id      = data.aws_vpcs.main.id
+  vpc_id      = data.aws_vpc.main.id
 }
 
 ##############################################################################
