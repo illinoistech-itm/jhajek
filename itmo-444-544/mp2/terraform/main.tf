@@ -167,6 +167,7 @@ resource "aws_launch_template" "mp1-lt" {
  
 resource "aws_autoscaling_group" "bar" {
   name = var.asg-name
+  depends_on = [aws_launch_template.mp1-lt]
   desired_capacity   = var.desired
   max_size           = var.max
   min_size           = var.min
@@ -187,6 +188,7 @@ resource "aws_autoscaling_group" "bar" {
 # Create a new ALB Target Group attachment
  
 resource "aws_autoscaling_attachment" "example" {
+  depends_on = [aws_lb_target_group.alb-lb-tg]
   autoscaling_group_name = aws_autoscaling_group.bar.id
   lb_target_group_arn    = aws_lb_target_group.alb-lb-tg.arn
 } 
