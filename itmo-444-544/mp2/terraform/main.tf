@@ -107,7 +107,7 @@ output "url" {
 ##############################################################################
 
 resource "aws_lb_target_group" "alb-lb-tg" {
-  depends_on = [aws_lb_target_group.alb-lb-tg]
+  depends_on = [aws_lb_.lb]
   name        = var.tg-name
   target_type = "instance"
   port        = 80
