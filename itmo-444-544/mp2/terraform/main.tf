@@ -272,12 +272,12 @@ resource "aws_dynamodb_table" "mp2-dynamodb-table" {
     name = "FINSIHEDS3URL"
     type = "S"
   }
-*/
+
   ttl {
     attribute_name = "TimeToExist"
     enabled        = false
   }
-/*
+
   global_secondary_index {
     name               = "GameTitleIndex"
     hash_key           = "GameTitle"
