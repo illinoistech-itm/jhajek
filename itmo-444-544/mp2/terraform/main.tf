@@ -2,12 +2,14 @@
 
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/vpc
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/vpcs
 ##############################################################################
 
-data "aws_vpc" "main" {
-  state = "available"
-}
+data "aws_vpcs" "main" {}
 
+output "vpcs" {
+  value = data.aws_vpcs.main.ids
+}
 ##############################################################################
 # https://developer.hashicorp.com/terraform/tutorials/configuration-language/data-source
 ##############################################################################
@@ -91,7 +93,7 @@ resource "aws_lb_target_group" "alb-lb-tg" {
   target_type = "alb"
   port        = 80
   protocol    = "TCP"
-  vpc_id      = data.aws_vpc.main[0].id
+  vpc_id      = data.aws_vpcs.main[0].id
 }
 
 ##############################################################################
