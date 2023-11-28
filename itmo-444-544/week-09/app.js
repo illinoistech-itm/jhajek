@@ -12,6 +12,7 @@ const { SNSClient, ListTopicsCommand, GetTopicAttributesCommand, SubscribeComman
 const { S3Client, ListBucketsCommand, ListObjectsCommand, GetObjectCommand } = require('@aws-sdk/client-s3');
 
 const { RDSClient, DescribeDBInstancesCommand } = require("@aws-sdk/client-rds");
+const { v4: uuidv4 } = require('uuid');
 
 const express = require('express')
 const app = express();
@@ -19,17 +20,19 @@ const multer = require('multer')
 const multerS3 = require('multer-s3')
 //const mysql = require('mysql2');
 const mysql = require('mysql2/promise');
-const REGION = "us-east-1"; //e.g. "us-east-1"
+const REGION = "us-east-2"; //e.g. "us-east-1";
 const s3 = new S3Client({ region: REGION });
 ///////////////////////////////////////////////////////////////////////////
 // I hardcoded my S3 bucket name, this you need to determine dynamically
 // Using the AWS JavaScript SDK
 ///////////////////////////////////////////////////////////////////////////
-
+var bucketName = 'raw-jrh-mp1';
+//listBuckets().then(result =>{bucketName = result;}).catch(err=>{console.error("listBuckets function call failed.")});
 	var upload = multer({
         storage: multerS3({
         s3: s3,
-        bucket: 'raw-jrh-itmo3',
+        bucket: bucketName,
+        //acl: 'public-read',
         key: function (req, file, cb) {
             cb(null, file.originalname);
             }
@@ -84,8 +87,8 @@ const getListOfSnsTopics = async () => {
   const command = new ListTopicsCommand({});  
     try {
     const results = await client.send(command);
-    //console.log("Get SNS Topic Results: ", results);
-    //console.log("ARN: ", results.Topics[0].TopicArn); 
+    //console.error("Get SNS Topic Results: ", results.Topics.length);
+    //console.error("ARN: ", results.Topics[0].TopicArn); 
     //return results.Topics[0]; 
     return results; 
   } catch (err) {
@@ -120,16 +123,14 @@ const getSnsTopicArn = async () => {
 const subscribeEmailToSNSTopic = async () => {
 
         let topicArn = await getListOfSnsTopics();
-
 	const params = {
-
-		Endpoint: "hajek@iit.edu",
+                // CHANGE ENDPOINT EMAIL TO YOUR OWN
+		Endpoint: 'hajek@iit.edu',
 		Protocol: 'email',
-		TopicArn: topicArn.Attributes.TopicArn
+		TopicArn: topicArn.Topics[0].TopicArn
 	}
-
         const client = new SNSClient({region: "us-east-2" });
-        const command = new SubscribeCommand( {params} );
+        const command = new SubscribeCommand( params );
         try {
                 const results = await client.send(command);
                 console.log("Subscribe Results: ", results);
@@ -143,13 +144,23 @@ const subscribeEmailToSNSTopic = async () => {
 ///////////////////////////////////////////////
 // send message to topic and all subscribers
 //
-const sendMessageViaEmail = async () => {
+const sendMessageViaEmail = async (req,res) => {
 
-	let publishMessage = await listObjects();
+	let publishMessage = await listObjects(req,res);
+    const fname = req.files[0].originalname;
+    console.log("File uploaded:",fname);
+    console.log("URLs collected:",publishMessage );
+    var s3URL = "URL not generated due to technical issue.";
+    for (let i = 0; i < publishMessage.length; i++) {
+        if(publishMessage[i].endsWith(fname)){
+        s3URL = publishMessage[i];
+        break;
+        }
+    }
 	let snsTopicArn = await getListOfSnsTopics();
 	const params = {
-		Subject: "Your imgage is ready!",
-		Message: publishMessage,
+		Subject: "Your image is ready!",
+		Message: s3URL,
 		TopicArn: snsTopicArn.Topics[0].TopicArn
 	};
 	const client = new SNSClient({region: "us-east-2" });
@@ -169,13 +180,13 @@ const sendMessageViaEmail = async () => {
 //
 const listAndCacheBuckets = async () => {
 
-	const client = new S3Client({region: "us-east-1" });
+	const client = new S3Client({region: "us-east-2" });
         const command = new ListBucketsCommand({});
 	try {
 		const results = await client.send(command);
 		//console.log("List Buckets Results: ", results.Buckets[0].Name);
 		const params = {
-			Bucket: results.Buckets[0].Name
+			Bucket: 'raw-jrh-mp1'
 		}
 		return params;
 } catch (err) {
@@ -185,15 +196,22 @@ const listAndCacheBuckets = async () => {
 //////////////////////////////////////////////////////////
 // Add S3 ListBucket code here
 //
+var bucket_name = "";
 const listBuckets = async () => {
 
-	const client = new S3Client({region: "us-east-1" });
+	const client = new S3Client({region: "us-east-2" });
         const command = new ListBucketsCommand({});
 	try {
 		const results = await client.send(command);
 		//console.log("List Buckets Results: ", results.Buckets[0].Name);
-		const params = {
-			Bucket: results.Buckets[0].Name
+                for ( element of results.Buckets ) {
+                        if ( element.Name.includes("raw") ) {
+                                console.log(element.Name)
+                                bucket_name = element.Name
+                        } }
+                
+                const params = {
+			Bucket: bucket_name
 		}
 		return params;
 	
@@ -206,13 +224,16 @@ const listBuckets = async () => {
 // ListObjects S3 
 // https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-s3/interfaces/listobjectscommandoutput.html
 // 
-const listObjects = async () => {
-	const client = new S3Client({region: "us-east-1" });
+const listObjects = async (req,res) => {
+	const client = new S3Client({region: "us-east-2" });
 	const command = new ListObjectsCommand(await listBuckets());
 	try {
 		const results = await client.send(command);
 		console.log("List Objects Results: ", results);
-	        const url = "https://" + results.Name + ".s3.amazonaws.com/" + results.Contents[0].Key;	
+        var url=[];
+        for (let i = 0; i < results.Contents.length; i++) {
+                url.push("https://" + results.Name + ".s3.amazonaws.com/" + results.Contents[i].Key);
+        }        
 		console.log("URL: " , url);
 		return url;
 	} catch (err) {
@@ -226,7 +247,15 @@ const listObjects = async () => {
 //
 const getPostedData = async (req,res) => {
 	try {
-	let s3URL = await listObjects();
+	let s3URLs = await listObjects(req,res);
+    const fname = req.files[0].originalname;
+    var s3URL = "URL not generated due to technical issue.";
+    for (let i = 0; i < s3URLs.length; i++) {
+        if(s3URLs[i].includes(fname)){
+            s3URL = s3URLs[i];
+        break
+        }
+    }
 	res.write('Successfully uploaded ' + req.files.length + ' files!')
 
 	// Use this code to retrieve the value entered in the username field in the index.html
@@ -236,7 +265,7 @@ const getPostedData = async (req,res) => {
 	// Use this code to retrieve the value entered in the phone field in the index.html
 	var phone = req.body['phone'];
 	// Write output to the screen
-       // res.write(s3url + "\n");
+        // res.write(s3url + "\n");
         res.write(username + "\n");
 	res.write(s3URL + "\n");
         res.write(email + "\n");
@@ -253,10 +282,13 @@ const getPostedData = async (req,res) => {
 //
 const getImagesFromS3Bucket = async (req,res) => {
 	try {
-		let imageURL = await listObjects();
-	res.set('Content-Type', 'text/html');	
-        res.write("Welcome to the gallery" + "\n");
-        res.write('<img src="' + imageURL + '" />'); 
+		let imageURL = await listObjects(req,res);
+        console.log("ImageURL:",imageURL);
+        res.set('Content-Type', 'text/html');	
+        res.write("<div>Welcome to the gallery" + "</div>");
+        for (let i = 0; i < imageURL.length; i++) {
+        res.write('<div><img src="' + imageURL[i] + '" /></div>'); 
+        }
         res.end(); 
 	} catch (err) {
                 console.error(err);
@@ -309,6 +341,17 @@ const selectRecord = async () => {
         }
 };
 
+const row = html => `<tr>\n${html}</tr>\n`,
+                heading = object => row(Object.keys(object).reduce((html, heading) => (html + `<th>${heading}</th>`), '')),
+                datarow = object => row(Object.values(object).reduce((html, value) => (html + `<td>${value}</td>`), ''));
+
+function htmlTable(dataList) {
+        return `<table>
+                  ${heading(dataList[0])}
+                  ${dataList.reduce((html, object) => (html + datarow(object)), '')}
+                </table>`
+      }
+
 ////////////////////////////////////////////////
 // Select and Print Record
 //
@@ -333,10 +376,9 @@ const selectAndPrintRecord = async (req,res) => {
         const [rows,fields] = await connection.execute('SELECT * FROM `entries`');
         res.set('Content-Type', 'text/html');
         res.write("Here are the records: " + "\n");
-        res.write(JSON.stringify(rows));
+        res.write(htmlTable(rows));
         res.end();
-
-		return rows;
+        return rows;
         } catch (err) {
                 console.error(err);
         }
@@ -353,7 +395,9 @@ const insertRecord = async (req,res) => {
         let obj = JSON.parse(sec.SecretString);
         try {
 
-
+        // console.error("Secret1:", obj.password);
+        // console.error("Secret2:", obj.username);
+        // console.error("dbIdentifier:", dbIdentifier.DBInstances[0].Endpoint.Address);
         const mysql = require('mysql2/promise');
         // create the connection to database
         const connection = await mysql.createConnection({
@@ -365,9 +409,21 @@ const insertRecord = async (req,res) => {
 
         // simple query
 	let email = req.body['email'];
-	let statement = 'INSERT INTO entries(RecordNumber,CustomerName,Email,Phone,Stat,RAWS3URL) VALUES("00000","NAME","' + email + '","000-000-0000",0,"http://");'
+    let id = uuidv4();
+    let username = req.body['name'];
+	let phone = req.body['phone'];
+    let s3URLs = await listObjects(req,res);
+    const fname = req.files[0].originalname;
+    var s3URL = "URL not generated due to technical issue.";
+    for (let i = 0; i < s3URLs.length; i++) {
+        if(s3URLs[i].includes(fname)){
+            s3URL = s3URLs[i];
+        break
+        }
+    }
+	let statement = 'INSERT INTO entries(RecordNumber,CustomerName,Email,Phone,Stat,RAWS3URL) VALUES("'+id+'","'+username+'","' + email + '","'+phone+'",1,"'+s3URL+'");'
         const [rows,fields] = await connection.execute(statement);
-       console.log(rows) 
+    //    console.error(rows);
 		return rows;
         } catch (err) {
                 console.error(err);
@@ -399,29 +455,14 @@ app.get('/db', function (req,res) {
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 
 (async () => { await getPostedData(req,res) } ) (); 
-(async () => { await getListOfSnsTopics(); })();
-(async () => { await getSnsTopicArn() })();
-(async () => { await subscribeEmailToSNSTopic() } ) ();
-(async () => { await sendMessageViaEmail() } ) ();
-(async () => { await insertRecord(req,res) } ) ();
-});
-
-/////////////////////////////////////////////
-// Call functions to retrieve values
-/////////////////////////////////////////////
-
-//(async () => { await getSecretARN() })();
-//(async () => { await getSecrets() })();
 //(async () => { await getListOfSnsTopics(); })();
 //(async () => { await getSnsTopicArn() })();
 //(async () => { await subscribeEmailToSNSTopic() } ) ();
-//(async () => {await listBuckets() } ) ();
-//(async () => { await listObjects() } ) ();
-//(async () => { await sendMessageViaEmail() } ) ();
+//(async () => { await sendMessageViaEmail(req,res) } ) ();
+(async () => { await insertRecord(req,res) } ) ();
+});
 
-
-app.listen(80, function () {
-    console.log('Amazon s3 file upload app listening on port 80');
-   // (async () => console.log(await getSecretARN()))();
+app.listen(3000, function () {
+    console.log('Amazon s3 file upload app listening on port 3000');
 });
 
