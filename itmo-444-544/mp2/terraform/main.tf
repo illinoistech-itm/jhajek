@@ -329,20 +329,24 @@ resource "aws_s3_bucket" "raw-bucket" {
 resource "aws_s3_bucket" "finished-bucket" {
   bucket = var.finished-s3-bucket
 }
-/*
+
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-raw" {
   bucket = aws_s3_bucket.raw-bucket.id
   policy = data.aws_iam_policy_document.allow_access_from_another_account-raw.json
-  #policy = "${file("raw-policy.json")}"
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-finished" {
   bucket = aws_s3_bucket.finished-bucket.id
   policy = data.aws_iam_policy_document.allow_access_from_another_account-finished.json
-   #policy = "${file("finished-policy.json")}"
 }
 
 data "aws_iam_policy_document" "allow_access_from_another_account-raw" {
+  statement {
+    actions   = ["s3:GetObject"]
+    resources = [aws_s3_bucket.raw-bucket.arn]
+    effect = "Allow"
+  }
+  /*
   statement {
     principals {
       type        = "AWS"
@@ -358,6 +362,7 @@ data "aws_iam_policy_document" "allow_access_from_another_account-raw" {
       "${aws_s3_bucket.raw-bucket.arn}/*",
     ]
   }
+  */
 }
 
 data "aws_iam_policy_document" "allow_access_from_another_account-finished" {
@@ -377,4 +382,3 @@ data "aws_iam_policy_document" "allow_access_from_another_account-finished" {
     ]
   }
 }
-*/
