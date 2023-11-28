@@ -47,7 +47,7 @@ sudo -u ubuntu git clone git@github.com:illinoistech-itm/jhajek.git
 # https://pm2.keymetrics.io/docs/usage/quick-start
 cd /home/ubuntu/jhajek/itmo-444-544/mp2/544
 
-sudo cp /home/ubuntu/tgranickas/itmo-444-544/mp2/default /etc/nginx/sites-available/default
+sudo cp /home/ubuntu/jhajek/itmo-444-544/mp2/default /etc/nginx/sites-available/default
 sudo systemctl daemon-reload
 sudo systemctl restart nginx
 
