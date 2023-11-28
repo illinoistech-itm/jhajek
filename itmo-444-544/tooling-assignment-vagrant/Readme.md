@@ -66,28 +66,42 @@ Assuming that the command `vagrant --version` gives us output, lets begin by ins
 
 Here we are going to create a directory to manage our artifact.  It is a good idea to create a directory per virtual machine that we will administer via Vagrant.  You can create a class directory and then sub-directories and or you can place this on a different disk. This I will leave up to you as it is your filesystem and your data--you are the one in charge.
 
-```mkdir itmt-430-2022 ; cd itmt-430-2022```
+* `mkdir itmt-430-2022` 
+* `cd itmt-430-2022`
 
 We will now use Vagrant to retrieve and Ubuntu 22.04 known as Jammy and a AlmaLinux 9 Virtual Machine:
 
-* ```mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls```
-* ```mkdir almalinux ; cd almalinux ; vagrant init almalinux/9 ; ls```
+1. `mkdir jammy64`
+1. `cd jammy64`
+1. `vagrant init ubuntu/jammy64` 
+  
+1. `mkdir almalinux9`
+1. `cd almalinux9` 
+1. `vagrant init almalinux/9` 
 
 #### M1 Macs Only
 
 For those using M1 Macs and Parallels you will need to replace the names of the Boxes in the demos with these two that have been prepared for M1 macs and parallels
 
-* wesdemos/ubuntu2204-arm
-* almalinux/9.aarch64
+* `bento/ubuntu-22.04-arm64`
+* `almalinux/9.aarch64`
 
-Once these commands are executed -- both under the `jammy64` and `almalinux` directory, you will see a `Vagrantfile` that has been created.  Let us take a look at this file.  You can do so via using the commands on MacOS or Windows from the Terminal:
+1. `mkdir jammy64-arm`
+1. `cd jammy64-arm`
+1. `bento/ubuntu-22.04-arm64` 
+  
+1. `mkdir almalinux9-arm`
+1. `cd almalinux9-arm` 
+1. `vagrant init almalinux/9.aarch64`
 
-* ```code Vagrantfile```
-* ```atom Vagrantfile```
-* ```vim Vagrantfile```
-  * You can use chocolatey to install `vim` on Windows -- it works well I use it all the time
+### Editing Your Vagrantfile
 
-Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`.  This value came from the `vagrant init` command typed above.  Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install.  Line 52, 57, and 58 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb.  For now lets not make any changes.
+Once these commands are executed -- both under the `jammy64` and `almalinux` directory, you will see a `Vagrantfile` that has been created. Let us take a look at this file.  You can do so via using the commands on MacOS or Windows from the Terminal:
+
+* `code Vagrantfile`
+* `vim Vagrantfile`
+
+Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`.  This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a **host-only** network between out host system and any guest (virtual) OSes we install. Line 52, 57, and 58 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb.
 
 ### Start a Vagrant Box
 
@@ -99,7 +113,7 @@ Once this step is successful, we need to establish a connection to the virtual m
 
 * To exit this ssh session type: `exit`
 * From the host OS, to restart a Vagrant Box you would type: `vagrant reload`
-* From the host OS, to pause or place into standby you would type: `vagrant susupend`
+* From the host OS, to pause or place into standby you would type: `vagrant suspend`
 * From the host OS, to bring out of standby your would type: `vagrant resume or vagrant up`
 * From the host OS, to poweroff your virtual machine you would type: `vagrant halt`
 * From the host OS, to remove all changes and reset the box to the status at first install you would type: `vagrant destroy`
@@ -121,6 +135,7 @@ If you want to reset your Vagrant Box after you installed a webserver.  Exit the
 ## From your host system
 
 * From the command line (non-admin) execute the command: `vagrant plugin install vagrant-vbguest`
+  * Or `vagrant plugin install vagrant-parallels` if on M1 Mac
   * This takes care a warning message from Vagrant about not being able to mount VirtualBox shared drives
 * Configure Vagrant Box memory to use at least 2 GB
 

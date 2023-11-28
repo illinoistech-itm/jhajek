@@ -83,10 +83,11 @@ brew install brew install --cask iterm2 ; brew install git ; brew install --cask
 
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
   * [https://www.parallels.com/products/desktop/pro/](https://www.parallels.com/products/desktop/pro/ "Parallels Pro Edition")
+* [50% off for students and educators Link](https://www.parallels.com/landingpage/pd/education/ "webpage for discount for student and educators")
   * The standard and education edition doesn't contain the commandline interface needed for automation.
 * Once Vagrant and Parallels Pro Edition is installed you need to also install the Parallels SDK from the Download Tab in your parallels.com account
   * From the Terminal run the command: `vagrant plugin install vagrant-parallels`
-    * This will add the needed plugin to allow you to use Parallels from Vagrant
+    * This will add the needed plugin to allow you to use Parallels as a default provider for Vagrant
     * This will also work if you have Parallels Pro Edition on an Intel Mac
 
 ## Create and Push your Readme.md
