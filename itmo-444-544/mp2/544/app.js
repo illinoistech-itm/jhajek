@@ -463,10 +463,10 @@ app.get('/db', function (req,res) {
 app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 
 (async () => { await getPostedData(req,res) } ) (); 
-//(async () => { await getListOfSnsTopics(); })();
-//(async () => { await getSnsTopicArn() })();
-//(async () => { await subscribeEmailToSNSTopic() } ) ();
-//(async () => { await sendMessageViaEmail(req,res) } ) ();
+(async () => { await getListOfSnsTopics(); })();
+(async () => { await getSnsTopicArn() })();
+(async () => { await subscribeEmailToSNSTopic() } ) ();
+(async () => { await sendMessageViaEmail(req,res) } ) ();
 (async () => { await insertRecord(req,res) } ) ();
 });
 
