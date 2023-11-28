@@ -23,7 +23,7 @@ sudo -u ubuntu git clone git@github.com:illinoistech-itm/jhajek.git
 
 # Start the nodejs app where it is located via PM2
 # https://pm2.keymetrics.io/docs/usage/quick-start
-cd /home/ubuntu/jhajek/itmo-544/mp2/
+cd /home/ubuntu/jhajek/itmo-544/mp1/
 
 sudo pm2 start app.js
 
