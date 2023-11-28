@@ -364,7 +364,7 @@ data "aws_iam_policy_document" "allow_access_from_another_account-raw" {
   statement {
     principals {
       type        = "AWS"
-      identifiers = ["548002151864"]
+      identifiers = ["*"]
     }
 
     actions = [
@@ -382,7 +382,7 @@ data "aws_iam_policy_document" "allow_access_from_another_account-finished" {
   statement {
     principals {
       type        = "AWS"
-      identifiers = ["548002151864"]
+      identifiers = ["*"]
     }
 
     actions = [
