@@ -1,5 +1,5 @@
 # These are your values that would be in arguments.txt
-imageid                = "ami-024e6efaf93d85776"
+imageid                = "ami-0e36378eee3c18b57"
 instance-type          = "t2.micro"
 key-name               = "itmo444vagrantkey"
 vpc_security_group_ids = "sg-0fafd233da91b97bd"
