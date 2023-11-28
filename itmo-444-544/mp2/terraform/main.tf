@@ -329,7 +329,7 @@ resource "aws_s3_bucket" "raw-bucket" {
 resource "aws_s3_bucket" "finished-bucket" {
   bucket = var.finished-s3-bucket
 }
-/*
+
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-raw" {
   depends_on=[data.aws_iam_policy_document.allow_access_from_another_account-raw]
   bucket = aws_s3_bucket.raw-bucket.id
@@ -346,7 +346,7 @@ data "aws_iam_policy_document" "allow_access_from_another_account-raw" {
   statement {
     principals {
       type        = "AWS"
-      identifiers = ["*"]
+      identifiers = ["548002151864"]
     }
 
     actions = [
@@ -364,7 +364,7 @@ data "aws_iam_policy_document" "allow_access_from_another_account-finished" {
   statement {
     principals {
       type        = "AWS"
-      identifiers = ["*"]
+      identifiers = ["548002151864"]
     }
 
     actions = [
@@ -377,4 +377,3 @@ data "aws_iam_policy_document" "allow_access_from_another_account-finished" {
     ]
   }
 }
-*/
