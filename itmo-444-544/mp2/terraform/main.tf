@@ -332,20 +332,20 @@ resource "aws_s3_bucket" "finished-bucket" {
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-raw" {
   bucket = aws_s3_bucket.raw-bucket.id
-  #policy = data.aws_iam_policy_document.allow_access_from_another_account-raw.json
-  policy = "${file("raw-policy.json")}"
+  policy = data.aws_iam_policy_document.allow_access_from_another_account-raw.json
+  #policy = "${file("raw-policy.json")}"
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-finished" {
   bucket = aws_s3_bucket.finished-bucket.id
-  #policy = data.aws_iam_policy_document.allow_access_from_another_account-finished.json
-   policy = "${file("finished-policy.json")}"
+  policy = data.aws_iam_policy_document.allow_access_from_another_account-finished.json
+   #policy = "${file("finished-policy.json")}"
 }
-/*
+
 data "aws_iam_policy_document" "allow_access_from_another_account-raw" {
   statement {
     principals {
-      type        = "*"
+      type        = "AWS"
       identifiers = ["*"]
     }
 
@@ -377,4 +377,3 @@ data "aws_iam_policy_document" "allow_access_from_another_account-finished" {
     ]
   }
 }
-*/
