@@ -237,7 +237,7 @@ const listObjects = async (req,res) => {
 		console.log("URL: " , url);
 		return url;
 	} catch (err) {
-		console.error(err);
+		console.error(err);     
 	}
 };
 
