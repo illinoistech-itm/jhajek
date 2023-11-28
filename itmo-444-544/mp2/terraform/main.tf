@@ -332,6 +332,7 @@ resource "aws_s3_bucket" "finished-bucket" {
 
 resource "aws_s3_bucket_public_access_block" "allow_access_from_another_account-raw" {
   bucket = aws_s3_bucket.raw-bucket.id
+  depends_on=[data.aws_iam_policy_document.allow_access_from_another_account-raw]
 
   block_public_acls       = true
   block_public_policy     = false
@@ -341,6 +342,8 @@ resource "aws_s3_bucket_public_access_block" "allow_access_from_another_account-
 
 resource "aws_s3_bucket_public_access_block" "allow_access_from_another_account-finished" {
   bucket = aws_s3_bucket.finished-bucket.id
+  depends_on=[data.aws_iam_policy_document.allow_access_from_another_account-finished]
+  
 
   block_public_acls       = true
   block_public_policy     = false
@@ -349,13 +352,13 @@ resource "aws_s3_bucket_public_access_block" "allow_access_from_another_account-
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-raw" {
-  depends_on=[data.aws_iam_policy_document.allow_access_from_another_account-raw,aws_s3_bucket.raw-bucket.id]
+  depends_on=[data.aws_iam_policy_document.allow_access_from_another_account-raw]
   bucket = aws_s3_bucket.raw-bucket.id
   policy = data.aws_iam_policy_document.allow_access_from_another_account-raw.json
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-finished" {
-  depends_on=[data.aws_iam_policy_document.allow_access_from_another_account-finished,aws_s3_bucket.finished-bucket.id]
+  depends_on=[data.aws_iam_policy_document.allow_access_from_another_account-finished]
   bucket = aws_s3_bucket.finished-bucket.id
   policy = data.aws_iam_policy_document.allow_access_from_another_account-finished.json
 }
