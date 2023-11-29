@@ -452,7 +452,7 @@ const queryAndPrintDynamoRecords = async (req,res) => {
         
         const table = await getDynamoTable();
         const client = new DynamoDBClient({region: REGION});
-        let email = req.body['email'];
+        let email = req.email;
 
         const command = new QueryCommand({
                 TableName: table.TableNames[0],
