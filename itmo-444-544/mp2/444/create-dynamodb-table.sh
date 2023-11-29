@@ -25,6 +25,9 @@ aws dynamodb create-table \
     --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
     --tags Key=Owner,Value=$IDENTITY
 
+# DynamoDB WAIT Commands
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/dynamodb/wait/index.html
+aws dynamodb table-exists --table-name ${23}
 
 # Put Item for DynomoDB -- like an SQL INSERT command
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/dynamodb/put-item.html
