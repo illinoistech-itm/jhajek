@@ -455,7 +455,7 @@ const queryAndPrintDynamoRecords = async (req,res) => {
         let email = req.email;
 
         const command = new QueryCommand({
-                TableName: table.TableNames[0],
+                TableName: table.TableNames,
                 KeyConditionExpression: "Email = :email",
                 ExpressionAttributeValues: {
                 ":Email": email
