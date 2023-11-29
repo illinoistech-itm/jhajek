@@ -437,7 +437,7 @@ const insertRecord = async (req,res) => {
 ///////////////////////////////////////////////////////////////////////////////
 const getDynamoTable = async () => {
 
-        const client = new DynamoDBClient({});
+        const client = new DynamoDBClient({region: REGION});
         const command = new ListTablesCommand({});
         const response = await client.send(command);
         console.log(response.TableNames.join("\n"));
