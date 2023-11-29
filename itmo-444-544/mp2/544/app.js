@@ -451,7 +451,7 @@ const getDynamoTable = async () => {
 const queryAndPrintDynamoRecords = async (req,res) => {
         
         const table = await getDynamoTable();
-        const client = new DynamoDBClient(config);
+        const client = new DynamoDBClient();
         
         const command = new QueryCommand({
                 TableName: table.TableNames[0],
@@ -490,7 +490,7 @@ const putDynamoDBRecord = async (req,res) => {
            }
         }
 
-        const client = new DynamoDBClient(config);
+        const client = new DynamoDBClient();
         let id = uuidv4();
         const input = { // PutItemInput
         TableName: table.TableNames[0], // required
