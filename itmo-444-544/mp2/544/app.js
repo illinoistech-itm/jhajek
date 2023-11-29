@@ -452,12 +452,13 @@ const queryAndPrintDynamoRecords = async (req,res) => {
         
         const table = await getDynamoTable();
         const client = new DynamoDBClient();
-        
+        let email = req.body['email'];
+
         const command = new QueryCommand({
                 TableName: table.TableNames[0],
                 KeyConditionExpression: "Email = :email",
                 ExpressionAttributeValues: {
-                ":Email": req.body['email']
+                ":Email": email
                 },
                 //ConsistentRead: true,
   });
