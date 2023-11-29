@@ -462,9 +462,9 @@ const queryAndPrintDynamoRecords = async (req,res) => {
         console.log(response);
         res.set('Content-Type', 'text/html');
         res.write("Here are the records: " + "\n");
-        res.write(response.Item);
+        res.write(JSON.stringify(response.Item));
         res.end();
-        return response;
+        //return response;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
