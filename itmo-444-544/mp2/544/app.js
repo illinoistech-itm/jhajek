@@ -11,7 +11,7 @@ const { SNSClient, ListTopicsCommand, GetTopicAttributesCommand, SubscribeComman
 
 const { S3Client, ListBucketsCommand, ListObjectsCommand, GetObjectCommand } = require('@aws-sdk/client-s3');
 
-const { ListTablesCommand, DynamoDBClient, QueryCommand, PutItemCommand, DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+const { ListTablesCommand, DynamoDBClient, QueryCommand, PutItemCommand } = require("@aws-sdk/client-dynamodb");
 
 const { v4: uuidv4 } = require('uuid');
 
