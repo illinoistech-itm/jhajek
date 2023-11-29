@@ -455,16 +455,16 @@ const queryAndPrintDynamoRecords = async (req,res) => {
         let email = req.email;
 
         const command = new ScanCommand({
-                TableName: table.TableNames     
+                TableName: table.TableNames[0]
           });
 
-  const response = await client.send(command);
-  console.log(response);
-  res.set('Content-Type', 'text/html');
-  res.write("Here are the records: " + "\n");
-  res.write(htmlTable(response));
-  res.end();
-  return response;
+        const response = await client.send(command);
+        console.log(response);
+        res.set('Content-Type', 'text/html');
+        res.write("Here are the records: " + "\n");
+        res.write(response);
+        res.end();
+        return response;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -488,6 +488,7 @@ const putDynamoDBRecord = async (req,res) => {
 
         const client = new DynamoDBClient({region: REGION});
         let id = uuidv4();
+        console.log(id);
         const input = { // PutItemInput
         TableName: table.TableNames[0], // required
                 Item: 
