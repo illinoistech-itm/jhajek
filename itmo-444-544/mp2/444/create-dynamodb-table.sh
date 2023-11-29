@@ -40,9 +40,8 @@ aws dynamodb put-item \
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/dynamodb/query.html
 aws dynamodb query \
     --table-name ${23} \
-    --projection-expression "RecordNumber" \
     --key-condition-expression "Email = :v1" \
     --expression-attribute-values file://expression-attributes.json \
-    --return-consumed-capacity TOTAL \
+    --return-consumed-capacity  ALL_PROJECTED_ATTRIBUTES \
     --output=json
 
