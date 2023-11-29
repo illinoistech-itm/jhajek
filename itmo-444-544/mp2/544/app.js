@@ -451,7 +451,7 @@ const getDynamoTable = async () => {
 const queryAndPrintDynamoRecords = async (req,res) => {
         
         const table = await getDynamoTable();
-        const client = new DynamoDBClient();
+        const client = new DynamoDBClient({region: REGION});
         let email = req.body['email'];
 
         const command = new QueryCommand({
@@ -491,7 +491,7 @@ const putDynamoDBRecord = async (req,res) => {
            }
         }
 
-        const client = new DynamoDBClient();
+        const client = new DynamoDBClient({region: REGION});
         let id = uuidv4();
         const input = { // PutItemInput
         TableName: table.TableNames[0], // required
