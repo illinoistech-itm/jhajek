@@ -62,19 +62,18 @@ Run your script in this fashion:
 
 ### New create-env.sh requirements
 
-* Create an AWS Secret Manager file
-  * Use JSON template to enter your secrets for the mariadb.json file
-* Add new npm installs for `uuid4`, `@aws-sdk/client-rds` and `mysql2/promise`
-* Use the provided SQL file to create a database and a table via the install-env.sh script using *inline* MySQL commands (`mysql -e`)
-* Create JavaScript code in `app.js` that uses the AWS JavaScript SDK to
-  * Insert a record into your database using the data your have posted in your form
-  * Create a `/gallery` route that will display that images from your S3 buckets in the `app.js`
-* Create additional code using the JavaScript AWS SDK using these functions to retrieve the needed values
-  * listObjects
-  * insertRecords
-  * getDBIdentifier
-  * getSecrets
-
+* Enable SNS subscription to a created topic for a user
+* Create a DynamoDB table 
+* Grant your user DynamoDB and SNS IAM permissions
+* Update NPM package installs to support DynamoDB and SNS
+* Remove the RDS implementations and use DynamoDB
+  * Remove all RDS code from your app.js
+* Install and configure [Hashicorp Terraform](https://www.terraform.io/ "webpage for Terraform")
+  * Remove the destroy script as Terraform will do the destroy work for you
+* Demonstrate the process of uploading and image
+  * Render the /db URL
+  * Render the /gallery URL
+  * Render the /upload URL
 
 ### arguments.txt
 
