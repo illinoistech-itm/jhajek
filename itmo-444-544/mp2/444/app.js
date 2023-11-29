@@ -11,7 +11,7 @@ const { SNSClient, ListTopicsCommand, GetTopicAttributesCommand, SubscribeComman
 
 const { S3Client, ListBucketsCommand, ListObjectsCommand, GetObjectCommand } = require('@aws-sdk/client-s3');
 
-const { ListTablesCommand, DynamoDBClient, QueryCommand, PutItemCommand } = require("@aws-sdk/client-dynamodb");
+const { ListTablesCommand, DynamoDBClient, ScanCommand, PutItemCommand } = require("@aws-sdk/client-dynamodb");
 
 const { v4: uuidv4 } = require('uuid');
 
@@ -452,16 +452,11 @@ const queryAndPrintDynamoRecords = async (req,res) => {
         
         const table = await getDynamoTable();
         const client = new DynamoDBClient({region: REGION});
-        let email = req.email
+        let email = req.email;
 
-        const command = new QueryCommand({
-                TableName: table.TableNames,
-                KeyConditionExpression: "Email = :email",
-                ExpressionAttributeValues: {
-                ":Email": email
-                },
-                //ConsistentRead: true,
-  });
+        const command = new ScanCommand({
+                TableName: table.TableNames     
+          });
 
   const response = await client.send(command);
   console.log(response);
