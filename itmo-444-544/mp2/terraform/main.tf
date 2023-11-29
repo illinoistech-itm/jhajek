@@ -340,7 +340,7 @@ resource "aws_s3_bucket_public_access_block" "allow_access_from_another_account-
   block_public_acls       = true
   block_public_policy     = false
   ignore_public_acls      = true
-  restrict_public_buckets = true
+  restrict_public_buckets = false
 }
 
 resource "aws_s3_bucket_public_access_block" "allow_access_from_another_account-finished" {
@@ -351,7 +351,7 @@ resource "aws_s3_bucket_public_access_block" "allow_access_from_another_account-
   block_public_acls       = true
   block_public_policy     = false
   ignore_public_acls      = true
-  restrict_public_buckets = true
+  restrict_public_buckets = false
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-raw" {
