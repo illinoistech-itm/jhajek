@@ -11,7 +11,8 @@ const { SNSClient, ListTopicsCommand, GetTopicAttributesCommand, SubscribeComman
 
 const { S3Client, ListBucketsCommand, ListObjectsCommand, GetObjectCommand } = require('@aws-sdk/client-s3');
 
-const { RDSClient, DescribeDBInstancesCommand } = require("@aws-sdk/client-rds");
+const { ListTablesCommand, DynamoDBClient, QueryCommand, PutItemCommand, DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+
 const { v4: uuidv4 } = require('uuid');
 
 const express = require('express')
@@ -146,7 +147,7 @@ const subscribeEmailToSNSTopic = async () => {
 //
 const sendMessageViaEmail = async (req,res) => {
 
-	let publishMessage = await listObjects(req,res);
+    let publishMessage = await listObjects(req,res);
     const fname = req.files[0].originalname;
     console.log("File uploaded:",fname);
     console.log("URLs collected:",publishMessage );
@@ -248,12 +249,12 @@ const listObjects = async (req,res) => {
 const getPostedData = async (req,res) => {
 	try {
 	let s3URLs = await listObjects(req,res);
-    const fname = req.files[0].originalname;
-    var s3URL = "URL not generated due to technical issue.";
-    for (let i = 0; i < s3URLs.length; i++) {
-        if(s3URLs[i].includes(fname)){
-            s3URL = s3URLs[i];
-        break
+        const fname = req.files[0].originalname;
+        var s3URL = "URL not generated due to technical issue.";
+        for (let i = 0; i < s3URLs.length; i++) {
+          if(s3URLs[i].includes(fname)){
+              s3URL = s3URLs[i];
+          break
         }
     }
 	res.write('Successfully uploaded ' + req.files.length + ' files!')
@@ -282,14 +283,14 @@ const getPostedData = async (req,res) => {
 //
 const getImagesFromS3Bucket = async (req,res) => {
 	try {
-		let imageURL = await listObjects(req,res);
-        console.log("ImageURL:",imageURL);
-        res.set('Content-Type', 'text/html');	
-        res.write("<div>Welcome to the gallery" + "</div>");
-        for (let i = 0; i < imageURL.length; i++) {
-        res.write('<div><img src="' + imageURL[i] + '" /></div>'); 
-        }
-        res.end(); 
+	        let imageURL = await listObjects(req,res);
+                console.log("ImageURL:",imageURL);
+                res.set('Content-Type', 'text/html');	
+                res.write("<div>Welcome to the gallery" + "</div>");
+                  for (let i = 0; i < imageURL.length; i++) {
+                    res.write('<div><img src="' + imageURL[i] + '" /></div>'); 
+                  }
+                res.end(); 
 	} catch (err) {
                 console.error(err);
         }
@@ -409,14 +410,14 @@ const insertRecord = async (req,res) => {
 
         // simple query
 	let email = req.body['email'];
-    let id = uuidv4();
-    let username = req.body['name'];
+        let id = uuidv4();
+        let username = req.body['name'];
 	let phone = req.body['phone'];
-    let s3URLs = await listObjects(req,res);
-    const fname = req.files[0].originalname;
-    var s3URL = "URL not generated due to technical issue.";
-    for (let i = 0; i < s3URLs.length; i++) {
-        if(s3URLs[i].includes(fname)){
+        let s3URLs = await listObjects(req,res);
+        const fname = req.files[0].originalname;
+        var s3URL = "URL not generated due to technical issue.";
+        for (let i = 0; i < s3URLs.length; i++) {
+          if(s3URLs[i].includes(fname)){
             s3URL = s3URLs[i];
         break
         }
@@ -434,11 +435,81 @@ const insertRecord = async (req,res) => {
 // DynamoDB Examples
 // https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/javascript_dynamodb_code_examples.html
 ///////////////////////////////////////////////////////////////////////////////
+const getDynamoTable = async () => {
 
-// Create code to replace RDS here
+        const client = new DynamoDBClient({});
+        const command = new ListTablesCommand({});
+        const response = await client.send(command);
+        console.log(response.TableNames.join("\n"));
+        return response;
+  };
 
+////////////////////////////////////////////////////////////////////////////////
+// DynamoDB query item
+// https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/javascript_dynamodb_code_examples.html
+///////////////////////////////////////////////////////////////////////////////
+const queryAndPrintDynamoRecords = async (req,res) => {
+        
+        const table = await getDynamoTable();
+        const client = new DynamoDBClient(config);
+        
+        const command = new QueryCommand({
+                TableName: table.TableNames[0],
+                KeyConditionExpression: "Email = :email",
+                ExpressionAttributeValues: {
+                ":Email": req.body['email']
+                },
+                //ConsistentRead: true,
+  });
 
+  const response = await client.send(command);
+  console.log(response);
+  res.set('Content-Type', 'text/html');
+  res.write("Here are the records: " + "\n");
+  res.write(htmlTable(response));
+  res.end();
+  return response;
+};
 
+////////////////////////////////////////////////////////////////////////////////
+// DynamoDB putItem
+// https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/dynamodb/command/PutItemCommand/
+///////////////////////////////////////////////////////////////////////////////
+const putDynamoDBRecord = async (req,res) => {
+        
+        const table = await getDynamoTable();
+
+        // retrieve URL of recently uploaded file
+        let s3URLs = await listObjects(req,res);
+        const fname = req.files[0].originalname;
+        var s3URL = "URL not generated due to technical issue.";
+        for (let i = 0; i < s3URLs.length; i++) {
+          if(s3URLs[i].includes(fname)){
+            s3URL = s3URLs[i];
+           break
+           }
+        }
+
+        const client = new DynamoDBClient(config);
+        let id = uuidv4();
+        const input = { // PutItemInput
+        TableName: table.TableNames[0], // required
+                Item: 
+                        {
+                        "Email": {"S": req.body['email']},
+                        "RecordNumber": {"S": id},
+                        "CustomerName": {"S": req.body['name']},
+                        "Phone": {"S": req.body['phone']},
+                        "Stat": {"N": "0"},
+                        "RAWS3URL": {"S": s3URL},
+                        "FINSIHEDS3URL": {"S": ""}
+                        }
+                }
+
+        const command = new PutItemCommand(input);
+        const response = await client.send(command);
+        return response;        
+};
 ////////////////////////////////////////////////////////////////////////////////
 // Request to index.html or / express will match this route and render this page
 //
@@ -455,8 +526,8 @@ app.get('/gallery', function (req, res) {
 
 app.get('/db', function (req,res) {
 
-(async () => { await getDBIdentifier() } ) ();
-(async () => { await selectAndPrintRecord(req,res) } ) ();
+(async () => {await queryAndPrintDynamoRecords(req,res) } ) ();
+//(async () => { await selectAndPrintRecord(req,res) } ) ();
 
 });
 
@@ -467,10 +538,10 @@ app.post('/upload', upload.array('uploadFile',1), function (req, res, next) {
 (async () => { await getSnsTopicArn() })();
 (async () => { await subscribeEmailToSNSTopic() } ) ();
 (async () => { await sendMessageViaEmail(req,res) } ) ();
-(async () => { await insertRecord(req,res) } ) ();
+//(async () => { await insertRecord(req,res) } ) ();
+(async () => { await putDynamoDBRecord(req,res) } ) ();
 });
 
 app.listen(3000, function () {
     console.log('Amazon s3 file upload app listening on port 3000');
 });
-
