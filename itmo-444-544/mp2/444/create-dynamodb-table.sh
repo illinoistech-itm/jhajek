@@ -43,5 +43,6 @@ aws dynamodb query \
     --projection-expression "RecordNumber" \
     --key-condition-expression "Email = :v1" \
     --expression-attribute-values file://expression-attributes.json \
-    --return-consumed-capacity TOTAL
+    --return-consumed-capacity TOTAL \
+    --output=json
 
