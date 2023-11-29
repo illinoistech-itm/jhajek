@@ -320,6 +320,7 @@ ITEM
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
+# https://stackoverflow.com/questions/65984400/how-to-delete-non-empty-s3-bucket-with-terraform
 ##############################################################################
 
 resource "aws_s3_bucket" "raw-bucket" {
@@ -354,13 +355,13 @@ resource "aws_s3_bucket_public_access_block" "allow_access_from_another_account-
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-raw" {
-  depends_on=[data.aws_iam_policy_document.allow_access_from_another_account-raw]
+  #depends_on=[data.aws_iam_policy_document.allow_access_from_another_account-raw]
   bucket = aws_s3_bucket.raw-bucket.id
   policy = data.aws_iam_policy_document.allow_access_from_another_account-raw.json
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account-finished" {
-  depends_on=[data.aws_iam_policy_document.allow_access_from_another_account-finished]
+  #depends_on=[data.aws_iam_policy_document.allow_access_from_another_account-finished]
   bucket = aws_s3_bucket.finished-bucket.id
   policy = data.aws_iam_policy_document.allow_access_from_another_account-finished.json
 }
