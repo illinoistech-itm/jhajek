@@ -324,10 +324,12 @@ ITEM
 
 resource "aws_s3_bucket" "raw-bucket" {
   bucket = var.raw-s3-bucket
+  force_destroy = true
 }
 
 resource "aws_s3_bucket" "finished-bucket" {
   bucket = var.finished-s3-bucket
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_public_access_block" "allow_access_from_another_account-raw" {
