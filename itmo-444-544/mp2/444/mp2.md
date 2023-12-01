@@ -1,12 +1,11 @@
-# Week-11 Mini-Project 1
+# Week-15 Mini-Project 2
 
 ## Objectives
 
-* Deploy and explain the IAM permission hierarchy for S3 bucket access
+* Deploy your infrastructure using Hashicorp Terraform
 * Deploy and explain IAM profile instance attachments
-* Configure and explain VPC subnetting in the AWS Cloud
 * Deploy and configure a custom EC2 image
-* Deploy and explain how to clone application code via Git
+* Deploy and make use of SND and DynamoDB features
 * Configure and explore Cloud Security using AWS Secrets management
 
 ## Outcomes
@@ -17,38 +16,23 @@ Building upon the previous labs accomplishments, at the conclusion of this Mini-
 
 For this assignment you can make these assumptions
 
-* Start by copying your code from week-09 into a directory named: **mp1**
+* Start by copying your code from **mp1** into a directory named: **mp2**
   * `create-env.sh`, `destroy-env.sh`, and `install-env.sh`
-  * Along with the provided `app.js` and `index.html`
+  * Along with the provided `app.js` and `index.html` -> Use the app.js provided in the jhajek sample code repo
 * We will all be using `us-east-2` as our default region - update this if needed in your `aws configure`
 * That the access keys are already created and not needed in this script
 * You will use the security-group has been already created and all of the proper ports are open
   * You will in your create-env.sh script provide the creation of two more security groups for the database ingress and egress
-* Use AWS Secrets to retrieve username and password for the Maria SQL Database
-  * When creating the RDS instance use the retrieved secrets values for `master-user-password` and `master username`
 
 ## Deliverable
 
-Create a folder named: `mp1` under your class folder in the provided private repo.  Try not to leave uneeded files, samples, or old code commented out in your assignments. Make it clean.
+Create a folder named: `mp2` under your class folder in the provided private repo. Try not to leave uneeded files, samples, or old code commented out in your assignments. Make it clean.
 
 * A script named: `create-env.sh`
-  * In addition to the previous weeks requirements, you will need to deploy the following:
-  * 1 RDS instance
-    * size `db.t3.micro`
-    * engine `mariadb`
-    * ~~master-user-password `cluster168`~~
-    * ~~master username `wizard`~~
-    * --db-name `customers`
-  * Create 1 RDS read-replica
-  * One auto-scaling group
-    * 1 launch configuration
-    * Min 2, max 5, desired 3
 * A script named: `destroy-env.sh`
   * This script will terminate **all** infrastructure you have created and **must work**
 * A script named: `install-env.sh`
-  * We will clone our sample JavaScript application
-  * Install dependencies
-  * Run at infrastructure boot time
+* All needed policy and dynamodb schema files (see example code repo)
 
 ### create-env.sh
 
@@ -62,6 +46,8 @@ Run your script in this fashion:
 
 ### New create-env.sh requirements
 
+In addition the previous mp1's requirements you will need to add or modify:
+
 * Enable SNS subscription to a created topic for a user
 * Create a DynamoDB table 
 * Grant your user DynamoDB and SNS IAM permissions
@@ -73,7 +59,6 @@ Run your script in this fashion:
   * Render the /db URL
   * Render the /gallery URL
   * Render the /upload URL
-
 
 ### arguments.txt
 
@@ -143,8 +128,16 @@ Using AWS CLI v2 filters filter the instance you created and destroy it.  A sing
 
 ## Final Deliverable
 
-**Note** the database launches and destroys will begin to take upwards of 5-15 minutes, meaning that each deploy with waiters could get to be 5-20 mins. Plan accordingly.
+**Note** the database launches and destroys will begin to take upwards of 5-15 minutes, meaning that each deploy with waiters could get to be 20 mins. Plan accordingly. For those in the itmo 444-01 (live) section you will come to class and demonstrate your deploy from a completely destroyed application. You will be asked 2 or 3 questions about the functionality of your site, understand the code your were given and be prepared to answer how it works.
 
-Submit the URL to the mp1 folder to Blackboard. Your week-06 repo will contain all three shell scripts but not the **arguments.txt** file (add arguments.txt to your `.gitignore`)
+In addition you will demonstrate:
 
-Add two screenshots, one of the initial load-balancer site rendering. The other showing the content of the upload in the your raw bucket.  Add these screen captures to your GitHub Repo
+* Demonstrate the process of uploading and image
+* Show the SNS subscription message
+* Render the /db URL
+* Render the /gallery URL
+* Render the /upload URL
+
+If you are in the itmo-444 02 online section - you will need to record a video of yourself (camera on for verification purposes) demonstrating the live requirements listed above and submit a URL to that video along with your GitHub repo URL.
+
+**Due: Wednesday December 6th 2:00 PM**
