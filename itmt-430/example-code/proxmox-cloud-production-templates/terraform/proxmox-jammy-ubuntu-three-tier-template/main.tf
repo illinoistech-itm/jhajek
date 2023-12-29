@@ -11,10 +11,53 @@ resource "random_shuffle" "datadisk" {
   result_count = 1
 }
 
-resource "random_shuffle" "target_node" {
-  input        = ["system41", "system42"]
+resource "random_shuffle" "nodename" {
+  input        = ["NODENAME3","NODENAME4"]
   result_count = 1
 }
+
+##############################################################################
+# Connecting Vault with Secrets for Terraform
+# https://registry.terraform.io/providers/hashicorp/vault/latest/docs/data-sources/generic_secret
+# https://registry.terraform.io/providers/hashicorp/vault/latest/docs
+# https://github.com/hashicorp/terraform/issues/16457
+##############################################################################
+data "vault_generic_secret" "pm_api_url" {
+  path = "secret/team00-url"
+}
+
+output pm_api_url {
+value = "${data.vault_generic_secret.pm_api_url.data["PVE"]}"
+sensitive = true
+}
+
+data "vault_generic_secret" "pm_api_token_id" {
+  path = "secret/team00-username-tf-infra"
+}
+
+output pm_api_token_id {
+value = "${data.vault_generic_secret.pm_api_token_id.data["USERNAME"]}"
+sensitive = true
+}
+
+data "vault_generic_secret" "pm_api_token_secret" {
+  path = "secret/team00-token-tf-infra"
+}
+
+output pm_api_token_secret {
+value = "${data.vault_generic_secret.pm_api_token_secret.data["TOKEN"]}"
+sensitive = true
+}
+
+data "vault_generic_secret" "target_node" {
+  path = "secret/team00-NODENAME"
+}
+
+output target_node {
+value = "${data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]}"
+sensitive = true
+}
+##############################################################################
 
 ###############################################################################
 # Terraform Plan for load balancer instance
@@ -24,7 +67,7 @@ resource "proxmox_vm_qemu" "load-balancer" {
   count       = var.lb-numberofvms
   name        = "${var.lb-yourinitials}-vm${count.index}.service.consul"
   desc        = var.lb-desc
-  target_node = random_shuffle.target_node.result[0]
+  target_node = "${data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]}"
   clone       = var.lb-template_to_clone
   os_type     = "cloud-init"
   memory      = var.lb-memory

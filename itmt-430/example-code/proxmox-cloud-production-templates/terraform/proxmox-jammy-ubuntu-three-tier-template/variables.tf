@@ -73,7 +73,7 @@ variable "consulip-240-prod-system28" {
 }
 
 variable "consulip-240-student-system41" {
-  default = "10.110.0.36"
+  default = "10.110.0.58"
 }
 
 variable "consulip-242-room" {
