@@ -133,6 +133,9 @@ resource "proxmox_vm_qemu" "load-balancer" {
       "sudo systemctl enable node-exporter.service",
       "sudo systemctl start node-exporter.service",
       "sudo systemctl restart nginx",
+      "sudo growpart /dev/vda 3",
+      "sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv",
+      "sudo resize2fs /dev/ubuntu-vg/ubuntu-lv",
       "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
     ]
 
@@ -214,6 +217,9 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
       "sudo systemctl daemon-reload",
       "sudo systemctl enable node-exporter.service",
       "sudo systemctl start node-exporter.service",
+      "sudo growpart /dev/vda 3",
+      "sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv",
+      "sudo resize2fs /dev/ubuntu-vg/ubuntu-lv",      
       "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
     ]
 
@@ -300,6 +306,9 @@ resource "proxmox_vm_qemu" "backend-database" {
       "sudo sed -i '1,$s/127.0.0.1/${var.backend-yourinitials}-vm${count.index}.service.consul/g' /etc/mysql/mariadb.conf.d/50-server.cnf",
       "sudo systemctl daemon-reload",
       "sudo systemctl restart mariadb.service",
+      "sudo growpart /dev/vda 3",
+      "sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv",
+      "sudo resize2fs /dev/ubuntu-vg/ubuntu-lv",      
       "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
     ]
 
