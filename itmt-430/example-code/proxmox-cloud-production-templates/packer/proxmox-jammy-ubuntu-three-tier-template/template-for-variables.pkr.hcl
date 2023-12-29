@@ -4,28 +4,24 @@
 // set them from the command line, a var-file, or the environment.
 
 # This is the name of the node in the Cloud Cluster where to deploy the virtual instances
-variable "NODENAME" {
-  type    = string
-  default = ""
+locals {
+  NODENAME = vault("/secret/data/team00-NODENAME","NODENAME3")
 }
 
-variable "TOKEN_ID" {
-  sensitive = true
-  type      = string
-  default   = ""
+locals {
+  USERNAME = vault("/secret/data/team00-username-packer-system","USERNAME")
 }
 
-variable "TOKEN_SECRET" {
-  sensitive = true
-  type      = string
-  default   = ""
+locals {
+  PROXMOX_TOKEN = vault("/secret/data/team00-token-packer-system","TOKEN")
 }
 
-variable "URL" {
-  type = string
-  # https://x.x.x.x:8006/api2/json
-  default   = ""
-  sensitive = true
+locals {
+  URL = vault("/secret/data/team00-url","SYSTEM41")
+}
+
+locals {
+  SSHPW = vault("/secret/data/team00-ssh","SSHPASS")
 }
 
 variable "MEMORY" {
@@ -70,24 +66,14 @@ variable "loadbalancer-VMNAME" {
   default = ""
 }
 
-# This is the password set in the subiquity/http/user-data line 9,
-# default password is vagrant, and password auth will be remove 
-# and replaced with Public Key Authentication at run time --
-# This is only for build time
-variable "SSHPW" {
-  type      = string
-  default   = ""
-  sensitive = true
-}
-
 variable "iso_checksum" {
   type    = string
-  default = "sha256:5e38b55d57d94ff029719342357325ed3bda38fa80054f9330dc789cd2d43931"
+  default = "file:https://mirrors.edge.kernel.org/ubuntu-releases/22.04.3/SHA256SUMS"
 }
 
 variable "iso_urls" {
   type    = list(string)
-  default = ["https://old-releases.ubuntu.com/releases/22.04/ubuntu-22.04.2-live-server-arm64.iso", "http://www.releases.ubuntu.com/jammy/ubuntu-22.04.2-live-server-amd64.iso"]
+  default = ["http://mirrors.edge.kernel.org/ubuntu-releases/22.04.3/ubuntu-22.04.3-live-server-amd64.iso"]
 }
 
 # This will be the non-root user account name

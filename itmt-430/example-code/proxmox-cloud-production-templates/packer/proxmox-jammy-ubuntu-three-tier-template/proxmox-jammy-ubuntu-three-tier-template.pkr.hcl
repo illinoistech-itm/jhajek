@@ -28,9 +28,9 @@ source "proxmox-iso" "backend-database" {
   ]
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
-  node      = "${var.NODENAME}"
-  username  = "${var.TOKEN_ID}"
-  token     = "${var.TOKEN_SECRET}"
+  node      = "${local.NODENAME}"
+  username  = "${local.USERNAME}"
+  token     = "${local.PROXMOX_TOKEN}"
   cpu_type  = "host"
   disks {
     disk_size    = "${var.DISKSIZE}"
@@ -61,13 +61,13 @@ source "proxmox-iso" "backend-database" {
   }
 
   os                       = "l26"
-  proxmox_url              = "${var.URL}"
+  proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
   unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "${var.STORAGEPOOL}"
-  ssh_password             = "${var.SSHPW}"
+  ssh_password             = "${local.SSHPW}"
   ssh_username             = "vagrant"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for Ubuntu Jammy Database 3 tier" 
@@ -87,9 +87,9 @@ source "proxmox-iso" "frontend-webserver" {
   ]
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
-  node      = "${var.NODENAME}"
-  username  = "${var.TOKEN_ID}"
-  token     = "${var.TOKEN_SECRET}"
+  node      = "${local.NODENAME}"
+  username  = "${local.USERNAME}"
+  token     = "${local.PROXMOX_TOKEN}"
   cpu_type  = "host"
   disks {
     disk_size    = "${var.DISKSIZE}"
@@ -120,13 +120,13 @@ source "proxmox-iso" "frontend-webserver" {
   }
 
   os                       = "l26"
-  proxmox_url              = "${var.URL}"
+  proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
   unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "${var.STORAGEPOOL}"
-  ssh_password             = "${var.SSHPW}"
+  ssh_password             = "${local.SSHPW}"
   ssh_username             = "vagrant"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for Ubuntu Jammy Frontend webserver"
@@ -146,9 +146,9 @@ source "proxmox-iso" "load-balancer" {
   ]
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
-  node      = "${var.NODENAME}"
-  username  = "${var.TOKEN_ID}"
-  token     = "${var.TOKEN_SECRET}"
+  node      = "${local.NODENAME}"
+  username  = "${local.USERNAME}"
+  token     = "${local.PROXMOX_TOKEN}"
   cpu_type  = "host"
   disks {
     disk_size    = "${var.DISKSIZE}"
@@ -179,13 +179,13 @@ source "proxmox-iso" "load-balancer" {
   }
 
   os                       = "l26"
-  proxmox_url              = "${var.URL}"
+  proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
   unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "${var.STORAGEPOOL}"
-  ssh_password             = "${var.SSHPW}"
+  ssh_password             = "${local.SSHPW}"
   ssh_username             = "vagrant"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for Ubuntu Jammy"
