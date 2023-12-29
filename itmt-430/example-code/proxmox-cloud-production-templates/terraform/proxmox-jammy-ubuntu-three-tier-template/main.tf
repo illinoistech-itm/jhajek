@@ -32,7 +32,7 @@ sensitive = true
 }
 
 data "vault_generic_secret" "pm_api_token_id" {
-  path = "secret/team00-username-tf-infra"
+  path = "secret/team00-username-tf-system"
 }
 
 output pm_api_token_id {
@@ -41,7 +41,7 @@ sensitive = true
 }
 
 data "vault_generic_secret" "pm_api_token_secret" {
-  path = "secret/team00-token-tf-infra"
+  path = "secret/team00-token-tf-system"
 }
 
 output pm_api_token_secret {
