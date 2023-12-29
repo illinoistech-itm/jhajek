@@ -1,13 +1,4 @@
 #https://registry.terraform.io/providers/Telmate/proxmox/latest/docs
-variable "pm_api_url" {}
-
-variable "pm_api_token_id" {
-  sensitive = true
-}
-
-variable "pm_api_token_secret" {
-  sensitive = true
-}
 
 variable "error_level" {
   default = "debug"
