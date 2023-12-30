@@ -26,37 +26,18 @@ data "vault_generic_secret" "pm_api_url" {
   path = "secret/team00-url"
 }
 
-output pm_api_url {
-value = "${data.vault_generic_secret.pm_api_url.data["PVE"]}"
-sensitive = true
-}
-
 data "vault_generic_secret" "pm_api_token_id" {
   path = "secret/team00-username-tf-system"
-}
-
-output pm_api_token_id {
-value = "${data.vault_generic_secret.pm_api_token_id.data["USERNAME"]}"
-sensitive = true
 }
 
 data "vault_generic_secret" "pm_api_token_secret" {
   path = "secret/team00-token-tf-system"
 }
 
-output pm_api_token_secret {
-value = "${data.vault_generic_secret.pm_api_token_secret.data["TOKEN"]}"
-sensitive = true
-}
-
 data "vault_generic_secret" "target_node" {
   path = "secret/team00-NODENAME"
 }
 
-output target_node {
-value = "${data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]}"
-sensitive = true
-}
 ##############################################################################
 
 ###############################################################################
