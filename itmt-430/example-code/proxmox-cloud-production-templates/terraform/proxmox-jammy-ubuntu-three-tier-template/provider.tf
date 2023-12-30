@@ -2,7 +2,7 @@ terraform {
   required_providers {
     proxmox = {
       source  = "Telmate/proxmox"
-      version = "2.9.14"
+      version = "2.9.11"
     }
     consul = {
       source  = "hashicorp/consul"
