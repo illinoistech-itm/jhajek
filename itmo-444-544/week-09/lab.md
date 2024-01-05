@@ -66,7 +66,7 @@ This is where you will pass the arguments (space delimited) as follows (order is
 1) target group name
 1) availability-zone 2 (choose b)
 1) auto-scaling group name
-1) launch configuration name
+1) launch template name
 1) db instance identifier (database name)
 1) db instance identifier (for read-replica), append *-rpl* to the database name
 1) min-size = 2
