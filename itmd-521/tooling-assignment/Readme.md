@@ -35,11 +35,11 @@ Homebrew is the MacOS 3rd party package manager located at: [https://brew.sh/](h
 
 If you have a Mac - install brew and provide a screenshot of the output of the command: `brew --version`
 
-### Windows 10 21H1+
+### Windows 10 and 11
 
 The name of the third party Windows Package manager is Chocolatey.  The download is located at [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page").
 
-For Windows 10, place a screenshot of the version command output for: ```choco --version```.
+For Windows place a screenshot of the version command output for: ```choco --version```.
 
 ### Commands to run to install all the software
 
@@ -53,15 +53,16 @@ For M1 Macs you will run the same as above but without the  VirtualBox install:
 
 `brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask vagrant ; brew install packer`
 
-* For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
+* For M1 Macs you will need to make a purchase of a copy of Parallels Pro
   * [https://www.parallels.com/products/desktop/pro/](https://www.parallels.com/products/desktop/pro/ "Parallels Pro Edition")
-  * The standard and education edition doesn't contain the commandline interface needed for automation.
+  * The standard and education edition doesn't contain the commandline interface needed for automation
+  * [50% discount link](https://www.parallels.com/landingpage/pd/education/ "Parallels Pro discuount")
 * Once Vagrant and Parallels Pro Edition is installed you need to also install the Parallels SDK from the Download Tab in your parallels.com account
   * From the Terminal run the command: `vagrant plugin install vagrant-parallels`
     * This will add the needed plugin to allow you to use Parallels from Vagrant
     * This will also work if you have Parallels Pro Edition on an Intel Mac
 
-For Windows 10 and 11 using Chocolatey:
+For Windows using Chocolatey:
 
 ```PowerShell
 choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell vagrant packer virtualbox
