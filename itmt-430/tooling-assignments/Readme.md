@@ -43,7 +43,7 @@ Homebrew is the MacOS 3rd party package manager located at: [https://brew.sh/](h
 
 If you have a Mac - install brew and provide a screenshot of the output of the command: `brew --version`
 
-### Windows 10 21H1+ or 11
+### Windows 10 or 11
 
 The name of the third party Windows Package manager is Chocolatey. The download is located at [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page").
 
@@ -118,8 +118,6 @@ We will be installing an text editor or and IDE for all of our coding and config
 
 * [VSCode from Microsoft](https://code.visualstudio.com/ "VSCode install")
   * Cross platform and has direct shell integration
-* [atom.io](https://atom.io/ "Atom.io install")
-  * Built by GitHub for Git integration
 * [Sublime Text](http://www.sublimetext.com/ "Submlime Text installer site")
   * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose.  Available for all platforms.
 * [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")

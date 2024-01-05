@@ -1,6 +1,6 @@
 # Git Tutorial
 
-![*Git commit messages--after developing this book I understand this completely*](https://github.com/illinoistech-itm/jhajek/blob/master/itmo-340-540/images/Chapter-Header/Appendix-D/git_commit-2.png "Git Commit")
+![*Git commit messages--after developing this book I understand this completely*](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/images/Chapter-Header/Appendix-D/git_commit-2.png "Git Commit")
 
 This is a tutorial for installing Git and configuring GitHub on Windows 10/11 and macOS.  
 
@@ -34,7 +34,7 @@ choco install git vscode powershell-core
 
 Once this is successful make sure to close the PowerShell console that was launched with Administrator privileges. Open PowerShell console, this time version 7--with the dark blue icon, not the light blue icon. Type the command: `git --version`, if the installation went well you will see version information printed to PowerShell similar to this: `git version 2.20.1.windows.1`
 
-### macOS - Git Installation via Homebrew
+### MacOS - Git Installation via Homebrew
 
 [Homebrew](https://brew.sh/ "macOS Homebrew webpage") is a third party package manager available for MacOS. Both Intel Macs and M1 Macs are supported by Homebrew. This functions as a much needed package manager and a way to install needed packages in an automated fashion. Using a package manager allows for having scripted installations as well as a function to update software in place from the command line.
 
@@ -54,7 +54,7 @@ brew cask install visual-studio-code
 
 ## Git Basics
 
-There are many Git Tutorials available on the Internet, some paid, and some free. The main source of documentation is the [Git Book](https://git-scm.com/book/en/v2 "Link to Git Book") from the Git developers and is available on line for free and in a printed edition.  We will be referencing some of that material in this tutorial and adding some more specific details.
+There are many Git Tutorials available on the Internet, some paid, and some free. The main source of documentation is the [Git Book](https://git-scm.com/book/en/v2 "Link to Git Book") from the Git developers and is available on line for free and in a printed edition. We will be referencing some of that material in this tutorial and adding some more specific details.
 
 ### Initial Git Setup
 
@@ -224,27 +224,27 @@ Now that we have a public key generated, copy the displayed content. We will now
 
 The steps listed here will help add your Public Key to your GitHub account for authentication. To begin, select the circle icon in the upper right corner to expand the option menu.
 
-![*Log into your GitHub Account*](https://github.com/illinoistech-itm/jhajek/blob/master/itmo-340-540/images/Appendix-D/github-menu.png "Your GitHub account settings")
+![*Log into your GitHub Account*](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/images/Appendix-D/github-menu.png "Your GitHub account settings")
 
 In this new menu near the bottom of the list your will see the **Settings** option.
 
-![*Select the Settings Option*](https://github.com/illinoistech-itm/jhajek/blob/master/itmo-340-540/images/Appendix-D/settings.png "Select the Settings Option")
+![*Select the Settings Option*](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/images/Appendix-D/settings.png "Select the Settings Option")
 
 A new set of settings options will appear, we want to select on the left-hand side middle of the page, **SSH and GPG Keys**.
 
-![*Select the SSH and GPG Keys option*](https://github.com/illinoistech-itm/jhajek/blob/master/itmo-340-540/images/Appendix-D/ssh.png "Select the SSH and GPG Keys option")
+![*Select the SSH and GPG Keys option*](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/images/Appendix-D/ssh.png "Select the SSH and GPG Keys option")
 
 On the right hand side of the new page, there will be a green **New SSH Key** button.
 
-![*Select Green New Key Button*](https://github.com/illinoistech-itm/jhajek/blob/master/itmo-340-540/images/Appendix-D/new.png "Select Green New Key Button")
+![*Select Green New Key Button*](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/images/Appendix-D/new.png "Select Green New Key Button")
 
 You will be presented with two text-boxes. The first is a title -- this is a comment that you can enter so you know where this key came from. I would recommend titling it based on two things: where is the key located (your laptop or desktop) and what is it for (the class number). This way you will give yourself a clue to the private keys location if you ever forget.
 
-![*Enter a descriptive title for the key*](https://github.com/illinoistech-itm/jhajek/blob/master/itmo-340-540/images/Appendix-D/title.png "Enter a descriptive title for the key")
+![*Enter a descriptive title for the key*](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/images/Appendix-D/title.png "Enter a descriptive title for the key")
 
 Paste the contents of the *.pub* file into the box labeled **Key** and hit the submit button. Your public key is now associated with your GitHub account to be used for authentication. Submit the key by hitting the green **Add SSH key** button.
 
-![*Paste the content of your Public key*](https://github.com/illinoistech-itm/jhajek/blob/master/itmo-340-540/images/Appendix-D/key.png "Paste the content of your Public key")
+![*Paste the content of your Public key*](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/images/Appendix-D/key.png "Paste the content of your Public key")
 
 #### Create the config file in your .ssh directory
 
@@ -287,15 +287,15 @@ Now we are set and ready to clone your remote repository to your local repositor
 1. Try not to use iCloud or OneDrive based disks that are backed up to the cloud as you already have a remote repository
 1. No spaces in filenames or folder names...[ever](https://jeremyhajek.com/2011/07/15/spaces-will-always-kill-you.html "Blog post. Spaces will always kill you")
 
-In my case I will create a new directory named `itmo-340` under my documents directory. You can use the File Explorer or the Finder in Mac to create files, but it is preferable to get comfortable with the commandline or shell. Opening PowerShell (or Terminal on a Mac) you will enter a series of commands:
+In my case I will create a new directory named `itmt-430` under my documents directory. You can use the File Explorer or the Finder in Mac to create files, but it is preferable to get comfortable with the commandline or shell. Opening PowerShell (or Terminal on a Mac) you will enter a series of commands:
 
 ```bash
 # The cd command changes directory -- navigates down the tree
 cd Documents
 # The mkdir command makes a new directory
-mkdir itmo-340
+mkdir itmt-430
 # The cd command moves you into the directory you just created
-cd itmo-340
+cd itmt-430
 # This is the command that we use to make a clone of our remote repository
 # Note: your URL will be different, change accordingly
 git clone git@github.com:illinoistech-itm/sample-student.git
@@ -310,7 +310,7 @@ ls
 
 Git is a commandline tool and it's many commands and features are replicated within the development IDEs such as VS Code, Atom, or Sublime editors. In our case we will be using VS Code. Our first step is to open the repository you just cloned to your system.
 
-Once VS Code is open, click the `File` option and select `Open Folder`. Git doesn't see files, that is a concession to humans, who understand files, Git only sees `repositories` so to work with Git we always need to open a folder. In this case I will navigate to `~/Documents/itmo-340/sample-student` and click the `Select Folder` button. Remember, we are not opening individual files--we are opening a repository.
+Once VS Code is open, click the `File` option and select `Open Folder`. Git doesn't see files, that is a concession to humans, who understand files, Git only sees `repositories` so to work with Git we always need to open a folder. In this case I will navigate to `~/Documents/itmt-430/sample-student` and click the `Select Folder` button. Remember, we are not opening individual files--we are opening a repository.
 
 VS Code will open your just cloned repository, you will see an empty `Readme.md` file in the file manager (upper left) lets select this and begin to edit this file. The tutorial assignment requires you to edit your `Readme.md` to make a markdown document. This Readme.md will contain these elements written in Markdown. This is the [Markdown cheat sheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
 

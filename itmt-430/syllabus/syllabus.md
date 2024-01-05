@@ -2,7 +2,7 @@
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
-Semester: Spring 2023 - Professor Jeremy Hajek
+Semester: Spring 2024 - Professor Jeremy Hajek
 
 ![*https://xkcd.com/1700/*](images/new_bug.png "All Software Engineering...")
 
@@ -13,7 +13,7 @@ Semester: Spring 2023 - Professor Jeremy Hajek
  Telephone | 312.567.5937
  Email | hajek@iit.edu
  Office | Perlstein Hall Room 223A, 10 W. 33rd St.
- Office Hours | Mon 12:30 PM — 1:20 PM, Tue & Thu 10:40 AM — 2:40 PM, Wed 11:30 AM — 1:00 PM, Fri 11:00 AM — 2:00 PM
+ Office Hours | Tue 2:00 - 3:00 PM, Wed 10:00 AM — 12:00 PM, Thu 1:00 PM - 3:00 PM, Fri 12:00 PM — 2:00 PM
  Location | Perlstein Hall 223 or Via Google Meets
  URL | Book and appointment at: [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 
@@ -23,15 +23,15 @@ In this capstone course, students will identify, gather, analyze, and write requ
 
 ## Prerequisites
 
-ITMD 321, ITMD 411, ITMD 361, ITMD 362, ITM 100, ITMM 471, ITMO 340, and ITMO 356   Credit: 2-0-2 (lecture and Lab course) Semester Hours
+* ITMD 321, ITMD 411, ITMD 361, ITMD 362, ITM 100, ITMM 471, ITMO 340, and ITMO 356  
+* Credit: 2-0-2 (lecture and Lab course) Semester Hours
 
 ## Lecture Day, Time & Place
 
 * Main Lecture Class time
-  * Monday 8:35am to 10:15am - [Michael Galvin Tower 1F6-1](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+  * Monday 10:00 am to 11:40am - [Michael Galvin Tower 1F6-1](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 * Lab Class Times
-  * Lab 01 Monday 10:25am to 12:05pm [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
-  * Lab 03 Wednesday 8:35am to 10:15am [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+  * Lab 01 Monday 10:50am to 1:30pm [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
   * Lab 04 Online meeting TBA
 
 ## Directions to the Smart Lab TS-2030
@@ -44,23 +44,23 @@ All readings should be done prior to class
 
 Session | Date | Topic | Lab |
 ----------|------|:------|----------
-1 | 01/09 | Introduction | Intro to Tooling Part I
-2 | 01/16 | No Class MLK Jr Day | Intro to Tooling Part II
-3 | 01/23 | The Three Ways Ch 2-4 | NA
-4 | 01/30 | Where to Start Ch 5-6 | ~~Sprint 01 presentation~~ NA
-5 | 02/06 | Where to Start Ch 7-8 | ~~NA~~ Sprint 01 presentation
-6 | 02/13 | Technical Practices of Flow Ch 9-13 | NA
-7 | 02/20 | Technical Practices of Feedback Ch 14-18 | ~~Sprint 02 presentation~~ NA
-8 | 02/27 | Technical Practices of Learning Ch 19-21 | ~~NA~~ Sprint 02 presentation
-9 | 03/06 | Technical Practices of InfoSec Ch 22-23 | NA
-NA | 03/13 | Spring Break Week | NA
-10 | 03/20 | DevOps Solutions 2-3 | NA
-11 | 03/27 | DevOps Solutions 4-5 | Sprint 03 presentation
-12 | 04/03 | DevOps Solutions 6-7 | NA
-13 | 04/10 | DevOps Solutions 8-9 | Sprint 04 presentation
-14 | 04/17 | DevOps Solutions 10-12 | NA
-15 | 04/24 | Review and Wrap up | Sprint 05 presentation
-16 | 05/01 | Final Exam Week | NA
+1 | 01/08 | Introduction | Intro to Tooling Part I
+2 | 01/15 | No Class MLK Jr Day | Intro to Tooling Part II
+3 | 01/22 | The Three Ways Ch 2-4 | NA
+4 | 01/29 | Where to Start Ch 5-6 | NA
+5 | 02/05 | Where to Start Ch 7-8 | Sprint 01 presentation
+6 | 02/12 | Technical Practices of Flow Ch 9-13 | NA
+7 | 02/19 | Technical Practices of Feedback Ch 14-18 | NA
+8 | 02/26 | Technical Practices of Learning Ch 19-21 | Sprint 02 presentation
+9 | 03/04 | Technical Practices of InfoSec Ch 22-23 | NA
+NA | 03/11 | Spring Break Week | NA
+10 | 03/18 | DevOps Solutions 2-3 | NA
+11 | 03/25 | DevOps Solutions 4-5 | Sprint 03 presentation
+12 | 04/01 | DevOps Solutions 6-7 | NA
+13 | 04/08 | DevOps Solutions 8-9 | Sprint 04 presentation
+14 | 04/15 | DevOps Solutions 10-12 | NA
+15 | 04/22 | Review and Wrap up | Sprint 05 presentation
+16 | 04/29 | Final Exam Week | NA
 
 ## Course Student Outcomes
 
