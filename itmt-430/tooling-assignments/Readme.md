@@ -147,6 +147,10 @@ git config --global user.name "Jeremy Hajek"
 git config --global user.email "hajek@iit.edu"
 ```
 
+### Completion of GitHub Tutorial
+
+You can now proceed to complete the GitHub tutorial setup and then return to finish the deliverables below.
+
 ### Install VirtualBox or Parallels
 
 If you do not already have VirtualBox 6.x installed, use your package manager to install VirtualBox.  VirtualBox will be our virtualization platform we are using this semester. It is a robust opensource product and can be used to create and host machines on our local systems.  It has integration with automation tools such as Packer and Vagrant from HashiCorp.
