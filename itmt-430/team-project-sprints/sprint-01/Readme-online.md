@@ -116,7 +116,7 @@ id_ed25519*
 .Vagrantfile*
 ```
 
-## Decided on Team Project Idea
+## Decide on Team Project Idea
 
 The project will you will have to plan, build, deploy, manage, and secure a 3-tier webapp site. Your team will need to determine what the site will be/do. The team needs to keep in mind the site will be working by the end of sprint-02. Your team can choose a topic or subject for your site that you could use as a future resume piece. This will impact the rest of your sprint-01 deliverables.
 
