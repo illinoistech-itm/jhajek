@@ -2,7 +2,7 @@
 
 ![](./syllabus/class-556/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
-Semester: Fall 2023 Professor Jeremy Hajek
+Semester: Spring 2024 Professor Jeremy Hajek
 
 ![*Linux...*](./syllabus/class-556/images/linux.png "Dilbert Cartoon")
 
@@ -13,7 +13,7 @@ Semester: Fall 2023 Professor Jeremy Hajek
       Telephone: 312.567.5937
           Email: hajek@iit.edu
          Office: Perlstein Hall Room 223A, 10 W. 33rd St.
-   Office Hours: Mies Campus: Friday 10:00-2:00
+   Office Hours: Mies Campus: Friday 12:00-2:00
          Online: Book and appointment at:
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 ---------------- --------------------------------------------------------
@@ -28,7 +28,12 @@ None : LECTURE: 2 LAB: 2 CREDITS: 3
 
 ### Lecture Day, Time & Place
 
-Monday and Wednesday 1:50 pm - 3:05 pm in [Galvin Tower room 67C1](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
+Tuesday and Thursday 11:25 am - 12:40 pm in [Smart Tech Lab in Tech Park South](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
+
+#### Smart Lab Location
+
+To get to the Smart Tech Lab, enter the Michael Galvin tower on 35th Street.  Swipe in at the desk and take the elevator up to the second floor.  Exit to the left and head north over the bridge from the Tower to the TS building.  The Floor turns from white tile to brown carpet.  Take a left at the intersection and the Smart Lab is directly ahead of you.
+ 
 
 ### Schedule of Topics/Readings
 
@@ -36,23 +41,23 @@ All readings should be done prior to class. Do the readings!
 
 Session | Date | Topic | Reading |
 --------|------|:------|----------
-01 | 08/21,23 | Introduction & Tooling Setup | Technology and Philosophy of FOSS Ch 2
-02 | 08/28,30 | History of Free and Open Source | Technology and Philosophy of FOSS Ch 3
-03 | 09/04,06 | Labor Day No class, Hardware and Linux Install | Technology and Philosophy of FOSS Ch 4
-04 | 09/11,13 | Desktop Linux and GUIs | Technology and Philosophy of FOSS Ch 5
-05 | 09/18,20 | Filesystem, Path, Shell, and File Permissions  | Technology and Philosophy of FOSS Ch 6
-06 | 09/25,27 | Shell meta-characters, pipes, search and tools | Technology and Philosophy of FOSS Ch 7
-07 | 10/02,04 | Introduction to Bash Shell, Linux Editors, and User Profiles | Technology and Philosophy of FOSS Ch 8
-08 | 10/09,11 | Writing Basic Shell Scripts | NA
-09 | 10/16,18 | Midterm Exam | Technology and Philosophy of FOSS Ch 9
-10 | 10/23,25 | System Administration and systemd | Technology and Philosophy of FOSS Ch 10
-11 | 10/30,11/01 | Init Services, Daemons, Processes | Technology and Philosophy of FOSS Ch 11
-12 | 11/06,08 | Filesystems: Creating, Partitioning, and Mounting | Technology and Philosophy of FOSS Ch 12
-13 | 11/13,15 | Networking, Webservers, and Databases | Technology and Philosophy of FOSS Ch 13
-14 | 11/20 | Infrastructure and Orchestration | NA - Final Project Assigned
-14 | 11/22 | NA | Thanksgiving Break - No Class
-15 | 11/27,29 | Final Project Work | NA
-16 | 12/04-09 | Final Exam week - Presentation of Final Project
+01 | 01/09,11 | Introduction & Tooling Setup | Technology and Philosophy of FOSS Ch 2
+02 | 01/16,18 | History of Free and Open Source | Technology and Philosophy of FOSS Ch 3
+03 | 01/23,25 | Labor Day No class, Hardware and Linux Install | Technology and Philosophy of FOSS Ch 4
+04 | 01/30,02/1 | Desktop Linux and GUIs | Technology and Philosophy of FOSS Ch 5
+05 | 02/6,8 | Filesystem, Path, Shell, and File Permissions  | Technology and Philosophy of FOSS Ch 6
+06 | 02/13,15| Shell meta-characters, pipes, search and tools | Technology and Philosophy of FOSS Ch 7
+07 | 02/20,22 | Introduction to Bash Shell, Linux Editors, and User Profiles | Technology and Philosophy of FOSS Ch 8
+08 | 02/27,29 | Writing Basic Shell Scripts | NA
+09 | 03/5,7 | Midterm Exam | Technology and Philosophy of FOSS Ch 9
+NA | 03/12,14 | no class- Spring Break
+10 | 03/19,21 | Init Services, Daemons, Processes | Technology and Philosophy of FOSS Ch 11
+11 | 03/26,28 | Filesystems: Creating, Partitioning, and Mounting | Technology and Philosophy of FOSS Ch 12
+12 | 04/2,4| Networking, Webservers, and Databases | Technology and Philosophy of FOSS Ch 13
+13 | 04/9,11 | Infrastructure and Orchestration | NA - Final Project Assigned
+14 | 04/16,18 |  |
+15 | 04/23,25 | Final Project Work | NA
+16 | 04/30 | Final Exam week - Presentation of Final Project
 
 ### Course Outcomes
 
