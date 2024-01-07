@@ -44,17 +44,17 @@ Session | Date | Topic | Homework Reading |
 02 | 01/16,18 | History of Free and Open Source | Technology and Philosophy of FOSS Ch 3
 03 | 01/23,25 | Hardware and Linux Install | Technology and Philosophy of FOSS Ch 4
 04 | 01/30,02/01 | Desktop Linux and GUIs | Technology and Philosophy of FOSS Ch 5
-05 | 02/06,08 | Filesystem, Path, Shell, and File Permissions  | Technology and Philosophy of FOSS Ch 6
-06 | 02/13,15| Shell meta-characters, pipes, search and tools | Technology and Philosophy of FOSS Ch 7
+05 | 02/06,08 | Filesystem, Path, Shell, and File Permissions | Technology and Philosophy of FOSS Ch 6
+06 | 02/13,15 | Shell meta-characters, pipes, search and tools | Technology and Philosophy of FOSS Ch 7
 07 | 02/20,22 | Introduction to Bash Shell, Linux Editors, and User Profiles | Technology and Philosophy of FOSS Ch 8
 08 | 02/27,29 | Writing Basic Shell Scripts | NA
 09 | 03/05,07 | Midterm Project Week | Technology and Philosophy of FOSS Ch 9
-NA | 03/12,14 | no class- Spring Break
-10 | 03/19,21 | Init Services, Daemons, Processes | Technology and Philosophy of FOSS Ch 11
-11 | 03/26,28 | Filesystems: Creating, Partitioning, and Mounting | Technology and Philosophy of FOSS Ch 12
-12 | 04/02,04| Networking, Webservers, and Databases | Technology and Philosophy of FOSS Ch 13
-13 | 04/09,11 | Infrastructure and Orchestration | NA - Final Project Assigned
-14 | 04/16,18 |  |
+NA | 03/12,14 | no class - Spring Break | -
+10 | 03/19,21 | System Administration | Technology and Philosophy of FOSS Ch 10
+11 | 03/26,28 | Init Services, Daemons, Processes | Technology and Philosophy of FOSS Ch 11
+12 | 04/02,04 | Filesystems: Creating, Partitioning, and Mounting | Technology and Philosophy of FOSS Ch 12
+13 | 04/09,11 | Networking, Webservers, and Databases | Technology and Philosophy of FOSS Ch 13
+14 | 04/16,18 | Infrastructure and Orchestration | Final Project Assigned
 15 | 04/23,25 | Final Project Work | NA
 16 | 04/30 | Final Exam week - Presentation of Final Project
 
