@@ -1,10 +1,10 @@
 # ITMO 556 Introduction to OpenSource Software
 
-![](./syllabus/class-556/images/CoC_horiz_lockup_2019.jpg "COC Logo")
+![](images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
 Semester: Spring 2024 Professor Jeremy Hajek
 
-![*Linux...*](./syllabus/class-556/images/linux.png "Dilbert Cartoon")
+![*Linux...*](images/linux.png "Dilbert Cartoon")
 
 ---------------- --------------------------------------------------------
   **Professor**: Jeremy Hajek
@@ -33,28 +33,27 @@ Tuesday and Thursday 11:25 am - 12:40 pm in [Smart Tech Lab in Tech Park South](
 #### Smart Lab Location
 
 To get to the Smart Tech Lab, enter the Michael Galvin tower on 35th Street.  Swipe in at the desk and take the elevator up to the second floor.  Exit to the left and head north over the bridge from the Tower to the TS building.  The Floor turns from white tile to brown carpet.  Take a left at the intersection and the Smart Lab is directly ahead of you.
- 
 
 ### Schedule of Topics/Readings
 
 All readings should be done prior to class. Do the readings!  
 
-Session | Date | Topic | Reading |
+Session | Date | Topic | Homework Reading |
 --------|------|:------|----------
 01 | 01/09,11 | Introduction & Tooling Setup | Technology and Philosophy of FOSS Ch 2
 02 | 01/16,18 | History of Free and Open Source | Technology and Philosophy of FOSS Ch 3
-03 | 01/23,25 | Labor Day No class, Hardware and Linux Install | Technology and Philosophy of FOSS Ch 4
-04 | 01/30,02/1 | Desktop Linux and GUIs | Technology and Philosophy of FOSS Ch 5
-05 | 02/6,8 | Filesystem, Path, Shell, and File Permissions  | Technology and Philosophy of FOSS Ch 6
+03 | 01/23,25 | Hardware and Linux Install | Technology and Philosophy of FOSS Ch 4
+04 | 01/30,02/01 | Desktop Linux and GUIs | Technology and Philosophy of FOSS Ch 5
+05 | 02/06,08 | Filesystem, Path, Shell, and File Permissions  | Technology and Philosophy of FOSS Ch 6
 06 | 02/13,15| Shell meta-characters, pipes, search and tools | Technology and Philosophy of FOSS Ch 7
 07 | 02/20,22 | Introduction to Bash Shell, Linux Editors, and User Profiles | Technology and Philosophy of FOSS Ch 8
 08 | 02/27,29 | Writing Basic Shell Scripts | NA
-09 | 03/5,7 | Midterm Exam | Technology and Philosophy of FOSS Ch 9
+09 | 03/05,07 | Midterm Project Week | Technology and Philosophy of FOSS Ch 9
 NA | 03/12,14 | no class- Spring Break
 10 | 03/19,21 | Init Services, Daemons, Processes | Technology and Philosophy of FOSS Ch 11
 11 | 03/26,28 | Filesystems: Creating, Partitioning, and Mounting | Technology and Philosophy of FOSS Ch 12
-12 | 04/2,4| Networking, Webservers, and Databases | Technology and Philosophy of FOSS Ch 13
-13 | 04/9,11 | Infrastructure and Orchestration | NA - Final Project Assigned
+12 | 04/02,04| Networking, Webservers, and Databases | Technology and Philosophy of FOSS Ch 13
+13 | 04/09,11 | Infrastructure and Orchestration | NA - Final Project Assigned
 14 | 04/16,18 |  |
 15 | 04/23,25 | Final Project Work | NA
 16 | 04/30 | Final Exam week - Presentation of Final Project

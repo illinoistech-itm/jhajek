@@ -2,7 +2,7 @@
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
-Semester: Spring 2023 Professor Jeremy Hajek
+Semester: Spring 2024 Professor Jeremy Hajek
 
 ![*https://xkcd.com/2054/*](images/data_pipeline.png "XCKD 2054 image URL")
 
@@ -13,7 +13,7 @@ Semester: Spring 2023 Professor Jeremy Hajek
  Telephone | 312.567.5937
  Email | hajek@iit.edu
  Office | Perlstein Hall Room 223A, 10 W. 33rd St.
- Office Hours | Mon 12:30 PM — 1:20 PM, Tue & Thu 10:40 AM — 2:40 PM, Wed 11:30 AM — 1:00 PM, Fri 11:00 AM — 2:00 PM
+ Office Hours | Fri 12:00 PM — 2:00 PM
  Location | Perlstein Hall 223 or Via Google Meets
  URL | Book and appointment at: [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 
@@ -25,55 +25,97 @@ This course covers both concepts and practical applications of distributed data 
 
 ITMD/S 514 and or ITMD 510 Credit: Normally 3-0-3 Semester Hours
 
-## Lecture Day, Time & Place
+## Section 01 Tuesday and Thursday Lecture Day, Time & Place
 
 * Main Class time
-  * Tuesday and Thursday 8:35am to 9:50am
-  * Location - [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+  * Tuesday and Thursday 3:15pm to 4:30pm
+  * Location - [TBA](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 
-## Directions to the Smart Lab TS-2030
-
-To get to the Smart Tech Lab - enter the IIT tower on 35th Street.  Swipe in at the desk and take the elevator up to the second floor.  Exit to the left and head north over the bridge from the Tower to the TS building.  The floor turns from white tile to brown carpet.  Take a left at the intersection and the Smart Lab is directly ahead of you.
-
-## Schedule of Topics/Readings
+## Section 01 Schedule of Topics/Readings
 
 All readings should be done prior to class
 
 Session | Date | Topic | Reading - Homework |
 ----------|------|:------|----------
-1 | 01/10 | Introduction | Tooling Assignment
-2 | 01/12 | Introduction | Tooling Assignment
-3 | 01/17 | Genesis of Spark Ch 1 | NA
-4 | 01/19 | Genesis of Spark Ch 1 | NA
-5 | 01/24 | Setting up Spark Ch 2 | NA
-6 | 01/26 | Setting up Spark Ch 2 | NA
-7 | 01/31 | Structured APIs Ch 3 | NA
+1 | 01/09 | Introduction | Tooling Assignment
+2 | 01/11 | Introduction | Tooling Assignment
+3 | 01/16 | Genesis of Spark Ch 1 | NA
+4 | 01/18 | Genesis of Spark Ch 1 | NA
+5 | 01/23 | Setting up Spark Ch 2 | NA
+6 | 01/25 | Setting up Spark Ch 2 | NA
+7 | 01/30 | Structured APIs Ch 3 | NA
 8 | 02/01 | Structured APIs Ch 3 | Assignment-01
-9 | 02/07 |  Structured APIs Ch 3 | NA
-10 | 02/09 | Structured APIs Ch 3 | Assignment-02
-11 | 02/14 | Introduction to Built-in Data Sources Ch 4 | Assignment-03
-12 | 02/16 | Introduction to Built-in Data Sources Ch 4 | NA
-13 | 02/21 | Interacting with External Data Sources Ch 5 | Assignment-04
-14 | 02/23 | Interacting with External Data Sources Ch 5 | NA
-15 | 02/28 | Spark SQL and DataSets Ch 6 | Assignment-05
-16 | 03/02 | Spark SQL and DataSets Ch 6 | NA
-17 | 03/07 | Mid-term preparation | NA
-18 | 03/09 | Mid-term Exam  | NA
+9 | 02/06 |  Structured APIs Ch 3 | NA
+10 | 02/08 | Structured APIs Ch 3 | Assignment-02
+11 | 02/13 | Introduction to Built-in Data Sources Ch 4 | Assignment-03
+12 | 02/15 | Introduction to Built-in Data Sources Ch 4 | NA
+13 | 02/20 | Interacting with External Data Sources Ch 5 | Assignment-04
+14 | 02/22 | Interacting with External Data Sources Ch 5 | NA
+15 | 02/27 | Spark SQL and DataSets Ch 6 | Assignment-05
+16 | 02/29 | Spark SQL and DataSets Ch 6 | NA
+17 | 03/05 | Mid-term preparation | NA
+18 | 03/07 | Mid-term Exam  | NA
+NA | 03/12 | Spring Break Week | NA
 NA | 03/14 | Spring Break Week | NA
-NA | 03/16 | Spring Break Week | NA
-19 | 03/21 | Tuning Spark Applications Ch 7 | Assignment-06
-20 | 03/23 | Tuning Spark Applications Ch 7 | NA
-21 | 03/28 | Structure Streaming Ch 8 | Assignment-07
-22 | 03/30 | Structure Streaming Ch 8 | NA
-23 | 04/04 | Data Lakes and Machine Learning Ch 9-10 | Assignment-08
-24 | 04/06 | Data Lakes and Machine Learning Ch 9-10 | NA
-25 | 04/11 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | Assignment-09
-26 | 04/13 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | NA
-27 | 04/18 | Project work time | Assignment-10 and Final Project Assigned
-28 | 04/20 | Project work time | NA
-29 | 04/25 | Project work time | NA
-30 | 04/27 | Project work time | NA
-31 | 05/02 | Final Exam Week | NA
+19 | 03/19 | Tuning Spark Applications Ch 7 | Assignment-06
+20 | 03/21 | Tuning Spark Applications Ch 7 | NA
+21 | 03/26 | Structure Streaming Ch 8 | Assignment-07
+22 | 03/28 | Structure Streaming Ch 8 | NA
+23 | 04/02 | Data Lakes and Machine Learning Ch 9-10 | Assignment-08
+24 | 04/04 | Data Lakes and Machine Learning Ch 9-10 | NA
+25 | 04/09 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | Assignment-09
+26 | 04/11 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | NA
+27 | 04/16 | Project work time | Assignment-10 and Final Project Assigned
+28 | 04/18 | Project work time | NA
+29 | 04/23 | Project work time | NA
+30 | 04/25 | Project work time | NA
+31 | 04/30 | Final Exam Week | NA
+
+## Section 05 Monday and Wednesday Lecture Day, Time & Place 
+
+* Main Class time
+  * Monday and Wednesday - Section 05 1:50 PM to 3:05 PM
+  * Locations - [IIT Tower 6C7-1](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+
+## Section 05 Schedule of Topics/Readings
+
+All readings should be done prior to class
+
+Session | Date | Topic | Reading - Homework |
+----------|------|:------|----------
+1 | 01/08 | Introduction | Tooling Assignment
+2 | 01/10 | Introduction | Tooling Assignment
+3 | 01/14 | Genesis of Spark Ch 1 | NA
+4 | 01/16 | Genesis of Spark Ch 1 | NA
+5 | 01/21 | Setting up Spark Ch 2 | NA
+6 | 01/23 | Setting up Spark Ch 2 | NA
+7 | 01/28 | Structured APIs Ch 3 | NA
+8 | 01/30 | Structured APIs Ch 3 | Assignment-01
+9 | 02/05 |  Structured APIs Ch 3 | NA
+10 | 02/07 | Structured APIs Ch 3 | Assignment-02
+11 | 02/12 | Introduction to Built-in Data Sources Ch 4 | Assignment-03
+12 | 02/14 | Introduction to Built-in Data Sources Ch 4 | NA
+13 | 02/19 | Interacting with External Data Sources Ch 5 | Assignment-04
+14 | 02/21 | Interacting with External Data Sources Ch 5 | NA
+15 | 02/26 | Spark SQL and DataSets Ch 6 | Assignment-05
+16 | 02/28 | Spark SQL and DataSets Ch 6 | NA
+17 | 03/04 | Mid-term preparation | NA
+18 | 03/06 | Mid-term Exam  | NA
+NA | 03/11 | Spring Break Week | NA
+NA | 03/13 | Spring Break Week | NA
+19 | 03/18 | Tuning Spark Applications Ch 7 | Assignment-06
+20 | 03/20 | Tuning Spark Applications Ch 7 | NA
+21 | 03/25 | Structure Streaming Ch 8 | Assignment-07
+22 | 03/27 | Structure Streaming Ch 8 | NA
+23 | 04/01 | Data Lakes and Machine Learning Ch 9-10 | Assignment-08
+24 | 04/03 | Data Lakes and Machine Learning Ch 9-10 | NA
+25 | 04/08 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | Assignment-09
+26 | 04/10 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | NA
+27 | 04/15 | Project work time | Assignment-10 and Final Project Assigned
+28 | 04/17 | Project work time | NA
+29 | 04/22 | Project work time | NA
+30 | 04/24 | Project work time | NA
+31 | 04/29 | Final Exam Week | NA
 
 ## Course Student Outcomes
 
