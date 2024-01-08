@@ -60,10 +60,7 @@ NA | 03/12,14 | no class - Spring Break | -
 
 ### Course Outcomes
 
-At the completion of this course, each successful student will be able to:
-
-Summarize the origins of and the philosophy behind Free and Open Source Software. They will be able to compose 
-and deploy tooling for running and maintaining applications on Free and Opensource software.
+At the completion of this course, each successful student will be able to summarize the origins of and the philosophy behind Free and Open Source Software. They will be able to compose and deploy tooling for running and maintaining applications on Free and Opensource software.
 
 ### Course Student Outcomes
 
