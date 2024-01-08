@@ -20,11 +20,11 @@ There are a long list of requirements that are unique to this Sprint that won't 
 
 ### Project Manager and Team Roles
 
-Each sprint will have 4 roles assigned that will be rotated each sprint (you only do one job once).  The roles are as follows:
+Each sprint will have 5 roles assigned that will be rotated each sprint (you only do one job once).  The roles are as follows:
 
 * Project Manager - ITMM 471
   * Responsible for the accomplishment of work for the entire sprint. Active leader and assigner of tasks, directing flow.
-* Developer 1 - ITM 311, 313, ITMD 411, ITMD 361, ITMO 340, ITMD 321
+* Developer 1 and 2 - ITM 311, 313, ITMD 411, ITMD 361, ITMO 340, ITMD 321
   * Both developers work together to deploy code that matches the tasks given to them by the team and through the project manager.
 * UI/UX and User Testing, ITMD 361, 362
   * Responsible for designing the UI/UX and working with the developers to implement the design in code, and then test that code to see it performs as designed.
@@ -46,7 +46,7 @@ While there are many solutions to the tooling required, I have provided a small 
   * Project Management tool needs to have Chat based notification integration
   * Google Docs is not a valid choice for a Project Management Tool as it does not meet the fist requirements
 
-* The team will a Git development workflow
+* The team will use a Git development workflow
   * Professor will invite each team-member to a team repo which you will have Admin access
   * This is to help the team focus on collaborating and understanding how code is developed and deployed
   * All design docs, instructions, code, diagrams, and tests will be updated and kept in the team repo
@@ -67,14 +67,14 @@ This is important as this is the document that your team will write up in markdo
 
 This document is important as it protects your team members and gives you recourse if for some reason members are not participating or delivering their requirements.  This also lays ground work for conflict resolution as well as in a last case scenario--separation from the team. In more modern terms you may see the phrase, **code-of-conduct** used as well.  The purpose of a document like this is never to be punitive but to establish boundaries on what is acceptable behavior for a community or team.
 
-Place a markdown document named: **Compact.md** in the root of your team directory.  In the document address these areas:
+Place a markdown document named: **Charter.md** in the root of your team directory.  In the document address these areas:
 
 * How work will flow
 * Communication rules and methods
 * Consequences
 * Restoration methods
 
-The document doesn't need to be extensive, but all parties need sign (place name and email below) and be in agreement. If you need some help or advice I have some material that can help you or reference your material from your Project Management class, ITMM 471.
+The document doesn't need to be extensive, but all parties need sign (place name and email) and be in agreement. If you need some help or advice I have some material that can help you or reference your material from your Project Management class, ITMM 471.
 
 ### Team Readme.md
 
