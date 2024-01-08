@@ -29,7 +29,7 @@ In this capstone course, students will identify, gather, analyze, and write requ
 ## Lecture Day, Time & Place
 
 * Main Lecture Class time
-  * Monday 10:00 am to 11:40am - [Michael Galvin Tower 1F6-1](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+  * Monday 10:00 am to 11:40am - [Tech South 2030 - Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 * Lab Class Times
   * Lab 01 Monday 11:50am to 1:30pm [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
   * Lab 04 Online meeting TBA
