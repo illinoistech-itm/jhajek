@@ -138,7 +138,7 @@ The final grade for the class will be calculated as follows:
       Review Questions:   20%        120
      Podcast Questions:   20%        120
          Final Project:   17%        100
-          Midterm Exam:   17%        100
+       Midterm Project:   17%        100
             Attendance:   5%          30
 ----------------------- ------- ----------------
 
