@@ -1,4 +1,4 @@
-# ITMD 521 Client/Server Technologies and Applications - Spring 2023
+# ITMD 521 Client/Server Technologies and Applications - Spring 2024
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
@@ -45,7 +45,7 @@ Session | Date | Topic | Reading - Homework |
 6 | 01/23 | Setting up Spark Ch 2 | NA
 7 | 01/28 | Structured APIs Ch 3 | NA
 8 | 01/30 | Structured APIs Ch 3 | Assignment-01
-9 | 02/05 |  Structured APIs Ch 3 | NA
+9 | 02/05 | Structured APIs Ch 3 | NA
 10 | 02/07 | Structured APIs Ch 3 | Assignment-02
 11 | 02/12 | Introduction to Built-in Data Sources Ch 4 | Assignment-03
 12 | 02/14 | Introduction to Built-in Data Sources Ch 4 | NA

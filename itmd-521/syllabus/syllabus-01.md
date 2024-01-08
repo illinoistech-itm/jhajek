@@ -1,4 +1,4 @@
-# ITMD 521 Client/Server Technologies and Applications - Spring 2023
+# ITMD 521 Client/Server Technologies and Applications - Spring 2024
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
@@ -35,33 +35,33 @@ ITMD/S 514 and or ITMD 510 Credit: Normally 3-0-3 Semester Hours
 
 All readings should be done prior to class
 
-Session | Date | Topic | Reading - Homework |
+Session | Date | Topic | Reading for Homework |
 ----------|------|:------|----------
-1 | 01/09 | Introduction | Tooling Assignment
-2 | 01/11 | Introduction | Tooling Assignment
-3 | 01/16 | Genesis of Spark Ch 1 | NA
-4 | 01/18 | Genesis of Spark Ch 1 | NA
-5 | 01/23 | Setting up Spark Ch 2 | NA
-6 | 01/25 | Setting up Spark Ch 2 | NA
-7 | 01/30 | Structured APIs Ch 3 | NA
-8 | 02/01 | Structured APIs Ch 3 | Assignment-01
-9 | 02/06 |  Structured APIs Ch 3 | NA
-10 | 02/08 | Structured APIs Ch 3 | Assignment-02
-11 | 02/13 | Introduction to Built-in Data Sources Ch 4 | Assignment-03
-12 | 02/15 | Introduction to Built-in Data Sources Ch 4 | NA
-13 | 02/20 | Interacting with External Data Sources Ch 5 | Assignment-04
-14 | 02/22 | Interacting with External Data Sources Ch 5 | NA
-15 | 02/27 | Spark SQL and DataSets Ch 6 | Assignment-05
-16 | 02/29 | Spark SQL and DataSets Ch 6 | NA
-17 | 03/05 | Mid-term preparation | NA
-18 | 03/07 | Mid-term Exam  | NA
+1 | 01/09 | Introduction | -
+2 | 01/11 | Tooling Assignment | FoDE Ch 1 and 2 
+3 | 01/16 | Data Engineering Life Cycle | -
+4 | 01/18 | Advanced Tooling Assignment | FoDE 3 and 4 
+5 | 01/23 | Architectures and Technology | -
+6 | 01/25 | Setting up Spark | Learning Spark 1-3 
+7 | 01/30 | Unified Analytics Engine | NA
+8 | 02/01 | Cookie Monster Demo | 
+9 | 02/06 | Data Generation in source systems | NA
+10 | 02/08 | Raw Storage |
+11 | 02/13 | Introduction to Built-in Data Sources | 
+12 | 02/15 | Interacting with External Data Sources | NA
+13 | 02/20 | Queries, Modeling, And Transformation | NA
+14 | 02/22 | Spark SQL in spark applications | NA
+15 | 02/27 | Mid-term project | NA
+16 | 02/29 | Mid-term project | NA
+17 | 03/05 | Mid-term project | NA
+18 | 03/07 | Mid-term project  | NA
 NA | 03/12 | Spring Break Week | NA
 NA | 03/14 | Spring Break Week | NA
-19 | 03/19 | Tuning Spark Applications Ch 7 | Assignment-06
+19 | 03/19 | Tuning Spark Applications Ch 7 | NA
 20 | 03/21 | Tuning Spark Applications Ch 7 | NA
-21 | 03/26 | Structure Streaming Ch 8 | Assignment-07
+21 | 03/26 | Structure Streaming Ch 8 | NA
 22 | 03/28 | Structure Streaming Ch 8 | NA
-23 | 04/02 | Data Lakes and Machine Learning Ch 9-10 | Assignment-08
+23 | 04/02 | Serving Data For Analytics, Machine Learning and Reverse ETL | NA
 24 | 04/04 | Data Lakes and Machine Learning Ch 9-10 | NA
 25 | 04/09 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | Assignment-09
 26 | 04/11 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | NA
