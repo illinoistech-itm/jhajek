@@ -25,52 +25,6 @@ This course covers both concepts and practical applications of distributed data 
 
 ITMD/S 514 and or ITMD 510 Credit: Normally 3-0-3 Semester Hours
 
-## Section 01 Tuesday and Thursday Lecture Day, Time & Place
-
-* Main Class time
-  * Tuesday and Thursday 3:15pm to 4:30pm
-  * Location - [TBA](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
-
-## Section 01 Schedule of Topics/Readings
-
-All readings should be done prior to class
-
-Session | Date | Topic | Reading - Homework |
-----------|------|:------|----------
-1 | 01/09 | Introduction | Tooling Assignment
-2 | 01/11 | Introduction | Tooling Assignment
-3 | 01/16 | Genesis of Spark Ch 1 | NA
-4 | 01/18 | Genesis of Spark Ch 1 | NA
-5 | 01/23 | Setting up Spark Ch 2 | NA
-6 | 01/25 | Setting up Spark Ch 2 | NA
-7 | 01/30 | Structured APIs Ch 3 | NA
-8 | 02/01 | Structured APIs Ch 3 | Assignment-01
-9 | 02/06 |  Structured APIs Ch 3 | NA
-10 | 02/08 | Structured APIs Ch 3 | Assignment-02
-11 | 02/13 | Introduction to Built-in Data Sources Ch 4 | Assignment-03
-12 | 02/15 | Introduction to Built-in Data Sources Ch 4 | NA
-13 | 02/20 | Interacting with External Data Sources Ch 5 | Assignment-04
-14 | 02/22 | Interacting with External Data Sources Ch 5 | NA
-15 | 02/27 | Spark SQL and DataSets Ch 6 | Assignment-05
-16 | 02/29 | Spark SQL and DataSets Ch 6 | NA
-17 | 03/05 | Mid-term preparation | NA
-18 | 03/07 | Mid-term Exam  | NA
-NA | 03/12 | Spring Break Week | NA
-NA | 03/14 | Spring Break Week | NA
-19 | 03/19 | Tuning Spark Applications Ch 7 | Assignment-06
-20 | 03/21 | Tuning Spark Applications Ch 7 | NA
-21 | 03/26 | Structure Streaming Ch 8 | Assignment-07
-22 | 03/28 | Structure Streaming Ch 8 | NA
-23 | 04/02 | Data Lakes and Machine Learning Ch 9-10 | Assignment-08
-24 | 04/04 | Data Lakes and Machine Learning Ch 9-10 | NA
-25 | 04/09 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | Assignment-09
-26 | 04/11 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | NA
-27 | 04/16 | Project work time | Assignment-10 and Final Project Assigned
-28 | 04/18 | Project work time | NA
-29 | 04/23 | Project work time | NA
-30 | 04/25 | Project work time | NA
-31 | 04/30 | Final Exam Week | NA
-
 ## Section 05 Monday and Wednesday Lecture Day, Time & Place 
 
 * Main Class time
@@ -126,6 +80,8 @@ At the outcome of this course, students will have a structured overview of distr
 Students completing this course will be able to:
 
 * Explain the Spark, MapReduce, and SQL data paradigms  
+* Describe the task of a Data Engineer
+* Describe the life cycle and accumulation of data
 * Deploy a remote Spark Application to a Spark cluster
 * Demonstrate loading data from disparate data sources and discuss advantages
 * Demonstrate and Discuss the benefits of enterprise Big Data tools
@@ -137,9 +93,18 @@ Students completing this course will be able to:
 
 * Learning Spark - Lighting-Fast Data Analytics
   * Damji, Jules S.; Wening, Brooke; Das, Tathagata; & Lee, Danny
-  * ISBN-13:  978-1-492-05004-9
-  * Publisher:  O'Reilly
+  * ISBN-13: 978-1-492-05004-9
+  * Publisher: O'Reilly
   * [https://www.amazon.com/Learning-Spark-Jules-Damji/dp/1492050040/ref=sr_1_9?keywords=learning+spark+2.0&qid=1641868150&sr=8-9](https://www.amazon.com/Learning-Spark-Jules-Damji/dp/1492050040/ref=sr_1_9?keywords=learning+spark+2.0&qid=1641868150&sr=8-9 "Link Learning Spark Amazon Page")
+
+![*Fundamentals of Data Engineering*](images/fund-data-engineering.png "Fundamentals of Data Engineering")
+
+* Fundamentals of Data Engineering
+  * Joe Reis, Matt Housley
+  * Released June 2022
+  * Publisher(s): O'Reilly Media, Inc.
+  * ISBN: 9781098108304
+  * [Link to Amazon](https://www.amazon.com/Fundamentals-Data-Engineering-Robust-Systems/dp/1098108302/ref=sr_1_1?crid=2Y0ZX5GC2N8KV&keywords=fundamentals+of+data+engineering&qid=1704683557&sprefix=fundamentals+of+data+en%2Caps%2C129&sr=8-1 "Textbook link to Amazon")
 
 ### Readings
 
