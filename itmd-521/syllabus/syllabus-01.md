@@ -44,8 +44,8 @@ Session | Date | Topic | Reading for Homework |
 5 | 01/23 | Architectures and Technology | -
 6 | 01/25 | Setting up Spark | Learning Spark 1-3 
 7 | 01/30 | Unified Analytics Engine | NA
-8 | 02/01 | Cookie Monster Demo | 
-9 | 02/06 | Data Generation in source systems | NA
+8 | 02/01 | Cookie Monster Demo | FoDE 5 and 6
+9 | 02/06 | Data Generation in source systems | -
 10 | 02/08 | Raw Storage |
 11 | 02/13 | Introduction to Built-in Data Sources | 
 12 | 02/15 | Interacting with External Data Sources | NA
