@@ -1,4 +1,4 @@
-# ITMD 521 Client/Server Technologies and Applications - Spring 2024
+# ITMD 521 Big Data Infrastructure - Spring 2024
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
@@ -21,6 +21,10 @@ Semester: Spring 2024 Professor Jeremy Hajek
 
 This course covers both concepts and practical applications of distributed data paradigms. This provides a comparison between SQL, MapReduce, and Spark Frameworks. The course focuses on how to treat and prepare unstructured data to be used in the MapReduce framework for parallel processing. Students will be tasked with learning and demonstrating the MapReduce framework through implementing the Hadoop framework and associated Java technology. [ITMD 521 Bulletin Description](http://bulletin.iit.edu/courses/itmd/ "ITMD 521 Bulletin Description")
 
+## Updated Course Description
+
+This course covers both concepts and practical applications of distributed data paradigms. We will explore cloud native tooling used for Big Data. We will focus on the concepts of Data Engineering and explore the Data Life Cyle. We will apply these concepts using opensource Big Data platforms and by writing code to explore the concepts of Data Engineering. You will have an experience how to treat and prepare structured and unstructured Big Data. Students will be tasked with learning and demonstrating these concepts via a hands on final project. [ITMD 521 Bulletin Description](http://bulletin.iit.edu/courses/itmd/ "ITMD 521 Bulletin Description")
+
 ## Prerequisites
 
 ITMD/S 514 and or ITMD 510 Credit: Normally 3-0-3 Semester Hours
@@ -29,7 +33,7 @@ ITMD/S 514 and or ITMD 510 Credit: Normally 3-0-3 Semester Hours
 
 * Main Class time
   * Tuesday and Thursday 3:15pm to 4:30pm
-  * Location - [TBA](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+  * Location - [Pritzker Science Hall 121 - PS 121](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 
 ## Section 01 Schedule of Topics/Readings
 
@@ -73,13 +77,12 @@ NA | 03/14 | Spring Break Week | NA
 
 ## Course Student Outcomes
 
-At the outcome of this course, students will have a structured overview of distributed data-paradigms.  You will be able to describe and explain the aspects of each paradigm and the tools used to run programs to query structured and unstructured data.  You will be able to install, implement, and demonstrate the software that allows you to use these paradigms.
+At the outcome of this course, students will have a structured overview of distributed data-paradigms. You will be able to describe and explain the aspects of each paradigm and the tools used to run programs to query structured and unstructured data. You will be able to install, implement, and demonstrate the software that allows you to use these paradigms. You will be able to explain the concept of Data Engineering and the Data Life Cycle.
 
 ## Course Objectives
 
 Students completing this course will be able to:
-
-* Explain the Spark, MapReduce, and SQL data paradigms  
+  
 * Describe the task of a Data Engineer
 * Describe the life cycle and accumulation of data
 * Deploy a remote Spark Application to a Spark cluster
