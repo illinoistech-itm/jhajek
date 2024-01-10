@@ -23,7 +23,7 @@ This course covers both concepts and practical applications of distributed data 
 
 ## Updated Course Description
 
-This course covers both concepts and practical applications of distributed data paradigms. We will explore cloud native tooling used for Big Data. We will focus on the concepts of Data Engineering and explore the Data Life Cyle. We will apply these concepts using opensource Big Data platforms and by writing code to explore the concepts of Data Engineering. You will have an experience how to treat and prepare structured and unstructured Big Data. Students will be tasked with learning and demonstrating these concepts via a hands on final project. [ITMD 521 Bulletin Description](http://bulletin.iit.edu/courses/itmd/ "ITMD 521 Bulletin Description")
+This course covers both concepts and practical applications of distributed data paradigms. We will explore cloud native tooling used for Big Data. We will focus on the concepts of Data Engineering and explore the Data Life Cyle. We will apply these concepts using opensource Big Data platforms and by writing code to explore the concepts of Data Engineering. You will have an experience how to treat and prepare structured and unstructured Big Data. Students will be tasked with learning and demonstrating these concepts via a hands on final project.
 
 ## Prerequisites
 
@@ -50,30 +50,30 @@ Session | Date | Topic | Reading for Homework |
 7 | 01/30 | Unified Analytics Engine | NA
 8 | 02/01 | Cookie Monster Demo | FoDE 5 and 6
 9 | 02/06 | Data Generation in source systems | -
-10 | 02/08 | Raw Storage |
-11 | 02/13 | Introduction to Built-in Data Sources | 
-12 | 02/15 | Interacting with External Data Sources | NA
-13 | 02/20 | Queries, Modeling, And Transformation | NA
-14 | 02/22 | Spark SQL in spark applications | NA
-15 | 02/27 | Mid-term project | NA
-16 | 02/29 | Mid-term project | NA
-17 | 03/05 | Mid-term project | NA
-18 | 03/07 | Mid-term project  | NA
-NA | 03/12 | Spring Break Week | NA
-NA | 03/14 | Spring Break Week | NA
-19 | 03/19 | Tuning Spark Applications Ch 7 | NA
-20 | 03/21 | Tuning Spark Applications Ch 7 | NA
-21 | 03/26 | Structure Streaming Ch 8 | NA
-22 | 03/28 | Structure Streaming Ch 8 | NA
-23 | 04/02 | Serving Data For Analytics, Machine Learning and Reverse ETL | NA
-24 | 04/04 | Data Lakes and Machine Learning Ch 9-10 | NA
-25 | 04/09 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | Assignment-09
-26 | 04/11 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | NA
-27 | 04/16 | Project work time | Assignment-10 and Final Project Assigned
-28 | 04/18 | Project work time | NA
-29 | 04/23 | Project work time | NA
-30 | 04/25 | Project work time | NA
-31 | 04/30 | Final Exam Week | NA
+10 | 02/08 | Raw Storage | Learning Spark 4 and 5
+11 | 02/13 | Introduction to Built-in Data Sources | -
+12 | 02/15 | Interacting with External Data Sources | Learning Spark 6 & FoDE 8
+13 | 02/20 | Queries, Modeling, And Transformation | - 
+14 | 02/22 | Spark SQL in spark applications | -
+15 | 02/27 | Mid-term project | -
+16 | 02/29 | Mid-term project | -
+17 | 03/05 | Mid-term project | -
+18 | 03/07 | Mid-term project  | -
+NA | 03/12 | Spring Break Week | -
+NA | 03/14 | Spring Break Week | Learning Spark Ch 7
+19 | 03/19 | Tuning Spark Applications | -
+20 | 03/21 | Tuning Spark Applications | Learning Spark Ch 8
+21 | 03/26 | Structure Streaming | -
+22 | 03/28 | Structure Streaming | FoDE 9 and Learning Spark 9-10
+23 | 04/02 | Serving Data For Analytics, Machine Learning and Reverse ETL | -
+24 | 04/04 | Data Lakes and Machine Learning Ch 9-10 | -
+25 | 04/09 | Data Lakes and Machine Learning & Cloud DBs | -
+26 | 04/11 | Data Lakes and Machine Learning & Cloud DBs | -
+27 | 04/16 | Project work time | Final Project Assigned
+28 | 04/18 | Project work time | -
+29 | 04/23 | Project work time | -
+30 | 04/25 | Project work time | -
+31 | 04/30 | Final Exam Week | -
 
 ## Course Student Outcomes
 
@@ -168,7 +168,7 @@ Dealing with code -- you need to respect opensource licenses and in the absence 
 
 ### Collaboration
 
-No collaboration allowed on assignments.
+We will use Discord for all class questions and disucssion
 
 ### Our Contract
 

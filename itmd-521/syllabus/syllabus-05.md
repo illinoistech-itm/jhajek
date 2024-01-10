@@ -1,4 +1,4 @@
-# ITMD 521 Client/Server Technologies and Applications - Spring 2024
+# ITMD 521 Big Data Infrastructure - Spring 2024
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
@@ -21,6 +21,10 @@ Semester: Spring 2024 Professor Jeremy Hajek
 
 This course covers both concepts and practical applications of distributed data paradigms. This provides a comparison between SQL, MapReduce, and Spark Frameworks. The course focuses on how to treat and prepare unstructured data to be used in the MapReduce framework for parallel processing. Students will be tasked with learning and demonstrating the MapReduce framework through implementing the Hadoop framework and associated Java technology. [ITMD 521 Bulletin Description](http://bulletin.iit.edu/courses/itmd/ "ITMD 521 Bulletin Description")
 
+## Updated Course Description
+
+This course covers both concepts and practical applications of distributed data paradigms. We will explore cloud native tooling used for Big Data. We will focus on the concepts of Data Engineering and explore the Data Life Cyle. We will apply these concepts using opensource Big Data platforms and by writing code to explore the concepts of Data Engineering. You will have an experience how to treat and prepare structured and unstructured Big Data. Students will be tasked with learning and demonstrating these concepts via a hands on final project.
+
 ## Prerequisites
 
 ITMD/S 514 and or ITMD 510 Credit: Normally 3-0-3 Semester Hours
@@ -37,49 +41,48 @@ All readings should be done prior to class
 
 Session | Date | Topic | Reading - Homework |
 ----------|------|:------|----------
-1 | 01/08 | Introduction | Tooling Assignment
-2 | 01/10 | Introduction | Tooling Assignment
-3 | 01/14 | Genesis of Spark Ch 1 | NA
-4 | 01/16 | Genesis of Spark Ch 1 | NA
-5 | 01/21 | Setting up Spark Ch 2 | NA
-6 | 01/23 | Setting up Spark Ch 2 | NA
-7 | 01/28 | Structured APIs Ch 3 | NA
-8 | 01/30 | Structured APIs Ch 3 | Assignment-01
-9 | 02/05 | Structured APIs Ch 3 | NA
-10 | 02/07 | Structured APIs Ch 3 | Assignment-02
-11 | 02/12 | Introduction to Built-in Data Sources Ch 4 | Assignment-03
-12 | 02/14 | Introduction to Built-in Data Sources Ch 4 | NA
-13 | 02/19 | Interacting with External Data Sources Ch 5 | Assignment-04
-14 | 02/21 | Interacting with External Data Sources Ch 5 | NA
-15 | 02/26 | Spark SQL and DataSets Ch 6 | Assignment-05
-16 | 02/28 | Spark SQL and DataSets Ch 6 | NA
-17 | 03/04 | Mid-term preparation | NA
-18 | 03/06 | Mid-term Exam  | NA
-NA | 03/11 | Spring Break Week | NA
-NA | 03/13 | Spring Break Week | NA
-19 | 03/18 | Tuning Spark Applications Ch 7 | Assignment-06
-20 | 03/20 | Tuning Spark Applications Ch 7 | NA
-21 | 03/25 | Structure Streaming Ch 8 | Assignment-07
-22 | 03/27 | Structure Streaming Ch 8 | NA
-23 | 04/01 | Data Lakes and Machine Learning Ch 9-10 | Assignment-08
-24 | 04/03 | Data Lakes and Machine Learning Ch 9-10 | NA
-25 | 04/08 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | Assignment-09
-26 | 04/10 | Data Lakes and Machine Learning & Cloud DBs Ch 9-10 | NA
-27 | 04/15 | Project work time | Assignment-10 and Final Project Assigned
-28 | 04/17 | Project work time | NA
-29 | 04/22 | Project work time | NA
-30 | 04/24 | Project work time | NA
-31 | 04/29 | Final Exam Week | NA
+1 | 01/08 | Introduction | -
+2 | 01/10 | Tooling Assignment | FoDE Ch 1 and 2 
+3 | 01/15 | Data Engineering Life Cycle | -
+4 | 01/17 | Advanced Tooling Assignment | FoDE 3 and 4 
+5 | 01/22 | Architectures and Technology | -
+6 | 01/24 | Setting up Spark | Learning Spark 1-3 
+7 | 01/29 | Unified Analytics Engine | NA
+8 | 01/31 | Cookie Monster Demo | FoDE 5 and 6
+9 | 02/05 | Data Generation in source systems | -
+10 | 02/07 | Raw Storage | Learning Spark 4 and 5
+11 | 02/12 | Introduction to Built-in Data Sources | -
+12 | 02/14 | Interacting with External Data Sources | Learning Spark 6 & FoDE 8
+13 | 02/19 | Queries, Modeling, And Transformation | - 
+14 | 02/21 | Spark SQL in spark applications | -
+15 | 02/26 | Mid-term project | -
+16 | 02/28 | Mid-term project | -
+17 | 03/04 | Mid-term project | -
+18 | 03/06 | Mid-term project  | -
+NA | 03/11 | Spring Break Week | -
+NA | 03/13 | Spring Break Week | Learning Spark Ch 7
+19 | 03/18 | Tuning Spark Applications | -
+20 | 03/20 | Tuning Spark Applications | Learning Spark Ch 8
+21 | 03/25 | Structure Streaming | -
+22 | 03/27 | Structure Streaming | FoDE 9 and Learning Spark 9-10
+23 | 04/01 | Serving Data For Analytics, Machine Learning and Reverse ETL | -
+24 | 04/03 | Data Lakes and Machine Learning Ch 9-10 | -
+25 | 04/08 | Data Lakes and Machine Learning & Cloud DBs | -
+26 | 04/10 | Data Lakes and Machine Learning & Cloud DBs | -
+27 | 04/15 | Project work time | Final Project Assigned
+28 | 04/17 | Project work time | -
+29 | 04/22 | Project work time | -
+30 | 04/24 | Project work time | -
+31 | 04/30 | Final Exam Week | -
 
 ## Course Student Outcomes
 
-At the outcome of this course, students will have a structured overview of distributed data-paradigms.  You will be able to describe and explain the aspects of each paradigm and the tools used to run programs to query structured and unstructured data.  You will be able to install, implement, and demonstrate the software that allows you to use these paradigms.
+At the outcome of this course, students will have a structured overview of distributed data-paradigms. You will be able to describe and explain the aspects of each paradigm and the tools used to run programs to query structured and unstructured data. You will be able to install, implement, and demonstrate the software that allows you to use these paradigms. You will be able to explain the concept of Data Engineering and the Data Life Cycle.
 
 ## Course Objectives
 
 Students completing this course will be able to:
-
-* Explain the Spark, MapReduce, and SQL data paradigms  
+  
 * Describe the task of a Data Engineer
 * Describe the life cycle and accumulation of data
 * Deploy a remote Spark Application to a Spark cluster
@@ -163,13 +166,13 @@ You must fully attribute all material directly quoted in papers and you must doc
 
 Dealing with code -- you need to respect opensource licenses and in the absence of a clear license be careful cutting and pasting code without attributing source. A good metric would be to add a comment in your code with a link to the original source to protect yourself.
 
-### Collaboration
-
-No collaboration allowed on assignments.
-
 ### Our Contract
 
 This syllabus is my contract with you as to what I will deliver and what I expect from you. If I change the syllabus, I will issue a revised version of the syllabus; the latest version will always be available on Blackboard. Revisions to readings and assignments will be communicated via Blackboard and via version control in GitHub
+
+### Collaboration
+
+We will use Discord for all class questions and disucssion
 
 ### Disabilities
 
