@@ -96,8 +96,6 @@ We will be installing an text editor or and IDE for all of our coding and config
 
 * [VSCode from Microsoft](https://code.visualstudio.com/ "VSCode install")
   * Cross platform and has direct shell integration
-* [atom.io](https://atom.io/ "Atom.io install")
-  * Built by GitHub for Git integration
 * [Sublime Text](http://www.sublimetext.com/ "Submlime Text installer site")
   * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose.  Available for all platforms.
 * [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")
