@@ -158,7 +158,7 @@ You will need to use the `wget` commandline tool to retrieve installation files 
   * Ubuntu - use `apt` to install `r-base`
   * AlmaLinux use: `sudo dnf config-manager --set-enabled crb; sudo dnf install R`
 * Install Spark 3.2.x
-  * [https://archive.apache.org/dist/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz](https://archive.apache.org/dist/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz "Apache Spark Download Link")
+  * [https://archive.apache.org/dist/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.2.tgz](https://archive.apache.org/dist/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz "Apache Spark Download Link")
   * You will need to install the `git` executable as well
 
 ## Summary
