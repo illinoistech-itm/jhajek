@@ -1,6 +1,6 @@
 # Git Tutorial
 
-![*Git commit messages--after developing this book I understand this completely*](https://github.com/illinoistech-itm/jhajek/blob/master/itmd-521/images/Chapter-Header/Appendix-D/git_commit-2.png "Git Commit")
+![*Git commit messages--after developing this book I understand this completely*](./images/Appendix-D/git_commit-2.png "Git Commit")
 
 This is a tutorial for installing Git and configuring GitHub on Windows 10/11 and macOS.  
 
@@ -228,7 +228,7 @@ The steps listed here will help add your Public Key to your GitHub account for a
 
 In this new menu near the bottom of the list your will see the **Settings** option.
 
-![*Select the Settings Option*](Appendix-D/settings.png "Select the Settings Option")
+![*Select the Settings Option*](images/Appendix-D/settings.png "Select the Settings Option")
 
 A new set of settings options will appear, we want to select on the left-hand side middle of the page, **SSH and GPG Keys**.
 
