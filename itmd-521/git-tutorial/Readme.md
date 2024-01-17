@@ -275,7 +275,8 @@ Host github.com
   Hostname github.com
   # This command tells SSH which Private key to use when making an SSH 
   # connection to GitHub
-  IdentityFile ~/.ssh/id_ed25519_340_github_key
+  # change the path from my username to yours
+  IdentityFile C:/Users/palad/.ssh/id_ed25519_github_key
 ```
 
 #### Cloning via SSH
