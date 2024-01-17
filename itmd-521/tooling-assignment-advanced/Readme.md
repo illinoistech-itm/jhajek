@@ -70,13 +70,12 @@ Here we are going to create a directory to manage our artifact.  It is a good id
 
 We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 22.04 known as Jammy and a [Alma Linux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpagte release notes for Alma Linux 9") (CentOS/Red Hat based) Virtual Machines:
 
-* ```mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls```
-* ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls```
-
-For those using M1 Macs and Parallels you will need to replace the names of the Boxes in the demos with these two that have been prepared for M1 macs and parallels
-
-* bento/debian-11.2-arm64
-* almalinux/9.aarch64
+* For x86 Windows and Intel Macs using Virtual Box
+  * ```mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls```
+  * ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls```
+* For those using M1/M2 Macs and Parallels Pro
+  * ```mkdir jammy64 ; cd jammy64 ; vagrant init bento/debian-11.2-arm64 ; ls```
+  * ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9.aarch64 ; ls```
 
 ### Additional Parallels M1 requirements
 
