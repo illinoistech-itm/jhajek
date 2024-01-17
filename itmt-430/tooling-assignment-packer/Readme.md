@@ -32,7 +32,7 @@ Taken from [https://packer.io](https://packer.io "Packer webpage"): Why Packer?
 
 Lets take a look and see how Packer is able to build virtual machines from a YAML based text file. For the sample code used in the next section you can issue the command `git pull` in the jhajek repo you cloned at the beginning of class to get the latest source code samples.  They will be located in the directory [packer-code-examples](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/packer-code-examples "website for packer code exmaple"). Let us look at the file named: `ubuntu-22041-live-server.pkr.hcl`
 
-```json
+```hcl
 
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
