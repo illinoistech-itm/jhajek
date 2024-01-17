@@ -155,15 +155,20 @@ You will find two folders, one for local VirtualBox build, the other for your te
 
 ### Acquiring the Packer Sample Templates to build VirtualBox VMs for Vagrant
 
-To get a hold of the Packer Build Template samples, you will need to clone an additional repo to your host systems (MacOS, Windows, or Linux). Issue the command: `git clone https://github.com/illinoistech-itm/jhajek`. There will be many directories with sample code from other classes, but all you are interested in is the `itmt-430` directory and the conent in the `example-code` folder. For the first part, copy the `packer-virtualbox-example` code directory out of the `example-code` directory and place a copy into your GitHub repo under the `itmt-430` folder -- **Note:** do not clone the `jhajek` repo directly into your own repo. Repos and not meant to be mixed together and can cause unexpected behavior.
+To get a hold of the Packer Build Template samples, you will need to clone an additional repo to your host systems (MacOS, Windows, or Linux). Issue the command: `git clone https://github.com/illinoistech-itm/jhajek`. There will be many directories with sample code from other classes, but all you are interested in is the `itmt-430` directory and the conent in the `example-code` folder. 
+
+**Note:** do not clone the `jhajek` repo directly into your own repo. Repos and not meant to be mixed together and can cause unexpected behavior.
 
 ### Building Your Own Virtual Machines Using Packer and VirtualBox
 
-The sample code provided is heavily templated, to allow many people to use without hard-coding specific values or secrets into the template. There will be a few steps to and values that we need to fill out. Let's take a look at the file named: [ubuntu22043-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/packer-virtualbox-example/ubuntu_22043_vanilla/ubuntu22043-server.pkr.hcl "webpage showing the Packer syntax").
+The sample code provided is heavily templated, to allow many people to use without hard-coding specific values or secrets into the template. There will be a few steps to and values that we need to fill out. Let's take a look at the file named: 
 
-There are two files associated with this Packer Build Template, there is a file called: `template-for-variables.pkr.hcl`. This file allows you to define variables that will be applied to settings at run time. For this reason we will rename `template-for-variables.pkr.hcl` to `variables.pkr.hcl` as we have added the `variables.pkr.hcl` file to the `.gitignore` file in our repo.  This will allow us to make changes to our build tempalte and even add secure passwords, without hard coding them into files that are committed to version control -- possibly exposing critical secrets. Packer looks exclusively for a file named `variables.pkr.hcl`, so we must rename our template to that name or else there will be a build error.
+* x86 VirtualBox based OSes 
+  * [ubuntu22043-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/advanced-tooling-examples/ubuntu_22043_vanilla/ubuntu22043-vanilla-live-server.pkr.hcl "webpage showing the Packer syntax").
+* Apple Silicon M Series Parallels Pro
+  * [ubuntu22043-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/advanced-tooling-examples/ubuntu_22043_m1_mac/ubuntu_22043_vanilla-arm-server.pkr.hcll "webpage showing the Packer syntax").
 
-[template-for-variables.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/packer-virtualbox-example/ubuntu_22043_vanilla/template-for-variables.pkr.hcl "webpage for template-for-variables.pkr.hcl")
+There are two files associated with this Packer Build Template, there is a file called: `variables.pkr.hcl`. This file allows you to define variables that will be applied to settings at run time.
 
 ### Building Your Own Virtual Machines Using Packer and Parallels on Apple Silicon
 

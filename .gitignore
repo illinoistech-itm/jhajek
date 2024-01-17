@@ -11,7 +11,7 @@ packer_cache/
 output*/
 vagrant.d/
 *.iso
-variables.pkr.hcl
+
 *.priv
 
 variables.json
