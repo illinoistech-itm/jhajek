@@ -32,7 +32,7 @@ Taken from [https://packer.io](https://packer.io "Packer webpage"): Why Packer?
 
 Lets take a look and see how Packer is able to build virtual machines from a YAML based text file. For the sample code used in the next section you can issue the command `git pull` in the jhajek repo you cloned at the beginning of class to get the latest source code samples.  They will be located in the directory [packer-code-examples](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/packer-code-examples "website for packer code exmaple"). Let us look at the file named: `ubuntu-22041-live-server.pkr.hcl`
 
-```hcl
+```json
 
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
@@ -45,7 +45,7 @@ packer {
   }
 }
 
-source "virtualbox-iso" "ubuntu-22041-live-server" {
+source "virtualbox-iso" "ubuntu-22043-live-server" {
   boot_command          = ["<cOn><cOff>", "<wait5>linux /casper/vmlinuz"," quiet"," autoinstall"," ds='nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/'","<enter>","initrd /casper/initrd <enter>","boot <enter>"]
   boot_wait               = "5s"
   disk_size               = 15000
@@ -54,8 +54,8 @@ source "virtualbox-iso" "ubuntu-22041-live-server" {
   http_directory          = "subiquity/http"
   http_port_max           = 9200
   http_port_min           = 9001
-  iso_checksum            = "sha256:10f19c5b2b8d6db711582e0e27f5116296c34fe4b313ba45f9b201a5007056cb"
-  iso_urls                = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.1/ubuntu-22.04.1-live-server-amd64.iso"]
+  iso_checksum            = "file:https://mirrors.edge.kernel.org/ubuntu-releases/22.04.3/SHA256SUMS"
+  iso_urls                = ["http://mirrors.edge.kernel.org/ubuntu-releases/22.04.3/ubuntu-22.04.3-live-server-amd64.iso"]
   shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
   ssh_username            = "vagrant"
   ssh_password            = "${var.user-ssh-password}"
@@ -67,7 +67,7 @@ source "virtualbox-iso" "ubuntu-22041-live-server" {
 }
 
 build {
-  sources = ["source.virtualbox-iso.ubuntu-22041-live-server"]
+  sources = ["source.virtualbox-iso.ubuntu-22043-live-server"]
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
