@@ -103,13 +103,13 @@ Once these commands are executed -- both under the `itmt-430` directory, you wil
 * ```vim Vagrantfile```
   * You can use chocolatey to install `vim` on Windows
 
-This file is essentially your configuration file. In this abstraction, Vagrant will translate these values into the underlying `vboxmanage` or the `parallels` commandline commands. Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`. This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install. Line 52, 57, and 58 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb. For now lets not make any changes.
+This file is essentially your configuration file. In this abstraction, Vagrant will translate these values into the underlying `vboxmanage` or the `parallels` commandline commands. Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`. This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install. Line ~~~52~~~ 59, ~~~57~~~ 64, and ~~~58~~~ 65 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb. For now lets not make any changes.
 
 ### Start a Vagrant Box
 
 From our jammy64 directory, let us start our first Vagrant Box. From the Terminal type: ```vagrant up```. What you will see is the Box file with the VirtualBox (or Parallels) vm being extracted and registered with your virtualization software. Next the system will begin to boot. The first install will take a bit longer as some additional drivers are being installed. This only happens on first boot. 
 
-Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: ```vagrant ssh```, and we are faced with an Ubuntu Server command prompt. What was the password? What was the IP address? You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the ~~Fedora 35 box~~ Alma Linux 9 box (almalinux/9).
+Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: ```vagrant ssh```, and we are faced with an Ubuntu Server command prompt. What was the password? What was the IP address? You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the Alma Linux 9 box (almalinux/9).
 
 ### Additional Vagrant Commands
 
@@ -126,7 +126,7 @@ Once this step is successful, we need to establish a connection to the virtual m
 
 The Vagrantfile is only processed the first time a system is initialized via `vagrant up`. If you make a change you need to reboot or power down/up the machine and for the first time after the change you would add the flag `--provision` to the command to force Vagrant to reinitialize the hardware.
 
-Let us try this. Choose the Ubuntu 22.04 jammy64 system's Vagrantfile and let us open it for editing. Let us uncomment line 35 and let us uncommand line 52, 57, and 58, changing the value on line 57 to 4096 if you have the extra memory or 2048 at least. If your Jammy virtual machine is running, form the host OS issue the command: `vagrant reload --provision` or if powered off `vagrant up --provision`.
+Let us try this. Choose the Ubuntu 22.04 jammy64 system's Vagrantfile and let us open it for editing. Let us uncomment line 35 and let us uncommand line ~~~52~~~ 59, ~~~57~~~ 64, and ~~~58~~~ 65 changing the value on line ~~57~~ 64 to 4096 if you have the extra memory or 2048 at least. If your Jammy virtual machine is running, form the host OS issue the command: `vagrant reload --provision` or if powered off `vagrant up --provision`.
 
 To further check the results after the command `vagrant ssh` is issued from the Ubuntu CLI type the command: `free --giga` to see how much memory is in the system. To test the private network, let us install a webserver by issuing the command: `sudo apt update; sudo apt-get install nginx`. From your host OS, open a web-browser to `http://192.168.56.10` and you will be met by a Welcome to Nginx message. **Note:** your IP address could be different -- it depends on the value you set on line 34 in your `Vagrantfile`.
 
@@ -149,7 +149,7 @@ If you want to reset your Vagrant Box after you installed a webserver. Exit the 
 * Using the `sudo apt-get update` and `sudo apt-get install nginx` command, install the Nginx webserver (pronounced Engine X)
   * Exit the ssh session.
   * Edit the corresponding `Vagrantfile` to enable line 35 a private network interface
-  * Edit the corresponding `Vagrantfile` to uncomment line 52, 57, and 58 changing line 57 to 2048 or 4096
+  * Edit the corresponding `Vagrantfile` to uncomment line ~~~52~~~ 59, ~~~57~~~ 64, and ~~~58~~~ 65 changing line ~~57~~ 64 to 2048 or 4096
 * Using the command `vagrant reload --provision` restart the virtual machine
 * After the reload command has succeeded, without using the `vagrant ssh` command, open a web-browser on your Host OS to `http://192.168.56.10` to see the **Hello World** page being served from Nginx in your Vagrant Box
 * Using the `vagrant halt` to power off the virtual machine, then issue the `vagrant destroy` command to reset the Vagrant Box to its initial state (pre-webserver install)
