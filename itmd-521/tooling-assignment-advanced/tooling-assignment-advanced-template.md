@@ -28,7 +28,7 @@ Execute command: `R -v`
 
 ## Python Version
 
-Execute command: `python -V`
+Execute command: `python3 -V`
 
 ## Result of Cloning Your Private Repository
 
