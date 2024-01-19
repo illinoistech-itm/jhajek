@@ -6,7 +6,7 @@ locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 packer {
   required_plugins {
     parallels = {
-      version = ">= 1.1.0"
+      version = "> 1.1.0"
       source  = "github.com/Parallels/parallels"
     }
   }
