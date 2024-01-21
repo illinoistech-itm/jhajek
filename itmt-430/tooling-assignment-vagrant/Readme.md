@@ -103,7 +103,7 @@ Once these commands are executed -- both under the `itmt-430` directory, you wil
 * ```vim Vagrantfile```
   * You can use chocolatey to install `vim` on Windows
 
-This file is essentially your configuration file. In this abstraction, Vagrant will translate these values into the underlying `vboxmanage` or the `parallels` commandline commands. Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`. This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install. Line ~~~52~~~ 59, ~~~57~~~ 64, and ~~~58~~~ 65 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb. For now lets not make any changes.
+This file is essentially your configuration file. In this abstraction, Vagrant will translate these values into the underlying `vboxmanage` or the `parallels` commandline commands. Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`. This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install. Line ~~52~~ 59, ~~57~~ 64, and ~~58~~ 65 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb. For now lets not make any changes.
 
 ### Start a Vagrant Box
 
