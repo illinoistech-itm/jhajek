@@ -9,6 +9,7 @@ This document contains the Sprint-01 requirements and deliverables
 * Integrate version control and Kanban based project tooling
 * Determine and assign design tasks to team members
 * Explore the facets of team based design
+* Create Vault for team application secrets
 
 ## Outcomes
 
@@ -55,8 +56,8 @@ While there are many solutions to the tooling required, I have provided a small 
 
 * Signup for Team Chat Tool
   * This will enable synchronous and asynchronous out of band communication between members and the professor if questions arise
-    * Invite: **hajek@hawk.iit.edu**
-    * Recommendations: [Slack](https://slack.com "Slack website")
+    * ~~Invite: **hajek@hawk.iit.edu**~~
+    * ~~Recommendations: [Slack](https://slack.com "Slack website")~~
     * Recommendations: [Discord](https://discord.com "Discord website") -- need to have integrations with Chat and Project Management tools
   * Must have the ability to add notifications from Project Management boards and Git commits to the Chat tool
   * This will allow for a central pooling of resources and knowledge
