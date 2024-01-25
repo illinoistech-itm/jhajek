@@ -53,7 +53,8 @@ Place Scala screenshot here
 
 ## Deliverables
 
-Using this template, under the `itmd-521` directory in your local repository, create a sub-directory named `labs`. Under that create another subdirectory named `week-04` and place this Readme.md file in that directory along with a folder for images.
+Using this template, under the `itmd-521` directory in your local repository, create a sub-directory named `labs`. Under that create another subdirectory named `week-03` and place this Readme.md file in that directory along with a folder for images.
 
 You also need to include your python and scala code and the `build.sbt` file. Push the code to your remote GitHub repo and submit the URL to this location in Blackboard.
 
+Do not push any data files into your GitHub repo
