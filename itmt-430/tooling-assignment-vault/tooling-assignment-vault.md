@@ -12,4 +12,4 @@ Issue the command `vagrant up` and `vqagrant ssh` and the command `~~echo~~ cat 
 
 ## Deliverable
 
-In the document, `tooling-assignment-packer.md`, provide the required screenshots. Push a copy of this markdown file in the private GitHub repo provided, under the itmt-430 folder and make an additional sub-folder named: ~~**tooling-assignments-packer**~~ **tooling-assignments-vault**. Submit the URL to your deliverable to Blackboard.
+In the document, `tooling-assignment-packer.md`, provide the required screenshots. Push a copy of this markdown file in the private GitHub repo provided, under the itmt-430 folder and make an additional sub-folder named: ~~**tooling-assignments-packer**~~ **tooling-assignment-vault**. Submit the URL to your deliverable to Blackboard.
