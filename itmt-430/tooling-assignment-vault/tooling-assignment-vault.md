@@ -8,7 +8,7 @@ Take a screenshot of the command: `vagrant box list` to show the ubuntu-server o
 
 ## cat TEST file
 
-Issue the command `vagrant up` and `vqagrant ssh` and the command `~~echo~~ cat /home/vagrant/TEST`. This will display the content of a FILE named test which will print out the DBUSER value and demonstrate that you have succesfully passed a secret via Vault.  Take a screenshot of this output.
+Issue the command `vagrant up` and `vagrant ssh` and the command `~~echo~~ cat /home/vagrant/TEST`. This will display the content of a FILE named test which will print out the DBUSER value and demonstrate that you have succesfully passed a secret via Vault.  Take a screenshot of this output.
 
 ## Deliverable
 
