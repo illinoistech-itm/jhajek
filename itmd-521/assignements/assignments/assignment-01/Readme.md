@@ -1,4 +1,4 @@
-# Assignment 01
+# Week-04 Lab
 
 ## Assignment Setup
 
@@ -14,7 +14,7 @@
 
 ## Assignment Details
 
-- In your local Git Repo, create a folder named **labs** under the `itmd-521` folder and create a sub-folder **assignment-01** and place this Readme.md template in that directory along with the required pieces of code
+- In your local Git Repo, create a folder named **labs** under the `itmd-521` folder and create a sub-folder ~~**assignment-01**~~  **week-04** and place this Readme.md template in that directory along with the required pieces of code
   - You will create two programs, one in Python and one in Scala
     - Python: assignment-01.py
     - Scala: assignment-01.scala
