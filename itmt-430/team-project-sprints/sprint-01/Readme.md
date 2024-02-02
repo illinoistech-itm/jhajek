@@ -181,7 +181,7 @@ Was your markdown proper and well formed HTML when rendered? | 1
 
 #### Points for Project Manager Presentation
 
-The report will be worth 15 points and will be graded on a scale listed below.  In addition to the critique, the Project Manager must deliver the presentation and will be graded on a 15 point scale for items delivered and 5 points (2.5 points each for the self and group critique).
+The report will be worth 15 points and will be graded on a scale listed below. In addition to the critique, the Project Manager must deliver the presentation and will be graded on a 15 point scale for items delivered and 5 points (2.5 points each for the self and group critique).
 
 Topic | Points Range |
 ----------|------
@@ -202,10 +202,10 @@ Walk-through of your site | 3
 
 ### Presentation Requirements
 
-* The presentation will be done in person for the live labs (L01 and L03), online class (L04) will have to pre-record
+* The presentation will be done in person for section 01 and section 04 will have to pre-record
   * Only the Project Manager does the presenting
   * Others need to help prepare it but only the PM will do the presenting
-  * Presentation is not a slide show, but a verbal explaining and demonstration of the artifacts produced
+  * Presentation is **not** a slide show, but a verbal explaining and demonstration of the artifacts produced
   * We need to see your face
   * If recorded, find a quiet place, focus on audio and or use head phones and make a quality recoding
 
@@ -219,4 +219,8 @@ Demonstrate the implementations of the above requirements:
 
 ### What to Deliver to Blackboard
 
-Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day. Feedback will be given on each submission.
+Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day. In your private GitHub repo under `itmt-430`, create a folder named `critique` > `sprint-01` > Readme.md
+
+Project Manager will also submit a file named `report.md` displaying the required artifacts listed in the PM rubric
+
+Feedback will be given on each submission.
