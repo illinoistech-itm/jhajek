@@ -13,7 +13,7 @@ This document contains the Sprint-02 requirements and deliverables
 
 ## Outcomes
 
-At the conclusion of this sprint you will have worked in combination with your teammates to estimate the timing to deliver software artifacts. You will have deployed your virtualized 3-tier application, applying your UI/UX design you created in sprint-01. You will have integrated the Data Schema as well as addressed security concerns and have begun to assign and complete tasks you were assigned.  Your goal is to show a working skeleton of the project at the end of sprint-02.
+At the conclusion of this sprint you will have worked in combination with your teammates to estimate the timing to deliver software artifacts. You will have deployed your virtualized 3-tier application, applying your UI/UX design you created in sprint-01. You will have integrated the Data Schema as well as addressed security concerns and have begun to assign and complete tasks you were assigned. Your goal is to show a working skeleton of the project at the end of sprint-02.
 
 ### Requirements
 
@@ -29,7 +29,7 @@ For this sprint, the roles are not exclusive. Anyone can submit code for instanc
   * Project Manager must take close notes of what has changed from sprint to sprint
   * Project Manager must also describe the task estimation process and describe what was completed and/or not completed
   * Must manage the team members and facilitate communication and individual progress outside of class times
-* Developer 1 , 2, and 3
+* Developer 1 and 2
   * Responsible for deciding on a programming language framework used, any APIs that will be created, and if any frameworks are implemented
   * Once this is chosen -- it is locked in for the rest of the class
   * Language must have a package manager
@@ -59,7 +59,6 @@ In the team repo their will need to be a few additional folders added.
 * A folder named: **build**
   * This will contain all instructions on how to build and deploy your application
   * This will contain Packer build templates for building Vagrant Boxes
-  * This will contain Vagrantfiles for deploying the machines in a pre-configured state
   * This will contain Bash and or PowerShell scripts for single source of deploy, halt, and removal of the application on your local system
   * The build directory will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
 
@@ -77,7 +76,7 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 * Login
   * Use your @hawk accounts and Google OAuth for login authentication in your application code (there are other options -- check with the instructor for approval first)
-  * Rolling your own Authentication system in 2023 is not a valid choice
+  * Rolling your own Authentication system in 2024 is not a valid choice
 * Choice of Server OS
   * Ubuntu Server 22.04
 * Infrastructure
@@ -90,9 +89,7 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ## Deliverables
 
-* Monday Lab live presentation and critiques are due 8:35am February 27th
-* Wednesday Lab presentation and critiques are due 8:35am March 1st
-* Online section recorded presentation and critiques due at 10 AM Friday March 3rd
+* All presentations and critiques are due 10:00am February 26th
 
 ### Individual Deliverables
 
