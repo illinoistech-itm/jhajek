@@ -33,7 +33,7 @@ For this sprint, the roles are not exclusive. Anyone can submit code for instanc
   * Responsible for deciding on a programming language framework used, any APIs that will be created, and if any frameworks are implemented
   * Once this is chosen -- it is locked in for the rest of the class
   * Language must have a package manager
-  * Use of Firebase is not allowed for this project (its a great product though)
+  * Use of Firebase is not allowed for this project (it is a great product though)
   * Use of non-framework PHP is not allowed
   * Must begin to code and deploy the items decided upon by the Project Manager
 * UI/UX
@@ -42,7 +42,7 @@ For this sprint, the roles are not exclusive. Anyone can submit code for instanc
   * If your UI/UX design is incomplete need to complete it before any work can progress
   * UI/UX design is a complete master blueprint of what your finished site will look like
 * IT Orchestration and Security
-  * Responsible for designing and deploying all virtualized infrastructure templates (Vagrant and Packer)
+  * Responsible for designing and deploying all virtualized infrastructure templates (Terraform and Packer)
   * Responsible for working with Developers to configure login authentication
   * Responsible for working with the team to coordinate the automated building of the entire application
   * Responsible for creating any shell scripts required for automated deployment
@@ -58,7 +58,7 @@ In the team repo their will need to be a few additional folders added.
   * This will contain all application source code
 * A folder named: **build**
   * This will contain all instructions on how to build and deploy your application
-  * This will contain Packer build templates for building Vagrant Boxes
+  * This will contain Packer build templates for building ~~Vagrant Boxes~~ Virtual Machines
   * This will contain Bash and or PowerShell scripts for single source of deploy, halt, and removal of the application on your local system
   * The build directory will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
 
@@ -173,3 +173,4 @@ Clear transition to a conclusion and small summary of presentation | 1
 ### What to Deliver to Blackboard
 
 Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day.  Feedback will be given on each submission.
+
