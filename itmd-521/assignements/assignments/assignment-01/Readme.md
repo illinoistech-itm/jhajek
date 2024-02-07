@@ -36,7 +36,7 @@
   - If your last name starts with A-K select female, L-Z select male
   - GroupBy the field `station to name`
   - Issue a show function displaying 10 records of the DataFrame (up to page 62 in the text book)
-- Repeat the above steps and create a file named: `assignment-01.scala`
+- Repeat the above steps and create a file named: ~~`assignment-01.scala`~~ `assignment_01.scala`
   - Compile and test the code using the sbt compiler
 
 ### Screen Shots
@@ -75,13 +75,13 @@ Case and spelling very important so I can automate through this assignment -- ma
   * Python
     * located in itmd-521 > labs > week-04 > py > assignment-01.py
   * Scala
-    * located in itmd-521 > labs > week-04 > scala > src > main > scala > assignment-01 > assignment-01.scala
+    * located in itmd-521 > labs > week-04 > scala > src > main > scala > assignment-01 > ~~assignment-01.scala~~ assignment_01.scala
     * Note that the `build.sbt` file will be placed in the `scala` directory
-    * Package path in Scala file would be main.scala.assignment-01
-    * Object name in Scala is `assignment-01`
+    * Package path in Scala file would be main.scala.assignment_01
+    * Object name in Scala is `assignment_01`
       * Needs to match the case of the `.scala` file
   * Class Path would be
-    * `main.scala.assignment-01.assignment-01`
+    * `main.scala.assignment_01.assignment_01`
   * jar file location
     * `./target/scala-2.12/main-scala-chapter2_2.12-1.0.jar`
 
