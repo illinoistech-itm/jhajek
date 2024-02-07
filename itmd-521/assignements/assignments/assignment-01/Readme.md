@@ -83,7 +83,7 @@ Case and spelling very important so I can automate through this assignment -- ma
   * Class Path would be
     * `main.scala.assignment_01.assignment_01`
   * jar file location
-    * `./target/scala-2.12/main-scala-chapter2_2.12-1.0.jar`
+    * `./target/scala-2.12/main-scala-assignment_01_2.12-1.0.jar`
 
 ### Deliverable
 
