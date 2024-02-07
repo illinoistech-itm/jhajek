@@ -34,7 +34,7 @@
 - You will run some Transformations and Actions
   - Use a `select` function to select Gender
   - If your last name starts with A-K select female, L-Z select male
-  - GroupBy the field `station to`
+  - GroupBy the field `station to name`
   - Issue a show function displaying 10 records of the DataFrame (up to page 62 in the text book)
 - Repeat the above steps and create a file named: `assignment-01.scala`
   - Compile and test the code using the sbt compiler
