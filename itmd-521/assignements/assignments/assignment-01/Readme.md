@@ -67,6 +67,24 @@ Screenshot goes here
 
 Screenshot goes here
 
+### Build Instructions 
+
+Case and spelling very important so I can automate through this assignment -- match me 100 percent
+
+* We have two deliverables
+  * Python
+    * located in itmd-521 > labs > week-04 > py > assignment-01.py
+  * Scala
+    * located in itmd-521 > labs > week-04 > scala > src > main > scala > assignment-01 > assignment-01.scala
+    * Note that the `build.sbt` file will be placed in the `scala` directory
+    * Package path in Scala file would be main.scala.assignment-01
+    * Object name in Scala is `assignment-01`
+      * Needs to match the case of the `.scala` file
+  * Class Path would be
+    * `main.scala.assignment-01.assignment-01`
+  * jar file location
+    * `./target/scala-2.12/main-scala-chapter2_2.12-1.0.jar`
+
 ### Deliverable
 
 Submit to Blackboard the URL to the folder in your GitHub repo. I will clone your code, compile it, and run it to test the functionality. Include your `build.sbt` and all needed scaffolding files as well, but not your build artifacts.
