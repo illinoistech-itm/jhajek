@@ -26,8 +26,8 @@
   - [printSchema()](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.printSchema.html "pyspark printschema web page")
   - [printSchema](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html#printSchema():Unit "scala pyspark API")
 - Also use the `.count()` function to display the number of records in each DataFrame
-  - [.count()](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "webapge to Scala API")
-  - [count() - Pyspark](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.count.html "Pyspark webapge for API")  
+  - [.count()](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "webpage to Scala API")
+  - [count() - Pyspark](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.count.html "Pyspark webpage for API")  
 
 ## Assignment Details Continued
 
@@ -71,4 +71,5 @@ Screenshot goes here
 
 Submit to Blackboard the URL to the folder in your GitHub repo. I will clone your code, compile it, and run it to test the functionality. Include your `build.sbt` and all needed scaffolding files as well, but not your build artifacts.
 
-Due at the **Start of class** February 7th 1:50pm
+* Due at the **Start of class** for Section 01, 02, and 03 February 8th 3:05pm
+* Due at the **Start of class** for Section 05 February 7th 1:50pm
