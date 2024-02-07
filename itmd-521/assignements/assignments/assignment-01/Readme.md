@@ -16,8 +16,8 @@
 
 - In your local Git Repo, create a folder named **labs** under the `itmd-521` folder and create a sub-folder ~~**assignment-01**~~  **week-04** and place this Readme.md template in that directory along with the required pieces of code
   - You will create two programs, one in Python and one in Scala
-    - Python: assignment-01.py
-    - Scala: assignment-01.scala
+    - Python: `assignment-01.py`
+    - Scala: ~~assignment-01.scala~~ `assignment_01.scala`
   - Per language file, create three data frames reading the extracted `Divvy_Trips_2015-Q1.csv` from your local system
     - First **infer the schema** and read the csv file
     - Second programmatically use **StructFields** to create and attach a schema and read the csv file
@@ -75,7 +75,7 @@ Case and spelling very important so I can automate through this assignment -- ma
   * Python
     * located in itmd-521 > labs > week-04 > py > assignment-01.py
   * Scala
-    * located in itmd-521 > labs > week-04 > scala > src > main > scala > assignment-01 > ~~assignment-01.scala~~ assignment_01.scala
+    * located in itmd-521 > labs > week-04 > scala > src > main > scala > ~~assignment-01~~ assignment_01 > ~~assignment-01.scala~~ assignment_01.scala
     * Note that the `build.sbt` file will be placed in the `scala` directory
     * Package path in Scala file would be main.scala.assignment_01
     * Object name in Scala is `assignment_01`
