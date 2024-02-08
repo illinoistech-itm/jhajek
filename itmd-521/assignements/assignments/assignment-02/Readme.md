@@ -26,7 +26,9 @@
     - Do not hardcode the dataset
   - Make sure to commit and push code to GitHub continually. Assignments that have the entire code submitted with none or little commit history will not be accepted
     - Commit and push often.
-  - Don't share the answers with others! Your work is individual.
+  - Don't share the answers with others! Your work is individual
+  - [PySpark API](https://spark.apache.org/docs/latest/api/python/index.html "webpage for Pyspark API")
+
 
 ## Assignment Details - Part II
 
@@ -42,7 +44,8 @@
   - Run the jar file via the `spark-submit` command
   - Once you have the answers, add it via a comment back to your source code.
   - Make sure to commit and push code to GitHub continually.  Assignments that have the entire code submitted with none or little commit history will not be accepted.  Commit and push often.
-  - Don't share the answers with others.  Your work is individual.
+  - Don't share the answers with others.  Your work is individual
+  - [Scala API](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/index.html "Scala API documentation")
 
 ### Deliverable
 

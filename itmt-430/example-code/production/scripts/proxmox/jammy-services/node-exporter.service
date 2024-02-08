@@ -1,0 +1,15 @@
+[Unit]
+Description=Node Exporter
+Wants=network-online.target
+After=network-online.target
+Wants=consul.service
+After=consul.service
+
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/bin/sh -c '/usr/local/bin/node_exporter --web.listen-address=0.0.0.0:9100 --no-collector.bonding --no-collector.dmi --no-collector.fibrechannel --no-collector.infiniband --no-collector.nfs --no-collector.nfsd --no-collector.nvme --no-collector.xfs'
+
+[Install]
+WantedBy=multi-user.target
