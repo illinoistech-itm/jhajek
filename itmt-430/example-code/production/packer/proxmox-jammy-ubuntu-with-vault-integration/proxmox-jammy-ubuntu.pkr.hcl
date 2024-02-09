@@ -1,5 +1,7 @@
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
+# Packer Proxmox Plugin Docs
+# https://github.com/hashicorp/packer-plugin-proxmox/tree/main/docs
 packer {
   required_plugins {
     virtualbox = {
@@ -14,31 +16,33 @@ packer {
 # source. Read the documentation for source blocks here:
 # https://www.packer.io/docs/from-1.5/blocks/source
 # https://github.com/burkeazbill/ubuntu-22-04-packer-fusion-workstation/blob/master/ubuntu-2204-daily.pkr.hcl
-source "proxmox-iso" "proxmox-jammy-vault-template" {
+source "proxmox-iso" "proxmox-jammy-ubuntu" {
   boot_command = [
-        "e<wait>",
-        "<down><down><down>",
-        "<end><bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
-        "<f10><wait>"
-      ]
-  boot_wait    = "5s"
-  cores        = "${var.NUMBEROFCORES}"
-  node         = "${var.NODENAME}"
-  username     = "${var.USERNAME}"
-  token        = "${var.PROXMOX_TOKEN}"
-  cpu_type     = "host"
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_wait = "5s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${local.NODENAME}"
+  username  = "${local.USERNAME}"
+  token     = "${local.PROXMOX_TOKEN}"
+  cpu_type  = "host"
   disks {
-    disk_size         = "${var.DISKSIZE}"
-    storage_pool      = "${var.STORAGEPOOL}"
-    storage_pool_type = "lvm"
-    type              = "virtio"
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    # storage_pool_type is deprecated and should be omitted, it will be removed in a later version of the proxmox plugin
+    # storage_pool_type = "lvm"
+    type = "virtio"
+    io_thread = true
   }
   http_directory   = "subiquity/http"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "sha256:a4acfda10b18da50e2ec50ccaf860d7f20b389df8765611142305c0e911d16fd"
-  iso_urls         = ["http://mirrors.edge.kernel.org/ubuntu-releases/22.04.3/ubuntu-22.04.3-live-server-amd64.iso"]
+  iso_checksum     = "${var.iso_checksum}"
+  iso_urls         = "${var.iso_urls}"
   iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
@@ -56,21 +60,23 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   }
 
   os                       = "l26"
-  proxmox_url              = "${var.URL}"
+  proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
   unmount_iso              = true
   qemu_agent               = true
+  scsi_controller          = "virtio-scsi-single"       
   cloud_init               = true
-  cloud_init_storage_pool  = "local"
-  ssh_password             = "${var.SSHPW}"
+  ssh_private_key_file     = "./id_ed25519"
+  cloud_init_storage_pool  = "${var.STORAGEPOOL}"
+  ssh_password             = "${local.SSHPW}"
   ssh_username             = "vagrant"
   ssh_timeout              = "28m"
-  template_description     = "A Packer template Hashicorp Vault"
+  template_description     = "A Packer template for Ubuntu Jammy"
   vm_name                  = "${var.VMNAME}"
 }
 
 build {
-  sources = ["source.proxmox-iso.proxmox-jammy-vault-template"]
+  sources = ["source.proxmox-iso.proxmox-jammy-ubuntu"]
 
   ########################################################################################################################
   # Using the file provisioner to SCP this file to the instance 
@@ -129,10 +135,10 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_2204.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_start-cloud-init.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_install_hashicorp_consul.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
+    scripts = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_2204.sh",
+      "../scripts/proxmox/core-jammy/post_install_prxmx_start-cloud-init.sh",
+      "../scripts/proxmox/core-jammy/post_install_prxmx_install_hashicorp_consul.sh",
+    "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
   }
 
   ########################################################################################################################
@@ -140,37 +146,36 @@ build {
   # Interface ens20
   # https://www.consul.io/docs/troubleshoot/common-errors
   ########################################################################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_change_consul_bind_interface.sh"]
   }
-  
+
   ############################################################################################
   # Script to give a dynamic message about the consul DNS upon login
   #
   # https://ownyourbits.com/2017/04/05/customize-your-motd-login-message-in-debian-and-ubuntu/
   #############################################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_update_dynamic_motd_message.sh"]
-  }  
-  
+  }
+
   ############################################################################################
   # Script to install telegraf dependencies for collecting hardware metrics
   #
   #############################################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh"]
-  } 
+  }
 
   ########################################################################################################################
   # Uncomment this block to add your own custom bash install scripts
   # This block you can add your own shell scripts to customize the image you are creating
   ########################################################################################################################
-
 
 }

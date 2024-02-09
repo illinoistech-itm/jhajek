@@ -1,0 +1,63 @@
+#cloud-config - https://raw.githubusercontent.com/nickcharlton/packer-ubuntu-2004/master/http/user-data
+autoinstall:
+  version: 1
+  identity:
+    hostname: ubuntu-server
+    password: '$6$qoazpFv0h6$1i0uxiM32aszgrgyYjv/2FLq73.TV2DCHOGi6nuiZoazu36Bewgb4hKarG9J3vwHxTpkdLQ10zeEt1J5XHG.Z/'
+    username: vagrant
+  early-commands:
+  # If we install the SSH server using the subiquity `ssh` configuration then port 22 gets opened up to packer _before_
+  # the requisite configuration has been done to allow Packer to SSH on to the guest O/S. This results in a failed build
+  # as Packer exceeds its SSH permitted number of SSH handshake attempts.
+  #
+  # To ensure this doesn't happen we stop the SSH service until right at the end when we re-enable it
+  # using a late-command.
+    - sudo systemctl stop ssh
+  refresh-installer:
+    update: yes  
+  storage:
+    layout:
+      name: lvm
+  packages:
+    - ubuntu-server-minimal
+    - qemu-guest-agent
+    - curl
+    - wget
+    - uuid
+    - git
+    - cloud-init
+    - build-essential
+  apt:
+    preserve_sources_list: false
+    primary:
+      - arches: [amd64]
+        uri: "http://10.0.0.40/ubuntu"
+  network:
+    network:
+      version: 2
+      ethernets:
+        ens18:
+          dhcp4: true
+          dhcp6: false
+          dhcp-identifier: mac
+          dhcp4-overrides:
+            use-hostname: true
+        ens19:
+          dhcp4: true
+          dhcp6: false
+        ens20:
+          dhcp4: true
+          dhcp6: false
+  ssh:
+    allow-pw: false
+    install-server: true
+    authorized-keys:
+      - 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGTi1ciil8RrWQj1Vez1CLkaB4unBLUar/wPTg3wnI3Q palad@framework'
+  late-commands:
+    - sed -i 's/^#*\(send dhcp-client-identifier\).*$/\1 = hardware;/' /target/etc/dhcp/dhclient.conf
+    - "echo 'Defaults:vagrant !requiretty' > /target/etc/sudoers.d/vagrant"
+    - "echo 'vagrant ALL=(ALL) NOPASSWD: ALL' >> /target/etc/sudoers.d/vagrant"
+    - "chmod 440 /target/etc/sudoers.d/vagrant"
+    - echo "Ciphers -chacha20-poly1305@openssh.com" | sudo tee -a /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf
+    - sudo chmod 600 /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf
+    - sudo systemctl start ssh
