@@ -41,31 +41,33 @@ All readings should be done prior to class
 
 Session | Date | Topic | Reading - Homework |
 ----------|------|:------|----------
+Session | Date | Topic | Reading for Homework |
+----------|------|:------|----------
 1 | 01/08 | Introduction | -
-2 | 01/10 | Tooling Assignment | FoDE Ch 1 and 2 
-3 | 01/15 | Data Engineering Life Cycle | -
-4 | 01/17 | Advanced Tooling Assignment | FoDE 3 and 4 
-5 | 01/22 | Architectures and Technology | -
-6 | 01/24 | Setting up Spark | Learning Spark 1-3 
-7 | 01/29 | Unified Analytics Engine | NA
-8 | 01/31 | Cookie Monster Demo | FoDE 5 and 6
-9 | 02/05 | Data Generation in source systems | -
-10 | 02/07 | Raw Storage | Learning Spark 4 and 5
-11 | 02/12 | Introduction to Built-in Data Sources | -
-12 | 02/14 | Interacting with External Data Sources | Learning Spark 6 & FoDE 8
-13 | 02/19 | Queries, Modeling, And Transformation | - 
-14 | 02/21 | Spark SQL in spark applications | -
-15 | 02/26 | Mid-term project | -
-16 | 02/28 | Mid-term project | -
-17 | 03/04 | Mid-term project | -
-18 | 03/06 | Mid-term project  | -
+2 | 01/10 | Tooling Assignment | FoDE 1 
+3 | 01/15 | Data Engineering Described | -
+4 | 01/17 | Advanced Tooling Assignment | FoDE 2
+5 | 01/22 | Data Engineering Life Cycle | Learning Spark 2
+6 | 01/24 | Apache Spark Install | FoDE 3
+7 | 01/29 | Designing Good Data Architecture | Learning Spark 3
+8 | 01/31 | Apache Spark Structured APIs | FoDE 4
+9 | 02/05 | Choosing Technologies Across the Data Engineering LifeCycle | Learning Spark 3
+10 | 02/07 | End to End Data Set Examples | FoDE 5
+11 | 02/12 | Data Generation in Source Systems | Learning Spark 4 Part I
+12 | 02/14 | Spark SQL and DataFrames | FoDE 6
+13 | 02/19 | Storage | Learning Spark 4 Part II 
+14 | 02/21 | File storage and Partitions | FoDE 7
+15 | 02/26 | Ingestion | Learning Spark 5
+16 | 02/28 | Spark, SQL, and DataFrames | FoDE 8
+17 | 03/04 | Queries, Modeling, and Transformation | Learning Spark 6
+18 | 03/06 | Spark SQL and Datasets  | FoDE 9
 NA | 03/11 | Spring Break Week | -
-NA | 03/13 | Spring Break Week | Learning Spark Ch 7
-19 | 03/18 | Tuning Spark Applications | -
+NA | 03/13 | Spring Break Week | -
+19 | 03/18 | Serving Data for Analytics, ML, and Reverse ETL | Learning Spark 7
 20 | 03/20 | Tuning Spark Applications | Learning Spark Ch 8
-21 | 03/25 | Structure Streaming | -
-22 | 03/27 | Structure Streaming | FoDE 9 and Learning Spark 9-10
-23 | 04/01 | Serving Data For Analytics, Machine Learning and Reverse ETL | -
+21 | 03/25 | Structured Streaming | -
+22 | 03/27 | Structured Streaming | Learning Spark 9-10
+23 | 04/01 | Data Lakes and Machine Learning Ch 9-10 | -
 24 | 04/03 | Data Lakes and Machine Learning Ch 9-10 | -
 25 | 04/08 | Data Lakes and Machine Learning & Cloud DBs | -
 26 | 04/10 | Data Lakes and Machine Learning & Cloud DBs | -
@@ -123,9 +125,9 @@ Attendance is expected and will be counted as part of your grade -- if you are n
 
 ### Course Web Site
 
-[http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL")
+[http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Management Site URL")
 
-The course will make use of Blackboard [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL") for communications, assignment submissions, group project coordination, providing online resources and administering examinations. All remote students will view the course lectures online via Blackboard, and online readings and other course material will be found on Blackboard.
+The course will make use of Blackboard [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Management Site URL") for communications, assignment submissions, group project coordination, providing online resources and administering examinations. All remote students will view the course lectures online via Blackboard, and online readings and other course material will be found on Blackboard.
 
 ### Assignments
 
@@ -147,10 +149,10 @@ The final grade for the class will be calculated as follows:
 
 Name | Grade | Total Points
 ------------------|----------|-----------
-Lab Assignments | 30% | 100 (10pts each x10)
-Midterm Exam | 30% | 100 points
-Final Project | 30% | 100 points
-Attendance | 10% | 30 points
+Lab Assignments | 50% | 130 (10pts each x13)
+~~Midterm Exam~~ | ~~30%~~ | ~~100 points~~
+Final Project | 38% | 100 points
+Attendance | 12% | 30 points
 
 ### Late Submission
 
