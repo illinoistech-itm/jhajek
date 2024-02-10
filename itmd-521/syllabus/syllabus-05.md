@@ -41,8 +41,6 @@ All readings should be done prior to class
 
 Session | Date | Topic | Reading - Homework |
 ----------|------|:------|----------
-Session | Date | Topic | Reading for Homework |
-----------|------|:------|----------
 1 | 01/08 | Introduction | -
 2 | 01/10 | Tooling Assignment | FoDE 1 
 3 | 01/15 | Data Engineering Described | -
