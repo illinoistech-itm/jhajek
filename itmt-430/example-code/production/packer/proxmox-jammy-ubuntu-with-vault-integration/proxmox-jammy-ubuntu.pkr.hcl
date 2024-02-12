@@ -66,7 +66,6 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
   qemu_agent               = true
   scsi_controller          = "virtio-scsi-single"       
   cloud_init               = true
-  ssh_private_key_file     = "./id_ed25519"
   cloud_init_storage_pool  = "${var.STORAGEPOOL}"
   ssh_password             = "${local.SSHPW}"
   ssh_username             = "vagrant"
