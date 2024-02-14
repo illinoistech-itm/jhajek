@@ -17,7 +17,8 @@
   - In that application code add seven comments (# pound sign) that type out the question from the text book
   - The schema is provided in the textbook on the preceding pages
   - Provide code to answer the questions below each header
-  - You can provide a single "read" of the source code at the top of the file into a DataFrame -- each question does not require a read()
+  - You can provide a single "read" of the source code at the top of the file into a DataFrame -- each question does not require a `read()`
+  - Unless noted for the output you can use a `.show(10)` to truncate the output 
   - Run the source code via Spark-Submit on your Vagrant Box
   - Once you have the answer to the question, go back and add a source code comment with the answer under the question
   - Sample code is available in the book LearningSparkV2 sample code

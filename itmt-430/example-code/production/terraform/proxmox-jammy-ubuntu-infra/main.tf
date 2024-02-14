@@ -61,19 +61,19 @@ resource "proxmox_vm_qemu" "vanilla-server" {
   network {
     model  = "virtio"
     bridge = "vmbr0"
-    macaddr = "04:9F:15:00:00:00" 
+    #macaddr = "04:9F:15:00:00:00" 
   }
 
   network {
     model  = "virtio"
     bridge = "vmbr1"
-    macaddr = "04:9F:15:00:00:00" 
+    #macaddr = "04:9F:15:00:00:00" 
   }
 
   network {
     model  = "virtio"
     bridge = "vmbr2"
-    macaddr = "04:9F:15:00:00:00" 
+    #macaddr = "04:9F:15:00:00:00" 
   }
 
   disk {
