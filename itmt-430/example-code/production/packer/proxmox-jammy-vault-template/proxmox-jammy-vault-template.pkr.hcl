@@ -37,8 +37,8 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   http_directory   = "subiquity/http"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "file:https://old-releases.ubuntu.com/releases/22.04.2/SHA256SUMS"
-  iso_urls         = ["http://mirrors.edge.kernel.org/ubuntu-releases/22.04.3/ubuntu-22.04.3-live-server-amd64.iso"]
+  iso_checksum     = "file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.4/SHA256SUMS"
+  iso_urls         = ["http://mirrors.edge.kernel.org/ubuntu-releases/22.04.4/ubuntu-22.04.4-live-server-amd64.iso"]
   iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
