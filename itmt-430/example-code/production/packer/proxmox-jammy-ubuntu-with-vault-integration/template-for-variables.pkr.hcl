@@ -52,7 +52,7 @@ variable "VMNAME" {
 
 variable "iso_checksum" {
   type = string
-  default =  "file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.3/SHA256SUMS"
+  default =  "file:https://old-releases.ubuntu.com/releases/22.04.2/SHA256SUMS"
 }
 
 # https://developer.hashicorp.com/terraform/language/values/variables#declaring-an-input-variable
