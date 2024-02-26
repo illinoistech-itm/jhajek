@@ -82,6 +82,7 @@ The professor is prescribing a small number of **additional** required tasks to 
 * Infrastructure
   * Build each server template needed in the 3-tier app as Virtual Machines
   * Uses assigned MAC address to get a static IP
+  * Open proper firewall ports and firewall logic
 * 3 Tier Application
   * First tier is a Load Balancer
     * Configure Loadbalancer to connect to webservers using the Consul DNS resolver on the meta-network (10.110.0.0/16)
@@ -105,6 +106,8 @@ The professor is prescribing a small number of **additional** required tasks to 
      * You will have to build often as code changes
      * Expect 10+ deployments of your site (this is normative)
      * Development on Localhost is not acceptable at this point
+     * Code will be pulled from GitHub and the system will be configured to start the application at boot
+     * No manual intervention
 * Usage of site
   * Demonstrate a successful login of a user
   * Post a question
@@ -114,15 +117,16 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 | Team Number | MacAddr | Static IP | FQDN |
 | ----------- | -------------| ------------- | ----------------- |
-| team 01m | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
-| team 02m | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
-| team 03m | 04:9F:15:00:00:13 | 192.168.172.62 | system62.rice.iit.edu |
-| team 04m | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
-| team 01o | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
-| team 02o | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
-| team 03o | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
-| team 04o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
-| team 05o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
+| team 00  | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
+| team 01m | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
+| team 02m | 04:9F:15:00:00:13 | 192.168.172.62 | system62.rice.iit.edu |
+| team 03m | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
+| team 04m | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
+| team 01o | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
+| team 02o | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
+| team 03o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
+| team 04o | 04:9F:15:00:00:19 | 192.168.172.68 | system68.rice.iit.edu |
+| team 05o | 04:9F:15:00:00:20 | 192.168.172.69 | system69.rice.iit.edu |
 
 ## Deliverables
 
