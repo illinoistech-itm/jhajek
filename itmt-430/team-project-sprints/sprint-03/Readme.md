@@ -117,10 +117,10 @@ The professor is prescribing a small number of **additional** required tasks to 
        * [AppRole Secrets](https://developer.hashicorp.com/vault/docs/auth/approle "webpage for App Role secrets")
        * [MySQL Secrets](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for MySQL secret engine")
 * Usage of site
-  * Demonstrate a successful login of a user
-  * Post a question
-  * Answer a question
-  * Logout that user
+  * Each team member demonstrate a successful login of a user
+    * Post a question
+    * Answer a question
+    * Logout that user
   * Will demonstrate your load balancer live by terminating 2 instances in succession
 
 | Team Number | MacAddr | Static IP | FQDN |
