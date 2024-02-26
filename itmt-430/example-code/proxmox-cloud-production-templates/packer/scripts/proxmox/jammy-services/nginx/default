@@ -1,0 +1,54 @@
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# https://www.nginx.com/resources/wiki/start/
+# https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+# https://wiki.debian.org/Nginx/DirectoryStructure
+#
+# In most cases, administrators will remove this file from sites-enabled/ and
+# leave it as reference inside of sites-available where it will continue to be
+# updated by the nginx packaging team.
+#
+# This file will automatically load configuration files provided by other
+# applications, such as Drupal or Wordpress. These applications will be made
+# available underneath a path with that package name, such as /drupal8.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+# Default server configuration
+#
+server {
+        listen 443 default_server ssl;
+        listen [::]:443 default_server ssl;
+        include snippets/self-signed.conf;
+        
+		# Intermediate configuration. tweak to your needs. 
+        # https://www.ssls.com/knowledgebase/how-to-install-an-ssl-certificate-on-a-nginx-server/
+		ssl_buffer_size 8k;
+		ssl_protocols TLSv1.3 TLSv1.2 TLSv1.1;
+		ssl_prefer_server_ciphers on;
+		ssl_ciphers ECDH+AESGCM:ECDH+AES256:ECDH+AES128:DH+3DES:!ADH:!AECDH:!MD5;
+
+        root /var/www/html;
+        index index.html;
+        server_name _;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                #try_files $uri $uri/ =404;
+                try_files $uri $uri/ =404;
+
+				# Added by JRH 
+        		proxy_pass http://backend;
+                # If you wanted https/TLS between each node on the frontend - you would 
+                # enable https and then have to enable each frontend node to support TLS/SSL
+                # Which is a better idea, but a more moving parts
+                # proxy_pass https://backend;
+                proxy_ssl_server_name on;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+        }
+
+}
