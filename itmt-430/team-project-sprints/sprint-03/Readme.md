@@ -1,5 +1,7 @@
 # Sprint 03 Requirements and Deliverables
 
+![*https://xkcd.com/303/*](./compiling.png "The life achievement you have unlocked...")
+
 This document contains the Sprint-03 requirements and deliverables
 
 ## Objectives
