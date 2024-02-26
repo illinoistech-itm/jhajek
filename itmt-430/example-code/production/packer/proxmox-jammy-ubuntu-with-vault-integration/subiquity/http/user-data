@@ -32,8 +32,6 @@ autoinstall:
     primary:
       - arches: [amd64]
         uri: "http://10.0.0.40/ubuntu"
-      - arches: [amd64]
-        uri: "http://10.0.0.40/hashicorp"
   network:
     network:
       version: 2
