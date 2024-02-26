@@ -88,6 +88,7 @@ The professor is prescribing a small number of **additional** required tasks to 
     * Configure Loadbalancer to connect to webservers using the Consul DNS resolver on the meta-network (10.110.0.0/16)
     * Enable the use of a self-signed https TLS cert
     * Using Nginx and proper routes
+    * Create packer VM templates on both SYSTEM41 and SYSETM42
   * Second tier is the webserver tier
     * Count of 3
     * Disable direct IP access (use the consul networks IPs for connectivity to the load balancer)
