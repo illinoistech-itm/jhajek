@@ -109,6 +109,11 @@ The professor is prescribing a small number of **additional** required tasks to 
      * Development on Localhost is not acceptable at this point
      * Code will be pulled from GitHub and the system will be configured to start the application at boot
      * No manual intervention
+     * Removal of all hard coded secrets
+     * Use Vault
+       * These can be KV pair secrets
+       * [AppRole Secrets](https://developer.hashicorp.com/vault/docs/auth/approle "webpage for App Role secrets")
+       * [MySQL Secrets](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for MySQL secret engine")
 * Usage of site
   * Demonstrate a successful login of a user
   * Post a question
