@@ -1,4 +1,4 @@
-# Tutorial for Constucting a Cloud Native Three Tier Application
+# Tutorial for Constructing a Cloud Native Three Tier Application
 
 This will be a combination lecture/tutorial on how and why we are creating a three-tier web application.
 
@@ -8,19 +8,19 @@ This will be a combination lecture/tutorial on how and why we are creating a thr
 * Explore the imperative nature of the three-tier application when dealing with cloud-native development
 * Discuss tooling needed to create a three-tier application
 * Discuss and explore the ramifications of the modifications that modern operating systems require to become three-tier applications
-* Discuss and explore the security ramifications of implementing a three-tier web applcation
+* Discuss and explore the security ramifications of implementing a three-tier web application
 
 ## Outcomes
 
-At the conclusion of this lecture/tutorial you will have explored the main tenants of a three-tier web applcation and the parameters and attributes required to construct one in a cloud-native manner.
+At the conclusion of this lecture/tutorial you will have explored the main tenants of a three-tier web application and the parameters and attributes required to construct one in a cloud-native manner.
 
 ## Purpose of an Application
 
-When we look at a web application, we tend to look in the wrong way. When we tend to think of Apps as a Server and a Database. Or we tend to think of an Application as a JavaScript or Android applciation. In a sense those are the things we are using and building in, but in relality an Applciation is very simple.
+When we look at a web application, we tend to look in the wrong way. When we tend to think of Apps as a Server and a Database. Or we tend to think of an Application as a JavaScript or Android application. In a sense those are the things we are using and building in, but in reality an Application is very simple.
 
-An application is essentially listening for external connections via HTTP, called `requests` or `http GET requests` and your applcaition will receive them, and server or return data to the requestor. That is pretty much it. You use Javascript or Java or Android to create an application that is listening on a certain port for a connection -- then serve the response back. With that in mind, the choice of language platform because a style choice because all lanugages are doing the same thing, as we are communicating over HTTP.
+An application is essentially listening for external connections via HTTP, called `requests` or `http GET requests` and your application will receive them, and server or return data to the requestor. That is pretty much it. You use Javascript or Java or Android to create an application that is listening on a certain port for a connection -- then serve the response back. With that in mind, the choice of language platform because a style choice because all languages are doing the same thing, as we are communicating over HTTP.
 
-When we create an application its for users/customers to use, interact with in a safe, secure, and fast environment. All features are geared towards serving the customer. Now there are layers of comlexity that can be added and security features due to application and session state, but these are implementation details.
+When we create an application its for users/customers to use, interact with in a safe, secure, and fast environment. All features are geared towards serving the customer. Now there are layers of complexity that can be added and security features due to application and session state, but these are implementation details.
 
 ## What is a Three-Tier Application?
 
@@ -50,9 +50,9 @@ We will be doing TLS termination and load-balancing via a self-signed certificat
 
 ### Downsides of a Load-Balacner
 
-There is definately some potential downsides of a loadbalancer. The first thing to know is that now your HTTP requests are not going directly to a webserver, they are being proxied through a load-balancer, which can make debugging more difficult. 
+There is definitely some potential downsides of a loadbalancer. The first thing to know is that now your HTTP requests are not going directly to a webserver, they are being proxied through a load-balancer, which can make debugging more difficult. 
 
-Load-blancers also introduce the problem of maintaining session or state across multiple nodes of the webserver tier. This concept is called `sticky-sessions` - how do you attach login session tokens to make sure each user request is sent to the same node, keeping someone logged in?
+Load-balancers also introduce the problem of maintaining session or state across multiple nodes of the webserver tier. This concept is called `sticky-sessions` - how do you attach login session tokens to make sure each user request is sent to the same node, keeping someone logged in?
 
 Nginx provides [sticky sessions](https://docs.nginx.com/nginx/deployment-guides/load-balance-third-party/node-js/ "webpage to nginx sticky sessions documents") via IP Hash Load-balancing.
 
@@ -70,7 +70,7 @@ There are many common webserver softwares, such as:
 * Apache
 * lighttpd
 
-Generally Nginx is preferred for any new infrastructure deployments. Often times these webservers will actually be used as proxies to server requests to the applciation servers on a standard port - 443 (https). In our cases this is an optional step but something to think about as an application grows in complexity.
+Generally Nginx is preferred for any new infrastructure deployments. Often times these webservers will actually be used as proxies to server requests to the application servers on a standard port - 443 (https). In our cases this is an optional step but something to think about as an application grows in complexity.
 
 For Example:
 
@@ -175,14 +175,16 @@ Though in your internal network and for service discovery you do not and won't a
 
 | Team Number | MacAddr | Static IP | FQDN |
 | ----------- | -------------| ------------- | ----------------- |
-| team 01m | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
-| team 02m | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
-| team 03m | 04:9F:15:00:00:13 | 192.168.172.62 | system62.rice.iit.edu |
-| team 04m | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
-| team 05w | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
-| team 05o | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
-| team 06o | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
-| team 07o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
+| team 00  | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
+| team 01m | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
+| team 02m | 04:9F:15:00:00:13 | 192.168.172.62 | system62.rice.iit.edu |
+| team 03m | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
+| team 04m | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
+| team 01o | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
+| team 02o | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
+| team 03o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
+| team 04o | 04:9F:15:00:00:19 | 192.168.172.68 | system68.rice.iit.edu |
+| team 05o | 04:9F:15:00:00:20 | 192.168.172.69 | system69.rice.iit.edu |
 
 All this requires is to modify the `resource` block of your load-balancer in your `main.tf`, the first `network` block.
 
@@ -206,7 +208,7 @@ network {
 
 ### Getting Application Code from the Team Repo into VM Instances
 
-Now that you have your infrastrucutre setup, how will we get code from a private team repo into each of our virtual machine instances? We will use the Git clone command as part of a `provisioner` script in the `packer build` phase. But we will run into a problem, the team repository is a private repo requiring authentication to clone. In this case we will need to provide a private key for GitHub authenticatioin and an ssh `config` file into a deployed instance. We can do that via a `file provisioner` in Packer. 
+Now that you have your infrastructure setup, how will we get code from a private team repo into each of our virtual machine instances? We will use the Git clone command as part of a `provisioner` script in the `packer build` phase. But we will run into a problem, the team repository is a private repo requiring authentication to clone. In this case we will need to provide a private key for GitHub authentication and an ssh `config` file into a deployed instance. We can do that via a `file provisioner` in Packer. 
 
 A [file provisioner](https://developer.hashicorp.com/packer/docs/provisioners/file "webpage for packer file provisioner documentation") allows you to securely upload files from your local system to the virtual machine being built. This is a simple way to insert a private key and an ssh config file to a virtual machine template. Later you can use a [shell provisioner](https://developer.hashicorp.com/packer/docs/provisioners/shell "webpage for shell provisioner documentation") to do the cloning of your private team repo.
 
@@ -245,23 +247,23 @@ There is also an additional security step, at the very end of the Packer provisi
 
 ### Where to Clone
 
-Cloning then takes place in a shell provisioner. The shell script is named `clone-team-repo.sh`. The essential code in that script is this command: `sudo -u vagrant git clone git@github.com:illinoistech-itm/team-00.git`. This clones your team code (**NOTE**: replace team-00 with your team repo name). Most likely you will clone your source code after you have installed all of the infrastrucutre, webservers, and language runtimes.
+Cloning then takes place in a shell provisioner. The shell script is named `clone-team-repo.sh`. The essential code in that script is this command: `sudo -u vagrant git clone git@github.com:illinoistech-itm/team-00.git`. This clones your team code (**NOTE**: replace team-00 with your team repo name). Most likely you will clone your source code after you have installed all of the infrastructure, webservers, and language run-times.
 
 This is because the team repo will contain custom configurations for configuring the load-balancer, setting up SSL/TLS cert, moving source code into the correct location for servers to render and serve code. Part of this will be envisioning each step that takes place so as to be troubleshooting what might be going wrong.
 
 ### Troubleshooting
 
-As our application grows more complex, in software and in infrastructure, there grows a complexity. We are trying to tame this complexity via version control and automation. There is a tempation to just fix things and patch the system together, but this contradicts our Third Way - Creating a Learning Culture.
+As our application grows more complex, in software and in infrastructure, there grows a complexity. We are trying to tame this complexity via version control and automation. There is a temptation to just fix things and patch the system together, but this contradicts our Third Way - Creating a Learning Culture.
 
-Though it is ok to experiement and fix things manually, you need to take the time to port all your changes into source code and your automation deploy scripts -- so that anyone can deploy the applciation and everyone can know the state of the application at any time. 
+Though it is ok to experiment and fix things manually, you need to take the time to port all your changes into source code and your automation deploy scripts -- so that anyone can deploy the application and everyone can know the state of the application at any time. 
 
-This is important becuase if you are trying to troubleshoot the system and the system you are reasoning about is not in the state you assume it is, this makes troubleshooting extremely difficult, as all your hypothesis will be made on shifting sand. Try to overcome and put the work in to automate everything and document it via GitHub, not to take shortcuts.
+This is important because if you are trying to troubleshoot the system and the system you are reasoning about is not in the state you assume it is, this makes troubleshooting extremely difficult, as all your hypothesis will be made on shifting sand. Try to overcome and put the work in to automate everything and document it via GitHub, not to take shortcuts.
 
-Another important concern is Linux system service control. How do you start services at boot? How does your application start at boot? You will need to think about creating systemd `.service` files so that your application can start up imeediately at boot--without human intervention.
+Another important concern is Linux system service control. How do you start services at boot? How does your application start at boot? You will need to think about creating systemd `.service` files so that your application can start up immediately at boot--without human intervention.
 
 ### Security Concerns
 
-There are many items here that will be of concern regarding security. Things such as passwords, account tokens and account IDs, Google developer API tokens, SSL/TLS certs, database passwords--essentially these are called secrets and they are the most valuable part of your applciation, the other part being customer private information.
+There are many items here that will be of concern regarding security. Things such as passwords, account tokens and account IDs, Google developer API tokens, SSL/TLS certs, database passwords--essentially these are called secrets and they are the most valuable part of your application, the other part being customer private information.
 
 We will begin with applying some verbose ways to securely transmit these values, but you will see quite quickly that this way doesn't scale at all, and makes management of secrets a liability with each of your team members handling secure information. Though we want you to gain a glimpse of just what you are responsible for securing.
 
