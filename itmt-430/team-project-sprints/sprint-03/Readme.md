@@ -4,25 +4,25 @@ This document contains the Sprint-03 requirements and deliverables
 
 ## Objectives
 
-* Create and Deploy a third-tier -- load-balancer
+* Create and Deploy a three tier web application
 * Integrate and document aspects of the Three Ways into your development process
 * Deploy your schema to a datastore for your application
 * Create software deployment estimates to understand the nature of software production
 * Engage and understand the process moving from design into an initial prototype
 * Discuss and deploy real-world security mitigations in your application
-* Deploy two additional applciation features
+* Deploy two additional application features
 
 ## Outcomes
 
-At the conclusion of this sprint project you will have built upon the work in Sprint-02. Your team will have deployed a working prototype of your site. You will begin to explore functionality and usability issues. Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working prototype of the project at the end of sprint-03.
+At the conclusion of this sprint project you will have built upon the work in Sprint-02. Your team will have deployed a working version of your site. You will begin to explore functionality and usability issues. Your team will be able to deploy a working project in an automated fashion for demonstration.
 
 ### Requirements
 
-The list of requirements will be determined by your team and as part of the project management process.  There will be a few additional items I will require and are listed below.
+The list of requirements will be determined by your team and as part of the project management process. There will be a few additional items I will require and are listed below.
 
 ### Team Roles
 
-Responsibility for team roles must be rotated imeediately after sprint-02 is presented. Delaying this action cannot be used as an excuse for not delivering the required artifacts. This is an artificial inefficiency that I am introducing to allow all members to participate and experience each role.
+Responsibility for team roles must be rotated immediately after sprint-02 is presented. Delaying this action cannot be used as an excuse for not delivering the required artifacts. This is an artificial inefficiency that I am introducing to allow all members to participate and experience each role.
 
 * Project Manager
   * In charge of making sure that tasks are assigned, artifacts are being delivered, and project boards are updated accordingly.
@@ -31,7 +31,7 @@ Responsibility for team roles must be rotated imeediately after sprint-02 is pre
   * Project Manager must make a close recording of what has changed from sprint to sprint
   * Project Manager must also describe the task estimation process and describe what was completed and/or not completed
   * Must manage the team members and facilitate communication and individual progress outside of class times
-* Developer 1 , 2, and 3
+* Developer 1 and 2
   * Programmers responsible for implementing code, coordinating with the UI/UX developers and IT Operations to deploy code.
   * Work with the developers to implement the designed UI/UX in code and CSS
   * Implementation must match the design showed in Sprint-01
@@ -39,10 +39,14 @@ Responsibility for team roles must be rotated imeediately after sprint-02 is pre
   * Help coordinate development into your team repo and using the provisioner scripts deploy your source code
 * UI/UX 
   * Site testing
-  * GitHub Issue posting
+  * GitHub Issue and bug posting
 * IT Orchestration and Security
   * Responsible for designing and deploying all virtualized infrastructure templates
   * Responsible for working with Developers to configure login authentication
+  * Responsible for creating all secrets
+    * These can be KV pair secrets
+    * [AppRole Secrets](https://developer.hashicorp.com/vault/docs/auth/approle "webpage for App Role secrets")
+    * [MySQL Secrets](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for MySQL secret engine")
   * Responsible for working with the team to coordinate the automated building of the entire application
   * Responsible for creating any shell scripts required for automated deployment
   * Responsible for training and teaching internal group members for deployment of infrastructure
@@ -57,7 +61,7 @@ In the team repo their will need to be a few additional folders added.
 * A folder named: **build**
   * This will contain all instructions on how to build and deploy your application
   * This will contain all Packer build templates
-  * This will contain all Terraform Plan
+  * This will contain all Terraform plans
   * This will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
 * Repository should be clean -- remove uneeded files and place all files within the appropriately named directory
 
@@ -75,35 +79,38 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 * Login
   * Use your @hawk accounts and Google OAuth for login authentication in your application code (there are other options -- check with me for approval first)
-  * Rolling your own Authentication system in 2023 is not a valid choice
 * Infrastructure
-  * Build each server needed in the 3-tier app as Virtual Machines
+  * Build each server template needed in the 3-tier app as Virtual Machines
   * Uses assigned MAC address to get a static IP
 * 3 Tier Application
   * First tier is a Load Balancer
     * Configure Loadbalancer to connect to webservers using the Consul DNS resolver on the meta-network (10.110.0.0/16)
     * Enable the use of a self-signed https TLS cert
-  * Second tier is 3 webservers
+    * Using Nginx and proper routes
+  * Second tier is the webserver tier
+    * Count of 3
+    * Disable direct IP access (use the consul networks IPs for connectivity to the load balancer)
     * Connect to single database using the Consul DNS resolver on the meta-network
   * Third tier is a single datastore/database
     * Configure database/datastore to listen for external connection of the meta-network (10.110.0.0/16)
     * Add **25** posts, 15 new posts and 10 replies - as according to your sites specific design
-    * Have 4 different users signed up
+      * Essentially simulate real activity on your site
+      * Use the [Python Faker](https://www.geeksforgeeks.org/python-faker-library/ "webpage for Python Faker") library to generate fak, but realistic names, states, cities, and so forth
 * User Testing
   * Show use of GitHub Issues for placing tickets to fix bugs
   * UI/UX should be testing the production system, logging in, posting items, etc, etc.
   * Show all issues filed and corresponding GitHub artifact and note if it is fixed
 * Deployment
-  * All work needs to be tested and developed in the Cloud Platform
+  * All work needs to be tested and developed on the Proxmox Cloud Platform
      * You will have to build often as code changes
-     * Expect 5-10 deployments of your site (this is normative)
+     * Expect 10+ deployments of your site (this is normative)
      * Development on Localhost is not acceptable at this point
 * Usage of site
   * Demonstrate a successful login of a user
   * Post a question
   * Answer a question
   * Logout that user
-  * Will demonstrate your load balancer live by terminating 2 instances in succession live
+  * Will demonstrate your load balancer live by terminating 2 instances in succession
 
 | Team Number | MacAddr | Static IP | FQDN |
 | ----------- | -------------| ------------- | ----------------- |
@@ -111,16 +118,15 @@ The professor is prescribing a small number of **additional** required tasks to 
 | team 02m | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
 | team 03m | 04:9F:15:00:00:13 | 192.168.172.62 | system62.rice.iit.edu |
 | team 04m | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
-| team 05w | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
-| team 05o | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
-| team 06o | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
-| team 07o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
+| team 01o | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
+| team 02o | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
+| team 03o | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
+| team 04o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
+| team 05o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
 
 ## Deliverables
 
-* Monday Lab live presentation and critiques are due 8:30am March 20th
-* Wednesday Lab section presentation and critiques are due 8:30am March 22nd
-* Online Lab section presentation and critiques are due 10:25am March 24th
+* All sections live presentation and critiques are due 10:00am March 25th
 
 ### Individual Deliverables
 
