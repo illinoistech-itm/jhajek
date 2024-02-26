@@ -91,13 +91,13 @@ The professor is prescribing a small number of **additional** required tasks to 
     * Create packer VM templates on both SYSTEM41 and SYSETM42
   * Second tier is the webserver tier
     * Count of 3
-    * Disable direct IP access (use the consul networks IPs for connectivity to the load balancer)
+    * Disable direct Public IP access to the 2nd and 3rd tier 
     * Connect to single database using the Consul DNS resolver on the meta-network
   * Third tier is a single datastore/database
     * Configure database/datastore to listen for external connection of the meta-network (10.110.0.0/16)
     * Add **25** posts, 15 new posts and 10 replies - as according to your sites specific design
       * Essentially simulate real activity on your site
-      * Use the [Python Faker](https://www.geeksforgeeks.org/python-faker-library/ "webpage for Python Faker") library to generate fak, but realistic names, states, cities, and so forth
+      * Use the [Python Faker](https://www.geeksforgeeks.org/python-faker-library/ "webpage for Python Faker") library to generate fake, but realistic names, states, cities, and so forth
 * User Testing
   * Show use of GitHub Issues for placing tickets to fix bugs
   * UI/UX should be testing the production system, logging in, posting items, etc, etc.
