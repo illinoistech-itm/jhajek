@@ -91,13 +91,15 @@ variable "DBPASS" {
 }
 
 # This variable is the IP address range to allow your connections
+# The SQL wildcard is the %
+# 10.110.%.%
 variable "CONNECTIONFROMIPRANGE" {
   type      = string
   sensitive = true
   default   = "REPLACE"
 }
 
-# This will be the fully qualified domain name yourinitials.service.consul
+# This will be the fully qualified domain name: team-00-be-vm0.service.consul
 variable "FQDN" {
   type      = string
   sensitive = true
