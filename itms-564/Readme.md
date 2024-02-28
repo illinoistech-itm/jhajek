@@ -6,7 +6,7 @@ Issue the command `git clone https://github.com/illinoistech-itm/jhajek`
 
 Change directory to: `jhajek/itms-564/` and run the required configuration shell script: `sudo bash ./cluster-script-run-after-install.sh`
 
-These are needed modifications the OTS Cyber Tech requires to let our systems on the network. Reboot after install.
+These are needed OS modifications required by the OTS Cyber Tech group to let our systems on the network. Reboot after install.
 
 ## Items
 
