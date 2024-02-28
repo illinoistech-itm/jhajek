@@ -8,7 +8,7 @@ Change directory to: `jhajek/itms-564/` and run the required configuration shell
 
 These are needed OS modifications required by the OTS Cyber Tech group to let our systems on the network. Reboot after install.
 
-## Items
+## Items that are installed
 
 1. Disable anonymous SSH users
 1. Install and enable `qemu-guest-agent` for Proxmox be able to interface with your network
