@@ -144,7 +144,7 @@ source "proxmox-iso" "load-balancer" {
     "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
     "<f10><wait>"
   ]
-  boot_wait = "10s"
+  boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
   node      = "${local.NODENAME}"
   username  = "${local.USERNAME}"
