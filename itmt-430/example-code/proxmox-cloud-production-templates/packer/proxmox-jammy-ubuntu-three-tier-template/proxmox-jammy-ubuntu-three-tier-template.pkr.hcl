@@ -69,7 +69,6 @@ source "proxmox-iso" "backend-database" {
   cloud_init_storage_pool  = "${var.STORAGEPOOL}"
   ssh_password             = "${local.SSHPW}"
   ssh_username             = "vagrant"
-  ssh_private_key_file     = "./id_ed25519"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for Ubuntu Jammy Database 3 tier" 
   vm_name                  = "${var.backend-VMNAME}"
