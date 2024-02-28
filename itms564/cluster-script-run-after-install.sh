@@ -1,7 +1,9 @@
 sudo apt update
 
-sudo apt install -y qemu-guest-agent
+sudo apt install -y qemu-guest-agent openssh-server fail2ban
 sudo systemctl start qemu-guest-agent
+sudo systemctl enable --now sshd
+sudo systemctl enable --now fail2ban
 
 sudo sed -i '1,$s/#AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config
 echo "Ciphers -chacha20-poly1305@openssh.com" >> /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf

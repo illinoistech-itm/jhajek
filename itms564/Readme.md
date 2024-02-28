@@ -14,3 +14,4 @@ These are needed modifications the OTS Cyber Tech requires to let our systems on
 1. Install and enable `qemu-guest-agent` for Proxmox be able to interface with your network
 1. Enable Firewalld and open only port 22 (ssh) on ens18 (first ethernet)
 1. Disable `chacha20-poly1305` in SSH encryption algorithms
+1. Enable `fail2ban` to prevent brute force SSH attacks
