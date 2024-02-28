@@ -8,6 +8,10 @@ Change directory to: `jhajek/itms-564/` and run the required configuration shell
 
 These are needed OS modifications required by the OTS Cyber Tech group to let our systems on the network. Reboot after install.
 
+## Firewalld Tutorial
+
+We need to enable the systemd firewall, `firewalld`. You can find details at [https://firewalld.org](https://firewalld.org "website for firewalld") and I have provided a quick tutorial overview of the basic commands for firewalld: [Quick tutorial on Firewalld](https://github.com/jhajek/Linux-text-book-part-1/blob/master/Chapter-12/chapter-12.md#firewalld "Website for firewalld")
+
 ## Items that are installed
 
 1. Disable anonymous SSH users
