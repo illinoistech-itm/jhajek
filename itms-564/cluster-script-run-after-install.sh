@@ -1,7 +1,8 @@
 sudo apt update
 
-sudo apt install -y qemu-guest-agent openssh-server fail2ban
+sudo apt install -y qemu-guest-agent openssh-server fail2ban cloud-init
 sudo systemctl start qemu-guest-agent
+sudo systemctl enable --now cloud-init
 sudo systemctl enable --now sshd
 sudo systemctl enable --now fail2ban
 
