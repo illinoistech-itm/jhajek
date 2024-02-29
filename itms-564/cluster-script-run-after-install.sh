@@ -10,6 +10,9 @@ sudo sed -i '1,$s/#AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_
 echo "Ciphers -chacha20-poly1305@openssh.com" >> /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf
 chmod 600 /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf
 
+echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGgpyrTX0Gzq1DLtwX2JwzlxfNaNfMtT55GFNbvyK2nv palad@framework' >> ~/.ssh/authorized_keys
+echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILku9jD8B9RYDb14u1lo+2Y68i/SzSFfrLLRttrlNqGx palad@framework' >> ~/.ssh/authorized_keys
+
 #############################################################################
 # Enable firewalld and allow only ssh through by default
 #############################################################################sudo apt-get update
