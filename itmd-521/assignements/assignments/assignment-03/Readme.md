@@ -30,7 +30,7 @@ When reading data you can use the generic `spark.read.format` command, but I rec
 
 ## Assignment Details - Part I
 
-Using the `departuredelays.csv` file, in a single file called `assignment-03.py` convert the remaining two Spark SQL queries from page 87 into Spark DataFrame APIs. Assume you are reading the input dynamically from the commandline -- no hard coding of file paths.
+Using the `departuredelays.csv` file, in a single file called `assignment_03.py` convert the remaining two Spark SQL queries from page 87 into Spark DataFrame APIs. Assume you are reading the input dynamically from the commandline -- no hard coding of file paths.
 
 - Type the remaining Spark SQL examples on page 87 into your code
 - Run it to show the results, limit 10 records - capture screenshot of just this result
@@ -49,7 +49,7 @@ Place required screenshot
   - Use the Spark Catalog to list the columns of table `us_delay_flights_tbl`
 - **Note:** Add this line to your `spark-submit` command to overcome the database already exists error
   - `--conf spark.sql.catalogImplementation=hive`
-  - Example: `spark-submit --conf spark.sql.catalogImplementation=hive assignment-03.py ./departuredelays.csv`
+  - Example: `spark-submit --conf spark.sql.catalogImplementation=hive assignment_03.py ./departuredelays.csv`
 
 ### Part II - Screenshot
 
