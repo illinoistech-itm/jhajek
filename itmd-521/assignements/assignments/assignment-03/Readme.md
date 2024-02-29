@@ -15,8 +15,8 @@
   - See Python sample below for how to structure commandline input of datasources
   - Note do not use the notebook file provided, we want to challenge you to be able to build this yourself
   - All Code will be created on your local system, pushed to GitHub, and then pulled to your Vagrant Box
-  - You will create one Pyspark file named: `assignment-03.py`
-  - You will create on Scala file named: `assignment-03.scala`
+  - You will create one Pyspark file named: `assignment_03.py`
+  - You will create on Scala file named: `assignment_03.scala`
     - And the necessary `sbt` build infrastructure
   - You will continue to load data via a commandline argument passing in the path of the file
 
