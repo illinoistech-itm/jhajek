@@ -125,7 +125,6 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 | Team Number | MacAddr | Static IP | FQDN |
 | ----------- | -------------| ------------- | ----------------- |
-| team 00  | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
 | team 01m | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
 | team 02m | 04:9F:15:00:00:13 | 192.168.172.62 | system62.rice.iit.edu |
 | team 03m | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
@@ -135,6 +134,7 @@ The professor is prescribing a small number of **additional** required tasks to 
 | team 03o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
 | team 04o | 04:9F:15:00:00:19 | 192.168.172.68 | system68.rice.iit.edu |
 | team 05o | 04:9F:15:00:00:20 | 192.168.172.69 | system69.rice.iit.edu |
+| team 00  | 04:9F:15:00:00:21 | 192.168.172.70 | system70.rice.iit.edu |
 
 ## Deliverables
 
