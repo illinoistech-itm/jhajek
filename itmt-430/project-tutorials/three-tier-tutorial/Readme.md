@@ -2,6 +2,8 @@
 
 This will be a combination lecture/tutorial on how and why we are creating a three-tier web application.
 
+[5 Part Tutorial Walk-Through Demo Videos](https://iit0-my.sharepoint.com/personal/hajek_iit_edu/_layouts/15/guestaccess.aspx?share=EpOS6KMnVBhEqG9-GgmG0a8B4k-rzpfiyBxmOsUofoIpMA&e=rjAi5b "webpage demo walk through videos")
+
 ## Objectives
 
 * Discuss the concept of the three-tier web application
