@@ -36,6 +36,7 @@ source "proxmox-iso" "backend-database" {
     disk_size    = "${var.DISKSIZE}"
     storage_pool = "${var.STORAGEPOOL}"
     type = "virtio"
+    iothread = true
   }
   http_directory   = "subiquity/http"
   http_port_max    = 9200
@@ -67,8 +68,9 @@ source "proxmox-iso" "backend-database" {
   cloud_init_storage_pool  = "${var.STORAGEPOOL}"
   ssh_password             = "${local.SSHPW}"
   ssh_username             = "vagrant"
-  ssh_timeout              = "28m"
-  template_description     = "A Packer template for Ubuntu Jammy Database 3 tier" 
+  ssh_timeout              = "22m"
+  scsi_controller          = "virtio-scsi-single"
+  template_description     = "A Packer template for Ubuntu Jammy Database" 
   vm_name                  = "${var.backend-VMNAME}"
 }
 
@@ -93,6 +95,7 @@ source "proxmox-iso" "frontend-webserver" {
     disk_size    = "${var.DISKSIZE}"
     storage_pool = "${var.STORAGEPOOL}"
     type = "virtio"
+    iothread = true
   }
   http_directory   = "subiquity/http"
   http_port_max    = 9200
@@ -124,7 +127,8 @@ source "proxmox-iso" "frontend-webserver" {
   cloud_init_storage_pool  = "${var.STORAGEPOOL}"
   ssh_password             = "${local.SSHPW}"
   ssh_username             = "vagrant"
-  ssh_timeout              = "28m"
+  ssh_timeout              = "22m"
+  scsi_controller          = "virtio-scsi-single"
   template_description     = "A Packer template for Ubuntu Jammy Frontend webserver"
   vm_name                  = "${var.frontend-VMNAME}"
 }
@@ -150,6 +154,7 @@ source "proxmox-iso" "load-balancer" {
     disk_size    = "${var.DISKSIZE}"
     storage_pool = "${var.STORAGEPOOL}"
     type = "virtio"
+    iothread = true
   }
   http_directory   = "subiquity/http"
   http_port_max    = 9200
@@ -181,8 +186,9 @@ source "proxmox-iso" "load-balancer" {
   cloud_init_storage_pool  = "${var.STORAGEPOOL}"
   ssh_password             = "${local.SSHPW}"
   ssh_username             = "vagrant"
-  ssh_timeout              = "28m"
-  template_description     = "A Packer template for Ubuntu Jammy"
+  ssh_timeout              = "22m"
+  scsi_controller          = "virtio-scsi-single"
+  template_description     = "A Packer template for Ubuntu Jammy Load Balancer"
   vm_name                  = "${var.loadbalancer-VMNAME}"
 }
 
