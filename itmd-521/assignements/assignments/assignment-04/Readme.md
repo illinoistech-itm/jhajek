@@ -22,8 +22,8 @@ This assignment will require the MySQL server you installed on your Vagrant Box.
 
 You will make extensive use of the textbook and these documentation pages -- **avoid** the internet as your first option and instead go to the API Documentation.
 
-- [PySpark JDBC DataReader Documentation](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameReader.jdbc.html "PySpark JDBC DataReader Documentation")
-- [DataFrameWriter JDBC API docs](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameWriter.format.html?highlight=format#pyspark.sql.DataFrameWriter.format "DataFrameWriter JDBC API docs")
+- [PySpark JDBC DataReader Documentation](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameReader.jdbc.html "PySpark JDBC DataReader Documentation")
+- [DataFrameWriter JDBC API docs](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameWriter.jdbc.html "DataFrameWriter JDBC API docs")
 - [Data Frame Reader JDBC API Docs](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameReader.jdbc.html "Data Frame Reader JDBC API Docs")
 
 ## Assignment Details - Part I
