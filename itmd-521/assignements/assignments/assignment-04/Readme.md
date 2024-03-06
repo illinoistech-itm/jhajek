@@ -28,7 +28,7 @@ You will make extensive use of the textbook and these documentation pages -- **a
 ## Assignment Details - Part I
 
 - You will create a PySpark application named: `assignment_04.py`
-  - Read the `Employees` table into a DataFrame
+  - Read the `employees` table into a DataFrame
   - Display the count of the number of records in the DF
   - Display the schema of the Employees Table from the DF
 - Create a DataFrame of the top 10,000 employee salaries (sort DESC) from the `salaries` table
