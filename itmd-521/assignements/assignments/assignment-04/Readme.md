@@ -24,7 +24,6 @@ You will make extensive use of the textbook and these documentation pages -- **a
 
 - [PySpark JDBC DataReader Documentation](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameReader.jdbc.html "PySpark JDBC DataReader Documentation")
 - [DataFrameWriter JDBC API docs](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameWriter.jdbc.html "DataFrameWriter JDBC API docs")
-- [Data Frame Reader JDBC API Docs](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameReader.jdbc.html "Data Frame Reader JDBC API Docs")
 
 ## Assignment Details - Part I
 
