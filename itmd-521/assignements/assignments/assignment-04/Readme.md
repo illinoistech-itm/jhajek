@@ -81,6 +81,9 @@ Run the application with the command: `spark-submit --jars ~/spark/jars/mysql-co
 
 ### Deliverable
 
+Create a sub-folder named: `labs` > `week-09` under the `itmd-521` folder. Place all deliverables there.
+Submit to Blackboard the URL to the folder in your GitHub repo.  I will clone your code and run it to test the functionality. I don't need the datasets as I will have them already.
+
 - Make sure you have the proper imports, be careful of grabbing extra or uneeded imports
 - Once you have the answers, add it via a commit back to your source GitHub repo
 - Make sure to commit and push code to GitHub continually.  Assignments that have the entire code submitted with none or little commit history will not be accepted.  Commit and push often.
