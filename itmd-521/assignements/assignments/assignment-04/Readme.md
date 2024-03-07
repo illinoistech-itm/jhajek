@@ -88,4 +88,10 @@ Run the application with the command: `spark-submit --jars ~/spark/jars/mysql-co
 
 Submit to Blackboard the URL to the folder in your GitHub repo.  I will clone your code and run it to test the functionality.
 
+#### Section 05
+
 Due at the **Start of class** March 20th 1:50 pm
+
+#### Section 01, 02, 03
+
+Due at the **Start of class** March 21st 3:15 pm
