@@ -45,7 +45,7 @@ You will make extensive use of the textbook and these documentation pages -- **a
 - Create a PySpark SQL table of just the Senior Engineers information that have left the company
 - Create a PySpark SQL tempView of just the Senior Engineers information that have left the company
 - Create a PySpark DataFrame of just the Senior Engineers information that have left the company
-  - Write each of the three prior options back to the database using the DataFrame Writer (save) function creating a table named: `left-table`, `left-tempview`, and `left-df` respectively
+  - Write each of the three prior options back to the database using the DataFrame Writer (save) function creating a table named: ~~`left-table`~~ `left_table`, ~~`left-tempview`~~ `left_tempview`, and ~~`left-df`~~ `left_df` respectively
 - Repeat the previous command that writes the DataFrame to the database, but set the mode type to `errorifexists` -- take a screenshot of the error message generated and place it here
 
 ## Assignment Details - Part III
@@ -53,9 +53,9 @@ You will make extensive use of the textbook and these documentation pages -- **a
 - Connect to Mariadb CLI from the Linux CLI (not from PySpark)
   - Issue the SQL commands to display the description of the tables created in Part II to show that the data has been written back to the database.  Take a screenshot of the output of the SQL DESCRIBE command
   - `aces`
-  - `left-table`
-  - `left-tempview`
-  - `left-df`
+  - ~~`left-table`~~ `left_table`
+  - ~~`left-tempview`~~ `left_tempview`
+  - ~~`left-df`~~ `left_df`
 
 Example will look something like this:
 

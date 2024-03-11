@@ -26,7 +26,7 @@ locals {
 
 variable "MEMORY" {
   type    = string
-  default = "4192"
+  default = "4096"
 }
 
 # Best to keep this low -- you can expand the size of a disk when deploying 
