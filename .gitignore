@@ -42,8 +42,8 @@ chapter-*.html
 .part*
 *.crc
 
-# Docker
-.env
+
+
 
 # Node JS
 node_modules/
