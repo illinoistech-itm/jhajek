@@ -10,6 +10,7 @@ This document contains the Sprint-05 requirements and deliverables
 * Deploy and explain uses of Bug tracking and creation of GitHub issues
 * Deploy final CSS revisions - matching original site plan
 * Complete one new feature
+* Deploy to Production Infrastructure
 
 ## Outcomes
 

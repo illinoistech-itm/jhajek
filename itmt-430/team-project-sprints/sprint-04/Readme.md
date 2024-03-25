@@ -11,6 +11,7 @@ This document contains the Sprint-04 requirements and deliverables
 * Refine application feature deployment
 * Create/Modify an admin console page that allows a user with admin privs to make a database backup from a webpage
 * Introduce S3 Object Storage for images and music
+* Deploy to Production Infrastructure
 
 ## Outcomes
 
