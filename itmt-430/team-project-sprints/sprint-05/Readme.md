@@ -2,20 +2,22 @@
 
 This document contains the Sprint-05 requirements and deliverables
 
+![*XKCD 1760*](./images/tv_problems_2x.png "image of xkcd 1760 TV trouble")
+
 ## Objectives
 
-* Deploy and explain user applciation testing
+* Deploy and explain user application testing
 * Deploy and explain uses of Bug tracking and creation of GitHub issues
-* Deploy final CSS revisions - mathcing original site plan
-* Deploy and detail two working application features
+* Deploy final CSS revisions - matching original site plan
+* Complete one new feature
 
 ## Outcomes
 
-At the conclusion of this sprint project and the class you will have built upon the work in Sprint-04 and have added an additional cloud-based production environment. Your team will have deployed a working prototype.  You will be able to explain the evolution and the obstacles you overcame. Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working prototype of the project at the end of sprint-05.
+At the conclusion of this sprint project and the class you will have built upon the work in Sprint-04 and have added an additional cloud-based production environment. Your team will have deployed a working prototype. You will be able to explain the evolution and the obstacles you overcame. Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working prototype of the project at the end of sprint-05.
 
 ### Requirements
 
-The list of requirements will be determined by your team and as part of the project management process.  There will be a few additional items I will require and are listed below.
+The list of requirements will be determined by your team and as part of the project management process. There will be a few additional items I will require and are listed below.
 
 ### Team Roles
 
@@ -30,7 +32,7 @@ For this sprint, there will be 5 team roles. For the teams with 4 - you can comb
 * Project Manager must also describe the task estimation process and describe what was completed and/or not completed
 * Must manage the team members and facilitate communication and individual progress outside of class times
 
-#### Developer 1 , 2, and 3
+#### Developers
 
 * Programmers responsible for implementing code, coordinating with the UI/UX developers and IT Operations to deploy code.
 * Work with the developers to implement the designed UI/UX in code and CSS
@@ -63,7 +65,7 @@ In the team repo their will need to be a few additional folders added. Keep the 
 
 ### Project Management Tool and Task Difficulty Estimation
 
-One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. Your team will use a scale of 1-5 points.  5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities.  For Sprint 05 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points.  If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
+One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. Your team will use a scale of 1-5 points. 5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities.  For Sprint 05 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points.  If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
 
 In the Project Management tool the 25 points worth of tasks need to have the point value assigned to that task and also have a name that is primary responsible and clearly marked.  This is how your Project Manager will report progress and how you will write your own and group critique at the end of the sprint. The professor will check in weekly during the beginning of the Lab days to check the current progress and help coordinate in anyway.  
 
@@ -74,8 +76,7 @@ In the Project Management tool the 25 points worth of tasks need to have the poi
 The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points
 
 * Login
-  * Use your @hawk accounts and Google OAuth (or appropriate authentication mechanism) for login authentication in your application code (there are other options -- check with me for approval first)
-  * Rolling your own Authentication system in 2022 is not a valid choice
+  * Use your @hawk accounts and Google OAuth for login authentication in your application code
 * Infrastructure
   * Build each server needed in the 3-tier app as Virtual Machines using Proxmox via Packer and Terraform templates
   * Use Packer as the tool for automating the creation of the Proxmox Images/Templates
@@ -87,19 +88,14 @@ The professor is prescribing a small number of **additional** required tasks to 
 * Deployment
   * You will have to build often, perhaps daily/nightly
 * Usage of site
-  * Pre-seed your site with 50 "real test users" and have them "ask" 2 questions and answer 1 other persons questions
+  * Pre-seed your site with 50 additional "real test users" and have them "ask" 10 questions and answer 1 other persons question (adjust the terms as appropriate to your site)
     * This is to show the search functionality and ability to store a complex discussion
   * Each member of your team needs to use the site and engage in making an account and at least 5 interaction
   * Posts must be real -- not "test test"
-  * Demonstrate a successful login of a user
-  * Post a question
-  * Answer that question
-  * Answer another question
-  * Logout that user
 
 ## Deliverables
 
-* **All sections** critiques due on Sunday evening 11:59 PM April 23rd.
+* **All sections** critiques due on Monday April 22nd 10:00am.
 
 ### Individual Deliverables
 

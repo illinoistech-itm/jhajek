@@ -2,12 +2,15 @@
 
 This document contains the Sprint-04 requirements and deliverables
 
+![*Will it work?*](./images/will_it_work_2x.png "Image for will it work checklist, xkcd 1742")
+
 ## Objectives
 
 * Integrate secure secrets management with Hashicorp Vault
-* Integrate Database a database replica
-* Introduce S3-like Object Storage
+* Integrate Database replica
 * Refine application feature deployment
+* Create/Modify an admin console page that allows a user with admin privs to make a database backup from a webpage
+* Introduce S3 Object Storage for images and music
 
 ## Outcomes
 
@@ -17,7 +20,7 @@ At the conclusion of this sprint your team will have created a Secure Vault for 
 
 All code and development will be graded and judged on what is on the Production Proxmox cloud platform. No hard coded values or secrets, make use of Vault - samples provided in the `jhajek` > `example-code` repository. Sprint-04 assumes that all of Sprint-03 requirements are delivered. All team members need to rotate positions.
 
-[Vault INtegration Tutorial](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/vault-integration-tutorial "webpage for Vault Integration")
+[Vault Integration Tutorial](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/vault-integration-tutorial "webpage for Vault Integration")
 
 ### Team Roles
 
@@ -30,7 +33,7 @@ For this sprint, there will be 5 team roles. For the teams with 4 - you can comb
   * Project Manager must make close notes of what has changed from sprint to sprint
   * Project Manager must also describe the task estimation process and describe what was completed and/or not completed
   * Must manage the team members and facilitate communication and individual progress outside of class times
-* Developer 1 , 2, and 3
+* Developer 1 and 2
   * Programmers responsible for implementing code, coordinating with the UI/UX developers and IT Operations to deploy code.
   * Work with the developers to implement the designed UI/UX in code and CSS
   * Implementation must match the design
@@ -38,10 +41,9 @@ For this sprint, there will be 5 team roles. For the teams with 4 - you can comb
   * Help coordinate development into your team repo and using the provisioner scripts deploy your source code to your Vagrant Box environment
 * UI/UX and testing
   * Must test the use of the site
-  * Demonstrate actions comencerate with the sites design, and report errors and bugs using the team's repo GitHub Issues tab
+  * Demonstrate actions according to the sites design, and report errors and bugs using the team's repo GitHub Issues tab
 * IT Orchestration and Security
-  * Responsible for designing and deploying all virtualized infrastructure templates
-  * Responsible for creating a Hashicorp Vault containing all program secrets
+  * Responsible for creating a Hashicorp Vault containing **all** program secrets
   * Responsible for working with the team to coordinate the automated building of the entire application
   * Responsible for creating any shell scripts required for automated deployment
   * Responsible for training and teaching internal group members for deployment of infrastructure
@@ -56,18 +58,15 @@ In the team repo their will need to be a few additional folders added. Keep the 
 * A folder named: **code**
   * This will contain all application source code
 * A folder named: **build**
-  * This will contain all instructions on how to build and deploy your application
-  * This will contain Packer build templates for building Vagrant Boxes
-  * This will contain Vagrantfiles for deploying the machines in a pre-configured state
-  * This will contain Bash and or PowerShell scripts for single source of deploy, halt, and removal of the application on your local system
+  * This will contain all instructions to build and deploy your application
   * Remove all uneeded sample code from your `build` folder
   * This will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
 
 ### Project Management Tool and Task Difficulty Estimation
 
-One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. Your team will use a scale of 1-5 points.  5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities.  For Sprint 04 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points.  If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
+One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. Your team will use a scale of 1-5 points. 5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities.  For Sprint 04 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points.  If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
 
-In the Project Management tool the 25 points worth of tasks need to have the point value assigned to that task and also have a name that is primary responsible and clearly marked.  This is how your Project Manager will report progress and how you will write your own and group critique at the end of the sprint. The professor will check in weekly during the beginning of the Lab days to check the current progress and help coordinate in anyway.  
+In the Project Management tool the 25 points worth of tasks need to have the point value assigned to that task and also have a name that is primary responsible and clearly marked. This is how your Project Manager will report progress and how you will write your own and group critique at the end of the sprint. The professor will check in weekly during the beginning of the Lab days to check the current progress and help coordinate in anyway.  
 
 **Note** -- this may require the group to *Swarm* on some initial items so that items that are blocking progress of the entire application don't hold up the entire team. Remember as a team-member it is your duty to swarm problems and solve them as a team (Third Way). The sprint is short - everyone is busy - you cannot wait to get started.
 
@@ -76,17 +75,20 @@ In the Project Management tool the 25 points worth of tasks need to have the poi
 The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points
 
 * Login
-  * Use your @hawk accounts and Google OAuth (or appropriate authentication mechanism) for login authentication in your application code (there are other options -- check with me for approval first)
-  * Rolling your own Authentication system in 2022 is not a valid choice
-  * SHow that your `sign up` feature works
-  * Login with that user
+  * Use your @hawk accounts and Google OAuth (or appropriate authentication mechanism) for login authentication in your application code
+  * Demonstrate how your `sign up` feature works
+  * Login as a user
 * Infrastructure
   * Demonstrate that the Vault KV pairs are stored -- show you setting a secret
   * Deploy your code to a production cloud environment at the same time using Packer and [Terraform](https://www.terraform.io/ "Hashicorp Terraform webpage")
 * 3 Tier Application
   * First tier is a Load Balancer
   * Second tier is 3 webservers
-  * Third tier is a single datastore
+  * Third tier is a `replicated` datastore (could be a cluster if using MongoDB)
+    * Means at least two, can be more
+  * For MySQL/MariaDB this means setting up [Master/Slave or Primary/Replica](https://mariadb.com/kb/en/setting-up-replication/ "webpage setup a replication") to create a write Master and a read-only system
+    * This will split your database calls into two -- all writes go to the master, and all reads come from the replica
+    * On MongoDB you will be working with a [ReplicaSet](https://www.mongodb.com/docs/manual/tutorial/deploy-replica-set/ "webpage ReplicaSet MongoDB")
 * Deployment
   * All work needs to be tested and developed on your teams built Vagrant Boxes and in the production environment
     * You will have to build often, perhaps daily/nightly
@@ -94,13 +96,14 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Development on Localhost is not acceptable at this point
 * Usage of site
   * Demonstrate all of your team members signed up and making at least 1 post and 1 answer (as applicable)
-    * You do this live not -- pre-programmed via an `.sql` file
+    * You do this live not -- pre-programmed via an `.sql` file (or appropriate JSON file)
   * Pre-seed your site with 100 posts from 20 additional `real` test users
     * Have them "ask" 2 questions each and answer 1 other persons questions
     * This is to show the search functionality and ability to store a complex discussion
       * Must pre-seed this using an `.sql` file
   * Logout that user
-* **Optioanal for Sprint-04**
+  * Ask three friends (not in the class) to sign up and use your site
+* S3 Storage Integration
   * Make use of on prem S3-like Object Storage, using [min.io](https://min.io webpage for on-prem S3 storage min.io").
   * Compatible with [Amazon S3 Object Storage](https://aws.amazon.com/s3/ "webpage for AWS S3") but on-premises storage 
   * Credentials and tutorial will be provided
@@ -110,9 +113,7 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ## Deliverables
 
-* Monday Lab live presentation and critiques are due 8:00 am April 10th
-* Wednesday Lab live presentation and critiques are due 8:00am April 13th
-* Online Lab presentation and critiques are due 10:25am April 15th (Friday)
+* Monday Lab live presentation and critiques are due Monday 10:00 am April 8th
 
 ### Individual Deliverables
 
