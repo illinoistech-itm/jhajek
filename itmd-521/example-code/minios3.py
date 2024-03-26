@@ -11,8 +11,8 @@ conf = SparkConf()
 conf.set('spark.jars.packages', 'org.apache.hadoop:hadoop-aws:3.3.0')
 conf.set('spark.hadoop.fs.s3a.aws.credentials.provider', 'org.apache.hadoop.fs.s3a.AnonymousAWSCredentialsProvider')
 
-conf.set('spark.hadoop.fs.s3a.access.key', os.getenv('SECRETKEY'))
-conf.set('spark.hadoop.fs.s3a.secret.key', os.getenv('ACCESSKEY'))
+conf.set('spark.hadoop.fs.s3a.access.key', os.getenv('ACCESSKEY'))
+conf.set('spark.hadoop.fs.s3a.secret.key', os.getenv('SECRETKEY'))
 # Configure these settings
 # https://medium.com/@dineshvarma.guduru/reading-and-writing-data-from-to-minio-using-spark-8371aefa96d2
 conf.set("spark.hadoop.fs.s3a.path.style.access", "true")
