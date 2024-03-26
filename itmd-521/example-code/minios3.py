@@ -17,6 +17,10 @@ conf.set('spark.hadoop.fs.s3a.secret.key', os.getenv('ACCESSKEY'))
 # https://medium.com/@dineshvarma.guduru/reading-and-writing-data-from-to-minio-using-spark-8371aefa96d2
 conf.set("spark.hadoop.fs.s3a.path.style.access", "true")
 conf.set("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
+# https://github.com/minio/training/blob/main/spark/taxi-data-writes.py
+# https://spot.io/blog/improve-apache-spark-performance-with-the-s3-magic-committer/
+conf.set('spark.hadoop.fs.s3a.committer.magic.enabled','true')
+conf.set('spark.hadoop.fs.s3a.committer.name','magic')
 # Internal IP for S3 cluster proxy
 conf.set("spark.hadoop.fs.s3a.endpoint", "http://infra-minio-proxy-vm0.service.consul")
 
