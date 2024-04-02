@@ -14,4 +14,4 @@ sudo sed -i "1,$s/replace-name/$(hostname)/" /etc/consul.d/system.hcl
 
 sudo mv -v ../jammy-services/system.hcl /etc/consul.d/
 sudo mv -v ../jammy-services/node-exporter-consul-service.json /etc/consul.d/
-sudo systemctl enable --now consul.service
+sudo systemctl enable consul.service
