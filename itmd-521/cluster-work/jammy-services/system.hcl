@@ -2,7 +2,7 @@ services {
   id = "changeme"
   name = "replace-name"
   tags = [
-    "student","HAWKID"
+    "spark-cluster","hajek@iit.edu"
   ]
   address = ""
 }
