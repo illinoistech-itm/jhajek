@@ -13,6 +13,8 @@ echo "Update SSH rules"
 echo "AllowTcpForwarding no" | sudo tee /etc/ssh/sshd_config.d/60-ots-customization.conf
 echo "Ciphers -chacha20-poly1305@openssh.com" | sudo tee /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf
 sudo chmod 600 /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf
+sudo systemctl daemon-reload
+sudo systemctl restart ssh
 
 sudo apt-get update
 sudo apt-get install -y firewalld
