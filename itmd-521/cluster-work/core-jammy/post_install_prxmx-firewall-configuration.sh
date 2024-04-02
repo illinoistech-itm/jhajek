@@ -8,9 +8,11 @@
 # Instances will be using firewalld
 ##############################################################################################
 echo "Printing current network status information..."
-ip a sh
-sudo networkctl
-sudo resolvectl
+
+echo "Update SSH rules"
+echo "AllowTcpForwarding no" | sudo tee /etc/ssh/sshd_config.d/60-ots-customization.conf
+echo "Ciphers -chacha20-poly1305@openssh.com" | sudo tee /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf
+sudo chmod 600 /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf
 
 sudo apt-get update
 sudo apt-get install -y firewalld
@@ -45,7 +47,12 @@ sudo firewall-cmd --zone=meta-network --add-port=8301/udp --permanent
 
 # Created entry for Node_exporter to be availabe for scraping
 sudo firewall-cmd --zone=meta-network --add-port=9100/tcp --permanent
+sudo firewall-cmd --zone=meta-network --add-port=30000-52000/tcp --permanent
+sudo firewall-cmd --zone=public --add-service=ssh --permanent
 
+# Creating the data network interface
+sudo firewall-cmd --new-zone=data-network --permanant
+sudo firewall-cmd --zone=meta-network --change-interface=ens21 --permanent
 ##############################################################################################
 # Add any additional firewall ports below this line in this format:
 # sudo firewall-cmd --zone=public --add-port=####/tcp --permanent
