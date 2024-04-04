@@ -9,7 +9,7 @@ import sys
 
 conf = SparkConf()
 conf.set('spark.jars.packages', 'org.apache.hadoop:hadoop-aws:3.3.0')
-conf.set('spark.hadoop.fs.s3a.aws.credentials.provider', 'org.apache.hadoop.fs.s3a.AnonymousAWSCredentialsProvider')
+conf.set('spark.hadoop.fs.s3a.aws.credentials.provider', 'org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider')
 
 conf.set('spark.hadoop.fs.s3a.access.key', os.getenv('ACCESSKEY'))
 conf.set('spark.hadoop.fs.s3a.secret.key', os.getenv('SECRETKEY'))
@@ -51,4 +51,7 @@ splitDF = df.withColumn('WeatherStation', df['_c0'].substr(5, 6)) \
 splitDF.printSchema()
 splitDF.show(5)
 
-splitDF.write.format("csv").mode("overwrite").option("header","true").save("s3a://itmd521/50.csv")
+##############################################################################
+# Replace jhajek with your own HAWKID, which is your bucket name
+##############################################################################
+splitDF.write.format("csv").mode("overwrite").option("header","true").save("s3a://jhajek/50.csv")
