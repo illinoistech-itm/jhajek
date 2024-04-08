@@ -129,7 +129,13 @@ foreach ($obj in $Data) {
 
 ##### Proxmox
 
-Currently in operation is a two node Proxmox VM Cluster. Proxmox is a German company that produces a management platform (akin to VM Ware ESXi and Hyper-V) on top of Debian Linux using the KVM platform for virtualization.
+Currently in operation are a two-node Proxmox VM Cluster. Proxmox is a German company that produces a management platform (akin to VM Ware ESXi and Hyper-V) on top of Debian Linux using the KVM platform for virtualization.
+
+| System FQDN       | CPUs      | Memory      | Disk              |
+| ------------------| ----------| ----------- | ----------------- |
+system41.rice.iit.edu | 24 CPUs | 196 GB RAM | 4 x8TB disks
+system42.rice.iit.edu | 24 CPUs | 224 GB RAM | 4 x8TB disks
+
 
 ### Automation Tools
 
