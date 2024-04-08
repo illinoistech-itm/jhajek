@@ -94,7 +94,38 @@ This is the single point of access to the Cloud Lab Infrastructure. Each student
 
 As part of the See Through lab, Professor Jeremy Hajek was granted unlimited private GitHub repos per a full organization. I have been creating and distributing repos based off of students HAWKIDs in the `illinoistech-itm` organization for over 6 years. We have distributed over 600 repos that students can use. These are private repos that only the owners or admins of the repos can see and the students, not public. 
 
-Public repos can be created for instructors who want to use it for code sharing, such as `https://github.com/illinoistech-itm/jhajek` 
+Public repos can be created for instructors who want to use it for code sharing, such as `https://github.com/illinoistech-itm/jhajek` and with a simple PowerShell script and a two column excel csv, I can create private repos for students and send out the invites in an automated fashion using the GitHub CLI. Note Powershell is cross platform and this can run on Macs and Linux as well. To create and send invites for a 100 person class took about 15 minutes (GitHub has rate limits).
+
+```Powershell
+# Assuming csv data structured like this
+# https://stackoverflow.com/questions/2157554/how-to-handle-command-line-arguments-in-powershell
+# hawkid,githubid
+# jhajek,coolguy744
+# lhajek,iwojima45 
+# ehajek,whateves1
+
+# script.ps1 -level admin
+param (
+    [string]$level = "write",
+    [string]$repocomment = "Private repo for ITM class work"
+ )
+
+# https://learn.microsoft.com/en-us/powershell/module/microsoft.Powershell.utility/import-csv
+$Data = Import-Csv -Path "./roster.csv"
+
+foreach ($obj in $Data) {
+    # Write the HAWK ID to the console
+    Write-Output "Creating repo for $($obj.hawkid)..."
+  
+    gh repo create https://github.com/illinoistech-itm/$($obj.hawkid) --private --add-readme -d $repocomment -g "Packer"
+    Start-Sleep -Seconds 25
+    
+    Write-Output "Now inviting GitHub ID $($obj.githubid)..."
+    gh api --method PUT -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/illinoistech-itm/$($obj.hawkid)/collaborators/$($obj.githubid) -f permission=$level
+
+    Start-Sleep -Seconds 15
+}
+```
 
 ##### Proxmox
 
