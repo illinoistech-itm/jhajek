@@ -138,17 +138,19 @@ system41.rice.iit.edu | 24 CPUs | 196 GB RAM | 4 x8TB disks
 system42.rice.iit.edu | 24 CPUs | 224 GB RAM | 4 x8TB disks
 
 
-### Automation Tools
+### Automation Tooling Used
 
-* Hashicorp Packer
+Currently we make use of opensource and source available tooling. The majority of our automation software is from cross-platform industry leader Hashicorp. As of January 2024 their opensource license was change to the BSL license but the software is still available for non-competitive use.
+
+* [Hashicorp Packer](https://packer.io "website for Hashicorp Packer")
   * Used for building VM images and templates
   * Supports all major Virtualization platforms
-* Hashicorp Consul
+* [Hashicorp Consul](https://consul.io "website for Hashicorp Consul")
   * Used for dynamic DNS and service discovery to help connect applications
-* Hashicorp Terraform
+* [Hashicorp Terraform](https://terraform.io "website for Hashicorp Terraform")
   * Infrastructure automation to provision and manage resources in any cloud or data center
-  * Cross cloud and platform
-* Hashicorp Vault
+  * Cross-cloud and cross-platform
+* [Hashicorp Vault](https://vault.io "website for Hashicorp Vault")
   * Secure management of secrets via HTTP
 * Linux, SSH, and ed25519 private keys
   * Ubuntu Server and AlmaLinux (but can be extended)
