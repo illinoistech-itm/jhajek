@@ -2,6 +2,10 @@
 
 A quick introduction and explanation of the See-Through Cloud Lab capabilities and functionality available to you and to students.
 
+## History of the Lab
+
+Originally called, "The Range for Year-round Gurus Studying Technology And Design", the name "See Through Cloud Lab" or "See Through Lab" came about when we found ourselves describing the lab as a safe and secure environment that exposed internal functions so that students could learn about what happens in a Cloud Computing Environment. Much like the see-through models of the human body that lets you see hwo the organs are placed, we wanted to same idea.
+
 ## Why “See Through?”
 
 There are various public cloud and enterprise grade virtualization platforms available. These are by nature designed to run securely and reliably and many companies big and small use them with great success. Our lab wants to focus on the internal parts of how these services work – which the Public and the enterprise won’t or can’t give you access to. Hence the name See Through Cloud Lab.  
@@ -10,13 +14,14 @@ We are endeavoring to use the 5 basic principals of cloud-native to recreate the
 
 ## Location of Lab and Commitment to Secure and Safe Access
 
-Currently located at the Wheaton Rice Campus in the Johanneson Computer Lab. Access to the lab is available via the school VPN and at the moment an email to Jeremy Hajek (hajek@iit.edu) to create accounts and generate API keys. Access is renewed before each semester.
+Currently located at the Wheaton Rice Campus in the Johanneson Computer Lab.  The cloud was built with technology donations from various companies and alum of the program and that were facilitated by [Professor Phil Matuszak](https://www.iit.edu/directory/people/philip-matuszak "webpage - IIT Phil Matuszak") and Professor Ray Trygstad. Access to the lab is available securely and remotely via the school VPN. No portions of the infrastructure is exposed publicly. Currently an email to Jeremy Hajek (hajek@iit.edu) to discuss capabilities to get individuals and classes onto the platform and generate API keys. Access is granted for a semester and renewed on request.
 
-The Cloud Lab has been managed by Professor Jeremy Hajek for over 6 years, in concert with design help from OTS members Fred Eichorst and Adrian Bucarica, and have worked hand-in-hand with OTS Cyber Tech group. We are continually updating and modifying our compute stack as new threats become available. We are making extensive use of the university VPN.
+The Cloud Lab has been managed by Professor Jeremy Hajek for over 6 years, in concert with design help from OTS members Fred Eichorst and Adrian Bucarica, and have worked hand-in-hand with OTS Cyber Tech group. We are continually updating and modifying our compute stack as new threats become available.
 
 ## 5 Basic Components of Cloud Native
 
-1.  All resources only accessed via APIs over HTTP
+1.  All resources only accessed via APIs over HTTP  
+a. [Jeff Besos API Mandate](https://nordicapis.com/the-bezos-api-mandate-amazons-manifesto-for-externalization/ "webpage for Jeff Besos API menu")
 2.  Elastic Virtual Machine resources  
 a.	Linux and x86-based
 3.	Elastic Block storage   
@@ -58,13 +63,16 @@ This cluster is currently used by students in the capstone ITMT-430 course. The 
 
 To make this as cloud native as possible we enforce the use of automation tooling for the creation of virtual machine templates and the integration of (on the administrative side) of the setting necessary to connect components of our cloud.  Version control is a **must** and required. This is similar to how modern PaaS platforms like Heroku function.
 
-#### Secure Template
+#### Secure Templates
 
-A pre-made secure template is provided to each student which can be used to build basic virtual machines or extended via shell scripts for custom needs. Our secure template also includes needed modification to integrate various cloud services into the stock operating systems.
+A pre-made secure template is provided to each student which can be used to build basic virtual machines or extend virtual machines via shell scripts for custom systems. Our secure template includes the needed modifications for integrating various services with the stock operating systems to make them function in a cloud native way.
 
-* Integration with our service discovery (Consul using the Gossip protocol) on the `meta-network` so applications can dynamically discover systems that don't have static IP mappings.
+* Integration with our service discovery 
+  * [Consul](https://consul.io "webpage hashicorp consul.io") using the [Gossip protocol](https://en.wikipedia.org/wiki/Gossip_protocol "webpage wikiarticle for gossip protocol") on the `meta-network` for application service discovery.
+  * Its how clouds can find systems with non-static IPS and without static DNS mappings.
 * Use of `systemd-firewalld` to block all firewall ports by default
   * User must open then as needed (AWS has the same behavior)
+  * Standard to `systemd` which means all linux platforms use the same configuration
 * Dynamic registration of each VM upon creation with our monitoring and metrics solution
   * Node Exporter, Prometheus, and Grafana
 * Force the use of Public/Private key use
@@ -72,7 +80,8 @@ A pre-made secure template is provided to each student which can be used to buil
 * Use of Vault for secure secrets management over HTTP
 * Use of Version control for integration for code and script deployment
 * Cloud Lab is very reliable, but comes with a 0% guarantee of uptime or reliability
-  * If you are using version control you should be able to restore your entire application
+  * You are required to use version control
+  * Version control, GitHub, should be the source of truth
 * Disabling of SSH password auth (Keys only)
   * Public keys are inserted by the user
   * A general admin key is also inserted at build time
@@ -80,6 +89,12 @@ A pre-made secure template is provided to each student which can be used to buil
 ### The Student Buildserver
 
 This is the single point of access to the Cloud Lab Infrastructure. Each student is given an account on this server, securely using SSH and Public/Private Key infrastructure (never any passwords). From the buildserver account students can clone their GitHub repo and user Packer to build VM templates on the Proxmox VM infrastructure and Terraform to deploy their VMs and applications.  
+
+### Student GitHub Accounts
+
+As part of the See Through lab, Professor Jeremy Hajek was granted unlimited private GitHub repos per a full organization. I have been creating and distributing repos based off of students HAWKIDs in the `illinoistech-itm` organization for over 6 years. We have distributed over 600 repos that students can use. These are private repos that only the owners or admins of the repos can see and the students, not public. 
+
+Public repos can be created for instructors who want to use it for code sharing, such as `https://github.com/illinoistech-itm/jhajek` 
 
 ##### Proxmox
 
