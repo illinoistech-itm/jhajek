@@ -77,7 +77,7 @@ Using the sample code provided to you in the `minios3.py` file - make sure you h
 
 ### Part Three deliverable
 
-Depending on your decade find the required Pyspark functions to execute and execute them.
+Depending on your decade find the required Pyspark functions to execute and execute them. Use the cleaned dataset you previously generated.
 
 #### A-F
 
