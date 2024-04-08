@@ -153,9 +153,14 @@ Currently we make use of opensource and source available tooling. The majority o
 * [Hashicorp Vault](https://vault.io "website for Hashicorp Vault")
   * Secure management of secrets via HTTP
 * Linux, SSH, and ed25519 private keys
-  * Ubuntu Server and AlmaLinux (but can be extended)
-  * All public clouds use this authentication method
+  * Ubuntu Server and AlmaLinux
+  * All public clouds use these authentication method
 
+### End Goal of the See Through Lab
+
+The end goal of the lab is not just for training, but to provide a complex environment to force students to think about all the aspects of what it takes to deploy an entire application quickly, reliably, repeatedly, and securely. With the proper training and engineering all of these are possible.
+
+These skills are in demand as this and future generations have the ability to change the world with software but also can harm the world with poorly written software that no one can debug or deploy. In these challenges are forced to understand security implications and scale implications. That is the job we are looking to accomplish.
 
 ## Spark Cluster Big Data and Data Engineering 
 
