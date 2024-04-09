@@ -20,16 +20,16 @@ The Cloud Lab has been managed by Professor Jeremy Hajek for over 6 years, in co
 
 ## 5 Basic Components of Cloud Native
 
-1.  All resources only accessed via APIs over HTTP  
-a. [Jeff Besos API Mandate](https://nordicapis.com/the-bezos-api-mandate-amazons-manifesto-for-externalization/ "webpage for Jeff Besos API menu")
-2.  Elastic Virtual Machine resources  
-a.	Linux and x86-based
-3.	Elastic Block storage   
-a.	Virtual disk
-4.	Object Storage 
-a.	Immutable Objects storage via HTTP
-5.	IAM  
-a.	Identity and Access Management, fine grained resource and account control
+* All resources only accessed via APIs over HTTP
+  * [Jeff Besos API Mandate](https://nordicapis.com/the-bezos-api-mandate-amazons-manifesto-for-externalization/ "webpage for Jeff Besos API menu")
+* Elastic Virtual Machine resources  
+  * Linux and x86-based
+* Elastic Block storage
+  * Virtual disk
+* Object Storage
+  * Immutable Objects storage via HTTP
+* IAM
+  * Identity and Access Management, fine grained resource and account control
 
 ## What does the lab contain?
 
@@ -67,14 +67,14 @@ To make this as cloud native as possible we enforce the use of automation toolin
 
 A pre-made secure template is provided to each student which can be used to build basic virtual machines or extend virtual machines via shell scripts for custom systems. Our secure template includes the needed modifications for integrating various services with the stock operating systems to make them function in a cloud native way.
 
-* Integration with our service discovery 
-  * [Consul](https://consul.io "webpage hashicorp consul.io") using the [Gossip protocol](https://en.wikipedia.org/wiki/Gossip_protocol "webpage wikiarticle for gossip protocol") on the `meta-network` for application service discovery.
+* Integration with Consul service discovery on the `10.110.0.0/16` network 
+  * [Consul](https://consul.io "webpage hashicorp consul.io") using the [Gossip protocol](https://en.wikipedia.org/wiki/Gossip_protocol "webpage wiki article for gossip protocol") on the `meta-network` for application service discovery.
   * Its how clouds can find systems with non-static IPS and without static DNS mappings.
 * Use of `systemd-firewalld` to block all firewall ports by default
   * User must open then as needed (AWS has the same behavior)
   * Standard to `systemd` which means all linux platforms use the same configuration
 * Dynamic registration of each VM upon creation with our monitoring and metrics solution
-  * Node Exporter, Prometheus, and Grafana
+  * Interface hooks for [Node exporter](https://github.com/prometheus/node_exporter "webpage prometheus node exporter"), [Prometheus](https://prometheus.io/docs/introduction/overview/ "webpage for Prometheus"), and [Grafana](https://grafana.com/ "webpage for Grafana")
 * Force the use of Public/Private key use
   * Never any passwords and all user generated so ITM maintains no keys or secrets
 * Use of Vault for secure secrets management over HTTP
@@ -94,7 +94,7 @@ This is the single point of access to the Cloud Lab Infrastructure. Each student
 
 As part of the See Through lab, Professor Jeremy Hajek was granted unlimited private GitHub repos per a full organization. I have been creating and distributing repos based off of students HAWKIDs in the `illinoistech-itm` organization for over 6 years. We have distributed over 600 repos that students can use. These are private repos that only the owners or admins of the repos can see and the students, not public. 
 
-Public repos can be created for instructors who want to use it for code sharing, such as `https://github.com/illinoistech-itm/jhajek` and with a simple PowerShell script and a two column excel csv, I can create private repos for students and send out the invites in an automated fashion using the GitHub CLI. Note Powershell is cross platform and this can run on Macs and Linux as well. To create and send invites for a 100 person class took about 15 minutes (GitHub has rate limits).
+Public repos can be created, such as, `https://github.com/illinoistech-itm/jhajek` and with a simple PowerShell script and a two column excel csv, I can create private repos for students and send out the invites in an automated fashion using the GitHub CLI. Note Powershell is cross platform and this can run on Macs and Linux as well. To create and send invites for a 100 person class took about 15 minutes (GitHub has rate limits).
 
 ```Powershell
 # Assuming csv data structured like this
@@ -117,11 +117,14 @@ foreach ($obj in $Data) {
     # Write the HAWK ID to the console
     Write-Output "Creating repo for $($obj.hawkid)..."
   
-    gh repo create https://github.com/illinoistech-itm/$($obj.hawkid) --private --add-readme -d $repocomment -g "Packer"
+    gh repo create https://github.com/illinoistech-itm/$($obj.hawkid) 
+    --private --add-readme -d $repocomment -g "Packer"
     Start-Sleep -Seconds 25
     
     Write-Output "Now inviting GitHub ID $($obj.githubid)..."
-    gh api --method PUT -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/illinoistech-itm/$($obj.hawkid)/collaborators/$($obj.githubid) -f permission=$level
+    gh api --method PUT -H "Accept: application/vnd.github+json" 
+    -H "X-GitHub-Api-Version: 2022-11-28" 
+    /repos/illinoistech-itm/$($obj.hawkid)/collaborators/$($obj.githubid) -f permission=$level
 
     Start-Sleep -Seconds 15
 }
@@ -131,12 +134,10 @@ foreach ($obj in $Data) {
 
 Currently in operation are a two-node Proxmox VM Cluster. Proxmox is a German company that produces a management platform (akin to VM Ware ESXi and Hyper-V) on top of Debian Linux using the KVM platform for virtualization. This cluster can be expanded to add capacity and make the cluster able to hold even more resources. Largest deploys see over 230 VMs extent and about 60 active without a dent into resources.
 
-
 | System FQDN       | CPUs      | Memory      | Disk         |
 | ------------------| ----------| ----------- | ------------ |
 system41.rice.iit.edu | 24 CPUs | 196 GB RAM | 4 x8TB disks
 system42.rice.iit.edu | 24 CPUs | 224 GB RAM | 4 x8TB disks
-
 
 ### Automation Tooling Used
 
@@ -164,23 +165,41 @@ These skills are in demand as this and future generations have the ability to ch
 
 ## Spark Cluster Big Data and Data Engineering 
 
-For distributed Big Data Calculations.  Currently CPU based not GPU based--though there are many workloads that are still CPU based.
+For distributed Big Data Calculations. Currently CPU based not GPU based--though there are many workloads that are still CPU based. We are using [Apache Spark](https://spark.apache.org/ "Webpage for Apache Spark"). 
+
+> *"Apache Spark™ is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters."*
+
+Spark uses distributed [DataFrames](https://spark.apache.org/docs/3.5.1/sql-programming-guide.html#content "webpage for Spark DataFrames"), has support for Python, R, Java, Scala, and SQL out of the box and has support for almost all data storage platforms: S3, MySQL, CSV, JSON, Parquet and more.
+
+### Current Spark Cluster Hardware
+
+| System FQDN       | CPUs      | Memory      |
+| ------------------| ----------| ----------- |
+spw1 | 16 | 93.4 GiB  	
+spw2 | 24 | 57.9 GiB 	
+worker-20240402212411-10.110.10.36-39753 	10.110.10.36:39753 	ALIVE 	16 (16 Used) 	30.4 GiB (6.0 GiB Used) 	
+worker-20240402212411-10.110.7.171-37085 	10.110.7.171:37085 	ALIVE 	16 (16 Used) 	54.0 GiB (6.0 GiB Used) 	
+worker-20240402213033-10.110.10.107-46369 	10.110.10.107:46369 	ALIVE 	24 (24 Used) 	124.9 GiB (6.0 GiB Used) 	
+worker-20240402220728-10.110.10.45-39767 	10.110.10.45:39767 	ALIVE 	24 (24 Used) 	42.2 GiB (6.0 GiB Used) 	
+worker-20240404041309-10.110.10.50-35401 	10.110.10.50:35401 	ALIVE 	32 (32 Used) 	187.8 GiB (6.0 GiB Used) 
+
 
 * 8 nodes
-* 170 CPU cores
-* 600 GB of RAM
+* ~170 CPU cores
+* ~600 GB of RAM
 * Storage disassociated and done via the Minio Object Storage Cluster
+  * Using [Erasure Coding](https://min.io/docs/minio/linux/operations/concepts/erasure-coding.html "Webpage explaining erasure coding") for data redundancy and availability
 * Students can submit jobs to a queue for deployment
   * Remote access 24/7 secure access available via the school VPN
+* Cluster scales linearly and additional nodes (servers) can be added without disruption to existing operations
+  * Currently running Ubuntu Linux 22.04.4
 
 ## Minio Object Storage Cluster
 
 *"[MinIO](https://min.io "website - minio, a high-performance, S3 compatible object store") is a high-performance, S3 compatible object store. It is built for large scale AI/ML, data lake and database workloads. It is software-defined and runs on any cloud or on-premises infrastructure. MinIO is dual-licensed under open source GNU AGPL v3 and a commercial enterprise license."*
 
-In addition to support S3 Object based storage we have an on-prem solution housing 16TB of storage.  Students receive an account that is controlled via an IAM policy that grants them access to their own bucket as well as read-access to certain data source buckets.
+In addition to supporting Object based storage we have an on-prem solution housing 16TB of storage. Students receive an account that is controlled via an IAM policy and can be quota controlled. These account credentials grant them access to a single bucket and other buckets as needed can be defined in the IAM policy.
 
-This is used to store large amounts of data in custom Big Data Formats, such as Parquet and Arrow.  Currently the ITMD-521 (~100 users) are making use of this working with NOAA historic weather datasets ~1TB of text data.
+This is used to store large amounts of data in custom Big Data Formats, such as Parquet and Arrow. Currently the ITMD-521 (~100 users) are making use of this working with NOAA historic weather datasets ~1TB of text data.
 
 This system is also used in conjunction with the ITMT-430 Capstone course for application development. Modern applications store artifacts (images, css, video) and serve it via HTTP. This allows students to experience secure and cloud native data-storage for applications. Applications speak HTTP.
-
-

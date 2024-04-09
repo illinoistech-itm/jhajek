@@ -81,31 +81,31 @@ Depending on your decade find the required Pyspark functions to execute and exec
 
 #### A-F
 
-Using your assigned dataset, find the Average temperature per month per year. Write these results out as a Parquet file named: `part-three.parquet`. Make use of Pyspark functions covered in the `Learning Spark v2` book as well as the Pyspark documentation. Do not use AI/GPT or copy and paste from the internet. Comment your code to explain how and why you are using it. Do not strip out any invalid records.
+Using your assigned dataset, find the Average temperature per month per year. Write these results out as a Parquet file named: `part-three.parquet`. Make use of Pyspark functions covered in the `Learning Spark v2` book as well as the Pyspark documentation. Do not use AI/GPT or copy and paste from the internet. Comment your code to explain how and why you are using it. **Do not strip out** any invalid records.
 
 Take only 12 records (only the first year of the decade) and write this to csv file named `part-three.csv`
 
 #### G-L
 
-Using your assigned dataset, find the Average temperature per month per year. You will need to strip out any temperature values that are outside of the human survival range (invalid integers). Write these results out as a Parquet file named: `part-three.parquet`. Make use of Pyspark functions covered in the `Learning Spark v2` book as well as the Pyspark documentation. Do not use AI/GPT or copy and paste from the internet. Comment your code to explain how and why you are using it.
+Using your assigned dataset, find the Average temperature per month per year. You will need to **strip out** any temperature values that are outside of the human survival range (invalid integers). Write these results out as a Parquet file named: `part-three.parquet`. Make use of Pyspark functions covered in the `Learning Spark v2` book as well as the Pyspark documentation. Do not use AI/GPT or copy and paste from the internet. Comment your code to explain how and why you are using it.
 
 Take only 12 records (only the first year of the decade) and write this to csv file named `part-three.csv`
 
 #### M-S
 
-Using your assigned dataset, find the Average temperature per month per year. Then find the standard deviation of each temperature over the course of the decade per month. Write these results out as a Parquet file named: `part-three.parquet`. Make use of Pyspark functions covered in the `Learning Spark v2` book as well as the Pyspark documentation. Do not use AI/GPT or copy and paste from the internet. Comment your code to explain how and why you are using it. Do not strip out invalid temperature values.
+Using your assigned dataset, find the Average temperature per month per year. Then find the standard deviation of each temperature over the course of the decade per month. Write these results out as a Parquet file named: `part-three.parquet`. Make use of Pyspark functions covered in the `Learning Spark v2` book as well as the Pyspark documentation. Do not use AI/GPT or copy and paste from the internet. Comment your code to explain how and why you are using it. **Do not strip out** invalid temperature values.
 
 Take only 12 records (the month and standard deviations) and write this to csv file named `part-three.csv`
 
 #### T-Z
 
-Using your assigned dataset, find the Average temperature per month per year. Then find the standard deviation of each temperature over the course of the decade per month. Write these results out as a Parquet file named: `part-three.parquet`. Make use of Pyspark functions covered in the `Learning Spark v2` book as well as the Pyspark documentation. Do not use AI/GPT or copy and paste from the internet. Comment your code to explain how and why you are using it.
+Using your assigned dataset, find the Average temperature per month per year. Then find the standard deviation of each temperature over the course of the decade per month. Write these results out as a Parquet file named: `part-three.parquet`. Make use of Pyspark functions covered in the `Learning Spark v2` book as well as the Pyspark documentation. Do not use AI/GPT or copy and paste from the internet. Comment your code to explain how and why you are using it. **Strip out** invalid Temperature records. 
 
 Take only 12 records (the month and standard deviations) and write this to csv file named `part-three.csv`
 
 ## Deliverable
 
 * For section 05 due Wednesday the 17th 1:50 PM - meaning the final submission is due at that time.
-* For section 01,02,03 due Thursday the 18th 3:15 PM - meaning the final submission is due at that time.
+* For section 01,02, 03 due Thursday the 18th 3:15 PM - meaning the final submission is due at that time.
 
 Push your Pyspark script or scripts to a file named `week-13` and submit the URL to that file to Blackboard.
