@@ -62,6 +62,12 @@ splitDF = df.withColumn('WeatherStation', df['_c0'].substr(5, 6)) \
 
 Using the sample code provided to you in the `minios3.py` file - make sure you have the latest version, we added two additional lines to speedup object/partition writing in Minio.
 
+#### Modify AppName
+
+Modify the value in the `appName` function. Use your HAWKID (not the @hawk part) and try to be specific on what part of the assignment you are running.
+
+```spark = SparkSession.builder.appName("JRH convert 50.txt to csv").config('spark.driver.host','spark-edge.service.consul').config(conf=conf).getOrCreate()```
+
 ### Part Two deliverable
 
 * Create a CSV file of the *cleaned* data
@@ -73,15 +79,15 @@ Using the sample code provided to you in the `minios3.py` file - make sure you h
   * Name the file: 50.csv (where 50 is the decade you were assigned)
 * Create a Parquet file
   * Name the file: 50.parquet (where 50 is the decade you were assigned)
-* Write these to your Minio Bucket
+* Write/Save these to your Minio Bucket
 
 ### Part Three deliverable
 
-Depending on your decade find the required Pyspark functions to execute and execute them. Use the cleaned dataset you previously generated.
+Depending on your decade find the required Pyspark functions to execute and execute them. Use the cleaned dataset you previously generated. Do not use AI/GPT or copy and paste from the internet. Follow the instructions exactly in regards to valid and invalid records
 
 #### A-F
 
-Using your assigned dataset, find the Average temperature per month per year. Write these results out as a Parquet file named: `part-three.parquet`. Make use of Pyspark functions covered in the `Learning Spark v2` book as well as the Pyspark documentation. Do not use AI/GPT or copy and paste from the internet. Comment your code to explain how and why you are using it. **Do not strip out** any invalid records.
+Using your assigned dataset, find the Average temperature per month per year. Write these results out as a Parquet file named: `part-three.parquet`. Make use of Pyspark functions covered in the `Learning Spark v2` book as well as the Pyspark documentation.  Comment your code to explain how and why you are using it. **Do not strip out** any invalid records.
 
 Take only 12 records (only the first year of the decade) and write this to csv file named `part-three.csv`
 
