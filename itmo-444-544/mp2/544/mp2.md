@@ -25,7 +25,7 @@ For this assignment you can make these assumptions
 
 ## Deliverable
 
-Create a folder named: `mp2` under your class folder in the provided private repo.  Try not to leave uneeded files, samples, or old code commented out in your assignments. Make it clean.
+Create a folder named: `mp2` under your class folder in the provided private repo. Try not to leave uneeded files, samples, or old code commented out in your assignments. Make it clean.
 
 * The proper Terraform files needed to create the infrastructure
 * Your `install-env.sh`
