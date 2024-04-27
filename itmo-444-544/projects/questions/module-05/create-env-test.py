@@ -101,7 +101,7 @@ if tag in str(responseasg['AutoScalingGroups'][0]['Tags']):
   
   print("Contains the tag: " + tag + "...")
 else:
-  checkTagTypeMismatch = True
+  checkTagTypeMismatch == True
 
 if checkTagTypeMismatch == False:
   print("Correct. All Ec2 Instances have the correct tag of: " + tag + "...")

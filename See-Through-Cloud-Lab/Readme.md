@@ -61,7 +61,11 @@ The lab is made up of several parts...
 
 This cluster is currently used by students in the capstone ITMT-430 course. The purpose is to provide them a sandbox and a system that represents as close as possible to a modern cloud-computing platform. Students are given VM level admin access so they can inspect all the parts of the platform, even each others systems. They do not have Account level access but otherwise we give them enough access to call this a *see through cloud*. We have a flat network structure by design so that all resources can see everyone others resource on the network--this is by design.
 
-To make this as cloud native as possible we enforce the use of automation tooling for the creation of virtual machine templates and the integration of (on the administrative side) of the setting necessary to connect components of our cloud.  Version control is a **must** and required. This is similar to how modern PaaS platforms like Heroku function.
+To make this as cloud native as possible we enforce the use of automation tooling for the creation of virtual machine templates and the integration of (on the administrative side) of the setting necessary to connect components of our cloud. 
+
+#### Version Control
+
+With the dawning of world-wide high speed networking, Linux, and commodity `x86` we saw the rise of cloud. In order to produce and develop software over this platform, `Version Control` became the *lingua franca* for development of code and infrastructure. Version control is a **must** and required for each student to make use of the Lab infrastructure.  it simply can't be used without it. Modern PaaS platforms like Heroku function on this principle.
 
 #### Secure Templates
 
