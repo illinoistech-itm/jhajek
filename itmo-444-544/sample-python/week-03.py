@@ -14,13 +14,30 @@ responseEC2 = ec2.describe_vpcs(
         {
             'Name': 'is-default',
             'Values': [
-                True,
+                'true',
             ]
         }
     ]
 )
 
 print("VPC ID is: " + responseEC2)
+
+responseSubnetEC2 = ec2.describe_subnets(
+    Filters=[
+        {
+            'Name': 'availability-zone',
+            'Values': [
+                '${10}',
+            ]
+        },
+    ],
+    SubnetIds=[
+        'string',
+    ],
+    DryRun=True|False,
+    NextToken='string',
+    MaxResults=123
+)
 
 '''
 if [ $# = 0 ]
@@ -33,22 +50,7 @@ echo "Finding and storing default VPCID value..."
 VPCID=$(aws ec2 describe-vpcs --filters "Name=is-default,Values=true" --query "Vpcs[*].VpcId" --output=text)
 echo $VPCID
 
-responseSubnetEC2 = ec2.describe_subnets(
-    Filters=[
-        {
-            'Name': 'is-default',
-            'Values': [
-                'True',
-            ]
-        },
-    ],
-    SubnetIds=[
-        'string',
-    ],
-    DryRun=True|False,
-    NextToken='string',
-    MaxResults=123
-)
+
 
 echo "Finding and storing the subnet IDs for defined in arguments.txt Availability Zone 1 and 2..."
 SUBNET2A=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=availability-zone,Values=${10}")
