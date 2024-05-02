@@ -37,21 +37,16 @@ responseSubnetEC2 = ec2.describe_subnets(
         {
             'Name': 'availability-zone',
             'Values': [
-                '${10}',
+                json_data['az2a','az2b']
             ]
         },
     ],
-    SubnetIds=[
-        'string',
-    ],
-    DryRun=True|False,
-    NextToken='string',
-    MaxResults=123
 )
 
 print(responseSubnetEC2)
 print("Subnet is: " + responseSubnetEC2['Subnets'][0]['SubnetId'])
-SUBNET = responseSubnetEC2['Subnets'][0]['SubnetId']
+SUBNET2A = responseSubnetEC2['Subnets']['az2a']['SubnetId']
+SUBNET2B = responseSubnetEC2['Subnets']['az2b']['SubnetId']
 
 '''
 if [ $# = 0 ]
