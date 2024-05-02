@@ -37,7 +37,7 @@ responseSubnetEC2 = ec2.describe_subnets(
         {
             'Name': 'availability-zone',
             'Values': [
-                json_data['az2a','az2b']
+                json_data['az2a'],json_data['az2b']
             ]
         },
     ],
