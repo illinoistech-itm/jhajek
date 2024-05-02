@@ -6,6 +6,14 @@
 # https://aws.amazon.com/sdk-for-python/
 
 import boto3
+import json
+
+# Code Sample to load JSON from a file into a dictionary named json_data
+# https://stackoverflow.com/questions/20199126/reading-json-from-a-file
+with open('~/arguments.json') as fd:
+     json_data = json.load(fd)
+
+print(json_data)
 
 ec2 = boto3.client('ec2')
 
@@ -22,6 +30,7 @@ responseEC2 = ec2.describe_vpcs(
 
 print(responseEC2)
 print("VPC ID is: " + responseEC2['Vpcs'][0]['VpcId'])
+VPCID = responseEC2['Vpcs'][0]['VpcId']
 
 responseSubnetEC2 = ec2.describe_subnets(
     Filters=[
@@ -39,6 +48,10 @@ responseSubnetEC2 = ec2.describe_subnets(
     NextToken='string',
     MaxResults=123
 )
+
+print(responseSubnetEC2)
+print("Subnet is: " + responseSubnetEC2['Subnets'][0]['SubnetId'])
+VPCID = responseEC2['Subnets'][0]['SubnetId']
 
 '''
 if [ $# = 0 ]
