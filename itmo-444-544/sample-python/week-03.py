@@ -45,8 +45,9 @@ responseSubnetEC2 = ec2.describe_subnets(
 
 print(responseSubnetEC2)
 print("Subnet is: " + responseSubnetEC2['Subnets'][0]['SubnetId'])
-SUBNET2A = responseSubnetEC2['Subnets']['az2a']['SubnetId']
-SUBNET2B = responseSubnetEC2['Subnets']['az2b']['SubnetId']
+# Watch out -- AZ 2a might not be returned as element 0 -- should probably write and if statement to check
+SUBNET2A = responseSubnetEC2['Subnets'][0]['SubnetId']
+SUBNET2B = responseSubnetEC2['Subnets'][1]['SubnetId']
 
 '''
 if [ $# = 0 ]
