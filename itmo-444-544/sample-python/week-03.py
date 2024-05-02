@@ -21,7 +21,7 @@ responseEC2 = ec2.describe_vpcs(
 )
 
 print(responseEC2)
-print("VPC ID is: " + responseEC2)
+print("VPC ID is: " + responseEC2['VPCS'][0]['VpcId'])
 
 responseSubnetEC2 = ec2.describe_subnets(
     Filters=[
