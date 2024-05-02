@@ -51,7 +51,7 @@ responseSubnetEC2 = ec2.describe_subnets(
 
 print(responseSubnetEC2)
 print("Subnet is: " + responseSubnetEC2['Subnets'][0]['SubnetId'])
-VPCID = responseEC2['Subnets'][0]['SubnetId']
+SUBNET = responseSubnetEC2['Subnets'][0]['SubnetId']
 
 '''
 if [ $# = 0 ]
