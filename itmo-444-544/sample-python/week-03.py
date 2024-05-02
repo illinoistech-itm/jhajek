@@ -10,7 +10,7 @@ import json
 
 # Code Sample to load JSON from a file into a dictionary named json_data
 # https://stackoverflow.com/questions/20199126/reading-json-from-a-file
-with open('~/arguments.json') as fd:
+with open('/home/vagrant/arguments.json') as fd:
      json_data = json.load(fd)
 
 print(json_data)
