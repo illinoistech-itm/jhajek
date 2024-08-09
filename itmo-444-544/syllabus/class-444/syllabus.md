@@ -6,18 +6,6 @@ Semester: Fall 2023 Professor Jeremy Hajek
 
 ![*https://xkcd.com/908*](./syllabus/class-444/images/the_cloud.png "XCKD 908 image URL")
 
----------------- --------------------------------------------------------
-  **Professor**: [Jeremy Hajek](https://www.iit.edu/directory/people/jeremy-hajek "webpage IIT People Jeremy Hajek")
-        Address: Department of Information Technology & Management,
-                 10 W. 33rd St., Chicago, IL 60616
-      Telephone: 312.567.5937
-          Email: hajek@iit.edu
-         Office: Perlstein Hall Room 223A, 10 W. 33rd St.
-   Office Hours: Mies Campus: Friday 10:30 - 2:00
-         Online: book an appointment at:
-                 [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
----------------- --------------------------------------------------------| 
-
 Category | Value |
 | --------- | ------------ |
  **Professor** | Jeremy Hajek
@@ -39,7 +27,7 @@ ITMO 356 and ITMD 321, Credit: Lab 3-0-3
 
 ### Lecture Day, Time & Place 
 
-Monday and Wednesday 3:15 pm - 4:30 pm in [Tech South Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), TS-2030 on IIT’s Mies Campus in Chicago.
+Tuesday and Thursday 8:35 am to 9:50 am in [Tech South Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), TS-2030 on IIT’s Mies Campus in Chicago.
 
 #### Smart Lab Location
 
