@@ -2,21 +2,20 @@
 
 ![](images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
-Semester: Spring 2024 Professor Jeremy Hajek
+Semester: Fall 2024 Professor Jeremy Hajek
 
 ![*Linux...*](images/linux.png "Dilbert Cartoon")
 
----------------- --------------------------------------------------------
-  **Professor**: Jeremy Hajek
-        Address: Department of Information Technology & Management,
-                 10 W. 33rd St., Chicago, IL 60616
-      Telephone: 312.567.5937
-          Email: hajek@iit.edu
-         Office: Perlstein Hall Room 223A, 10 W. 33rd St.
-   Office Hours: Mies Campus: Friday 12:00-2:00
-         Online: Book and appointment at:
-                 [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
----------------- --------------------------------------------------------
+| Category | Value |
+| --------- | ------------ |
+ **Professor** | Jeremy Hajek
+ Address | Department of Information Technology & Management 10 W. 33rd St., Chicago, IL 60616
+ Telephone | 312.567.5937
+ Email | hajek@iit.edu
+ Office | Galvin Tower 15th Floor, 10 W. 35th St.
+ Office Hours | Mon - Thurs — 1:00 - 3:00 PM
+ Location | Galvin Tower 15th Floor, 10 W. 35th St or via MS Teams Link
+ URL | Book and appointment at: [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 
 ## Course Catalog Description
 
@@ -40,23 +39,22 @@ All readings should be done prior to class. Do the readings!
 
 Session | Date | Topic | Homework Reading |
 --------|------|:------|----------
-01 | 01/09,11 | Introduction & Tooling Setup | Technology and Philosophy of FOSS Ch 2
-02 | 01/16,18 | History of Free and Open Source | Technology and Philosophy of FOSS Ch 3
-03 | 01/23,25 | Hardware and Linux Install | Technology and Philosophy of FOSS Ch 4
-04 | 01/30,02/01 | Desktop Linux and GUIs | Technology and Philosophy of FOSS Ch 5
-05 | 02/06,08 | Filesystem, Path, Shell, and File Permissions | Technology and Philosophy of FOSS Ch 6
-06 | 02/13,15 | Shell meta-characters, pipes, search and tools | Technology and Philosophy of FOSS Ch 7
-07 | 02/20,22 | Introduction to Bash Shell, Linux Editors, and User Profiles | Technology and Philosophy of FOSS Ch 8
-08 | 02/27,29 | Writing Basic Shell Scripts | NA
-09 | 03/05,07 | Midterm Project Week | Technology and Philosophy of FOSS Ch 9
-NA | 03/12,14 | no class - Spring Break | -
-10 | 03/19,21 | System Administration | Technology and Philosophy of FOSS Ch 10
-11 | 03/26,28 | Init Services, Daemons, Processes | Technology and Philosophy of FOSS Ch 11
-12 | 04/02,04 | Filesystems: Creating, Partitioning, and Mounting | Technology and Philosophy of FOSS Ch 12
-13 | 04/09,11 | Networking, Webservers, and Databases | Technology and Philosophy of FOSS Ch 13
-14 | 04/16,18 | Infrastructure and Orchestration | Final Project Assigned
-15 | 04/23,25 | Final Project Work | NA
-16 | 04/30 | Final Exam week - Presentation of Final Project
+01 | 08/20,22 | Introduction & Tooling Setup | Technology and Philosophy of FOSS Ch 2
+02 | 08/27,29 | History of Free and Open Source | Technology and Philosophy of FOSS Ch 3
+03 | 09/03,05 | Hardware and Linux Install | Technology and Philosophy of FOSS Ch 4
+04 | 09/10,12 | Desktop Linux and GUIs | Technology and Philosophy of FOSS Ch 5
+05 | 09/17,19 | Filesystem, Path, Shell, and File Permissions | Technology and Philosophy of FOSS Ch 6
+06 | 09/24,26 | Shell meta-characters, pipes, search and tools | Technology and Philosophy of FOSS Ch 7
+07 | 10/01,03 | Introduction to Bash Shell, Linux Editors, and User Profiles | Technology and Philosophy of FOSS Ch 8
+08 | 10/08,10 | Writing Basic Shell Scripts | NA
+09 | 10/15,17 | Midterm Project Week | Technology and Philosophy of FOSS Ch 9
+10 | 10/22,24 | no class - Spring Break | -
+11 | 10/29,31 | System Administration | Technology and Philosophy of FOSS Ch 10
+12 | 11/05,07 | Init Services, Daemons, Processes | Technology and Philosophy of FOSS Ch 11
+13 | 11/12,14 | Filesystems: Creating, Partitioning, and Mounting | Technology and Philosophy of FOSS Ch 12
+14 | 11/19,21 | Networking, Webservers, and Databases | Technology and Philosophy of FOSS Ch 13
+15 | 11/26,28 | Infrastructure and Orchestration | Final Project Assigned
+16 | 12/03  | Final Project Work | NA
 
 ### Course Outcomes
 

@@ -16,7 +16,18 @@ Semester: Fall 2023 Professor Jeremy Hajek
    Office Hours: Mies Campus: Friday 10:30 - 2:00
          Online: book an appointment at:
                  [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
----------------- --------------------------------------------------------
+---------------- --------------------------------------------------------| 
+
+Category | Value |
+| --------- | ------------ |
+ **Professor** | Jeremy Hajek
+ Address | Department of Information Technology & Management 10 W. 33rd St., Chicago, IL 60616
+ Telephone | 312.567.5937
+ Email | hajek@iit.edu
+ Office | Galvin Tower 15th Floor, 10 W. 35th St.
+ Office Hours | Mon - Thurs — 1:00 - 3:00 PM
+ Location | Galvin Tower 15th Floor, 10 W. 35th St or via MS Teams Link
+ URL | Book and appointment at: [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 
 ## Course Catalog Description
 

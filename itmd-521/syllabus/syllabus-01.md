@@ -1,8 +1,8 @@
-# ITMD 521 Big Data Infrastructure - Spring 2024
+# ITMD 521 Big Data Infrastructure - Fall 2024
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
-Semester: Spring 2024 Professor Jeremy Hajek
+Semester: Fall 2024 Professor Jeremy Hajek
 
 ![*https://xkcd.com/2054/*](images/data_pipeline.png "XCKD 2054 image URL")
 
@@ -12,9 +12,9 @@ Semester: Spring 2024 Professor Jeremy Hajek
  Address | Department of Information Technology & Management 10 W. 33rd St., Chicago, IL 60616
  Telephone | 312.567.5937
  Email | hajek@iit.edu
- Office | Perlstein Hall Room 223A, 10 W. 33rd St.
- Office Hours | Fri 12:00 PM — 2:00 PM
- Location | Perlstein Hall 223 or Via Google Meets
+ Office | Galvin Tower 15th Floor, 10 W. 35th St.
+ Office Hours | Mon - Thurs — 1:00 - 3:00 PM
+ Location | Galvin Tower 15th Floor, 10 W. 35th St or via MS Teams Link
  URL | Book and appointment at: [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
 
 ## Course Catalog Description
@@ -23,17 +23,22 @@ This course covers both concepts and practical applications of distributed data 
 
 ## Updated Course Description
 
-This course covers both concepts and practical applications of distributed data paradigms. We will explore cloud native tooling used for Big Data. We will focus on the concepts of Data Engineering and explore the Data Life Cyle. We will apply these concepts using opensource Big Data platforms and by writing code to explore the concepts of Data Engineering. You will have an experience how to treat and prepare structured and unstructured Big Data. Students will be tasked with learning and demonstrating these concepts via a hands on final project.
+This course covers both concepts and practical applications of distributed data paradigms and data engineering. We will explore cloud native tooling used in the industry. We will focus on the concepts of Data Engineering and explore the Data Life Cycle. We will apply these concepts using opensource Big Data platforms and by writing code to explore the concepts of Data Engineering. You will have an experience how to treat and prepare structured and unstructured Big Data. Students will be tasked with learning and demonstrating these concepts via a hands on final project.
 
 ## Prerequisites
 
-ITMD/S 514 and or ITMD 510 Credit: Normally 3-0-3 Semester Hours
+Familiarity with programming and Linux: Normally 3-0-3 Semester Hours
 
-## Section 01 Tuesday and Thursday Lecture Day, Time & Place
+## Section 01 Tuesday Lecture, Time & Place
 
 * Main Class time
-  * Tuesday and Thursday 3:15pm to 4:30pm
-  * Location - [Pritzker Science Hall 121 - PS 121](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+  * Tuesday 5:00 PM to 7:40 PM
+  * Location - TS-2030 Smart Lab
+  * [Campus Map](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
+
+### Directions to Smart Lab
+
+To get to the Smart Tech Lab - enter the Michael Galvin tower on 35th Street.  Swipe in at the desk and take the elevator up to the second floor. Exit to the left and head north over the bridge from the Tower to the TS building. The Floor turns from white tile to brown carpet.  Take a left at the intersection and the Smart Lab is directly ahead of you.
 
 ## Section 01 Schedule of Topics/Readings
 
@@ -41,39 +46,22 @@ All readings should be done prior to class
 
 Session | Date | Topic | Reading for Homework |
 ----------|------|:------|----------
-1 | 01/09 | Introduction | -
-2 | 01/11 | Tooling Assignment | FoDE 1 
-3 | 01/16 | Data Engineering Described | -
-4 | 01/18 | Advanced Tooling Assignment | FoDE 2
-5 | 01/23 | Data Engineering Life Cycle | Learning Spark 2
-6 | 01/25 | Apache Spark Install | FoDE 3
-7 | 01/30 | Designing Good Data Architecture | Learning Spark 3
-8 | 02/01 | Apache Spark Structured APIs | FoDE 4
-9 | 02/06 | Choosing Technologies Across the Data Engineering LifeCycle | Learning Spark 3
-10 | 02/08 | End to End Data Set Examples | FoDE 5
-11 | 02/13 | Data Generation in Source Systems | Learning Spark 4 Part I
-12 | 02/15 | Spark SQL and DataFrames | FoDE 6
-13 | 02/20 | Storage | Learning Spark 4 Part II 
-14 | 02/22 | File storage and Partitions | FoDE 7
-15 | 02/27 | Ingestion | Learning Spark 5
-16 | 02/29 | Spark, SQL, and DataFrames | FoDE 8
-17 | 03/05 | Queries, Modeling, and Transformation | Learning Spark 6
-18 | 03/07 | Spark SQL and Datasets  | FoDE 9
-NA | 03/12 | Spring Break Week | -
-NA | 03/14 | Spring Break Week | -
-19 | 03/19 | Serving Data for Analytics, ML, and Reverse ETL | Learning Spark 7
-20 | 03/21 | Tuning Spark Applications | Learning Spark Ch 8
-21 | 03/26 | Structured Streaming | -
-22 | 03/28 | Structured Streaming | Learning Spark 9-10
-23 | 04/02 | Data Lakes and Machine Learning Ch 9-10 | -
-24 | 04/04 | Data Lakes and Machine Learning Ch 9-10 | -
-25 | 04/09 | Data Lakes and Machine Learning & Cloud DBs | -
-26 | 04/11 | Data Lakes and Machine Learning & Cloud DBs | -
-27 | 04/16 | Project work time | Final Project Assigned
-28 | 04/18 | Project work time | -
-29 | 04/23 | Project work time | -
-30 | 04/25 | Project work time | -
-31 | 04/30 | Final Exam Week | -
+1 | 08/20 | Introduction | -
+2 | 08/27 | Tooling Assignment | FoDE 1 
+3 | 09/03 | Data Engineering Described | -
+4 | 09/10 | Advanced Tooling Assignment | FoDE 2
+5 | 09/17 | Data Engineering Life Cycle | Learning Spark 2
+6 | 09/24 | Apache Spark Install | FoDE 3
+7 | 10/01 | Designing Good Data Architecture | Learning Spark 3
+8 | 10/08 | Apache Spark Structured APIs | FoDE 4
+9 | 10/15 | Choosing Technologies Across the Data Engineering LifeCycle | Learning Spark 3
+10 | 10/22 | End to End Data Set Examples | FoDE 5
+11 | 10/29 | Data Generation in Source Systems | Learning Spark 4 Part I
+12 | 11/05 | Spark SQL and DataFrames | FoDE 6
+13 | 11/12 | Storage | Learning Spark 4 Part II 
+14 | 11/19 | File storage and Partitions | FoDE 7
+15 | 11/26 | Ingestion | Learning Spark 5
+16 | 12/03 | Final Exam Week | -
 
 ## Course Student Outcomes
 
