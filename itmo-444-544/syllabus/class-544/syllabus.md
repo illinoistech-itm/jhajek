@@ -2,9 +2,9 @@
 
 ![](./syllabus/class-544/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
-Semester: Fall 2023 Professor Jeremy Hajek
+Semester: Fall 2024 Professor Jeremy Hajek
 
-![*https://xkcd.com/908*](./syllabus/class-544/images/the_cloud.png "XKCD 908 image URL")
+![*https://xkcd.com/908*](./images/the_cloud.png "XKCD 908 image URL")
 
 Category | Value |
 | --------- | ------------ |
