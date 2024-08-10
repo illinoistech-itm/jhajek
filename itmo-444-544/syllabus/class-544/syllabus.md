@@ -1,6 +1,6 @@
 # ITMO 544 Cloud Computing Technologies
 
-![](./syllabus/class-544/images/CoC_horiz_lockup_2019.jpg "COC Logo")
+![](./images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
 Semester: Fall 2024 Professor Jeremy Hajek
 
@@ -86,15 +86,13 @@ Each successful student will be able to demonstrate building and running cloud-b
 
 ### Required Textbook
 
-The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2, Thomas A. Limoncelli, Strata R. Chalup and Christina J. Hogan, 2014. ISBN: 978-0321943187
+No required textbook
 
 You will be using an existing or creating an account at [Amazon Web Services](https://aws.amazon.com/ "AWS Web services URL"). This will require a Credit Card for registration purposes -- but there won't be any extra cost.
 
-![*Cloud Computing Technologies Textbook*](./syllabus/class-444/images/book.png "Picture of the Textbook")
-
 ### Readings 
 
-Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should al-ready be familiar with. Completion of reading may be verified by quizzes. Specific readings are assigned by topic above.
+Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected. Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should already be familiar with. Completion of reading may be verified by quizzes. Specific readings are assigned by topic above.
 
 ### Course Notes  
 

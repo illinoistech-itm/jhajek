@@ -5,22 +5,22 @@
 ## Get current timestamp
 $STAMP=Get-Date(Get-Date).ToUniversalTime()-uformat "%m%d%Y-%H%M%S"
 
-If (Test-Path "./output/pdf/itmo-?44-cloud-computing-technologies-*"){
-  Remove-Item ./output/pdf/*.pdf -Verbose
+If (Test-Path "../../output/pdf/itmo-444-cloud-computing-technologies-*"){
+  Remove-Item ../../output/pdf/*.pdf -Verbose
 }Else{
-  Write-Output "./output/pdf/itmo-444-cloud-computing-technologies-*.pdf - File does not exist."
+  Write-Output "../../output/pdf/itmo-444-cloud-computing-technologies-*.pdf - File does not exist."
 }
 
-If (Test-Path "./output/docx/itmo-?44-cloud-computing-technologies-*"){
-  Remove-Item ./output/docx/*.docx -Verbose
+If (Test-Path "../../output/docx/itmo-444-cloud-computing-technologies-*"){
+  Remove-Item ../../output/docx/*.docx -Verbose
 }Else{
-  Write-Output "./output/docx/itmo-444-cloud-computing-technologies-*.docx - File does not exist."
+  Write-Output "../../output/docx/itmo-444-cloud-computing-technologies-*.docx - File does not exist."
 }
 
-If (Test-Path "./output/odt/itmo-?44-cloud-computing-technologies-*"){
-  Remove-Item ./output/odt/*.odt -Verbose
+If (Test-Path "../../output/odt/itmo-444-cloud-computing-technologies-*"){
+  Remove-Item ../../output/odt/*.odt -Verbose
 }Else{
-  Write-Output "./output/odt/itmo-444-cloud-computing-technologies-*.odt - File does not exist."
+  Write-Output "../../output/odt/itmo-444-cloud-computing-technologies-*.odt - File does not exist."
 }
 
 #######################################################################################################################
