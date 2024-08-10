@@ -1,6 +1,6 @@
 # ITMO 444 Cloud Computing Technologies
 
-![](./syllabus/class-444/images/CoC_horiz_lockup_2019.jpg "COC Logo")
+![](./images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
 Semester: Fall 2024 Professor Jeremy Hajek
 
@@ -88,11 +88,9 @@ Students completing this course will be able to:
 
 ### Required Textbook
 
-The Practice of Cloud System Administration: Designing and Operating Large Distributed Systems, Volume 2, Thomas A. Limoncelli, Strata R. Chalup and Christina J. Hogan, 2014. ISBN: 978-0321943187
+No required textbook
 
 You will be using an existing or creating an account at [Amazon Web Services](https://aws.amazon.com/ "AWS Web services URL").  This will require a Credit Card for registration purposes -- but there won't be any extra cost.
-
-![*Cloud Computing Technologies Textbook*](./syllabus/class-444/images/book.png "Picture of the Textbook")
 
 ### Readings
 
