@@ -109,11 +109,14 @@ It is recommended to take notes from the discussion portion of the class.
 
 Attendance is expected and will be counted as part of your grade -- if you are not able to attend please email me
 
-### Course Web Site
+### Canvas
 
-[http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Management Site URL")
+We will be using Canvas as the new LMS for communications, assignment submissions, group project coordination, providing online resources and administering examinations. All remote students will view the course lectures online via Canvas, and online readings and other course material will be found on Canvas.
 
-The course will make use of Blackboard [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Management Site URL") for communications, assignment submissions, group project coordination, providing online resources and administering examinations. All remote students will view the course lectures online via Blackboard, and online readings and other course material will be found on Blackboard.
+Mobile apps available
+
+* [Android Canvas](https://play.google.com/store/apps/details?id=com.instructure.candroid&hl=en_US "Android Canvas")
+* [iOS Canvas](https://apps.apple.com/us/app/canvas-student/id480883488 "iOS Canvas")
 
 ### Assignments
 
