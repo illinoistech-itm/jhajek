@@ -158,11 +158,7 @@ Take a screenshot of the VirtualBox > Help > About VirtualBox output or from the
 There are 2 options:
 
 * Buying a Pro-license from Parallels (link for %50 student discount)
-  * [Pro License from Parallels](https://www.parallels.com/landingpage/pd/education/?cjevent=8130c1204d8811ee81ff00890a82b839&utm_source=CJ&utm_medium=AFFILIATES "Pro License from Paralles")
-* [UTM](https://mac.getutm.app/ "webpage for apple sillicon framework")
-  * Free download or purchase in the Mac App store
-
-Whichever solution you choose - take a screenshot showing the installed version.
+  * [Pro License from Parallels](https://www.parallels.com/landingpage/pd/education/?cjevent=8130c1204d8811ee81ff00890a82b839&utm_source=CJ&utm_medium=AFFILIATES "Pro License from Parallels")
 
 **Note:** that you can use Parallels on an Intel MacOS as well -- you would need to make sure you have the Pro edition installed and the SDK installed as well.
 
