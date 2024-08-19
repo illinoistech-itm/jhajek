@@ -43,18 +43,18 @@ Session # | Date | Topic | Reading |
 2 | 08/28,30 | Introduction to Cloud Native Thinking | NA
 3 | 09/04,06 | Labor Day No class - Preface Ch 0 | Chapter 1
 4 | 09/11,13 | Designing in a Distributed World | Chapter 2
-5 | 09/18,20 | Designing for Operations | Chapter 3
-6 | 09/25,27 | Selecting a Service Platform | Chapter 4
-7 | 10/02,04 | Application Architectures | Chapter 5
-8 | 10/09,11 | Design Patterns for Scaling | NA
-9 | 10/16,18 | Design for Resiliency | -
-10 | 10/23,25 | Midterm Exam | -
+5 | 09/18,20 | Selecting a Service Platform | Chapter 4
+6 | 09/25,27 | Application Architectures | Chapter 5
+7 | 10/02,04 | Design Patterns for Scaling | Chapter 6
+8 | 10/09,11 | Design for Resiliency | -
+9 | 10/16,18 | Graduate Project 1 | -
+10 | 10/23,25 | Mini Project 1 | -
 11 | 10/30,11/01 | Mini Project 1 | -
 12 | 11/06,08 | Mini Project 2 | -
 13 | 11/13,15 | Mini Project 2 | -
 14 | 11/20 | Mini Project 3 | -
 14 | 11/22 | NA | Thanksgiving Break - No Class
-15 | 11/27,29 | Final Project | -
+15 | 11/27,29 | Final Project Work | -
 16 | 12/04-09 | Final Project Presentation - TBA
 
 ### Course Outcomes
