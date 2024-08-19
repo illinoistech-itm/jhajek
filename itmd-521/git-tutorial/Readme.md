@@ -307,29 +307,6 @@ ls
 # What do you see?
 ```
 
-#### Opening your Repository to work with
-
-Git is a commandline tool and it's many commands and features are replicated within the development IDEs such as VS Code, Atom, or Sublime editors. In our case we will be using VS Code. Our first step is to open the repository you just cloned to your system.
-
-Once VS Code is open, click the `File` option and select `Open Folder`. Git doesn't see files, that is a concession to humans, who understand files, Git only sees `repositories` so to work with Git we always need to open a folder. In this case I will navigate to `~/Documents/itmd-521/sample-student` and click the `Select Folder` button. Remember, we are not opening individual files--we are opening a repository.
-
-VS Code will open your just cloned repository, you will see an empty `Readme.md` file in the file manager (upper left) lets select this and begin to edit this file. The tutorial assignment requires you to edit your `Readme.md` to make a markdown document. This Readme.md will contain these elements written in Markdown. This is the [Markdown cheat sheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
-
-The document will include:
-
-* h1 with your name
-  * a picture of you
-  * a picture of something that describes you
-* h2 Where are you from?
-  * Tell us where you are from
-* h2 IT Interests
-  * Tell us what you IT Interests and or skills are
-* h2 Something Interesting About You
-  * Tell us something interesting about you
-* What was your first computing device?
-
-Here is a completed sample: [https://github.com/illinoistech-itm/jhajek/blob/master/README.md](https://github.com/illinoistech-itm/jhajek/blob/master/README.md "Professor's GitHub Repo Sample"). **Note**, I will have more folders then you because I have sample code for more classes.
-
 #### Git commands
 
 Git has a concept of code repositories. Changes to code are stored only as the changes plus the originals. Each time code is committed, you are not storing a new version of a file, but only the deltas from each change. Git can reconstruct the original file by applying all the changes to present you with the current file. After a `git clone` command you now have a local copy of your remote repo. The repository located on GitHub is called your **remote repo**.
