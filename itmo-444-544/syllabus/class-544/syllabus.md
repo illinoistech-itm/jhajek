@@ -111,9 +111,13 @@ Mobile apps available
 * [Android Canvas](https://play.google.com/store/apps/details?id=com.instructure.candroid&hl=en_US "Android Canvas")
 * [iOS Canvas](https://apps.apple.com/us/app/canvas-student/id480883488 "iOS Canvas")
 
+### Zoom Stream
+
+Courses will be streamed by Zoom (link available in the Canvas course section) and available on demand under the **Panopto Video Link** in Canvas.
+
 ### Assignments
 
-Project/Examination: There will be 6 chapter review questions, 6 graded labs, 3 Mini Projects, 1 Final project, and 1 Mid-term.
+Project/Examination: Based on the six chapters covered, there will be a graduate design project, 6 labs, 3 Mini Coding Projects, 1 Final project with presentation during the final exam period.
 
 All Work will be pushed to a GitHub private repository that you will be given access to by the professor.
 
@@ -132,11 +136,10 @@ The final grade for the class will be calculated as follows:
 ----------------------- ------- ----------------
   Review Questions (6):   15%        120
                Lab (6):   15%        120
-          Midterm Exam:   13%        100
                    MP1:   13%        100
                    MP2:   13%        100
                    MP3:   13%        100
-         Final Project:   13%        100
+         Final Project:   36%        200
             Attendance:    5%         30
 ----------------------- ------- ----------------
 
@@ -150,7 +153,7 @@ All work you submit in this course must be your own.
 
 ### Plagiarism 
 
-You must fully attribute all material directly quoted in papers and you must document all sources used in the preparation of the paper using complete, APA-style bibliographic entries. Including directly quoted material in an assignment without attribution or a bibliography entry for the source of the material is always plagiarism and will always be treated as such by me. No more than thirty-three percent of material included in any paper may be direct quotes. Students have submitted plagiarized material in seven of the last eight times I have taught this course and I will not tolerate it. If you submit plagiarized material you WILL receive a grade of ZERO for the assignment or exam question, an Academic Honesty Violation Report will be filed, and it may result in your expulsion from the course with a failing grade as per the IIT and ITM academic honesty policies. There is no excuse for not understanding this policy and if you do not understand it please let me know and I will be happy to discuss it with you until you do.
+You must fully attribute all code you use and find. This is required by citation rules (such as Stack Overflow) and is good practice.  All code must be your own.
 
 ### Collaboration 
 
