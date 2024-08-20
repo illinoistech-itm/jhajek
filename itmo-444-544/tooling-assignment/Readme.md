@@ -65,13 +65,13 @@ For Windows 10 or 11, place a screenshot of the version command output for: ```c
 For MacOS using Homebrew:
 
 ```bash
-brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask ; brew install virtualbox ; brew install --cask vagrant ; brew install packer
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask ; brew install virtualbox ; brew install --cask vagrant ; brew install packer
 ```
 
 For M1 Macs you will run the same as above but without the VirtualBox install:
 
 ```bash
-brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask vagrant ; brew install packer
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask vagrant ; brew install packer
 ```
 
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
@@ -117,12 +117,12 @@ We will be installing an text editor or and IDE for all of our coding and config
 
 * [VSCode from Microsoft](https://code.visualstudio.com/ "VSCode install")
   * Cross platform and has direct shell integration
-* [atom.io](https://atom.io/ "Atom.io install")
-  * Built by GitHub for Git integration
+* [Zed](https://zed.dev/download "Zed editor")
+  * Built by by former Atom team (no windows currently)
 * [Sublime Text](http://www.sublimetext.com/ "Submlime Text installer site")
   * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose.  Available for all platforms.
-* [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")
-  * Cross Platform development tool from Adobe
+* [Theia](https://theia-ide.org/ "Theia Editor")
+  * Cross Platform development tool Eclipse Foundation
 
 Take a screenshot from the ABOUT tab in your IDE to show the installed version
 
@@ -186,20 +186,6 @@ Packer is another automation tool from HashiCorp.  Whereas Vagrant was for runni
 Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site").  If you have a version > 1.6.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  
 
 Take a screenshot of the output of the command: ```packer --version```
-
-### Oh-My-Git Tutorial
-
-Download the proper [Oh My Git! tutorial](https://ohmygit.org/ "webpage for oh my git") the program runs as a self contained executable on your system (Windows Mac or Linux).
-
-Complete the tutorial and take screenshots of the completed sections (may need to take a few shots as the there are many sections).
-
-This Git tutorial is a good refresher for those who need it and a great introduction for those new to Version Control and want to learn it. You can leave the last section out, **Sandbox**, it is an open area for you to experiment in and no real way to "complete it."
-
-### Adding Screenshots
-
-Using the `Readme.md` template file provided under the Assignment Tab > Week-01 in Blackboard, add your screenshots to the `Readme.md` and commit and push the document to a folder named: `itmo-540` > `tooling-assignment` inyour private GitHub repo
-
-Use the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
 
 ### Final deliverable to Blackboard
 
