@@ -72,8 +72,8 @@ At the outcome of this course, students will have a structured overview of distr
 Students completing this course will be able to:
   
 * Describe the task of a Data Engineer
-* Describe the life cycle and accumulation of data
-* Deploy a remote Spark Application to a Spark cluster
+* Explain the Data lifecycle
+* Deploy a Spark Application to a Spark cluster
 * Demonstrate loading data from disparate data sources and discuss advantages
 * Demonstrate and Discuss the benefits of enterprise Big Data tools
 * Demonstrate the creation of Data Pipelining
@@ -120,7 +120,7 @@ Mobile apps available
 
 ### Assignments
 
-Lab Assignment: There will be ~~10~~ 13 lab assignments
+Lab Assignment: There will be 13 lab assignments
 Final Project: The will be a final project detailed and presented during the final exam period
 
 ### Grading
@@ -139,7 +139,6 @@ The final grade for the class will be calculated as follows:
 Name | Grade | Total Points
 ------------------|----------|-----------
 Lab Assignments | 50% | 130 (10pts each x13)
-~~Midterm Exam~~ | ~~30%~~ | ~~100 points~~
 Final Project | 38% | 100 points
 Attendance | 12% | 30 points
 
@@ -153,13 +152,13 @@ All work you submit in this course must be your own. That includes code and code
 
 ### Plagiarism
 
-You must fully attribute all material directly quoted in papers and you must document all sources used in the preparation of the paper using complete, APA-style bibliographic entries. Including directly quoted material in an assignment without attribution or a bibliography entry for the source of the material is always plagiarism and will always be treated as such by me. No more than thirty-three percent of material included in any paper may be direct quotes. Students have submitted plagiarized material in seven of the last eight times I have taught this course and I will not tolerate it. If you submit plagiarized material you WILL receive a grade of ZERO for the assignment or exam question, an Academic Honesty Violation Report will be filed, and it may result in your expulsion from the course with a failing grade as per the IIT and ITM academic honesty policies. There is no excuse for not understanding this policy and if you do not understand it please let me know and I will be happy to discuss it with you until you do
+You must fully attribute all material, even when using code. Citing your sources is considered good practice and required even with source code. Using code-snippets from Stack Overflow requires a notice of the MIT license. Even proper usage of ChatGPT requires attribution and will generate an attribution link.
 
 Dealing with code -- you need to respect opensource licenses and in the absence of a clear license be careful cutting and pasting code without attributing source. A good metric would be to add a comment in your code with a link to the original source to protect yourself.
 
 ### Collaboration
 
-We will use Discord for all class questions and disucssion
+We will use Discord for all class questions and discussion
 
 ### Our Contract
 
