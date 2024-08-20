@@ -37,7 +37,7 @@ If you have a Mac - install brew and provide a screenshot of the output of the c
 
 ### Windows 10 and 11
 
-The name of the third party Windows Package manager is Chocolatey.  The download is located at [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page").
+The name of the third party Windows Package manager is Chocolatey. The download is located at [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page").  Windows 11 now has `winget` directly integrated to the OS.
 
 For Windows place a screenshot of the version command output for: ```choco --version```.
 
@@ -96,10 +96,12 @@ We will be installing an text editor or and IDE for all of our coding and config
 
 * [VSCode from Microsoft](https://code.visualstudio.com/ "VSCode install")
   * Cross platform and has direct shell integration
+* [Zed](https://zed.dev/download "Zed editor")
+  * Built by by former Atom team (no windows currently)
 * [Sublime Text](http://www.sublimetext.com/ "Submlime Text installer site")
   * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose.  Available for all platforms.
-* [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")
-  * Cross Platform development tool from Adobe
+* [Theia](https://theia-ide.org/ "Theia Editor")
+  * Cross Platform development tool Eclipse Foundation
 
 Take a screenshot from the ABOUT tab in your IDE to show the installed version
 
@@ -152,71 +154,6 @@ Packer is another automation tool from HashiCorp.  Whereas Vagrant was for runni
 Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site").  If you have a version > 1.6.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  
 
 Take a screenshot of the output of the command: ```packer --version```
-
-## Tooling Assignment Part II
-
-Part II will explore some version control exercises and using getting familiar with Markdown
-
-## Create and Push your Readme.md
-
-In this step you will clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it) to your local system.  In the root of this repo you will create a file named `Readme.md` and a folder named **images**. This `Readme.md` will contain the elements below written in Markdown. This is a good [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
-
-The document will include:
-
-* h1 with your name
-  * a picture of you
-  * a picture of something that describes you
-* h2 Where are you from?
-  * Tell us where you are from
-* h2 What was your first computing device?
-* h2 IT Interests
-  * Tell us what you IT Interests and or skills are
-* h2 Something Interesting About You
-  * Tell us something interesting about you
-
-Push this to your GitHub private account repo.
-
-Here is my own completed sample: [https://github.com/illinoistech-itm/jhajek/blob/master/README.md](https://github.com/illinoistech-itm/jhajek/blob/master/README.md "Professor's GitHub Repo Sample").  **Note**, I will have more folders then you because I have sample code for more classes.  If you have previously completed this assignment, no need to do anything unless you want to update the information.
-
-### Create a .gitignore file
-
-Every Git repository needs a `.gitignore` file.  This file tells Git to ignore certain files.  These are files that are too large, binary format, or things like security keys and passwords, that we don't want to be committing to our Git Repos.
-
-We will create a file named: `.gitignore` and place the following values into it and add, commit, and push the file to your private repo.
-
-```bash
-#packer
-*.vdi
-*.box
-.vagrant/
-*console.log
-packer-cache/
-packer_cache/
-*.pem
-*~$
-*.ova
-output*/
-vagrant.d/
-*.iso
-variables.pkr.hcl
-*.priv
-variables.json
-.DS_Store
-id_rsa
-id_rsa*
-id_rsa.pub
-.Vagrantfile*
-Vagrantfile~
-config.default.yml
-```
-
-### Adding Screenshots
-
-On your local system, clone the instructors sample code repo containing this assignment.  Issue the command: `git clone https://github.com/illinoistech-itm/jhajek.git` on your local system command line. **Note** - if you already have this repo clone just issue: `git pull` to update to the latest assignment. From your local system's file manager copy the document from the cloned repo: jhajek > itmd-521 > tooling-assignment > Readme.md and place the copied document into your own private repo on the local system under a root folder named: **itmd-521**.  In that itmd-521 directory, add an directory named: `images` and place all of your screenshots into that directory.
-
-Open your private Repo using your IDE and now that we have worked with Markdown, I want you to go back, using the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet") and add image links under each of the screenshot statements in the assignment above.
-
-Once complete, add, commit, and push your tooling assignment Readme.md to your GitHub Repo
 
 ### Final deliverable to Blackboard
 
