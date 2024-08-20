@@ -6,19 +6,19 @@
 $STAMP=Get-Date(Get-Date).ToUniversalTime()-uformat "%m%d%Y-%H%M%S"
 
 If (Test-Path "../../output/pdf/itmo-544-cloud-computing-technologies-*"){
-  Remove-Item ../../output/pdf/*.pdf -Verbose
+  Remove-Item ../../output/pdf/itmo-544-cloud-computing-technologies-*.pdf -Verbose
 }Else{
   Write-Output "../../output/pdf/itmo-544-cloud-computing-technologies-*.pdf - File does not exist."
 }
 
 If (Test-Path "../../output/docx/itmo-544-cloud-computing-technologies-*"){
-  Remove-Item ../../output/docx/*.docx -Verbose
+  Remove-Item ../../output/docx/itmo-544-cloud-computing-technologies-*.docx -Verbose
 }Else{
   Write-Output "../../output/docx/itmo-544-cloud-computing-technologies-*.docx - File does not exist."
 }
 
 If (Test-Path "../../output/odt/itmo-544-cloud-computing-technologies-*"){
-  Remove-Item ../../output/odt/*.odt -Verbose
+  Remove-Item ../../output/odt/itmo-544-cloud-computing-technologies-*.odt -Verbose
 }Else{
   Write-Output "../../output/odt/itmo-544-cloud-computing-technologies-*.odt - File does not exist."
 }

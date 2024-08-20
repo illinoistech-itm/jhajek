@@ -86,7 +86,13 @@ Each successful student will be able to demonstrate building and running cloud-b
 
 ### Required Textbook
 
-No required textbook
+![*The Practice of Cloud System Administration*](./images/book.png "The Practice of Cloud System Administration")
+
+* ASIN: B00N7N2CRQ
+* Publisher: Addison-Wesley Professional
+* Publication: date September 1, 2014
+* ISBN: 978-0321943187
+* Authors: Limoncelli Thomas A. , Chalup Strata R. , Hogan Christina J. 
 
 You will be using an existing or creating an account at [Amazon Web Services](https://aws.amazon.com/ "AWS Web services URL"). This will require a Credit Card for registration purposes -- but there won't be any extra cost.
 
