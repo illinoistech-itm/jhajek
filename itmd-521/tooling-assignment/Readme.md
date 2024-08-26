@@ -56,7 +56,7 @@ For M1 Macs you will run the same as above but without the  VirtualBox install:
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro
   * [https://www.parallels.com/products/desktop/pro/](https://www.parallels.com/products/desktop/pro/ "Parallels Pro Edition")
   * The standard and education edition doesn't contain the commandline interface needed for automation
-  * [50% discount link](https://www.parallels.com/landingpage/pd/education/ "Parallels Pro discuount")
+  * [30% discount link](https://www.parallels.com/landingpage/pd/education/ "Parallels Pro discount")
 * Once Vagrant and Parallels Pro Edition is installed you need to also install the Parallels SDK from the Download Tab in your parallels.com account
   * From the Terminal run the command: `vagrant plugin install vagrant-parallels`
     * This will add the needed plugin to allow you to use Parallels from Vagrant
@@ -151,7 +151,7 @@ Take a screenshot of the output of the command: ```vagrant --version```
 
 Packer is another automation tool from HashiCorp.  Whereas Vagrant was for running virtual machines, Packer's job is to build virtual machine images from a template language.  This tool allows fast infrastructure deployment, multi-provider portability, improved stability, and greater testability.
 
-Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site").  If you have a version > 1.6.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  
+Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site"). If you have a version > 1.6.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  
 
 Take a screenshot of the output of the command: ```packer --version```
 
