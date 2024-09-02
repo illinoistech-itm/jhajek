@@ -1,6 +1,6 @@
 # Lab 01
 
-For ITMD 521, Big Data Technologies, week-04, lab-01, chapter-02
+For ITMD 521, Big Data Technologies, week-03, lab-01, chapter-02
 
 ## Objectives
 
