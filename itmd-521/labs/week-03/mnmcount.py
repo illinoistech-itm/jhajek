@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     count_mnm_df = (mnm_df.select("State", "Color","Count").groupBy("State","Color").agg(count("Count").alias("Total")).orderBy("Total", ascending=False))
 
-    count_mnm_df.show(n=60, truncated=False)
+    count_mnm_df.show(n=60, truncate=False)
     print("Total Rows = %d" % (count_mnm_df.count()))
 
     ca_count_mnm_df = (mnm_df.select("State","Color","Count").where(mnm_df.State == "CA").agg(count("Count").alias("Total")).orderBy("Total", ascending=False))
