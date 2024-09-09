@@ -10,31 +10,23 @@ This is a tutorial for installing Git and configuring GitHub on Windows 10/11 an
 
 Git can be installed on any operating system via an installer, but I recommend to install it via a third party package manger.
 
-### Windows 10 and 11 - Git Installation via Chocolatey
+### Windows 10 and 11 - Git Installation via Winget
 
-[The Chocolatey Windows 10 package manager](https://chocolatey.org "chocolatey package manager install page") allows for scripted installs of applications.  This tool is convenient for installing common applications such as Firefox, Android Studio, Java JDK, VS code, VirtualBox and other commonly installed tools.  You need to enable PowerShell scripts, which is shown via [the install instructions](https://chocolatey.org/install "Chocolatey install instructions").  Using a package manager allows for having scripted installations as well as a function to update software in place from the command line.
+**Note if you have these tools already installed you can skip this section!**
 
-From PowerShell (not CMD!) with Administrative privileges, run this command to install chocolatey:
-
-```PowerShell
-Set-ExecutionPolicy Bypass -Scope Process -Force; `
-[System.Net.ServicePointManager]::SecurityProtocol `
-= [System.Net.ServicePointManager]::SecurityProtocol `
--bor 3072; iex ((New-Object `
-System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-```
-
-Upon finishing this command you will need to close PowerShell and reopen it with Administrative privileges again. Once you have this done you can use the ```choco``` command to install Git amongst other software.
+[The Windows 10 and 11 built in package manager- Winget](https://learn.microsoft.com/en-us/windows/package-manager/ "The Windows 10 and 11 built in package manager- Winget") allows for scripted installs of applications.  This tool is convenient for installing common applications such as Firefox, Android Studio, Java JDK, VS code, VirtualBox and other commonly installed tools.
 
 ```PowerShell
-# from an admin console
-choco install git vscode powershell-core
-# You can also install VirtualBox via choco too
+winget install Microsoft.VisualStudioCode --source winget
+winget install Microsoft.Powershell --source winget
+winget install Git.git --source winget
 ```
 
-Once this is successful make sure to close the PowerShell console that was launched with Administrator privileges. Open PowerShell console, this time version 7--with the dark blue icon, not the light blue icon. Type the command: `git --version`, if the installation went well you will see version information printed to PowerShell similar to this: `git version 2.20.1.windows.1`
+Open PowerShell console, this time version 7--with the dark blue icon, not the light blue icon. Type the command: `git --version`, if the installation went well you will see version information printed to PowerShell similar to this: `git version 2.20.1.windows.1`
 
 ### MacOS - Git Installation via Homebrew
+
+**Note if you have these tools already installed you can skip this section!**
 
 [Homebrew](https://brew.sh/ "macOS Homebrew webpage") is a third party package manager available for MacOS. Both Intel Macs and M1 Macs are supported by Homebrew. This functions as a much needed package manager and a way to install needed packages in an automated fashion. Using a package manager allows for having scripted installations as well as a function to update software in place from the command line.
 
