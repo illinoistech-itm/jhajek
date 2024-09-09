@@ -14,7 +14,7 @@ Git can be installed on any operating system via an installer, but I recommend t
 
 **Note if you have these tools already installed you can skip this section!**
 
-[The Windows 10 and 11 built in package manager- Winget](https://learn.microsoft.com/en-us/windows/package-manager/ "The Windows 10 and 11 built in package manager- Winget") allows for scripted installs of applications.  This tool is convenient for installing common applications such as Firefox, Android Studio, Java JDK, VS code, VirtualBox and other commonly installed tools.
+[The Windows 10 and 11 built in package manager- Winget](https://learn.microsoft.com/en-us/windows/package-manager/ "The Windows 10 and 11 built in package manager- Winget") allows for scripted installs of applications.  This tool is convenient for installing common applications such as Firefox, Android Studio, Java JDK, VS code, VirtualBox and other commonly installed tools. To do this open up `PowerShell`.
 
 ```PowerShell
 winget install Microsoft.VisualStudioCode --source winget
