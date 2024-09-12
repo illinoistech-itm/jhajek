@@ -22,7 +22,7 @@ For this assignment you can make these assumptions
 
 ## Deliverable
 
-Create a folder named: week-05 under your class folder in the provided private repo. In the folder there will be three shell scripts:
+Create a folder named: **module-04** under your class folder in the provided private repo. In the folder there will be three shell scripts:
 
 * A script named: `create-env.sh`
   * This script will create a ELB
@@ -76,4 +76,4 @@ Using AWS CLI v2 filters filter the instance you created and destroy it.  A sing
 
 ## Final Deliverable
 
-Submit the URL to the week-05 folder to Blackboard. Your week-05 repo will contain all three shell scripts but NOT the **arguments.txt** file (add arguments.txt to your `.gitignore`)
+Submit the URL to the module-04 folder. Your module-04 repo will contain all three shell scripts but NOT the **arguments.txt** file (add arguments.txt to your `.gitignore`).
