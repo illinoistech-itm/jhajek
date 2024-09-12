@@ -10,17 +10,7 @@
 
 At the conclusion of this lab, the user will have explored and experienced creating and managing public cloud service accounts. They will have had the exposure of securing those accounts and of having launched basic public cloud infrastructure.
 
-### Part 1
-
-* Sign up for a full account at [aws.amazon.com](https://aws.amazon.com/ "AWS signup")
-  * Warning - this requires a credit card and you to manage this
-  * Configure two factor authentication
-* Create a non-root user account
-* Take screenshot of the user account ID information after logged in and add it to this document
-
-#### Part 1 Screenshot Here
-
-### Part 2
+### Using the AWS Console
 
 Using the AWS Web Console:
 
