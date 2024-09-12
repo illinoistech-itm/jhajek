@@ -1,10 +1,10 @@
-# Week-02 Lab Assignment
+# Module-03 Lab Assignment
 
 ## Objectives
 
 * Discuss and explore creating and managing public cloud service accounts securely
 * Become familiar with Industry Standard Cloud Computing Console
-* Describe and explore the process to launch public cloud infrastructure resouces
+* Describe and explore the process to launch public cloud infrastructure resources
 
 ## Outcomes
 
@@ -45,4 +45,4 @@ Add screenshot here
 
 ### Deliverable
 
-Create a folder named: `week-03` -> `lab` under the itmo-444 (or 544) folder in the private repo provided to you. Use this markdown template and provide the required screenshots below the items. Submit to Blackboard just the URL to the markdown document.
+Create a folder named: `module-03` under the itmo-444 (or 544) folder in the private repo provided to you. Use this markdown template and provide the required screenshots below the items. Submit just the URL to the markdown document.
