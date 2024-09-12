@@ -1,4 +1,4 @@
-# Week-04 Lab
+# Module 04
 
 ## Objectives
 
@@ -20,9 +20,6 @@ Use the `ubuntu/jammy64` Vagrant box your created and configured your aws-cli on
   * For example: `jrh-444`
   * Use the command: `sudo hostnamectl set-hostname jrh-444`
 * Add screenshot to this document
-* Install the `aws-cli` tools
-  * Take a screenshot of the command `aws --version`
-  * Place screenshot here
 
 ## Part 2
 
