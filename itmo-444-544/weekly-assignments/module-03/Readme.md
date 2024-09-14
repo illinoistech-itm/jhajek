@@ -23,15 +23,15 @@ Using the AWS Web Console:
 
 #### Part 2 ScreenShot One
 
-Add screenshot here
+Add screenshot here of AWS Console Launched instance
 
 #### Part 2 ScreenShot Two
 
-Add screenshot here
+Add screenshot here of SSH into the instance and installing Nginx
 
 #### Part 2 ScreenShot Three
 
-Add screenshot here
+Add screenshot here of the the EC2 instance IP address displaying the Nginx, "Hello World."
 
 ### Deliverable
 

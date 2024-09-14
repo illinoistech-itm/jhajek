@@ -1,79 +1,65 @@
-# Module-04 Lab
+# Module 04
 
 ## Objectives
 
-* Create and Deploy a load-balancer with backend cloud application
-* Explore the cloud concept of target groups
-* Implement a dynamic command positional parameter solution in your shell scripts
-* Create scripts to dynamically launch, install, and destroy your environment
-* Understand how to use AWS CLI Filters for querying ephemeral instance data
+* Demonstrate the creation of a managed shell script for the deployment of cloud resources
+* Demonstrate the termination of cloud resources in an automated fashion
+* Demonstrate the use of positional parameters for dynamic variable creation in a shell script
 
-## Outcomes
+## Links to Use
 
-At the conclusion of this Lab you will have successfully deployed and destroyed your cloud application via the AWS CLI and using positional parameters in a shell script. You will have configured your application to use AWS CLI Filters and Queries to retrieve dynamic data about ephemeral instances.
+* [AWS CLI Reference](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html "webpage aws cli sdk")
+* [How to install Wordpress](https://developer.wordpress.org/advanced-administration/before-install/howto-install/ "webpage for installing Wordpress")
+* [Install aws-cli v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html "webpage how to install aws-cli v2")
 
-## Assumptions
+## Part 1
 
-For this assignment you can make these assumptions
+Use the `ubuntu/jammy64` Vagrant box your created and configured your aws-cli on.
 
-* We will all be using `us-east-2` as our default region - update this if needed
-* That the access keys are already created and not needed in this script
-* That the security-group has been already created and all of the proper ports are open
+* Change the hostname to a hostname that includes: your initials and the course.
+  * For example: `jrh-444`
+  * Use the command: `sudo hostnamectl set-hostname jrh-444`
+* Add screenshot to this document
 
-## Deliverable
+## Part 2
 
-Create a folder named: **module-04** under your class folder in the provided private repo. In the folder there will be three shell scripts:
+### Steps to take
 
-* A script named: `create-env.sh`
-  * This script will create a ELB
-  * All needed elements to attach an EC2 instance to a target group
-  * an EC2 instance
-* A script named: `install-env.sh` will install the Nginx webserver
-* A script named: `destroy-env.sh`
-  * This script will terminate **all** infrastructure you have created
+From the AWS Cli on your Vagrant Box
 
-### create-env.sh
+* Pass all variables via the commandline and access them via positional parameters
+  * Create and add a new key-pair
+  * Create a security group and open remote ports (22 and 80)
+* Create an EC2 instance 
+  * Create a `user-data` script that installs an Nginx webserver and MySQL server
+    * You will need to manually configure Wordpress
+* Create a script that will terminate all your launched resources (don't leave this running longer than it has to, as it is not very secure!)
 
-This is shell script will take commandline input dynamically via positional parameters ($1 $2 $3 and so on) via a file named `arguments.txt`. For a refresh on positional parameters [see my text book](https://github.com/jhajek/Linux-text-book-part-1/releases/tag/2021-09-29 "Link to Linux Textbook") starting on page ~179 PDF.
+Arguments.txt file order of variables:
 
-You can access positional parameters after `$9` by using `${10}`. You can hard code the user-data flag to be the value: `file://install-env.sh`
+* $1 image-id
+* $2 instance-type
+* $3 key-name
+* $4 security-group-ids
+* $5 count (3)
+* $6 path to user-data file
 
-Run your script in this fashion:
+Use this command to pass the positional parameters into the script. Order is vitally important. `./create-env.sh $(< arguments.txt)`
 
-```./create-env.sh $(<arguments.txt)```
+## Part 3
 
-### arguments.txt
+* Create a Wordpress blog post using the content of the Readme.md (where you introduced yourself). Take a screenshot of a this blog post in Wordpress, properly formatted and showing the URL.
+  * Place screenshot here
 
-This is where you will pass the arguments (space delimited) as follows (order is **very** important)
+## Deliverables
 
-* image-id
-* instance-type
-* key-name
-* security-group-ids
-* count
-* user-data file name
-* availability-zone
-* elb name
-* target group name
+Create a folder named: `week-04` under your class folder in the provided private repo. In the folder there will be three shell scripts:
 
-These values we will dynamically query for
+* `create-env.sh`
+  * This script will create an EC2 instance that installs an Apache Web Server on launch
+  * A second shell script named: `install-env.sh` will install the Apache 2 webserver
+* `destroy-env.sh`
+  * This script will terminate all infrastructure you have created
+* I will test this script by using my own account information
 
-* subnet-id (1)
-* subnet-id (2)
-* vpc-id
-
-I will grade your logic by running it with my account configuration information, no hard-coded values.
-
-### install-env.sh
-
-This application we will install Nginx and use the default index.html screen for our purposes.
-
-### destroy-env.sh
-
-Using AWS CLI v2 filters filter the instance you created and destroy it.  A single running of `destroy-env.sh` will terminate all of the resources that your `install-env.sh` script launched.
-
-[AWS Filters](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html "URL for AWS Filters")
-
-## Final Deliverable
-
-Submit the URL to the module-04 folder. Your module-04 repo will contain all three shell scripts but NOT the **arguments.txt** file (add arguments.txt to your `.gitignore`).
+Submit the URL to the week-04 folder to Blackboard
