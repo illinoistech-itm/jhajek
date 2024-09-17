@@ -2,7 +2,7 @@
 
 ## Objectives
 
-- Demonstrate the knowledge of constructing end-to-end DataFrame and Dataset Spark applications
+- Demonstrate the knowledge of constructing end-to-end DataFrame based applications
 - Demonstrate working code and knowledge of statistics
 - Understand and utilize Pyspark API Documentation
 
@@ -19,8 +19,8 @@
   - Provide code to answer the questions below each header
   - You can provide a single "read" of the source code at the top of the file into a DataFrame -- each question does not require a read()
   - Run the source code via Spark-Submit on your Vagrant Box
-  - Once you have the answer to the question, go back and add a source code comment with the answer under the question
-  - Sample code is available in the book LearningSparkV2 sample code
+  - ~~Once you have the answer to the question, go back and add a source code comment with the answer under the questio~~
+    - Sample code is available in the book LearningSparkV2 sample code
     - `~/LearningSparkV2/databricks-datasets/learning-spark-v2/sf-fire-calls.csv`
   - Like the MnMcount code -- take the dataset input as a commandline variable
     - Do not hardcode the dataset
