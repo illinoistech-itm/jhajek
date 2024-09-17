@@ -27,7 +27,7 @@ echo $SUBNET2C
 aws elbv2 create-load-balancer \
     --name ${8} \
     --subnets $SUBNET2A $SUBNET2B $SUBNET2C \
-    -- tags Key='name',Value=${13} 
+    --tags Key='name',Value=${13} 
 
 
 
