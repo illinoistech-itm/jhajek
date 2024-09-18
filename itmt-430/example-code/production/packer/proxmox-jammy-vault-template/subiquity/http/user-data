@@ -47,7 +47,7 @@ autoinstall:
           dhcp4: true
           dhcp6: false
   ssh:
-    allow-pw: true
+    allow-pw: false
     install-server: true
     authorized-keys:
       - 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGTi1ciil8RrWQj1Vez1CLkaB4unBLUar/wPTg3wnI3Q palad@framework'
