@@ -8,7 +8,7 @@ ELBARN=$(aws elbv2 describe-load-balancer --output=text --query='LoadBalancers[*
 
 #Delete loadbalancer
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/delete-load-balancer.html
-aws elbv2 delete-load-balancers --load-balancer-arn $ELBARN
+aws elbv2 delete-load-balancer --load-balancer-arn $ELBARN
 
 # First Describe EC2 instances
 # https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html
