@@ -4,7 +4,7 @@
 # SUBNET2B=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=availability-zone,Values=${12}")
 # First Query to get the ELB name using the --query and --filters
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-listeners.html
-ELBARN=$(aws elbv2 describe-load-balancers --output=text --query='LoadBalancers[*].LoadBalancerARN')
+ELBARN=$(aws elbv2 describe-load-balancer --output=text --query='LoadBalancers[*].LoadBalancerARN')
 
 #Delete loadbalancer
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/delete-load-balancer.html
