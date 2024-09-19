@@ -28,8 +28,9 @@ echo $SUBNET2C
 aws elbv2 create-load-balancer \
     --name ${8} \
     --subnets $SUBNET2A $SUBNET2B $SUBNET2C \
-    --tags Key='name',Value=${13} 
-
+    --tags Key='name',Value=${13} \ 
+    --output table
+    
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-listeners.html
 ELBARN=$(aws elbv2 describe-load-balancers --output=text --query='LoadBalancers[*].LoadBalancerArn')
 echo "*****************************************************************"
