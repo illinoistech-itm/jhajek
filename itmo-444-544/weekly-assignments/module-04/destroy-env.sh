@@ -8,8 +8,8 @@ EC2IDS=$(aws ec2 describe-instances \
 
 # Now Terminate all EC2 instances
 # https://docs.aws.amazon.com/cli/latest/reference/ec2/terminate-instances.html
- aws ec2 terminate-instances --instance-ids $EC2IDS
- aws ec2 wait instance-terminated --instance-ids $EC2IDS
+aws ec2 terminate-instances --instance-ids $EC2IDS
+aws ec2 wait instance-terminated --instance-ids $EC2IDS
 echo "Instances are terminated!"
 
 #Dynamically detect your infrastrcuture and destroy it/terminate it
@@ -23,4 +23,6 @@ echo "*****************************************************************"
 #Delete loadbalancer
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/delete-load-balancer.html
 aws elbv2 delete-load-balancer --load-balancer-arn $ELBARN
+aws elbv2 wait load-balancers-deleted --load-balancer-arns $ELBARN
+echo "Load balancers deleted!"
 
