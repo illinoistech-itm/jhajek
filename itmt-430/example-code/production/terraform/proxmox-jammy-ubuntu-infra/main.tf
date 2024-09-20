@@ -77,7 +77,7 @@ resource "proxmox_vm_qemu" "vanilla-server" {
     #macaddr = "04:9F:15:00:00:00" 
   }
 
-  disk {
+  disks {
     virtio {
       virtio0 {
         disk {
