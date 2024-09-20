@@ -23,7 +23,7 @@ resource "proxmox_vm_qemu" "vault" {
   memory          = var.memory
   cores           = var.cores
   sockets         = var.sockets
-  scsihw          = "lsi"
+  scsihw          = "virtio-scsi-single"
   bootdisk        = "virtio0"
   boot            = "cdn"
   agent           = 1
@@ -48,8 +48,8 @@ resource "proxmox_vm_qemu" "vault" {
   }
 
   disks {
-    scsi {
-      scsi0 {
+    virtio {
+      virtio0 {
         disk {
         storage = random_shuffle.datadisk.result[0]
         size    = var.disk_size
