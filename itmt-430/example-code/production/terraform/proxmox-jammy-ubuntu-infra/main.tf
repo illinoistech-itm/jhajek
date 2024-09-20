@@ -78,8 +78,8 @@ resource "proxmox_vm_qemu" "vanilla-server" {
   }
 
   disks {
-    virtio {
-      virtio0 {
+    scsi {
+      scis0 {
         disk {
         storage = random_shuffle.datadisk.result[0]
         size    = var.disk_size
