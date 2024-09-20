@@ -33,9 +33,8 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
   disks {
     disk_size    = "${var.DISKSIZE}"
     storage_pool = "${var.STORAGEPOOL}"
-    # storage_pool_type is deprecated and should be omitted, it will be removed in a later version of the proxmox plugin
-    # storage_pool_type = "lvm"
-    type = "virtio"
+    # io thread option requires virtio-scsi-single controller
+    type = "virtio-scsi-single"
     io_thread = true
   }
   http_directory   = "subiquity/http"
