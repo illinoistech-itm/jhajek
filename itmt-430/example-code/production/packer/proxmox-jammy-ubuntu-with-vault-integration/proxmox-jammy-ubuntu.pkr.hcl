@@ -71,7 +71,7 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
   cloud_init_storage_pool = "${var.STORAGEPOOL}"
   ssh_password            = "${local.SSHPW}"
   ssh_username            = "vagrant"
-  ssh_timeout             = "28m"
+  ssh_timeout             = "22m"
   template_description    = "A Packer template for Ubuntu Jammy"
   vm_name                 = "${var.VMNAME}"
   tags                    = "${var.TAGS}"
