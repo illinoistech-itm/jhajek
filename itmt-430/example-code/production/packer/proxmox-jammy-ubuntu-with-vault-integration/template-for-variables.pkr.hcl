@@ -50,6 +50,12 @@ variable "VMNAME" {
   default = "teamXX-template"
 }
 
+variable "TAGS" {
+  # Place your initials first then team name and any other tag seperated via ;
+  type = string
+  default  = "initials;team"
+}
+
 variable "iso_checksum" {
   type = string
   default =  "file:https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"

@@ -45,6 +45,9 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
   iso_urls         = "${var.iso_urls}"
   iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
+  variable "TAGS" {
+  default  = "creator;jrh,type;vault"
+}
 
   network_adapters {
     bridge = "vmbr0"
