@@ -24,8 +24,9 @@ resource "proxmox_vm_qemu" "vault" {
   cores           = var.cores
   sockets         = var.sockets
   scsihw          = "virtio-scsi-single"
-  bootdisk        = "virtio0"
-  boot            = "cdn"
+  #bootdisk        = "virtio0"
+  #boot            = "cdn"
+  boot            = "order=virtio"
   agent           = 1
 
   ipconfig0 = "ip=dhcp"
