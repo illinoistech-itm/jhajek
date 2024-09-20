@@ -48,6 +48,11 @@ variable "NUMBEROFCORES" {
   default = "1"
 }
 
+variable "TAGS" {
+  type = string
+  default  = "creator;jrh,type;vault"
+}
+
 # This is the name of the Virtual Machine Template you want to create
 variable "VMNAME" {
   type    = string

@@ -75,6 +75,7 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
   ssh_timeout              = "28m"
   template_description     = "A Packer template for Ubuntu Jammy"
   vm_name                  = "${var.VMNAME}"
+  tags                     = "${var.TAGS}"
 }
 
 build {

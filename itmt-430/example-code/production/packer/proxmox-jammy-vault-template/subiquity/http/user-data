@@ -47,7 +47,7 @@ autoinstall:
           dhcp4: true
           dhcp6: false
   ssh:
-    allow-pw: false
+    allow-pw: true
     install-server: true
     authorized-keys:
       - 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGTi1ciil8RrWQj1Vez1CLkaB4unBLUar/wPTg3wnI3Q palad@framework'
@@ -56,7 +56,9 @@ autoinstall:
     - "echo 'Defaults:vagrant !requiretty' > /target/etc/sudoers.d/vagrant"
     - "echo 'vagrant ALL=(ALL) NOPASSWD: ALL' >> /target/etc/sudoers.d/vagrant"
     - "chmod 440 /target/etc/sudoers.d/vagrant"
-    - sudo sed -i '1,$s/#AllowTcpForwarding yes/AllowTcpForwarding no/' /etc/ssh/sshd_config
-    - echo "Ciphers -chacha20-poly1305@openssh.com" >> /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf
-    - chmod 600 /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf
+    - echo 'AllowTcpForwarding no' | sudo tee -a /etc/ssh/sshd_config.d/disable-password-auth.conf
+    - echo 'PermitRootLogin no' | sudo tee -a /etc/ssh/sshd_config.d/disable-root-auth.conf 
+    - echo "Ciphers -chacha20-poly1305@openssh.com" | sudo tee -a /etc/ssh/sshd_config.d/disable_chacha20-poly1305.conf
+    - echo "LoginGraceTime 0" | sudo tee -a /etc/ssh/sshd_config.d/rce.conf
+    - sudo chmod 600 /etc/ssh/sshd_config.d/*.conf
     - sudo systemctl start ssh

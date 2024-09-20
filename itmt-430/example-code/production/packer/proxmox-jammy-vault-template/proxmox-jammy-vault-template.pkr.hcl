@@ -67,6 +67,7 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   ssh_timeout              = "28m"
   template_description     = "A Packer template Hashicorp Vault"
   vm_name                  = "${var.VMNAME}"
+  tags                     = "${var.TAGS}"
 }
 
 build {
