@@ -47,7 +47,7 @@ resource "proxmox_vm_qemu" "vault" {
     bridge = "vmbr2"
   }
 
-  disk {
+  disks {
     virtio {
       virtio0 {
         disk {
