@@ -31,6 +31,7 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   disks {
     disk_size         = "${var.DISKSIZE}"
     storage_pool      = "${var.STORAGEPOOL}"
+    # io thread option requires virtio-scsi-single controller
     type = "virtio-scsi-single"
     io_thread = true
   }
