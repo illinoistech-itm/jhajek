@@ -23,7 +23,7 @@ resource "proxmox_vm_qemu" "vault" {
   memory          = var.memory
   cores           = var.cores
   sockets         = var.sockets
-  scsihw          = "virtio-scsi-pci"
+  scsihw          = "lsi"
   bootdisk        = "virtio0"
   boot            = "cdn"
   agent           = 1
