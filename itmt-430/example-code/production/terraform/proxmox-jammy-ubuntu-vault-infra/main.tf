@@ -51,7 +51,6 @@ resource "proxmox_vm_qemu" "vault" {
     virtio {
       virtio0 {
         disk {
-        slot = 0
         storage = random_shuffle.datadisk.result[0]
         size    = var.disk_size
         }
