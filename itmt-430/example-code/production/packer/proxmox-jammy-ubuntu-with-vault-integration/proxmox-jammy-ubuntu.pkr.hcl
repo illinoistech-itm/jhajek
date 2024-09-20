@@ -1,3 +1,4 @@
+# Documentation located: https://developer.hashicorp.com/packer/integrations/hashicorp/proxmox/latest/components/builder/iso
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 # Packer Proxmox Plugin Docs
@@ -30,14 +31,17 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
   username  = "${local.USERNAME}"
   token     = "${local.PROXMOX_TOKEN}"
   cpu_type  = "host"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller = "virtio-scsi-single"
+
   disks {
     disk_size    = "${var.DISKSIZE}"
     storage_pool = "${var.STORAGEPOOL}"
-    # io thread option requires virtio-scsi-single controller
-    type = "virtio-scsi-single"
+    type = "virtio"
     io_thread = true
   }
   http_directory   = "subiquity/http"
+  http_bind_address = "10.110.0.45"
   http_port_max    = 9200
   http_port_min    = 9001
   iso_checksum     = "${var.iso_checksum}"

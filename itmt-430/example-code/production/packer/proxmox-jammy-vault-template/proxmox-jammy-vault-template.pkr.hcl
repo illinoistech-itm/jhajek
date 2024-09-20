@@ -1,9 +1,10 @@
+# Documentation located: https://developer.hashicorp.com/packer/integrations/hashicorp/proxmox/latest/components/builder/iso
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 packer {
   required_plugins {
     virtualbox = {
-      version = ">= 1.0.8"
+      version = ">= 1.1.8"
       source  = "github.com/hashicorp/proxmox"
     }
   }
@@ -28,11 +29,12 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   username     = "${var.USERNAME}"
   token        = "${var.PROXMOX_TOKEN}"
   cpu_type     = "host"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller = "virtio-scsi-single" 
   disks {
     disk_size         = "${var.DISKSIZE}"
     storage_pool      = "${var.STORAGEPOOL}"
-    # io thread option requires virtio-scsi-single controller
-    type = "virtio-scsi-single"
+    type = "virtio"
     io_thread = true
   }
   http_directory   = "subiquity/http"
@@ -56,6 +58,8 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
     model  = "virtio"
   }
 
+  http_directory   = "subiquity/http"
+  http_bind_address = "10.110.0.45"
   os                       = "l26"
   proxmox_url              = "${var.URL}"
   insecure_skip_tls_verify = true
