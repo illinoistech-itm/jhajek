@@ -31,7 +31,7 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   disks {
     disk_size         = "${var.DISKSIZE}"
     storage_pool      = "${var.STORAGEPOOL}"
-    type = "virtio"
+    type = "virtio-scsi-single"
     io_thread = true
   }
   http_directory   = "subiquity/http"
