@@ -69,7 +69,7 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   scsi_controller      = "virtio-scsi-single"
   ssh_password         = "${var.SSHPW}"
   ssh_username         = "vagrant"
-  ssh_timeout          = "28m"
+  ssh_timeout          = "22m"
   template_description = "A Packer template Hashicorp Vault"
   vm_name              = "${var.VMNAME}"
   tags                 = "${var.TAGS}"
