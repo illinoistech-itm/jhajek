@@ -31,26 +31,21 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
   username  = "${local.USERNAME}"
   token     = "${local.PROXMOX_TOKEN}"
   cpu_type  = "host"
-  # io thread option requires virtio-scsi-single controller
-  scsi_controller = "virtio-scsi-single"
 
   disks {
     disk_size    = "${var.DISKSIZE}"
     storage_pool = "${var.STORAGEPOOL}"
-    type = "virtio"
-    io_thread = true
+    type         = "virtio"
+    io_thread    = true
   }
-  http_directory   = "subiquity/http"
+  http_directory    = "subiquity/http"
   http_bind_address = "10.110.0.45"
-  http_port_max    = 9200
-  http_port_min    = 9001
-  iso_checksum     = "${var.iso_checksum}"
-  iso_urls         = "${var.iso_urls}"
-  iso_storage_pool = "local"
-  memory           = "${var.MEMORY}"
-  variable "TAGS" {
-  default  = "creator;jrh,type;vault"
-}
+  http_port_max     = 9200
+  http_port_min     = 9001
+  iso_checksum      = "${var.iso_checksum}"
+  iso_urls          = "${var.iso_urls}"
+  iso_storage_pool  = "local"
+  memory            = "${var.MEMORY}"
 
   network_adapters {
     bridge = "vmbr0"
@@ -70,15 +65,16 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
   insecure_skip_tls_verify = true
   unmount_iso              = true
   qemu_agent               = true
-  scsi_controller          = "virtio-scsi-single"       
-  cloud_init               = true
-  cloud_init_storage_pool  = "${var.STORAGEPOOL}"
-  ssh_password             = "${local.SSHPW}"
-  ssh_username             = "vagrant"
-  ssh_timeout              = "28m"
-  template_description     = "A Packer template for Ubuntu Jammy"
-  vm_name                  = "${var.VMNAME}"
-  tags                     = "${var.TAGS}"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller         = "virtio-scsi-single"
+  cloud_init              = true
+  cloud_init_storage_pool = "${var.STORAGEPOOL}"
+  ssh_password            = "${local.SSHPW}"
+  ssh_username            = "vagrant"
+  ssh_timeout             = "28m"
+  template_description    = "A Packer template for Ubuntu Jammy"
+  vm_name                 = "${var.VMNAME}"
+  tags                    = "${var.TAGS}"
 }
 
 build {

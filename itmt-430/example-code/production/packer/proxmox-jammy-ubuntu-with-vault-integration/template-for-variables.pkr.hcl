@@ -5,23 +5,23 @@
 
 # This is the name of the node in the Cloud Cluster where to deploy the virtual instances
 locals {
-  NODENAME = vault("/secret/data/team00-NODENAME","NODENAME4")
+  NODENAME = vault("/secret/data/team00-NODENAME", "NODENAME4")
 }
 
 locals {
-  USERNAME = vault("/secret/data/team00-username-packer-system","USERNAME")
+  USERNAME = vault("/secret/data/team00-username-packer-system", "USERNAME")
 }
 
 locals {
-  PROXMOX_TOKEN = vault("/secret/data/team00-token-packer-system","TOKEN")
+  PROXMOX_TOKEN = vault("/secret/data/team00-token-packer-system", "TOKEN")
 }
 
 locals {
-  URL = vault("/secret/data/team00-url","SYSTEM42")
+  URL = vault("/secret/data/team00-url", "SYSTEM42")
 }
 
 locals {
-  SSHPW = vault("/secret/data/team00-ssh","SSHPASS")
+  SSHPW = vault("/secret/data/team00-ssh", "SSHPASS")
 }
 
 variable "MEMORY" {
@@ -52,13 +52,13 @@ variable "VMNAME" {
 
 variable "TAGS" {
   # Place your initials first then team name and any other tag seperated via ;
-  type = string
-  default  = "initials;team"
+  type    = string
+  default = "initials;team"
 }
 
 variable "iso_checksum" {
-  type = string
-  default =  "file:https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
+  type    = string
+  default = "file:https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
 }
 
 # https://developer.hashicorp.com/terraform/language/values/variables#declaring-an-input-variable

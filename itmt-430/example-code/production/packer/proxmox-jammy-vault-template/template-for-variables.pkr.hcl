@@ -11,20 +11,20 @@ variable "NODENAME" {
 
 variable "USERNAME" {
   sensitive = true
-  type   = string
-  default = ""
+  type      = string
+  default   = ""
 }
 
 variable "PROXMOX_TOKEN" {
   sensitive = true
-  type   = string
-  default = ""
+  type      = string
+  default   = ""
 }
 
 variable "URL" {
   type = string
   # https://x.x.x.x:8006/api2/json
-  default = ""
+  default   = ""
   sensitive = true
 }
 
@@ -39,7 +39,7 @@ variable "DISKSIZE" {
 }
 
 variable "STORAGEPOOL" {
-  type = string
+  type    = string
   default = "datadisk1"
 }
 
@@ -49,8 +49,8 @@ variable "NUMBEROFCORES" {
 }
 
 variable "TAGS" {
-  type = string
-  default  = "creator;jrh,type;vault"
+  type    = string
+  default = "creator;jrh,type;vault"
 }
 
 # This is the name of the Virtual Machine Template you want to create
@@ -60,7 +60,7 @@ variable "VMNAME" {
 }
 
 variable "SSHPW" {
-  type    = string
-  default = "vagrant"
+  type      = string
+  default   = "vagrant"
   sensitive = true
 }

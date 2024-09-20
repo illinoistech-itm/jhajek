@@ -17,33 +17,33 @@ packer {
 # https://github.com/burkeazbill/ubuntu-22-04-packer-fusion-workstation/blob/master/ubuntu-2204-daily.pkr.hcl
 source "proxmox-iso" "proxmox-jammy-vault-template" {
   boot_command = [
-        "e<wait>",
-        "<down><down><down>",
-        "<end><bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
-        "<f10><wait>"
-      ]
-  boot_wait    = "5s"
-  cores        = "${var.NUMBEROFCORES}"
-  node         = "${var.NODENAME}"
-  username     = "${var.USERNAME}"
-  token        = "${var.PROXMOX_TOKEN}"
-  cpu_type     = "host"
-  # io thread option requires virtio-scsi-single controller
-  scsi_controller = "virtio-scsi-single" 
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_wait = "5s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${var.NODENAME}"
+  username  = "${var.USERNAME}"
+  token     = "${var.PROXMOX_TOKEN}"
+  cpu_type  = "host"
+
   disks {
-    disk_size         = "${var.DISKSIZE}"
-    storage_pool      = "${var.STORAGEPOOL}"
-    type = "virtio"
-    io_thread = true
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    type         = "virtio"
+    io_thread    = true
   }
-  http_directory   = "subiquity/http"
-  http_port_max    = 9200
-  http_port_min    = 9001
-  iso_checksum     = "file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
-  iso_urls         = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/ubuntu-22.04.5-live-server-amd64.iso"]
-  iso_storage_pool = "local"
-  memory           = "${var.MEMORY}"
+  http_directory    = "subiquity/http"
+  http_bind_address = "10.110.0.45"
+  http_port_max     = 9200
+  http_port_min     = 9001
+  iso_checksum      = "file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
+  iso_urls          = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/ubuntu-22.04.5-live-server-amd64.iso"]
+  iso_storage_pool  = "local"
+  memory            = "${var.MEMORY}"
 
   network_adapters {
     bridge = "vmbr0"
@@ -58,8 +58,6 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
     model  = "virtio"
   }
 
-  http_directory   = "subiquity/http"
-  http_bind_address = "10.110.0.45"
   os                       = "l26"
   proxmox_url              = "${var.URL}"
   insecure_skip_tls_verify = true
@@ -67,12 +65,14 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
-  ssh_password             = "${var.SSHPW}"
-  ssh_username             = "vagrant"
-  ssh_timeout              = "28m"
-  template_description     = "A Packer template Hashicorp Vault"
-  vm_name                  = "${var.VMNAME}"
-  tags                     = "${var.TAGS}"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller      = "virtio-scsi-single"
+  ssh_password         = "${var.SSHPW}"
+  ssh_username         = "vagrant"
+  ssh_timeout          = "28m"
+  template_description = "A Packer template Hashicorp Vault"
+  vm_name              = "${var.VMNAME}"
+  tags                 = "${var.TAGS}"
 }
 
 build {
@@ -135,10 +135,10 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_2204.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_start-cloud-init.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_install_hashicorp_consul.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
+    scripts = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_2204.sh",
+      "../scripts/proxmox/core-jammy/post_install_prxmx_start-cloud-init.sh",
+      "../scripts/proxmox/core-jammy/post_install_prxmx_install_hashicorp_consul.sh",
+    "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
   }
 
   ########################################################################################################################
@@ -146,32 +146,32 @@ build {
   # Interface ens20
   # https://www.consul.io/docs/troubleshoot/common-errors
   ########################################################################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_change_consul_bind_interface.sh"]
   }
-  
+
   ############################################################################################
   # Script to give a dynamic message about the consul DNS upon login
   #
   # https://ownyourbits.com/2017/04/05/customize-your-motd-login-message-in-debian-and-ubuntu/
   #############################################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_update_dynamic_motd_message.sh"]
-  }  
-  
+  }
+
   ############################################################################################
   # Script to install telegraf dependencies for collecting hardware metrics
   #
   #############################################################################################
-  
+
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh"]
-  } 
+  }
 
   ########################################################################################################################
   # Uncomment this block to add your own custom bash install scripts
