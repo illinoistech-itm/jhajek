@@ -26,7 +26,7 @@ resource "proxmox_vm_qemu" "vault" {
   scsihw          = "virtio-scsi-single"
   #bootdisk        = "virtio0"
   #boot            = "cdn"
-  boot            = "order=virtio"
+  boot            = "order=virtio0"
   agent           = 1
 
   ipconfig0 = "ip=dhcp"
