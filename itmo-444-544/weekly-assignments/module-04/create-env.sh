@@ -56,3 +56,40 @@ echo "Waiting for instances..."
 #https://docs.aws.amazon.com/cli/latest/reference/ec2/wait/instance-running.html
 aws ec2 wait instance-running --instance-ids $EC2IDS
 echo "Instances are up!"
+
+# Find the VPC
+# Note: the way I did it, I added a new argument on the arguments.txt file for VPC ID
+#https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpcs.html
+MYVPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId' --filters "Name=vpc-id,Values=${14}")
+
+# https://docs.aws.amazon.com/cli/latest/reference/elbv2/create-target-group.html
+aws elbv2 create-target-group \
+    --name ${9} \
+    --protocol HTTP \
+    --port 80 \
+    --target-type instance \
+    --vpc-id $MYVPCID
+
+#https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-target-groups.html
+TGARN=$(aws elbv2 describe-target-groups --output=text --query='TargetGroups[*].TargetGroupArn' --names ${9})
+echo "TGARN"
+
+
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/register-targets.html
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/target-in-service.html
+# Register targets and wait for them to be in service
+# Create a bash Array so we can loop through it and take care of the Id= 
+declare -a IDSARRAY
+IDSARRAY=( $EC2IDS )
+
+for ID in ${IDSARRAY[@]};
+do
+  aws elbv2 register-targets \
+    --target-group-arn $TGARN --targets Id=$ID
+  aws elbv2 wait target-in-service  --target-group-arn $TGARN --targets=$ID,80
+  echo "Target $ID is in service"
+done
+
+
+
+

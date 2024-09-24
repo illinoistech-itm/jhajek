@@ -26,3 +26,13 @@ aws elbv2 delete-load-balancer --load-balancer-arn $ELBARN
 aws elbv2 wait load-balancers-deleted --load-balancer-arns $ELBARN
 echo "Load balancers deleted!"
 
+declare -a IDSARRAY
+IDSARRAY=( $EC2IDS )
+
+for ID in ${IDSARRAY[@]};
+do
+  aws elbv2 deregister-targets \
+    --target-group-arn $TGARN --targets Id=$ID
+  aws elbv2 wait target-deregistered  --target-group-arn $TGARN --targets=$ID,80
+  echo Targets 
+done
