@@ -6,6 +6,19 @@ EC2IDS=$(aws ec2 describe-instances \
     --output=text \
     --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running  )
 
+# Deregistering attached EC2 IDS before terminating instances
+
+declare -a IDSARRAY
+IDSARRAY=( $EC2IDS )
+
+for ID in ${IDSARRAY[@]};
+do
+  aws elbv2 deregister-targets \
+    --target-group-arn $TGARN --targets Id=$ID
+  aws elbv2 wait target-deregistered  --target-group-arn $TGARN --targets=$ID,80
+  echo Target $ID deregistred
+done
+
 # Now Terminate all EC2 instances
 # https://docs.aws.amazon.com/cli/latest/reference/ec2/terminate-instances.html
 aws ec2 terminate-instances --instance-ids $EC2IDS
@@ -26,13 +39,13 @@ aws elbv2 delete-load-balancer --load-balancer-arn $ELBARN
 aws elbv2 wait load-balancers-deleted --load-balancer-arns $ELBARN
 echo "Load balancers deleted!"
 
-declare -a IDSARRAY
-IDSARRAY=( $EC2IDS )
 
-for ID in ${IDSARRAY[@]};
-do
-  aws elbv2 deregister-targets \
-    --target-group-arn $TGARN --targets Id=$ID
-  aws elbv2 wait target-deregistered  --target-group-arn $TGARN --targets=$ID,80
-  echo Targets $ID deregistred
-done
+
+#Deleting target group, and wait for it to deregister
+#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/delete-target-group.html
+#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/target-deregistered.html
+
+aws elbv2 delete-target-group --target-group-arn $TGARN
+aws elbv2 wait target-deregistered --target-group-arn $TGARN
+
+

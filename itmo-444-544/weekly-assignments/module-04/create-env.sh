@@ -19,7 +19,7 @@
 echo "Finding and storing the subnet IDs for defined in arguments.txt Availability Zone 1 and 2..."
 SUBNET2A=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=availability-zone,Values=${10}")
 SUBNET2B=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=availability-zone,Values=${11}")
-SUBNET2B=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=availability-zone,Values=${12}")
+SUBNET2C=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=availability-zone,Values=${12}")
 echo $SUBNET2A
 echo $SUBNET2B
 echo $SUBNET2C
@@ -59,7 +59,7 @@ echo "Instances are up!"
 # Find the VPC
 # Note: the way I did it, I added a new argument on the arguments.txt file for VPC ID
 #https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpcs.html
-MYVPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId' --filters "Name=vpc-id,Values=${14}")
+MYVPCID=$(aws ec2 describe-vpcs --output=text --query='Vpcs[*].VpcId' )
 
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/create-target-group.html
 aws elbv2 create-target-group \
@@ -69,6 +69,8 @@ aws elbv2 create-target-group \
     --target-type instance \
     --vpc-id $MYVPCID
 
+
+ 
 #https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-target-groups.html
 TGARN=$(aws elbv2 describe-target-groups --output=text --query='TargetGroups[*].TargetGroupArn' --names ${9})
 echo "TGARN"
