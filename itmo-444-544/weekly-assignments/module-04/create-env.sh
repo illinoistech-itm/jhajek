@@ -68,8 +68,6 @@ aws elbv2 create-target-group \
     --port 80 \
     --target-type instance \
     --vpc-id $MYVPCID
-
-
  
 #https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-target-groups.html
 TGARN=$(aws elbv2 describe-target-groups --output=text --query='TargetGroups[*].TargetGroupArn' --names ${9})
@@ -87,10 +85,12 @@ for ID in ${IDSARRAY[@]};
 do
   aws elbv2 register-targets \
     --target-group-arn $TGARN --targets Id=$ID
-  aws elbv2 wait target-in-service  --target-group-arn $TGARN --targets=$ID,80
+  aws elbv2 wait target-in-service  --target-group-arn $TGARN --targets=$ID,Port=80
   echo "Target $ID is in service"
 done
 
 
+#Creating listener
+#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/create-listener.html
 
-
+aws elbv2 create-listener --load-balancer-arn $ELBARN --protocol HTTP --port 80 --default-actions Type=forward,TargetGroupArn=$TGARN

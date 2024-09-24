@@ -6,7 +6,14 @@ EC2IDS=$(aws ec2 describe-instances \
     --output=text \
     --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running  )
 
-# Deregistering attached EC2 IDS before terminating instances
+#Deregistering attached EC2 IDS before terminating instances
+#Deleting target group, and wait for it to deregister
+#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/delete-target-group.html
+#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/target-deregistered.html
+
+#https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-target-groups.html
+TGARN=$(aws elbv2 describe-target-groups --output=text --query='TargetGroups[*].TargetGroupArn' --names ${9})
+echo "TGARN"
 
 declare -a IDSARRAY
 IDSARRAY=( $EC2IDS )
@@ -18,6 +25,9 @@ do
   aws elbv2 wait target-deregistered  --target-group-arn $TGARN --targets=$ID,80
   echo Target $ID deregistred
 done
+
+aws elbv2 delete-target-group --target-group-arn $TGARN
+aws elbv2 wait target-deregistered --target-group-arn $TGARN
 
 # Now Terminate all EC2 instances
 # https://docs.aws.amazon.com/cli/latest/reference/ec2/terminate-instances.html
@@ -33,6 +43,8 @@ ELBARN=$(aws elbv2 describe-load-balancers --output=text --query='LoadBalancers[
 echo "*****************************************************************"
 echo "Printing ELBARN: $ELBARN"
 echo "*****************************************************************"
+
+
 #Delete loadbalancer
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/delete-load-balancer.html
 aws elbv2 delete-load-balancer --load-balancer-arn $ELBARN
@@ -41,11 +53,6 @@ echo "Load balancers deleted!"
 
 
 
-#Deleting target group, and wait for it to deregister
-#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/delete-target-group.html
-#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/target-deregistered.html
 
-aws elbv2 delete-target-group --target-group-arn $TGARN
-aws elbv2 wait target-deregistered --target-group-arn $TGARN
 
 
