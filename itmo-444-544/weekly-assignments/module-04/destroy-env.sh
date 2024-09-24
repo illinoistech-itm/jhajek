@@ -6,6 +6,12 @@ EC2IDS=$(aws ec2 describe-instances \
     --output=text \
     --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running  )
 
+# Delete listeners
+# https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-listeners.html
+ELBARN=$(aws elbv2 describe-load-balancers --output=text --query='LoadBalancers[*].LoadBalancerArn')
+
+LISTARN=$(aws elbv2 describe-listeners --load-balancer-arn $ELBARN  )
+
 #Deregistering attached EC2 IDS before terminating instances
 #Deleting target group, and wait for it to deregister
 #https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/delete-target-group.html
@@ -13,7 +19,7 @@ EC2IDS=$(aws ec2 describe-instances \
 
 #https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-target-groups.html
 TGARN=$(aws elbv2 describe-target-groups --output=text --query='TargetGroups[*].TargetGroupArn' --names ${9})
-echo "TGARN"
+echo "TGARN: $TGARN"
 
 declare -a IDSARRAY
 IDSARRAY=( $EC2IDS )

@@ -71,7 +71,7 @@ aws elbv2 create-target-group \
  
 #https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-target-groups.html
 TGARN=$(aws elbv2 describe-target-groups --output=text --query='TargetGroups[*].TargetGroupArn' --names ${9})
-echo "TGARN"
+echo "Target group ARN: $TGARN"
 
 
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/register-targets.html
