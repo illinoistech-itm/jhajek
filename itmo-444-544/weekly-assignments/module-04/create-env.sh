@@ -28,6 +28,7 @@ echo $SUBNET2C
 aws elbv2 create-load-balancer \
     --name ${8} \
     --subnets $SUBNET2A $SUBNET2B $SUBNET2C \
+    --security-groups ${4} \
     --tags Key='name',Value=${13}  
     
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-listeners.html
