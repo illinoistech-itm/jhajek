@@ -34,7 +34,7 @@ ELBARN=$(aws elbv2 describe-load-balancers --output=text --query='LoadBalancers[
 #https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-listeners.html
 LISTARN=$(aws elbv2 describe-listeners --load-balancer-arn $ELBARN --output=text --query='Listeners[*].ListenerArn' )
 #https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/delete-listener.html
-aws elbv2 delete-listener $LISTARN
+aws elbv2 delete-listener --listener-arn $LISTARN
 
 # Now Terminate all EC2 instances
 # https://docs.aws.amazon.com/cli/latest/reference/ec2/terminate-instances.html
