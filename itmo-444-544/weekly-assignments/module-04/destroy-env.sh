@@ -20,6 +20,7 @@ IDSARRAY=( $EC2IDS )
 
 for ID in ${IDSARRAY[@]};
 do
+  echo "Now deregistering ID: $ID..."
   aws elbv2 deregister-targets \
     --target-group-arn $TGARN --targets Id=$ID
   aws elbv2 wait target-deregistered --target-group-arn $TGARN --targets Id=$ID,Port=80

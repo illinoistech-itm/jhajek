@@ -96,3 +96,10 @@ do
   aws elbv2 wait target-in-service  --target-group-arn $TGARN --targets Id=$ID,Port=80
   echo "Target $ID is in service"
 done
+
+# GO to the elbv2 describe-load-balancers
+# find DNS URL in the return object - and print the URL to the screen
+
+
+DNSNAME=$(aws elbv2 describe-load-balancers --output=text --query='LoadBalancers[*].DNSName')
+DNSNAME="http://$DNSNAME"
