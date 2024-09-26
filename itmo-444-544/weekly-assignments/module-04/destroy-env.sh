@@ -12,7 +12,7 @@ EC2IDS=$(aws ec2 describe-instances \
 #https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/target-deregistered.html
 
 #https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-target-groups.html
-TGARN=$(aws elbv2 describe-target-groups --output=text --query='TargetGroups[*].TargetGroupArn' --names ${9})
+TGARN=$(aws elbv2 describe-target-groups --output=text --query='TargetGroups[*].TargetGroupArn')
 echo "TGARN: $TGARN"
 
 declare -a IDSARRAY
@@ -22,7 +22,7 @@ for ID in ${IDSARRAY[@]};
 do
   aws elbv2 deregister-targets \
     --target-group-arn $TGARN --targets Id=$ID
-  aws elbv2 wait target-deregistered  --target-group-arn $TGARN --targets=$ID,80
+  aws elbv2 wait target-deregistered  --target-group-arn $TGARN --targets Id=$ID,Port=80
   echo Target $ID deregistred
 done
 
