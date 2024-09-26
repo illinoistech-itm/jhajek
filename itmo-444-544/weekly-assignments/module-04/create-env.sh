@@ -79,6 +79,7 @@ echo "Target group ARN: $TGARN"
 echo "Creating elbv2 listener..."
 aws elbv2 create-listener --load-balancer-arn $ELBARN --protocol HTTP --port 80 --default-actions Type=forward,TargetGroupArn=$TGARN
 echo "Created elbv2 listener..."
+
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/register-targets.html
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/target-in-service.html
 # Register targets and wait for them to be in service

@@ -22,7 +22,7 @@ for ID in ${IDSARRAY[@]};
 do
   aws elbv2 deregister-targets \
     --target-group-arn $TGARN --targets Id=$ID
-  aws elbv2 wait target-deregistered  --target-group-arn $TGARN --targets Id=$ID,Port=80
+  aws elbv2 wait target-deregistered --target-group-arn $TGARN --targets Id=$ID,Port=80
   echo Target $ID deregistred
 done
 
@@ -50,7 +50,6 @@ ELBARN=$(aws elbv2 describe-load-balancers --output=text --query='LoadBalancers[
 echo "*****************************************************************"
 echo "Printing ELBARN: $ELBARN"
 echo "*****************************************************************"
-
 
 #Delete loadbalancer
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/delete-load-balancer.html
