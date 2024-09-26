@@ -92,6 +92,6 @@ do
   aws elbv2 register-targets \
     --target-group-arn $TGARN --targets Id=$ID
   echo "Waiting for $ID to be registered..."
-  #aws elbv2 wait target-in-service  --target-group-arn $TGARN --targets Id=$ID,Port=80
+  aws elbv2 wait target-in-service  --target-group-arn $TGARN --targets Id=$ID,Port=80
   echo "Target $ID is in service"
 done
