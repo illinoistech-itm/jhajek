@@ -74,7 +74,6 @@ aws elbv2 create-target-group \
 TGARN=$(aws elbv2 describe-target-groups --output=text --query='TargetGroups[*].TargetGroupArn' --names ${9})
 echo "Target group ARN: $TGARN"
 
-
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/register-targets.html
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/target-in-service.html
 # Register targets and wait for them to be in service
@@ -88,7 +87,7 @@ do
   aws elbv2 register-targets \
     --target-group-arn $TGARN --targets Id=$ID
   echo "Waiting for $ID to be registered..."
-  aws elbv2 wait target-in-service  --target-group-arn $TGARN --targets Id=$ID,Port=80
+  #aws elbv2 wait target-in-service  --target-group-arn $TGARN --targets Id=$ID,Port=80
   echo "Target $ID is in service"
 done
 
