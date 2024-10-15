@@ -31,6 +31,9 @@
 # ${13} module-05
 # ${14} asg name
 # ${15} launch-template name
+# ${16} asg min
+# ${17} asg max
+# ${18} asg desired
 ```
 
 ## Part 1

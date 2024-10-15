@@ -15,6 +15,11 @@
 # ${11} us-east-2b
 # ${12} us-east-2c
 # ${13} tag value
+# ${14} asg name
+# ${15} launch template name
+# ${16} asg min
+# ${17} asg max
+# ${18} asg desired
 
 echo "Finding and storing the subnet IDs for defined in arguments.txt Availability Zone 1 and 2..."
 SUBNET2A=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=availability-zone,Values=${10}")
@@ -29,7 +34,7 @@ echo $SUBNET2C
 aws ec2 create-launch-template \
     --launch-template-name ${15} \
     --version-description version1 \
-    --launch-template-data file://${6}
+    --launch-template-data file://config.json
 
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/create-load-balancer.html
 aws elbv2 create-load-balancer \
@@ -51,7 +56,14 @@ echo "Waiting for ELB to become available..."
 aws elbv2 wait load-balancer-available --load-balancer-arns $ELBARN
 echo "ELB is available..."
 
-
+# Create auto-scalng groups
+# https://docs.aws.amazon.com/cli/latest/reference/autoscaling/create-auto-scaling-group.html
+aws autoscaling create-auto-scaling-group \
+    --auto-scaling-group-name ${14} \
+    --launch-template LaunchTemplateName=${15} \
+    --min-size ${16} \
+    --max-size ${17} \
+    --desired-capacity ${18}
 
 echo "Retrieving Instance ID"
 EC2IDS=$(aws ec2 describe-instances \
