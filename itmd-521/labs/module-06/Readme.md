@@ -24,7 +24,6 @@ When reading data you can use the generic `spark.read.format` command, but I rec
 
 * DataFrameReader - [parquet](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.DataFrameReader.parquet.html "webpage for pyspark api parquet")
 * DataFrameReader - [json](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.DataFrameReader.json.html "webpage for pyspark api json")
-* DataFrameReader - [Scala](https://spark.apache.org/docs/3.2.0/api/scala/org/apache/spark/sql/DataFrameReader.html "webpage for Spark Scala API")
 
 ## Assignment Details - Part I
 
@@ -36,7 +35,7 @@ Using the `departuredelays.csv` file, in a single file called module-06.py conve
 
 - From page 90-92, you will create a Table named `us_delay_flights_tbl` from the `departuredelays.csv`
   - Create a `tempView` of all flights with an origin of Chicago (ORD) and a month/day combo of between 03/01 and 03/15
-  - Show the first 5 records of the tempView, taking a screenshot
+  - Show the first 5 records of the tempView
   - Use the Spark Catalog to list the columns of table `us_delay_flights_tbl`
 - **New** Add this line to your `spark-submit` command to overcome the database already exists error
   - `--conf spark.sql.catalogImplementation=hive`
@@ -58,7 +57,7 @@ For all files use `mode` as `overwrite` so that I can run your program and your 
 
 Using the `departuredelays` parquet file you created part III, read the content into a DataFrame, select all records that have `ORD` (Chicago O'Hare as `Origin`) and write the results to a DataFrameWriter named `orddeparturedelays`
 
-* Use a `.show(10)` function to print out the first 10 lines, and take a screenshot
+* Use a `.show(10)` function to print out the first 10 lines
 * Save as type Parquet 
 
 ### Deliverable
