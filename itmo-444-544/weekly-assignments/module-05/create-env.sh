@@ -55,26 +55,7 @@ echo "*****************************************************************"
 echo "Waiting for ELB to become available..."
 aws elbv2 wait load-balancer-available --load-balancer-arns $ELBARN
 echo "ELB is available..."
-
-# Create auto-scalng groups
-# https://docs.aws.amazon.com/cli/latest/reference/autoscaling/create-auto-scaling-group.html
-aws autoscaling create-auto-scaling-group \
-    --auto-scaling-group-name ${14} \
-    --launch-template LaunchTemplateName=${15} \
-    --min-size ${16} \
-    --max-size ${17} \
-    --desired-capacity ${18}
-
-echo "Retrieving Instance ID"
-EC2IDS=$(aws ec2 describe-instances \
-    --output=text \
-    --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running)
-
-echo "Waiting for instances..."
-#https://docs.aws.amazon.com/cli/latest/reference/ec2/wait/instance-running.html
-aws ec2 wait instance-running --instance-ids $EC2IDS
-echo "Instances are up!"
-
+  
 # Find the VPC
 # Note: the way I did it, I added a new argument on the arguments.txt file for VPC ID
 #https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpcs.html
@@ -98,27 +79,31 @@ echo "Creating elbv2 listener..."
 aws elbv2 create-listener --load-balancer-arn $ELBARN --protocol HTTP --port 80 --default-actions Type=forward,TargetGroupArn=$TGARN
 echo "Created elbv2 listener..."
 
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/register-targets.html
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/target-in-service.html
-# Register targets and wait for them to be in service
-# Create a bash Array so we can loop through it and take care of the Id= 
-declare -a IDSARRAY
-IDSARRAY=( $EC2IDS )
+# Create auto-scalng groups
+# https://docs.aws.amazon.com/cli/latest/reference/autoscaling/create-auto-scaling-group.html
+aws autoscaling create-auto-scaling-group \
+    --auto-scaling-group-name ${14} \
+    --launch-template LaunchTemplateName=${15} \
+    --target-group-arns $TGARN \
+    --health-check-type ELB \
+    --health-check-grace-period 120 \
+    --min-size ${16} \
+    --max-size ${17} \
+    --desired-capacity ${18}
 
-for ID in ${IDSARRAY[@]};
-do
-  echo "Now registering ID: $ID..."
-  aws elbv2 register-targets \
-    --target-group-arn $TGARN --targets Id=$ID
-  echo "Waiting for $ID to be registered..."
-  aws elbv2 wait target-in-service  --target-group-arn $TGARN --targets Id=$ID,Port=80
-  echo "Target $ID is in service"
-done
+echo "Retrieving Instance ID"
+EC2IDS=$(aws ec2 describe-instances \
+    --output=text \
+    --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running)
+
+echo "Waiting for instances..."
+#https://docs.aws.amazon.com/cli/latest/reference/ec2/wait/instance-running.html
+aws ec2 wait instance-running --instance-ids $EC2IDS
+echo "Instances are up!"
 
 # GO to the elbv2 describe-load-balancers
 # find DNS URL in the return object - and print the URL to the screen
 
-
 DNSNAME=$(aws elbv2 describe-load-balancers --output=text --query='LoadBalancers[*].DNSName')
 DNSNAME="http://$DNSNAME"
-echo "DNS URL: $DNSName"
+echo "DNS URL: $DNSNAME"
