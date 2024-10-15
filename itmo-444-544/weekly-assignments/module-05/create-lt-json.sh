@@ -50,8 +50,8 @@ JSON="{
             \"DeleteOnTermination\": true
         }
     ],
-    \"BlockDeviceMappings\":[{\"DeviceName\":\"/dev/sdc\",\"Ebs\":{\"VolumeSize\": ${18}}},{\"DeviceName\":\"/dev/sdd\",\"Ebs\":{\"VolumeSize\": ${18}}}],
     \"ImageId\": \"${1}\",
+    
     \"InstanceType\": \"${2}\",
     \"KeyName\": \"${3}\",
     \"UserData\": \"$BASECONVERT\",
