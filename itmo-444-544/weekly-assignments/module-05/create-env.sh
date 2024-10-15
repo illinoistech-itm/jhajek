@@ -24,6 +24,13 @@ echo $SUBNET2A
 echo $SUBNET2B
 echo $SUBNET2C
 
+# Create launch template
+# https://docs.aws.amazon.com/cli/latest/reference/ec2/create-launch-template.html
+aws ec2 create-launch-template \
+    --launch-template-name ${15} \
+    --version-description version1 \
+    --launch-template-data file://${6}
+
 # https://docs.aws.amazon.com/cli/latest/reference/elbv2/create-load-balancer.html
 aws elbv2 create-load-balancer \
     --name ${8} \
@@ -44,8 +51,7 @@ echo "Waiting for ELB to become available..."
 aws elbv2 wait load-balancer-available --load-balancer-arns $ELBARN
 echo "ELB is available..."
 
-# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/run-instances.html
-aws ec2 run-instances --image-id ${1} --instance-type ${2}  --key-name ${3} --security-group-ids ${4} --count ${5} --user-data file://${6}
+
 
 echo "Retrieving Instance ID"
 EC2IDS=$(aws ec2 describe-instances \
