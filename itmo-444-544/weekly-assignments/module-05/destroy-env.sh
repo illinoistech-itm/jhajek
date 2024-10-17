@@ -1,10 +1,6 @@
 #!/bin/bash
 
-# First Describe EC2 instances
-# https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html
-EC2IDS=$(aws ec2 describe-instances \
-    --output=text \
-    --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running  )
+
 
 # Find the auto scaling group
 # https://docs.aws.amazon.com/cli/latest/reference/autoscaling/describe-auto-scaling-groups.html
@@ -25,8 +21,21 @@ aws autoscaling update-auto-scaling-group \
 echo "$ASGNAME autoscaling group was updated!"
 
 # Collect EC2 instance IDS
+# First Describe EC2 instances
+# https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html
+EC2IDS=$(aws ec2 describe-instances \
+    --output=text \
+    --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running  )
 
+declare -a IDSARRAY
+IDSARRAY=( $EC2IDS )
 # Add ec2 wait instances IDS terminated
+# https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/wait/instance-terminated.html
+# Now Terminate all EC2 instances
+# https://docs.aws.amazon.com/cli/latest/reference/ec2/wait/instance-terminated.html
+echo "Waiting for instances..."
+aws ec2 wait instance-terminated --instance-ids $EC2IDS
+echo "Instances are terminated!"
 
 # Delete listeners after deregistering target group
 ELBARN=$(aws elbv2 describe-load-balancers --output=text --query='LoadBalancers[*].LoadBalancerArn')
@@ -37,11 +46,6 @@ aws elbv2 delete-listener --listener-arn $LISTARN
 aws elbv2 delete-target-group --target-group-arn $TGARN
 aws elbv2 wait target-deregistered --target-group-arn $TGARN
 
-# Now Terminate all EC2 instances
-# https://docs.aws.amazon.com/cli/latest/reference/ec2/wait/instance-terminated.html
-
-aws ec2 wait instance-terminated --instance-ids $EC2IDS
-echo "Instances are terminated!"
 
 #Dynamically detect your infrastrcuture and destroy it/terminate it
 # SUBNET2B=$(aws ec2 describe-subnets --output=text --query='Subnets[*].SubnetId' --filter "Name=availability-zone,Values=${12}")
