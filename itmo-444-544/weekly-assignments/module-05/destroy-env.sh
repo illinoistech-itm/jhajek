@@ -6,26 +6,27 @@ EC2IDS=$(aws ec2 describe-instances \
     --output=text \
     --query='Reservations[*].Instances[*].InstanceId' --filter Name=instance-state-name,Values=pending,running  )
 
-#Deregistering attached EC2 IDS before terminating instances
-#Deleting target group, and wait for it to deregister
-#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/delete-target-group.html
-#https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/wait/target-deregistered.html
+# Find the auto scaling group
+# https://docs.aws.amazon.com/cli/latest/reference/autoscaling/describe-auto-scaling-groups.html
+echo "Retrieving autoscaling group name..."
+ASGNAME=$(aws autoscaling describe-auto-scaling-groups --output=text --query='AutoScalingGroups[*].AutoScalingGroupName')
+echo "*****************************************************************"
+echo "Autoscaling group name: $ASGNAME"
+echo "*****************************************************************"
 
-#https://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-target-groups.html
-TGARN=$(aws elbv2 describe-target-groups --output=text --query='TargetGroups[*].TargetGroupArn')
-echo "TGARN: $TGARN"
+# Update the auto scaling group to remove the min and max values to zero
+# https://docs.aws.amazon.com/cli/latest/reference/autoscaling/update-auto-scaling-group.html
+echo "Updating $ASGNAME autoscaling group to set minimum and desired capacity to 0..."
+aws autoscaling update-auto-scaling-group \
+    --auto-scaling-group-name $ASGNAME \
+    --health-check-type ELB \
+    --min-size 0 \
+    --desired-capacity 0
+echo "$ASGNAME autoscaling group was updated!"
 
-declare -a IDSARRAY
-IDSARRAY=( $EC2IDS )
+# Collect EC2 instance IDS
 
-for ID in ${IDSARRAY[@]};
-do
-  echo "Now deregistering ID: $ID..."
-  aws elbv2 deregister-targets \
-    --target-group-arn $TGARN --targets Id=$ID
-  aws elbv2 wait target-deregistered --target-group-arn $TGARN --targets Id=$ID,Port=80
-  echo Target $ID deregistred
-done
+# Add ec2 wait instances IDS terminated
 
 # Delete listeners after deregistering target group
 ELBARN=$(aws elbv2 describe-load-balancers --output=text --query='LoadBalancers[*].LoadBalancerArn')
@@ -37,8 +38,8 @@ aws elbv2 delete-target-group --target-group-arn $TGARN
 aws elbv2 wait target-deregistered --target-group-arn $TGARN
 
 # Now Terminate all EC2 instances
-# https://docs.aws.amazon.com/cli/latest/reference/ec2/terminate-instances.html
-aws ec2 terminate-instances --instance-ids $EC2IDS
+# https://docs.aws.amazon.com/cli/latest/reference/ec2/wait/instance-terminated.html
+
 aws ec2 wait instance-terminated --instance-ids $EC2IDS
 echo "Instances are terminated!"
 
