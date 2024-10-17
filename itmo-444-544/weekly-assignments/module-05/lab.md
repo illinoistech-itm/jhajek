@@ -53,8 +53,9 @@ For the `create-env.sh`:
 * Check for the existence of one Launch Template
 * Check for the existence of one Autoscaling Group
 * Check for the existence of one ELB
-* Check for the existence of three EC2 instances
-* Check for the existence of the EC2 instances being tagged: **module-05**
+* Check for the existence of three EC2 instances tagged: **module-05**
+* ~~Check for the existence of the EC2 instances being tagged: **module-05**~~
+* Check for the ELB to return an HTTP 200 upon request
 
 For the `destroy-env.sh`:
 
