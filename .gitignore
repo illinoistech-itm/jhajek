@@ -32,7 +32,6 @@ pull-repo.sh
 # Artifacts for Published Documents
 *.pdf
 *.docx
-*.txt
 *~
 chapter-*.html
 

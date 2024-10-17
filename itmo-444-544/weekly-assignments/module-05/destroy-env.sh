@@ -32,7 +32,6 @@ IDSARRAY=( $EC2IDS )
 # Add ec2 wait instances IDS terminated
 # https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/wait/instance-terminated.html
 # Now Terminate all EC2 instances
-# https://docs.aws.amazon.com/cli/latest/reference/ec2/wait/instance-terminated.html
 echo "Waiting for instances..."
 aws ec2 wait instance-terminated --instance-ids $EC2IDS
 echo "Instances are terminated!"
@@ -61,6 +60,13 @@ echo "*****************************************************************"
 aws elbv2 delete-load-balancer --load-balancer-arn $ELBARN
 aws elbv2 wait load-balancers-deleted --load-balancer-arns $ELBARN
 echo "Load balancers deleted!"
+
+# Delete the auto-scaling group
+# https://docs.aws.amazon.com/cli/latest/reference/autoscaling/delete-auto-scaling-group.html
+echo "Deleting $ASGNAME autoscaling group..."
+aws autoscaling delete-auto-scaling-group \
+    --auto-scaling-group-name $ASGNAME
+echo "$ASGNAME autoscaling group was deleted!"
 
 
 
