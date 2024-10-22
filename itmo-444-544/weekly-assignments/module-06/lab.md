@@ -36,7 +36,7 @@
 # ${16} asg min
 # ${17} asg max
 # ${18} asg desired
-# ${19} RDS Database Name
+# ${19} RDS Database Name (no punctuation)
 ```
 
 ## Assumptions
