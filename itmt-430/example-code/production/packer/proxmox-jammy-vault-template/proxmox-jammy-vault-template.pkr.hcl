@@ -39,7 +39,7 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
 
   disks {
     disk_size    = "${var.DISKSIZE}"
-    #storage_pool = "${var.STORAGEPOOL}"
+    storage_pool = "${var.STORAGEPOOL}"
     type         = "virtio"
     io_thread    = true
   }
