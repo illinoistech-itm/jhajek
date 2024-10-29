@@ -47,8 +47,6 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   http_bind_address = "10.110.0.45"
   http_port_max     = 9200
   http_port_min     = 9001
-  #iso_checksum      = "file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
-  #iso_urls          = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/ubuntu-22.04.5-live-server-amd64.iso"]
   iso_storage_pool  = "local"
   memory            = "${var.MEMORY}"
 
@@ -68,7 +66,6 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   os                       = "l26"
   proxmox_url              = "${var.URL}"
   insecure_skip_tls_verify = true
-  #unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
