@@ -23,6 +23,13 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
     "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
     "<f10><wait>"
   ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/ubuntu-22.04.5-live-server-amd64.iso"
+    unmount=true
+    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
+  }
+  
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
   node      = "${var.NODENAME}"
@@ -32,7 +39,7 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
 
   disks {
     disk_size    = "${var.DISKSIZE}"
-    storage_pool = "${var.STORAGEPOOL}"
+    #storage_pool = "${var.STORAGEPOOL}"
     type         = "virtio"
     io_thread    = true
   }
@@ -40,8 +47,8 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   http_bind_address = "10.110.0.45"
   http_port_max     = 9200
   http_port_min     = 9001
-  iso_checksum      = "file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
-  iso_urls          = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/ubuntu-22.04.5-live-server-amd64.iso"]
+  #iso_checksum      = "file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
+  #iso_urls          = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/ubuntu-22.04.5-live-server-amd64.iso"]
   iso_storage_pool  = "local"
   memory            = "${var.MEMORY}"
 
@@ -61,7 +68,7 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
   os                       = "l26"
   proxmox_url              = "${var.URL}"
   insecure_skip_tls_verify = true
-  unmount_iso              = true
+  #unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
