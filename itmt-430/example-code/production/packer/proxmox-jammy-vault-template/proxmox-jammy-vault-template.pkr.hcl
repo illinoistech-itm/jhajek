@@ -42,6 +42,8 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
     storage_pool = "${var.STORAGEPOOL}"
     type         = "virtio"
     io_thread    = true
+    format       = "raw"
+    
   }
   http_directory    = "subiquity/http"
   http_bind_address = "10.110.0.45"
