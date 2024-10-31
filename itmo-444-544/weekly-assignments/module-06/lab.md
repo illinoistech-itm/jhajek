@@ -36,7 +36,7 @@
 # ${16} asg min
 # ${17} asg max
 # ${18} asg desired
-# ${19} RDS Database Name (no punctuation)
+# ${19} RDS Database Instance Identifier (no punctuation) --db-instance-identifier
 ```
 
 ## Assumptions
@@ -45,11 +45,11 @@ Assume all the requirements from module-05 to be completed and this module's req
 
 ## Part 1
 
-Add to your `create-env.sh` a commands to create a [proper RDS instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html "RDS how to create with passwords managed page"), along with a `db-subnet-group`. Use the `--manage-master-user-password` option to allow the AWS Secrets Manager to handle your password. Add a read-replica to this option. Use `--db-instance-identifier` for `${19}` and use `db.t3.micro` as the free-tier db instance type. Tag your database with the module tag.
+Add to your `create-env.sh` a commands to create a [proper RDS instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html "RDS how to create with passwords managed page"), along with a `db-subnet-group`. Use the `--manage-master-user-password` option to allow the AWS Secrets Manager to handle your password. Add a read-replica to this option. Use `--db-instance-identifier` for `${19}` and use `db.t3.micro` as the free-tier db instance type. Tag your database with the module tag. Though it will take extra time, make use of waiters for the RDS instances.
 
 ## Part 2
 
-Modify your `destroy-env.sh` to detach and destroy all resources launched during the `create-env.sh` process. Watch the waiter logic. Note that destroying a database takes 5-15 minutes. Plan accordingly.
+Modify your `destroy-env.sh` to detach and destroy all resources launched during the `create-env.sh` process. Watch the waiter logic. Note that destroying a database takes 5-15 minutes. Plan accordingly. Though it will take extra time, make use of waiters for the RDS instances.
 
 ## Part 3
 
