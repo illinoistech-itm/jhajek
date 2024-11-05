@@ -58,7 +58,7 @@ Using the [Python Boto3 AWS SDK](https://boto3.amazonaws.com/v1/documentation/ap
 For the `create-env-grader.py`:
 
 * Check for the existence of ~~two~~ one RDS instances
-* Check for the existence of the **module-06** tag for the database instances
+* Check for the existence of the **module-06** tag for the database instance~~s~~
 * Check for the existence of one Secret in your Secrets Manager
 * Check for the existence of three EC2 instances tagged: **module-06**
 * Check for the ELB to return an HTTP 200 upon request
