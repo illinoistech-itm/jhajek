@@ -45,7 +45,7 @@ Assume all the requirements from module-05 to be completed and this module's req
 
 ## Part 1
 
-Add to your `create-env.sh` a commands to create a [proper RDS instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html "RDS how to create with passwords managed page"), along with a `db-subnet-group`. Use the `--manage-master-user-password` option to allow the AWS Secrets Manager to handle your password. Add a read-replica to this option. Use `--db-instance-identifier` for `${19}` and use `db.t3.micro` as the free-tier db instance type. Tag your database with the module tag. Though it will take extra time, make use of waiters for the RDS instances.
+Add to your `create-env.sh` a commands to create a [proper RDS instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html "RDS how to create with passwords managed page"), along with a `db-subnet-group`. Use the `--manage-master-user-password` option to allow the AWS Secrets Manager to handle your password. ~~Add a read-replica to this option.~~ Use `--db-instance-identifier` for `${19}` and use `db.t3.micro` as the free-tier db instance type. Tag your database with the module tag. Though it will take extra time, make use of waiters for the RDS instances.
 
 ## Part 2
 
@@ -57,7 +57,7 @@ Using the [Python Boto3 AWS SDK](https://boto3.amazonaws.com/v1/documentation/ap
 
 For the `create-env-grader.py`:
 
-* Check for the existence of two RDS instances
+* Check for the existence of ~~two~~ one RDS instances
 * Check for the existence of the **module-06** tag for the database instances
 * Check for the existence of one Secret in your Secrets Manager
 * Check for the existence of three EC2 instances tagged: **module-06**
