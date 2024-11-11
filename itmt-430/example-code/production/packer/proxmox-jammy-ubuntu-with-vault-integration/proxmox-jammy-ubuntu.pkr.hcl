@@ -34,9 +34,9 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
   
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
-  node      = "${var.NODENAME}"
-  username  = "${var.USERNAME}"
-  token     = "${var.PROXMOX_TOKEN}"
+  node      = "${local.NODENAME}"
+  username  = "${local.USERNAME}"
+  token     = "${local.PROXMOX_TOKEN}"
   cpu_type  = "host"
 
   disks {
@@ -68,14 +68,14 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
   }
 
   os                       = "l26"
-  proxmox_url              = "${var.URL}"
+  proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
   # io thread option requires virtio-scsi-single controller
   scsi_controller      = "virtio-scsi-single"
-  ssh_password         = "${var.SSHPW}"
+  ssh_password             = "${local.SSHPW}"
   ssh_username         = "vagrant"
   ssh_timeout          = "22m"
   template_description = "A Packer template for Ubuntu Jammy Server integrated with Vault secrets."
