@@ -25,11 +25,18 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
     "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
     "<f10><wait>"
   ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/ubuntu-22.04.5-live-server-amd64.iso"
+    unmount=true
+    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
+  }
+  
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
-  node      = "${local.NODENAME}"
-  username  = "${local.USERNAME}"
-  token     = "${local.PROXMOX_TOKEN}"
+  node      = "${var.NODENAME}"
+  username  = "${var.USERNAME}"
+  token     = "${var.PROXMOX_TOKEN}"
   cpu_type  = "host"
 
   disks {
@@ -37,13 +44,13 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
     storage_pool = "${var.STORAGEPOOL}"
     type         = "virtio"
     io_thread    = true
+    format       = "raw"
+    
   }
   http_directory    = "subiquity/http"
   http_bind_address = "10.110.0.45"
   http_port_max     = 9200
   http_port_min     = 9001
-  iso_checksum      = "${var.iso_checksum}"
-  iso_urls          = "${var.iso_urls}"
   iso_storage_pool  = "local"
   memory            = "${var.MEMORY}"
 
@@ -61,20 +68,19 @@ source "proxmox-iso" "proxmox-jammy-ubuntu" {
   }
 
   os                       = "l26"
-  proxmox_url              = "${local.URL}"
+  proxmox_url              = "${var.URL}"
   insecure_skip_tls_verify = true
-  unmount_iso              = true
   qemu_agent               = true
+  cloud_init               = true
+  cloud_init_storage_pool  = "local"
   # io thread option requires virtio-scsi-single controller
-  scsi_controller         = "virtio-scsi-single"
-  cloud_init              = true
-  cloud_init_storage_pool = "${var.STORAGEPOOL}"
-  ssh_password            = "${local.SSHPW}"
-  ssh_username            = "vagrant"
-  ssh_timeout             = "22m"
-  template_description    = "A Packer template for Ubuntu Jammy"
-  vm_name                 = "${var.VMNAME}"
-  tags                    = "${var.TAGS}"
+  scsi_controller      = "virtio-scsi-single"
+  ssh_password         = "${var.SSHPW}"
+  ssh_username         = "vagrant"
+  ssh_timeout          = "22m"
+  template_description = "A Packer template for Ubuntu Jammy Server integrated with Vault secrets."
+  vm_name              = "${var.VMNAME}"
+  tags                 = "${var.TAGS}"
 }
 
 build {
