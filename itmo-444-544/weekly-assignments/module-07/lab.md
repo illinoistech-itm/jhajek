@@ -30,6 +30,7 @@
   * Place the public key content of that keypair into your GitHub private repo as a [Deploy Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/managing-deploy-keys "webpage deploy key") 
   * Check your connection on the EC2 instance CLI with the command: `ssh git@github.com`
   * From the CLI of your own Vagrant Box, create a [custom AMI Image](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-image.html "webpage create custom AMI")
+  * Copy newly generated AMI ID and replace previous AMI ID in your arguments.txt
 * Create a single RDS instance using the parameters from previously assigned modules
   * On the EC2 instance still resident, install the package `mysql-client`
   * On the EC2 instance still resident clone the repository where you have the sample `create.sql` file
