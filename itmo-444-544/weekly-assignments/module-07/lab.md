@@ -39,7 +39,7 @@
     * When prompted retrieve secrets password from Secrets Manager
   * Connect again and check that the tables have been created
   * From the CLI on your vagrant box, use the AWS CLI v2 to [create and RDS Snapshot](https://awscli.amazonaws.com/v2/documentation/api/2.0.34/reference/rds/create-db-snapshot.html "webpage to create an RDS snapshot") 
-* Upon successful creation and availability of the custom AMI and snapshot, terminate the EC2 instance the image came from.
+* Upon successful creation and availability of the custom AMI and snapshot, terminate the EC2 instance the image came from and terminate the RDS instance without a final snapshot.
 
 ## Arguments.txt
 
