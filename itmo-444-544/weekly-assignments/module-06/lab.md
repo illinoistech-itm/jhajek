@@ -30,7 +30,7 @@
 # ${10} us-east-2a
 # ${11} us-east-2b
 # ${12} us-east-2c
-# ${13} module-05
+# ${13} module-06
 # ${14} asg name
 # ${15} launch-template name
 # ${16} asg min
