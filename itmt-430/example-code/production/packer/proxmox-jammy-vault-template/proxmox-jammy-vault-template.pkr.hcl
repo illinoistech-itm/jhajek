@@ -43,13 +43,12 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
     type         = "virtio"
     io_thread    = true
     format       = "raw"
-    
   }
   http_directory    = "subiquity/http"
   http_bind_address = "10.110.0.45"
   http_port_max     = 9200
   http_port_min     = 9001
-  iso_storage_pool  = "local"
+  #iso_storage_pool  = "local"
   memory            = "${var.MEMORY}"
 
   network_adapters {
