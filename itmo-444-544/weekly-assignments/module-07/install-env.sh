@@ -12,6 +12,6 @@ sudo apt install -y nginx
 sudo -U ubuntu git clone git@github.com:illinoistech-itm/hajek.git
 
 # Adjust repo name and path accordingly
-cp hajek/itmo-444-544/weekly-assignments/module-07/index.html /var/www/html/
-
+sudo cp hajek/itmo-444-544/weekly-assignments/module-07/index.html /var/www/html/
+sudo cp hajek/itmo-444-544/weekly-assignments/module-07/app.js /var/www/html/
 
