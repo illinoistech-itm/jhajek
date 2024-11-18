@@ -13,7 +13,7 @@ sudo apt-get update
 sudo apt-get dist-upgrade -y
 
 # Disable password authentication
-echo "PasswordAuthentication no" | sudo tee -a /etc/ssh/sshd_config.d/diable-password-auth.conf
+echo "PasswordAuthentication no" | sudo tee -a /etc/ssh/sshd_config.d/10-disable-password-auth.conf
 
 # https://github.com/hashicorp/terraform-provider-vsphere/issues/516
 # Remove /etc/machine-id so that all the cloned machines will get their own IP address upon DHCP request
