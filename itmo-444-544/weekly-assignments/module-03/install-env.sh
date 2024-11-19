@@ -33,7 +33,7 @@ cd /home/ubuntu
 # sudo -u ubuntu npm install @aws-sdk/client-dynamodb @aws-sdk/client-sqs @aws-sdk/client-s3 @aws-sdk/client-sns express multer multer-s3 uuid ip
 
 # Install necessary libraries for our application
-sudo -u ubuntu npm install  @aws-sdk/client-s3 @aws-sdk/secrets-client-manager express multer multer-s3 uuid ip
+sudo -u ubuntu npm install  @aws-sdk/client-s3 @aws-sdk/client-secrets-manager express multer multer-s3 uuid ip
 
 sudo npm install pm2 -g
 
