@@ -43,7 +43,10 @@ sudo npm install pm2 -g
 # Change URL to your private repo
 sudo -u ubuntu git clone git@github.com:illinoistech-itm/hajek.git
 
-# Adjust repo name and path accordingly :-)
-sudo cp hajek/itmo-444-544/weekly-assignments/module-07/index.html /var/www/html/
-sudo cp hajek/itmo-444-544/weekly-assignments/module-07/app.js /var/www/html/
+# cd command to the directory containing app.js
+# WARNING!!! This is the path in my GitHub Repo - yours could be different
+# Please adjust accordingly - There be Dragons!
+cd hajek/itmo-444-544/weekly-assignments/module-08/
 
+# Used to auto start the app.js nodejs application at deploy time
+sudo pm2 start app.js
