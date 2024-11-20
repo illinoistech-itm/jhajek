@@ -52,7 +52,7 @@ JSON="{
     ],
     \"ImageId\": \"${1}\",
     \"IamInstanceProfile\" : {
-      \"Name\": \"${19}\"
+      \"Name\": \"${20}\"
     }, 
     \"InstanceType\": \"${2}\",
     \"KeyName\": \"${3}\",
