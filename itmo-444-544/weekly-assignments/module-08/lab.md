@@ -62,7 +62,7 @@ Make use of this code block after your RDS instance launches and after the waite
 
 ```bash
 aws rds modify-db-instance \
-    --db-instance-identifier ${19} \
+    --db-instance-identifier ${20} \
     --manage-master-user-password
 ```
 
