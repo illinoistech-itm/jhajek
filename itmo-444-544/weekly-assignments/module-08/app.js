@@ -337,23 +337,64 @@ const getDBIdentifier = async () => {
       };
 
 //////////////////////////////////
+// https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/secrets-manager/command/ListSecretsCommand/
+// Command to list the dynamic secret ID created by the RDS --manage-master-user-password
+// ListSecretsCommand
+
+const listSecrets = async () => {
+
+  secretID = "";
+  const client = new SecretsManagerClient({ region: REGION});
+  const command = new ListSecretsCommand();
+  try {
+    const results = await client.send(command);
+    console.log(results);
+		
+    for ( element of results.Buckets ) {
+      if ( element.Name.includes("rds") ) {
+              console.log(element.Name)
+              secretID = element.Name
+      } }
+    
+    const params = {
+      SecretId: secret_name
+		}
+		return params;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+//////////////////////////////////
 // https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/secrets-manager/command/GetSecretValueCommand/
 // Directly retrieve the secret value
 // GetSecretValueCommand
 //
-
 const getUname = async () => {
   
-  //console.log("Secret ARN: ",secretARN.SecretList[0].ARN);
+  let secretID = await listSecrets();
   const params = {
-    SecretId: "username",
+    SecretId: secretID,
   };
   const client = new SecretsManagerClient({ region: REGION });
   const command = new GetSecretValueCommand(params);
   try {
     const results = await client.send(command);
-    //console.log(results);
-    return results;
+    console.log(results);
+    // Returned value looks like this... need to strip out the \ and \n and turn it 
+    //into Json so we can retrieve the Value
+    // "SecretString": "{\n  \"username\":\"david\",\n  \"password\":\"EXAMPLE-PASSWORD\"\n}\n",
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
+    valueToJsonify = results.SecretList[0].SecretString.replace(/\\n/g, '');
+    jsonValue = valueToJsonify.replace(/\\/g,"");
+       
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+    /*
+    const json = '{"result":true, "count":42}';
+    const obj = JSON.parse(json);
+    */
+    const obj = JSON.parse(jsonValue);
+    return obj.username;
   } catch (err) {
     console.error(err);
   }
@@ -367,34 +408,29 @@ const getUname = async () => {
 
 const getPword = async () => {
   
-  //console.log("Secret ARN: ",secretARN.SecretList[0].ARN);
+  let secretID = await listSecrets();
   const params = {
-    SecretId: "password",
+    SecretId: secretID,
   };
   const client = new SecretsManagerClient({ region: REGION });
   const command = new GetSecretValueCommand(params);
   try {
     const results = await client.send(command);
-    //console.log(results);
-    return results;
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-/////////////////////////////////////////////////
-// add list SNS topics here
-//
-
-const getListOfSnsTopics = async () => {
-  const client = new SNSClient({ region: REGION });
-  const command = new ListTopicsCommand({});
-  try {
-    const results = await client.send(command);
-    //console.error("Get SNS Topic Results: ", results.Topics.length);
-    //console.error("ARN: ", results.Topics[0].TopicArn);
-    //return results.Topics[0];
-    return results;
+    console.log(results);
+    // Returned value looks like this... need to strip out the \ and \n and turn it 
+    //into Json so we can retrieve the Value
+    // "SecretString": "{\n  \"username\":\"david\",\n  \"password\":\"EXAMPLE-PASSWORD\"\n}\n",
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
+    valueToJsonify = results.SecretList[0].SecretString.replace(/\\n/g, '');
+    jsonValue = valueToJsonify.replace(/\\/g,"");
+       
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+    /*
+    const json = '{"result":true, "count":42}';
+    const obj = JSON.parse(json);
+    */
+    const obj = JSON.parse(jsonValue);
+    return obj.password;
   } catch (err) {
     console.error(err);
   }
