@@ -57,13 +57,21 @@ Add to your `install-env.sh` logic needed to:
 * Install via `npm` all application dependencies
 * Clone your private repo and using the PM2 process manager start the app.js application
 
+Make use of this code block after your RDS instance launches and after the waiter is complete.
+
+```bash
+aws rds modify-db-instance \
+    --db-instance-identifier ${19} \
+    --manage-master-user-password
+```
+
 ## Part 2
 
 Using the [Python Boto3 AWS SDK](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html "Python Boto3 AWS SDK") you will write an autograder script for this project. One for the `create-env.sh` named: `create-env-grader.py`, and one for the `destroy-env.py` named: `destroy-env-grader.py`. Print out information per item below to the screen and keep a grandtotal to print out your score out of 5.
 
 For the `create-env-grader.py`:
 
-* Check for the existence of one RDS instances
+* Check for the existence of one RDS instance~~s~~ and one RDS Snapshot
 * Check for the existence of the **module-08** tag for the database instance
 * Check for the existence of two S3 buckets
 * Check for the existence of 2 images named: `vegeta.jpg` and `knuth.jpg` 
