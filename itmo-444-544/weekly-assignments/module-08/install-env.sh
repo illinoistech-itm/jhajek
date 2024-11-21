@@ -6,7 +6,7 @@
 # Installing Nodejs 22
 
 # Node JS Package List URL Link: https://github.com/nodesource/distributions?tab=readme-ov-file#using-debian-as-root-nodejs-22
-sudo apt-get install -y curl
+sudo apt-get install -y curl nginx
 
 # Get the URL of the package
 curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
@@ -42,6 +42,10 @@ sudo npm install pm2 -g
 
 # Change URL to your private repo
 sudo -u ubuntu git clone git@github.com:illinoistech-itm/hajek.git
+
+sudo cp hajek/itmo-444-544/weekly-assignments/module-08/default /etc/nginx/sites-available/default
+sudo systemctl daemon-reload
+sudo systemctl restart nginx
 
 # cd command to the directory containing app.js
 # WARNING!!! This is the path in my GitHub Repo - yours could be different
