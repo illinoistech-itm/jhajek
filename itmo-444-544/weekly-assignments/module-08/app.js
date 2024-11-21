@@ -69,7 +69,7 @@ const listBuckets = async () => {
         const command = new ListBucketsCommand({});
 	try {
 		const results = await client.send(command);
-		//console.log("List Buckets Results: ", results.Buckets[0].Name);
+		console.log("List Buckets Results: ", results.Buckets[0].Name);
                 for ( element of results.Buckets ) {
                         if ( element.Name.includes("raw") ) {
                                 console.log(element.Name)
@@ -107,7 +107,6 @@ const listObjects = async (req,res) => {
 	}
 };
 
-
 ///////////////////////////////////////////////
 /// Get posted data as an async function
 //
@@ -131,7 +130,7 @@ const getPostedData = async (req,res) => {
 	// Use this code to retrieve the value entered in the phone field in the index.html
 	var phone = req.body['phone'];
         res.write(username + "\n");
-	    res.write(s3URL + "\n");
+	      res.write(s3URL + "\n");
         res.write(email + "\n");
         res.write(phone + "\n");
 
@@ -167,8 +166,8 @@ const getDBIdentifier = async () => {
         const command = new DescribeDBInstancesCommand({});
         try {
           const results = await client.send(command);
-          //console.log("List RDS results: ", results.DBInstances[0].DBInstanceIdentifier);
-          //console.log("List RDS Endpoint results: ", results.DBInstances[0].Endpoint.Address);
+          console.log("List RDS results: ", results.DBInstances[0].DBInstanceIdentifier);
+          console.log("List RDS Endpoint results: ", results.DBInstances[0].Endpoint.Address);
           return results;
         } catch (err) {
           console.error(err);
