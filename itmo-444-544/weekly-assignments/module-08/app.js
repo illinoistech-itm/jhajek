@@ -459,12 +459,12 @@ const getSnsTopicArn = async () => {
 ///////////////////////////////////////////////////
 // Register email with Topic
 //
-const subscribeEmailToSNSTopic = async () => {
+const subscribeEmailToSNSTopic = async (req,res) => {
   let topicArn = await getListOfSnsTopics();
+  let email = req.body['email']
   const params = {
-    // CHANGE ENDPOINT EMAIL TO YOUR OWN
-    Endpoint: "hajek@iit.edu",
-    Protocol: "email",
+      Endpoint: email,
+      Protocol: "email",
     TopicArn: topicArn.Topics[0].TopicArn,
   };
   const client = new SNSClient({ region: REGION });
@@ -567,12 +567,12 @@ app.get("/", function (req, res) {
       
       app.post("/upload", upload.array("uploadFile", 1), function (req, res, next) {
         (async () => { await getPostedData(req, res);})();
-        (async () => { await getListOfSnsTopics(); })();
-        (async () => { await getSnsTopicArn() })();
-        (async () => { await subscribeEmailToSNSTopic() } ) ();
+        //(async () => { await getListOfSnsTopics(); })();
+        //(async () => { await getSnsTopicArn() })();
+        //(async () => { await subscribeEmailToSNSTopic(req,res) } ) ();
         //(async () => { await sendMessageViaEmail(req,res) } ) ();
         (async () => { await insertRecord(req, res);})();
-        (async () => { await sendMessageToQueue(req,res); }) ();
+        //(async () => { await sendMessageToQueue(req,res); }) ();
         // add SQS message here, includes DB record UUID,
       });
       
