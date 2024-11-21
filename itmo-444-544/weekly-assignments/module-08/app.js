@@ -346,7 +346,7 @@ const getUname = async () => {
   
   //console.log("Secret ARN: ",secretARN.SecretList[0].ARN);
   const params = {
-    SecretId: "uname",
+    SecretId: "username",
   };
   const client = new SecretsManagerClient({ region: REGION });
   const command = new GetSecretValueCommand(params);
@@ -369,7 +369,7 @@ const getPword = async () => {
   
   //console.log("Secret ARN: ",secretARN.SecretList[0].ARN);
   const params = {
-    SecretId: "pword",
+    SecretId: "password",
   };
   const client = new SecretsManagerClient({ region: REGION });
   const command = new GetSecretValueCommand(params);
