@@ -2,7 +2,7 @@
 
 ## Objectives
 
-* Demonstrate process to install AWS JavaScript SDK packages
+* Demonstrate the process to install AWS JavaScript SDK packages
 * Demonstrate the concept of deploying a working cloud native application
 * Demonstrate the IAM concepts needed for integrating cloud services for an application
 * Demonstrate the termination of cloud resources in an automated fashion
@@ -57,7 +57,7 @@ Add to your `install-env.sh` logic needed to:
 * Install via `npm` all application dependencies
 * Clone your private repo and using the PM2 process manager start the app.js application
   * Making use of an Nginx reverse proxy (code provided)
-  
+
 Make use of this code block after your RDS instance launches and after the waiter is complete.
 
 ```bash
