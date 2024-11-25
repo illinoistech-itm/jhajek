@@ -63,13 +63,11 @@ resource "proxmox_vm_qemu" "vanilla-server" {
   network {
     model  = "virtio"
     bridge = "vmbr0"
-    #macaddr = "04:9F:15:00:00:00" 
   }
 
   network {
     model  = "virtio"
     bridge = "vmbr1"
-    #macaddr = "04:9F:15:00:00:00" 
   }
 
   network {
@@ -126,6 +124,6 @@ resource "proxmox_vm_qemu" "vanilla-server" {
 }
 
 output "proxmox_ip_address_default" {
-  description = "Current Pulbic IP"
+  description = "Current Public IP"
   value = proxmox_vm_qemu.vanilla-server.*.default_ipv4_address
 }
