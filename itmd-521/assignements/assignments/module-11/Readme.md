@@ -16,11 +16,11 @@ You will write out a series of csv (uncompressed) files using the `coalesce(1)` 
 
 Using date ranges, select all records for the month of February for each year in the decade, find the following: You may have to add filters to remove records that have values that are legal but not real -- such as 9999 or anything too low for humans to live. You will have to construct a schema for writing the results. You may want to make use of temp tables to keep smaller sets of data in memory.
 
-1) Count the number of records
-1) Average air temperature for month of February 
-1) Median air temperature for month of February
-1) Standard Deviation of air temperature for month of February
-1) Find AVG air temperature per StationID in the month of February
+1) Count the number of records total
+1) Average air temperature for month of February for each year 
+1) Median air temperature for month of February for each year
+1) Standard Deviation of air temperature for month of February for each year
+1) Find AVG air temperature per StationID in the month of February for each year
 
 ## Deliverable
 
