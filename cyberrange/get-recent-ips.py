@@ -1,10 +1,21 @@
 from proxmoxer import ProxmoxAPI
 import configparser
 
+# Read URL, username, and password from the config.ini file -- keeps hard coded values out of the document
+# Requires a Proxmox user with proper permissions
+# We can create a user and credentials for this purpose
 config = configparser.ConfigParser()
 config.read("config.ini")
-# identify the unique tag you are looking for
+# identify the unique VM tag you are looking for
 UNIQUEIDTAG = ''
+
+# Create connection and authenticate to a Proxmox cluster
+# The config.ini looks like this, none of the values are quoted
+
+# [prxmx41]
+# url: system41.rice.iit.edu   -- just the URL no pre or postfix
+# user: username@pve
+# pass: long string provided
 
 proxmox = ProxmoxAPI(config.get("prxmx41","url"), user=config.get("prxmx41","user"), password=config.get("prxmx41","pass"), verify_ssl=False)
 
