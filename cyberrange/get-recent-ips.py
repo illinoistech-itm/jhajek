@@ -17,21 +17,28 @@ UNIQUEIDTAG = ''
 # user: username@pve
 # pass: long string provided
 
-proxmox = ProxmoxAPI(config.get("prxmx41","url"), user=config.get("prxmx41","user"), password=config.get("prxmx41","pass"), verify_ssl=False)
+node1 = "system35"
+node2 = "system43"
+#node3 = ""
+proxmox = ProxmoxAPI(config.get("system1","url"), user=config.get("system1","user"), password=config.get("system1","pass"), verify_ssl=False)
 
-prxmx41 = proxmox.nodes("system41").qemu.get()
-prxmx42 = proxmox.nodes("system42").qemu.get()
+prxmx1 = proxmox.nodes(node1).qemu.get()
+prxmx2 = proxmox.nodes(node2).qemu.get()
+#prxmx3 = proxmox.nodes(node3).qemu.get()
 
+# Initialize empty lists to hold query results
 runningvms = []
 runningwithtagsvms = []
+
+# node 1
 # Loop through the first node to get all of the nodes that are of status running and that have the tag of the user
-for vm in prxmx41:
+for vm in prxmx1:
   if vm['status'] == 'running' and vm['tags'].split(';')[1] == UNIQUEIDTAG:
     runningvms.append(vm)
 
 # Loop through those running VMs to then get networking/IP information
 for vm in runningvms:
-  runningwithtagsvms.append(proxmox.nodes("system41").qemu(vm['vmid']).agent("network-get-interfaces").get())
+  runningwithtagsvms.append(proxmox.nodes(node1).qemu(vm['vmid']).agent("network-get-interfaces").get())
 # Visualization debugging
 # print(runningwithtagsvms[3]['result'])
 
@@ -45,4 +52,26 @@ for x in range(len(runningwithtagsvms)):
   print('VMTAG: ' + str(runningvms[x]['tags'].split(';')[1]))
   for y in range(len(runningwithtagsvms[x]['result'])):
     print(runningwithtagsvms[x]['result'][y]['ip-addresses'][0]['ip-address'])
-    
+
+# node 2
+# Loop through the first node to get all of the nodes that are of status running and that have the tag of the user
+for vm in prxmx1:
+  if vm['status'] == 'running' and vm['tags'].split(';')[1] == UNIQUEIDTAG:
+    runningvms.append(vm)
+
+# Loop through those running VMs to then get networking/IP information
+for vm in runningvms:
+  runningwithtagsvms.append(proxmox.nodes(node2).qemu(vm['vmid']).agent("network-get-interfaces").get())
+# Visualization debugging
+# print(runningwithtagsvms[3]['result'])
+
+print(len(runningwithtagsvms))
+# Get length of network interfaces list
+interfacelen = len(runningwithtagsvms)
+
+for x in range(len(runningwithtagsvms)):
+  print('VMID: ' + str(runningvms[x]['vmid']))
+  print('VMSTATUS: ' + str(runningvms[x]['status']))
+  print('VMTAG: ' + str(runningvms[x]['tags'].split(';')[1]))
+  for y in range(len(runningwithtagsvms[x]['result'])):
+    print(runningwithtagsvms[x]['result'][y]['ip-addresses'][0]['ip-address'])
