@@ -3,6 +3,8 @@ import configparser
 
 config = configparser.ConfigParser()
 config.read("config.ini")
+# identify the unique tag you are looking for
+UNIQUEIDTAG = ''
 
 proxmox = ProxmoxAPI(config.get("prxmx41","url"), user=config.get("prxmx41","user"), password=config.get("prxmx41","pass"), verify_ssl=False)
 
@@ -13,7 +15,7 @@ runningvms = []
 runningwithtagsvms = []
 # Loop through the first node to get all of the nodes that are of status running and that have the tag of the user
 for vm in prxmx41:
-  if vm['status'] == 'running' and vm['tags'].split(';')[1] == 'studentproduction':
+  if vm['status'] == 'running' and vm['tags'].split(';')[1] == UNIQUEIDTAG:
     runningvms.append(vm)
 
 # Loop through those running VMs to then get networking/IP information
