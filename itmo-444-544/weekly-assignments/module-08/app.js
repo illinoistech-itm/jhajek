@@ -350,16 +350,13 @@ const listSecrets = async () => {
     const results = await client.send(command);
     console.log(results);
 		
-    for ( element of results.Buckets ) {
+    for ( element of results.SecretList ) {
       if ( element.Name.includes("rds") ) {
               console.log(element.Name)
               secretID = element.Name
       } }
     
-    const params = {
-      SecretId: secret_name
-		}
-		return params;
+		return secretID;
   } catch (err) {
     console.error(err);
   }
