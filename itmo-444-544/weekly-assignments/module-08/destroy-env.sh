@@ -23,6 +23,3 @@ aws s3api delete-bucket --bucket $l --region us-east-1 --no-cli-pager
 aws s3api wait bucket-not-exists --bucket $l --no-cli-pager
 done
 echo "S3 Bucket deleted"
-
-aws secretsmanager delete-secret --secret-id $SECRET_ID --no-cli-pager
-echo "secret deleted"
