@@ -188,8 +188,8 @@ const getDBIdentifier = async () => {
           // create the connection to database
           const connection = await mysql.createConnection({
             host: dbIdentifier.DBInstances[0].Endpoint.Address,
-            user: uname.SecretString,
-            password: pword.SecretString,
+            user: uname,
+            password: pword,
             database: "company",
           });
       
@@ -239,8 +239,8 @@ const getDBIdentifier = async () => {
           // create the connection to database
           const connection = await mysql.createConnection({
             host: dbIdentifier.DBInstances[0].Endpoint.Address,
-            user: uname.SecretString,
-            password: pword.SecretString,
+            user: uname,
+            password: pword,
             database: "company",
           });
       
@@ -267,8 +267,8 @@ const getDBIdentifier = async () => {
           // create the connection to database
           const connection = await mysql.createConnection({
             host: dbIdentifier.DBInstances[0].Endpoint.Address,
-            user: uname.SecretString,
-            password: pword.SecretString,
+            user: uname,
+            password: pword,
             database: "company",
           });
       
@@ -297,8 +297,8 @@ const getDBIdentifier = async () => {
           // create the connection to database
           const connection = await mysql.createConnection({
             host: dbIdentifier.DBInstances[0].Endpoint.Address,
-            user: uname.SecretString,
-            password: pword.SecretString,
+            user: uname,
+            password: pword,
             database: "company",
           });
       
@@ -382,15 +382,15 @@ const getUname = async () => {
     //into Json so we can retrieve the Value
     // "SecretString": "{\n  \"username\":\"david\",\n  \"password\":\"EXAMPLE-PASSWORD\"\n}\n",
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
-    valueToJsonify = results.SecretList[0].SecretString.replace(/\\n/g, '');
-    jsonValue = valueToJsonify.replace(/\\/g,"");
+    //valueToJsonify = results.SecretList[0].SecretString.replace(/\\n/g, '');
+    //jsonValue = valueToJsonify.replace(/\\/g,"");
        
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
     /*
     const json = '{"result":true, "count":42}';
     const obj = JSON.parse(json);
     */
-    const obj = JSON.parse(jsonValue);
+    const obj = JSON.parse(results.SecretString);
     return obj.username;
   } catch (err) {
     console.error(err);
@@ -418,15 +418,15 @@ const getPword = async () => {
     //into Json so we can retrieve the Value
     // "SecretString": "{\n  \"username\":\"david\",\n  \"password\":\"EXAMPLE-PASSWORD\"\n}\n",
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
-    valueToJsonify = results.SecretList[0].SecretString.replace(/\\n/g, '');
-    jsonValue = valueToJsonify.replace(/\\/g,"");
+    //valueToJsonify = results.SecretList[0].SecretString.replace(/\\n/g, '');
+    //jsonValue = valueToJsonify.replace(/\\/g,"");
        
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
     /*
     const json = '{"result":true, "count":42}';
     const obj = JSON.parse(json);
     */
-    const obj = JSON.parse(jsonValue);
+    const obj = JSON.parse(results.SecretString);
     return obj.password;
   } catch (err) {
     console.error(err);
