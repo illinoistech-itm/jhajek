@@ -12,6 +12,6 @@ sudo sed -i "1,$s/#datacenter = 'my-dc-1'/datacenter = 'rice-dc-1'/" /etc/consul
 sudo sed -i "1,$s/changeme/$RANDOM/" /etc/consul.d/system.hcl
 sudo sed -i "1,$s/replace-name/$(hostname)/" /etc/consul.d/system.hcl
 
-sudo mv -v ../jammy-services/system.hcl /etc/consul.d/
-sudo mv -v ../jammy-services/node-exporter-consul-service.json /etc/consul.d/
+sudo cp -v ../jammy-services/system.hcl /etc/consul.d/
+sudo cp -v ../jammy-services/node-exporter-consul-service.json /etc/consul.d/
 sudo systemctl enable consul.service
