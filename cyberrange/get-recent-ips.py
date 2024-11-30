@@ -8,7 +8,7 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 # identify the unique VM tag you are looking for
 UNIQUEIDTAG = ''
-
+POSITIONOFUNIQUETAG = 1
 # Create connection and authenticate to a Proxmox cluster
 # The config.ini looks like this, none of the values are quoted
 
@@ -33,7 +33,7 @@ runningwithtagsvms = []
 # node 1
 # Loop through the first node to get all of the nodes that are of status running and that have the tag of the user
 for vm in prxmx1:
-  if vm['status'] == 'running' and vm['tags'].split(';')[1] == UNIQUEIDTAG:
+  if vm['status'] == 'running' and vm['tags'].split(';')[POSITIONOFUNIQUETAG] == UNIQUEIDTAG:
     runningvms.append(vm)
 
 # Loop through those running VMs to then get networking/IP information
