@@ -434,6 +434,18 @@ const getPword = async () => {
 };
 
 ///////////////////////////////////////////
+////List topics
+//
+const getListOfSnsTopics = async () =>{
+  const client = new SNSClient({region: REGION });
+
+  const command = new ListTopicsCommand();
+  const response = await client.send(command);
+
+  return response
+}
+
+///////////////////////////////////////////
 // List of properties of Topic ARN
 //
 const getSnsTopicArn = async () => {
