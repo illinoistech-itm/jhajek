@@ -128,7 +128,10 @@ Attendance is expected and will be counted as part of your grade -- if you are n
 
 ### Course Web Site
 
-The course will make use of Canvas inside of the Illinois Tech Portal.
+The course will make use of Canvas inside of the Illinois Tech Portal. There are Mobile apps available:
+
+* [Android Canvas](https://play.google.com/store/apps/details?id=com.instructure.candroid&hl=en_US "Android Canvas")
+* [iOS Canvas](https://apps.apple.com/us/app/canvas-student/id480883488 "iOS Canvas")
 
 ### Assignments
 
