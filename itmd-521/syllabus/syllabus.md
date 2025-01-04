@@ -31,7 +31,7 @@ Familiarity with programming and Linux: Normally 3-0-3 Semester Hours
 ## Section 01 Tuesday Lecture, Time & Place
 
 * Main Class time
-  * Tuesday and Thursday 5:00 PM to 7:40 PM
+  * Tuesday and Thursday 3:15 to 4:30 PM
   * Location - TS-2030 Smart Lab
   * [Campus Map](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 
@@ -39,28 +39,45 @@ Familiarity with programming and Linux: Normally 3-0-3 Semester Hours
 
 To get to the Smart Tech Lab - enter the Michael Galvin tower on 35th Street.  Swipe in at the desk and take the elevator up to the second floor. Exit to the left and head north over the bridge from the Tower to the TS building. The Floor turns from white tile to brown carpet.  Take a left at the intersection and the Smart Lab is directly ahead of you.
 
-## Section 01 Schedule of Topics/Readings
+## Schedule of Topics/Readings
 
 All readings should be done prior to class
 
-Session | Date | Topic | Reading for Homework |
-----------|------|:------|----------
-1 | 08/20 | Introduction | -
-2 | 08/27 | Tooling Assignment | FoDE 1 
-3 | 09/03 | Data Engineering Described | -
-4 | 09/10 | Advanced Tooling Assignment | FoDE 2
-5 | 09/17 | Data Engineering Life Cycle | Learning Spark 2
-6 | 09/24 | Apache Spark Install | FoDE 3
-7 | 10/01 | Designing Good Data Architecture | Learning Spark 3
-8 | 10/08 | Apache Spark Structured APIs | FoDE 4
-9 | 10/15 | Choosing Technologies Across the Data Engineering LifeCycle | Learning Spark 3
-10 | 10/22 | End to End Data Set Examples | FoDE 5
-11 | 10/29 | Data Generation in Source Systems | Learning Spark 4 Part I
-12 | 11/05 | Spark SQL and DataFrames | FoDE 6
-13 | 11/12 | Storage | Learning Spark 4 Part II 
-14 | 11/19 | File storage and Partitions | FoDE 7
-15 | 11/26 | Ingestion | Learning Spark 5
-16 | 12/03 | Final Exam Week | -
+Week | Date | Topic | Readings |
+----|------|:--------------------|-------------
+1 | 01/14 | Introduction | -
+2 | 01/16 |              | -
+3 | 01/21 | Tooling Assignment | FoDE 1 
+4 | 01/23 | Data Engineering Described | -
+5 | 01/28 | Advanced Tooling Assignment | FoDE 2
+6 | 01/30 | Advanced Tooling Assignment | FoDE 2
+7 | 02/04 | Data Engineering Life Cycle | Learning Spark 2
+8 | 02/06 | Data Engineering Life Cycle | Learning Spark 2
+9 | 02/11 | Apache Spark Install | FoDE 3
+10 | 02/13 | Apache Spark Install | FoDE 3
+11 | 02/18 | Designing Good Data Architecture | Learning Spark 3
+12 | 02/20 | Designing Good Data Architecture | Learning Spark 3
+13 | 02/25 | Apache Spark Structured APIs | FoDE 4
+14 | 02/27 | Apache Spark Structured APIs | FoDE 4
+15 | 03/04 | Choosing Technologies Across the Data Engineering LifeCycle | Learning Spark 3
+16 | 03/06 | Choosing Technologies Across the Data Engineering LifeCycle | Learning Spark 3
+17 | 03/11 | End to End Data Set Examples | FoDE 5
+18 | 03/13 | End to End Data Set Examples | FoDE 5
+NA | 03/18 | No Class Spring Break | NA
+NA | 03/20 | No Class Spring Break | NA
+19 | 03/25 | Data Generation in Source Systems | Learning Spark 4 Part I
+20 | 03/27 | Data Generation in Source Systems | Learning Spark 4 Part I
+21 | 04/01 | Spark SQL and DataFrames | FoDE 6
+22 | 04/03 | Spark SQL and DataFrames | FoDE 6
+23 | 04/08 | Storage | Learning Spark 4 Part II
+24 | 04/10 | Storage | Learning Spark 4 Part II
+25 | 04/15 | File storage and Partitions | FoDE 7
+26 | 04/17 | File storage and Partitions | FoDE 7
+27 | 04/22 | Ingestion | Learning Spark 5
+28 | 04/24 | Ingestion | Learning Spark 5
+29 | 04/29 | TBA | NA
+30 | 05/01 | TBA | NA
+31 | 05/05 | Final Exam Week | -
 
 ## Course Student Outcomes
 
