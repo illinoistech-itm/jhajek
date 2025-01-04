@@ -1,4 +1,4 @@
-# ITMT 430 Systems Integration - Spring 2024
+# ITMT 430 Systems Integration - Spring 2025
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
