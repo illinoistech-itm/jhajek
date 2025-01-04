@@ -188,7 +188,7 @@ We will be using a Discord channel to communicate questions this semester.
 
 ### Our Contract
 
-This syllabus is my contract with you as to what I will deliver and what I expect from you. If I change the syllabus, I will issue a revised version of the syllabus; the latest version will always be available on Blackboard. Revisions to readings and assignments will be communicated via Blackboard and via version control in GitHub
+This syllabus is my contract with you as to what I will deliver and what I expect from you. If I change the syllabus, I will issue a revised version of the syllabus; the latest version will always be available via Canvas. Revisions to readings and assignments will be communicated via Canvas and via version control in GitHub
 
 ### Disabilities
 
