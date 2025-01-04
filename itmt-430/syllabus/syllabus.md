@@ -128,9 +128,7 @@ Attendance is expected and will be counted as part of your grade -- if you are n
 
 ### Course Web Site
 
-[http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL")
-
-The course will make use of Blackboard [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL") for communications, assignment submissions, group project coordination, providing online resources and administering examinations. All remote students will view the course lectures online via Blackboard, and online readings and other course material will be found on Blackboard.
+The course will make use of Canvas inside of the Illinois Tech Portal.
 
 ### Assignments
 

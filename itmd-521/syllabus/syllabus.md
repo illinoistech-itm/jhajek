@@ -1,21 +1,20 @@
-# ITMD 521 Big Data Infrastructure - Fall 2024
+# ITMD 521 Big Data Infrastructure - Fall 2025
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
-Semester: Fall 2024 Professor Jeremy Hajek
+Semester: Spring 2025 Professor Jeremy Hajek
 
 ![*https://xkcd.com/2054/*](images/data_pipeline.png "XCKD 2054 image URL")
 
 | Category | Value |
 | --------- | ------------ |
  **Professor** | Jeremy Hajek
- Address | Department of Information Technology & Management 10 W. 33rd St., Chicago, IL 60616
+ Address | Department of Information Technology & Management 10 W. 35th St., Chicago, IL 60616
  Telephone | 312.567.5937
  Email | hajek@iit.edu
- Office | Galvin Tower 15th Floor, 10 W. 35th St.
- Office Hours | Mon - Thurs — 1:00 - 3:00 PM
- Location | Galvin Tower 15th Floor, 10 W. 35th St or via MS Teams Link
- URL | Book and appointment at: [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
+ Office | IIT Tower 15th Floor
+ Office Hours and URL | See Times at [https://iit.campus.eab.com/pal/WAle8ZAcry](https://iit.campus.eab.com/pal/WAle8ZAcry "webpage for availability")
+ Location | IIT Tower 15th Floor or online via MS Teams
 
 ## Course Catalog Description
 
@@ -32,7 +31,7 @@ Familiarity with programming and Linux: Normally 3-0-3 Semester Hours
 ## Section 01 Tuesday Lecture, Time & Place
 
 * Main Class time
-  * Tuesday 5:00 PM to 7:40 PM
+  * Tuesday and Thursday 5:00 PM to 7:40 PM
   * Location - TS-2030 Smart Lab
   * [Campus Map](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 
