@@ -2,65 +2,67 @@
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
-Semester: Spring 2024 - Professor Jeremy Hajek
+Semester: Spring 2025 - Professor Jeremy Hajek
 
 ![*https://xkcd.com/1700/*](images/new_bug.png "All Software Engineering...")
 
 | Category | Value |
 | --------- | ------------ |
  **Professor** | Jeremy Hajek
- Address | Department of Information Technology & Management 10 W. 33rd St., Chicago, IL 60616
+ Address | Department of Information Technology & Management 10 W. 35th St., Chicago, IL 60616
  Telephone | 312.567.5937
  Email | hajek@iit.edu
- Office | Perlstein Hall Room 223A, 10 W. 33rd St.
- Office Hours | Fri 12:00 PM — 2:00 PM
- Location | Perlstein Hall 223 or Via Google Meets
- URL | Book and appointment at: [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
-
+ Office | IIT Tower 15th Floor
+ Office Hours and URL | See Times at [https://iit.campus.eab.com/pal/WAle8ZAcry](https://iit.campus.eab.com/pal/WAle8ZAcry "webpage for availability")
+ Location | IIT Tower 15th Floor or online via MS Teams
+ 
 ## Course Catalog Description
 
 In this capstone course, students will identify, gather, analyze, and write requirements based on user needs and will then design, construct, integrate, and implement an information system as a solution to a business problem. Students will document integration architecture, methodologies, and technologies using industry best practices. User needs and user centered design will be applied in the selection, creation, evaluation, and administration of the resulting system. The system design process will take into account professional, ethical, legal, security, and social issues and responsibilities and stress the local and global impact of computing on individuals, organizations, and society. Discussion will also cover the need to engage in continuing professional development. [ITMT 430 Bulletin Description](http://bulletin.iit.edu/courses/itmt/ "ITMT 430 Bulletin Description")
 
 ## Prerequisites
 
-* ITMD 321, ITMD 411, ITMD 361, ITMD 362, ITM 100, ITMM 471, ITMO 340, and ITMO 356  
+* ITMD 321, ITMD 411, ITMD 361, ITMD 362, ITM 100, ITMM 471, ITMO 340, and ITMO 356
 * Credit: 2-0-2 (lecture and Lab course) Semester Hours
 
 ## Lecture Day, Time & Place
 
-* Main Lecture Class time
-  * Monday 10:00 am to 11:40am - [Tech South 2030 - Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
-* Lab Class Times
-  * Lab 01 Monday 11:50am to 1:30pm [TS-2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
-  * Lab 04 Online meeting TBA
+* Main Class time
+  * Monday 10:00 am to 11:40am
+  * Room TBA
+* Lab Class Times - Located in TS-2030 Smart Lab
+  * Lab 01 Monday 11:50am to 1:30pm
+  * Lab 02 Tuesday 10:00am to 11:40am
+  * Lab 03 Wednesday 11:50am to 1:30pm
+  * Lab 04 Online meeting determined by the teams
 
 ## Directions to the Smart Lab TS-2030
 
-To get to the Smart Tech Lab - enter the IIT tower on 35th Street. Swipe in at the desk and take the elevator up to the second floor.  Exit to the left and head north over the bridge from the Tower to the TS building. The floor turns from white tile to brown carpet. Take a left at the intersection and the Smart Lab is directly ahead of you.
+To get to the [Smart Tech Lab](https://www.youtube.com/watch?v=5ONkc4p0cQA&t=1s "YouTube introduction to Smart Lab") - enter the IIT tower on 35th Street. Swipe in at the desk and take the elevator up to the second floor.  Exit to the left and head north over the bridge from the Tower to the TS building. The floor turns from white tile to brown carpet. Take a left at the intersection and the Smart Lab is directly ahead of you. 
 
 ## Schedule of Topics/Readings
 
 All readings should be done prior to class
 
-Session | Date | Topic | Lab |
-----------|------|:------|----------
-1 | 01/08 | Introduction | Intro to Tooling Part I
-2 | 01/15 | No Class MLK Jr Day | Intro to Tooling Part II
-3 | 01/22 | The Three Ways Ch 2-4 | NA
-4 | 01/29 | Where to Start Ch 5-6 | NA
-5 | 02/05 | Where to Start Ch 7-8 | Sprint 01 presentation
-6 | 02/12 | Technical Practices of Flow Ch 9-13 | NA
-7 | 02/19 | Technical Practices of Feedback Ch 14-18 | NA
-8 | 02/26 | Technical Practices of Learning Ch 19-21 | Sprint 02 presentation
-9 | 03/04 | Technical Practices of InfoSec Ch 22-23 | NA
-NA | 03/11 | Spring Break Week | NA
-10 | 03/18 | DevOps Solutions 2-3 | NA
-11 | 03/25 | DevOps Solutions 4-5 | Sprint 03 presentation
-12 | 04/01 | DevOps Solutions 6-7 | NA
-13 | 04/08 | DevOps Solutions 8-9 | Sprint 04 presentation
-14 | 04/15 | DevOps Solutions 10-12 | NA
-15 | 04/22 | Review and Wrap up | Sprint 05 presentation
-16 | 04/29 | Final Exam Week | NA
+Week | Date | Topic | Lab |
+----|------|:--------------------|-------------
+1 | 01/13 | Introduction | Intro to Tooling Part I
+2 | 01/20 | No Class MLK Jr Day | Intro to Tooling Part II
+3 | 01/27 | The Three Ways Ch 2-4 | NA
+4 | 02/03 | Where to Start Ch 5-6 | NA
+5 | 02/10 | Where to Start Ch 7-8 | Sprint 01 presentation
+6 | 02/17 | Technical Practices of Flow Ch 9-13 | NA
+7 | 02/24 | Technical Practices of Feedback Ch 14-18 | NA
+8 | 03/03 | Technical Practices of Learning Ch 19-21 | Sprint 02 presentation
+9 | 03/10 | Technical Practices of InfoSec Ch 22-23 | NA
+NA | 03/17 | Spring Break Week | NA
+10 | 03/24 | DevOps Solutions 2-3 | NA
+11 | 03/31 | DevOps Solutions 4-5 | Sprint 03 presentation
+12 | 04/07 | DevOps Solutions 6-7 | NA
+13 | 04/14 | DevOps Solutions 8-9 | Sprint 04 presentation
+14 | 04/21 | DevOps Solutions 10-12 | NA
+15 | 04/28 | Sprint 05 Final Presentation Day for everyone!
+16 | 05/06 | Final Exam Week | NA
 
 ## Course Student Outcomes
 
@@ -81,9 +83,9 @@ Students completing this course will be able to:
 * Describe the local and global impact of computing on individuals, organizations, and society
 * Describe the need to engage in continuing professional development and explain how this may be achieved
 
-## Required Textbook
+\newpage
 
-![*DevOps Handbook - Second Edition*](images/devops-handbook-v2.png "DevOps Handbook cover image Version 2")
+## Required Textbook
 
 * DevOps Handbook - How to Create World-Class Agility, Reliability, & Security in Technology Organizations
   * Gene Kim, Patrick Debois, John Willis, Jez Humble, Dr. Nicole Forsgren
@@ -93,9 +95,9 @@ Students completing this course will be able to:
   * Edition description: **Second Edition**
   * [https://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1138718562?ean=9781950508402](https://www.barnesandnoble.com/w/the-devops-handbook-gene-kim/1138718562?ean=9781950508402 "DevOps Handbook second edition")
 
-\newpage
+![*DevOps Handbook - Second Edition*](images/devops-handbook-v2.png "DevOps Handbook cover image Version 2")
 
-![*Operations Anti-Patterns, DevOps Solutions*](images/dev-ops-anti-patterns.png "Operations Anti-Patterns, DevOps Solutions Cover Image")
+\newpage
 
 * Operations Anti-Patterns, DevOps Solutions
   * Jeffery D. Smith
@@ -107,6 +109,10 @@ Students completing this course will be able to:
   * Item Weight 1.32 pounds
   * Dimensions 7.38 x 0.7 x 9.25 inches
   * [https://www.manning.com/books/operations-anti-patterns-devops-solutions](https://www.manning.com/books/operations-anti-patterns-devops-solutions "Operations Anti-Patterns book link")
+
+![*Operations Anti-Patterns, DevOps Solutions*](images/dev-ops-anti-patterns.png "Operations Anti-Patterns, DevOps Solutions Cover Image")
+
+\newpage
 
 ### Readings
 
@@ -133,7 +139,7 @@ The course will make use of Blackboard [http://blackboard.iit.edu/](http://black
 * Tooling assignment
   * This initial assignment will help you get your infrastructure setup and prepared for the semester
 * Advanced Tooling Assignments
-  * Covering Vagrant and Packer
+  * Covering Vagrant, Packer, and Vault
 * Student Chapter Presentation
   * Each week there are scheduled lectures that will be given by the student teams during the main course section
 * Student Chapter Review Questions
@@ -150,7 +156,7 @@ A | Outstanding work reflecting substantial effort | 90-100%
 B | Excellent work reflecting good effort | 80-89.99%
 C | Satisfactory work meeting minimum expectations | 70-79.99%
 D | Substandard work not meeting expectations | 60-69.99%
-E | Unsatisfactory work |0-59.99%
+E | Unsatisfactory work | 0-59.99%
 
 The final grade for the class will be calculated as follows:
 
@@ -180,7 +186,7 @@ This class won't be dealing with formal written papers.
 
 ### Communication
 
-We will be using a Discord channel to communicate questions in place of Teaching Assistants this semester.
+We will be using a Discord channel to communicate questions this semester.
 
 ### Our Contract
 
