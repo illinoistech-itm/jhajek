@@ -55,7 +55,7 @@ Use the distros built in Package Manger where needed.
 
 ### Commands to run and install all the software
 
-**NOTE** if you have any of this software already installed, you do not need to reinstall it -- but it wouldn't hurt to upgrade everything so that we are all on the same versions. Adjust accordingly if you are using your own custom software.
+**NOTE** if you have any of this software already installed, you do not need to reinstall it -- but it wouldn't hurt to upgrade everything so that we are all on the same versions. Adjust accordingly if you are using your own custom software. You can use VMware if you would like, but it doesn't hurt to be exposed to VirtualBox.
 
 For MacOS using Homebrew:
 
@@ -71,22 +71,22 @@ brew install --cask powershell ; brew install --cask iterm2 ; brew install git ;
 
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
   * [https://www.parallels.com/products/desktop/pro/](https://www.parallels.com/products/desktop/pro/ "Parallels Pro Edition")
-  * The standard and education edition doesn't contain the commandline interface needed for automation.
+  * The standard and education edition **doesn't** contain the commandline interface needed for automation.
+  * [30% discount from Parallels for students](https://www.parallels.com/plans/education/?utm_id=62180886&extensionid={extensionid}&matchtype=p&device=c&devicemodel=&creative=&network=o&placement=&x-source=ppc&msclkid=b165d690a867187c3acfb112351dd161&utm_source=bing&utm_medium=cpc&utm_campaign=PDfM%20-%20B%20-%20EN%20-%20US%20-%20PS%20-%20AMER&utm_term=parallels%20academic&utm_content=Parallels%20EDU "webpage for discount")
 * Once Vagrant and Parallels Pro Edition is installed you need to also install the Parallels SDK from the Download Tab in your parallels.com account
   * From the Terminal run the command: `vagrant plugin install vagrant-parallels`
     * This will add the needed plugin to allow you to use Parallels from Vagrant
     * This will also work if you have Parallels Pro Edition on an Intel Mac
 
-For Windows 10 and 11 using Chocolatey:
+For Windows:
 
 ```PowerShell
-choco install powershell-core 
-choco install microsoft-windows-terminal git vscode vscode-powershell vagrant packer virtualbox
+winget install powershell-core git vscode vscode-powershell vagrant packer virtualbox
 ```
 
 ### Installation of a Modern Shell
 
-For Windows we are going to install PowerShell Core, also known as PowerShell 7.x. Windows includes PowerShell 5 (the light blue icon), which has ceased development and doesn't have support for modern font display.  PowerShell 7 is opensource and cross-platform available.  Working on Windows, PowerShell 7 is a must.
+For Windows we are going to install PowerShell Core, also known as PowerShell 7.x. Windows includes PowerShell 5 (the light blue icon), which has ceased development and doesn't have support for modern font display. PowerShell 7 is opensource and cross-platform available. Working on Windows, PowerShell 7 is a must.
 
 Open PowerShell 7 and issue the command: `ssh -V` and take a screenshot of the PowerShell version output as well as the SSH version output.
 
