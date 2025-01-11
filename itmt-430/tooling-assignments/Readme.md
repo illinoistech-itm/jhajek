@@ -3,7 +3,7 @@
 ## Objectives
 
 * Discuss and describe modern Cloud Native tooling
-* Learn and describe the advantage using modern package managers on Windows and MacOS for tooling install
+* Learn and describe the advantage using modern package managers on Windows and MacOS
 * Demonstrate the advantages of using version control for documentation distribution
 * Learn and discuss the use of Markdown for text based document creation
 
@@ -41,27 +41,21 @@ Package Managers help by streamlining a few important items:
 
 Homebrew is the MacOS 3rd party package manager located at: [https://brew.sh/](https://brew.sh/ "brew installer page"). It is available for Intel and M1 based Macs -- the workflow doesn't change.
 
-If you have a Mac - install brew and provide a screenshot of the output of the command: `brew --version`
+If you have a Mac - install `brew` and provide a screenshot of the output of the command: `brew --version`
 
-### Windows 10 or 11
+### Windows
 
-The name of the third party Windows Package manager is Chocolatey. The download is located at [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page").
+[WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget/ "webpage for winget") is a command line tool enabling users to discover, install, upgrade, remove and configure applications on Windows 10, Windows 11, and Windows Server 2025 computers. This tool is the client interface to the Windows Package Manager service.
 
-From an Administrator PowerShell 5 prompt:
+For Windows, place a screenshot of the version command output for: `winget --version`.
 
-```PowerShell
-Set-ExecutionPolicy Bypass -Scope Process -Force; `
-[System.Net.ServicePointManager]::SecurityProtocol `
-= [System.Net.ServicePointManager]::SecurityProtocol `
--bor 3072; iex ((New-Object `
-System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-```
+### Linux
 
-For Windows 10 or 11, place a screenshot of the version command output for: ```choco --version```.
+Use the distros built in Package Manger where needed.
 
 ### Commands to run and install all the software
 
-**NOTE** if you have any of this software already installed, you do not need to reinstall it -- but it wouldn't hurt to upgrade everything so that we are all on the same versions.  Below I will describe what we are installing.
+**NOTE** if you have any of this software already installed, you do not need to reinstall it -- but it wouldn't hurt to upgrade everything so that we are all on the same versions. Adjust accordingly if you are using your own custom software.
 
 For MacOS using Homebrew:
 
