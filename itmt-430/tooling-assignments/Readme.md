@@ -108,15 +108,17 @@ Open the iterm2 Terminal and from the File > About section take a screenshot of 
 
 ### Install IDE editor with native version control support
 
-We will be installing an text editor or and IDE for all of our coding and configuration.  The key is one with native version control tooling integrated.  There are many and all can be installed via your OSes package manager, here are a list:
+We will be installing an text editor or and IDE for all of our coding and configuration. The key is one with native version control tooling integrated. There are many and all can be installed via your OSes package manager
 
 * [VSCode from Microsoft](https://code.visualstudio.com/ "VSCode install")
-  * Cross platform and has direct shell integration
-* [Sublime Text](http://www.sublimetext.com/ "Submlime Text installer site")
-  * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose.  Available for all platforms.
-* [Adobe Brackets](http://brackets.io/ "Adobe Brackets Install")
-  * Cross Platform development tool from Adobe
-
+  * Cross platform and has direct shell integration, liveshare, and Copilot integration
+* [Sublime Text](http://www.sublimetext.com/ "Sublime Text installer site")
+  * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose
+* [IDX](https://idx.dev/ "webpage for IDX use)
+  * Project IDX is an AI-assisted workspace for full-stack, multiplatform app development in the cloud made by Google
+* [Theia IDE](https://theia-ide.org/ "webpage for Theia IDE download")
+  * The Theia IDE is a modern IDE for cloud and desktop built on the Theia Platform
+   
 Take a screenshot from the ABOUT tab in your IDE to show the installed version
 
 ### Install Git Client for Version Control
