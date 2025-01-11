@@ -123,7 +123,7 @@ Take a screenshot from the ABOUT tab or commandline `--version` output of your i
 
 ### Install Git Client for Version Control
 
-Version Control is vital to modern software development and we will be using our Package Manger to install the Git Client for our respective operating systems. **Note**, this is different from the GitHub Desktop tool, which we will not be using this semester.
+Version Control is **vital** to modern software development and we will be using our Package Manger to install the Git Client for our respective operating systems. **Note**, this is different from the GitHub Desktop tool, which we will not be using this semester.
 
 Take a screenshot of the output of the command: ```git --version```
 
@@ -142,10 +142,6 @@ My information would look like this:
 git config --global user.name "Jeremy Hajek"
 git config --global user.email "hajek@iit.edu"
 ```
-
-### Completion of GitHub Tutorial
-
-You can now proceed to complete the GitHub tutorial setup and then return to finish the deliverables below.
 
 ### Install VirtualBox or Parallels
 
