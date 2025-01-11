@@ -66,7 +66,7 @@ brew install --cask powershell ; brew install --cask iterm2 ; brew install git ;
 For M1 Macs you will run the same as above but without the VirtualBox install:
 
 ```bash
-brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask atom ; brew install --cask vagrant ; brew install packer
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask vagrant ; brew install packer
 ```
 
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
@@ -81,7 +81,7 @@ brew install --cask powershell ; brew install --cask iterm2 ; brew install git ;
 For Windows:
 
 ```PowerShell
-winget install powershell-core git vscode vscode-powershell vagrant packer virtualbox
+winget install Microsoft.PowerShell Microsoft.git Microsoft.VisualStudioCode vagrant packer virtualbox
 ```
 
 ### Installation of a Modern Shell
@@ -92,7 +92,7 @@ Open PowerShell 7 and issue the command: `ssh -V` and take a screenshot of the P
 
 For MacOS, newer versions use the Z shell.  This is due to Apple not using GPLv3+ software, which newer versions of BASH are licensed under.  This should be just fine and not require a new shell install.  If you want to experiment you can also install PowerShell 7 via Brew but it is not required.
 
-Open a terminal and type the commands: `zsh --version` and `ssh -V` and take a screenshot of the output
+Open a terminal and type the commands: `zsh --version` and `ssh -V` and take a screenshot of the output.
 
 ### Installation of a Modern Terminal
 
