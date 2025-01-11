@@ -98,7 +98,7 @@ Open a terminal and type the commands: `zsh --version` and `ssh -V` and take a s
 
 A Terminal is a way to run and manage multiple shell together, not unlike a web-browser, in a single managed window.  You will spend much time on in a shell during your career, the Terminal is a huge helper.
 
-On Windows, Microsoft provides a [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab "Install Windows Terminal from Microsoft Store")
+On Windows, Microsoft provides a [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab "Install Windows Terminal from Microsoft Store"). Though if using Windows 11, Windows Terminal comes pre-installed in the OS.
 
 Open the Windows Terminal and select from the drop down arrow, the ABOUT tab, and take a screenshot of the version output
 
