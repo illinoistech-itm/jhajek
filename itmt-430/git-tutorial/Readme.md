@@ -2,55 +2,7 @@
 
 ![*Git commit messages--after developing this book I understand this completely*](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/images/Chapter-Header/Appendix-D/git_commit-2.png "Git Commit")
 
-This is a tutorial for installing Git and configuring GitHub on Windows 10/11 and macOS.  
-
-## Installing Git
-
-[Git](https://git-scm.org "Gits site") is a piece of software that allows for distributed version control. [Version control](https://en.wikipedia.org/wiki/Version_control_system "Wikipedia Article on Version Control") is an idea that starts with having a central repository for controlling access to source code. Version control is a way that all source code, media, documentation, and supporting scripts for a project can be stored in a central place--with its history and changes all managed and recorded. This is usually a remote location and referred to as the **single source of truth**. With the rise of the internet, the concept of DVCS--**distributed version control software**, implemented the bring-over, merge, and modify model. Currently the industry standard [DVCS](https://en.wikipedia.org/wiki/Distributed_version_control "Wikipedia Article on DCVS") software is `Git`. Git should not be confused with `GitHub`. Git is opensource version control software and GitHub is a commercial implementation with a management portal for Git software, [owned by Microsoft](https://news.microsoft.com/announcement/microsoft-acquires-github/ "Article Microsoft buys GitHub").
-
-Git can be installed on any operating system via an installer, but I recommend to install it via a third party package manger.
-
-### Windows 10 and 11 - Git Installation via Chocolatey
-
-[The Chocolatey Windows 10 package manager](https://chocolatey.org "chocolatey package manager install page") allows for scripted installs of applications.  This tool is convenient for installing common applications such as Firefox, Android Studio, Java JDK, VS code, VirtualBox and other commonly installed tools.  You need to enable PowerShell scripts, which is shown via [the install instructions](https://chocolatey.org/install "Chocolatey install instructions").  Using a package manager allows for having scripted installations as well as a function to update software in place from the command line.
-
-From PowerShell (not CMD!) with Administrative privileges, run this command to install chocolatey:
-
-```PowerShell
-Set-ExecutionPolicy Bypass -Scope Process -Force; `
-[System.Net.ServicePointManager]::SecurityProtocol `
-= [System.Net.ServicePointManager]::SecurityProtocol `
--bor 3072; iex ((New-Object `
-System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-```
-
-Upon finishing this command you will need to close PowerShell and reopen it with Administrative privileges again. Once you have this done you can use the ```choco``` command to install Git amongst other software.
-
-```PowerShell
-# from an admin console
-choco install git vscode powershell-core
-# You can also install VirtualBox via choco too
-```
-
-Once this is successful make sure to close the PowerShell console that was launched with Administrator privileges. Open PowerShell console, this time version 7--with the dark blue icon, not the light blue icon. Type the command: `git --version`, if the installation went well you will see version information printed to PowerShell similar to this: `git version 2.20.1.windows.1`
-
-### MacOS - Git Installation via Homebrew
-
-[Homebrew](https://brew.sh/ "macOS Homebrew webpage") is a third party package manager available for MacOS. Both Intel Macs and M1 Macs are supported by Homebrew. This functions as a much needed package manager and a way to install needed packages in an automated fashion. Using a package manager allows for having scripted installations as well as a function to update software in place from the command line.
-
-To install `Homebrew` or `brew` run the below command:
-
-```bash
-/bin/bash -c \
-"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-```
-
-For installing Git on a Mac, open the `terminal` app.  Run the command:
-
-```bash
-brew install git
-brew cask install visual-studio-code
-```
+This is a tutorial for installing Git and configuring GitHub on Windows and macOS and assumes you have `git` already installed.  We won't be using GitHub Desktop during this class.
 
 ## Git Basics
 
@@ -83,7 +35,7 @@ This step only has to be done once on your computer after installation of `git`.
 
 #### Git Commands
 
-Git has a rich suite of tools and a large number of options. In this tutorial we are going to cover about seven of the core actions that will make you conversant with git as well as show how to securely setup remote access to your Git repo.  You can always find help for commands by typing: `git --help` or for a specific command: `git add --help`.  Note if you have a GUI a local webpage with the help info will open, if you are on a GUI-less server, then the text will print out to the screen.
+Git has a rich suite of tools and a large number of options. In this tutorial we are going to cover about seven of the core actions that will make you conversant with git as well as show how to securely setup remote access to your Git repo. You can always find help for commands by typing: `git --help` or for a specific command: `git add --help`. Note if you have a GUI a local webpage with the help info will open, if you are on a GUI-less server, then the text will print out to the screen.
 
 * `git add`
   * Add file contents to the index
@@ -104,7 +56,7 @@ Git has a rich suite of tools and a large number of options. In this tutorial we
 
 In order to authenticate to your own repo we need to select an authentication method. In the past, GitHub used a username and password combo. This was not considered secure as the password and username had to be passed inside the URL of the request. We are all familiar with username and passwords and they are the easiest but the hardest to secure.
 
-In October of 2021, GitHub, realizing how important it is to protect access to code repositories.  Most large companies are using GitHub and if a hacker were able to get into your source code, this would be a valuable prize.
+In October of 2021, GitHub, realizing how important it is to protect access to code repositories. Most large companies are using GitHub and if a hacker were able to get into your source code, this would be a valuable prize.
 
 So GitHub removed the password authentication method, no longer possible. They replaced it with something called a PAT, [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token "Web Site for GitHub Personal Access Token"). PATs have advantages over username/password combos.
 
@@ -140,31 +92,16 @@ We will be using the `ssh-keygen` command to generate your key pair. The command
 ssh-keygen -t ed25519
 ```
 
-A few things to watch out for, remember that Windows is **NOT** case sensitive, but Mac and Linux are case sensitive. Meaning of Mac, Git and git are not the same values, but on Windows they are.
-
-```bash
-# Note on Windows the divider: "\" is different than Mac and Linux 
-# Mac and Linux use the "/"
-# This example is on a Windows system
-# The username on Windows in this case is: palad
-Generating public/private ed25519 key pair.
-Enter file in which to save the key (C:\Users\palad/.ssh/id_ed25519):
-# Mac example would look like this
-# The username on the Mac in this case is: palad
-Generating public/private ed25519 key pair.
-Enter file in which to save the key (/Users/palad/.ssh/id_ed25519):
-```
-
-The value in the parenthesis is the default value. If you were to hit the "ENTER" key it would place your Public and Private Key files in the directory and name the file accordingly. Lets modify this entry so you can identify each key pair and its purpose later.
+A few things to watch out for, remember that Windows is **NOT** case sensitive, but Mac and Linux are case sensitive. The value in the parenthesis is the default value. If you were to hit the "ENTER" key it would place your Public and Private Key files in the directory and name the file accordingly. Lets modify this entry so you can identify each key pair and its purpose later.
 
 At the prompt we will type the following and it will look like this:
 
 ```bash
 # Remember, No spaces in the file name!
 # Windows
-Enter file in which to save the key ...: C:\Users\palad/.ssh/id_ed25519_340_github_key
+Enter file in which to save the key ...: C:\Users\palad/.ssh/id_ed25519_430_github_key
 # Mac\Linux
-Enter file in which to save the key ...: /Users/palad/.ssh/id_ed25519_340_github_key
+Enter file in which to save the key ...: /Users/palad/.ssh/id_ed25519_430_github_key
 ```
 
 The next prompt will ask you to enter a **passphrase**, this is an additional password that can be attached to a private key and would be required to use the private key for authentication. This can be a good idea as it is an extra layer of security against physical theft of your private key file. But in the use case we are working we are going to opt not to use it and handle security in a different method. In this case you can hit the "ENTER" key twice and it will not add a passphrase to your private key.
@@ -177,8 +114,8 @@ Enter same passphrase again:
 You will now see some output similar to this:
 
 ```bash
-Your identification has been saved in c:\Users\palad/.ssh/id_ed25519_340_github_key.
-Your public key has been saved in c:\Users\palad/.ssh/id_ed25519_340_github_key.pub.
+Your identification has been saved in c:\Users\palad/.ssh/id_ed25519_430_github_key.
+Your public key has been saved in c:\Users\palad/.ssh/id_ed25519_430_github_key.pub.
 The key fingerprint is:
 SHA256:3LR4sEpKQgbA6LT7yOP54QcAUJ5/BaDEY/zgo3YWrOA palad@lenovo-laptop
 The key's randomart image is:
@@ -200,8 +137,8 @@ We are interested in the first two lines of the output. They show the file locat
 ```bash
 # Location of private and public keys -- note the public key has a .pub extension
 # The private key has no default extension
-Your identification has been saved in c:\Users\palad/.ssh/id_ed25519_340_github_key.
-Your public key has been saved in c:\Users\palad/.ssh/id_ed25519_340_github_key.pub
+Your identification has been saved in c:\Users\palad/.ssh/id_ed25519_430_github_key.
+Your public key has been saved in c:\Users\palad/.ssh/id_ed25519_430_github_key.pub
 ```
 
 In order to make secure connections to GitHub we are going to need to add the content of the .pub Public key into your GitHub account. We can do this via copy and paste:
@@ -209,13 +146,12 @@ In order to make secure connections to GitHub we are going to need to add the co
 ```bash
 # display the content of the .pub file -- note the location of the file
 # On Windows:
-type c:\Users\palad/.ssh/id_ed25519_340_github_key.pub
+type c:\Users\palad/.ssh/id_ed25519_430_github_key.pub
 # On Mac/Linux
-cat /Users/palad/.ssh/id_ed25519_340_github_key.pub
+cat /Users/palad/.ssh/id_ed25519_430_github_key.pub
 # You will receive output similar to this
 # Don't worry the public key is meant to be openly distributed
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILOgJFa4p2bLzbiqSfin87zzrFC29vULvMXd+MrwHbL0
-palad@lenovo-laptop
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILOgJFa4p2bLzbiqSfin87zzrFC29vULvMXd+MrwHbL0 palad@lenovo-laptop
 ```
 
 #### Add Your Public Key to GitHub
@@ -275,7 +211,7 @@ Host github.com
   Hostname github.com
   # This command tells SSH which Private key to use when making an SSH 
   # connection to GitHub
-  IdentityFile ~/.ssh/id_ed25519_340_github_key
+  IdentityFile ~/.ssh/id_ed25519_430_github_key
 ```
 
 #### Cloning via SSH
