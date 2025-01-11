@@ -60,7 +60,7 @@ Use the distros built in Package Manger where needed.
 For MacOS using Homebrew:
 
 ```bash
-brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install virtualbox ; brew install --cask vagrant ; brew install packer
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install virtualbox ; brew install --cask vagrant ; brew install packer ; brew install --cask theiaide
 ```
 
 For M1 Macs you will run the same as above but without the VirtualBox install:
