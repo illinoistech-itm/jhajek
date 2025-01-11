@@ -62,4 +62,6 @@ On your local system, clone the instructors sample code repo containing this ass
 
 Open your private Repo using your IDE and now that we have worked with Markdown, I want you to go back, using the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet") and add image links under each of the screenshot statements in the assignment above.
 
-Once complete, add, commit, and push your tooling assignment Readme.md to your GitHub Repo
+### Final deliverable
+
+Submit to Canvas the URL to your GitHub private repo, so I can clone and see all these elements. Once complete, add, commit, and push your tooling assignment Readme.md to your GitHub Repo. You will submit URL's to the work in the Private GitHub repo to Blackboard, but the work will stay in GitHub.
