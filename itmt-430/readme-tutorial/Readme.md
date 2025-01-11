@@ -1,4 +1,4 @@
-# GitHub Tutorial
+# Readme.md Tutorial
 
 You can now proceed to complete the GitHub tutorial setup.
 
