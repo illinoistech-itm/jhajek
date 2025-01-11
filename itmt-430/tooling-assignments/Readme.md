@@ -159,7 +159,7 @@ Take a screenshot of Parallels Desktop > About Parallels Desktop or from the ter
 
 Vagrant is a tool from [HashiCorp](https://hashicorp.com "HashiCorp website").  This tool is used to abstract away the VirtualBox interface and provide direct commandline access, increasing ease of use.  *Vagrant provides easy to configure, reproducible, and portable work environments built on top of industry-standard technology and controlled by a single consistent workflow to help maximize the productivity and flexibility of you and your team.*
 
-Using your package manager, install the latest version of [Vagrant](https://vagrantup.com "Vagrant download site"). If you have a version 2.2.x you will be ok. Note, if using Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.
+Using your package manager, install the latest version of [Vagrant](https://vagrantup.com "Vagrant download site"). If you have a version 2.4.x you will be ok. Note, if using Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.
 
 Take a screenshot of the output of the command: `vagrant --version`
 
@@ -167,7 +167,7 @@ Take a screenshot of the output of the command: `vagrant --version`
 
 Packer is another automation tool from HashiCorp. Whereas Vagrant was for running virtual machines, Packer's job is to build virtual machine images from a template language. This tool allows fast infrastructure deployment, multi-provider portability, improved stability, and greater testability.
 
-Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site").  If you have a version > 1.6.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  
+Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site"). If you have a version > 1.8.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.
 
 Take a screenshot of the output of the command: `packer --version`
 
@@ -179,72 +179,6 @@ Complete the tutorial and take screenshots of the completed sections (may need t
 
 This Git tutorial is a good refresher for those who need it and a great introduction for those new to Version Control and want to learn it. You can leave the last section out, **Sandbox**, it is an open area for you to experiment in and no real way to "complete it."
 
-### Completion of GitHub Tutorial
+### Final deliverable
 
-You can now proceed to complete the GitHub tutorial setup and then return to finish the deliverables below.
-
-### Create and Push your Readme.md
-
-In this step you will clone the Private GitHub repo you have been provided with by the professor (you received an invite email to it) to your local system.  In the root of this repo you will create a file named `Readme.md` and a folder named **images**. This `Readme.md` will contain the elements below written in Markdown. This is a good [Markdown cheat-sheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet").
-
-The document will include:
-
-* h1 with your name
-  * a picture of you
-  * a picture of something that describes you
-* h2 Where are you from?
-  * Tell us where you are from
-* h2 What was your first computing device?
-* h2 IT Interests
-  * Tell us what you IT Interests and or skills are
-* h2 Something Interesting About You
-  * Tell us something interesting about you
-
-Push this to your GitHub private account repo.
-
-Here is my own completed sample: [https://github.com/illinoistech-itm/jhajek/blob/master/README.md](https://github.com/illinoistech-itm/jhajek/blob/master/README.md "Professor's GitHub Repo Sample").  **Note**, I will have more folders then you because I have sample code for more classes.  If you have previously completed this assignment, no need to do anything unless you want to update the information.
-
-### Create a .gitignore file
-
-Every Git repository needs a `.gitignore` file.  This file tells Git to ignore certain files.  These are files that are too large, binary format, or things like security keys and passwords, that we don't want to be committing to our Git Repos.
-
-We will create a file named: `.gitignore` and place the following values into it and add, commit, and push the file to your private repo.
-
-```bash
-# Files, Folders, security keys, and Binaries to ignore
-
-*.vdi
-*.box
-.vagrant/
-*console.log
-packer-cache/
-packer_cache/
-*.pem
-*~$
-*.ova
-output*/
-vagrant.d/
-*.iso
-variables.pkr.hcl
-*.priv
-variables.json
-.DS_Store
-id_rsa
-id_rsa*
-id_rsa.pub
-.Vagrantfile*
-Vagrantfile~
-config.default.yml
-```
-
-### Adding Screenshots
-
-On your local system, clone the instructors sample code repo containing this assignment.  Issue the command: `git clone https://github.com/illinoistech-itm/jhajek.git` on your local system command line. **Note** - if you already have this repo clone just issue: `git pull` to update to the latest assignment. From your local system's file manager copy the document from the cloned repo: jhajek > itmt-430 > tooling-assignment > Readme.md and place the copied document into your own private repo on the local system under a root folder named: **itmt-430**.  In that itmt-430 directory, add an directory named: `images` and place all of your screenshots into that directory.
-
-Open your private Repo using your IDE and now that we have worked with Markdown, I want you to go back, using the [Markdown cheatsheet reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet "Markdown cheatsheet") and add image links under each of the screenshot statements in the assignment above.
-
-Once complete, add, commit, and push your tooling assignment Readme.md to your GitHub Repo
-
-### Final deliverable to Blackboard
-
-Submit to Blackboard the URL to your GitHub private repo, so I can clone and see all these elements. You will submit URL's to the work in the Private GitHub repo to Blackboard, but the work will stay in GitHub.
+Submit to Canvas the URL to your GitHub private repo, so I can clone and see all these elements. You will submit URL's to the work in the Private GitHub repo to Blackboard, but the work will stay in GitHub.
