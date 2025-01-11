@@ -159,17 +159,17 @@ Take a screenshot of Parallels Desktop > About Parallels Desktop or from the ter
 
 Vagrant is a tool from [HashiCorp](https://hashicorp.com "HashiCorp website").  This tool is used to abstract away the VirtualBox interface and provide direct commandline access, increasing ease of use.  *Vagrant provides easy to configure, reproducible, and portable work environments built on top of industry-standard technology and controlled by a single consistent workflow to help maximize the productivity and flexibility of you and your team.*
 
-Using your package manager, install the latest version of [Vagrant](https://vagrantup.com "Vagrant download site").  If you have a version 2.2.x you will be ok.  Note, if using Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  
+Using your package manager, install the latest version of [Vagrant](https://vagrantup.com "Vagrant download site"). If you have a version 2.2.x you will be ok. Note, if using Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.
 
-Take a screenshot of the output of the command: ```vagrant --version```
+Take a screenshot of the output of the command: `vagrant --version`
 
 ### Install Packer.io
 
-Packer is another automation tool from HashiCorp.  Whereas Vagrant was for running virtual machines, Packer's job is to build virtual machine images from a template language.  This tool allows fast infrastructure deployment, multi-provider portability, improved stability, and greater testability.
+Packer is another automation tool from HashiCorp. Whereas Vagrant was for running virtual machines, Packer's job is to build virtual machine images from a template language. This tool allows fast infrastructure deployment, multi-provider portability, improved stability, and greater testability.
 
 Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site").  If you have a version > 1.6.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  
 
-Take a screenshot of the output of the command: ```packer --version```
+Take a screenshot of the output of the command: `packer --version`
 
 ### Oh-My-Git Tutorial
 
@@ -178,6 +178,10 @@ Download the proper [Oh My Git! tutorial](https://ohmygit.org/ "webpage for oh m
 Complete the tutorial and take screenshots of the completed sections (may need to take a few shots as the there are many sections).
 
 This Git tutorial is a good refresher for those who need it and a great introduction for those new to Version Control and want to learn it. You can leave the last section out, **Sandbox**, it is an open area for you to experiment in and no real way to "complete it."
+
+### Completion of GitHub Tutorial
+
+You can now proceed to complete the GitHub tutorial setup and then return to finish the deliverables below.
 
 ### Create and Push your Readme.md
 
