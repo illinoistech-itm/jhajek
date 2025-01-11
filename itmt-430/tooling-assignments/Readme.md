@@ -119,7 +119,7 @@ We will be installing an text editor or and IDE for all of our coding and config
 * [Theia IDE](https://theia-ide.org/ "webpage for Theia IDE download")
   * The Theia IDE is a modern IDE for cloud and desktop built on the Theia Platform
    
-Take a screenshot from the ABOUT tab in your IDE to show the installed version
+Take a screenshot from the ABOUT tab or commandline `--version` output of your installed IDE.
 
 ### Install Git Client for Version Control
 
