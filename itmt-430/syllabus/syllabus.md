@@ -34,6 +34,7 @@ In this capstone course, students will identify, gather, analyze, and write requ
   * Lab 02 Tuesday 10:00am to 11:40am
   * Lab 03 Wednesday 11:50am to 1:30pm
   * Lab 04 Online meeting determined by the teams
+  * Lab 05 Monday 1:50 PM to 3:30 PM
 
 ## Directions to Herman Hall 002
 
