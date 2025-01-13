@@ -10,7 +10,7 @@ This document will explain the requirements and deliverables of your team chapte
 
 ## Outcomes
 
-At the conclusion of each team's presentation, each team will have delivered not less than a 30 minute presentation covering the topics and chapters assigned.  You will have highlighted major concepts and themes as well as covered the creation of review material that will be complied into the class final exam.
+At the conclusion of each team's presentation, each team will have delivered not less than a 30 minute presentation covering the topics and chapters assigned. You will have highlighted major concepts and themes as well as covered the creation of review material that will be complied into the class final exam.
 
 ### Make Sure You Have Signed Up for a Presentation Team
 
