@@ -27,14 +27,17 @@ In this capstone course, students will identify, gather, analyze, and write requ
 
 ## Lecture Day, Time & Place
 
-* Main Class time
+* Main Class time - Located [Herman Hall 002](https://www.iit.edu/sites/default/files/2022-08/mies-campus-accessibility-map-2022.pdf "webapge map of campus")
   * Monday 10:00 am to 11:40am
-  * Room TBA
 * Lab Class Times - Located in TS-2030 Smart Lab
   * Lab 01 Monday 11:50am to 1:30pm
   * Lab 02 Tuesday 10:00am to 11:40am
   * Lab 03 Wednesday 11:50am to 1:30pm
   * Lab 04 Online meeting determined by the teams
+
+## Directions to Herman Hall 002
+
+Herman Hall is located against the train tracks (not the "L" tracks) just north of 33rd street, in the basement.
 
 ## Directions to the Smart Lab TS-2030
 
