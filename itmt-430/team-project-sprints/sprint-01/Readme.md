@@ -9,7 +9,7 @@ This document contains the Sprint-01 requirements and deliverables
 * Integrate version control and Kanban based project tooling
 * Determine and assign design tasks to team members
 * Explore the facets of team based design
-* Create Vault for team application secrets
+* Explore and design a process for secret's management
 
 ## Outcomes
 
