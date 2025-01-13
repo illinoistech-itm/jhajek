@@ -1,6 +1,6 @@
 # Readme.md Tutorial
 
-You can now proceed to complete the GitHub tutorial setup.
+This tutorial assumes you have completed the Tooling Assignment and the Git setup tutorial.
 
 ### Create and Push your Readme.md
 
