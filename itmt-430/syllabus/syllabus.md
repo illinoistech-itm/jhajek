@@ -52,7 +52,7 @@ Week | Date | Topic | Lab |
 ----|------|:--------------------|-------------
 1 | 01/13 | Introduction | Intro to Tooling Part I
 2 | 01/20 | No Class MLK Jr Day | Intro to Tooling Part II
-3 | 01/27 | The Three Ways Ch 2-4 | NA
+3 | 01/27 | The Three Ways Ch 2-4 | Intro to Tooling Part II
 4 | 02/03 | Where to Start Ch 5-6 | NA
 5 | 02/10 | Where to Start Ch 7-8 | Sprint 01 presentation
 6 | 02/17 | Technical Practices of Flow Ch 9-13 | NA

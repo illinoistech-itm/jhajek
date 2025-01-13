@@ -80,9 +80,9 @@ brew install --cask powershell ; brew install --cask iterm2 ; brew install git ;
 
 For Windows:
 
-```PowerShell
+`PowerShell
 winget install Microsoft.PowerShell Microsoft.git Microsoft.VisualStudioCode vagrant packer virtualbox
-```
+`
 
 ### Installation of a Modern Shell
 
@@ -104,7 +104,7 @@ Open the Windows Terminal and select from the drop down arrow, the ABOUT tab, an
 
 On MacOS, there is a terminal called [iterm2](https://iterm2.com/ "MacOS shell terminal")
 
-Open the iterm2 Terminal and from the File > About section take a screenshot of the version output
+Open the `iterm2` Terminal and from the File > About section take a screenshot of the version output
 
 ### Install IDE editor with native version control support
 
