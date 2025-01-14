@@ -102,9 +102,9 @@ On Windows, Microsoft provides a [Windows Terminal](https://www.microsoft.com/en
 
 Open the Windows Terminal and select from the drop down arrow, the ABOUT tab, and take a screenshot of the version output
 
-On MacOS, there is a terminal called [iterm2](https://iterm2.com/ "MacOS shell terminal")
+On MacOS, there is a terminal called [iterm2](https://iterm2.com/ "MacOS shell terminal").
 
-Open the `iterm2` Terminal and from the File > About section take a screenshot of the version output
+Open the `iterm2` Terminal and from the File > About section take a screenshot of the version output.
 
 ### Install IDE editor with native version control support
 
@@ -117,7 +117,7 @@ We will be installing an text editor or and IDE for all of our coding and config
 * [IDX](https://idx.dev/ "webpage for IDX use")
   * Project IDX is an AI-assisted workspace for full-stack, multiplatform app development in the cloud made by Google
 * [Theia IDE](https://theia-ide.org/ "webpage for Theia IDE download")
-  * The Theia IDE is a modern IDE for cloud and desktop built on the Theia Platform
+  * Theia IDE is a modern IDE for cloud and desktop built on the Theia Platform
    
 Take a screenshot from the ABOUT tab or commandline `--version` output of your installed IDE.
 

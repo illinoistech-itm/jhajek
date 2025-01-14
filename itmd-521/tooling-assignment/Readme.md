@@ -33,50 +33,56 @@ Package Managers help by streamlining a few important items:
 
 Homebrew is the MacOS 3rd party package manager located at: [https://brew.sh/](https://brew.sh/ "brew installer page"). It is available for Intel and M1 based Macs -- the workflow doesn't change.
 
-If you have a Mac - install brew and provide a screenshot of the output of the command: `brew --version`
+If you have a Mac - install `brew` and provide a screenshot of the output of the command: `brew --version`
 
-### Windows 10 and 11
+### Windows
 
-The name of the third party Windows Package manager is Chocolatey. The download is located at [Chocolatey.org](https://chocolatey.org/ "Chocolatey.org download page").  Windows 11 now has `winget` directly integrated to the OS.
+[WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget/ "webpage for winget") is a command line tool enabling users to discover, install, upgrade, remove and configure applications on Windows 10, Windows 11, and Windows Server 2025 computers. This tool is the client interface to the Windows Package Manager service.
 
-For Windows place a screenshot of the version command output for: ```choco --version```.
+For Windows, place a screenshot of the version command output for: `winget --version`.
 
-### Commands to run to install all the software
+### Commands to run and install all the software
 
-**NOTE** if you have any of this software already installed, you do not need to reinstall it -- but it wouldn't hurt to upgrade everything so that we are all on the same versions.  Below I will describe what we are installing.
+**NOTE** if you have any of this software already installed, you do not need to reinstall it -- but it wouldn't hurt to upgrade everything so that we are all on the same versions. Adjust accordingly if you are using your own custom software. You can use VMware if you would like, but it doesn't hurt to be exposed to VirtualBox.
 
 For MacOS using Homebrew:
 
-`brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install virtualbox ; brew install --cask vagrant ; brew install packer`
+```bash
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install virtualbox ; brew install --cask vagrant ; brew install packer ; brew install --cask theiaide
+```
 
-For M1 Macs you will run the same as above but without the  VirtualBox install:
+For M1 Macs you will run the same as above but without the VirtualBox install:
 
-`brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask vagrant ; brew install packer`
+```bash
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask vagrant ; brew install packer
+```
 
-* For M1 Macs you will need to make a purchase of a copy of Parallels Pro
+* For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
   * [https://www.parallels.com/products/desktop/pro/](https://www.parallels.com/products/desktop/pro/ "Parallels Pro Edition")
-  * The standard and education edition doesn't contain the commandline interface needed for automation
-  * [30% discount link](https://www.parallels.com/landingpage/pd/education/ "Parallels Pro discount")
+  * The standard and education edition **doesn't** contain the commandline interface needed for automation.
+  * [30% discount from Parallels for students](https://www.parallels.com/plans/education/?utm_id=62180886&extensionid={extensionid}&matchtype=p&device=c&devicemodel=&creative=&network=o&placement=&x-source=ppc&msclkid=b165d690a867187c3acfb112351dd161&utm_source=bing&utm_medium=cpc&utm_campaign=PDfM%20-%20B%20-%20EN%20-%20US%20-%20PS%20-%20AMER&utm_term=parallels%20academic&utm_content=Parallels%20EDU "webpage for discount")
 * Once Vagrant and Parallels Pro Edition is installed you need to also install the Parallels SDK from the Download Tab in your parallels.com account
   * From the Terminal run the command: `vagrant plugin install vagrant-parallels`
     * This will add the needed plugin to allow you to use Parallels from Vagrant
     * This will also work if you have Parallels Pro Edition on an Intel Mac
 
-For Windows using Chocolatey:
+For Windows:
 
 ```PowerShell
-choco install powershell-core microsoft-windows-terminal git vscode vscode-powershell vagrant packer virtualbox
+winget install Microsoft.PowerShell Microsoft.git Microsoft.VisualStudioCode vagrant packer virtualbox
 ```
 
 ### Installation of a Modern Shell
 
-For Windows we are going to install PowerShell Core, also known as PowerShell 7.x. Windows includes PowerShell 5 (the lightblue icon), which has ceased development and doesn't have support for modern font display.  PowerShell 7 is opensource and cross-platform available.  Working on Windows, PowerShell 7 is a must.
+A Terminal is a way to run and manage multiple shell together, not unlike a web-browser, in a single managed window.  You will spend much time on in a shell during your career, the Terminal is a huge helper.
 
-Open PowerShell 7 and issue the command: `ssh -V` and take a screenshot of the PowerShell version output as well as the SSH version output.
+On Windows, Microsoft provides a [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab "Install Windows Terminal from Microsoft Store"). Though if using Windows 11, Windows Terminal comes pre-installed in the OS.
 
-For MacOS, newer versions use the Z shell.  This is due to Apple not using GPLv3+ software, which newer versions of BASH are licensed under.  This should be just fine and not require a new shell install.  If you want to experiment you can also install PowerShell 7 via Brew but it is not required.
+Open the Windows Terminal and select from the drop down arrow, the ABOUT tab, and take a screenshot of the version output
 
-Open a terminal and type the commands: `zsh --version` and `ssh -V` and take a screenshot of the output
+On MacOS, there is a terminal called [iterm2](https://iterm2.com/ "MacOS shell terminal").
+
+Open the `iterm2` Terminal and from the File > About section take a screenshot of the version output.
 
 ### Installation of a Modern Terminal
 
@@ -92,16 +98,18 @@ Open the iterm2 Terminal and from the File > About section take a screenshot of 
 
 ### Install IDE editor with native version control support
 
-We will be installing an text editor or and IDE for all of our coding and configuration.  The key is one with native version control tooling integrated.  There are many and all can be installed via your OSes package manager, here are a list:
+We will be installing an text editor or and IDE for all of our coding and configuration. The key is one with native version control tooling integrated. There are many and all can be installed via your OSes package manager
 
 * [VSCode from Microsoft](https://code.visualstudio.com/ "VSCode install")
-  * Cross platform and has direct shell integration
-* [Zed](https://zed.dev/download "Zed editor")
-  * Built by by former Atom team (no windows currently)
-* [Sublime Text](http://www.sublimetext.com/ "Submlime Text installer site")
-  * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose.  Available for all platforms.
-* [Theia](https://theia-ide.org/ "Theia Editor")
-  * Cross Platform development tool Eclipse Foundation
+  * Cross platform and has direct shell integration, liveshare, and Copilot integration
+* [Sublime Text](http://www.sublimetext.com/ "Sublime Text installer site")
+  * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose
+* [IDX](https://idx.dev/ "webpage for IDX use")
+  * Project IDX is an AI-assisted workspace for full-stack, multiplatform app development in the cloud made by Google
+* [Theia IDE](https://theia-ide.org/ "webpage for Theia IDE download")
+  * Theia IDE is a modern IDE for cloud and desktop built on the Theia Platform
+   
+Take a screenshot from the ABOUT tab or commandline `--version` output of your installed IDE.
 
 Take a screenshot from the ABOUT tab in your IDE to show the installed version
 
@@ -109,7 +117,7 @@ Take a screenshot from the ABOUT tab in your IDE to show the installed version
 
 Version Control is vital to modern software development and we will be using our Package Manger to install the Git Client for our respective operating systems. **Note**, this is different from the GitHub Desktop tool, which we will not be using this semester.
 
-Take a screenshot of the output of the command: ```git --version```
+Take a screenshot of the output of the command: `git --version`
 
 #### Configure Git Client
 
@@ -145,7 +153,7 @@ Vagrant is a tool from [HashiCorp](https://hashicorp.com "HashiCorp website").  
 
 Using your package manager, install the latest version of [Vagrant](https://vagrantup.com "Vagrant download site").  If you have a version 2.2.x you will be ok.  Note, if using Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  
 
-Take a screenshot of the output of the command: ```vagrant --version```
+Take a screenshot of the output of the command: `vagrant --version`
 
 ### Install Packer.io
 
@@ -153,7 +161,7 @@ Packer is another automation tool from HashiCorp.  Whereas Vagrant was for runni
 
 Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site"). If you have a version > 1.6.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.  
 
-Take a screenshot of the output of the command: ```packer --version```
+Take a screenshot of the output of the command: `packer --version`
 
 ### Final deliverable to Blackboard
 
