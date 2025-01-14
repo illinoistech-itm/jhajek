@@ -114,7 +114,7 @@ We will be installing an text editor or and IDE for all of our coding and config
   * Cross platform and has direct shell integration, liveshare, and Copilot integration
 * [Sublime Text](http://www.sublimetext.com/ "Sublime Text installer site")
   * Built for a MacOS native experience, A sophisticated text editor for code, markup and prose
-* [IDX](https://idx.dev/ "webpage for IDX use)
+* [IDX](https://idx.dev/ "webpage for IDX use")
   * Project IDX is an AI-assisted workspace for full-stack, multiplatform app development in the cloud made by Google
 * [Theia IDE](https://theia-ide.org/ "webpage for Theia IDE download")
   * The Theia IDE is a modern IDE for cloud and desktop built on the Theia Platform
