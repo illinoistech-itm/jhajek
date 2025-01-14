@@ -211,7 +211,7 @@ Host github.com
   Hostname github.com
   # This command tells SSH which Private key to use when making an SSH 
   # connection to GitHub
-  IdentityFile ~/.ssh/id_ed25519_430_github_key
+  IdentityFile c:/users/palad/.ssh/id_ed25519_430_github_key
 ```
 
 #### Cloning via SSH
