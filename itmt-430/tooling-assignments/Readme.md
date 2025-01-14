@@ -80,9 +80,9 @@ brew install --cask powershell ; brew install --cask iterm2 ; brew install git ;
 
 For Windows:
 
-`PowerShell
+```PowerShell
 winget install Microsoft.PowerShell Microsoft.git Microsoft.VisualStudioCode vagrant packer virtualbox
-`
+```
 
 ### Installation of a Modern Shell
 
