@@ -1,4 +1,4 @@
-# ITMD 521 Big Data Infrastructure - Fall 2025
+# ITMD 521 Big Data Infrastructure - Spring 2025
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
@@ -13,7 +13,7 @@ Semester: Spring 2025 Professor Jeremy Hajek
  Telephone | 312.567.5937
  Email | hajek@iit.edu
  Office | IIT Tower 15th Floor
- Office Hours and URL | See Times at [https://iit.campus.eab.com/pal/WAle8ZAcry](https://iit.campus.eab.com/pal/WAle8ZAcry "webpage for availability")
+ Office Hours and URL | See Times at [Book an Appointment](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu?anonymous&ep=plink "webpage for availability")
  Location | IIT Tower 15th Floor or online via MS Teams
 
 ## Course Catalog Description
