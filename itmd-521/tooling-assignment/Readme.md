@@ -78,7 +78,7 @@ A Terminal is a way to run and manage multiple shell together, not unlike a web-
 
 On Windows, Microsoft provides a [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab "Install Windows Terminal from Microsoft Store"). Though if using Windows 11, Windows Terminal comes pre-installed in the OS.
 
-Open the Windows Terminal and select from the drop down arrow, the ABOUT tab, and take a screenshot of the version output
+Open the Windows Terminal and select from the drop down arrow, the ABOUT tab, and take a screenshot of the version output.
 
 ### Installation of a Modern Terminal
 
