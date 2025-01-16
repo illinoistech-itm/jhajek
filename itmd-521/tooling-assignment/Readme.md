@@ -80,10 +80,6 @@ On Windows, Microsoft provides a [Windows Terminal](https://www.microsoft.com/en
 
 Open the Windows Terminal and select from the drop down arrow, the ABOUT tab, and take a screenshot of the version output
 
-On MacOS, there is a terminal called [iterm2](https://iterm2.com/ "MacOS shell terminal").
-
-Open the `iterm2` Terminal and from the File > About section take a screenshot of the version output.
-
 ### Installation of a Modern Terminal
 
 A Terminal is a way to run and manage multiple shell together, not unlike a web-browser, in a single managed window.  You will spend much time on in a shell during your career, the Terminal is a huge helper.
