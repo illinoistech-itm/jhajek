@@ -1,8 +1,8 @@
 # Jeremy Hajek
 
-![Family](images/family.png "Family")
+![Family](./images/family.png "Family")
 
-![Prince of all Sayans](images/vegeta.jpg "Vegeta")
+![Prince of all Sayans](./images/vegeta.jpg "Vegeta")
 
 ## Where are you from
 
