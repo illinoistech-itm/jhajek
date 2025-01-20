@@ -34,7 +34,7 @@ Requirement | Points Possible | Notes |
 Opening - was there a clear introduction and summary of what will be presented | 7 | -
 Material Presentation - was the spelling correct, did the presentation show effort, did you read directly off the slides | 7 | -
 Summary of Material - did the presentation cover all relative material | 7 | -
-Review Questions - were at least 5 review questions presented and answer sufficiently | 7 | -
+Review Questions - were at least 3 review questions presented and answer sufficiently | 7 | -
 Additional Resources - were at least three additional resources linked to based on the chapter | 7 | -
 Closing - was there a clear transition to a conclusion with a summary of the material | 7 | -
 Participation - did each member of the team participate | 7 | -
