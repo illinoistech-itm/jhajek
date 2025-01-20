@@ -14,16 +14,17 @@ At the conclusion of each team's presentation, each team will have delivered not
 
 ### Make Sure You Have Signed Up for a Presentation Team
 
-See Blackboard > CONTENT for the sign up link add your name to one of the chapters (3 per week/team).
+See Canvas Modules: `Student Chapter Presentations` for the sign up link add your name to one of the weeks/chapters.
 
 Your team will provide:
 
 * An approximately 40 minute presentation covering the main themes of the material allotted
-  * Presentation will be done live either all in person or all online, but done live
-  * Presentation will submitted by the prior Thursday by 5:00 pm to your presentation day and involve a meeting with the professor to cover the material or make any adjustments
+* Presentation will be done with partners from your class section
+  * Find partners from 01 and the 02 section finds partners
+  * Presentation will submitted the `Thursday` before your presentation day by 5:00 pm and involve a meeting with the professor to cover the material or make any adjustments the Friday before your team presents.
   * All team members must participate and speak in the presentation
   * The presentation must clearly cover the main themes of your allotted material and clearly express them, as well as discuss the case studies mentioned (if applicable).
-  * Teams will prepare at least 3 review questions per chapter material covered ~~5 review questions of short answer~~ and the answers for these questions
+  * Teams will prepare at least 3 review questions per chapter material covered and the answers for these questions
   * Provide three additional slides linking to resources involving YouTube presentations from people mentioned in the chapter or based on topics in the chapter
 
 In addition the grading rubric will look like this:
@@ -40,15 +41,15 @@ Participation - did each member of the team participate | 7 | -
 
 ### Non-Presenting Team's weekly role
 
-Each non-presenting team must prepare and additional one review, short answer question, per chapter covered and submit them to Blackboard by the Friday prior to the weeks presentation so that the team and the instructor have a chance to cover the material during the Monday presentation.
+Each non-presenting team must prepare and additional two short answer review questions, per chapter covered and submit them to Canvas by the Friday prior to the weeks presentation so that the team and the instructor have a chance to cover the material during the Monday presentation.
 
 ### Submitted Questions
 
-All submitted questions will become part of a pool for the final exam
+All submitted questions will become part of a pool for the midterm and final exam
 
 ### Project Deliverables
 
-Submit which ever notes / presentation platform you have prepared and a second copy with the detailed answers provided to BlackBoard the Thursday by 5:00 PM, so I have time to give you feedback before your Monday's presentation. Then we will meet as a team on Friday morning - [you can book an appointment](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu?anonymous&ep=plink "Instructor Booking App") -- Note only one team member has to book a time.
+Submit whichever notes / presentation platform you have prepared and a second copy with the detailed answers provided to Canvas the Thursday by 5:00 PM, so I have time to give you feedback before your Monday's presentation. Then we will meet as a team on Friday morning, we will most likely need 1.5 hours.[You can book an appointment](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu?anonymous&ep=plink "Instructor Booking App") -- Note only one team member has to book a time.
 
 Presenting team will be a group submission and only one submission is needed per team.
 
