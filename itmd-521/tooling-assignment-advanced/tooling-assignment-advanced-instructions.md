@@ -74,6 +74,7 @@ We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 22.04 known
   * ```mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls```
   * ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls```
 * For those using M1/M2 Macs and Parallels Pro
+  * `mkdir jammy64 ; cd jammy64 ; vagrant init bento/ubuntu-22.04-arm64 ; ls`
   * ```mkdir debian11 ; cd debian12 ; vagrant init bento/debian-12-arm64 ; ls```
   * ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls```
 
