@@ -74,8 +74,8 @@ We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 22.04 known
   * ```mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls```
   * ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls```
 * For those using M1/M2 Macs and Parallels Pro
-  * ```mkdir debian11 ; cd debian11 ; vagrant init bento/debian-11.2-arm64 ; ls```
-  * ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9.aarch64 ; ls```
+  * ```mkdir debian11 ; cd debian12 ; vagrant init bento/debian-12-arm64 ; ls```
+  * ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls```
 
 ### Additional Parallels M1 requirements
 
