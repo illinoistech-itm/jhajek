@@ -1,6 +1,6 @@
 # Tooling Assignment Advanced Template
 
-Provide the required screenshots to show that tooling has been properly installed inside of your Ubuntu Jammy 22.04 Vagrant Box
+This is the assigned template for the `tooling-assignment-advanced-instructions` assignment. You will complete this document by adding the required screenshots.
 
 ## Hostname Change
 
