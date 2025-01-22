@@ -62,16 +62,16 @@ There are a few basic terms to remember when dealing with Vagrant:
 
 Assuming that the command `vagrant --version` gives us output, lets begin by installing our first Vagrant Box. Open your terminal application and let us `cd` to the Documents directory
 
-```cd Documents```
+`cd Documents`
 
 Here we are going to create a directory to manage our artifact. It is a good idea to create a directory per virtual machine that we will administer via Vagrant. You can create a class directory and then sub-directories and or you can place this on a different disk. This I will leave up to you as it is your filesystem and your data--you are the one in charge.
 
-```mkdir itmt-430 ; cd itmt-430```
+`mkdir itmt-430 ; cd itmt-430`
 
-We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 22.04 known as Jammy and a [Alma Linux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpagte release notes for Alma Linux 9") (CentOS/Red Hat based) Virtual Machines:
+We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 22.04 known as Jammy and a [AlmaLinux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpagte release notes for AlmaLinux 9") (CentOS/Red Hat based) Virtual Machines
 
-* ```mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls```
-* ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls```
+* `mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls`
+* `mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls`
 
 ### Vagrant Commands for Parallels on Apple Silicon
 
@@ -87,29 +87,29 @@ Installation instructions
   * `vagrant plugin install vagrant-parallels`
   * This will install the parallels provider for Vagrant
 
-We will now use Vagrant to retrieve 2 Linux Distributions, Debian 11 and an [Alma Linux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpagte release notes for Alma Linux 9") (CentOS/Red Hat based) Virtual Machines:
+We will now use Vagrant to retrieve 2 Linux Distributions, Debian 11 and an [AlmaLinux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpage release notes for AlmaLinux 9") (CentOS/Red Hat based) Virtual Machines:
 
-* ```mkdir jammy64 ; cd jammy64 ; vagrant init bento/debian-11.2-arm64 ; ls```
-* ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9.aarch64 ; ls```
+  * `mkdir jammy64 ; cd jammy64 ; vagrant init bento/ubuntu-22.04-arm64 ; ls`
+  * `mkdir debian12 ; cd debian12 ; vagrant init bento/debian-12-arm64 ; ls`
+  * `mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls`
 
 This will retrieve already created vanilla server installs. All instructions from here on out are the same.
 
 ### The Vagrantfile
 
-Once these commands are executed -- both under the `itmt-430` directory, you will see a file named: `Vagrantfile` that has been created. Let us take a look at this file. You can do so via using the commands on MacOS or Windows from the Terminal:
+Once these commands are executed -- both under the `itmt-430` directory, you will see a file named: `Vagrantfile` that has been created. Let us take a look at this file. You can do so via using the commands on MacOS or Windows from the Terminal.
 
-* ```code Vagrantfile```
-* ```atom Vagrantfile```
-* ```vim Vagrantfile```
+* `code Vagrantfile`
+* `vim Vagrantfile`
   * You can use chocolatey to install `vim` on Windows
 
-This file is essentially your configuration file. In this abstraction, Vagrant will translate these values into the underlying `vboxmanage` or the `parallels` commandline commands. Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`. This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install. Line ~~52~~ 59, ~~57~~ 64, and ~~58~~ 65 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb. For now lets not make any changes.
+This file is essentially your configuration file. In this abstraction, Vagrant will translate these values into the underlying `vboxmanage` or the `parallels` commandline commands. Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`. This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install. Line 59, 64, and 65 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb. For now lets not make any changes.
 
 ### Start a Vagrant Box
 
 From our jammy64 directory, let us start our first Vagrant Box. From the Terminal type: ```vagrant up```. What you will see is the Box file with the VirtualBox (or Parallels) vm being extracted and registered with your virtualization software. Next the system will begin to boot. The first install will take a bit longer as some additional drivers are being installed. This only happens on first boot. 
 
-Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: ```vagrant ssh```, and we are faced with an Ubuntu Server command prompt. What was the password? What was the IP address? You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the Alma Linux 9 box (almalinux/9).
+Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: ```vagrant ssh```, and we are faced with an Ubuntu Server command prompt. What was the password? What was the IP address? You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the AlmaLinux 9 box (almalinux/9).
 
 ### Additional Vagrant Commands
 
@@ -149,7 +149,7 @@ If you want to reset your Vagrant Box after you installed a webserver. Exit the 
 * Using the `sudo apt-get update` and `sudo apt-get install nginx` command, install the Nginx webserver (pronounced Engine X)
   * Exit the ssh session.
   * Edit the corresponding `Vagrantfile` to enable line 35 a private network interface
-  * Edit the corresponding `Vagrantfile` to uncomment line ~~52~~ 59, ~~57~~ 64, and ~~58~~ 65 changing line ~~57~~ 64 to 2048 or 4096
+  * Edit the corresponding `Vagrantfile` to uncomment line 59, 64, and 65 changing line 64 to 2048 or 4096
 * Using the command `vagrant reload --provision` restart the virtual machine
 * After the reload command has succeeded, without using the `vagrant ssh` command, open a web-browser on your Host OS to `http://192.168.56.10` to see the **Hello World** page being served from Nginx in your Vagrant Box
 * Using the `vagrant halt` to power off the virtual machine, then issue the `vagrant destroy` command to reset the Vagrant Box to its initial state (pre-webserver install)
