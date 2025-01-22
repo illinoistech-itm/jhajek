@@ -4,6 +4,7 @@ variable "memory_amount" {
 }
 
 variable "SSHPW" {
+  # Don't hard code a password here...
   sensitive = true
   type = string
   default = ""
