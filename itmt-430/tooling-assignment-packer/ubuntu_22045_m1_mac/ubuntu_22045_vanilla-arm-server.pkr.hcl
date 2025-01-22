@@ -9,9 +9,7 @@ packer {
       source  = "github.com/hashicorp/vagrant"
       version = "~> 1"
     }
-  }
-  required_plugins {
-    vagrant = {
+    parallels = {
       source  = "github.com/hashicorp/parallels"
       version = "~> 1"
     }
