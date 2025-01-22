@@ -68,12 +68,12 @@ Here we are going to create a directory to manage our artifact.  It is a good id
 
 ```mkdir itmd-521 ; cd itmd-521```
 
-We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 22.04 known as Jammy and a [Alma Linux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpagte release notes for Alma Linux 9") (CentOS/Red Hat based) Virtual Machines:
+We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 22.04 known as Jammy and a [AlmaLinux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpage release notes for AlmaLinux 9") (CentOS/Red Hat based) Virtual Machines:
 
 * For x86 Windows and Intel Macs using Virtual Box
   * ```mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls```
   * ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls```
-* For those using M1/M2 Macs and Parallels Pro
+* For those using Apple Silicon Macs and Parallels Pro
   * `mkdir jammy64 ; cd jammy64 ; vagrant init bento/ubuntu-22.04-arm64 ; ls`
   * ```mkdir debian12 ; cd debian12 ; vagrant init bento/debian-12-arm64 ; ls```
   * ```mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls```
@@ -87,9 +87,8 @@ Parallels is a Apple Silicon native virtualization solution, equal in all senses
 Once these commands are executed -- both under the `itmd-521` directory, you will see a Vagrantfile that has been created.  Let us take a look at this file. You can do so via using the commands on MacOS or Windows from the Terminal:
 
 * `code Vagrantfile`
-* `atom Vagrantfile`
 * `vim Vagrantfile`
-  * You can use chocolatey to install `vim` on Windows -- it works well I use it all the time
+  * You can use winget and brew to install `vim` -- it works well I use it all the time
 
 Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`. This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install.  Line 52, 57, and 58 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb. For now lets not make any changes.
 
@@ -97,13 +96,13 @@ Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfi
 
 From our jammy64 directory, let us start our first Vagrant Box.  From the Terminal type: `vagrant up`.  What you will see is the Box file with the VirtualBox (or Parallels) vm being extracted and registered with your virtualization software.  Next the system will begin to boot.  The first install will take a bit longer as some additional drivers are being installed.  This only happens on first boot.
 
-Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: `vagrant ssh`, and we are faced with an Ubuntu Server command prompt. What was the password? What was the IP address?  You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the Alma Linux 9 box.
+Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: `vagrant ssh`, and we are faced with an Ubuntu Server command prompt. What was the password? What was the IP address?  You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the AlmaLinux 9 box.
 
 ### Additional Vagrant Commands
 
 * To exit this ssh session type: `exit`
 * From the host OS, to restart a Vagrant Box you would type: `vagrant reload`
-* From the host OS, to pause or place into standby you would type: `vagrant susupend`
+* From the host OS, to pause or place into standby you would type: `vagrant suspend`
 * From the host OS, to bring out of standby your would type: `vagrant resume or vagrant up`
 * From the host OS, to power-off your virtual machine you would type: `vagrant halt`
 * From the host OS, to remove all changes and reset the box to the status at first install you would type: `vagrant destroy`
@@ -118,9 +117,9 @@ Let us try this.  Choose the Ubuntu 22.04 jammy64 system's Vagrantfile and let u
 
 To further check the results after the command `vagrant ssh` is issued from the Ubuntu CLI type the command: `free --giga` to see how much memory is in the system.  To test the private network, let us install a webserver by issuing the command: `sudo apt update; sudo apt install nginx`.  From your host OS, open a web-browser to `http://192.168.56.10` and you will be met by a Welcome to Nginx message.
 
-If you are using M1 Apple Silicon - the private network settings are bit different.  Here is a link to the Paralles documentation for [setting a Private Network interface static IP](https://parallels.github.io/vagrant-parallels/docs/networking/private_network.html "webpage for Parallels Vagrant Private Networking").
+If you are using M1 Apple Silicon - the private network settings are bit different.  Here is a link to the Parallels documentation for [setting a Private Network interface static IP](https://parallels.github.io/vagrant-parallels/docs/networking/private_network.html "webpage for Parallels Vagrant Private Networking").
 
-```
+```ruby
 Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.50.4"
 end
@@ -140,7 +139,7 @@ This is handy because often you want a fresh server to install some tools, but d
 
 ## Inside Vagrant Box Steps
 
-You will need to use the `wget` commandline tool to retrieve installation files for Hadoop and Spark.  You will need to use the `tar` command to extract the tarballs: `tar -xvzf` and the command `sudo apt update` to check for the latest packages and the command: `sudo apt install` to install additional packages like Java and MariaDB. For Alma Linux you will need to install additional tools: ```sudo dnf install epel-release vim rsync wget```
+You will need to use the `wget` commandline tool to retrieve installation files for Hadoop and Spark.  You will need to use the `tar` command to extract the tarballs: `tar -xvzf` and the command `sudo apt update` to check for the latest packages and the command: `sudo apt install` to install additional packages like Java and MariaDB. For Alma inux you will need to install additional tools: ```sudo dnf install epel-release vim rsync wget```
 
 * Change hostname of the system to include the course number and your initials
   * Use the command: `sudo hostnamectl set-hostname initials-and-class-number`
