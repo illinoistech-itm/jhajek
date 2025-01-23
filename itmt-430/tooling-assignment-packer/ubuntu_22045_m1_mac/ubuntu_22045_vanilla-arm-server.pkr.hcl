@@ -27,7 +27,6 @@ source "parallels-iso" "vanilla-server" {
   disk_size               = 15000
   parallels_tools_flavor  = "lin"
   guest_os_type           = "ubuntu"
-  disk_type               = "plain"
   hard_drive_interface    = "sata"
   http_directory          = "subiquity/http"
   http_port_max           = 9200
@@ -44,7 +43,7 @@ source "parallels-iso" "vanilla-server" {
   # Hint to fix the problem of "initramfs unpacking failed" error
   # https://askubuntu.com/questions/1269855/usb-installer-initramfs-unpacking-failed-decoding-failed]
   memory                  = "${var.memory_amount}"
-  prlctl                  = [["set", "{{.Name}}", "--bios-type", "efi-arm64" ],["set", "{{.Name}}","--device-del", "fdd0"]]
+  prlctl                  = [["set", "{{.Name}}","--device-del", "fdd0"]]
   prlctl_version_file     = ".prlctl_version"
   vm_name                 = "ubuntu-server-vanilla"
 }
