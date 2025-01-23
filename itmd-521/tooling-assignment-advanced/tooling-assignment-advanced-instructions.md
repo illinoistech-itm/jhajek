@@ -150,14 +150,14 @@ You will need to use the `wget` commandline tool to retrieve installation files 
   * `export PATH=$PATH:$SPARK_HOME/bin`
 * Install MariaDB server
   * `mariadb-server`
-* Install Java 11 OpenJDK
+* Install Java 17 OpenJDK
   * `sudo apt update`
-  * `sudo apt install openjdk-11-jdk`
+  * `sudo apt install openjdk-17-jdk`
 * Install R package
   * Ubuntu - use `apt` to install `r-base`
   * AlmaLinux use: `sudo dnf config-manager --set-enabled crb; sudo dnf install R`
 * Install Spark 3.5.x
-  * [https://dlcdn.apache.org/spark/spark-3.5.0/spark-3.5.4-bin-hadoop3.tgz](https://dlcdn.apache.org/spark/spark-3.5.0/spark-3.5.4-bin-hadoop3.tgz "Apache Spark Download Link")
+  * [https://dlcdn.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz](https://dlcdn.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz "Apache Spark Download Link")
     * `wget https://dlcdn.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz`
     * `tar -xvzf spark-3.5.4-bin-hadoop3.tgz`
     * `mv spark-3.5.4-bin-hadoop3 spark`
