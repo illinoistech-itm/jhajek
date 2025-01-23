@@ -26,7 +26,8 @@ source "parallels-iso" "vanilla-server" {
   boot_wait               = "5s"
   disk_size               = 15000
   parallels_tools_flavor  = "lin"
-  guest_os_type           = "ubuntu"
+  #guest_os_type           = "ubuntu"
+  guest_os_type           = "other"
   hard_drive_interface    = "sata"
   http_directory          = "subiquity/http"
   http_port_max           = 9200
