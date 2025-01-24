@@ -28,6 +28,7 @@ source "parallels-iso" "vanilla-server" {
   parallels_tools_flavor  = "lin"
   guest_os_type           = "ubuntu"
   hard_drive_interface    = "scsi"
+  firmware                = "bios"
   http_directory          = "subiquity/http"
   http_port_max           = 9200
   http_port_min           = 9001
