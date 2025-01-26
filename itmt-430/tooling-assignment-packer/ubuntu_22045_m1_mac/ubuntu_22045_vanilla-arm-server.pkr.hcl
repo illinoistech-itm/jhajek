@@ -43,7 +43,7 @@ source "parallels-iso" "vanilla-server" {
   # Hint to fix the problem of "initramfs unpacking failed" error
   # https://askubuntu.com/questions/1269855/usb-installer-initramfs-unpacking-failed-decoding-failed]
   memory                  = "${var.memory_amount}"
-  prlctl                  = [["set", "{{.Name}}","--bios-type", "bios" ],["set", "{{.Name}}","--device-bootorder", "cdrom0 hdd0 net0"],["set", "{{.Name}}", "--select-boot-device", "on"],["set", "{{.Name}}","--device-del", "fdd0"]]
+  prlctl                  = [["set", "{{.Name}}","--bios-type", "xyz" ],["set", "{{.Name}}","--device-bootorder", "cdrom0 hdd0 net0"],["set", "{{.Name}}", "--select-boot-device", "on"],["set", "{{.Name}}","--device-del", "fdd0"]]
   prlctl_version_file     = ".prlctl_version"
   vm_name                 = "ubuntu-server-vanilla"
 }
