@@ -42,6 +42,7 @@ source "parallels-iso" "vanilla-server" {
   ssh_handshake_attempts  = "300"
   communicator            = "ssh"
   floppy_files            = null
+  cd_files                = ["/Users/Jeremy/Downloads/packer-iso-cache/a26d6549df299d1b04dcda5352d588f8b034ee1a.iso"]
   # Hint to fix the problem of "initramfs unpacking failed" error
   # https://askubuntu.com/questions/1269855/usb-installer-initramfs-unpacking-failed-decoding-failed]
   memory                  = "${var.memory_amount}"
