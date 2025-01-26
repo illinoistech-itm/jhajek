@@ -18,8 +18,8 @@ packer {
 
 
 source "parallels-iso" "vanilla-server" {
-  # https://github.com/chef/bento/blob/main/packer_templates/ubuntu/ubuntu-20.04-arm64.json
-  # For 20.04 Ubuntu Server
+  # https://github.com/Parallels/packer-examples
+  # Welcome to our repository containing a collection of Packer scripts intended for creating diverse virtual machine configurations for the Parallels Desktop provider.
   #boot_command          = ["<esc>", "linux /casper/vmlinuz"," quiet"," autoinstall"," ds='nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/'","<enter>","initrd /casper/initrd <enter>","boot <enter>"]
   # For 22.04 Ubuntu Server
   boot_command          = ["<esc>", "c", "linux /casper/vmlinuz"," quiet"," autoinstall"," ds='nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/'","<enter>","initrd /casper/initrd <enter>","boot <enter>"]
