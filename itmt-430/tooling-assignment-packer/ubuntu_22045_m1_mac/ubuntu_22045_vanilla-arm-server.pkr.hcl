@@ -25,7 +25,7 @@ source "parallels-iso" "vanilla-server" {
   boot_command          = ["<esc>", "c", "linux /casper/vmlinuz"," quiet"," autoinstall"," ds='nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/'","<enter>","initrd /casper/initrd <enter>","boot <enter>"]
   boot_wait               = "5s"
   disk_size               = 15000
-  parallels_tools_flavor  = "lin"
+  parallels_tools_flavor  = "lin-arm"
   guest_os_type           = "ubuntu"
   hard_drive_interface    = "sata"
   http_directory          = "subiquity/http"
@@ -40,10 +40,13 @@ source "parallels-iso" "vanilla-server" {
   ssh_username            = "vagrant"
   parallels_tools_mode    = "upload"
   ssh_handshake_attempts  = "300"
+  communicator            = "ssh"
+  floppy_files            = null
   # Hint to fix the problem of "initramfs unpacking failed" error
   # https://askubuntu.com/questions/1269855/usb-installer-initramfs-unpacking-failed-decoding-failed]
   memory                  = "${var.memory_amount}"
-  prlctl                  = [["set", "{{.Name}}","--device-bootorder", "cdrom0 hdd0"],["set", "{{.Name}}","--bios-type", "xyz" ],["set", "{{.Name}}", "--select-boot-device", "on"],["set", "{{.Name}}","--device-del", "fdd0"]]
+  prlctl                  = [["set", "{{ .Name }}", "--efi-boot", "off"]
+  #prlctl                  = [["set", "{{.Name}}","--device-bootorder", "cdrom0 hdd0"],["set", "{{.Name}}","--bios-type", "xyz" ],["set", "{{.Name}}", "--select-boot-device", "on"],["set", "{{.Name}}","--device-del", "fdd0"]]
   prlctl_version_file     = ".prlctl_version"
   vm_name                 = "ubuntu-server-vanilla"
 }
