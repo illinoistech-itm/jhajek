@@ -10,8 +10,7 @@ packer {
       version = "~> 1"
     }
     parallels = {
-      #source  = "github.com/hashicorp/parallels"
-      source  = "jrh/me/parallels"
+      source  = "github.com/hashicorp/parallels"
       version = "<=1.2.0"
     }
   }
