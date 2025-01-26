@@ -45,7 +45,6 @@ source "parallels-iso" "vanilla-server" {
   # https://askubuntu.com/questions/1269855/usb-installer-initramfs-unpacking-failed-decoding-failed]
   memory                  = "${var.memory_amount}"
   prlctl                  = [["set", "{{.Name}}","--bios-type", "efi-arm64" ]]
-  #prlctl                  = [["set", "{{ .Name }}", "--efi-boot", "off"]]
   prlctl_version_file     = ".prlctl_version"
   vm_name                 = "ubuntu-server-vanilla"
 }
