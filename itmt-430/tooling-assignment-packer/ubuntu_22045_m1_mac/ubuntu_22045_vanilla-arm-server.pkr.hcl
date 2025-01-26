@@ -11,7 +11,7 @@ packer {
     }
     parallels = {
       source  = "github.com/hashicorp/parallels"
-      version = ">= 1.1.5"
+      version = ">= 1.1.8-dev"
     }
   }
 }
