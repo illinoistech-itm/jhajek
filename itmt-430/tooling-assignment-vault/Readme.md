@@ -12,4 +12,4 @@ Issue the command `vagrant up` and `vagrant ssh` and the command `cat /home/vagr
 
 ## Deliverable
 
-In the document, `tooling-assignment-packer.md`, provide the required screenshots. Push a copy of this markdown file in the private GitHub repo provided, under the itmt-430 folder and make an additional sub-folder named: **tooling-assignment-vault**. Submit the URL to your deliverable to Canvas.
+In the document, `Readme.md`, provide the required screenshots. Push a copy of this markdown file in the private GitHub repo provided, under the `itmt-430` folder and make an additional sub-folder named: `tooling-assignment-vault`. Submit the URL to your deliverable to Canvas.

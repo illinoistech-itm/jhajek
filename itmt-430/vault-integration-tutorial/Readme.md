@@ -22,9 +22,9 @@ There is a simple shell provisioner under the `three-tier` > `vault` folder to o
 
 ### Second Steps with Terraform
 
-You will find a sample Terraform plan in the `example-code` > `proxmox-cloud-production-templates` > `terraform` `proxmox-jammy-ubuntu-vault` sample code. You will modify the `template-terraform.tfvars` as noted. Execute `terraformm apply`.
+You will find a sample Terraform plan in the `example-code` > `proxmox-cloud-production-templates` > `terraform` `proxmox-jammy-ubuntu-vault` sample code. You will modify the `template-terraform.tfvars` as noted. Execute `terraform apply`.
 
-### Confuguring Vault
+### Configuring Vault
 
 Following these few steps we can configure a simple Vault K/V pair server with our secrets and then integrate those secrets into our Packer build templates. Note that Vault is has a wide range of features far beyond this simple tutorial, it has built in AWS integration as well. This is just the tip of the iceberg showing how to run a production Vault.
 
@@ -44,7 +44,7 @@ Following these few steps we can configure a simple Vault K/V pair server with o
   * Save these somewhere safe
   * No need to use `sudo`
 * `vault operator unseal`
-  * Need to execute this three times and give three of the five undeal keys (1 each time) to unseal the Vault
+  * Need to execute this three times and give three of the five unseal keys (1 each time) to unseal the Vault
 * `vault login`
   * No need to use `sudo`
   * Give the root key give when the `vault operator init` was shown
@@ -144,8 +144,8 @@ You can see on line 35 the first time we use one of the Vault secrets for our Va
 
 ### Check if it Works
 
-You can see if you can succesfully authenticate to Vault as well as all the variables are properly defined using the `packer validate .` -- this command takes on new meaning using Vault Packer intergrations.
+You can see if you can successfully authenticate to Vault as well as all the variables are properly defined using the `packer validate .` -- this command takes on new meaning using Vault Packer integrations.
 
 ## Conclusion
 
-Congratualations. You have succesfully walked through creating a secure secrets environment, increased security by reducing manual secret management, and creating central secret integration. This is one of the first steps in deploying cloud native applications is a secure manner.
+Congratulations. You have successfully walked through creating a secure secrets environment, increased security by reducing manual secret management, and creating central secret integration. This is one of the first steps in deploying cloud native applications is a secure manner.
