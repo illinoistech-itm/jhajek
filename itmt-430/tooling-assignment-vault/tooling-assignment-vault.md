@@ -2,12 +2,9 @@
 
 ## Objectives
 
-* Explain the problem that automation tooling for Linux provides
-* Identity Current orchestration and automation tools
-* Explain the role of Hashicorp in the realm of automation tools
-* Describe the process to automate the installation of Linux Operating Systems
-* Explain the concept of secrets management in automation
-* Identify a solution for deploying complete applications using automation tooling on Linux
+* Explain the problem that automation tooling for Linux solves
+* Describe the problem of secrets management in automation deployment
+* Demonstrate how Vault can be deployed on a network
 
 ## Outcomes
 
