@@ -16,7 +16,8 @@ packer {
   }
 }
 
-
+# Packer Parallels-iso documentation:
+# https://developer.hashicorp.com/packer/integrations/Parallels/parallels/latest/components/builder/iso
 source "parallels-iso" "vanilla-server" {
   # https://github.com/Parallels/packer-examples
   # Welcome to our repository containing a collection of Packer scripts intended for creating diverse virtual machine configurations for the Parallels Desktop provider.

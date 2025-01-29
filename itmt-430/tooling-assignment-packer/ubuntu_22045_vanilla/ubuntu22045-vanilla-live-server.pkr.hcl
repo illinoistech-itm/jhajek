@@ -19,6 +19,8 @@ packer {
   }
 }
 
+# Packer Virtualbox-iso documentation
+# https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/latest/components/builder/iso
 source "virtualbox-iso" "ubuntu-22045-server" {
     boot_command = [
         "e<wait>",
