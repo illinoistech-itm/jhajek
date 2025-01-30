@@ -10,7 +10,7 @@ For ITMD 521, Big Data Technologies, week-03, lab-01, chapter-02
 
 ## Outcomes
 
-At the completion of this lab you will have compiled a significant Spark application and learned of the structure of a Spark Application. You will have dealth with file paths and how to load data into a Spark Cluster (local) for Data Analysis.
+At the completion of this lab you will have compiled a significant Spark application and learned of the structure of a Spark Application. You will have to deal with file paths and how to load data into a Spark Cluster (local) for Data Analysis.
 
 ### Requirements
 
@@ -18,9 +18,9 @@ Type the code in Chapter 02 of the Learning Spark V2 book for both the Python an
 
 Work on your local system MacOS or Windows and push your code to GitHub, then in your Vagrant Box (Ubuntu Linux) pull your code changes and run the code.
 
-You will also need access to the [Learning Spark V2 sample code data files](https://github.com/databricks/LearningSparkV2.git "webpage class sample code"). In your Vagratn Box clone the repo: `https://github.com/databricks/LearningSparkV2.git` 
+You will also need access to the [Learning Spark V2 sample code data files](https://github.com/databricks/LearningSparkV2.git "webpage class sample code"). In your Vagrant Box clone the repo: `https://github.com/databricks/LearningSparkV2.git` 
 
-### Lab 01
+### Output
 
 You are to take the sample code listed in Chapter 02, the MnMCount for both Python and Scala, in the case of Scala, you are to use the SBT tool to build and run the application (see Monday slides for info to install SBT). You will capture the entire screen of output, the key content will look something like this:
 
@@ -53,8 +53,8 @@ Place Scala screenshot here
 
 ## Deliverables
 
-Using this template, under the `itmd-521` directory in your local repository, create a sub-directory named `labs`. Under that create another subdirectory named `week-03` and place this Readme.md file in that directory along with a folder for images.
+Using this template, under the `itmd-521` directory in your local repository, create a sub-directory named `labs`. Under that create another subdirectory named `module-03` and place this Readme.md file in that directory along with a folder for images. `itmd-521` > `labs` > `module-03`
 
-You also need to include your python and scala code and the `build.sbt` file. Push the code to your remote GitHub repo and submit the URL to this location in Blackboard.
+You also need to include your Python and Scala code and the `build.sbt` file in your Git repo. Push the code to your remote GitHub repo and submit the URL to this location in Canvas.
 
 Do not push any data files into your GitHub repo
