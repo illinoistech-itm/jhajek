@@ -17,6 +17,6 @@ count_mnm_df = (mnm_df
                 .sum("Count")
                 .orderBy("sum(Count)", ascending=False))
 
-count_mnm_df.show(n=10, truncated=False)
+count_mnm_df.show(n=10, truncate=False)
 
 spark.stop()
