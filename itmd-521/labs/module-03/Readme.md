@@ -51,10 +51,14 @@ Place screenshot here
 
 Place Scala screenshot here
 
-## Deliverables
+## First Deliverable
 
 Using this template, under the `itmd-521` directory in your local repository, create a sub-directory named `labs`. Under that create another subdirectory named `module-03` and place this Readme.md file in that directory along with a folder for images. `itmd-521` > `labs` > `module-03`
 
 You also need to include your Python and Scala code and the `build.sbt` file in your Git repo. Push the code to your remote GitHub repo and submit the URL to this location in Canvas.
 
 Do not push any data files into your GitHub repo
+
+## Second Deliverable
+
+
