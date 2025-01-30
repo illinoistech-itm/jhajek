@@ -19,6 +19,7 @@ For this portion of the assignment you will need to have software installed on y
 
 Upon completing the lab, record a video not less than 3 minutes and not more than 5, to explain your work and output based on the questions listed below. Upload the video to Canvas.  Double check your video before uploading to see if the audio and screen recording is done correctly.
 
+* Make sure to introduce yourself and tell us which section you are in (briefly)
 * Are you loading the M&M data set filename through the command line or using the absolute path to the file?
 * What function are you using to read data from a file into a dataframe?
 * For your results, which state and color has the top 2 highest count?
