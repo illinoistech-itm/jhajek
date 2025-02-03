@@ -13,7 +13,7 @@ This document contains the Sprint-01 requirements and deliverables
 
 ## Outcomes
 
-At the conclusion of this sprint project you will have engaged in designing and collaborating with your team members to begin the first step to create your three-tier web-app project.  This design phase will integrate version control and Kanban based project tooling and allow you to explore the facets of team based design as you would face in the real world.
+At the conclusion of this sprint project you will have engaged in designing and collaborating with your team members to begin the first step to create your three-tier web-app project. This design phase will integrate version control and Kanban based project tooling and allow you to explore the facets of team based design as you would face in the real world.
 
 ### Requirements
 
@@ -43,22 +43,22 @@ While there are many solutions to the tooling required, I have provided a small 
     * [Basecamp](https://basecamp.com/ "Basecamp website")
     * [GitHub Projects](https://docs.github.com/issues/trying-out-the-new-projects-experience "website for GitHub projects")
   * Need to invite all team members to it
-  * Need to invite the instructor to the project - **hajek@hawk.iit.edu**
+  * Need to invite the instructor to the project - **hajek@iit.edu** and **izziwa@hawk.iit.edu**
   * Must be used during the entire project to reflect work-in-progress and work completed
-  * Project Management tool needs to have Chat based notification integration
+  * Project Management tool needs to have integration features
   * Google Docs is not a valid choice for a Project Management Tool as it does not meet the fist requirements
 
-* The team will a Git development workflow
-  * Professor will invite each team-member to a team repo which you will have Admin access
+* The team will a use Git development workflow
+  * Professor will invite each team-member to a team repo which you will have Admin access :white_check_mark:
   * This is to help the team focus on collaborating and understanding how code is developed and deployed
   * All design docs, instructions, code, diagrams, and tests will be updated and kept in the team repo
+  * Will be making use of [Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request "webpage for creating pull requests")
   * Google Docs is not an adequate solution for team based Trunk Development - everything in the repository
 
 * Signup for Team Chat Tool
   * This will enable synchronous and asynchronous out of band communication between members and the professor if questions arise
-    * ~~Invite: **hajek@hawk.iit.edu**~~
-    * ~~Recommendations: [Slack](https://slack.com "Slack website")~~
     * Recommendations: [Discord](https://discord.com "Discord website") -- need to have integrations with Chat and Project Management tools
+    * Drop the link in a DM in Discord
   * Must have the ability to add notifications from Project Management boards and Git commits to the Chat tool
   * This will allow for a central pooling of resources and knowledge
   * Facebook Messenger and SMS are not adequate solutions
@@ -67,7 +67,7 @@ While there are many solutions to the tooling required, I have provided a small 
 
 This is important as this is the document that your team will write up in markdown, place in the root of your team repo, and will be the rules of work engagement for your team.  Like the [Mayflower Compact](https://en.wikipedia.org/wiki/Mayflower_Compact "Wiki Article for Mayflower Compact"), this document will determine how work will flow, communication rules and method, consequences, and restoration methods.
 
-This document is important as it protects your team members and gives you recourse if for some reason members are not participating or delivering their requirements.  This also lays ground work for conflict resolution as well as in a last case scenario--separation from the team. In more modern terms you may see the phrase, **code-of-conduct** used as well.  The purpose of a document like this is never to be punitive but to establish boundaries on what is acceptable behavior for a community or team.
+This document is important as it protects your team members and gives you recourse if for some reason members are not participating or delivering their requirements. This also lays ground work for conflict resolution as well as in a last case scenario--separation from the team. The purpose of a document like this is never to be punitive but to establish boundaries on what is acceptable behavior for a community or team.
 
 Place a markdown document named: **Compact.md** in the root of your team directory.  In the document address these areas:
 
@@ -118,9 +118,21 @@ id_ed25519*
 .Vagrantfile*
 ```
 
-## Decided on Team Project Idea
+## Decide on Team Project Idea
 
-The project will you will have to plan, build, deploy, manage, and secure a 3-tier webapp site. Your team will need to determine what the site will be/do. The team needs to keep in mind the site will be working by the end of sprint-02. Your team can choose a topic or subject for your site that you could use as a future resume piece. This will impact the rest of your sprint-01 deliverables.
+The project will you will have to plan, build, deploy, manage, and secure a 3-tier webapp. Your team will need to determine what the site will be and what it does. The team needs to keep in mind the site will be working by the end of sprint-02. Your team can choose a topic or subject for your site that you could use as a future resume piece. This will impact the rest of your sprint-01 deliverables.
+
+Project will require state management, account management, and admin management workflows.
+
+### Assign Team Roles
+
+Sort your team members alphabetically - this will be the rotation for jobs each sprint
+
+* Project Manager
+* Developer 
+* Junior Developer
+* UI/UX and testing
+* IT operations
 
 ### UI/UX Design
 
@@ -136,11 +148,19 @@ Based on the creation of the UI/UX design, this will give your team a list of at
 
 This will be accomplished on the teams Project Management tool, and notification will show in the Chat Channel
 
+### IT Operations
+
+Will gain access to the build production server (provided by instructor) and will create the teams Production Vault Server for secrets management.
+
+### Developers
+
+Will document and determine the development framework used for the project in agreement with the rest of the group.
+
 ### Individual Deliverables
 
 The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work. This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
 
-In the private repo provided to you (with your hawk ID), under the itmt-430 folder, create another folder that will be named for this sprint, **sprint-01**.  In this directory place a markdown based document named: **Report.md**
+In the private repo provided to you (with your hawk ID), under the `itmt-430` folder, create another folder that will be named for this sprint, **sprint-01**.  In this directory place a markdown based document named: **Report.md**
 
 In the document **Report.md** include an H1 header called **Sprint-01** and then an H2 header: **Self-Critique** and detailing:
 
@@ -202,7 +222,7 @@ Walk-through of your site | 3
 
 ### Presentation Requirements
 
-* The presentation will be done in person for section 01 and section 04 will have to pre-record
+* The presentation will be done in person for section 01 and 05. Section 04 will have to pre-record
   * Only the Project Manager does the presenting
   * Others need to help prepare it but only the PM will do the presenting
   * Presentation is **not** a slide show, but a verbal explaining and demonstration of the artifacts produced
@@ -217,10 +237,10 @@ Demonstrate the implementations of the above requirements:
 * Demonstrate your project overview form the About.md
 * Present a walk-through of your site's design documents, explaining its functionality
 
-### What to Deliver to Blackboard
+### What to Deliver to Canvas
 
-Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day. In your private GitHub repo under `itmt-430`, create a folder named `critique` > `sprint-01` > Readme.md
+Each person must deliver the URL to their Critique reports at the beginning of Sprint Presentation Day, Monday 10 AM. In your private GitHub repo under `itmt-430` > `sprint-01` > Readme.md
 
-Project Manager will also submit a file named `report.md` displaying the required artifacts listed in the PM rubric
+For the group deliverable, the project manager will submit a link to an additional file created under the `sprint-01` folder called `report.md`. This is the presentation material due at the beginning of presentation day, Monday 10 AM and will display the required artifacts listed in the PM rubric. Online section will submit their recorded presentation as well. Presenting time will target 15-20 minutes.
 
 Feedback will be given on each submission.
