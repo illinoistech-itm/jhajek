@@ -140,7 +140,7 @@ In a folder in the team repository placed in the root the repo named **design**,
 
 ### Entity Relationship Diagram
 
-Based on completing the UI/UX design you will be able to create an entire Entity Relationship diagram.  This will show the structure or schema of the database you end up working on. The ERD can be draw using a diagram tool and stored in the **design** folder for reference. In addition, from the ERD you can generate SQL CREATE statements to generate this schema. This will be used in sprint-02 but is required by the end of Sprint 01.
+Based on completing the UI/UX design you will be able to create an entire Entity Relationship diagram. This will show the structure or schema of the database you end up working on. The ERD can be draw using a diagram tool and stored in the **design** folder for reference. In addition, from the ERD you can generate SQL CREATE statements to generate this schema. This will be used in sprint-02 but is required by the end of Sprint 01. Need to create 10 sample records.
 
 ### Creation and Listing of Application Tasks
 
