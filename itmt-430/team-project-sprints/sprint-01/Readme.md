@@ -239,8 +239,8 @@ Demonstrate the implementations of the above requirements:
 
 ### What to Deliver to Canvas
 
-Each person must deliver the URL to their Critique reports at the beginning of Sprint Presentation Day, Monday 10 AM. In your private GitHub repo under `itmt-430` > `sprint-01` > Readme.md
+Each person must deliver the URL to their Critique reports at the beginning of Sprint Presentation Day, Monday 10 AM. In your private GitHub repo under `itmt-430` > `sprint-01` > Readme.md.
 
-For the group deliverable, the project manager will submit a link to an additional file created under the `sprint-01` folder called `report.md`. This is the presentation material due at the beginning of presentation day, Monday 10 AM and will display the required artifacts listed in the PM rubric. Online section will submit their recorded presentation as well. Presenting time will target 15-20 minutes.
+The project manager in addition has to submit a document under the `sprint-01` folder named `report.md` that is a written report collecting all of the artifacts presented in a single cohesive status report. This will count for 10 points of the PMs grade and is presented in markdown.
 
 Feedback will be given on each submission.
