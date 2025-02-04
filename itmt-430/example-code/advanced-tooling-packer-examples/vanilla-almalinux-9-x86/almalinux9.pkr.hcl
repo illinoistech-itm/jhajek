@@ -26,8 +26,8 @@ source "virtualbox-iso" "alma-linux-9-vanilla" {
   http_directory          = "."
   http_port_min           = 9001
   http_port_max           = 9100
-  iso_checksum            = "file:https://mirror.grid.uchicago.edu/pub/linux/alma/9.3/isos/x86_64/CHECKSUM"
-  iso_urls                = ["https://mirror.grid.uchicago.edu/pub/linux/alma/9.3/isos/x86_64/AlmaLinux-9-latest-x86_64-boot.iso"]
+  iso_checksum            = "file:https://mirror.grid.uchicago.edu/pub/linux/alma/9.5/isos/x86_64/CHECKSUM"
+  iso_urls                = ["https://mirror.grid.uchicago.edu/pub/linux/alma/9.5/isos/x86_64/AlmaLinux-9-latest-x86_64-boot.iso"]
   shutdown_command        = "echo 'vagrant' | sudo -S /sbin/poweroff"
   ssh_password            = "${var.SSHPW}"
   ssh_port                = 22
