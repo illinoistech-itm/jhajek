@@ -50,10 +50,11 @@ variable "NUMBEROFCORES" {
 
 variable "TAGS" {
   type    = string
-  default = "creator;jrh,type;vault"
+  default = "team00;vault"
 }
 
 # This is the name of the Virtual Machine Template you want to create
+# REPLACE XX with your number
 variable "VMNAME" {
   type    = string
   default = "teamXX-vault-server"
