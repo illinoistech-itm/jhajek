@@ -10,5 +10,7 @@ sudo apt-get install -y vault
 echo "export VAULT_ADDR='https://127.0.0.1:8200'" >> /home/vagrant/.bashrc
 echo "export VAULT_SKIP_VERIFY='true'" >> /home/vagrant/.bashrc
 
+sudo systemctl enable vault
+
 sudo firewall-cmd --zone=meta-network --add-port=8200/tcp --permanent
 sudo firewall-cmd --reload

@@ -181,6 +181,11 @@ build {
   # Uncomment this block to add your own custom bash install scripts
   # This block you can add your own shell scripts to customize the image you are creating
   ########################################################################################################################
+  # Script to install Vault
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    scripts         = ["../scripts/proxmox/jammy-vault/install-vault.sh"]
+  }
 
 
 }
