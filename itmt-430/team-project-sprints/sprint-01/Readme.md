@@ -122,7 +122,11 @@ id_ed25519*
 
 The project will you will have to plan, build, deploy, manage, and secure a 3-tier webapp. Your team will need to determine what the site will be and what it does. The team needs to keep in mind the site will be working by the end of sprint-02. Your team can choose a topic or subject for your site that you could use as a future resume piece. This will impact the rest of your sprint-01 deliverables.
 
-Project will require state management, account management, and admin management workflows.
+The web application we are building will require state management, account management, and admin management workflows. All hardware and cloud platform access will be provided to you in Sprint-02, no need to secure outside hosting. We won't be using platforms like Firebase of Netlify, though those are good software, we want you to build the entire infrastructure.
+
+### Additional Project Manager Task for Online section only
+
+You will keep a log of who attended any team meetings and this will be published as part of your deliverables in an `attendance.md` file placed in `sprint-01` with the critique and report.
 
 ### Assign Team Roles
 
@@ -150,7 +154,9 @@ This will be accomplished on the teams Project Management tool, and notification
 
 ### IT Operations
 
-Will gain access to the build production server (provided by instructor) and will create the teams Production Vault Server for secrets management.
+~~Will gain access to the build production server (provided by instructor) and will create the teams Production Vault Server for secrets management.~~
+
+Determine the type of database/datastore you will use for your project, needs to be able to run on Linux, on a replicated cluster (At least two nodes) detail your choice, documentation for configuring a DB cluster, and which platform you have chosen.
 
 ### Developers
 
