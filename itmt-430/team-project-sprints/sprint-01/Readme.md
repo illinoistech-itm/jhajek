@@ -226,6 +226,10 @@ Walk-through of your site | 3
 * 1 point meets some of the items expected
 * 0 points expectations missing
 
+## attendance.md
+
+For the Online Only section PM, you need to add an additional `attendance.md` file in your `sprint-01` folder with a short record of who attended your teams meetings and when they took place.
+
 ### Presentation Requirements
 
 * The presentation will be done in person for section 01 and 05. Section 04 will have to pre-record
