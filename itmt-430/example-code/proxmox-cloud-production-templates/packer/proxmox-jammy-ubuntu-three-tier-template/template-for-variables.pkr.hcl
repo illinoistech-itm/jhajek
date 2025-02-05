@@ -68,12 +68,12 @@ variable "loadbalancer-VMNAME" {
 
 variable "iso_checksum" {
   type    = string
-  default = "file:https://mirrors.edge.kernel.org/ubuntu-releases/22.04.4/SHA256SUMS"
+  default = "file:https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
 }
 
 variable "iso_urls" {
   type    = list(string)
-  default = ["http://mirrors.edge.kernel.org/ubuntu-releases/22.04.4/ubuntu-22.04.4-live-server-amd64.iso"]
+  default = ["http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/ubuntu-22.04.5-live-server-amd64.iso"]
 }
 
 # This will be the non-root user account name
