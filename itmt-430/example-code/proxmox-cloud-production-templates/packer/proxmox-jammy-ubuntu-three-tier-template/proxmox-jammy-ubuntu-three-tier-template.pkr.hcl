@@ -231,7 +231,7 @@ build {
   #############################################################################
 
   provisioner "file" {
-    source      = "/home/hajek/.ssh/id_ed25519"
+    source      = "./id_ed25519"
     destination = "/home/vagrant/.ssh/id_ed25519"
   }
 
