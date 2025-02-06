@@ -25,21 +25,20 @@ At the conclusion of this lab you will have built Spark applications in Python a
 ## Assignment Details
 
 - In your local Git Repo, create a folder named **labs** under the `itmd-521` folder and create a sub-folder **module-04** and place this Readme.md template in that directory along with the required pieces of code
-  - You will create two programs, one in Python and one in Scala
+  - You will create one program
     - Python: module-04.py
-    - Scala: module-04.scala
-  - Per language file, create three data frames reading the extracted `Divvy_Trips_2015-Q1.csv` from your local system
+  - Create three data frames reading data from the extracted `Divvy_Trips_2015-Q1.csv` 
+    - Do not hardcode the path to the data file
+      - Follow the example in the MnMCount to dynamically declare the location from the command line
     - First **infer the schema** and read the csv file
     - Second programmatically use **StructFields** to create and attach a schema and read the csv file
     - Third attach a schema via a DDL and read the csv file
 - After each read operation include the function `printSchema()`
   - [printSchema - Python](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.printSchema.html?highlight=printschema "pyspark printschema web page")
-  - [printSchema - Scala](https://spark.apache.org/docs/latest/api/scala/scala/index.html "scala pyspark API")
 - Also use the `.count()` function to display the number of records in each DataFrame
   - [.count - Python](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.count.html?highlight=count#pyspark.sql.functions.count "webpage to Scala API")
-  - [count() - Scala](https://spark.apache.org/docs/latest/api/scala/scala/index.html "Pyspark webpage for API")  
 
-### Screen Shots
+## Screen Shots
 
 Add the required screenshots here:
 
@@ -55,20 +54,8 @@ Screenshot goes here
 
 Screenshot goes here
 
-### Screenshot of the printSchema inferred in Scala
-
-Screenshot goes here
-
-### Screenshot of the printSchema programmatically in Scala
-
-Screenshot goes here
-
-### Screenshot of the printSchema via DDL in Scala
-
-Screenshot goes here
-
 ### Deliverable
 
-Submit to Blackboard the URL to the folder in your GitHub repo. I will clone your code, compile it, and run it to test the functionality. Include your `build.sbt` file as well, but not your build artifacts. 
+Using this template, under the itmd-521 directory in your local repository, create a sub-directory named labs. Under that create another subdirectory named module-03 and place this Readme.md file in that directory along with a folder for images. `itmd-521` > `labs` > `module-04`
 
-Due at the **Start of class** September 17th 5:00 pm
+Due at the **Start of class** February 13th 3:15pm

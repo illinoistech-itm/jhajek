@@ -8,7 +8,7 @@ sudo apt-get install -y nginx curl rsync
 # How to generate a self-signed TLS cert
 
 # https://github.com/nodesource/distributions/blob/master/README.md#using-ubuntu-2
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # https://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl
