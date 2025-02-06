@@ -47,7 +47,7 @@ locals {
 
 # This will be the fully qualified domain name: team-00-be-vm0.service.consul
 locals {
-  FQDN = vault("/secret/data/DB","FQDN") 
+  FQDN = vault("/secret/data/DB","DBURL") 
 }
 
 # This will be the Database name you default to (like posts or comments or customers)
