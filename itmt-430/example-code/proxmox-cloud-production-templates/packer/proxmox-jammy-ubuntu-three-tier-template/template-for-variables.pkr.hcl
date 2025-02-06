@@ -5,7 +5,7 @@
 
 # This is the name of the node in the Cloud Cluster where to deploy the virtual instances
 locals {
-  NODENAME = vault("/secret/data/NODENAME","NODENAME3")
+  NODENAME = vault("/secret/data/NODENAME","SYSTEM41")
 }
 
 locals {
@@ -17,11 +17,11 @@ locals {
 }
 
 locals {
-  URL = vault("/secret/data/URL","SYSTEM41")
+  URL = vault("/secret/data/URL","S41")
 }
 
 locals {
-  SSHPW = vault("/secret/data/SSH","SSHPASS")
+  SSHPW = vault("/secret/data/SSH","SSHPW")
 }
 
 locals {
