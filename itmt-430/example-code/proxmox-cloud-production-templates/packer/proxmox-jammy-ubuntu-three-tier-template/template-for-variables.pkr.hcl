@@ -85,6 +85,21 @@ variable "local_iso_name" {
   default = "ubuntu-22.04.5-live-server-amd64.iso"
 }
 
+variable "FE-TAGS" {
+  type = string
+  default  = "frontend;jhajek"
+}
+
+variable "BE-TAGS" {
+  type = string
+  default  = "backend;jhajek"
+}
+
+variable "LB-TAGS" {
+  type = string
+  default  = "loadbalancer;jhajek"
+}
+
 # This will be the non-root user account name
 variable "DBUSER" {
   type      = string

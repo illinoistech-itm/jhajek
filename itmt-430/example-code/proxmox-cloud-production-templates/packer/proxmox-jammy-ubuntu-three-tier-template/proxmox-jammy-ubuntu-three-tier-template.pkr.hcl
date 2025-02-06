@@ -77,7 +77,7 @@ source "proxmox-iso" "backend-database" {
   ssh_timeout              = "22m"
   template_description     = "A Packer template for Ubuntu Jammy Database" 
   vm_name                  = "${var.backend-VMNAME}"
-  tags                     = "${var.TAGS}"
+  tags                     = "${var.BE-TAGS}"
 }
 
 ###########################################################################################
@@ -142,7 +142,7 @@ source "proxmox-iso" "frontend-webserver" {
   ssh_timeout              = "22m"
   template_description     = "A Packer template for Ubuntu Jammy Frontend webserver"
   vm_name                  = "${var.frontend-VMNAME}"
-  tags                     = "${var.TAGS}"
+  tags                     = "${var.FE-TAGS}"
 }
 
 ###########################################################################################
@@ -207,7 +207,7 @@ source "proxmox-iso" "load-balancer" {
   ssh_timeout              = "22m"
   template_description     = "A Packer template for Ubuntu Jammy Load Balancer"
   vm_name                  = "${var.loadbalancer-VMNAME}"
-  tags                     = "${var.TAGS}"
+  tags                     = "${var.LB-TAGS}"
 }
 
 build {
