@@ -28,9 +28,9 @@ source "proxmox-iso" "backend-database" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/ubuntu-22.04.5-live-server-amd64.iso"
+    iso_file="local:iso/${var.local_iso_name}"
     unmount=true
-    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
+    iso_checksum="${var.iso_checksum}"
   }
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
@@ -77,6 +77,7 @@ source "proxmox-iso" "backend-database" {
   ssh_timeout              = "22m"
   template_description     = "A Packer template for Ubuntu Jammy Database" 
   vm_name                  = "${var.backend-VMNAME}"
+  tags                     = "${var.TAGS}"
 }
 
 ###########################################################################################
@@ -94,7 +95,7 @@ source "proxmox-iso" "frontend-webserver" {
     type="scsi"
     iso_file="local:iso/${var.local_iso_name}"
     unmount=true
-    iso_checksum="file:${var.iso_checksum}"
+    iso_checksum="${var.iso_checksum}"
   }
   boot_wait = "8s"
   cores     = "${var.NUMBEROFCORES}"
@@ -141,6 +142,7 @@ source "proxmox-iso" "frontend-webserver" {
   ssh_timeout              = "22m"
   template_description     = "A Packer template for Ubuntu Jammy Frontend webserver"
   vm_name                  = "${var.frontend-VMNAME}"
+  tags                     = "${var.TAGS}"
 }
 
 ###########################################################################################
@@ -156,9 +158,9 @@ source "proxmox-iso" "load-balancer" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/ubuntu-22.04.5-live-server-amd64.iso"
+    iso_file="local:iso/${var.local_iso_name}"
     unmount=true
-    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
+    iso_checksum="${var.iso_checksum}"
   }
   boot_wait = "10s"
   cores     = "${var.NUMBEROFCORES}"
@@ -205,6 +207,7 @@ source "proxmox-iso" "load-balancer" {
   ssh_timeout              = "22m"
   template_description     = "A Packer template for Ubuntu Jammy Load Balancer"
   vm_name                  = "${var.loadbalancer-VMNAME}"
+  tags                     = "${var.TAGS}"
 }
 
 build {
