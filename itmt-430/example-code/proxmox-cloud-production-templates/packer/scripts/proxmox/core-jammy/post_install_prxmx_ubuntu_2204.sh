@@ -12,6 +12,11 @@ sudo usermod -a -G admin vagrant
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
+# Disable password authentication
+echo "PasswordAuthentication no" | sudo tee -a /etc/ssh/sshd_config.d/10-disable-password-auth.conf
+sudo systemctl daemon-reload
+sudo systemctl restart ssh
+
 # https://github.com/hashicorp/terraform-provider-vsphere/issues/516
 # Remove /etc/machine-id so that all the cloned machines will get their own IP address upon DHCP request
 # https://unix.stackexchange.com/questions/402999/is-it-ok-to-change-etc-machine-id
