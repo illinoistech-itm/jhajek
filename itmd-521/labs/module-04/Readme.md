@@ -2,7 +2,7 @@
 
 ## Objectives
 
-* Create and demonstrate the creation of Spark Schemas for Python and Scala
+* Create and demonstrate the creation of Spark Schemas for Python
 * Create and build running Spark Applications
 * Create and build an application that will read arbitrary input
 
