@@ -26,7 +26,13 @@ source "proxmox-iso" "backend-database" {
     "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
     "<f10><wait>"
   ]
-  boot_wait = "6s"
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/ubuntu-22.04.5-live-server-amd64.iso"
+    unmount=true
+    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
+  }
+  boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
   node      = "${local.NODENAME}"
   username  = "${local.USERNAME}"
@@ -35,15 +41,14 @@ source "proxmox-iso" "backend-database" {
   disks {
     disk_size    = "${var.DISKSIZE}"
     storage_pool = "${var.STORAGEPOOL}"
-    type = "virtio"
-    io_thread = true
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
   }
-  http_directory   = "subiquity/http"
+  http_directory    = "subiquity/http"
+  http_bind_address = "10.110.0.45"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "${var.iso_checksum}"
-  iso_urls         = "${var.iso_urls}"
-  iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
   network_adapters {
@@ -62,14 +67,14 @@ source "proxmox-iso" "backend-database" {
   os                       = "l26"
   proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
-  unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
-  cloud_init_storage_pool  = "${var.STORAGEPOOL}"
-  ssh_password             = "${local.SSHPW}"
-  ssh_username             = "vagrant"
-  ssh_timeout              = "22m"
+  cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
   scsi_controller          = "virtio-scsi-single"
+  ssh_password             = "${local.SSHPW}"
+  ssh_username             = "${local.SSHUSER}"
+  ssh_timeout              = "22m"
   template_description     = "A Packer template for Ubuntu Jammy Database" 
   vm_name                  = "${var.backend-VMNAME}"
 }
@@ -85,6 +90,12 @@ source "proxmox-iso" "frontend-webserver" {
     "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
     "<f10><wait>"
   ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/${var.local_iso_name}"
+    unmount=true
+    iso_checksum="file:${var.iso_checksum}"
+  }
   boot_wait = "8s"
   cores     = "${var.NUMBEROFCORES}"
   node      = "${local.NODENAME}"
@@ -94,15 +105,14 @@ source "proxmox-iso" "frontend-webserver" {
   disks {
     disk_size    = "${var.DISKSIZE}"
     storage_pool = "${var.STORAGEPOOL}"
-    type = "virtio"
-    io_thread = true
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
   }
-  http_directory   = "subiquity/http"
+  http_directory    = "subiquity/http"
+  http_bind_address = "10.110.0.45"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "${var.iso_checksum}"
-  iso_urls         = "${var.iso_urls}"
-  iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
   network_adapters {
@@ -121,14 +131,14 @@ source "proxmox-iso" "frontend-webserver" {
   os                       = "l26"
   proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
-  unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
-  cloud_init_storage_pool  = "${var.STORAGEPOOL}"
-  ssh_password             = "${local.SSHPW}"
-  ssh_username             = "vagrant"
-  ssh_timeout              = "22m"
+  cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
   scsi_controller          = "virtio-scsi-single"
+  ssh_password             = "${local.SSHPW}"
+  ssh_username             = "${local.SSHUSER}"
+  ssh_timeout              = "22m"
   template_description     = "A Packer template for Ubuntu Jammy Frontend webserver"
   vm_name                  = "${var.frontend-VMNAME}"
 }
@@ -144,7 +154,13 @@ source "proxmox-iso" "load-balancer" {
     "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
     "<f10><wait>"
   ]
-  boot_wait = "5s"
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/ubuntu-22.04.5-live-server-amd64.iso"
+    unmount=true
+    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
+  }
+  boot_wait = "10s"
   cores     = "${var.NUMBEROFCORES}"
   node      = "${local.NODENAME}"
   username  = "${local.USERNAME}"
@@ -153,15 +169,14 @@ source "proxmox-iso" "load-balancer" {
   disks {
     disk_size    = "${var.DISKSIZE}"
     storage_pool = "${var.STORAGEPOOL}"
-    type = "virtio"
-    io_thread = true
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
   }
-  http_directory   = "subiquity/http"
+  http_directory    = "subiquity/http"
+  http_bind_address = "10.110.0.45"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "${var.iso_checksum}"
-  iso_urls         = "${var.iso_urls}"
-  iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
   network_adapters {
@@ -180,14 +195,14 @@ source "proxmox-iso" "load-balancer" {
   os                       = "l26"
   proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
-  unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
-  cloud_init_storage_pool  = "${var.STORAGEPOOL}"
-  ssh_password             = "${local.SSHPW}"
-  ssh_username             = "vagrant"
-  ssh_timeout              = "22m"
+  cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
   scsi_controller          = "virtio-scsi-single"
+  ssh_password             = "${local.SSHPW}"
+  ssh_username             = "${local.SSHUSER}"
+  ssh_timeout              = "22m"
   template_description     = "A Packer template for Ubuntu Jammy Load Balancer"
   vm_name                  = "${var.loadbalancer-VMNAME}"
 }

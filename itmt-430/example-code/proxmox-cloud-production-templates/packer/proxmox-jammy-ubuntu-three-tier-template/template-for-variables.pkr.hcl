@@ -5,23 +5,27 @@
 
 # This is the name of the node in the Cloud Cluster where to deploy the virtual instances
 locals {
-  NODENAME = vault("/secret/data/team00-NODENAME","NODENAME3")
+  NODENAME = vault("/secret/data/NODENAME","NODENAME3")
 }
 
 locals {
-  USERNAME = vault("/secret/data/team00-username-packer-system","USERNAME")
+  USERNAME = vault("/secret/data/SECRETKEY","PK-USERNAME")
 }
 
 locals {
-  PROXMOX_TOKEN = vault("/secret/data/team00-token-packer-system","TOKEN")
+  PROXMOX_TOKEN = vault("/secret/data/ACCESSKEY","PK-TOKEN")
 }
 
 locals {
-  URL = vault("/secret/data/team00-url","SYSTEM41")
+  URL = vault("/secret/data/URL","SYSTEM41")
 }
 
 locals {
-  SSHPW = vault("/secret/data/team00-ssh","SSHPASS")
+  SSHPW = vault("/secret/data/SSH","SSHPASS")
+}
+
+locals {
+  SSHUSER = vault("/secret/data/SSH","SSHUSER")
 }
 
 variable "MEMORY" {
@@ -74,6 +78,11 @@ variable "iso_checksum" {
 variable "iso_urls" {
   type    = list(string)
   default = ["http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/ubuntu-22.04.5-live-server-amd64.iso"]
+}
+
+variable "local_iso_name" {
+  type    = string
+  default = "ubuntu-22.04.5-live-server-amd64.iso"
 }
 
 # This will be the non-root user account name
