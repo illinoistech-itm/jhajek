@@ -8,7 +8,7 @@
 
 ## Outcomes
 
-At the conclusion of this lab you will have built Spark applications in Python and Scala and demonstrated the three methods for assigning schemas to arbitrary data.
+At the conclusion of this lab you will have built Spark applications in Python demonstrated the three methods for assigning schemas to arbitrary data.
 
 ## Assignment Setup
 
