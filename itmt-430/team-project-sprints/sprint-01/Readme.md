@@ -166,15 +166,15 @@ Will document and determine the development framework used for the project in ag
 
 The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work. This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
 
-In the private repo provided to you (with your hawk ID), under the `itmt-430` folder, create another folder that will be named for this sprint, **sprint-01**.  In this directory place a markdown based document named: **Report.md**
+In the private repo provided to you (with your hawk ID), under the `itmt-430` folder, create another folder that will be named for this sprint, `sprint-01`.  In this directory place a markdown based document named: ~~Report.md~~ `Readme.md`. 
 
-In the document **Report.md** include an H1 header called **Sprint-01** and then an H2 header: **Self-Critique** and detailing:
+In the document ~~Report.md~~ `Readme.md` include an H1 header called `Sprint-01` and then an H2 header: `Self-Critique` and detailing:
 
 * Any roles or jobs you had for the sprint
 * Detail the work you accomplished and delivered
 * Self-Critique what you did and what could have gone better
 
-In the second part of the document, include and H2 header: **Group-Critique** and write a critique of the each team member's role, the contributions that made for the sprint, and any notes or improvements that could be done.  Make use of GitHub commits, Project Management board or the Chat Channel to find artifacts
+In the second part of the document, include and H2 header: `Group-Critique` and write a critique of the each team member's role, the contributions that made for the sprint, and any notes or improvements that could be done.  Make use of GitHub commits, Project Management board or the Chat Channel to find artifacts
 
 #### Points for Self-Critique
 
