@@ -33,7 +33,7 @@ For this sprint, the roles are not exclusive. Anyone can submit code for instanc
   * Responsible for deciding on a programming language framework used, any APIs that will be created, and if any frameworks are implemented
   * Once this is chosen -- it is locked in for the rest of the class
   * Language must have a package manager
-  * Use of Firebase is not allowed for this project (it is a great product though)
+  * Use of Firebase is **not** allowed for this project (it is a great product though)
   * Use of non-framework PHP is not allowed
   * Must begin to code and deploy the items decided upon by the Project Manager
 * UI/UX
@@ -58,8 +58,7 @@ In the team repo their will need to be a few additional folders added.
   * This will contain all application source code
 * A folder named: **build**
   * This will contain all instructions on how to build and deploy your application
-  * This will contain Packer build templates for building ~~Vagrant Boxes~~ Virtual Machines
-  * This will contain Bash and or PowerShell scripts for single source of deploy, halt, and removal of the application on your local system
+  * This will contain Packer build templates for building Virtual Machines
   * The build directory will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
 
 ### Project Management Tool and Task Difficulty Estimation
@@ -75,21 +74,18 @@ In the Project Management tool the **25 points** worth of tasks need to have the
 The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points
 
 * Login
-  * Use your @hawk accounts and Google OAuth for login authentication in your application code (there are other options -- check with the instructor for approval first)
-  * Rolling your own Authentication system in 2024 is not a valid choice
+  * Use Google OAuth for login authentication in your application code (there are other options -- check with the instructor for approval first)
+  * Rolling your own Authentication system in 2025 is not a valid choice
 * Choice of Server OS
   * Ubuntu Server 22.04
 * Infrastructure
   * Build virtual machine templates of each system you will need in the 3-tier app as Virtual Machines using [Packer](https://packer.io "webpage for hashicorp packer")
   * Use of [Terraform](https://www.terraform.io/ "webpage for hashicorp terraform") for deploying virtual machine templates
 * You will be assigned API keys and access to an on prem University [Proxmox Cloud Platform Cluster](https://proxmox.com "webpage for proxmox virtualization platform")
-* This sprint we will build just 2 of the 3 tiers
-  * Second tier is a single webserver (suggestions: Nginx, Apache2/httpd, lighttpd)
-  * Third tier is a single datastore (suggestions: MariaDB, PostgreSQL, MongoDB, Sqlite3 - No Oracle)
 
 ## Deliverables
 
-* All presentations and critiques are due 10:00am February 26th
+* All presentations and critiques are due 10:00am March 3rd
 
 ### Individual Deliverables
 
@@ -172,5 +168,5 @@ Clear transition to a conclusion and small summary of presentation | 1
 
 ### What to Deliver to Blackboard
 
-Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day.  Feedback will be given on each submission.
+Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day. Feedback will be given on each submission.
 
