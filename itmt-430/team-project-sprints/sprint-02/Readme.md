@@ -1,6 +1,6 @@
 # Sprint 02 Requirements and Deliverables
 
-This document contains the Sprint-02 requirements and deliverables
+This document contains the `Sprint-02` requirements and deliverables.
 
 ## Objectives
 
@@ -13,7 +13,7 @@ This document contains the Sprint-02 requirements and deliverables
 
 ## Outcomes
 
-At the conclusion of this sprint you will have worked in combination with your teammates to estimate the timing to deliver software artifacts. You will have deployed your virtualized 3-tier application, applying your UI/UX design you created in sprint-01. You will have integrated the Data Schema as well as addressed security concerns and have begun to assign and complete tasks you were assigned. Your goal is to show a working skeleton of the project at the end of sprint-02.
+At the conclusion of this sprint you will have worked in combination with your teammates to estimate the timing to deliver software artifacts. You will have deployed your virtualized 3-tier application, applying your UI/UX design you created in `sprint-01`. You will have integrated the Data Schema as well as addressed security concerns and have begun to assign and complete tasks you were assigned. Your goal is to show a working skeleton of the project at the end of `sprint-02`.
 
 ### Requirements
 

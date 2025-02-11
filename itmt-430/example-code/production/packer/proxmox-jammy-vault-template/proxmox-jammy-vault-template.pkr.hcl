@@ -168,7 +168,7 @@ build {
   }
 
   ############################################################################################
-  # Script to install telegraf dependencies for collecting hardware metrics
+  # Script to install Node_exporter dependencies for collecting hardware metrics
   #
   #############################################################################################
 
