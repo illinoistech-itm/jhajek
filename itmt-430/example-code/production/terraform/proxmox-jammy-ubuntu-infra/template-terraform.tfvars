@@ -2,7 +2,7 @@
 # These are your proxmox API token credentials (not username and password)
 # That will be provided to you
 ###############################################################################
-keypath             = "name-of-your-private-key" # The path to the private key you need to communicate with your instances
+keypath = "name-of-your-private-key" # The path to the private key you need to communicate with your instances
 ###############################################################################
 # Debugging information settings
 # No need to change these values
@@ -16,8 +16,8 @@ pm_log_file   = "terraform-plugin-proxmox.log" # (Optional; defaults to terrafor
 # FQDN -- this is needed for the gossip based DNS to work
 ###############################################################################
 yourinitials = "" # initials to add to make unique systems
-numberofvms  = 1             # quantity of that template to launch
-desc         = ""            # What is the purpose of the TF template
+numberofvms  = 1  # quantity of that template to launch
+desc         = "" # What is the purpose of the TF template
 ###############################################################################
 # Name the template your created via Packer for Terraform to use to deploy
 # instances from

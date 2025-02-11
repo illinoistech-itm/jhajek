@@ -20,13 +20,14 @@ pm_log_file   = "terraform-plugin-proxmox.log" # (Optional; defaults to terrafor
 # FQDN -- this is needed for the gossip based DNS to work
 ###############################################################################
 yourinitials = "" # initials to add to make unique systems
-numberofvms  = 1             # quantity of that template to launch
-desc         = ""            # What is the purpose of the TF template
+numberofvms  = 1  # quantity of that template to launch
+desc         = "" # What is the purpose of the TF template
 ###############################################################################
 # Name the template your created via Packer for Terraform to use to deploy
 # instances from
 ###############################################################################
 template_to_clone = "" # The name of the template to clone
+tags              = "" # comma - ',' separated: vaultserver,team00
 ###############################################################################
 # Customize instance hardware settings
 ###############################################################################

@@ -41,6 +41,8 @@ variable "disk_size" {}
 
 variable "keypath" {}
 
+variable "tags" {}
+
 variable "additional_wait" {
   default = 30
 }

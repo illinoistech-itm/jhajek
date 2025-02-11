@@ -9,12 +9,12 @@ resource "random_id" "id" {
 # https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/shuffle#example-usage
 resource "random_shuffle" "datadisk" {
   #input        = ["datadisk1","datadisk2","datadisk3","datadisk4"]
-  input        = ["datadisk1","datadisk2"]
+  input        = ["datadisk1", "datadisk2"]
   result_count = 1
 }
 
 resource "random_shuffle" "nodename" {
-  input        = ["NODENAME3","NODENAME4"]
+  input        = ["NODENAME3", "NODENAME4"]
   result_count = 1
 }
 
@@ -41,20 +41,20 @@ data "vault_generic_secret" "target_node" {
 }
 
 resource "proxmox_vm_qemu" "vanilla-server" {
-  count           = var.numberofvms
-  name            = "${var.yourinitials}-vm${count.index}.service.consul"
-  desc            = var.desc
-  target_node     = "${data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]}"
-  clone           = var.template_to_clone
-  os_type         = "cloud-init"
-  memory          = var.memory
-  cores           = var.cores
-  sockets         = var.sockets
-  scsihw          = "virtio-scsi-single"
+  count       = var.numberofvms
+  name        = "${var.yourinitials}-vm${count.index}.service.consul"
+  desc        = var.desc
+  target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
+  clone       = var.template_to_clone
+  os_type     = "cloud-init"
+  memory      = var.memory
+  cores       = var.cores
+  sockets     = var.sockets
+  scsihw      = "virtio-scsi-single"
   #bootdisk        = "virtio0"
   #boot            = "cdn"
-  boot            = "order=virtio0"
-  agent           = 1
+  boot  = "order=virtio0"
+  agent = 1
 
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"
@@ -80,9 +80,9 @@ resource "proxmox_vm_qemu" "vanilla-server" {
     virtio {
       virtio0 {
         disk {
-        iothread = true
-        storage = random_shuffle.datadisk.result[0]
-        size    = var.disk_size
+          iothread = true
+          storage  = random_shuffle.datadisk.result[0]
+          size     = var.disk_size
         }
       }
     }
@@ -109,7 +109,7 @@ resource "proxmox_vm_qemu" "vanilla-server" {
       "sudo systemctl start node-exporter.service",
       "sudo growpart /dev/vda 3",
       "sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv",
-      "sudo resize2fs /dev/ubuntu-vg/ubuntu-lv",      
+      "sudo resize2fs /dev/ubuntu-vg/ubuntu-lv",
       "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
     ]
 
@@ -125,5 +125,5 @@ resource "proxmox_vm_qemu" "vanilla-server" {
 
 output "proxmox_ip_address_default" {
   description = "Current Public IP"
-  value = proxmox_vm_qemu.vanilla-server.*.default_ipv4_address
+  value       = proxmox_vm_qemu.vanilla-server.*.default_ipv4_address
 }

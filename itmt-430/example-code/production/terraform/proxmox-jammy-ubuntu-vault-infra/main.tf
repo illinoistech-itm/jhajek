@@ -8,26 +8,24 @@ resource "random_id" "id" {
 
 # https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/shuffle#example-usage
 resource "random_shuffle" "datadisk" {
-  #input        = ["datadisk1","datadisk2","datadisk3","datadisk4"]
-  input        = ["datadisk1","datadisk2"]
+  input        = ["datadisk1", "datadisk2", "datadisk3", "datadisk4"]
   result_count = 1
 }
 
 resource "proxmox_vm_qemu" "vault" {
-  count           = var.numberofvms
-  name            = "${var.yourinitials}-vm${count.index}.service.consul"
-  desc            = var.desc
-  target_node     = var.target_node
-  clone           = var.template_to_clone
-  os_type         = "cloud-init"
-  memory          = var.memory
-  cores           = var.cores
-  sockets         = var.sockets
-  scsihw          = "virtio-scsi-single"
-  #bootdisk        = "virtio0"
-  #boot            = "cdn"
-  boot            = "order=virtio0"
-  agent           = 1
+  count       = var.numberofvms
+  name        = "${var.yourinitials}-vm${count.index}.service.consul"
+  desc        = var.desc
+  target_node = var.target_node
+  clone       = var.template_to_clone
+  os_type     = "cloud-init"
+  memory      = var.memory
+  cores       = var.cores
+  sockets     = var.sockets
+  scsihw      = "virtio-scsi-pci"
+  boot        = "order=virtio0"
+  agent       = 1
+  tags        = var.tags
 
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"
@@ -40,7 +38,7 @@ resource "proxmox_vm_qemu" "vault" {
 
   network {
     model  = "virtio"
-    bridge = "vmbr1" 
+    bridge = "vmbr1"
   }
 
   network {
@@ -52,9 +50,9 @@ resource "proxmox_vm_qemu" "vault" {
     virtio {
       virtio0 {
         disk {
-        iothread = true
-        storage = random_shuffle.datadisk.result[0]
-        size    = var.disk_size
+          iothread = true
+          storage  = random_shuffle.datadisk.result[0]
+          size     = var.disk_size
         }
       }
     }
@@ -75,6 +73,9 @@ resource "proxmox_vm_qemu" "vault" {
       "echo 'retry_join = [\"${var.consulip-240-prod-system28}\",\"${var.consulip-240-student-system41}\",\"${var.consulip-242-room}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
       "sudo systemctl daemon-reload",
       "sudo systemctl restart consul.service",
+      "sudo growpart /dev/vda 3",
+      "sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv",
+      "sudo resize2fs /dev/ubuntu-vg/ubuntu-lv",
       "sudo rm /opt/consul/node-id",
       "sudo systemctl restart consul.service",
       "sudo sed -i 's/0.0.0.0/${var.yourinitials}-vm${count.index}.service.consul/' /etc/systemd/system/node-exporter.service",
@@ -97,5 +98,5 @@ resource "proxmox_vm_qemu" "vault" {
 
 output "proxmox_ip_address_default" {
   description = "Current Pulbic IP"
-  value = proxmox_vm_qemu.vault.*.default_ipv4_address
+  value       = proxmox_vm_qemu.vault.*.default_ipv4_address
 }
