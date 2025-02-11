@@ -4,7 +4,9 @@ This document contains the `Sprint-02` requirements and deliverables.
 
 ## Objectives
 
-* Create a remote virtualized test environment for your 3-tier application
+* Determine what encapsulates a secret for your application
+* Deploy a three-tier web application 
+* Create a virtualized environment for your 3-tier application
 * Integrate and document aspects of the Three Ways into your development process
 * Deploy your schema to a datastore for your application
 * Enable and create software deployment estimates to understand the nature of software production
@@ -13,7 +15,7 @@ This document contains the `Sprint-02` requirements and deliverables.
 
 ## Outcomes
 
-At the conclusion of this sprint you will have worked in combination with your teammates to estimate the timing to deliver software artifacts. You will have deployed your virtualized 3-tier application, applying your UI/UX design you created in `sprint-01`. You will have integrated the Data Schema as well as addressed security concerns and have begun to assign and complete tasks you were assigned. Your goal is to show a working skeleton of the project at the end of `sprint-02`.
+At the conclusion of this sprint you will have worked in combination with your teammates to estimate the timing to deliver software artifacts. You will have deployed your virtualized 3-tier application, applying your UI/UX design you created in `sprint-01`. You will have integrated your Schema into your datastore as well as addressed security concerns and have begun to assign and complete tasks you were assigned. Your goal is to show a working application and login at the end of `sprint-02`.
 
 ### Requirements
 
@@ -31,10 +33,11 @@ For this sprint, the roles are not exclusive. Anyone can submit code for instanc
   * Must manage the team members and facilitate communication and individual progress outside of class times
 * Developer 1 and 2
   * Responsible for deciding on a programming language framework used, any APIs that will be created, and if any frameworks are implemented
+  * Need to investigate integrating Oauth2 and Using Google for 3rd party auth (log in with Google)
   * Once this is chosen -- it is locked in for the rest of the class
   * Language must have a package manager
   * Use of Firebase is **not** allowed for this project (it is a great product though)
-  * Use of non-framework PHP is not allowed
+  * Use of raw PHP is not allowed
   * Must begin to code and deploy the items decided upon by the Project Manager
 * UI/UX
   * Work with the developers to implement the designed UI/UX in code and css
@@ -63,11 +66,13 @@ In the team repo their will need to be a few additional folders added.
 
 ### Project Management Tool and Task Difficulty Estimation
 
-One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. Your team will use a scale of 1-5 points. 5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities. For Sprint 2 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points. If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
+One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. 
 
-In the Project Management tool the **25 points** worth of tasks need to have the point value assigned to that task and also have a name that is primary responsible and clearly marked.  This is how your Project Manager will report progress and how you will write your own and group critique at the end of the sprint. The professor will check in weekly during the beginning of the Lab days to check the current progress and help coordinate in anyway.  
+Your team will use a scale of 1-5 points per task; 5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities. For Sprint 2 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points. If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
 
-**Note** -- this may require the group to *Swarm* on some initial items so that items that are blocking progress of the entire application don't hold up the entire team. Remember as a team-member it is your duty to swarm problems and solve them as a team (Third Way).
+In the Project Management tool the **25 points** worth of tasks need to have the point value assigned to that task and also have a name that is primary responsible and clearly marked. This is how your Project Manager will report progress and how you will write your own and group critique at the end of the sprint. The professor will check in weekly during the beginning of the Lab days to check the current progress and help coordinate in anyway.  
+
+**Note** -- this may require the group to *Swarm* on some initial items so that items that are blocking progress of the entire application don't hold up the entire team. Remember as a team-member it is your duty to swarm problems and solve them as a team (The Third Way).
 
 ### Required Artifacts
 
@@ -81,7 +86,8 @@ The professor is prescribing a small number of **additional** required tasks to 
 * Infrastructure
   * Build virtual machine templates of each system you will need in the 3-tier app as Virtual Machines using [Packer](https://packer.io "webpage for hashicorp packer")
   * Use of [Terraform](https://www.terraform.io/ "webpage for hashicorp terraform") for deploying virtual machine templates
-* You will be assigned API keys and access to an on prem University [Proxmox Cloud Platform Cluster](https://proxmox.com "webpage for proxmox virtualization platform")
+* You will be assigned API keys and access to the department infrastructure
+  * [Proxmox Cloud Platform Cluster](https://proxmox.com "webpage for proxmox virtualization platform")
 
 ## Deliverables
 
@@ -91,9 +97,9 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work.  This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
 
-In the private repo provided to you (with your hawk ID), under the itmt-430 folder, create another folder that will be named for this sprint, **sprint-02**.  In this directory place a markdown based document named: **Report.md**
+In the private repo provided to you (with your hawk ID), under the `itmt-430` folder, create another folder that will be named for this sprint, `sprint-02`.  In this directory place a markdown based document named: `Readme.md`. 
 
-In the document **Report.md** include an H1 header called **Sprint-02** and then an H2 header: **Self-Critique** and detailing:
+In the document `Readme.md` include an H1 header called `Sprint-02` and then an H2 header: `Self-Critique` and detailing:
 
 * In detail, explain your role for the sprint and the general area you covered
 * Detail the tasks your were assigned and attach artifacts to show that they were completed (Kanban Cards, GitHub commits, screenshots of the application, etc. etc.)
@@ -166,7 +172,11 @@ Clear transition to a conclusion and small summary of presentation | 1
   * We need to see your face
   * If recorded, find a quiet place, focus on audio and or use head phones and make a quality recoding.
 
-### What to Deliver to Blackboard
+### What to Deliver to Canvas
 
-Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day. Feedback will be given on each submission.
 
+Each person must deliver the URL to their Critique reports at the beginning of Sprint Presentation Day, Monday 10 AM. In your private GitHub repo under `itmt-430` > `sprint-02` > `Readme.md`.
+
+The project manager in addition has to submit a document under the `sprint-02` folder named `report.md` that is a written report collecting all of the artifacts presented in a single cohesive status report. This will count for 10 points of the PMs grade and is presented in markdown.
+
+Feedback will be given on each submission.
