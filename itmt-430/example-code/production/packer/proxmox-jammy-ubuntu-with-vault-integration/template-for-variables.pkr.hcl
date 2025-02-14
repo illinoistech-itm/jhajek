@@ -53,7 +53,7 @@ variable "VMNAME" {
 variable "TAGS" {
   # Place your initials first then team name and any other tag seperated via ;
   type    = string
-  default = "initials;team"
+  default = "team;type-of-server"
 }
 
 variable "iso_checksum" {

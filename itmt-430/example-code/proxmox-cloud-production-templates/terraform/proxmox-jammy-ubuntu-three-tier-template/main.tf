@@ -12,7 +12,7 @@ resource "random_shuffle" "datadisk" {
 }
 
 resource "random_shuffle" "nodename" {
-  input        = ["NODENAME3","NODENAME4"]
+  input        = ["NODENAME3", "NODENAME4"]
   result_count = 1
 }
 
@@ -48,16 +48,16 @@ resource "proxmox_vm_qemu" "load-balancer" {
   count       = var.lb-numberofvms
   name        = "${var.lb-yourinitials}-vm${count.index}.service.consul"
   desc        = var.lb-desc
-  target_node = "${data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]}"
+  target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
   clone       = var.lb-template_to_clone
   os_type     = "cloud-init"
   memory      = var.lb-memory
   cores       = var.lb-cores
   sockets     = var.lb-sockets
   scsihw      = "virtio-scsi-pci"
-  bootdisk    = "virtio0"
-  boot        = "cdn"
+  boot        = "order=virtio0"
   agent       = 1
+  tags        = var.lb-tags
 
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"
@@ -81,12 +81,17 @@ resource "proxmox_vm_qemu" "load-balancer" {
     bridge = "vmbr2"
   }
 
-  disk {
-    type    = "virtio"
-    storage = random_shuffle.datadisk.result[0]
-    size    = var.lb-disk_size
+  disks {
+    virtio {
+      virtio0 {
+        disk {
+          iothread = true
+          storage  = random_shuffle.datadisk.result[0]
+          size     = var.disk_size
+        }
+      }
+    }
   }
-
   #https://developer.hashicorp.com/terraform/language/meta-arguments/depends_on
   # Nginx requires that all three nodes be runnning before the load
   # balancer service will start - otherwise your Nginx LB will be in 
@@ -143,16 +148,16 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
   count       = var.frontend-numberofvms
   name        = "${var.frontend-yourinitials}-vm${count.index}.service.consul"
   desc        = var.frontend-desc
-  target_node = "${data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]}"
+  target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
   clone       = var.frontend-template_to_clone
   os_type     = "cloud-init"
   memory      = var.frontend-memory
   cores       = var.frontend-cores
   sockets     = var.frontend-sockets
   scsihw      = "virtio-scsi-pci"
-  bootdisk    = "virtio0"
-  boot        = "cdn"
+  boot        = "order=virtio0"
   agent       = 1
+  tags        = var.fe-tags
 
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"
@@ -173,10 +178,16 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
     bridge = "vmbr2"
   }
 
-  disk {
-    type    = "virtio"
-    storage = random_shuffle.datadisk.result[0]
-    size    = var.frontend-disk_size
+  disks {
+    virtio {
+      virtio0 {
+        disk {
+          iothread = true
+          storage  = random_shuffle.datadisk.result[0]
+          size     = var.disk_size
+        }
+      }
+    }
   }
 
   provisioner "remote-exec" {
@@ -200,7 +211,7 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
       "sudo systemctl start node-exporter.service",
       "sudo growpart /dev/vda 3",
       "sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv",
-      "sudo resize2fs /dev/ubuntu-vg/ubuntu-lv",      
+      "sudo resize2fs /dev/ubuntu-vg/ubuntu-lv",
       "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
     ]
 
@@ -227,16 +238,16 @@ resource "proxmox_vm_qemu" "backend-database" {
   count       = var.backend-numberofvms
   name        = "${var.backend-yourinitials}-vm${count.index}.service.consul"
   desc        = var.backend-desc
-  target_node = "${data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]}"
+  target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
   clone       = var.backend-template_to_clone
   os_type     = "cloud-init"
   memory      = var.backend-memory
   cores       = var.backend-cores
   sockets     = var.backend-sockets
   scsihw      = "virtio-scsi-pci"
-  bootdisk    = "virtio0"
-  boot        = "cdn"
+  boot        = "order=virtio0"
   agent       = 1
+  tags        = var.be-tags
 
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"
@@ -257,10 +268,16 @@ resource "proxmox_vm_qemu" "backend-database" {
     bridge = "vmbr2"
   }
 
-  disk {
-    type    = "virtio"
-    storage = random_shuffle.datadisk.result[0]
-    size    = var.backend-disk_size
+  disks {
+    virtio {
+      virtio0 {
+        disk {
+          iothread = true
+          storage  = random_shuffle.datadisk.result[0]
+          size     = var.disk_size
+        }
+      }
+    }
   }
 
   provisioner "remote-exec" {
@@ -289,7 +306,7 @@ resource "proxmox_vm_qemu" "backend-database" {
       "sudo systemctl restart mariadb.service",
       "sudo growpart /dev/vda 3",
       "sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv",
-      "sudo resize2fs /dev/ubuntu-vg/ubuntu-lv",      
+      "sudo resize2fs /dev/ubuntu-vg/ubuntu-lv",
       "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
     ]
 

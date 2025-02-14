@@ -2,7 +2,7 @@
 # These are your proxmox API token credentials (not username and password)
 # That will be provided to you
 ###############################################################################
-keypath             = "name-of-your-private-key" # The name to the private key you need to communicate with your instances
+keypath = "name-of-your-private-key" # The name to the private key you need to communicate with your instances
 ###############################################################################
 # Debugging information settings
 # No need to change these values
@@ -33,6 +33,9 @@ consul-service-tag-contact-email = "your-hawk-email-here" # Used as part of the 
 frontend-template_to_clone = "" # The name of the template to clone
 backend-template_to_clone  = "" # The name of the template to clone
 lb-template_to_clone       = "" # The name of the template to clone
+fe-tags = "" # Tags separated by commas: fe,team00
+lb-tags = "" # Tags separated by commas: lb,team00
+be-tags = "" # Tags separated by commas: be,team00
 ###############################################################################
 # Customize instance hardware settings
 ###############################################################################

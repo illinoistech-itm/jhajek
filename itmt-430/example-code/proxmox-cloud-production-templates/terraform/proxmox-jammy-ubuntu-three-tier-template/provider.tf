@@ -2,15 +2,15 @@ terraform {
   required_providers {
     proxmox = {
       source  = "Telmate/proxmox"
-      version = "2.9.11"
+      version = "3.0.1-rc4"
     }
     consul = {
       source  = "hashicorp/consul"
-      version = "2.20.0"
+      version = "2.21.0"
     }
     vault = {
-      source = "hashicorp/vault"
-      version = "3.23.0"
+      source  = "hashicorp/vault"
+      version = "4.4.0"
     }
   }
 }
