@@ -49,7 +49,8 @@ resource "proxmox_vm_qemu" "load-balancer" {
   name        = "${var.lb-yourinitials}-vm${count.index}.service.consul"
   desc        = var.lb-desc
   #target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
-  target_node = random_shuffle.nodename.result[0]
+  #target_node = random_shuffle.nodename.result[0]
+  target_node = "system41"
   clone       = var.lb-template_to_clone
   os_type     = "cloud-init"
   memory      = var.lb-memory
