@@ -123,19 +123,6 @@ The professor is prescribing a small number of **additional** required tasks to 
     * Logout that user
   * Will demonstrate your load balancer live by terminating 2 instances in succession
 
-| Team Number | MacAddr | Static IP | FQDN |
-| ----------- | -------------| ------------- | ----------------- |
-| team 01m | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
-| team 02m | 04:9F:15:00:00:13 | 192.168.172.62 | system62.rice.iit.edu |
-| team 03m | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
-| team 04m | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
-| team 01o | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
-| team 02o | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
-| team 03o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
-| team 04o | 04:9F:15:00:00:19 | 192.168.172.68 | system68.rice.iit.edu |
-| team 05o | 04:9F:15:00:00:20 | 192.168.172.69 | system69.rice.iit.edu |
-| team 00  | 04:9F:15:00:00:21 | 192.168.172.70 | system70.rice.iit.edu |
-
 ## Deliverables
 
 * All sections live presentation and critiques are due 10:00am March 25th
