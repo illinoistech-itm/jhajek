@@ -88,6 +88,23 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Use of [Terraform](https://www.terraform.io/ "webpage for hashicorp terraform") for deploying virtual machine templates
 * You will be assigned API keys and access to the department infrastructure
   * [Proxmox Cloud Platform Cluster](https://proxmox.com "webpage for proxmox virtualization platform")
+* Your team will be assigned a Mac address and a static IP for their load-balancer
+  * Note there is no team08, we merged them into a team06 and 07
+
+| Team Number | MacAddr | Static IP | FQDN |
+| ----------- | -------------| ------------- | ----------------- |
+| team01 | 04:9F:15:00:00:37 | 192.168.172.55 | system55.rice.iit.edu |
+| team02 | 04:9F:15:00:00:38 | 192.168.172.56 | system56.rice.iit.edu |
+| team03 | 04:9F:15:00:00:39 | 192.168.172.57 | system57.rice.iit.edu |
+| team04 | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
+| team05 | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
+| team06 | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
+| team07 | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
+| team09 | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
+| team10 | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
+| team11 | 04:9F:15:00:00:19 | 192.168.172.68 | system68.rice.iit.edu |
+| team12 | 04:9F:15:00:00:20 | 192.168.172.69 | system69.rice.iit.edu |
+| team13 | 04:9F:15:00:00:21 | 192.168.172.70 | system70.rice.iit.edu |
 
 ## Deliverables
 
