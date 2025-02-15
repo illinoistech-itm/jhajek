@@ -422,7 +422,7 @@ build {
   #############################################################################
   # Using the file provisioner to SCP this file to the instance 
   # Copy the private key used to clone your source code -- make sure the public
-  # key is in your GitHub account
+  # key is in your GitHub account and you using a deploy key
   #############################################################################
 
   provisioner "file" {
