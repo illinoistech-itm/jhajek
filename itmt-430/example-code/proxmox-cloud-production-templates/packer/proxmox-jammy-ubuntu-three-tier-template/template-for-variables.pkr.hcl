@@ -9,6 +9,10 @@ locals {
 }
 
 locals {
+  NODENAME2 = vault("/secret/data/NODENAME","SYSTEM42")
+}
+
+locals {
   USERNAME = vault("/secret/data/SECRETKEY","PK-USERNAME")
 }
 
