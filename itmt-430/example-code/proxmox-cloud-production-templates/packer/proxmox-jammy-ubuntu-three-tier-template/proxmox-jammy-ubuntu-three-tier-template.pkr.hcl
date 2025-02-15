@@ -414,10 +414,10 @@ build {
   # your GitHub account to the server
   #############################################################################
 
-  #provisioner "file" {
-  #  source      = "./config"
-  #  destination = "/home/vagrant/.ssh/config"
-  #}
+  provisioner "file" {
+    source      = "./config"
+    destination = "/home/vagrant/.ssh/config"
+  }
 
   #############################################################################
   # Using the file provisioner to SCP this file to the instance 
@@ -427,7 +427,7 @@ build {
 
   provisioner "file" {
     source      = "./id_ed25519"
-    destination = "/home/vagrant/.ssh/id_ed25519"
+    destination = "/home/vagrant/.ssh/id_ed25519_github_key"
   }
 
   #############################################################################
