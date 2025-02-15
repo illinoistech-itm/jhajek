@@ -23,19 +23,19 @@ resource "random_shuffle" "nodename" {
 # https://github.com/hashicorp/terraform/issues/16457
 ##############################################################################
 data "vault_generic_secret" "pm_api_url" {
-  path = "secret/team00-url"
+  path = "secret/URL"
 }
 
 data "vault_generic_secret" "pm_api_token_id" {
-  path = "secret/team00-username-tf-system"
+  path = "secret/TF-USERNAME"
 }
 
 data "vault_generic_secret" "pm_api_token_secret" {
-  path = "secret/team00-token-tf-system"
+  path = "secret/TF-TOKEN"
 }
 
 data "vault_generic_secret" "target_node" {
-  path = "secret/team00-NODENAME"
+  path = "secret/NODENAME"
 }
 
 ##############################################################################
