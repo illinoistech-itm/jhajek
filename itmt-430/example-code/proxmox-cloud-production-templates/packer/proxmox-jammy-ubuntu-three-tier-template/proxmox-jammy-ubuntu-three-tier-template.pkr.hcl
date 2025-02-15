@@ -426,7 +426,7 @@ build {
   #############################################################################
 
   provisioner "file" {
-    source      = "./id_ed25519"
+    source      = "./id_ed25519_github_key"
     destination = "/home/vagrant/.ssh/id_ed25519_github_key"
   }
 
