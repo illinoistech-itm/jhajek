@@ -51,10 +51,9 @@ resource "proxmox_vm_qemu" "vanilla-server" {
   cores       = var.cores
   sockets     = var.sockets
   scsihw      = "virtio-scsi-single"
-  #bootdisk        = "virtio0"
-  #boot            = "cdn"
-  boot  = "order=virtio0"
-  agent = 1
+  boot        = "order=virtio0"
+  agent       = 1
+  tags        = var.tags
 
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"

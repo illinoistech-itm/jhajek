@@ -23,6 +23,7 @@ desc         = "" # What is the purpose of the TF template
 # instances from
 ###############################################################################
 template_to_clone = "" # The name of the template to clone
+tags              = "" # comma - ',' separated: vaultserver,team00
 ###############################################################################
 # Customize instance hardware settings
 ###############################################################################
