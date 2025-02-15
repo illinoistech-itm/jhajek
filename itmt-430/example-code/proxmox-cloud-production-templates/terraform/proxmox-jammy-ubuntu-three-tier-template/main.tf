@@ -12,7 +12,7 @@ resource "random_shuffle" "datadisk" {
 }
 
 resource "random_shuffle" "nodename" {
-  input        = ["NODENAME3", "NODENAME4"]
+  input        = ["NODENAME", "NODENAME2"]
   result_count = 1
 }
 
@@ -87,7 +87,7 @@ resource "proxmox_vm_qemu" "load-balancer" {
         disk {
           iothread = true
           storage  = random_shuffle.datadisk.result[0]
-          size     = var.disk_size
+          size     = var.lb-disk_size
         }
       }
     }
@@ -136,7 +136,7 @@ resource "proxmox_vm_qemu" "load-balancer" {
 }
 
 output "proxmox_lb_ip_address_default" {
-  description = "Current Pulbic IP"
+  description = "Current Public IP"
   value       = proxmox_vm_qemu.load-balancer.*.default_ipv4_address
 }
 
@@ -184,7 +184,7 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
         disk {
           iothread = true
           storage  = random_shuffle.datadisk.result[0]
-          size     = var.disk_size
+          size     = var.frontend-disk_size
         }
       }
     }
@@ -192,7 +192,7 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
 
   provisioner "remote-exec" {
     # This inline provisioner is needed to accomplish the final fit and finish of your deployed
-    # instance and condigure the system to register the FQDN with the Consul DNS system
+    # instance and configure the system to register the FQDN with the Consul DNS system
     inline = [
       "sudo hostnamectl set-hostname ${var.frontend-yourinitials}-vm${count.index}",
       "sudo sed -i 's/changeme/${random_id.id.dec}${count.index}/' /etc/consul.d/system.hcl",
@@ -226,7 +226,7 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
 }
 
 output "proxmox_frontend_ip_address_default" {
-  description = "Current Pulbic IP"
+  description = "Current Public IP"
   value       = proxmox_vm_qemu.frontend-webserver.*.default_ipv4_address
 }
 
@@ -274,7 +274,7 @@ resource "proxmox_vm_qemu" "backend-database" {
         disk {
           iothread = true
           storage  = random_shuffle.datadisk.result[0]
-          size     = var.disk_size
+          size     = var.backend-disk_size
         }
       }
     }
@@ -282,7 +282,7 @@ resource "proxmox_vm_qemu" "backend-database" {
 
   provisioner "remote-exec" {
     # This inline provisioner is needed to accomplish the final fit and finish of your deployed
-    # instance and condigure the system to register the FQDN with the Consul DNS system
+    # instance and configure the system to register the FQDN with the Consul DNS system
     inline = [
       "sudo hostnamectl set-hostname ${var.backend-yourinitials}-vm${count.index}",
       "sudo sed -i 's/changeme/${random_id.id.dec}${count.index}/' /etc/consul.d/system.hcl",
@@ -321,6 +321,6 @@ resource "proxmox_vm_qemu" "backend-database" {
 }
 
 output "proxmox_backend_ip_address_default" {
-  description = "Current Pulbic IP"
+  description = "Current Public IP"
   value       = proxmox_vm_qemu.backend-database.*.default_ipv4_address
 }
