@@ -10,9 +10,9 @@ resource "random_shuffle" "datadisk" {
   input        = ["datadisk2", "datadisk3", "datadisk4", "datadisk1"]
   result_count = 1
 }
-
+# data.vault_generic_secret.target_node.data
 resource "random_shuffle" "nodename" {
-  input        = ["NODENAME", "NODENAME2"]
+  input        = [data.vault_generic_secret.target_node.S41, data.vault_generic_secret.target_node.S42]
   result_count = 1
 }
 
