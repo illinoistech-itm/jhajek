@@ -12,7 +12,7 @@ resource "random_shuffle" "datadisk" {
 }
 # data.vault_generic_secret.target_node.data
 resource "random_shuffle" "nodename" {
-  input        = [data.vault_generic_secret.target_node.data["SYSTEM41"], data.vault_generic_secret.target_node.data["SYSTEM42"]]
+  input        = [data.vault_generic_secret.target_node.data["SYSTEM42"], data.vault_generic_secret.target_node.data["SYSTEM41"]]
   result_count = 1
 }
 
