@@ -49,8 +49,7 @@ resource "proxmox_vm_qemu" "load-balancer" {
   name        = "${var.lb-yourinitials}-vm${count.index}.service.consul"
   desc        = var.lb-desc
   #target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
-  #target_node = random_shuffle.nodename.result[0]
-  target_node = "system41"
+  target_node = random_shuffle.nodename.result[0]
   clone       = var.lb-template_to_clone
   os_type     = "cloud-init"
   memory      = var.lb-memory
@@ -150,7 +149,8 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
   count       = var.frontend-numberofvms
   name        = "${var.frontend-yourinitials}-vm${count.index}.service.consul"
   desc        = var.frontend-desc
-  target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
+  #target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
+  target_node = random_shuffle.nodename.result[0]
   clone       = var.frontend-template_to_clone
   os_type     = "cloud-init"
   memory      = var.frontend-memory
@@ -240,7 +240,8 @@ resource "proxmox_vm_qemu" "backend-database" {
   count       = var.backend-numberofvms
   name        = "${var.backend-yourinitials}-vm${count.index}.service.consul"
   desc        = var.backend-desc
-  target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
+  #target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
+  target_node = random_shuffle.nodename.result[0]
   clone       = var.backend-template_to_clone
   os_type     = "cloud-init"
   memory      = var.backend-memory
