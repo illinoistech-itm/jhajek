@@ -1,4 +1,4 @@
-# Tutorial Explanation for Deployment of a Three Tier Applicaton With Secrets
+# Tutorial Explanation for Deployment of a Three Tier Application With Secrets
 
 This tutorial will go over step by step the deployment and automation of a three tier application including secrets
 
@@ -15,12 +15,12 @@ At the conclusion of the review of this working end-to-end sample, you will have
 
 ## Overview
 
-What are we trying to solve in this document and sprint-03? We are reinforcing a few concepts regarding security, deployment, automation, and repeatability. This brings new questions:
+What are we trying to solve in this document and sprint-02? We are reinforcing a few concepts regarding security, deployment, automation, and repeatability. This brings new questions:
 
 * How do we dynamically configure secrets in our application?
   * Can you name some secrets your application has?
   * Can you name components that have or need a secret value?
-* How will we know the IP addresses of our frontend and backend systems when they have an epehemeral DHCP address?
+* How will we know the IP addresses of our frontend and backend systems when they have an ephemeral DHCP address?
   * Why do we have multiple networks? Why can't we just put everything on the public network or localhost?
 * How to we preseed our database with tables and data?
 * How do handle HTTP connections through a load-balancer?
@@ -60,7 +60,7 @@ For this example you will find a working prototype three-tier application that h
 
 * A simple EJS webapp
 * Nginx load-balancer
-* TLS cert (selfsigned)
+* TLS cert (self-signed)
 * MariaDB database
   * With a populated table
 * Secrets passed in via Packer's environment_vars command
@@ -79,9 +79,9 @@ The content of this `source` block doesn't change -- other than to create one mo
 
 ### Shell Provisioners
 
-**Note:** The entire setup here is an example, it works, but you will have to modify settings, and add or remove things that are not relevant to your project. If you are using Django, then you would remove all the Javascript setup code. Nothing here is required and feel free to adjust settings so that they make sense to you. Also comment everything you can so you can pass this on to your other group memebrs when you rotate.
+**Note:** The entire setup here is an example, it works, but you will have to modify settings, and add or remove things that are not relevant to your project. If you are using Django, then you would remove all the Javascript setup code. Nothing here is required and feel free to adjust settings so that they make sense to you. Also comment everything you can so you can pass this on to your other group members when you rotate.
 
-Now lets take a look at the shell provisioners section of the Packer build template, starting at line 315. We will go through each of these and see how we handle creating the application, creating the database, connecting them, securing them, and passing some secrets into them. Starting on line 315 we see a `shell proivisioner` that allows us to execute a shell script on our virtual machine images. This requires us to clone a private GitHub repo where our team code is located. The team00 is my sample code.  
+Now lets take a look at the shell provisioners section of the Packer build template, starting at line 315. We will go through each of these and see how we handle creating the application, creating the database, connecting them, securing them, and passing some secrets into them. Starting on line 315 we see a `shell provisioner` that allows us to execute a shell script on our virtual machine images. This requires us to clone a private GitHub repo where our team code is located. The team00 is my sample code.  
 
 ```hcl
   provisioner "shell" {
@@ -129,14 +129,14 @@ Starting on line 326, we see the file provisioner that contains instructions to 
   * Setup and open firewall ports
   * Understand the network diagram
 * `post_install_prxmx_frontend-webserver.sh`
-  * Install frontend applcation dependencies
+  * Install frontend application dependencies
   * This could be via `apt`, `npm`, or `pip` -- your package manager
   * This also involves moving code and/or starting services
   * Finding and replacing default values for secrets
 * `application-start.sh`
   * Retrieving and installing application dependencies
   * This sample uses NodeJS and NPM and based on a `package.json` file, has an additional install command to retrieve all the package dependencies
-  * I choose to inclue the `mysql2` and `dotenv` npm packages here
+  * I choose to include the `mysql2` and `dotenv` npm packages here
   * [NPM](https://www.npmjs.com/ "webpage of NPM") - is the Node Package Manager that NodeJS Uses --   
   * [Recently purchased by Microsoft](https://www.cnbc.com/2020/03/16/microsoft-github-agrees-to-buy-code-distribution-start-up-npm.htm "webpage Microsoft purchases NPM")
 
