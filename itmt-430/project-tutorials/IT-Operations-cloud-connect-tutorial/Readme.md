@@ -4,15 +4,13 @@ This tutorial will demonstrate how to use class build-server, provided API keys,
 
 ## Overview
 
-This tutorial assumes you have completed the Vagrant-Tooling-Assigment and the Packer-Tooling-Assignment under Sprint-02 in Blackboard. It is critical to complete those first -- this tutorial builds upon those concepts.
+This tutorial assumes you have completed the Vagrant-Tooling-Assignment, Packer-Tooling-Assignment, Vault-Tooling-Assignment. It is critical to complete those first -- this tutorial builds upon those concepts.
 
-At the conclusion of this tutorial you will have succesfully connected to the remote buildserver and used Packer to build two virtual machine templates on the the Proxmox Virtualization Platform.
+At the conclusion of this tutorial you will have successfully connected to the remote buildserver and used Packer and Terraform to deploy a sample three-tier web application.
 
 ## Setup
 
-This tutorial is specifically for the IT/Operations person in your group for Sprint-02, but eventually everyone will be able to do this starting Sprint-03. Sample templates are provided in the [jhajek](https://github.com/illinoistech-itm/jhajek "github repo for 430 sample code") repo. If you cloned the sample code in the previous Packer exercise, issue the command: `git pull` from the repo directory to get any update.  
-
-**Note** you will need to upgrade your VirtualBox to 7.0.x if you have 6.1.x. You can do this from `choco upgrade virtualbox` on Windows or `brew upgrade virtualbox` on MacOS. This is due to modern Linux OSes cutting off support for older hardware -- which VirtualBox 6.1.x emulates. 
+This tutorial is specifically for the IT/Operations person in your group for Sprint-02, but eventually everyone will be able to do this starting Sprint-03. If you cloned the sample code in the previous Packer exercise, issue the command: `git pull` from the repo directory to get any update.  
 
 ### Retrieving Template Examples
 
@@ -59,7 +57,7 @@ The Virtualization template we chose for building this internal cloud runs on a 
 
 ![*Proxmox GUI Console*](./images/proxmox.png "webpage for Proxmox GUI")
 
-The functionaly is very similar to [VMware_ESXi](https://en.wikipedia.org/wiki/VMware_ESXi "webpage for VMware ESXi") or [Microsoft Hyper-V](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v "webpage for Hyper-V"). 
+The functionally is very similar to [VMware_ESXi](https://en.wikipedia.org/wiki/VMware_ESXi "webpage for VMware ESXi") or [Microsoft Hyper-V](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v "webpage for Hyper-V").
 
 ### Cloud Network
 
@@ -74,7 +72,7 @@ Our Cloud platform has three attached networks:
 
 ### Proxmox API
 
-Proxmox has an API that allows you to programatically access any action you can take in the GUI--such as create virtual machine, delete, and so forth. This API is controlled by a `token_id` and a `token_secret` -- these are standard issue for working with Cloud Native software, no passwords here.
+Proxmox has an API that allows you to programmatically access any action you can take in the GUI--such as create virtual machine, delete, and so forth. This API is controlled by a `token_id` and a `token_secret` -- these are standard issue for working with Cloud Native software, no passwords here.
 
 The Proxmox API can be accessed in two ways: [Packer has a Proxmox builder](https://developer.hashicorp.com/packer/plugins/builders/proxmox/iso "webpage for Packer Proxmox-iso provider") which we can leverage to build Virtual Machine Templates for our Virtualization Platform and [Terraform has a Proxmox Provider](https://registry.terraform.io/providers/Telmate/proxmox/latest/docs "webpage for Proxmox Provider") as well. You will be provided with a `token_id` and `token_secret` per person - starting with just IT/Operations.
 
@@ -84,7 +82,7 @@ When dealing with Cloud-Native application deployments, the concepts we are used
 
 You don't actually install anything--you create OS templates or `images` and upload them to each provider (AWS, Proxmox, Azure...) and then use a templated language to deploy many `instances` of an image. You may have a `database` image. You might have a `loadbalancer` image. You might have a `webserver` image. And you may want variable copies or `instances` of each of these `images`.
 
-[Hashicorp Terraform](https://terraform.io "webpage for Terraform") is a platform nuetral way to programmatically deploy arbitrary numbers of instances from pre-made images. Packer will help make your templates, and Terraform helps you think in terms of deploying your application in total. Think of Terraform as Vagrant all grown up.
+[Hashicorp Terraform](https://terraform.io "webpage for Terraform") is a platform neutral way to programmatically deploy arbitrary numbers of instances from pre-made images. Packer will help make your templates, and Terraform helps you think in terms of deploying your application in total. Think of Terraform as Vagrant all grown up.
 
 ### Examples and HCL Templates
 
@@ -101,7 +99,7 @@ locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 packer {
   required_plugins {
     virtualbox = {
-      version = "= 1.1.0"
+      version = ">= 1.1.0"
       source  = "github.com/hashicorp/proxmox"
     }
   }
@@ -487,7 +485,7 @@ Now I believe we are ready. You can execute the same three commands we ran for t
 
 Sit back and watch: you are about to become a cloud-native Ops Engineer.
 
-If succesful, in the [Proxmox GUI Console](https://system41.rice.iit.edu:8006 "webpage for Proxmox GUI console") you will see two virtual machine templates a screen with a paper icon behind it and indicated by the red square. Virtual Machines are indicated by a little computer screen icon in the figure below.
+If successful, in the [Proxmox GUI Console](https://system41.rice.iit.edu:8006 "webpage for Proxmox GUI console") you will see two virtual machine templates a screen with a paper icon behind it and indicated by the red square. Virtual Machines are indicated by a little computer screen icon in the figure below.
 
 ![*Successful Packer Build*](./images/templates.png "image of templates being built")
 
