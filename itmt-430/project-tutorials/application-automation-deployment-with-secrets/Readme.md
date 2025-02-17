@@ -436,14 +436,18 @@ Here is the chart for all the teams
 
 | Team Number | MacAddr | Static IP | FQDN |
 | ----------- | -------------| ------------- | ----------------- |
-| team 01m | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
-| team 02m | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
-| team 03m | 04:9F:15:00:00:13 | 192.168.172.62 | system62.rice.iit.edu |
-| team 04m | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
-| team 05w | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
-| team 05o | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
-| team 06o | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
-| team 07o | 04:9F:15:00:00:18 | 192.168.172.67 | system67.rice.iit.edu |
+| team01 | 04:9F:15:00:00:37 | 192.168.172.55 | system55.rice.iit.edu |
+| team02 | 04:9F:15:00:00:38 | 192.168.172.56 | system56.rice.iit.edu |
+| team03 | 04:9F:15:00:00:39 | 192.168.172.57 | system57.rice.iit.edu |
+| team04 | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
+| team05 | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
+| team06 | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
+| team07 | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
+| team09 | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
+| team10 | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
+| team11 | 04:9F:15:00:00:19 | 192.168.172.68 | system68.rice.iit.edu |
+| team12 | 04:9F:15:00:00:20 | 192.168.172.69 | system69.rice.iit.edu |
+| team13 | 04:9F:15:00:00:21 | 192.168.172.70 | system70.rice.iit.edu |
 
 This change is the only change that needs to be made and can be pushed into your team private repo.
 
