@@ -13,10 +13,12 @@
 - We will be using the departure delays files located at:
   - `~/LearningSparkV2/databricks-datasets/learning-spark-v2/flights`
   - See Python sample below for how to structure commandline input of datasources
-  - Note do not use the notebook file provided, we want to challenge you to be able to build this yourself
   - All Code will be created on your local system, pushed to GitHub, and then pulled to your Vagrant Box
   - You will create one Pyspark file named: `module-06.py`
   - You will continue to load data via a commandline argument passing in the path of the file
+  - Use [https://pages.databricks.com/rs/094-YMS-629/images/LearningSpark2.0.pdf](https://pages.databricks.com/rs/094-YMS-629/images/LearningSpark2.0.pdf "webpage for Learning Spark V2 book")
+
+**Note:** do not use the notebook file provided, we want to challenge you to be able to build this yourself.
 
 ### DataFrameReader
 
@@ -27,13 +29,13 @@ When reading data you can use the generic `spark.read.format` command, but I rec
 
 ## Assignment Details - Part I
 
-Using the `departuredelays.csv` file, in a single file called module-06.py convert the remaining two Spark SQL queries from page 87 into Spark DataFrame APIs
+Using the `departuredelays.csv` file, in a single file called `module-06.py` convert the remaining two Spark SQL queries from printed page 87 or page 111 of the PDF into Spark DataFrame APIs.
 
-- Type the remaining Spark SQL examples on page 87 into your code
+- Type the remaining Spark SQL examples into your code
 
 ## Assignment Details - Part II
 
-- From page 90-92, you will create a Table named `us_delay_flights_tbl` from the `departuredelays.csv`
+- From page 90-92, PDf 115-117, you will create a Table named `us_delay_flights_tbl` from the `departuredelays.csv`
   - Create a `tempView` of all flights with an origin of Chicago (ORD) and a month/day combo of between 03/01 and 03/15
   - Show the first 5 records of the tempView
   - Use the Spark Catalog to list the columns of table `us_delay_flights_tbl`
@@ -63,8 +65,8 @@ Using the `departuredelays` parquet file you created part III, read the content 
 ### Deliverable
 
 Create a sub-folder named: `module-06` under the `itmd-521` folder. Place all deliverables there.
-Submit to Blackboard the URL to the folder in your GitHub repo. I will clone your code and run it to test the functionality. I don't need the datasets as I will have them already.
+Submit to Canvas the URL to the folder in your GitHub repo. I will clone your code and run it to test the functionality. I don't need the datasets as I will have them already.
 
-Submit to Blackboard the URL to the folder in your GitHub repo. I will clone your code and run it to test the functionality. I don't need the datasets as I will have them configured in the example-data directory -- path is important.
+Submit to Canvas the URL to the folder in your GitHub repo. I will clone your code and run it to test the functionality. I don't need the datasets as I will have them configured in the example-data directory -- path is important.
 
-Due at the **Start of class** October 22nd 5:00 PM
+Due at the **Start of class** February 27th 3:15 PM
