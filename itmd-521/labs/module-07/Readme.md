@@ -23,6 +23,14 @@ When reading data you can use the generic `spark.read.format` command, but I rec
 * DataFrameReader - [json](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.DataFrameReader.json.html "webpage for pyspark api json")
 * DataFrameReader - [JDBC](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameReader.jdbc.html "Webpage for pyspark API JDBC")
   * [Data Source Options](https://spark.apache.org/docs/latest/sql-data-sources-jdbc.html#data-source-option "webpage for Pyspark API JDBC dataframe reader data source options")
+* Command to retrieve the Connector/J package
+
+``` 
+conf = SparkConf()
+conf.set('mysql:mysql-connector-java:8.0.33')
+
+spark = SparkSession.builder.appName("Your App Name").config(conf=conf).getOrCreate()
+```
 
 ## Assignment Details - Part I
 
