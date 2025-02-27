@@ -25,7 +25,8 @@ When reading data you can use the generic `spark.read.format` command, but I rec
   * [Data Source Options](https://spark.apache.org/docs/latest/sql-data-sources-jdbc.html#data-source-option "webpage for Pyspark API JDBC dataframe reader data source options")
 * Command to retrieve the Connector/J package
 
-``` 
+```
+from pyspark import SparkConf
 conf = SparkConf()
 conf.set('mysql:mysql-connector-java:8.0.33')
 
