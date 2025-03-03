@@ -97,7 +97,7 @@ The professor is prescribing a small number of **additional** required tasks to 
     * Connect to your database-tier using the Consul DNS resolver on the meta-network
     * Adjust links for images to use Minio (on prem Object storage S3-like cluster)
       * Account credentials will be provided
-      * [SDK for multi-language](https://min.io/docs/minio/linux/developers/minio-drivers.html "webpage for Minio SDK")
+      * [SDK for multi-language Minio access](https://min.io/docs/minio/linux/developers/minio-drivers.html "webpage for Minio SDK")
   * Third tier is a replicated database
     * Add a read-replica to your database tier
     * Configure database/datastore to listen for external connection of the meta-network (10.110.0.0/16)
