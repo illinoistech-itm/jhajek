@@ -85,7 +85,7 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Build each server template needed in the 3-tier app as Virtual Machines
   * Use assigned MAC address to get a static IP
   * Open proper firewall ports and firewall logic
-* 3 Tier Application
+* 3-Tier Application
   * First tier is a Load Balancer
     * Configure Loadbalancer to connect to webservers using the Consul DNS resolver on the meta-network (10.110.0.0/16)
     * Enable the use of a self-signed https TLS cert
@@ -95,7 +95,7 @@ The professor is prescribing a small number of **additional** required tasks to 
     * Count of 3
     * Disable direct Public IP access to the 2nd and 3rd tier 
     * Connect to your database-tier using the Consul DNS resolver on the meta-network
-    * Adjust links for images to use Minio (on prem Object storage S3-like cluster)
+    * Adjust links for images to use Minio (on-prem Object storage S3-like cluster)
       * Account credentials will be provided
       * [SDK for multi-language Minio access](https://min.io/docs/minio/linux/developers/minio-drivers.html "webpage for Minio SDK")
   * Third tier is a replicated database
