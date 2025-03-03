@@ -191,7 +191,6 @@ Clear transition to a conclusion and small summary of presentation | 1
 
 ### What to Deliver to Canvas
 
-
 Each person must deliver the URL to their Critique reports at the beginning of Sprint Presentation Day, Monday 10 AM. In your private GitHub repo under `itmt-430` > `sprint-02` > `Readme.md`.
 
 The project manager in addition has to submit a document under the `sprint-02` folder named `report.md` that is a written report collecting all of the artifacts presented in a single cohesive status report. This will count for 10 points of the PMs grade and is presented in markdown.

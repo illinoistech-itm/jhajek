@@ -80,10 +80,10 @@ In the Project Management tool the *25 points* worth of tasks need to have the p
 The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points. Each item listed here will contain multiple sub-steps. For instance deploying a database requires you to modify the database to listen for external connections, not on localhost.
 
 * Login
-  * Use your @hawk accounts and Google OAuth for login authentication in your application code (there are other options -- check with me for approval first)
+  * Use a google account and Google OAuth for login authentication in your application code
 * Infrastructure
   * Build each server template needed in the 3-tier app as Virtual Machines
-  * Uses assigned MAC address to get a static IP
+  * Use assigned MAC address to get a static IP
   * Open proper firewall ports and firewall logic
 * 3 Tier Application
   * First tier is a Load Balancer
@@ -94,8 +94,11 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Second tier is the webserver tier
     * Count of 3
     * Disable direct Public IP access to the 2nd and 3rd tier 
-    * Connect to single database using the Consul DNS resolver on the meta-network
-  * Third tier is a single datastore/database
+    * Connect to your database-tier using the Consul DNS resolver on the meta-network
+    * Adjust links for images to use Minio (on prem Object storage S3-like cluster)
+      * Account credentials will be provided
+  * Third tier is a replicated database
+    * Add a read-replica to your database tier
     * Configure database/datastore to listen for external connection of the meta-network (10.110.0.0/16)
     * Add **25** posts, 15 new posts and 10 replies - as according to your sites specific design
       * Essentially simulate real activity on your site
@@ -125,7 +128,7 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ## Deliverables
 
-* All sections live presentation and critiques are due 10:00am March 25th
+* All sections presentation and critiques are due Monday March 31st at 10:00am.
 
 ### Individual Deliverables
 
@@ -207,4 +210,9 @@ Clear transition to a conclusion and small summary of presentation | 1
 
 ### What to Deliver to Blackboard
 
-Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day. Feedback will be given on each submission.
+Each person must deliver the URL to their Critique reports at the beginning of Sprint Presentation Day, Monday 10 AM. In your private GitHub repo under `itmt-430` > `sprint-03` > `Readme.md`.
+
+The project manager in addition has to submit a document under the `sprint-03` folder named `report.md` that is a written report collecting all of the artifacts presented in a single cohesive status report. This will count for 10 points of the PMs grade and is presented in markdown.
+
+Feedback will be given on each submission.
+
