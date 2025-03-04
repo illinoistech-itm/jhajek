@@ -122,7 +122,7 @@ The professor is prescribing a small number of **additional** required tasks to 
        * [AppRole Secrets](https://developer.hashicorp.com/vault/docs/auth/approle "webpage for App Role secrets")
        * [MySQL Secrets](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for MySQL secret engine")
 * Usage of site
-  * Each team member demonstrate a successful login of a user
+  * Each team member demonstrate a successful login of a user and the equivalent of these actions per your site
     * Post a question
     * Answer a question
     * Logout that user
