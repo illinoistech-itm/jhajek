@@ -22,6 +22,19 @@ At the conclusion of this sprint project you will have built upon the work in Sp
 
 The list of requirements will be determined by your team and as part of the project management process. There will be a few additional items I will require and are listed below.
 
+### Additional Readings and URLs
+
+* [Minio Software Development Kits - SDK](https://min.io/docs/minio/linux/developers/python/API.htmlhttps://min.io/docs/minio/linux/developers/python/API.html "webpage for additional SDKs")
+  * [Python](https://min.io/docs/minio/linux/developers/python/API.html "webpage for Python minio kit")
+  * [JavaScript](https://min.io/docs/minio/linux/developers/minio-drivers.html#javascript-sdk "webpage for JavaScript Minio SDK")
+* [Python Library for Hashicorp Vault - hvac](https://iit.instructure.com/courses/12200/modules/items/161775 "webpage for hvac library")
+* JavaScript NPM modules for Vault integration
+  * [hashi-vault-js](https://www.npmjs.com/package/hashi-vault-js "webpage for hashi-vault-js")
+  * [node-vault](https://www.npmjs.com/package/node-vault "webpage for node-vault")
+  * [vault-api](https://www.npmjs.com/package/vault-api ""webpage for vault-api)
+* [Minio Object Storage Platform](https://min.io/ "webpage for minio")
+  * [What is the difference between block, object, and file storage]?(https://aws.amazon.com/compare/the-difference-between-block-file-object-storage/ "webpage explaining the difference between block, object, and file storage." )
+
 ### Team Roles
 
 Responsibility for team roles must be rotated immediately after sprint-02 is presented. Delaying this action cannot be used as an excuse for not delivering the required artifacts. This is an artificial inefficiency that I am introducing to allow all members to participate and experience each role.
