@@ -114,7 +114,8 @@ The professor is prescribing a small number of **additional** required tasks to 
      * Expect 10+ deployments of your site (this is normative)
      * Development on Localhost is not acceptable at this point
      * Code will be pulled from GitHub and the system will be configured to start the application at boot
-     * No manual intervention
+       * You can and will have to do some manual exploration, but back port those changes and always be able to build from scratch a fully working application
+      * Reduce your Packer Template harddisk sizes to 15 GB (possibly 10) to reduce the raw copy time and then expand the disk size in the `remote-exec` portion of the `main.tf` (lvextend code is already there for you).
      * Removal of all hard coded secrets
      * Use Vault
        * These can be KV pair secrets
