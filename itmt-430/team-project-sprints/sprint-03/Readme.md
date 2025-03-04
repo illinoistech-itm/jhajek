@@ -24,6 +24,9 @@ The list of requirements will be determined by your team and as part of the proj
 
 ### Additional Readings and URLs
 
+* [What is the difference between block, object, and file storage](https://aws.amazon.com/compare/the-difference-between-block-file-object-storage/ "webpage explaining the difference between block, object, and file storage." )
+* [Minio Object Storage Platform](https://min.io/ "webpage for minio")
+
 * [Minio Software Development Kits - SDK](https://min.io/docs/minio/linux/developers/python/API.htmlhttps://min.io/docs/minio/linux/developers/python/API.html "webpage for additional SDKs")
   * [Python](https://min.io/docs/minio/linux/developers/python/API.html "webpage for Python minio kit")
   * [JavaScript](https://min.io/docs/minio/linux/developers/minio-drivers.html#javascript-sdk "webpage for JavaScript Minio SDK")
@@ -32,8 +35,8 @@ The list of requirements will be determined by your team and as part of the proj
   * [hashi-vault-js](https://www.npmjs.com/package/hashi-vault-js "webpage for hashi-vault-js")
   * [node-vault](https://www.npmjs.com/package/node-vault "webpage for node-vault")
   * [vault-api](https://www.npmjs.com/package/vault-api ""webpage for vault-api)
-* [Minio Object Storage Platform](https://min.io/ "webpage for minio")
-  * [What is the difference between block, object, and file storage]?(https://aws.amazon.com/compare/the-difference-between-block-file-object-storage/ "webpage explaining the difference between block, object, and file storage." )
+
+* [Create Read Replicas for MySQL](https://dev.mysql.com/doc/refman/8.0/en/replication-setup-replicas.html "webpage to create read-replicas")
 
 ### Team Roles
 

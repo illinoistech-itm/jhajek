@@ -73,7 +73,7 @@ variable "MEMORY" {
 # instances from templates - but not reduce the disk size -- No need to edit this
 variable "DISKSIZE" {
   type    = string
-  default = "25G"
+  default = "10G"
 }
 
 # This is the name of the disk the build template will be stored on in the 
