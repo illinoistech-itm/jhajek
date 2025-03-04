@@ -10,7 +10,7 @@ This document contains the Sprint-03 requirements and deliverables
 * Integrate and document aspects of the Three Ways into your development process
 * Deploy your schema to a datastore for your application
 * Create software deployment estimates to understand the nature of software production
-* Engage and understand the process moving from design into an initial prototype
+* Engage and understand the process moving from design to prototype
 * Discuss and deploy real-world security mitigations in your application
 * Deploy two additional application features
 
