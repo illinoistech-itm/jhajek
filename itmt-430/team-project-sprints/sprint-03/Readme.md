@@ -210,11 +210,10 @@ Clear transition to a conclusion and small summary of presentation | 1
   * We need to see your face
   * If recorded, find a quiet place, focus on audio and or use head phones and make a quality recoding
 
-### What to Deliver to Blackboard
+### What to Deliver to Canvas
 
 Each person must deliver the URL to their Critique reports at the beginning of Sprint Presentation Day, Monday 10 AM. In your private GitHub repo under `itmt-430` > `sprint-03` > `Readme.md`.
 
 The project manager in addition has to submit a document under the `sprint-03` folder named `report.md` that is a written report collecting all of the artifacts presented in a single cohesive status report. This will count for 10 points of the PMs grade and is presented in markdown.
 
 Feedback will be given on each submission.
-
