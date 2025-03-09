@@ -91,6 +91,8 @@ The professor is prescribing a small number of **additional** required tasks to 
 * Your team will be assigned a Mac address and a static IP for their load-balancer
   * Note there is no team08, we merged them into a team06 and 07
 
+### Team Static DHCP IPs
+
 | Team Number | MacAddr | Static IP | FQDN |
 | ----------- | -------------| ------------- | ----------------- |
 | team01 | 04:9F:15:00:00:37 | 192.168.172.55 | system55.rice.iit.edu |
