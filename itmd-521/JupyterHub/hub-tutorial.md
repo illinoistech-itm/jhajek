@@ -125,7 +125,6 @@ Run the below snippet of code in a cell to create a spark session on the spark m
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
 
-
 # Removing hard coded password - using os module & open to import them from creds.txt file
 import os
 import sys
@@ -214,7 +213,7 @@ except:
     accesskey,secretkey = "",""
 ```
 
-In the `try` block we are trying to open the `creds.txt` file that's present in the user's home folder and read the contents of it into two varibales `accesskey` and `secretkey` these variables are then used in S3 auth configuration.
+In the `try` block we are trying to open the `creds.txt` file that's present in the user's home folder and read the contents of it into two variables `accesskey` and `secretkey` these variables are then used in S3 auth configuration.
 
 Now, you can make use of the `SparkSession` object created in this case `spark`, in the forthcoming cells to run the spark jobs.
 
@@ -294,7 +293,7 @@ Please refer to the below cheat sheet for read and write file options. The direc
 
 ### %%Capture (No-Hup)
 
-If the job submitted takes some time to run we can generally use nohup to redirect the ouput without having us to keep the ssh session alive. As, we are not submitting the job's via terminal there is no way to use no hup directly. To get around this issue, we will use `%%capture` magic to capture the output.
+If the job submitted takes some time to run we can generally use nohup to redirect the output without having us to keep the ssh session alive. As, we are not submitting the job's via terminal there is no way to use no hup directly. To get around this issue, we will use `%%capture` magic to capture the output.
 
 Run the below code in a new cell. `%%capture myapp` has been added in the first line. (Replace `myapp` with a better name.)
 
@@ -306,7 +305,7 @@ avg_df = splitDF.select(month(col('ObservationDate')).alias('Month'),year(col('O
 avg_df.show(10)
 ```
 
-You can close your notebook and re login after the job has completed. To check your output by calling `test` as shown below.
+You can close your notebook and relogin after the job has completed. To check your output by calling `test` as shown below.
 
 ```python
 test()
