@@ -427,7 +427,7 @@ variable "URL" {
 }
 ```
 
-The next set of values are only for Virtual Machine Template building -- the amount of memory or CPUs doesn't reflect when the instances are deployed. You can experiement with these values, but I didn't notice a large performance increase when I added more memory or CPU.
+The next set of values are only for Virtual Machine Template building -- the amount of memory or CPUs doesn't reflect when the instances are deployed. You can experiment with these values, but I didn't notice a large performance increase when I added more memory or CPU.
 
 The disksize you want to leave low, when deploying virtual machine instances from and image, you can increase the disk size, but not decrease it, so best to start low and increase when deploying with Terraform.
 
@@ -491,7 +491,4 @@ If successful, in the [Proxmox GUI Console](https://system41.rice.iit.edu:8006 "
 
 ## Conclusion
 
-This ends part 1, how to build Virtual Machine Templates on out Cloud provider, Proxmox. There will be a separate username and password to authenticate to a GUI to check your progress. The second part will engage with Terraform and how to deploy arbitrary numbers of virtual machines into production.
-
-You can now proceed to the part two, [Virtual Machine Images Deployment tutorial](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/project-tutorials/IT-Operations-cloud-connect-tutorial/Virtual-Machine-Images-Deployment-turotial-Part-2.md "webpage for Terraform Tutorial") which will show you how to deploy virtual machines from Proxmox templates.
-
+This ends how to build Virtual Machine Templates on out Cloud provider, Proxmox. There will be a separate username and password to authenticate to a GUI to check your progress. The second part will engage with Terraform and how to deploy arbitrary numbers of virtual machines into production.
