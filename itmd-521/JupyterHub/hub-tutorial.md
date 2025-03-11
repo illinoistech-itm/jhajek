@@ -266,7 +266,7 @@ splitDF = df.withColumn('WeatherStation', df['_c0'].substr(5, 6)) \
 .withColumn('APQualityCode', df['_c0'].substr(105, 1).cast(IntegerType())).drop('_c0')
 
 splitDF.printSchema()
-splitDF.show()
+splitDF.show(10)
 ```
 In another cell, run the following code which will give us the average temperature and standard deviation per month, per year.
 
@@ -274,7 +274,7 @@ In another cell, run the following code which will give us the average temperatu
 avg_df = splitDF.select(month(col('ObservationDate')).alias('Month'),year(col('ObservationDate')).alias('Year'),col('AirTemperature').alias('Temperature'))\
              .groupBy('Month','Year').agg(avg('Temperature'),stddev('Temperature')).orderBy('Year','Month')
 
-avg_df.show()
+avg_df.show(10)
 ```
 
 ### Writing to MinIO
@@ -303,7 +303,7 @@ Run the below code in a new cell. `%%capture test` has been added in the first l
 avg_df = splitDF.select(month(col('ObservationDate')).alias('Month'),year(col('ObservationDate')).alias('Year'),col('AirTemperature').alias('Temperature'))\
              .groupBy('Month','Year').agg(avg('Temperature'),stddev('Temperature')).orderBy('Year','Month')
 
-avg_df.show()
+avg_df.show(10)
 ```
 
 You can close your notebook and re login after the job has completed. To check your output by calling `test` as shown below.
