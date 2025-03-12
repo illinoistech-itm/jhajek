@@ -284,7 +284,7 @@ The code shown below write the `splitDF` as a single partioned csv file to a S3 
 splitDF.write.mode("overwrite").option("header","true").csv("s3a://REPLACEWITHYOURHAWKID/50.csv")
 ```
 
-You can check the contents of the bucket by logging into Minio @ https://system54.rice.iit.edu/minio/ui/browser with your credentials ,which will be stored in `creds.txt` in the home directory.
+You can check the contents of the bucket by logging into Minio @ https://system54.rice.iit.edu/minio/ui/browser with your credentials, which will be stored in `creds.txt` in the home directory.
 
 Please refer to the below cheat sheet for read and write file options. The directory path will be the path of the MinIO S3 bucket.
 
