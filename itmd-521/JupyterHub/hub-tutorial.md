@@ -305,14 +305,22 @@ avg_df = splitDF.select(month(col('ObservationDate')).alias('Month'),year(col('O
 avg_df.show(10)
 ```
 
-You can close your notebook and relogin after the job has completed. To check your output by calling `test` as shown below.
+You can close your notebook and relogin after the job has completed. To check your output by calling `xyzapp` as shown below.
+
+** xyz = your initials!
 
 ```python
-test()
+xyzapp()
 ```
 
 ***Note: You must stop your session before closing the notebook with `spark.stop()`, if you didn't have any spark jobs running. This helps to free up resources assigned to your job, such that other jobs in the queue can make use of them.***
 
 ### How to stop a Jupytr Hub Spark Application
 
-The final line of your Spark Application, or when you are done with the Jupytr Hub session should be `spark.stop()`.  This will release the resources back to the cluster.
+The final line of your Spark Application, or when you are done with the Jupytr Hub session should be .  This will release the resources back to the cluster.
+
+```
+spark.stop()
+```
+
+
