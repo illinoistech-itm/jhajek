@@ -40,7 +40,7 @@ Click on python icon under the Notebook section to create a new notebook.
 
 !['create-notebook'](./images/create-notebook.png)
 
-This will create a new notebook in the ***current directory***. If you want to create a new notebook in specific directory, navigate to that folder and then click on python icon under notbook section as shown above.
+This will create a new notebook in the ***current directory***. If you want to create a new notebook in specific directory, navigate to that folder and then click on python icon under notebook section as shown above.
 
 ### Running programs
 
@@ -93,7 +93,7 @@ pip install pandas
 
 ### Extensions
 You can also install extensions and add it to your workspace.
-You can install extensions by clicking on the extensions tab in the left manu pane and then search your desired extension and click on intsall.
+You can install extensions by clicking on the extensions tab in the left menu pane and then search your desired extension and click on install.
 
 !['extension-symbol'](images/extension-symbol.png)
 
@@ -105,7 +105,7 @@ You can install extensions by clicking on the extensions tab in the left manu pa
 
 You can restart the jupyter server by clicking on the hub control panel present in file menu and then click on Stop my server and start my server.
 
-!['hub controler panel'](images/hub-control-panel.png)
+!['hub control panel'](images/hub-control-panel.png)
 
 !['stop server'](./images/stop-server.png) 
 
