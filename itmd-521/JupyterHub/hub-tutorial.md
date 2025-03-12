@@ -307,7 +307,7 @@ avg_df.show(10)
 
 You can close your notebook and relogin after the job has completed. To check your output by calling `xyzapp` as shown below.
 
-** xyz = your initials!
+** xyz **= your initials!
 
 ```python
 xyzapp()
@@ -323,4 +323,4 @@ The final line of your Spark Application, or when you are done with the Jupytr H
 spark.stop()
 ```
 
-
+[Link to full example notebook](https://github.com/illinoistech-itm/jhajek/blob/master/itmd-521/JupyterHub/example-hub-applications.ipynb "webpage for full notebook example")
