@@ -119,7 +119,7 @@ The professor is prescribing a small number of **additional** required tasks to 
     * Configure database/datastore to listen for external connection of the meta-network (10.110.0.0/16)
     * Add **25** posts, 15 new posts and 10 replies - as according to your sites specific design
       * Essentially simulate real activity on your site
-      * Use the [Python Faker](https://www.geeksforgeeks.org/python-faker-library/ "webpage for Python Faker") library to generate fake, but realistic names, states, cities, and so forth
+      * Use the [Python Faker](https://pypi.org/project/Faker/ "webpage for Python Faker") library to generate fake, but realistic names, states, cities, and so forth
 * User Testing
   * Show use of GitHub Issues for placing tickets to fix bugs
   * UI/UX should be testing the production system, logging in, posting items, etc, etc.
@@ -131,7 +131,7 @@ The professor is prescribing a small number of **additional** required tasks to 
      * Development on Localhost is not acceptable at this point
      * Code will be pulled from GitHub and the system will be configured to start the application at boot
        * You can and will have to do some manual exploration, but back port those changes and always be able to build from scratch a fully working application
-      * Reduce your Packer Template harddisk sizes to 15 GB (possibly 10) to reduce the raw copy time and then expand the disk size in the `remote-exec` portion of the `main.tf` (lvextend code is already there for you).
+      * Reduce your Packer Template harddisk sizes to 15 GB (possibly 10) to reduce the raw copy time and then expand the disk size in the `remote-exec` portion of the `main.tf` (`lvextend` code is already there for you)
      * Removal of all hard coded secrets
      * Use Vault
        * These can be KV pair secrets
