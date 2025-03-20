@@ -41,11 +41,21 @@ Participation - did each member of the team participate | 7 | -
 
 ### Non-Presenting Team's weekly role
 
-Each non-presenting team must prepare and additional two short answer review questions, per chapter covered and submit them to Canvas by the Friday prior to the weeks presentation so that the team and the instructor have a chance to cover the material during the Monday presentation.
+~~Each non-presenting team must prepare and additional two short answer review questions, per chapter covered and submit them to Canvas by the Friday prior to the weeks presentation so that the team and the instructor have a chance to cover the material during the Monday presentation.~~
+
+Updated 03/20 for second half. Students individually will provide short critiques based on the presentation.
+
+Answering these questions:
+
+1) Did the team make a clear introduction of the material that would be presented, why or why not?
+1) Did the team provide three review questions at the end of the presentation?
+1) Briefly explain what was the main theme of the chapter.
+1) Did the team give a summary and a clear conclusion at the end of the presentation?
+1) Briefly explain one thing you learned in this presentation.
 
 ### Submitted Questions
 
-All submitted questions will become part of a pool for the midterm and final exam
+All presenter submitted questions will become part of a pool for the midterm and final exam.
 
 ### Project Deliverables
 
@@ -53,4 +63,6 @@ Submit whichever notes / presentation platform you have prepared and a second co
 
 Presenting team will be a group submission and only one submission is needed per team.
 
-Non-presenting teams will also submit their questions as a team submission.
+~~Non-presenting teams will also submit their questions as a team submission~~ 
+
+Non-presenters will submit individual critiques.  
