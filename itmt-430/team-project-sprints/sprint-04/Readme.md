@@ -7,10 +7,10 @@ This document contains the Sprint-04 requirements and deliverables
 ## Objectives
 
 * Integrate secure secrets management with Hashicorp Vault
-* Integrate Database replica
+* Integrate Database replicas
 * Refine application feature deployment
-* Create/Modify an admin console page that allows a user with admin privs to make a database backup from a webpage
-* Introduce S3 Object Storage for images and music
+* Examine site functionality with 10 non-team users
+* Introduce S3 Object Storage
 * Deploy to Production Infrastructure
 
 ## Outcomes
@@ -85,7 +85,7 @@ The professor is prescribing a small number of **additional** required tasks to 
 * 3 Tier Application
   * First tier is a Load Balancer
   * Second tier is 3 webservers
-  * Third tier is a `replicated` datastore (could be a cluster if using MongoDB)
+  * Third tier is a `replicated` datastore
     * Means at least two, can be more
   * For MySQL/MariaDB this means setting up [Master/Slave or Primary/Replica](https://mariadb.com/kb/en/setting-up-replication/ "webpage setup a replication") to create a write Master and a read-only system
     * This will split your database calls into two -- all writes go to the master, and all reads come from the replica
@@ -103,7 +103,7 @@ The professor is prescribing a small number of **additional** required tasks to 
     * This is to show the search functionality and ability to store a complex discussion
       * Must pre-seed this using an `.sql` file
   * Logout that user
-  * Ask three friends (not in the class) to sign up and use your site
+  * Ask 10 classmates (not in the class) to sign up and use your site (Done by UI/UX)
 * S3 Storage Integration
   * Make use of on prem S3-like Object Storage, using [min.io](https://min.io webpage for on-prem S3 storage min.io").
   * Compatible with [Amazon S3 Object Storage](https://aws.amazon.com/s3/ "webpage for AWS S3") but on-premises storage 
@@ -112,26 +112,38 @@ The professor is prescribing a small number of **additional** required tasks to 
   * [JavaScript SDK](https://min.io/docs/minio/linux/developers/minio-drivers.html#javascript-sdk "webpage for JavaScript SDK")
   * [Python SDK](https://min.io/docs/minio/linux/developers/minio-drivers.html#python-minio-py "webpage for Python SDK minio")
 
+### 10 User Site Review
+
+You will need to find 10 classmates (not on your team) and ask them to sit down and "use" your site.  This will include you having a short explanation of the site and then explaining what the task might be (each groups site functionality will differ). Your specific tasks might include: signup for the service, purchase an item, make a post, or search for an item. This is to be designed and accomplished by the UI/UX person. You as the interviewer need to watch and take notes on how they accomplish the task. Your system needs to be stable so that the artifacts of these experiments remain resident for the sprint presentation.
+
+Record their information:
+
+* Name of student
+* Major
+* Include a description of the tasks you gave them
+  * Include your experience of how they did
+* Write your conclusions 
+
 ## Deliverables
 
-* Monday Lab live presentation and critiques are due Monday 10:00 am April 8th
+* Monday Lab live presentation and critiques are due Monday 10:00 am April 14th
 
 ### Individual Deliverables
 
-The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work.  This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
+The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work. This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
 
 In the private repo provided to you (with your hawk ID), under the itmt-430 folder, create another folder that will be named for this sprint, **sprint-04**.  In this directory place a markdown based document named: **Report.md**
 
 In the document **Report.md** include an H1 header called **Sprint-04** and then an H2 header: **Self-Critique** and detailing:
 
 * In detail, explain your role for the sprint and the general area you covered
-* Detail the tasks your were assigned and attach artifacts to show that they were completed (Kanban Cards, GitHub commits, screenshots of the application, etc. etc.)
+* Detail the tasks your were assigned and attach artifacts to show that they were completed (Kanban Cards, GitHub commits, screenshots of the application, etc. etc.) based on your story points
   * If your tasks were not able to be completed you need to detail the process you took and explain what happened to prevent your completion of assigned tasks
 * Self-Critique what you did and what and note any areas of improvement
 
 In the second part of the document, include and H2 header: **Group-Critique** and write a critique of the each team member:
 
-* Explain each team-member's assigned role and what they were generally tasked to accomplish - using your project management board and other artifacts
+* Explain each team-member's assigned role and what they were generally tasked to accomplish - using your project management board
 * Explain which specific cards and tasks they were assigned and which they accomplished
   * If they were not able to accomplish their tasks give an explanation as to what happened
   * Make use of GitHub commits, the Project Management board or the Chat Channel to find supporting documents of your critique
@@ -175,10 +187,10 @@ Topic | Points Range |
 Introduction of your teammates | 1
 Clear introduction and small summary of what will be presented with a clear transition | 1
 Demonstration of project management tool and explanation of the 25 build point items -- tell us what initially was assigned and what was accomplished | 3
-Demonstrate deployment of full working application on the provided cloud environment | 3
-Demonstrate login of user, posting of a question, and answering of a question, on the Vagrant Infrastructure | 2
+Demonstrate deployment of full working application on the provided cloud environment by killing one Front End (showing the LB) | 3
+Demonstrate login of user, taking an action, and logging out | 2
 Demonstration of all team-members accomplishing the prior step | 2
-Professor will log into your production system and post a question and post an answer, unassisted | 1
+Presenting of conclusions of UI/UX study | 1
 UI/UX walk through explaining what was accomplished and what portions of the UI/UX are outstanding | 2
 Clear transition to a conclusion and small summary of presentation | 1
 
