@@ -9,7 +9,7 @@ This document contains the Sprint-05 requirements and deliverables
 * Deploy and explain user application testing
 * Deploy and explain uses of Bug tracking and creation of GitHub issues
 * Deploy final CSS revisions - matching original site plan
-* Complete one new feature
+* Explore your site vulnerabilities via a Pen Test
 * Deploy to Production Infrastructure
 
 ## Outcomes
@@ -41,6 +41,7 @@ For this sprint, there will be 5 team roles. For the teams with 4 - you can comb
 * If your UI/UX design is incomplete need to complete it before any work can progress
 * UI/UX design is a complete master blueprint of what your finished site will look like
 * Help coordinate development into your team repo and using the provisioner scripts deploy your source code to your Proxmox Box environment
+* Responsible for doing a site vulnerability analysis on **your** teams site/infrastructure
 
 #### IT Orchestration and Security
 
@@ -50,6 +51,7 @@ For this sprint, there will be 5 team roles. For the teams with 4 - you can comb
 * Responsible for creating any shell scripts required for automated deployment
 * Responsible for training and teaching internal group members for deployment of infrastructure
 * Responsible for noting and explaining all secrets management, firewall rules, and API security implemented
+* Responsible for doing a site vulnerability analysis on **another** teams site/infrastructure
 
 ### Team Setup Items
 
@@ -100,14 +102,14 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ### Individual Deliverables
 
-The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work.  This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
+The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work. This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
 
 In the private repo provided to you (with your hawk ID), under the itmt-430 folder, create another folder that will be named for this sprint, **sprint-05**.  In this directory place a markdown based document named: **Report.md**
 
 In the document **Report.md** include an H1 header called **Sprint-05** and then an H2 header: **Self-Critique** and detailing:
 
 * In detail, explain your role for the sprint and the general area you covered
-* Detail the tasks your were assigned and attach artifacts to show that they were completed (Kanban Cards, GitHub commits, screenshots of the application, etc. etc.)
+* Detail the tasks your were assigned and attach artifacts to show that they were completed (Kanban Cards, GitHub commits, screenshots of the application, etc. etc.) based on your story points
   * If your tasks were not able to be completed you need to detail the process you took and explain what happened to prevent your completion of assigned tasks
 * Self-Critique what you did and what and note any areas of improvement
 
@@ -159,7 +161,7 @@ Clear introduction and small summary of what will be presented with a clear tran
 Demonstration of project management tool and explanation of the 25 build point items -- tell us what initially was assigned and what was accomplished (show GitHub commit charts and Kanban Board) | 3
 Demonstrate deployment of full working application on the provided cloud environment with explanation of each component | 3
 Demonstrate login of user, posting of a question, and answering of a question | 3
-Demonstration of all team-members accomplishing the prior step | 3
+Report of your and other teams Pen test results | 3
 Clear transition to a conclusion and small summary of presentation | 1
 
 #### Rubric for Project Manager Presentation
@@ -180,4 +182,4 @@ Clear transition to a conclusion and small summary of presentation | 1
 
 ### What to Deliver to Blackboard
 
-Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day.  Feedback will be given on each submission.
+Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day 04/28 10:00 AM. Feedback will be given on each submission.
