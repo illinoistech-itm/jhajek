@@ -10,6 +10,7 @@ This document contains the Sprint-05 requirements and deliverables
 * Deploy and explain uses of Bug tracking and creation of GitHub issues
 * Deploy final CSS revisions - matching original site plan
 * Explore your site vulnerabilities via a Pen Test
+* Ask 10 classmates (not in the class) to sign up and use your site (Done by UI/UX)
 * Deploy to Production Infrastructure
 
 ## Outcomes
@@ -96,6 +97,20 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Each member of your team needs to use the site and engage in making an account and at least 5 interaction
   * Posts must be real -- not "test test"
 
+
+### 10 User Site Review
+
+You will need to find 10 classmates (not on your team) and ask them to sit down and "use" your site.  This will include you having a short explanation of the site and then explaining what the task might be (each groups site functionality will differ). Your specific tasks might include: signup for the service, purchase an item, make a post, or search for an item. This is to be designed and accomplished by the UI/UX person. You as the interviewer need to watch and take notes on how they accomplish the task. Your system needs to be stable so that the artifacts of these experiments remain resident for the sprint presentation.
+
+Record their information:
+
+* Name of student
+* Major
+* Include a description of the tasks you gave them
+  * Include your experience of how they did
+* Write your conclusions
+
+
 ## Deliverables
 
 * **All sections** critiques due on Monday April 22nd 10:00am.
@@ -161,7 +176,8 @@ Clear introduction and small summary of what will be presented with a clear tran
 Demonstration of project management tool and explanation of the 25 build point items -- tell us what initially was assigned and what was accomplished (show GitHub commit charts and Kanban Board) | 3
 Demonstrate deployment of full working application on the provided cloud environment with explanation of each component | 3
 Demonstrate login of user, posting of a question, and answering of a question | 3
-Report of your and other teams Pen test results | 3
+Report of your and other teams Pen test results | 1
+Summary of User Testing report | 2
 Clear transition to a conclusion and small summary of presentation | 1
 
 #### Rubric for Project Manager Presentation

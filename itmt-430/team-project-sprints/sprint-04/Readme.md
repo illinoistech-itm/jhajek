@@ -9,7 +9,7 @@ This document contains the Sprint-04 requirements and deliverables
 * Integrate secure secrets management with Hashicorp Vault
 * Integrate Database replicas
 * Refine application feature deployment
-* Examine site functionality with 10 non-team users
+* ~~Examine site functionality with 10 non-team users~~
 * Introduce S3 Object Storage
 * Deploy to Production Infrastructure
 
@@ -89,12 +89,12 @@ The professor is prescribing a small number of **additional** required tasks to 
     * Means at least two, can be more
   * For MySQL/MariaDB this means setting up [Master/Slave or Primary/Replica](https://mariadb.com/kb/en/setting-up-replication/ "webpage setup a replication") to create a write Master and a read-only system
     * This will split your database calls into two -- all writes go to the master, and all reads come from the replica
-    * On MongoDB you will be working with a [ReplicaSet](https://www.mongodb.com/docs/manual/tutorial/deploy-replica-set/ "webpage ReplicaSet MongoDB")
+    * ~~On MongoDB you will be working with a [ReplicaSet](https://www.mongodb.com/docs/manual/tutorial/deploy-replica-set/ "webpage ReplicaSet MongoDB")~~
 * Deployment
-  * All work needs to be tested and developed on your teams built Vagrant Boxes and in the production environment
+  * All work needs to be tested and developed ~~on your teams built Vagrant Boxes and~~ in the production environment
     * You will have to build often, perhaps daily/nightly
     * We can set up an additional nightly systemd timer script to add an nightly build task, if you are interested - ask me
-  * Development on Localhost is not acceptable at this point
+  * ~~Development on Localhost is not acceptable at this point~~
 * Usage of site
   * Demonstrate all of your team members signed up and making at least 1 post and 1 answer (as applicable)
     * You do this live not -- pre-programmed via an `.sql` file (or appropriate JSON file)
@@ -103,8 +103,8 @@ The professor is prescribing a small number of **additional** required tasks to 
     * This is to show the search functionality and ability to store a complex discussion
       * Must pre-seed this using an `.sql` file
   * Logout that user
-  * Ask 10 classmates (not in the class) to sign up and use your site (Done by UI/UX)
-* S3 Storage Integration
+  * ~~Ask 10 classmates (not in the class) to sign up and use your site (Done by UI/UX)~~
+* Object Storage Integration
   * Make use of on prem S3-like Object Storage, using [min.io](https://min.io webpage for on-prem S3 storage min.io").
   * Compatible with [Amazon S3 Object Storage](https://aws.amazon.com/s3/ "webpage for AWS S3") but on-premises storage 
   * Credentials and tutorial will be provided
@@ -114,15 +114,15 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ### 10 User Site Review
 
-You will need to find 10 classmates (not on your team) and ask them to sit down and "use" your site.  This will include you having a short explanation of the site and then explaining what the task might be (each groups site functionality will differ). Your specific tasks might include: signup for the service, purchase an item, make a post, or search for an item. This is to be designed and accomplished by the UI/UX person. You as the interviewer need to watch and take notes on how they accomplish the task. Your system needs to be stable so that the artifacts of these experiments remain resident for the sprint presentation.
+~~You will need to find 10 classmates (not on your team) and ask them to sit down and "use" your site.  This will include you having a short explanation of the site and then explaining what the task might be (each groups site functionality will differ). Your specific tasks might include: signup for the service, purchase an item, make a post, or search for an item. This is to be designed and accomplished by the UI/UX person. You as the interviewer need to watch and take notes on how they accomplish the task. Your system needs to be stable so that the artifacts of these experiments remain resident for the sprint presentation. ~~
 
-Record their information:
+~~Record their information:~~
 
-* Name of student
-* Major
-* Include a description of the tasks you gave them
-  * Include your experience of how they did
-* Write your conclusions 
+* ~~Name of student~~
+* ~~Major~~
+* ~~Include a description of the tasks you gave them~~
+  * ~~Include your experience of how they did~~
+* ~~Write your conclusions~~ 
 
 ## Deliverables
 
@@ -189,8 +189,8 @@ Clear introduction and small summary of what will be presented with a clear tran
 Demonstration of project management tool and explanation of the 25 build point items -- tell us what initially was assigned and what was accomplished | 3
 Demonstrate deployment of full working application on the provided cloud environment by killing one Front End (showing the LB) | 3
 Demonstrate login of user, taking an action, and logging out | 2
-Demonstration of all team-members accomplishing the prior step | 2
-Presenting of conclusions of UI/UX study | 1
+Demonstration of all team-members accomplishing the prior step | 3
+~~Presenting of conclusions of UI/UX study~~ | ~~1~~
 UI/UX walk through explaining what was accomplished and what portions of the UI/UX are outstanding | 2
 Clear transition to a conclusion and small summary of presentation | 1
 
