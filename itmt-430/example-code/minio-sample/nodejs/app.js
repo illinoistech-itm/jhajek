@@ -255,7 +255,7 @@ app.get("/db", function (req, res) {
 })();
 });
 
-app.post("/upload", upload.array('file', 12), function (req, res, next) {
+app.post("/upload", upload.array('uploadFile', 12), function (req, res, next) {
 (async () => {
     await getPostedData(req, res);
 })();
