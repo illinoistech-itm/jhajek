@@ -43,9 +43,15 @@ var bucketName = "rahmed16";
 //
 const getPostedData = async (req, res) => {
 try {
-    await minioClient.makeBucket(bucketName)
-    console.log('Bucket created successfully.')
-    
+    const exists = await minioClient.bucketExists(bucketName)
+        if (exists) {
+    return console.log('Bucket exists.')
+    }
+    else {
+        await minioClient.makeBucket(bucketName)
+        console.log('Bucket created successfully.')
+    }
+
 
     // Use this code to retrieve the value entered in the username field in the index.html
     var username = req.body["name"];
