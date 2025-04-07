@@ -250,10 +250,10 @@ app.post("/upload", function (req, res, next) {
 (async () => {
     await getPostedData(req, res);
 })();
-
+/*
 (async () => {
     await insertRecord(req, res);
-})();
+})();*/
 });
 
 app.listen(3000, function () {
