@@ -47,7 +47,7 @@ try {
     const exists = await minioClient.bucketExists(bucketName)
         if (exists) {
         console.log('Bucket exists.')
-        console.log(req.file)
+        console.log(req.files)
     }
     else {
         await minioClient.makeBucket(bucketName)
@@ -65,7 +65,7 @@ try {
     // Write output to the screen
     // res.write(s3url + "\n");
     res.write(username + "\n");
-    res.write(s3URL + "\n");
+    //res.write(s3URL + "\n");
     res.write(email + "\n");
     res.write(phone + "\n");
 
