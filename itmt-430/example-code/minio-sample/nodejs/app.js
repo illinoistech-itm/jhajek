@@ -25,8 +25,8 @@ import * as Minio from 'minio'
 //////////////////////////////////////////////////////////////////////////////
 const minioClient = new Minio.Client({
     endPoint: process.env.MINIOENDPOINT,
-    port: 443,
-    useSSL: true,
+    port: 80,
+    useSSL: false,
     accessKey: process.env.MINIOACCESSKEY,
     secretKey: process.env.MINIOSECRETKEY,
   })
