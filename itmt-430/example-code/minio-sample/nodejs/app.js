@@ -54,7 +54,19 @@ try {
         console.log('Bucket created successfully.')
     }
  
-    
+    const fileStream = Fs.createReadStream(req.files.filename)
+    const fileStat = Fs.stat(req.files.filename, function (err, stats) {
+      if (err) {
+        return console.log(err)
+      }
+
+    minioClient.putObject(bucketName, req.file.name , fileStream, stats.size, function (err, objInfo) {
+        if (err) {
+          return console.log(err) // err should be null
+        }
+        console.log('Success!', objInfo)
+      })
+    })
 
     // Use this code to retrieve the value entered in the username field in the index.html
     var username = req.body["name"];
