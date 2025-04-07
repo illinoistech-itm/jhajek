@@ -8,7 +8,7 @@ import multer from 'multer'
 import multerS3  from 'multer-s3'
 import mysql from 'mysql2/promise'
 import 'dotenv/config'
-require('dotenv').config()
+//require('dotenv').config()
 import * as Minio from 'minio'
 //////////////////////////////////////////////////////////////////////////////
 // Retrieve these values from Vault... I would read them from a .env file
