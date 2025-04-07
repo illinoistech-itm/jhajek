@@ -71,13 +71,7 @@ try {
 //
 const getImagesFromS3Bucket = async (req, res) => {
 try {
-    let imageURL = await listObjects(req, res);
-    console.log("ImageURL:", imageURL);
-    res.set("Content-Type", "text/html");
-    res.write("<div>Welcome to the gallery" + "</div>");
-    for (let i = 0; i < imageURL.length; i++) {
-    res.write('<div><img src="' + imageURL[i] + '" /></div>');
-    }
+    console.log("Getting Images from minio...");
     res.end();
 } catch (err) {
     console.error(err);
@@ -88,13 +82,8 @@ try {
 // Lookup Database Identifier
 //
 const getDBIdentifier = async () => {
-const client = new RDSClient({ region: "us-east-2" });
-const command = new DescribeDBInstancesCommand({});
 try {
-    const results = await client.send(command);
-    //console.log("List RDS results: ", results.DBInstances[0].DBInstanceIdentifier);
-    //console.log("List RDS Endpoint results: ", results.DBInstances[0].Endpoint.Address);
-    return results;
+   console.log("getting DB...")
 } catch (err) {
     console.error(err);
 }
