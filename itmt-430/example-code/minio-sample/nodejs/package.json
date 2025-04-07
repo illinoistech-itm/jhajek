@@ -1,5 +1,16 @@
 {
-    "dependencies": {
+  "name": "index",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",  
+  "dependencies": {
       "dotenv": "^16.4.7",  
       "express": "^4.21.2",
       "minio": "^8.0.5",
