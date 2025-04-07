@@ -14,6 +14,7 @@ import multerS3  from 'multer-s3'
 import mysql from 'mysql2/promise'
 import 'dotenv/config'
 import * as Minio from 'minio'
+import * as Fs from 'fs'
 var upload = multer({ dest: 'uploads/' })
 //////////////////////////////////////////////////////////////////////////////
 // Retrieve these values from Vault... I would read them from a .env file
