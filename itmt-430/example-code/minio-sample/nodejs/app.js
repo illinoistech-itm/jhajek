@@ -250,7 +250,7 @@ try {
 //
 
 app.get("/", function (req, res) {
-res.sendFile(__dirname + "/index.html");
+res.sendFile(path.join(__dirname , "index.html"));
 });
 
 app.get("/gallery", function (req, res) {
