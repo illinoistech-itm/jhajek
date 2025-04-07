@@ -56,8 +56,8 @@ try {
     }
     console.log(req.files.path)
     console.log(req.files.filename)
-    const fileStream = Fs.createReadStream(req.files.destination + req.files.filename)
-    const fileStat = Fs.stat(req.files.destination + req.files.filename, function (err, stats) {
+    const fileStream = Fs.createReadStream(req.files.path)
+    const fileStat = Fs.stat(req.files.path, function (err, stats) {
       if (err) {
         return console.log(err)
       }
