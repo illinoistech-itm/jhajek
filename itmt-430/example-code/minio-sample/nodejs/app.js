@@ -54,8 +54,8 @@ try {
         await minioClient.makeBucket(bucketName)
         console.log('Bucket created successfully.')
     }
-    console.log(req.file.path)
-    console.log(req.file.filename)
+    console.log(req.files.path)
+    console.log(req.files.filename)
     const fileStream = Fs.createReadStream(req.files.destination + req.files.filename)
     const fileStat = Fs.stat(req.files.destination + req.files.filename, function (err, stats) {
       if (err) {
