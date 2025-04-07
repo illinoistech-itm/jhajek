@@ -46,27 +46,16 @@ const getPostedData = async (req, res) => {
 try {
     const exists = await minioClient.bucketExists(bucketName)
         if (exists) {
-    return console.log('Bucket exists.')
+        console.log('Bucket exists.')
+        console.log(req.file.name)
     }
     else {
         await minioClient.makeBucket(bucketName)
         console.log('Bucket created successfully.')
     }
+ 
     
-    
-    const fileStream = Fs.createReadStream(req.file)
-    const fileStat = Fs.stat(req.file.name, function (err, stats) {
-      if (err) {
-        return console.log(err)
-      }
 
-    minioClient.putObject(bucketName, req.file.name , fileStream, stats.size, function (err, objInfo) {
-        if (err) {
-          return console.log(err) // err should be null
-        }
-        console.log('Success!', objInfo)
-      })
-    })
     // Use this code to retrieve the value entered in the username field in the index.html
     var username = req.body["name"];
     // Use this code to retrieve the value entered in the email field in the index.html
