@@ -4,6 +4,7 @@
   
 import express from 'express'
 const app = express();
+import path from 'path'
 import multer from 'multer'
 import multerS3  from 'multer-s3'
 import mysql from 'mysql2/promise'
