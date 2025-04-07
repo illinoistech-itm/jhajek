@@ -22,8 +22,8 @@ const minioClient = new Minio.Client({
     endPoint: process.env.MINIOENDPOINT,
     port: 443,
     useSSL: true,
-    accessKey: MINIOACCESSKEY,
-    secretKey: MINIOSECRETKEY,
+    accessKey: process.env.MINIOACCESSKEY,
+    secretKey: process.env.MINIOSECRETKEY,
   })
 //////////////////////////////////////////////////////////////////////////////
 //  bucketname is your hawkID - for now we will start with a single bucket per
