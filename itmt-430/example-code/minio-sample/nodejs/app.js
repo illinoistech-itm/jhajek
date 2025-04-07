@@ -29,7 +29,7 @@ const minioClient = new Minio.Client({
 //////////////////////////////////////////////////////////////////////////////
 //  bucketname is your hawkID - for now we will start with a single bucket per
 //  team, but we can create more if needed
-var bucketName = "hajek";
+var bucketName = "rahmed16";
 //////////////////////////////////////////////////////////////////////////////
 // https://www.npmjs.com/package/multer-s3
 var upload = multer({
