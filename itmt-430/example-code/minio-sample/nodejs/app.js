@@ -279,5 +279,5 @@ app.post("/upload", upload.array("uploadFile", 1), function (req, res, next) {
 });
 
 app.listen(3000, function () {
-console.log("Amazon s3 file upload app listening on port 3000");
+console.log("Min.io s3 file upload app listening on port 3000");
 });
