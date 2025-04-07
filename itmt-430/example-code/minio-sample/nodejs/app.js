@@ -47,7 +47,7 @@ try {
     const exists = await minioClient.bucketExists(bucketName)
         if (exists) {
         console.log('Bucket exists.')
-        console.log(req.file.name)
+        console.log(req.file)
     }
     else {
         await minioClient.makeBucket(bucketName)
