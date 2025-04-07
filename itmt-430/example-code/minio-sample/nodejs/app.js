@@ -14,11 +14,12 @@ import multerS3  from 'multer-s3'
 import mysql from 'mysql2/promise'
 import 'dotenv/config'
 import * as Minio from 'minio'
+var upload = multer({ dest: 'uploads/' })
 //////////////////////////////////////////////////////////////////////////////
 // Retrieve these values from Vault... I would read them from a .env file
 // DotEnv is recommended as the easiest approach 
 // https://www.npmjs.com/package/dotenv
-// MINIOENDPOINT = "https://system54.rice.iit.edu"
+// MINIOENDPOINT = "system54.rice.iit.edu"
 // You should store the endPoint URL, accessKey and SecretKey values in Vault
 // Retrieve them and populate your .env file
 // These keys are separate from the Proxmox Keys... more secrets to manage 
@@ -51,8 +52,21 @@ try {
         await minioClient.makeBucket(bucketName)
         console.log('Bucket created successfully.')
     }
+    
+    
+    const fileStream = Fs.createReadStream(req.file)
+    const fileStat = Fs.stat(req.file.name, function (err, stats) {
+      if (err) {
+        return console.log(err)
+      }
 
-
+    minioClient.putObject(bucketName, req.file.name , fileStream, stats.size, function (err, objInfo) {
+        if (err) {
+          return console.log(err) // err should be null
+        }
+        console.log('Success!', objInfo)
+      })
+    })
     // Use this code to retrieve the value entered in the username field in the index.html
     var username = req.body["name"];
     // Use this code to retrieve the value entered in the email field in the index.html
@@ -252,7 +266,7 @@ app.get("/db", function (req, res) {
 })();
 });
 
-app.post("/upload", function (req, res, next) {
+app.post("/upload", upload.array('file', 12), function (req, res, next) {
 (async () => {
     await getPostedData(req, res);
 })();
