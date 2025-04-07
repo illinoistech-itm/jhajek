@@ -14,6 +14,7 @@ import * as Minio from 'minio'
 // Retrieve these values from Vault... I would read them from a .env file
 // DotEnv is recommended as the easiest approach 
 // https://www.npmjs.com/package/dotenv
+// MINIOENDPOINT = "https://system54.rice.iit.edu"
 // You should store the endPoint URL, accessKey and SecretKey values in Vault
 // Retrieve them and populate your .env file
 // These keys are separate from the Proxmox Keys... more secrets to manage 
