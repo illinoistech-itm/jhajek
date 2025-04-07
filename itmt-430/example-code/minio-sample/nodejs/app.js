@@ -43,7 +43,7 @@ var bucketName = "rahmed16";
 //
 const getPostedData = async (req, res) => {
 try {
-    await minioClient.makeBucket('bucketname')
+    await minioClient.makeBucket(bucketName)
     console.log('Bucket created successfully.')
     
 
