@@ -2,7 +2,7 @@
 // Minio JavaScript SDK
 // https://min.io/docs/minio/linux/developers/javascript/API.html
   
-const express = require("express");
+import express from 'express'
 const app = express();
 const multer = require("multer");
 const multerS3 = require("multer-s3");
