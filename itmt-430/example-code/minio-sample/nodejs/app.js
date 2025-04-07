@@ -46,6 +46,7 @@ try {
     await minioClient.makeBucket('bucketname')
     console.log('Bucket created successfully.')
     
+
     // Use this code to retrieve the value entered in the username field in the index.html
     var username = req.body["name"];
     // Use this code to retrieve the value entered in the email field in the index.html
@@ -256,7 +257,7 @@ app.get("/db", function (req, res) {
 })();
 });
 
-app.post("/upload", upload.array("uploadFile", 1), function (req, res, next) {
+app.post("/upload", function (req, res, next) {
 (async () => {
     await getPostedData(req, res);
 })();
