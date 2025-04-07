@@ -7,7 +7,7 @@ const app = express();
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const mysql = require("mysql2/promise");
-const dotenv = require('dotenv')
+import 'dotenv/config'
 require('dotenv').config()
 import * as Minio from 'minio'
 //////////////////////////////////////////////////////////////////////////////
