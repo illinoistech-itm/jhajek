@@ -36,32 +36,16 @@ const minioClient = new Minio.Client({
 var bucketName = "rahmed16";
 //////////////////////////////////////////////////////////////////////////////
 // https://www.npmjs.com/package/multer-s3
-var upload = multer({
-storage: multerS3({
-    s3: minioClient,
-    bucket: bucketName,
-    key: function (req, file, cb) {
-    cb(null, file.originalname);
-    },
-}),
-});
+
   
 ///////////////////////////////////////////////
 /// Get posted data as an async function
 //
 const getPostedData = async (req, res) => {
 try {
-    let s3URLs = await listObjects(req, res);
-    const fname = req.files[0].originalname;
-    var s3URL = "URL not generated due to technical issue.";
-    for (let i = 0; i < s3URLs.length; i++) {
-    if (s3URLs[i].includes(fname)) {
-        s3URL = s3URLs[i];
-        break;
-    }
-    }
-    res.write("Successfully uploaded " + req.files.length + " files!");
-
+    await minioClient.makeBucket('bucketname')
+    console.log('Bucket created successfully.')
+    
     // Use this code to retrieve the value entered in the username field in the index.html
     var username = req.body["name"];
     // Use this code to retrieve the value entered in the email field in the index.html
