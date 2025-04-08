@@ -35,7 +35,6 @@ const minioClient = new Minio.Client({
 //////////////////////////////////////////////////////////////////////////////
 //  bucketname is your hawkID - for now we will start with a single bucket per
 //  team, but we can create more if needed
-var bucketName = "rahmed16";
 //////////////////////////////////////////////////////////////////////////////
 // https://www.npmjs.com/package/multer-s3
 
@@ -44,6 +43,8 @@ var bucketName = "rahmed16";
 /// Get posted data as an async function
 //
 const getPostedData = async (req, res) => {
+// Use this code to retrieve the value entered in the bucket field in the index.html
+var bucketName = req.body["bucketName"];
 try {
     const exists = await minioClient.bucketExists(bucketName)
         if (exists) {
@@ -76,8 +77,8 @@ try {
     var email = req.body["email"];
     // Use this code to retrieve the value entered in the phone field in the index.html
     var phone = req.body["phone"];
+
     // Write output to the screen
-    // res.write(s3url + "\n");
     res.write(username + "\n");
     //res.write(s3URL + "\n");
     res.write(email + "\n");
