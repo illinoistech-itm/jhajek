@@ -80,6 +80,16 @@ try {
     console.log(err)
     })
 
+    // getPresignedURL
+    // presigned url for 'getObject' method.
+    // expires in a day.
+    // Generates a presigned URL for the provided HTTP method, ‘httpMethod’. Browsers/Mobile clients 
+    // may point to this URL to directly download objects even if the bucket is private. This 
+    // presigned URL can have an associated expiration time in seconds after which the URL is no 
+    // longer valid. The default value is 7 days.
+    const presignedUrl = await minioClient.presignedUrl('GET', bucketName, req.files[0].originalname, 24 * 60 * 60)
+    console.log(presignedUrl)
+
     // Use this code to retrieve the value entered in the username field in the index.html
     var username = req.body["name"];
     // Use this code to retrieve the value entered in the email field in the index.html
@@ -89,7 +99,7 @@ try {
 
     // Write output to the screen
     res.write(username + "\n");
-    //res.write(s3URL + "\n");
+    res.write(presignedUrl + "\n");
     res.write(email + "\n");
     res.write(phone + "\n");
 
