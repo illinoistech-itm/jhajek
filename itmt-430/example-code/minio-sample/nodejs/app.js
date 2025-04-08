@@ -63,7 +63,7 @@ try {
         return console.log(err)
       }
 
-    minioClient.putObject(bucketName, req.files[0].originalname , fileStream, stats.size, function (err, objInfo) {
+    const objectURL = minioClient.putObject(bucketName, req.files[0].originalname , fileStream, stats.size, function (err, objInfo) {
         if (err) {
           return console.log(err) // err should be null
         }
@@ -71,6 +71,7 @@ try {
       })
     })
 
+    res.write(objectURL);
     // listObjects
     const stream = minioClient.listObjectsV2(bucketName, '', true, '')
     stream.on('data', function (obj) {
