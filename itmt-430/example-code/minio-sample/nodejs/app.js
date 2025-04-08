@@ -55,7 +55,7 @@ try {
         console.log('Bucket created successfully.')
     }
     console.log(req.files[0].originalname)
-    console.log(req.files[0].filename)
+    console.log(req.files[0].path)
     const fileStream = Fs.createReadStream(req.files.path)
     const fileStat = Fs.stat(req.files.path, function (err, stats) {
       if (err) {
