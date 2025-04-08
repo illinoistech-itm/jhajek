@@ -71,7 +71,6 @@ try {
       })
     })
 
-    res.write(objectURL);
     // listObjects
     const stream = minioClient.listObjectsV2(bucketName, '', true, '')
     stream.on('data', function (obj) {
