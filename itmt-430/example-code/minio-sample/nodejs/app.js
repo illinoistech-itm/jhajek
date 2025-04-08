@@ -71,6 +71,15 @@ try {
       })
     })
 
+    // listObjects
+    const stream = minioClient.listObjectsV2(bucketName, '', true, '')
+    stream.on('data', function (obj) {
+    console.log(obj)
+    })
+    stream.on('error', function (err) {
+    console.log(err)
+    })
+
     // Use this code to retrieve the value entered in the username field in the index.html
     var username = req.body["name"];
     // Use this code to retrieve the value entered in the email field in the index.html
