@@ -56,13 +56,13 @@ try {
     }
     console.log(req.files[0].originalname)
     console.log(req.files[0].path)
-    const fileStream = Fs.createReadStream(req.files.path)
-    const fileStat = Fs.stat(req.files.path, function (err, stats) {
+    const fileStream = Fs.createReadStream(req.files[0].path)
+    const fileStat = Fs.stat(req.files[0].path, function (err, stats) {
       if (err) {
         return console.log(err)
       }
 
-    minioClient.putObject(bucketName, req.files.name , fileStream, stats.size, function (err, objInfo) {
+    minioClient.putObject(bucketName, req.files[0].originalname , fileStream, stats.size, function (err, objInfo) {
         if (err) {
           return console.log(err) // err should be null
         }
