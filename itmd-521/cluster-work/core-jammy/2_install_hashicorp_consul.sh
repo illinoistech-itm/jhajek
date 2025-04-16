@@ -8,7 +8,7 @@ sudo apt-get update && sudo apt-get install -y consul
 
 sudo systemctl stop consul.service
 echo 'retry_join = ["10.110.0.59","10.110.0.58","10.110.0.38"]' | sudo tee -a /etc/consul.d/consul.hcl
-sudo sed -i "1,$s/#datacenter = 'my-dc-1'/datacenter = 'rice-dc-1'/" /etc/consul.d/consul.hcl
+sudo sed -i "1,$s/#datacenter = \'my-dc-1\'/datacenter = \'rice-dc-1\'/" /etc/consul.d/consul.hcl
 sudo sed -i "1,$s/changeme/$RANDOM/" /etc/consul.d/system.hcl
 sudo sed -i "1,$s/replace-name/$(hostname)/" /etc/consul.d/system.hcl
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Retreive Spark 3.5.1
-wget https://dlcdn.apache.org/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz
+wget https://archive.apache.org/dist/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz
 
 mv ./spark-3.5.1-bin-hadoop3.tgz /home/controller/spark-3.5.1-bin-hadoop3.tgz
 sudo chown -R controller:controller /home/controller/spark-3.5.1-bin-hadoop3.tgz
