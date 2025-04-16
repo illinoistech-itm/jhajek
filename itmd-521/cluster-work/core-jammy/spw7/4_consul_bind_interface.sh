@@ -6,4 +6,4 @@
 # https://www.consul.io/docs/troubleshoot/common-errors
 #########################################################################
 
-sed -i 's/#bind_addr = \"0.0.0.0\"/bind_addr = \"{{GetInterfaceIP \\\"ens2f3\\\"}}\"/' /etc/consul.d/consul.hcl
+sed -i 's/#bind_addr = \"0.0.0.0\"/bind_addr = \"{{GetInterfaceIP \\\"enp5s0\\\"}}\"/' /etc/consul.d/consul.hcl

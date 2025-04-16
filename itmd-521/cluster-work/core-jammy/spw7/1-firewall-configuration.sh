@@ -25,20 +25,20 @@ sudo systemctl start firewalld
 # sudo firewall-cmd --zone=public --add-interface=ens18 --permanent
 # Creates a zone that restricts traffic to that one interface ens18
 ##############################################################################################
-sudo firewall-cmd --zone=public --add-interface=eno1 --permanent
+sudo firewall-cmd --zone=public --add-interface=enp7s0f1 --permanent
 sudo firewall-cmd --zone=public --add-service=ssh --permanent
 
 # Create new zone on ens19 called metrics-network for just metrics
 sudo firewall-cmd --new-zone=metrics-network --permanent
 # Attach interface ens19 (eth1) to the new zone
-sudo firewall-cmd --zone=metrics-network --change-interface=eno2 --permanent
+sudo firewall-cmd --zone=metrics-network --change-interface=enp7s0f1 --permanent
 # Created entry for Prometheus
 # sudo firewall-cmd --zone=metrics-network --add-port=9100/tcp --permanent
 
 # Create new zone on ens20 called meta-network for a non-routable internal network
 sudo firewall-cmd --new-zone=meta-network --permanent
 # Attach interface ens20 (eth2) to the new zone
-sudo firewall-cmd --zone=meta-network --change-interface=ens2f3--permanent
+sudo firewall-cmd --zone=meta-network --change-interface=enp5s0 --permanent
 
 # Consul ports needed for Gossip protocol on the LAN
 # https://www.consul.io/docs/install/ports
@@ -54,7 +54,7 @@ sudo firewall-cmd --zone=public --add-service=ssh --permanent
 
 # Creating the data network interface
 sudo firewall-cmd --new-zone=data-network --permanent
-sudo firewall-cmd --zone=meta-network --change-interface=ens2f2 --permanent
+sudo firewall-cmd --zone=meta-network --change-interface=enp4s0 --permanent
 ##############################################################################################
 # Add any additional firewall ports below this line in this format:
 # sudo firewall-cmd --zone=public --add-port=####/tcp --permanent
