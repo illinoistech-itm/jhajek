@@ -113,7 +113,7 @@ Record their information:
 
 ## Deliverables
 
-* **All sections** critiques due on Monday April 22nd 10:00am.
+* **All sections** critiques due on Monday April ~~22nd~~ 28th 10:00am.
 
 ### Individual Deliverables
 
