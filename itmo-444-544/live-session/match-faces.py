@@ -12,7 +12,7 @@ response = client.compare_faces(
     TargetImage={
         'S3Object': {
             'Bucket': 'live-session',
-            'Name': 'P13.jpg'
+            'Name': 'P7.jpg'
         }
     }
 )
