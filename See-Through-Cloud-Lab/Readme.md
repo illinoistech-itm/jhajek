@@ -22,8 +22,8 @@ The Cloud Lab has been managed by Professor Jeremy Hajek for over 6 years, in co
 
 * All resources only accessed via APIs over HTTP
   * [Jeff Besos API Mandate](https://nordicapis.com/the-bezos-api-mandate-amazons-manifesto-for-externalization/ "webpage for Jeff Besos API menu")
-* Elastic Virtual Machine resources  
-  * Linux and x86-based
+* Elastic Compute and Virtual Networking resources  
+  * Linux x86-based VMs
 * Elastic Block storage
   * Virtual disk
 * Object Storage
@@ -40,18 +40,18 @@ There are various components to the See Through Cloud Lab. The main goal of this
 The lab is made up of several parts...
 
 * Infrastructure Cluster
-  * Running Proxmox 8.0 and a 2x Node Cluster
+  * Running Proxmox 8.3 and a 3x Node Cluster
 * Student Production Cluster
-  * Running Proxmox 8.0 and a 2x Node Cluster
+  * Running Proxmox 8.3 and a 3x Node Cluster
 
 #### Infrastructure Cluster
 
-* 2 Consul servers (Service Discovery)
+* 3 [Consul](https://consul.io "Webpage for consul") servers (Service Discovery)
 * 1 DHCP server for 3 internal non-routable networks
   * Metrics Collection Network - `10.0.0.0/16`
   * Meta-Network for application discovery - `10.110.0.0/16`
   * Data-Network - for access to our internal Big Data Cluster - `10.200.0.0`
-* 1 Prometheus Server for VM metrics aggregation
+* 1 [Prometheus](https://prometheus.io "Webpage for Prometheus") Server for VM metrics aggregation
 * 1 Grafana Server for Graphing and Visualization
 * 1 Jenkins CI system for CI building of Android Applications
 * OTS provides DHCP services and DHCP leases on an RFC 1918 `192.168.172.0/24` network
