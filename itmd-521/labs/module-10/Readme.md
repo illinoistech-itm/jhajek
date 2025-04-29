@@ -11,10 +11,10 @@
 
 Using the adjusted setup from Module-09, and based on your assigned dataset, you will execute two comparisons of initial write and load times of two jobs using the Minio Cluster (Object Storage) and MySQL storage.
 
-* A-F use 60.txt
-* G-L use 70.txt
-* M-S use 80.txt
-* T-Z use 90.txt
+* A-F use 40.txt
+* G-L use 50.txt
+* M-S use 60.txt
+* T-Z use 40.txt
 
 ## Assignment Setup Details
 
