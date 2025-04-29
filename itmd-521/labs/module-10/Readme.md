@@ -1,4 +1,4 @@
-# Lab 06
+# Lab 08
 
 ## Objectives
 
