@@ -38,7 +38,7 @@ Using this template, provide a screenshot of the execution of the `show tables;`
 
 ### Deliverable
 
-Create a sub-folder named: `module-08` under the `itmd-521` folder. Push this deliverable with included screenshot there.
+Create a sub-folder named: `module-09` under the `itmd-521` folder. Push this deliverable with included screenshot there.
 
 Submit to Canvas the URL to the folder in your GitHub repo. 
 
