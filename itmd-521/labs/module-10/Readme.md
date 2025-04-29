@@ -20,24 +20,30 @@ Using the adjusted setup from Module-09, and based on your assigned dataset, you
 
 * Read the assigned year value from the `itmd521` bucket into a single DataFrame
 * Clean the data with the given cleaning code in the example-code Jupytr Notebook
-* Write the contents of the DataFrame to your Minio bucket and to your own Database
+* Write the contents of the DataFrame to your Minio bucket as a Parquet file
+  * Create file name based on the english word representing the decade you are working with
+* Write the contents of the DataFrame to your own Database
   * Create a table name based on the english word representing the decade you are working with
 
-## Assignment Setup Part I
+## Assignment Part I
 
-* Write a Pyspark application to query the cleaned dataset into a DataFrame from your S3 bucket
+Write a Pyspark application to read: 
 
+* The cleaned dataset into a DataFrame from your S3 bucket
+* The cleaned dataset into a DataFrame from MySQL table
 
-### Screenshot Required
+## Assignment Part II
 
-Using this template, provide a screenshot of the execution of the `show tables;` command from your database on `system31.rice.iit.edu`
-
-**Place Screenshot here**
+* Create a Pyspark statement that will split the DataFrame data into two additional Parquet files
+  * Based on Longitude and Latitude (Northern and Southern hemisphere)
+* Write the two DataFrames out as MySQL tables
+* Write the two DataFrames out as Parquet files
+  * Name them with the english word of the decade plus `-northern` or -`southern`
 
 ### Deliverable
 
-Create a sub-folder named: `module-08` under the `itmd-521` folder. Push this deliverable with included screenshot there.
+Create a sub-folder named: `module-10` under the `itmd-521` folder. Submit the URL to your code in GitHub
 
 Submit to Canvas the URL to the folder in your GitHub repo. 
 
-Due at the **Start of class** May 02nd 3:15 PM
+Due at May 03rd 11:59 PM
