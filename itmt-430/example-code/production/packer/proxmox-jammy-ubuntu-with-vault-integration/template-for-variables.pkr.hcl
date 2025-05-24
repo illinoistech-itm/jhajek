@@ -26,12 +26,12 @@ locals {
 
 variable "MEMORY" {
   type    = string
-  default = "4192"
+  default = "8192"
 }
 
 variable "DISKSIZE" {
   type    = string
-  default = "25G"
+  default = "10G"
 }
 
 variable "STORAGEPOOL" {
