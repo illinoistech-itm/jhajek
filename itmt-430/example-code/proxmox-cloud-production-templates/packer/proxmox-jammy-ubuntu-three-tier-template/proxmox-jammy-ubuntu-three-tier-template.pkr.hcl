@@ -3,7 +3,7 @@ locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 packer {
   required_plugins {
     virtualbox = {
-      version = "= 1.1.7"
+      version = "= 1.1.8"
       source  = "github.com/hashicorp/proxmox"
     }
   }
