@@ -1,10 +1,10 @@
 # ITMO 453 Opensource Server Administration
 
-![](./syllabus/images/CoC_horiz_lockup_2019.jpg "COC Logo")
+![](./images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
 Semester: Summer 2025
 
-![*https://xkcd.com/350/*](./syllabus/images/network.png "XCKD 350 image URL")
+![*https://xkcd.com/350/*](./images/network.png "XCKD 350 image URL")
 
 | Category | Value |
 | --------- | ------------ |
@@ -97,9 +97,9 @@ The final grade for the class will be calculated as follows: (example)
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-   Tooling Assignments:   15%         40
+   Tooling Assignments:   10%         50
                 MP 1-5:   50%        200                 
-         Final Project:   35%        160              
+         Final Project:   40%        150              
                     
 ----------------------- ------- ----------------
 
