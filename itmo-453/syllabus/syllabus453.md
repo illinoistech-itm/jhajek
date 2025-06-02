@@ -18,7 +18,7 @@ Semester: Summer 2025
 
 **Course Catalog Description:** Students learn the administration topics and concepts of IT orchestration, automation, monitoring, and metric collection. Topics include configuring industry standard automation tooling and using scripting to achieve immutable infrastructure. Students will learn how to monitor and collect and present metrics in regards to the infrastructure they deploy. [ITMO 453 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 453 Bulletin Description")
 
-**Prerequisites:** ITMP 340 and ITMO 356, Credit: Lab 3-0-3
+**Prerequisites:** ITMO 340 and ITMO 356, Credit: Lab 3-0-3
 
 **Lecture Day, Time & Place:** Monday and Wednesday 10 AM - 1:10 PM in the [Tech South 2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
 
@@ -77,11 +77,9 @@ Prometheus Up and Running Version 2
 
 **Course Notes:**  It is recommended to take notes from the oral discussion portion of the class.
 
-**Attendance:** Undergrad attendance is expected and will be counted as part of your grade.  
-
 **Course Web Site:** We will be using Canvas for the course
 
-**Assignments:**  There will be 2 Mini-Projects, and 1 final project.
+**Assignments:**  5 tooling assignments and 5 Mini-Projects (MPs)
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 
