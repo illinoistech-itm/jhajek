@@ -93,12 +93,11 @@ E | Unsatisfactory work | 0-59.99%
 
 The final grade for the class will be calculated as follows: (example)
 
-   Name                  Grade    Total Points
------------------------ ------- ----------------
-   Tooling Assignments:   10%         50
-                MP 1-5:   50%        200              
-         Final Project:   40%        150
------------------------ ------- ----------------
+| Name                 | Grade | Total Points |
+| ----------------------- | ------- | ---------------- |
+|   Tooling Assignments: | 10% | 50 |
+|                MP 1-5: | 50% | 200 |                 
+|         Final Project: | 40% | 150 |
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.
 

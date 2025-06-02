@@ -98,7 +98,6 @@ The final grade for the class will be calculated as follows: (example)
 |   Tooling Assignments: | 10% | 50 |
 |                MP 1-5: | 50% | 200 |                 
 |         Final Project: | 40% | 150 |
-| ----------------------- | ------- | ---------------- |
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.
 
