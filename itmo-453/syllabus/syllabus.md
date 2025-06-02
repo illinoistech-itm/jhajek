@@ -6,59 +6,41 @@ Semester: Fall 2023
 
 ![*https://xkcd.com/350/*](./syllabus/images/network.png "XCKD 350 image URL")
 
----------------- --------------------------------------------------------
-  **Professor**: Jeremy Hajek
-        Address: Department of Information Technology & Management,
-                 10 W. 33rd St., Chicago, IL 60616
-      Telephone: 312.567.5937
-          Email: hajek@iit.edu
-         Office: Perlstein Hall Room 223A, 10 W. 33rd St.
-   Office Hours: Mies Campus: Monday-Wed 11:30 -3:00, Thursday 2:00-3:00, Friday 12:00 to 2:00
-         Online: book and appointment at:
-                 [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
----------------- --------------------------------------------------------
+| Category | Value |
+| --------- | ------------ |
+ **Professor** | Jeremy Hajek
+ Address | Department of Information Technology & Management 10 W. 35th St., Chicago, IL 60616
+ Telephone | 312.567.5937
+ Email | hajek@iit.edu
+ Office | IIT Tower 15th Floor
+ Office Hours and URL | [See Times](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu?anonymous&ep=plink "webpage for availability")
+ Location | IIT Tower 15th Floor or online via MS Teams
 
 **Course Catalog Description:** Students learn the administration topics and concepts of IT orchestration, automation, monitoring, and metric collection. Topics include configuring industry standard automation tooling and using scripting to achieve immutable infrastructure. Students will learn how to monitor and collect and present metrics in regards to the infrastructure they deploy. [ITMO 453 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 453 Bulletin Description")
 
 **Prerequisites:** ITMP 340 and ITMO 356, Credit: Lab 3-0-3
 
-**Lecture Day, Time & Place:** Tuesday 9:40am to 10:55am and 9:40am to 11:55am in [Tech South 2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
+**Lecture Day, Time & Place:** Monday and Wednesday 10 AM - 1:10 PM in the [Tech South 2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
 
 **Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 08/21 | Introduction  | Tooling Setup
-2 | 08/23 | Tooling  | To Be Assigned
-3 | 08/28 | CLI review  | -
-4 | 08/30 | CLI review  | -
-5 | 09/04 | Monitoring and Measurement Frameworks  | -
-6 | 09/06 | Monitoring and Measurement Frameworks  | -
-7 | 09/11 | Managing Events and Metrics  | -
-8 | 09/13 | Managing Events and Metrics  | -
-9 | 09/18 | Managing Events and Metrics  | -
-10| 09/20 | Managing Events and Metrics | -
-11| 09/25 | Managing Events and Metrics | -
-12| 09/27 | Managing Events and Metrics | -
-13| 10/02 | Introducing Graphite and Grafana | -
-14| 10/04 | Introducing Graphite and Grafana | -
-15| 10/09 | Collectd events | MP1 Assigned
-16| 10/11 | Collectd events | -
-17| 10/16 | Logs and Logging | -
-18| 10/18 | Logs and Logging | -
-19| 10/23 | Building Monitored Applications | MP1 Presented in Class, MP2 Assigned
-20| 10/25 | Building Monitored Applications | -
-21| 10/30 | Notifications | -
-22| 11/01 | Notifications | -
-23| 11/06 | Monitoring an Application | -
-24| 11/08 | Monitoring an Application | -
-25| 11/13 | Class Work time | -
-26| 11/15 | Class Work time | -
-27| 11/20 | Class Work time | Final Presentation Assigned, MP2 Presented in Class
-28| 11/22 | Thanksgiving Break - No Class | -
-29| 11/27 | Class Work time | -
-30| 11/29 | Class Work time | -
-31| 04-08 | Final Exam week | Final Project Presentation
+1 | 06/02 | Introduction and tooling setup | Ch 1 and 2
+2 | 06/04 | History of Monitoring | Ch 3-6
+3 | 06/09 | Instrumentation | Ch 9-12
+4 | 06/11 | Graphing | Ch 13-16
+5 | 06/16 | Infrastructure Monitoring  | -
+6 | 06/18 | Infrastructure Monitoring  | Ch 18-20 
+7 | 06/23 | Alerting and security | -
+8 | 06/25 | Alerting and security | -
+9 | 06/30 | Log Management and collection | -
+10| 07/02 | Log Management and collection | -
+11| 07/09 | Application Logging and Metrics | -
+12| 07/11 | Application Logging and Metrics | -
+13| 07/16 | Project work time | -
+14| 07/18 | Project work time | -
+15| 07/23 | Final Project/Exam Week | Final Presentation
 
 **Course Outcomes:**
 
@@ -87,15 +69,17 @@ This course will enable students to be ready to design, build, and implement log
 
 **Required Textbook:**
 
-None
+Prometheus Up and Running Version 2
+
+![*Prometheus Up and Running Version 2](./images/prometheus-up-and-run.png "Image of textbook")
+
+[*Purchase on Amazon*](https://www.amazon.com/_/dp/1098131142?smid=ATVPDKIKX0DER&_encoding=UTF8&tag=oreilly20-20 "link to purchase textbook")
 
 **Course Notes:**  It is recommended to take notes from the oral discussion portion of the class.
 
 **Attendance:** Undergrad attendance is expected and will be counted as part of your grade.  
 
-**Course Web Site:** [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL")
-
-**Blackboard:** The course will make intensive use of Blackboard [http://blackboard.iit.edu/](http://blackboard.iit.edu/ "Course Document Mangement Site URL") for communications, assignment submissions, group project coordination, providing online resources and administering examinations. All remote students will view the course lectures online via Blackboard, and online readings and other course material will be found on Blackboard.
+**Course Web Site:** We will be using Canvas for the course
 
 **Assignments:**  There will be 2 Mini-Projects, and 1 final project.
 
