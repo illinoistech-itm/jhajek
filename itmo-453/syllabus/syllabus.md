@@ -2,7 +2,7 @@
 
 ![](./syllabus/images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
-Semester: Fall 2023
+Semester: Summer 2025
 
 ![*https://xkcd.com/350/*](./syllabus/images/network.png "XCKD 350 image URL")
 
@@ -50,9 +50,9 @@ This course will enable students to be ready to design, build, and implement log
 
 * Explain the difference between push and pull metrics
 * Explain the difference between logging and metrics
-* Describe event streams are and how they are used in monitoring and metric collection
-* Explain the use of logging and metrics in  regards to Operating System containers
-* Design, build, and implement logging and  metrics in monitored applications
+* Describe the current industry state of monitoring 
+* Explain the use of logging and metrics in regards to Operating System
+* Design, build, and implement logging and metrics systems into monitored applications
 
 **Topics to Be Covered**:
 
@@ -97,10 +97,10 @@ The final grade for the class will be calculated as follows: (example)
 
    Name                  Grade    Total Points
 ----------------------- ------- ----------------
-                   MP1:   30%        100
-                   MP2:   30%        100
-         Final Project:   30%        100
-            Attendance:   10%         30
+   Tooling Assignments:   15%         40
+                MP 1-5:   50%        200                 
+         Final Project:   35%        160              
+                    
 ----------------------- ------- ----------------
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.
@@ -108,8 +108,6 @@ The final grade for the class will be calculated as follows: (example)
 **Academic Honesty:**  All work you submit in this course must be your own.
 
 **Plagiarism:** You must fully attribute all material directly quoted in papers and you must document all sources used in the preparation of the paper using complete, APA-style bibliographic entries. Including directly quoted material in an assignment without attribution or a bibliography entry for the source of the material is always plagiarism and will always be treated as such by me. No more than thirty-three percent of material included in any paper may be direct quotes. Students have submitted plagiarized material in seven of the last eight times I have taught this course and I will not tolerate it. If you submit plagiarized material you WILL receive a grade of ZERO for the assignment or exam question, an Academic Honesty Violation Report will be filed, and it may result in your expulsion from the course with a failing grade as per the IIT and ITM academic honesty policies. There is no excuse for not understanding this policy and if you do not understand it please let me know and I will be happy to discuss it with you until you do.
-
-**Collaboration:** Students may only collaborate on assignments or projects that are explicitly designated as group assignments or projects. Students submitting work that is identical or in some cases even substantively the same will be asked to discuss the assignment with me. If one student admits to having copied the work, or if there is clear evidence who is guilty, the guilty student will be assigned a grade of zero. If no one admits to the offense or a reasonable determination of guilt cannot be made, each student involved will be assigned a grade of zero. In either case, an Academic Honesty Violation Report will be filed, and it may result in your expulsion from the course with a failing grade as per the IIT and ITM academic honesty policies.
 
 **Our Contract:** This syllabus is my contract with you as to what I will deliver and what I expect from you. If I change the syllabus, I will issue a revised version of the syllabus; the latest version will always be available on Blackboard. Revisions to readings and assignments will be communicated via Blackboard.
 
