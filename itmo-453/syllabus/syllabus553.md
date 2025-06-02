@@ -77,11 +77,9 @@ Prometheus Up and Running Version 2
 
 **Course Notes:**  It is recommended to take notes from the oral discussion portion of the class.
 
-**Attendance:** Undergrad attendance is expected and will be counted as part of your grade.  
-
 **Course Web Site:** We will be using Canvas for the course
 
-**Assignments:**  There will be 2 Mini-Projects, and 1 final project.
+**Assignments:**  5 tooling assignments and 5 Mini-Projects (MPs)
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 
@@ -95,13 +93,12 @@ E | Unsatisfactory work | 0-59.99%
 
 The final grade for the class will be calculated as follows: (example)
 
-   Name                  Grade    Total Points
------------------------ ------- ----------------
-   Tooling Assignments:   10%         50
-                MP 1-5:   50%        200                 
-         Final Project:   40%        150              
-                    
------------------------ ------- ----------------
+| Name                 | Grade | Total Points |
+| ----------------------- | ------- | ---------------- |
+|   Tooling Assignments: | 10% | 50 |
+|                MP 1-5: | 50% | 200 |                 
+|         Final Project: | 40% | 150 |
+| ----------------------- | ------- | ---------------- |
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.
 
@@ -109,7 +106,7 @@ The final grade for the class will be calculated as follows: (example)
 
 **Plagiarism:** You must fully attribute all material directly quoted in papers and you must document all sources used in the preparation of the paper using complete, APA-style bibliographic entries. Including directly quoted material in an assignment without attribution or a bibliography entry for the source of the material is always plagiarism and will always be treated as such by me. No more than thirty-three percent of material included in any paper may be direct quotes. Students have submitted plagiarized material in seven of the last eight times I have taught this course and I will not tolerate it. If you submit plagiarized material you WILL receive a grade of ZERO for the assignment or exam question, an Academic Honesty Violation Report will be filed, and it may result in your expulsion from the course with a failing grade as per the IIT and ITM academic honesty policies. There is no excuse for not understanding this policy and if you do not understand it please let me know and I will be happy to discuss it with you until you do.
 
-**Our Contract:** This syllabus is my contract with you as to what I will deliver and what I expect from you. If I change the syllabus, I will issue a revised version of the syllabus; the latest version will always be available on Blackboard. Revisions to readings and assignments will be communicated via Blackboard.
+**Our Contract:** This syllabus is my contract with you as to what I will deliver and what I expect from you. If I change the syllabus, I will issue a revised version of the syllabus; the latest version will always be available on Canvas. Revisions to readings and assignments will be communicated via Canvas.
 
 **Disabilities:** Reasonable accommodations will be made for students with documented disabilities.  In order to receive accommodations, students must obtain a letter of accommodation from the Center for Disability Resources and make an appointment to speak with me as soon as possible.  My office hours are listed on the first page of the syllabus. The Center for Disability Resources (CDR) is located in 3424 S. State St., room 1C3-2 (on the first floor), telephone 312 567.5744 or disabilities@iit.edu.
 
