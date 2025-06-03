@@ -43,10 +43,6 @@ Session # | Date | Topic | Reading |
 14| 07/19 | Introduction to Cloud Native Design Patterns with Lambda | -
 15| 07/24 | Final Project/Exam Week | Final Presentation
 
-**Course Outcomes:**
-
-This course will enable students to be ready to design, build, and implement logging and metrics in monitored applications. Implementing these foundations will allow any system administrator to integrate logging and metric collection to correlate with business objectives.
-
 **Course Student Outcomes:** Students completing this course will be able to:
 
 * Implement the concepts of cloud computing and cloud-native applications in a three-tier web application 
