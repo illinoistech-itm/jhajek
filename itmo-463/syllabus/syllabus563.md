@@ -84,8 +84,7 @@ Letter | Description | Percentage
 A | Outstanding work reflecting substantial effort | 90-100%
 B | Excellent work reflecting good effort | 80-89.99%
 C | Satisfactory work meeting minimum expectations | 70-79.99%
-D | Substandard work not meeting expectations | 60-69.99%
-E | Unsatisfactory work | 0-59.99%
+E | Unsatisfactory work | 0-69.99%
 
 The final grade for the class will be calculated as follows: (example)
 
