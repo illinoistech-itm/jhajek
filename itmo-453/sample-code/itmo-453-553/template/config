@@ -1,4 +1,0 @@
-Host   github.com
-Hostname github.com
-IdentityFile /home/vagrant/.ssh/id_rsa_itmo-453-553-2020
-StrictHostKeyChecking no
