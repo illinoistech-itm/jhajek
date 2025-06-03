@@ -4,7 +4,7 @@
 
 ## Get current timestamp
 $STAMP=Get-Date(Get-Date).ToUniversalTime()-uformat "%m%d%Y-%H%M%S"
-$DESC="opensource-admin"
+$DESC="software-as-a-service"
 
 ### Build for 400 level Undergrad Course Syllabi
 If (Test-Path "./output/pdf/itmo-463*"){

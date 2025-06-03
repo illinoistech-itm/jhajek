@@ -1,10 +1,10 @@
-# ITMO 553 Opensource Server Administration
+# ITMO 563 Cloud Software as a Service
 
 ![](./images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
 Semester: Summer 2025
 
-![*https://xkcd.com/350/*](./images/network.png "XCKD 350 image URL")
+![*https://xkcd.com/303/*](./images/compiling.png "XCKD 303 image URL")
 
 | Category | Value |
 | --------- | ------------ |
@@ -16,31 +16,32 @@ Semester: Summer 2025
  Office Hours and URL | [See Times](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu?anonymous&ep=plink "webpage for availability")
  Location | IIT Tower 15th Floor or online via MS Teams
 
-**Course Catalog Description:** Students learn the administration topics and concepts of IT orchestration, automation, monitoring, and metric collection. Topics include configuring industry standard automation tooling and using scripting to achieve immutable infrastructure. Students will learn how to monitor and collect and present metrics in regards to the infrastructure they deploy. 
+**Course Catalog Description:** Software as a Service (SaaS) allows consumers to use a provider’s applications running on a cloud infrastructure. Students will explore different approaches, techniques, tools and technologies to build, deploy, 
+and manage cloud native applications.
 
-**Prerequisites:** ITMP 540 and ITMO 556, Credit: Lab 3-0-3
+**Prerequisites:** ITMO 540, ITM 513, and ITMO 556, Credit: Lab 2-0-2
 
-**Lecture Day, Time & Place:** Monday and Wednesday 10 AM - 1:10 PM in the [Tech South 2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
+**Lecture Day, Time & Place:** Tuesday and Thursday 10 AM - 12:30 PM in the [Tech South 2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
 
-**Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
+**Schedule of Topics/Readings:** All readings should be done prior to class. Most of the documents are reference documents, but still worth reading. 
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 06/02 | Introduction and tooling setup | Ch 1 and 2
-2 | 06/04 | History of Monitoring | Ch 3-6
-3 | 06/09 | Instrumentation | Ch 9-12
-4 | 06/11 | Graphing | Ch 13-16
-5 | 06/16 | Infrastructure Monitoring  | -
-6 | 06/18 | Infrastructure Monitoring  | Ch 18-20 
-7 | 06/23 | Alerting and security | -
-8 | 06/25 | Alerting and security | -
-9 | 06/30 | Log Management and collection | -
-10| 07/02 | Log Management and collection | -
-11| 07/09 | Application Logging and Metrics | -
-12| 07/11 | Application Logging and Metrics | -
-13| 07/16 | Project work time | -
-14| 07/18 | Project work time | -
-15| 07/23 | Final Project/Exam Week | Final Presentation
+1 | 06/03 | Introduction and Definition of Cloud Native | -
+2 | 06/05 | Introduction and Definition of Cloud Native | -
+3 | 06/10 | Cloud Native Infrastructure Deployment | -
+4 | 06/12 | Cloud Native Infrastructure Deployment | -
+5 | 06/17 | Cloud Native Elements | -
+6 | 06/19 | Cloud Native Elements | -
+7 | 06/24 | Cloud Native Software Deployments | -
+8 | 06/26 | Cloud Native Software Deployments | -
+9 | 07/01 | Cloud Native Design Patterns | -
+10| 07/03 | Cloud Native Design Patterns | -
+11| 07/10 | Intermediate Cloud Native Application Development | -
+12| 07/12 | Intermediate Cloud Native Application Development | -
+13| 07/17 | Introduction to Cloud Native Design Patterns with Lambda | -
+14| 07/19 | Introduction to Cloud Native Design Patterns with Lambda | -
+15| 07/24 | Final Project/Exam Week | Final Presentation
 
 **Course Outcomes:**
 
@@ -48,38 +49,33 @@ This course will enable students to be ready to design, build, and implement log
 
 **Course Student Outcomes:** Students completing this course will be able to:
 
-* Explain the difference between push and pull metrics
-* Explain the difference between logging and metrics
-* Describe the current industry state of monitoring 
-* Explain the use of logging and metrics in regards to Operating System
-* Design, build, and implement logging and metrics systems into monitored applications
+* Implement the concepts of cloud computing and cloud-native applications in a three-tier web application 
+* Discuss design decisions for constructing cloud native applications 
+* Describe the five components of Cloud 
+* Explain and evaluate current tooling used in building and deploying cloud native applications 
+* Explain and discuss the various public cloud service that can be used for developing cloud-native 
+applications 
+* Demonstrate and deploy an application to a cloud platform using a cloud native process  
+* Explain and discuss the concept of orchestration.
 
 **Topics to Be Covered**:
 
-* Monitoring & Measurement Frameworks
-* Managing events and Metrics & Graphing
-* Event Routing and Collection
-* Containers and Logs
-* Building an app & Notifications
-* Getting Started & Monitoring Nodes
-* Service Discovery
-* Alerting & Scaling and Reliability
-* Instrumenting Applications & Logging
-* Building Monitored Applications & Notification
+* Declarative Programming
+* Function as a Service (Lambda)
+* Event Triggers
+* Automation
+* APIs
+* Infrastructure Modelling
 
 **Required Textbook:**
 
-Prometheus Up and Running Version 2
-
-![*Prometheus Up and Running Version 2](./images/prometheus-up-and-run.png "Image of textbook")
-
-[*Purchase on Amazon*](https://www.amazon.com/_/dp/1098131142?smid=ATVPDKIKX0DER&_encoding=UTF8&tag=oreilly20-20 "link to purchase textbook")
+No required textbook - article links will be provided
 
 **Course Notes:**  It is recommended to take notes from the oral discussion portion of the class.
 
 **Course Web Site:** We will be using Canvas for the course
 
-**Assignments:**  5 tooling assignments and 5 Mini-Projects (MPs)
+**Assignments:**  There will be 7 weekly assignments and 1 final presentation
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 
@@ -95,15 +91,14 @@ The final grade for the class will be calculated as follows: (example)
 
 | Name                 | Grade | Total Points |
 | ----------------------- | ------- | ---------------- |
-|   Tooling Assignments: | 10% | 50 |
-|                MP 1-5: | 50% | 200 |                 
-|         Final Project: | 40% | 150 |
+|   Weekly Assignments: | 50% | 70 |
+|         Final Project: | 50% | 70 |
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.
 
 **Academic Honesty:**  All work you submit in this course must be your own.
 
-**Plagiarism:** You must fully attribute all material directly quoted in papers and you must document all sources used in the preparation of the paper using complete, APA-style bibliographic entries. Including directly quoted material in an assignment without attribution or a bibliography entry for the source of the material is always plagiarism and will always be treated as such by me. No more than thirty-three percent of material included in any paper may be direct quotes. Students have submitted plagiarized material in seven of the last eight times I have taught this course and I will not tolerate it. If you submit plagiarized material you WILL receive a grade of ZERO for the assignment or exam question, an Academic Honesty Violation Report will be filed, and it may result in your expulsion from the course with a failing grade as per the IIT and ITM academic honesty policies. There is no excuse for not understanding this policy and if you do not understand it please let me know and I will be happy to discuss it with you until you do.
+**Plagiarism and AI:** I would like to generally recognize that LLM and gAI products do exist and that they are very useful and powerful. There is no restriction on using these tools, but I would like to caution you that you will have to verbally explain your code as part of your deliverables. Best to use these tools as helpers not as something that can do your work. Always cite any use of an LLM along with the prompt used to generate it. 
 
 **Our Contract:** This syllabus is my contract with you as to what I will deliver and what I expect from you. If I change the syllabus, I will issue a revised version of the syllabus; the latest version will always be available on Canvas. Revisions to readings and assignments will be communicated via Canvas.
 
