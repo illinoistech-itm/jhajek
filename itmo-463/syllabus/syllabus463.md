@@ -1,4 +1,4 @@
-# ITMO 463 Opensource Server Administration
+# ITMO 463 Cloud Software as a Service
 
 ![](./images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
@@ -16,31 +16,32 @@ Semester: Summer 2025
  Office Hours and URL | [See Times](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu?anonymous&ep=plink "webpage for availability")
  Location | IIT Tower 15th Floor or online via MS Teams
 
-**Course Catalog Description:** Students learn the administration topics and concepts of IT orchestration, automation, monitoring, and metric collection. Topics include configuring industry standard automation tooling and using scripting to achieve immutable infrastructure. Students will learn how to monitor and collect and present metrics in regards to the infrastructure they deploy. [ITMO 453 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 453 Bulletin Description")
+**Course Catalog Description:** Software as a Service (SaaS) allows consumers to use a provider’s applications running on a cloud infrastructure. Students will explore different approaches, techniques, tools and technologies to build, deploy, 
+and manage cloud native applications. [ITMO 463 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 463 Bulletin Description")
 
-**Prerequisites:** ITMO 340 and ITMO 356, Credit: Lab 3-0-3
+**Prerequisites:** ITMO 340, ITM 313, and ITMO 356, Credit: Lab 2-0-2
 
-**Lecture Day, Time & Place:** Monday and Wednesday 10 AM - 1:10 PM in the [Tech South 2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
+**Lecture Day, Time & Place:** Tuesday and Thursday 10 AM - 12:30 PM in the [Tech South 2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
 
-**Schedule of Topics/Readings:** All readings should be done prior to class. Do the readings!  
+**Schedule of Topics/Readings:** All readings should be done prior to class. Most of the documents are reference documents, but still worth reading. 
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 06/02 | Introduction and tooling setup | Ch 1 and 2
-2 | 06/04 | History of Monitoring | Ch 3-6
-3 | 06/09 | Instrumentation | Ch 9-12
-4 | 06/11 | Graphing | Ch 13-16
-5 | 06/16 | Infrastructure Monitoring  | -
-6 | 06/18 | Infrastructure Monitoring  | Ch 18-20 
-7 | 06/23 | Alerting and security | -
-8 | 06/25 | Alerting and security | -
-9 | 06/30 | Log Management and collection | -
-10| 07/02 | Log Management and collection | -
-11| 07/09 | Application Logging and Metrics | -
-12| 07/11 | Application Logging and Metrics | -
-13| 07/16 | Project work time | -
-14| 07/18 | Project work time | -
-15| 07/23 | Final Project/Exam Week | Final Presentation
+1 | 06/03 | Introduction and Definition of Cloud Native | -
+2 | 06/05 | Introduction and Definition of Cloud Native | -
+3 | 06/10 | Cloud Native Infrastructure Deployment | -
+4 | 06/12 | Cloud Native Infrastructure Deployment | -
+5 | 06/17 | Cloud Native Elements | -
+6 | 06/19 | Cloud Native Elements | -
+7 | 06/24 | Cloud Native Software Deployments | -
+8 | 06/26 | Cloud Native Software Deployments | -
+9 | 07/01 | Cloud Native Design Patterns | -
+10| 07/03 | Cloud Native Design Patterns | -
+11| 07/10 | Intermediate Cloud Native Application Development | -
+12| 07/12 | Intermediate Cloud Native Application Development | -
+13| 07/17 | Introduction to Cloud Native Design Patterns with Lambda | -
+14| 07/19 | Introduction to Cloud Native Design Patterns with Lambda | -
+15| 07/24 | Final Project/Exam Week | Final Presentation
 
 **Course Outcomes:**
 
@@ -48,11 +49,14 @@ This course will enable students to be ready to design, build, and implement log
 
 **Course Student Outcomes:** Students completing this course will be able to:
 
-* Explain the difference between push and pull metrics
-* Explain the difference between logging and metrics
-* Describe the current industry state of monitoring 
-* Explain the use of logging and metrics in regards to Operating System
-* Design, build, and implement logging and metrics systems into monitored applications
+* Implement the concepts of cloud computing and cloud-native applications in a three-tier web application 
+* Discuss design decisions for constructing cloud native applications 
+* Describe the five components of Cloud 
+* Explain and evaluate current tooling used in building and deploying cloud native applications 
+* Explain and discuss the various public cloud service that can be used for developing cloud-native 
+applications 
+* Demonstrate and deploy an application to a cloud platform using a cloud native process  
+* Explain and discuss the concept of orchestration.
 
 **Topics to Be Covered**:
 
