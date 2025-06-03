@@ -60,30 +60,22 @@ applications
 
 **Topics to Be Covered**:
 
-* Monitoring & Measurement Frameworks
-* Managing events and Metrics & Graphing
-* Event Routing and Collection
-* Containers and Logs
-* Building an app & Notifications
-* Getting Started & Monitoring Nodes
-* Service Discovery
-* Alerting & Scaling and Reliability
-* Instrumenting Applications & Logging
-* Building Monitored Applications & Notification
+* Declarative Programming
+* Function as a Service (Lambda)
+* Event Triggers
+* Automation
+* APIs
+* Infrastructure Modelling
 
 **Required Textbook:**
 
-Prometheus Up and Running Version 2
-
-![*Prometheus Up and Running Version 2](./images/prometheus-up-and-run.png "Image of textbook")
-
-[*Purchase on Amazon*](https://www.amazon.com/_/dp/1098131142?smid=ATVPDKIKX0DER&_encoding=UTF8&tag=oreilly20-20 "link to purchase textbook")
+No required textbook - article links will be provided
 
 **Course Notes:**  It is recommended to take notes from the oral discussion portion of the class.
 
 **Course Web Site:** We will be using Canvas for the course
 
-**Assignments:**  5 tooling assignments and 5 Mini-Projects (MPs)
+**Assignments:**  There will be 7 weekly assignments and 1 final presentation
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 
@@ -99,9 +91,8 @@ The final grade for the class will be calculated as follows: (example)
 
 | Name                 | Grade | Total Points |
 | ----------------------- | ------- | ---------------- |
-|   Tooling Assignments: | 10% | 50 |
-|                MP 1-5: | 50% | 200 |                 
-|         Final Project: | 40% | 150 |
+|   Weekly Assignments: | 50% | 70 |
+|         Final Project: | 50% | 70 |
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.
 
