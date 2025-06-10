@@ -51,7 +51,7 @@ For Windows, place a screenshot of the version command output for: `winget --ver
 
 ### Linux
 
-Use the distros built in Package Manger where needed.
+Use the distros built in Package Manger where needed (but NOT for `Vagrant` and `Packer`).
 
 ### Commands to run and install all the software
 
@@ -59,14 +59,20 @@ Use the distros built in Package Manger where needed.
 
 For MacOS using Homebrew:
 
+For Vagrant and Packer we need to install the Hashicorp tap first.
+
+`brew tap hashicorp/tap`
+
 ```bash
-brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install virtualbox ; brew install --cask vagrant ; brew install packer ; brew install --cask theiaide
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install virtualbox ; brew install hashicorp/tap/hashicorp-vagrant ; brew install hashicorp/tap/hashicorp-vagrant ; brew install --cask theiaide
 ```
 
 For M1 Macs you will run the same as above but without the VirtualBox install:
 
+`brew tap hashicorp/tap`
+
 ```bash
-brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask vagrant ; brew install packer
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install hashicorp/tap/hashicorp-vagrant ; brew install hashicorp/tap/hashicorp-vagrant
 ```
 
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
