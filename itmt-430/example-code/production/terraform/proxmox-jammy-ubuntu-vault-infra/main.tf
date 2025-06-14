@@ -21,33 +21,33 @@ resource "proxmox_vm_qemu" "vault" {
   os_type     = "cloud-init"
   memory      = var.memory
   cpu {
-  cores           = var.cores
-  sockets         = var.sockets
+    cores   = var.cores
+    sockets = var.sockets
   }
-  skip_ipv6       = true
-  scsihw      = "virtio-scsi-pci"
-  boot        = "order=virtio0"
-  agent       = 1
-  tags        = var.tags
+  skip_ipv6 = true
+  scsihw    = "virtio-scsi-pci"
+  boot      = "order=virtio0"
+  agent     = 1
+  tags      = var.tags
 
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"
   ipconfig2 = "ip=dhcp"
 
   network {
-    id=0
+    id     = 0
     model  = "virtio"
     bridge = "vmbr0"
   }
 
   network {
-    id=1
+    id     = 1
     model  = "virtio"
     bridge = "vmbr1"
   }
 
   network {
-    id=2
+    id     = 2
     model  = "virtio"
     bridge = "vmbr2"
   }

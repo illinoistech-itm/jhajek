@@ -8,7 +8,7 @@ resource "random_id" "id" {
 
 # https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/shuffle#example-usage
 resource "random_shuffle" "datadisk" {
-  input        = ["datadisk4","datadisk2","datadisk3","datadisk1"]
+  input        = ["datadisk4", "datadisk2", "datadisk3", "datadisk1"]
   result_count = 1
 }
 
@@ -48,33 +48,33 @@ resource "proxmox_vm_qemu" "vanilla-server" {
   os_type     = "cloud-init"
   memory      = var.memory
   cpu {
-  cores           = var.cores
-  sockets         = var.sockets
+    cores   = var.cores
+    sockets = var.sockets
   }
-  skip_ipv6       = true
-  scsihw      = "virtio-scsi-single"
-  boot        = "order=virtio0"
-  agent       = 1
-  tags        = var.tags
+  skip_ipv6 = true
+  scsihw    = "virtio-scsi-single"
+  boot      = "order=virtio0"
+  agent     = 1
+  tags      = var.tags
 
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"
   ipconfig2 = "ip=dhcp"
 
   network {
-    id=0
+    id     = 0
     model  = "virtio"
     bridge = "vmbr0"
   }
 
   network {
-    id=1
+    id     = 1
     model  = "virtio"
     bridge = "vmbr1"
   }
 
   network {
-    id=2
+    id     = 2
     model  = "virtio"
     bridge = "vmbr2"
     #macaddr = "04:9F:15:00:00:00" 

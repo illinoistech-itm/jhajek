@@ -45,30 +45,30 @@ data "vault_generic_secret" "target_node" {
 ###############################################################################
 
 resource "proxmox_vm_qemu" "load-balancer" {
-  count       = var.lb-numberofvms
-  name        = "${var.lb-yourinitials}-vm${count.index}.service.consul"
-  desc        = var.lb-desc
+  count = var.lb-numberofvms
+  name  = "${var.lb-yourinitials}-vm${count.index}.service.consul"
+  desc  = var.lb-desc
   #target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
   target_node = random_shuffle.nodename.result[0]
   clone       = var.lb-template_to_clone
   os_type     = "cloud-init"
   memory      = var.lb-memory
   cpu {
-  cores           = var.lb-cores
-  sockets         = var.lb-sockets
+    cores   = var.lb-cores
+    sockets = var.lb-sockets
   }
-  skip_ipv6       = true
-  scsihw      = "virtio-scsi-pci"
-  boot        = "order=virtio0"
-  agent       = 1
-  tags        = var.lb-tags
-  
+  skip_ipv6 = true
+  scsihw    = "virtio-scsi-pci"
+  boot      = "order=virtio0"
+  agent     = 1
+  tags      = var.lb-tags
+
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"
   ipconfig2 = "ip=dhcp"
 
   network {
-    id=0
+    id     = 0
     model  = "virtio"
     bridge = "vmbr0"
     # Edit in the terraform.tfvars and add your assigned mac address
@@ -77,13 +77,13 @@ resource "proxmox_vm_qemu" "load-balancer" {
   }
 
   network {
-    id=1
+    id     = 1
     model  = "virtio"
     bridge = "vmbr1"
   }
 
   network {
-    id=2
+    id     = 2
     model  = "virtio"
     bridge = "vmbr2"
   }
@@ -152,42 +152,42 @@ output "proxmox_lb_ip_address_default" {
 ###############################################################################
 
 resource "proxmox_vm_qemu" "frontend-webserver" {
-  count       = var.frontend-numberofvms
-  name        = "${var.frontend-yourinitials}-vm${count.index}.service.consul"
-  desc        = var.frontend-desc
+  count = var.frontend-numberofvms
+  name  = "${var.frontend-yourinitials}-vm${count.index}.service.consul"
+  desc  = var.frontend-desc
   #target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
   target_node = random_shuffle.nodename.result[0]
   clone       = var.frontend-template_to_clone
   os_type     = "cloud-init"
   memory      = var.frontend-memory
   cpu {
-  cores           = var.frontend-cores
-  sockets         = var.frontend-sockets
+    cores   = var.frontend-cores
+    sockets = var.frontend-sockets
   }
-  skip_ipv6       = true
-  scsihw      = "virtio-scsi-pci"
-  boot        = "order=virtio0"
-  agent       = 1
-  tags        = var.fe-tags
+  skip_ipv6 = true
+  scsihw    = "virtio-scsi-pci"
+  boot      = "order=virtio0"
+  agent     = 1
+  tags      = var.fe-tags
 
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"
   ipconfig2 = "ip=dhcp"
 
   network {
-    id=0
+    id     = 0
     model  = "virtio"
     bridge = "vmbr0"
   }
 
   network {
-    id=1
+    id     = 1
     model  = "virtio"
     bridge = "vmbr1"
   }
 
   network {
-    id=2
+    id     = 2
     model  = "virtio"
     bridge = "vmbr2"
   }
@@ -249,42 +249,42 @@ output "proxmox_frontend_ip_address_default" {
 # Terraform Plan for backend Database instances
 ###############################################################################
 resource "proxmox_vm_qemu" "backend-database" {
-  count       = var.backend-numberofvms
-  name        = "${var.backend-yourinitials}-vm${count.index}.service.consul"
-  desc        = var.backend-desc
+  count = var.backend-numberofvms
+  name  = "${var.backend-yourinitials}-vm${count.index}.service.consul"
+  desc  = var.backend-desc
   #target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
   target_node = random_shuffle.nodename.result[0]
   clone       = var.backend-template_to_clone
   os_type     = "cloud-init"
   memory      = var.backend-memory
   cpu {
-  cores           = var.backend-cores
-  sockets         = var.backend-sockets
+    cores   = var.backend-cores
+    sockets = var.backend-sockets
   }
-  skip_ipv6       = true
-  scsihw      = "virtio-scsi-pci"
-  boot        = "order=virtio0"
-  agent       = 1
-  tags        = var.be-tags
+  skip_ipv6 = true
+  scsihw    = "virtio-scsi-pci"
+  boot      = "order=virtio0"
+  agent     = 1
+  tags      = var.be-tags
 
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"
   ipconfig2 = "ip=dhcp"
 
   network {
-    id=0
+    id     = 0
     model  = "virtio"
     bridge = "vmbr0"
   }
 
   network {
-    id=1
+    id     = 1
     model  = "virtio"
     bridge = "vmbr1"
   }
 
   network {
-    id=2
+    id     = 2
     model  = "virtio"
     bridge = "vmbr2"
   }
