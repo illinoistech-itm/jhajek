@@ -8,13 +8,12 @@ resource "random_id" "id" {
 
 # https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/shuffle#example-usage
 resource "random_shuffle" "datadisk" {
-  #input        = ["datadisk1","datadisk2","datadisk3","datadisk4"]
-  input        = ["datadisk1", "datadisk2"]
+  input        = ["datadisk4","datadisk2","datadisk3","datadisk1"]
   result_count = 1
 }
 
 resource "random_shuffle" "nodename" {
-  input        = ["NODENAME3", "NODENAME4"]
+  input        = [data.vault_generic_secret.target_node.data["SYSTEM42"], data.vault_generic_secret.target_node.data["SYSTEM41"]]
   result_count = 1
 }
 
@@ -44,12 +43,15 @@ resource "proxmox_vm_qemu" "vanilla-server" {
   count       = var.numberofvms
   name        = "${var.yourinitials}-vm${count.index}.service.consul"
   desc        = var.desc
-  target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
+  target_node = random_shuffle.nodename.result[0]
   clone       = var.template_to_clone
   os_type     = "cloud-init"
   memory      = var.memory
-  cores       = var.cores
-  sockets     = var.sockets
+  cpu {
+  cores           = var.cores
+  sockets         = var.sockets
+  }
+  skip_ipv6       = true
   scsihw      = "virtio-scsi-single"
   boot        = "order=virtio0"
   agent       = 1
@@ -60,16 +62,19 @@ resource "proxmox_vm_qemu" "vanilla-server" {
   ipconfig2 = "ip=dhcp"
 
   network {
+    id=0
     model  = "virtio"
     bridge = "vmbr0"
   }
 
   network {
+    id=1
     model  = "virtio"
     bridge = "vmbr1"
   }
 
   network {
+    id=2
     model  = "virtio"
     bridge = "vmbr2"
     #macaddr = "04:9F:15:00:00:00" 

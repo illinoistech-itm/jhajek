@@ -53,18 +53,22 @@ resource "proxmox_vm_qemu" "load-balancer" {
   clone       = var.lb-template_to_clone
   os_type     = "cloud-init"
   memory      = var.lb-memory
-  cores       = var.lb-cores
-  sockets     = var.lb-sockets
+  cpu {
+  cores           = var.lb-cores
+  sockets         = var.lb-sockets
+  }
+  skip_ipv6       = true
   scsihw      = "virtio-scsi-pci"
   boot        = "order=virtio0"
   agent       = 1
   tags        = var.lb-tags
-
+  
   ipconfig0 = "ip=dhcp"
   ipconfig1 = "ip=dhcp"
   ipconfig2 = "ip=dhcp"
 
   network {
+    id=0
     model  = "virtio"
     bridge = "vmbr0"
     # Edit in the terraform.tfvars and add your assigned mac address
@@ -73,11 +77,13 @@ resource "proxmox_vm_qemu" "load-balancer" {
   }
 
   network {
+    id=1
     model  = "virtio"
     bridge = "vmbr1"
   }
 
   network {
+    id=2
     model  = "virtio"
     bridge = "vmbr2"
   }
@@ -154,8 +160,11 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
   clone       = var.frontend-template_to_clone
   os_type     = "cloud-init"
   memory      = var.frontend-memory
-  cores       = var.frontend-cores
-  sockets     = var.frontend-sockets
+  cpu {
+  cores           = var.fe-cores
+  sockets         = var.fe-sockets
+  }
+  skip_ipv6       = true
   scsihw      = "virtio-scsi-pci"
   boot        = "order=virtio0"
   agent       = 1
@@ -166,16 +175,19 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
   ipconfig2 = "ip=dhcp"
 
   network {
+    id=0
     model  = "virtio"
     bridge = "vmbr0"
   }
 
   network {
+    id=1
     model  = "virtio"
     bridge = "vmbr1"
   }
 
   network {
+    id=2
     model  = "virtio"
     bridge = "vmbr2"
   }
@@ -245,8 +257,11 @@ resource "proxmox_vm_qemu" "backend-database" {
   clone       = var.backend-template_to_clone
   os_type     = "cloud-init"
   memory      = var.backend-memory
-  cores       = var.backend-cores
-  sockets     = var.backend-sockets
+  cpu {
+  cores           = var.be-cores
+  sockets         = var.be-sockets
+  }
+  skip_ipv6       = true
   scsihw      = "virtio-scsi-pci"
   boot        = "order=virtio0"
   agent       = 1
@@ -257,16 +272,19 @@ resource "proxmox_vm_qemu" "backend-database" {
   ipconfig2 = "ip=dhcp"
 
   network {
+    id=0
     model  = "virtio"
     bridge = "vmbr0"
   }
 
   network {
+    id=1
     model  = "virtio"
     bridge = "vmbr1"
   }
 
   network {
+    id=2
     model  = "virtio"
     bridge = "vmbr2"
   }
