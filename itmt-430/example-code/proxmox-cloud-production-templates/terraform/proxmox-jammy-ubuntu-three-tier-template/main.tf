@@ -161,8 +161,8 @@ resource "proxmox_vm_qemu" "frontend-webserver" {
   os_type     = "cloud-init"
   memory      = var.frontend-memory
   cpu {
-  cores           = var.fe-cores
-  sockets         = var.fe-sockets
+  cores           = var.frontend-cores
+  sockets         = var.frontend-sockets
   }
   skip_ipv6       = true
   scsihw      = "virtio-scsi-pci"
@@ -258,8 +258,8 @@ resource "proxmox_vm_qemu" "backend-database" {
   os_type     = "cloud-init"
   memory      = var.backend-memory
   cpu {
-  cores           = var.be-cores
-  sockets         = var.be-sockets
+  cores           = var.backend-cores
+  sockets         = var.backend-sockets
   }
   skip_ipv6       = true
   scsihw      = "virtio-scsi-pci"
