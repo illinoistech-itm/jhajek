@@ -100,7 +100,7 @@ resource "proxmox_vm_qemu" "load-balancer" {
     }
   }
   #https://developer.hashicorp.com/terraform/language/meta-arguments/depends_on
-  # Nginx requires that all three nodes be runnning before the load
+  # Nginx requires that all three nodes be running before the load
   # balancer service will start - otherwise your Nginx LB will be in 
   # a "stopped" service state. This forces a dependency that Terraform cannot
   # automatically infer -- hence the need for depends_on
@@ -108,7 +108,7 @@ resource "proxmox_vm_qemu" "load-balancer" {
 
   provisioner "remote-exec" {
     # This inline provisioner is needed to accomplish the final fit and finish of your deployed
-    # instance and condigure the system to register the FQDN with the Consul DNS system
+    # instance and configure the system to register the FQDN with the Consul DNS system
     inline = [
       "sudo hostnamectl set-hostname ${var.lb-yourinitials}-vm${count.index}",
       "sudo sed -i 's/changeme/${random_id.id.dec}${count.index}/' /etc/consul.d/system.hcl",
