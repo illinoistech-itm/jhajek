@@ -196,9 +196,11 @@ Refer to 13.6.4 and 13.6.5 in the [Linux Textbook](https://github.com/jhajek/Lin
 
 ### Step 9: Second Packer Template 
 
-This Template will build a single Vanilla Ubuntu Server. 
+This Template will build a single Vanilla Ubuntu Server Template. 
 
 ### Step 10: Second Terraform Template
+
+This create a single VM instance from your created VM template.
 
 ### Step 11: Three-tier Application Explanation
 
