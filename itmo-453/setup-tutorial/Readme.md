@@ -115,6 +115,7 @@ itmt-430 > example-code > production
 ```
 This folder includes: 
 
+* You need to go through the process of filling out the `variables.pkr.hcl` with the provided credentials to build your Vault Server 
 * The first vault template: `promox-jammy-vault-template` 
   * You will be managing your own secrets 
   * We need to build a Vault server first
