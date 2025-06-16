@@ -161,7 +161,7 @@ You can now initialize and unseal your Vault. You will want to refer to the Vaul
 
 Create new values in the policy file, `itmo453-secrets.hcl` -- adjust the policy name accordingly. 
 
-```json
+```
 path "secret/data/*" { 
   capabilities = ["read","create", "update","delete"] 
 } 
