@@ -131,7 +131,9 @@ These steps will complete and build an Ubuntu server with Vault, the `.bashrc`, 
 
 ### Step 5: Deploying Instances with Terraform 
 
-Terraform is Hashicorp’s application deployment tool. Like Vagrant, but all grown up. It allows you to automate infrastructure deployment on any cloud or VM platform.  
+What is [Terraform](https://developer.hashicorp.com/terraform "webpage for Terraform")? Terraform is an infrastructure as code tool that lets you build, change, and version infrastructure safely and efficiently.
+
+[Terraform](https://developer.hashicorp.com/terraform "webpage for Terraform") is Hashicorp’s application deployment tool. Like Vagrant, but all grown up. It allows you to automate infrastructure deployment on any cloud or VM platform.  
 
 ![*Terraform templates*](./images/terraform.png "screenshot of Terraform templates")
 
@@ -140,3 +142,58 @@ Steps:
 * `terraform init` (first time only, per directory) 
 * `terraform validate`
 * `terraform apply`
+
+### Step 6: Configure your Vault Server 
+
+You will start by SSHing into your newly deployed Vault Server. The IP address will be printed out on the last line of a successful `terraform apply` command. Otherwise you can find it by selecting the instance of you VM in the Proxmox Web Console. 
+
+![*Proxmox Web Console - Summary Tab*](./images/ip.png "screenshot proxmox web console")
+
+```
+ssh -i ./id_ed25519_vault_student_production vagrant@system73.rice.iit.edu
+```
+
+The private key listed here is the private key that matches the public key you generated ON the buildserver. Not the key for GitHub on the buildserver, but the match to the public key that you inserted into the `subiquity > http > user-data` file. In this case I moved the private key out of the packer directory and into the directory where the Terraform templates are.
+
+You can now initialize and unseal your Vault. You will want to refer to the Vault tutorial. This will be the single Vault server you use for the rest of the project. 
+
+### Step 7: Installing Vault via Ubuntu CLI 
+
+Create new values in the policy file, `itmo453-secrets.hcl` -- adjust the policy name accordingly. 
+
+```json
+path "secret/data/*" { 
+  capabilities = ["read","create", "update","delete"] 
+} 
+
+path "auth/token/create" { 
+   capabilities = ["create", "read", "update", "list"] 
+} 
+```
+
+Finish the tutorial by creating a `VAULT TOKEN` for these credentials. Note these credentials are pretty wide-open. Feel free to experiment on reducing the capabilities. There will be some additional secrets that were not present in the tutorial. Later you will need to add additional secrets, but these will get you started.
+
+```
+vault kv put -mount=secret NODENAME SYSTEM41=system41 SYSTEM42=system42 
+vault kv put -mount=secret SSH SSHUSER=vagrant SSHPW=vagrant 
+vault kv put -mount=secret URL S41=https://system41.rice.iit.edu:8006/api2/json S42=https://system42.rice.iit.edu:8006/api2/json 
+vault kv put -mount=secret ACCESSKEY PK-USERNAME='hajek-pk@pve!hajek-itmt4302024' TF-USERNAME='hajek-tf@pve!hajek-itmt4302024' 
+vault kv put -mount=secret SECRETKEY PK-TOKEN='7935a1ca-7775-487f-adaa-9999999999b67' TF-TOKEN='c4662ce8-a9eb-4424-8573-9999999999140' 
+vault kv put -mount=secret DB DBPASS=letmein DBUSER=controller DATABASENAME=foo DBURL=team-00-db.service.console CONNECTIONFROMIPRANGE='10.110.%.%' 
+```
+ 
+*Advanced:* Vault MySQL integration: [MySQL/MariaDB database secrets engine](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage MySQL Vault integration")
+
+### Step 8: Configure Your Account on the Buildserver to Access Vault 
+
+Most of the sample code can be used directly if your Vault Server is configured correctly. In the `variables.pkr.hcl` you will need to adjust the variable names.
+
+You will also need to setup your Vault server Environment variables but editing your `.bashrc` file on the buildserver located in your Home directory. 
+
+Refer to 13.6.4 and 13.6.5 in the [Linux Textbook](https://github.com/jhajek/Linux-text-book-part-1/blob/master/Chapter-13/chapter-13.md#setting-vault-environment-variables-on-your-host-linux-system "webpage demonstrating configuring Vault on the client-side")
+
+![*Buildserver .bashrc*](./images/bashrc.png "screenshot .bashrc on Buildserver")
+
+### Step 9: Second Packer Template 
+
+This Template will build a single Vanilla Ubuntu Server. 
