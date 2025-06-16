@@ -128,3 +128,15 @@ Make sure to execute these commands:
 * `packer build .`
 
 These steps will complete and build an Ubuntu server with Vault, the `.bashrc`, and the firewall pre-configured via Packer's provisioning system. This will create a VM template on the Proxmox Cluster in which we can deploy arbitrary number of VMs via Terraform.
+
+### Step 5: Deploying Instances with Terraform 
+
+Terraform is Hashicorp’s application deployment tool. Like Vagrant, but all grown up. It allows you to automate infrastructure deployment on any cloud or VM platform.  
+
+![*Terraform templates*](./images/terraform.png "screenshot of Terraform templates")
+
+Steps:
+
+* `terraform init` (first time only, per directory) 
+* `terraform validate`
+* `terraform apply`
