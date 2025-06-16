@@ -197,3 +197,13 @@ Refer to 13.6.4 and 13.6.5 in the [Linux Textbook](https://github.com/jhajek/Lin
 ### Step 9: Second Packer Template 
 
 This Template will build a single Vanilla Ubuntu Server. 
+
+### Step 10: Second Terraform Template
+
+### Step 11: Three-tier Application Explanation
+
+See the [additional tutorial](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/project-tutorials/three-tier-tutorial "webpage Internal Cloud Network Organization") to explain the organization of our internal network.
+
+## Conclusion
+
+In this tutorial we were able to successfully connect and configure access to the Proxmox See-through Cloud. We were able to setup secrets' management and deploy a sample three-tier web application via Packer and Terraform, demonstrating automation and Linux OS concepts in a Cloud Native manner.
