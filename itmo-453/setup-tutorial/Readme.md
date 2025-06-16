@@ -96,4 +96,34 @@ On the buildserver, you will need to generate another ed25519 public private key
 
 * Repeat the process from the Git Tutorial on the buildserver 
 * Create a config file containing the necessary information in your .ssh directory 
-* Clone your own private repo code  
+* Clone your own private repo code
+
+### Step 3: Location of credentials
+
+The credentials you will need are located in your buildserver home directory in a file named: `HAWKID-proxmox-credentials.txt`.
+
+The first paragraph will contain your Cluster web console credentials. The next text blocks surrounded by textboxes will contain API Access and Secret Keys for building and deploying virtual machine artifacts via Packer and Terraform on the Proxmox cluster.
+
+### Step 4: Example code for initial Vault construction
+
+There are Packer templates available in the [https://github.com/illinoistech-itm/jhajek](https://github.com/illinoistech-itm/jhajek "webpage for jhajek sample code repo") repo. You can also clone this to your own local system to further investigate the code base. BE CAREFUL! Not to clone the jhajek repo into another existing repo. Git can become confused when repos are embedded inside of each other. 
+
+![*Example Code location*](./images/430.png "screenshot for example code location")
+
+```
+itmt-430 > example-code > production
+```
+This folder includes: 
+
+* The first vault template: `promox-jammy-vault-template` 
+  * You will be managing your own secrets 
+  * We need to build a Vault server first
+    * We will build it the same way we did the in the Vault Tooling Assignment
+
+Make sure to execute these commands: 
+
+* `packer init .` (first time only) 
+* `packer validate .`
+* `packer build .`
+
+These steps will complete and build an Ubuntu server with Vault, the `.bashrc`, and the firewall pre-configured via Packer's provisioning system. This will create a VM template on the Proxmox Cluster in which we can deploy arbitrary number of VMs via Terraform.
