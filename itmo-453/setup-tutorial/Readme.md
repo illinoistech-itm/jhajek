@@ -186,7 +186,7 @@ vault kv put -mount=secret DB DBPASS=letmein DBUSER=controller DATABASENAME=foo 
 
 ### Step 8: Configure Your Account on the Buildserver to Access Vault 
 
-Most of the sample code can be used directly if your Vault Server is configured correctly. In the `variables.pkr.hcl` you will need to adjust the variable names.
+Most of the sample code can be used directly if your Vault Server is configured correctly.
 
 You will also need to setup your Vault server Environment variables but editing your `.bashrc` file on the buildserver located in your Home directory. 
 
