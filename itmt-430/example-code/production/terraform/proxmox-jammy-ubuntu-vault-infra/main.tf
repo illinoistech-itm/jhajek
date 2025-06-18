@@ -1,6 +1,7 @@
 ###############################################################################################
-# This template demonstrates a Terraform plan to deploy one Ubuntu Focal 20.04 instance.
-# Run this by typing: terraform apply -parallelism=1
+# This template demonstrates a Terraform plan 
+# Documentation: 
+# https://registry.terraform.io/providers/Telmate/proxmox/latest/docs/resources/vm_qemu
 ###############################################################################################
 resource "random_id" "id" {
   byte_length = 8
