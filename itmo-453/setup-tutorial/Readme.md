@@ -194,17 +194,17 @@ Refer to 13.6.4 and 13.6.5 in the [Linux Textbook](https://github.com/jhajek/Lin
 
 ![*Buildserver .bashrc*](./images/bashrc.png "screenshot .bashrc on Buildserver")
 
-### Step 9: Second Packer Template 
-
-This Template will build a single Vanilla Ubuntu Server Template. 
-
-### Step 10: Second Terraform Template
-
-This create a single VM instance from your created VM template.
-
-### Step 11: Three-tier Application Explanation
+### Step 9: Three-tier Application Explanation
 
 See the [additional tutorial](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/project-tutorials/three-tier-tutorial "webpage Internal Cloud Network Organization") to explain the organization of our internal network.
+
+### Step 10: Three-tier Web Application Packer Templates 
+
+Here we will build our example three-tier web application VM templates.
+
+### Step 11: Three-tier Web Application Terraform Templates
+
+Here we will deploy our example three-tier web application VMs.
 
 ## Conclusion
 

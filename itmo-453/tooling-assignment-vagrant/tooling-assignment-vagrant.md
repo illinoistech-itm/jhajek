@@ -73,13 +73,13 @@ We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 22.04 known
 * `mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls`
 * `mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls`
 
-### Vagrant Commands for Parallels on Apple Silicon
+### Vagrant Commands for Parallels on Apple Silicon M-series
 
-Parallels is a Apple Silicon native virtualization solution, equal in all senses to VirtualBox on x86 hardware. It does require a couple of extra items detailed at this [KB 122843 article](https://kb.parallels.com/en/122843 "webpage for parallels kb article").
+Parallels is a Apple Silicon, arm64 native virtualization solution, equal in all senses to VirtualBox on x86 hardware. It does require a couple of extra items detailed at this [KB 122843 article](https://kb.parallels.com/en/122843 "webpage for parallels kb article").
 
 Student discount price for [Parallels Pro edition -- one year license](https://www.parallels.com/landingpage/pd/education/ "webpage parallels pro edition").
 
-For those using Apple Silicon Macs and Parallels you will need to replace the names of the Boxes in the demos with these two that have been prepared for M1 macs and parallels. Documentation and installation [instructions provided by Parallels](https://parallels.github.io/vagrant-parallels/docs/usage.html "webpage for parallels and vagrant installation on M1 macs").
+For those using Apple Silicon Macs and Parallels you will need to replace the names of the Boxes in the demos with these two that have been prepared for M1 macs and parallels. Documentation and installation [instructions provided by Parallels](https://parallels.github.io/vagrant-parallels/docs/usage.html "webpage for parallels and vagrant installation on M-series macs").
 
 Installation instructions 
 
@@ -87,17 +87,16 @@ Installation instructions
   * `vagrant plugin install vagrant-parallels`
   * This will install the parallels provider for Vagrant
 
-We will now use Vagrant to retrieve 2 Linux Distributions, Debian 11 and an [AlmaLinux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpage release notes for AlmaLinux 9") (CentOS/Red Hat based) Virtual Machines:
+We will now use Vagrant to retrieve 2 Linux Distributions prepared for M-series processors (arm64), Ubuntu Noble 24.04 and [AlmaLinux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpage release notes for AlmaLinux 9") (CentOS/Red Hat based) Virtual Machines:
 
-  * `mkdir jammy64 ; cd jammy64 ; vagrant init bento/ubuntu-22.04-arm64 ; ls`
-  * `mkdir debian12 ; cd debian12 ; vagrant init bento/debian-12-arm64 ; ls`
-  * `mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls`
+* `mkdir noble64 ; cd noble64 ; vagrant init bento/ubuntu-24.04 ; ls`
+* `mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls`
 
 This will retrieve already created vanilla server installs. All instructions from here on out are the same.
 
 ### The Vagrantfile
 
-Once these commands are executed -- both under the `itmt-430` directory, you will see a file named: `Vagrantfile` that has been created. Let us take a look at this file. You can do so via using the commands on MacOS or Windows from the Terminal.
+Once these commands are executed, you will see a file named: `Vagrantfile` that has been created. Let us take a look at this file. You can do so via using the commands on MacOS or Windows from the Terminal.
 
 * `code Vagrantfile`
 * `vim Vagrantfile`
@@ -107,9 +106,9 @@ This file is essentially your configuration file. In this abstraction, Vagrant w
 
 ### Start a Vagrant Box
 
-From our jammy64 directory, let us start our first Vagrant Box. From the Terminal type: ```vagrant up```. What you will see is the Box file with the VirtualBox (or Parallels) vm being extracted and registered with your virtualization software. Next the system will begin to boot. The first install will take a bit longer as some additional drivers are being installed. This only happens on first boot. 
+From our jammy64 directory, let us start our first Vagrant Box. From the Terminal type: `vagrant up`. What you will see is the Box file with the VirtualBox (or Parallels) vm being extracted and registered with your virtualization software. Next the system will begin to boot. The first install will take a bit longer as some additional drivers are being installed. This only happens on first boot. 
 
-Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: ```vagrant ssh```, and we are faced with an Ubuntu Server command prompt. What was the password? What was the IP address? You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the AlmaLinux 9 box (almalinux/9).
+Once this step is successful, we need to establish a connection to the virtual machine via SSH (secure shell). We do this by the command: `vagrant ssh`, and we are faced with an Ubuntu Server command prompt. What was the password? What was the IP address? You don't know and don't need to know as Vagrant has abstracted all of this away and allowed you to get to the focus of all of this -- installing and running software. Open a new Terminal window and repeat the steps above for the AlmaLinux 9 box (almalinux/9).
 
 ### Additional Vagrant Commands
 
