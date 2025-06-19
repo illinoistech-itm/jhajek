@@ -194,6 +194,7 @@ All this requires is to modify the `resource` block of your load-balancer in you
 
 ```hcl
 network {
+  id     = 0
   model  = "virtio"
   bridge = "vmbr0"
  }
@@ -203,8 +204,9 @@ Should be edited to say this:
 
 ```hcl
 network {
-  model  = "virtio"
-  bridge = "vmbr0"
+  id      = 0
+  model   = "virtio"
+  bridge  = "vmbr0"
   # Replace this mac addr with your assigned Mac
   macaddr = "04:9F:15:00:00:21"
   }
