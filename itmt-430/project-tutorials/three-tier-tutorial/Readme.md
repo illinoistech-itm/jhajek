@@ -249,13 +249,99 @@ build {
 
 This will require you create an additional `ed25519` public/private keypair that will be placed in the directory where you execute the `packer build .` command. You will add the public key portion to your GitHub account so that your virtual machine instance can use these credentials to authenticate. You will need to make note of the keys and make proper adjustments to the names.
 
-There is also an additional security step, at the very end of the Packer provisioning phase, you will see a script called `cleanup.sh`. This will delete your private key off of your server instance just before completing the provisioner phase--so that even if your instance is compromised--no keys will be avaialble to steal.
+There is also an additional security step, at the very end of the Packer provisioning phase, you will see a script called `cleanup.sh`. This will delete your private key off of your server instance just before completing the provisioner phase--so that even if your instance is compromised--no keys will be available to abuse.
 
-### Where to Clone
+### Values that need to be changed
 
-Cloning then takes place in a shell provisioner. The shell script is named `clone-team-repo.sh`. The essential code in that script is this command: `sudo -u vagrant git clone git@github.com:illinoistech-itm/team-00.git`. This clones your team code (**NOTE**: replace team-00 with your team repo name). Most likely you will clone your source code after you have installed all of the infrastructure, webservers, and language run-times.
+In the sample code, there are many variables that assume you are using the `team-00` private GitHub repo. I will note the files and lines you need to change. All paths assume you are in the `proxmox-cloud-production-templates` directory.
 
-This is because the team repo will contain custom configurations for configuring the load-balancer, setting up SSL/TLS cert, moving source code into the correct location for servers to render and serve code. Part of this will be envisioning each step that takes place so as to be troubleshooting what might be going wrong.
+#### move-nginx-files.sh
+
+* `packer > scripts > proxmox > three-tier > loadbalancer > move-nginx-files.sh`
+
+```bash
+# This overrides the default nginx conf file enabling loadbalacning and 443 TLS only
+sudo cp -v /home/vagrant/team-00/code/nginx/nginx.conf /etc/nginx/
+sudo cp -v /home/vagrant/team-00/code/nginx/default /etc/nginx/sites-available/
+# This connects the TLS certs built in this script with the instances
+sudo cp -v /home/vagrant/team-00/code/nginx/self-signed.conf /etc/nginx/snippets/
+
+sudo systemctl daemon-reload
+```
+
+Update the path to the `code` folder. The `team-00` placeholder should be replaced with your private repo you were given for the class. Adjust the path as well.
+
+#### clone-team-repo.sh
+
+* `packer > scripts > proxmox > three-tier > clone-team-repo.sh`
+
+```bash
+sudo -u vagrant git clone git@github.com:illinoistech-itm/team-00.git
+```
+
+Update the repo name to clone -- this should be the provided private repo. Make sure you have generated an additional ed25519 key and placed the public key portion into GitHub as a per repo Deploy Key.
+
+#### application-start.sh
+
+* `packer > scripts > proxmox > three-tier > frontend > application-start.sh`
+
+```bash
+cd /home/vagrant/team-00/code/express-static-app/
+```
+
+This line of code needs to be adjusted. Change the `team-00` value to your GitHub repo name and adjust the path to `code` as needed.
+
+#### post_install_prxmx_frontend-webserver.sh
+
+* `packer > scripts > proxmox > three-tier > frontend > post_install_prxmx_frontend-webserver.sh`
+
+```bash
+# Change directory to the location of your JS code
+cd /home/vagrant/team-00/code/express-static-app/
+```
+
+This line of code needs to be adjusted. Change the `team-00` value to your GitHub repo name and adjust the path to `code` as needed.
+
+```bash
+###############################################################################
+# Using Find and Replace via sed to add in the secrets to connect to MySQL
+# There is a .env file containing an empty template of secrets -- essentially
+# this is a hack to pass environment variables into the vm instances
+###############################################################################
+
+sudo sed -i "s/FQDN=/FQDN=$FQDN/" /home/vagrant/team-00/code/express-static-app/.env
+sudo sed -i "s/DBUSER=/DBUSER=$DBUSER/" /home/vagrant/team-00/code/express-static-app/.env
+sudo sed -i "s/DBPASS=/DBPASS=$DBPASS/" /home/vagrant/team-00/code/express-static-app/.env
+sudo sed -i "s/DATABASE=/DATABASE=$DATABASE/" /home/vagrant/team-00/code/express-static-app/.env
+```
+
+These lines are taking the username and password values from Vault and using the to execute inline mysql commands to create users and databases for the example project. Adjust the paths to the files. **Advanced:** This part could be replaced by using the MySQL Vault secrets backend...
+
+#### post_install_prxmx_backend-database.sh
+
+* `packer > scripts > proxmox > three-tier > backend > post_install_prxmx_backend-database.sh`
+
+```bash
+# Change directory to the location of your JS code
+cd /home/vagrant/team-00/code/db-samples
+```
+
+The `team-00` directory name needs to be changed as well as the path to the `code` directory.
+
+#### nginx.conf
+
+* `packer > scripts > proxmox > jammy-services > nginx > nginx.conf`
+
+```
+upstream backend {
+  ip_hash;  # this allows for a sticky session - requests from origin IP always sent to the same backend
+      server team00-fe-vm0.service.consul:3000;
+      server team00-fe-vm1.service.consul:3000;
+      server team00-fe-vm2.service.consul:3000;
+}
+```
+
+Update the value of `team-00-fe` to be the value you have or will provide in the `terraform.tfvars` file for this variable: `frontend-yourinitials`. This is how you will assign you Consul network FQDN so that you can resolve the IP in your application.
 
 ### Troubleshooting
 
