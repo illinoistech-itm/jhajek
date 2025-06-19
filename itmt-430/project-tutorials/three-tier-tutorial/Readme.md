@@ -353,20 +353,6 @@ This is important because if you are trying to troubleshoot the system and the s
 
 Another important concern is Linux system service control. How do you start services at boot? How does your application start at boot? You will need to think about creating systemd `.service` files so that your application can start up immediately at boot--without human intervention.
 
-### Security Concerns
-
-There are many items here that will be of concern regarding security. Things such as passwords, account tokens and account IDs, Google developer API tokens, SSL/TLS certs, database passwords--essentially these are called secrets and they are the most valuable part of your application, the other part being customer private information.
-
-We will begin with applying some verbose ways to securely transmit these values, but you will see quite quickly that this way doesn't scale at all, and makes management of secrets a liability with each of your team members handling secure information. Though we want you to gain a glimpse of just what you are responsible for securing.
-
-In the next sprint, this will be a defining issue and we will be implementing a solution for securing the distribution of secrets.
-
-### User Testing
-
-Your application needs to be tested and bugs or errors need to be filed. For your team's bug tracker we will use `GitHub Issues`. This is the `Issues` tab at the top of your team repo. the UI/UX person is responsible for testing the production systems, attempting to authenticate to Google Oauth, login, create items, and use your site. This assumes that the production system is in a working state, and makes that imperative to progress. You can at your choice split your developers up and assign one to be primarily a coder and one to primarily be a debugger. The issues posted should become Trello cards and work there way through the system and produce an artifact (GitHub commit at the end to show the initial bug as well as the solved issue).
-
-![*GitHub Issues*](./images/issues.png "Image of GitHub Issues")
-
 ## Summary and Conclusion
 
 This sprint is a long one, but important as we are beginning to create an actual working cloud native application. Continue to make use of the principles we are learning in the DevOps handbook and keep working at this--soon you will see the fruits of your labors.
