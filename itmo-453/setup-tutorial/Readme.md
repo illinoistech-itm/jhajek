@@ -200,7 +200,7 @@ See the [additional tutorial](https://github.com/illinoistech-itm/jhajek/tree/ma
 
 ### Step 10: Three-tier Web Application Packer Templates 
 
-Here we will build our example three-tier web application VM templates.
+See this [additional walk-through](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/project-tutorials/application-automation-deployment-with-secrets "webpage explaining example three tier web application.") for extensive three-tier application explanations and descriptions of the different functions needed to build and deploy our three-tier web application.
 
 ### Step 11: Three-tier Web Application Terraform Templates
 
