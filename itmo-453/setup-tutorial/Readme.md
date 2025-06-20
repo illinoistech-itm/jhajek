@@ -1,4 +1,4 @@
-# Cluster Setup Tutorial
+# Cluster Access Setup Tutorial
 
 This is a short description of the tools we need to setup
 
