@@ -101,3 +101,4 @@ You can see this in action, ssh into anyone of your servers and issue the comman
   * This will show you everything currently registered
 * `ping team00-lb-vm0.service.consul`
   * Though this is the instructors demo this will resolve to an IP address
+
