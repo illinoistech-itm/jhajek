@@ -3,4 +3,4 @@
 
 instance-type          = "t2.micro"
 key-name               = "vagrant-463-key-pair"
-tag-name               = "module-03"
+tag                    = "module-03"

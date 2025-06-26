@@ -12,7 +12,7 @@ resource "aws_vpc" "main" {
   instance_tenancy = "default"
 
   tags = {
-    Name = "module-03"
+    Name = var.tag
   }
 }
 
@@ -25,7 +25,7 @@ resource "aws_subnet" "main" {
   cidr_block = "10.0.1.0/24"
 
   tags = {
-    Name = "module-03"
+    Name = var.tag
   }
 }
 
@@ -40,7 +40,7 @@ resource "aws_security_group" "allow_module_03" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name = "module-03"
+    Name = var.tag
   }
 }
 
@@ -88,12 +88,12 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "module_03" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
-  key_name = "vagrant-463-key-pair"
+  instance_type = var.instance-type
+  key_name = var.key-name
   vpc_security_group_ids = aws_security_group.allow_http.id
   subnet_id = aws_subnet.main.id
 
   tags = {
-    Name = "module_03"
+    Name = var.tag
   }
 }

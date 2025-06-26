@@ -14,6 +14,6 @@
 
 variable "instance-type" {}
 variable "key-name" {}
-variable "cnt" {}
+variable "count" {}
 variable "az" { default = ["us-east-2a", "us-east-2b", "us-east-2c"] }
-variable "tag-name" {}
+variable "tag" {}
