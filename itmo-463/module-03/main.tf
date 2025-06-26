@@ -90,7 +90,7 @@ resource "aws_instance" "module_03" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance-type
   key_name = var.key-name
-  vpc_security_group_ids = aws_security_group.allow_http.id
+  vpc_security_group_ids = aws_security_group.allow_module_03.id
   subnet_id = aws_subnet.main.id
 
   tags = {
