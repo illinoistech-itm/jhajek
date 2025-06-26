@@ -24,6 +24,7 @@ resource "aws_vpc" "main" {
 # Create VPC DHCP options -- public DNS provided by Amazon
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_dhcp_options
 
+
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_dhcp_options
 
 
