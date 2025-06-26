@@ -17,6 +17,31 @@ resource "aws_vpc" "main" {
 }
 
 ##############################################################################
+# Block to create an Internet Gateway
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway
+##############################################################################
+
+# Create VPC DHCP options -- public DNS provided by Amazon
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_dhcp_options
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_dhcp_options
+
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway
+
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table
+
+
+# Now we need to associate the route_table to subnets
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association
+
+
+# Now make the new route the main associated route
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/main_route_table_association
+
+
+##############################################################################
 # BLock to create a subnet for our VPC
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet
 ##############################################################################
