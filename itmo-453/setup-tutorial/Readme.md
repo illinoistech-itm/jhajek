@@ -27,7 +27,7 @@ If you have more than one MFA set up besides your phone, it could give you a tri
 
 ## SSH Connection
 
-Now we will test your SSH connection to the `buildserver`. From the terminal on your computer run the follwing command, replacing values of mine with yours:
+Now we will test your SSH connection to the `buildserver`. From the terminal on your computer run the following command, replacing values of mine with yours:
 
 ```bash
 ssh -i c:/users/palad/.ssh/id_ed25519_itmo_453_key hajek@system45.rice.iit.edu
