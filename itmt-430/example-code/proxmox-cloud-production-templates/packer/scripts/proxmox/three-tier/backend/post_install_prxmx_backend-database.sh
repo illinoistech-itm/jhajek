@@ -12,7 +12,7 @@ sudo apt-get install -y mariadb-server-10.6
 # Using the variables you are passing via the variables.pkr.hcl file, you can
 # access those variables as Linux ENVIRONMENT variables, use find and replace
 # via sed and inline execute an inline mysql command
-# Albiet this looks a bit hacky -- but it allows us not to hard code 
+# This looks a bit hacky -- but it allows us not to hard code 
 # secrets into our systems when building your backend template 
 #############################################################################
 

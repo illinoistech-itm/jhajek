@@ -87,11 +87,11 @@ Here we are using the `sed` command to find and replace a place holder, `replace
 
 For example if you system names are:
 
-* team00-lb-vm0.service.consul
-* team00-ws-vm0.service.consul
-* team00-ws-vm1.service.consul
-* team00-ws-vm2.service.consul
-* team00-db-vm0.service.consul
+* jrh-lb-vm0.service.consul
+* jrh-fe-vm0.service.consul
+* jrh-fe-vm1.service.consul
+* jrh-fe-vm2.service.consul
+* jrh-db-vm0.service.consul
 
 You would know these FQDNs ahead of time as you will be defining them in the `terraform.tfvars` under the `yourinitials` variable. Since you know the full domain names, you can add these directly into your Nginx loadbalancer configuration and into your application configuration to connect to the database. The IP resolution is completely transparent, as long as the consul service is running.
 
@@ -99,6 +99,71 @@ You can see this in action, ssh into anyone of your servers and issue the comman
 
 * `consul catalog nodes`
   * This will show you everything currently registered
-* `ping team00-lb-vm0.service.consul`
+* `ping jrh-lb-vm0.service.consul`
   * Though this is the instructors demo this will resolve to an IP address
 
+### Firewall Zones
+
+Assuming you are in the `proxmox-cloud-production-templates` directory...
+
+* `packer > scripts > core-jammy > post_install_prxmx-firewall-configuration.sh`
+
+You have the code that does three things
+
+1) Install firewalld
+2) Create three zones
+3) Configure and attach the zones to existing network interfaces
+
+By default all interfaces are locked down and you need to open additional ports in the firewall during the `provisioning `phase.
+
+```bash
+#!/bin/bash
+##############################################################################################
+# This is where you would update or open new firewall ports.
+# By default is open:
+# Port 22 for SSH
+# port 8301 and 8500 are the Gossip protocol and for the instance to be able to 
+# register with the Consul DNS service 
+# Instances will be using firewalld
+##############################################################################################
+sudo apt-get update
+sudo apt-get install -y firewalld
+
+sudo systemctl enable firewalld
+sudo systemctl start firewalld
+##############################################################################################
+# sudo firewall-cmd --zone=public --add-interface=ens18 --permanent
+# Creates a zone that restricts traffic to that one interface ens18
+##############################################################################################
+sudo firewall-cmd --zone=public --add-interface=ens18 --permanent
+sudo firewall-cmd --zone=public --add-service=ssh --permanent
+
+# Create new zone on ens19 called metrics-network for just metrics
+sudo firewall-cmd --new-zone=metrics-network --permanent
+# Attach interface ens19 (eth1) to the new zone
+sudo firewall-cmd --zone=metrics-network --change-interface=ens19 --permanent
+# Created entry for Prometheus
+# sudo firewall-cmd --zone=metrics-network --add-port=9100/tcp --permanent
+
+# Create new zone on ens20 called meta-network for a non-routable internal network
+sudo firewall-cmd --new-zone=meta-network --permanent
+# Attach interface ens20 (eth2) to the new zone
+sudo firewall-cmd --zone=meta-network --change-interface=ens20 --permanent
+
+# Consul ports needed for Gossip protocol on the LAN
+# https://www.consul.io/docs/install/ports
+# Clients only need 8301 tcp & udp to communicate and Gossip with each other
+
+sudo firewall-cmd --zone=meta-network --add-port=8301/tcp --permanent
+sudo firewall-cmd --zone=meta-network --add-port=8301/udp --permanent
+
+# Created entry for Node_exporter to be availabe for scraping
+sudo firewall-cmd --zone=meta-network --add-port=9100/tcp --permanent
+
+##############################################################################################
+# Add any additional firewall ports below this line in this format:
+# sudo firewall-cmd --zone=public --add-port=####/tcp --permanent
+# sudo firewall-cmd --zone=public --add-port=####/udp --permanent
+##############################################################################################
+sudo firewall-cmd --reload
+```
