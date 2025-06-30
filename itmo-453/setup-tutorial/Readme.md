@@ -766,7 +766,7 @@ See this [additional walk-through](https://github.com/illinoistech-itm/jhajek/tr
 
 ### Step 11: Three-tier Web Application Terraform Templates
 
-Here we will deploy our example three-tier web application VMs.
+Here we will deploy our example three-tier web application VMs and explain the content of the files in the `terraform` directory: `main.tf, provider.tf, terraform.tfvars, variables.tf`.
 
 ## Conclusion
 
