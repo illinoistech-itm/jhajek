@@ -11,6 +11,8 @@ If you are off of the campus network, connect via the university VPN client to o
 
 Use your full `@hawk.iit.edu` email and portal password to authenticate. You will have to 2-factor authenticate as well.
 
+If you have more than one MFA set up besides your phone, it could give you a tricky time. If it is not prompting you to input one of your MFA, then close it, reconnect, and try putting `,SMS` directly after your password (no spaces and caps). For example: `password,SMS`.
+
 ## Connect to VPN
 
 Launch the Cisco VPN tool and connect to `vpn.iit.edu` 
