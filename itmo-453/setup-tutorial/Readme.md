@@ -517,7 +517,7 @@ This is due to strict host key checking and is due to the nature that IP address
 In this file, all the application dependencies are installed. This means that if we are using EJS via NodeJS -- served on ExpressJS we need to install those operating system libraries first. Let us take a look at some of the sample bash shell scripts to do this
 
 ```bash
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install -g npm@9.6.0
 ```
@@ -730,39 +730,6 @@ packer build -except='proxmox-iso.load-balancer' .
 # Will build only proxmox-iso.load-balancer
 packer build -only='proxmox-iso.load-balancer' .
 ```
-
-#### Adjustements in the `remote-exec` portion
-
-```hcl
-provisioner "remote-exec" {
-    # This inline provisioner is needed to accomplish the final fit and finish of your deployed
-    # instance and condigure the system to register the FQDN with the Consul DNS system
-    inline = [
-      "sudo hostnamectl set-hostname ${var.backend-yourinitials}-vm${count.index}",
-      "sudo sed -i 's/changeme/${random_id.id.dec}${count.index}/' /etc/consul.d/system.hcl",
-      "sudo sed -i 's/replace-name/${var.backend-yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",
-      "sudo sed -i 's/ubuntu-server/${var.backend-yourinitials}-vm${count.index}/' /etc/hosts",
-      "sudo sed -i 's/FQDN/${var.backend-yourinitials}-vm${count.index}.service.consul/' /etc/update-motd.d/999-consul-dns-message",
-      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"rice-dc-1\"/' /etc/consul.d/consul.hcl",
-      "echo 'retry_join = [\"${var.consulip}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
-      "sudo sed -i 's/HAWKID/${var.consul-service-tag-contact-email}/' /etc/consul.d/node-exporter-consul-service.json",
-      "sudo systemctl daemon-reload",
-      "sudo systemctl restart consul.service",
-      "sudo rm /opt/consul/node-id",
-      "sudo systemctl restart consul.service",
-      "sudo sed -i 's/0.0.0.0/${var.backend-yourinitials}-vm${count.index}.service.consul/' /etc/systemd/system/node-exporter.service",
-      "sudo systemctl daemon-reload",
-      "sudo systemctl enable node-exporter.service",
-      "sudo systemctl start node-exporter.service",
-      "sudo systemctl stop mariadb.service",
-      "sudo sed -i '1,$s/127.0.0.1/${var.backend-yourinitials}-vm${count.index}.service.consul/g' /etc/mysql/mariadb.conf.d/50-server.cnf",
-      "sudo systemctl daemon-reload",
-      "sudo systemctl restart mariadb.service",
-      "echo 'Your FQDN is: ' ; dig +answer -x ${self.default_ipv4_address} +short"
-    ]
-```
-
-See this [additional walk-through](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/project-tutorials/application-automation-deployment-with-secrets "webpage explaining example three tier web application.") for extensive three-tier application explanations and descriptions of the different functions needed to build and deploy our three-tier web application.
 
 ### Step 11: Three-tier Web Application Terraform Templates
 
