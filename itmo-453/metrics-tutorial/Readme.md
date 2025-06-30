@@ -216,3 +216,80 @@ ExecStart=/bin/sh -c '/usr/local/bin/node_exporter --web.listen-address=0.0.0.0:
 WantedBy=multi-user.target
 ```
 
+Even with this service file we need to do a bit more manuvering of the files to get them into the correct locations.
+
+#### Installing the Node Exporter Binary
+
+* `packer > scripts > core-jammy > post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh`
+
+```bash
+#!/bin/bash 
+set -e
+set -v
+
+echo "Downloading Prometheus Node Exporter..."
+wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0/node_exporter-1.4.0.linux-amd64.tar.gz
+tar -xvzf node_exporter-1.4.0.linux-amd64.tar.gz
+
+echo "Create system account and group node_exporter..."
+sudo adduser --system --group node_exporter
+
+echo "Copying extracted node_exporter to /usr/local/bin/..."
+cp -v ./node_exporter-1.4.0.linux-amd64/node_exporter /usr/local/bin/node_exporter
+
+echo "Changing ownership of node_exporter binary..."
+sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
+
+sudo cp -v /home/vagrant/node-exporter.service /etc/systemd/system/node-exporter.service
+#sudo systemctl enable node-exporter.service
+```
+
+This logic is downloading Node Exporter from an internal mirror, extracting the contents, and then copying our binary to the `/usr/local/bin` directory. In addition we see the service file for `node-exporter.service` being copied to the `/etc/systemd/system` directory--that is where user created `.service` files reside.
+
+#### Moving the files into place
+
+* `packer > scripts > core-jammy > post_install_prxmx_install_hashicorp_consul.sh`
+
+```bash
+#!/bin/bash
+
+# script to install hashicorp consul for Proxmox servers
+
+wget -O- http://10.0.0.40/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+#echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] http://10.0.0.40/hashicorp $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt-get update && sudo apt-get install -y consul
+
+sudo systemctl stop consul.service
+sudo mv -v /home/vagrant/system.hcl /etc/consul.d/
+sudo mv -v /home/vagrant/node-exporter-consul-service.json /etc/consul.d/
+sudo systemctl enable consul.service
+
+echo "Sleeping for 5 seconds..."
+sleep 5
+
+```
+
+This file has two purposes: it starts the `Consul` service as well as copies the `node exporter` service config file into the Consul configuration directory: `/etc/consul.d`.
+
+Now when the Consul service starts on each VM, the node_exporter service will also start and register there endpoints with Consul.
+
+#### Where does everything start?
+
+The final piece is run time configuration during the `terraform apply` stage in the `main.tf` file.
+
+```
+# main.tf
+"sudo systemctl daemon-reload",
+"sudo systemctl restart consul.service",
+"sudo rm /opt/consul/node-id",
+"sudo systemctl restart consul.service",
+"sudo sed -i 's/0.0.0.0/${var.lb-yourinitials}-vm${count.index}.service.consul/' /etc/systemd/system/node-exporter.service",
+"sudo systemctl daemon-reload",
+"sudo systemctl enable node-exporter.service",
+"sudo systemctl start node-exporter.service",
+```
+
+You can see in the `provisioner "remote-exec"` block that we start all of our services; consul and node_exporter.
+
+
