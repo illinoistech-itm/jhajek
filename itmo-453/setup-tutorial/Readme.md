@@ -643,8 +643,8 @@ For other platforms you may want to remove or edit this -- for Django there is a
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts         = ["../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-database.sh"]
-    environment_vars = ["DBUSER=${var.DBUSER}","IPRANGE=${var.CONNECTIONFROMIPRANGE}","DBPASS=${var.DBPASS}"]
-    only            = ["proxmox-iso.backend-database"]
+    environment_vars = ["DBUSER=${local.DBUSER}", "IPRANGE=${local.CONNECTIONFROMIPRANGE}", "DBPASS=${local.DBPASS}"]
+    only             = ["proxmox-iso.backend-database41"]
   }
 ```
 
