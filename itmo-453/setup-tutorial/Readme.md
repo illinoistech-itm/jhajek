@@ -355,7 +355,7 @@ All my troubleshooting experience in Linux boils down to three things. I have na
 
 ### Step 10: Three-tier Web Application Packer Templates 
 
-What are we trying to solve in this document and sprint-02? We are reinforcing a few concepts regarding security, deployment, automation, and repeatability. This brings new questions:
+What are we trying to solve? We are reinforcing a few concepts regarding security, deployment, automation, and repeatability. This brings new questions:
 
 * How do we dynamically configure secrets in our application?
   * Can you name some secrets your application has?
@@ -374,26 +374,6 @@ It is highly recommended to install the `HCL` syntax highlighting plugin in VSCo
 
 ![*HCL Syntax Highlighitng*](./images/hcl-plugin.png "image of VSCode HCL Plugin")
 
-#### Example Code Location
-
-Working code to demonstrate all of this is located in two places
-
-* Sample Javascript code is located in a public repo
-  * [https://github.com/illinoistech-itm/team-00](https://github.com/illinoistech-itm/team-00 "git repo for sample code")
-  * Normally should be private but for demo purposes
-* Setup files included
-  * This includes EJS (Javascript) code
-  * Nginx load-balancer configs
-  * SQL files for creating a database and populating it
-* Sample Packer and Terraform build scripts
-  * Located in the [jhajek](https://github.com/illinoistech-itm/jhajek "Git repo for jhajek sample code") sample code repo
-  * If you have cloned previously, issue a `git pull` before starting this tutorial
-  * Under the `itmt-430` directory, `example-code`
-    * All artifacts located under the `proxmox-jammy-ubuntu-three-tier-template` folder
-* View the application in action at [https://system59.rice.iit.edu/](https://system59.rice.iit.edu/ "webpage for exmaple application")
-  * Team000 - you can log into the systems and view any of the content via the GUI console
-  * Username and Password both `vagrant`
-
 #### Parts of the App
 
 For this example you will find a working prototype three-tier application that has:
@@ -403,19 +383,11 @@ For this example you will find a working prototype three-tier application that h
 * TLS cert (self-signed)
 * MariaDB database
   * With a populated table
-* Secrets passed in via Packer's environment_vars command
+* Secrets passed in via Packer's `environment_vars` command
 
 #### Lets Look at the Packer Build Template
 
-We will be starting out by looking at the updates to the Packer build template - [proxmox-jammy-ubuntu-three-tier-template.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/proxmox-cloud-production-templates/packer/proxmox-jammy-ubuntu-three-tier-template/proxmox-jammy-ubuntu-three-tier-template.pkr.hcl "webpage to proxmox-jammy-ubuntu-three-tier-template.pkr.hcl"), go ahead and open it in a tab now.
-
-The first additional we notice is starting on line 134, we see a new `source` block for a load-balancer.
-
-![*Load Balancer Source*](./images/load-balancer.png "image of load-balancer code")
-
-The content of this `source` block doesn't change -- other than to create one more builder, other than to give you one more template/image to deploy instances from. 
-
-![*Three Templates/Images*](./images/three.png "image of three produced templates")
+We will be starting out by looking at the Packer build template - `proxmox-jammy-ubuntu-three-tier-template.pkr.hcl`.
 
 #### Shell Provisioners
 
