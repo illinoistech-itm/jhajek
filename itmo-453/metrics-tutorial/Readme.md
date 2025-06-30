@@ -167,3 +167,28 @@ sudo firewall-cmd --zone=meta-network --add-port=9100/tcp --permanent
 ##############################################################################################
 sudo firewall-cmd --reload
 ```
+
+### How to configure metrics collection
+
+The virtual machines created inside of our cloud and as part of this three-tier example have some vital components already registered. Just running a VM doesn't give you these capabilities. Why? Because operating systems are still considered as a *personal computer* -- we need to add on these capabilities.
+
+The first one is: 
+
+```
+packer > scripts > jammy-services > node-exporter-consul-service.json
+```
+
+```json
+{
+  "service":
+  {"name": "node-exporter",
+    "tags": ["node-exporter", "prometheus","HAWKID"],
+    "port": 9100
+  }
+}
+```
+
+This file is used to register the Node Exporter service with the `Consul` network for each VM that is created. This is important because as VMs are created and destroyed there needs to be an automatic way to see the Node Exporter service as it becomes available.
+
+Now this is different from the point of a VM registering itself with Consul to use DNS forwarding. In this case we are registering the service with `Consul`. Later `Prometheus` will be able to query the service list and know where to find all of the `Node Exporter` endpoints.
+
