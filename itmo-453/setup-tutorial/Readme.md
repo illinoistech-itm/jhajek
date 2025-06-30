@@ -599,7 +599,7 @@ How does this work then, again starting from line 326, we see a new Packer value
     scripts         = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-webserver.sh",
                       "../scripts/proxmox/three-tier/frontend/application-start.sh"]
-    environment_vars = ["DBUSER=${var.DBUSER}","DBPASS=${var.DBPASS}","DATABASE=${var.DATABASE}","FQDN=${var.FQDN}"]                      
+    environment_vars = ["DBUSER=${local.DBUSER}","DBPASS=${local.DBPASS}","DATABASE=${local.DATABASE}","FQDN=${local.FQDN}"]                      
     only            = ["proxmox-iso.frontend-webserver"]
   }
 ```
