@@ -432,7 +432,7 @@ Starting on line 326, we see the file provisioner that contains instructions to 
     scripts         = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
                       "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-webserver.sh",
                       "../scripts/proxmox/three-tier/frontend/application-start.sh"]
-    environment_vars = ["DBUSER=${var.DBUSER}","DBPASS=${var.DBPASS}","DATABASE=${var.DATABASE}","FQDN=${var.FQDN}"]                      
+    environment_vars = ["DBUSER=${local.DBUSER}","DBPASS=${local.DBPASS}","DATABASE=${local.DATABASE}","FQDN=${local.FQDN}"]                      
     only            = ["proxmox-iso.frontend-webserver"]
   }
 ```
@@ -522,7 +522,7 @@ sudo apt-get install -y nodejs
 sudo npm install -g npm@9.6.0
 ```
 
-This code retrieves the NodeJS 16 longterm support PPA repository for Ubuntu Linux and adds it to your operating system, making for an easy installtion of nodejs via the apt package manager. The next line updates the `npm` NodeJS package manager that is installed along with NodeJS. You would adjust this for non-NodeJS code and applications.
+This code retrieves the NodeJS 16 long term support PPA repository for Ubuntu Linux and adds it to your operating system, making for an easy installation of nodejs via the apt package manager. The next line updates the `npm` NodeJS package manager that is installed along with NodeJS. You would adjust this for non-NodeJS code and applications.
 
 ```bash
 # Change directory to the location of your JS code
@@ -541,7 +541,7 @@ This installs the express, ejs, and pm2 packages -- technically the express and 
 sudo -u vagrant pm2 start server.js
 ```
 
-This line is key to start the service initially, note that we use the `sudo -u vagrant` command -- this executes the pm2 start server.js command with sudo privilleges, but gives ownership to any scaffolding created to the `vagrant` user. Otherwise your application would need `root` permission to run and that could be done but is very dangerous and highly unneccesary. This is a security feature. This command needs to be executed where your *index* or *start* page for your JavaScript application is located.
+This line is key to start the service initially, note that we use the `sudo -u vagrant` command -- this executes the pm2 start server.js command with sudo privileges, but gives ownership to any scaffolding created to the `vagrant` user. Otherwise your application would need `root` permission to run and that could be done but is very dangerous and highly unnecessary. This is a security feature. This command needs to be executed where your *index* or *start* page for your JavaScript application is located.
 
 ```bash
 # This creates your javascript application service file
