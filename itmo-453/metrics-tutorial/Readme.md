@@ -192,3 +192,27 @@ This file is used to register the Node Exporter service with the `Consul` networ
 
 Now this is different from the point of a VM registering itself with Consul to use DNS forwarding. In this case we are registering the service with `Consul`. Later `Prometheus` will be able to query the service list and know where to find all of the `Node Exporter` endpoints.
 
+#### Node Exporter Service file
+
+The `Node Exporter` binary is downloaded and installed during the `provisioning` phase of the `packer build .` command. It is just a binary and needs a systemd service file to make the service start at system boot.
+
+* `packer > scripts > jammy-services > node-exporter.service`
+
+```
+[Unit]
+Description=Node Exporter
+Wants=network-online.target
+After=network-online.target
+Wants=consul.service
+After=consul.service
+
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/bin/sh -c '/usr/local/bin/node_exporter --web.listen-address=0.0.0.0:9100 --no-collector.bonding --no-collector.dmi --no-collector.fibrechannel --no-collector.infiniband --no-collector.nfs --no-collector.nfsd --no-collector.nvme --no-collector.xfs'
+
+[Install]
+WantedBy=multi-user.target
+```
+
