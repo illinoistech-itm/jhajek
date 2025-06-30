@@ -292,4 +292,6 @@ The final piece is run time configuration during the `terraform apply` stage in 
 
 You can see in the `provisioner "remote-exec"` block that we start all of our services; consul and node_exporter.
 
+## Conclusion
 
+These are the scripts and run time configurations that are needed to enable single virtual machines to be part of a cloud computing platform -- to enable external metrics publication and handle the ephemeral/dynamic nature of VMs on a cloud. 
