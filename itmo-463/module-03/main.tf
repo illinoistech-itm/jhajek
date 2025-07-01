@@ -40,7 +40,6 @@ resource "aws_route_table" "main" {
   vpc_id = aws_vpc.main.id
 
   route {
-    # must match the size of the VPC CIDR block
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.gw.id
   }
@@ -57,6 +56,10 @@ resource "aws_route_table" "main" {
 # Now associated the route table
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/main_route_table_association
 
+resource "aws_main_route_table_association" "a" {
+  vpc_id         = aws_vpc.foo.id
+  route_table_id = aws_route_table.bar.id
+}
 
 ##############################################################################
 # BLock to create a subnet for our VPC
