@@ -39,15 +39,27 @@ resource "aws_internet_gateway" "gw" {
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway
 
-
+# Now we need to create the route_table to subnets
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table
 
+resource "aws_route_table" "main" {
+  vpc_id = aws_vpc.main.id
 
-# Now we need to associate the route_table to subnets
+  route {
+    cidr_block = "10.0.1.0/24"
+    gateway_id = aws_internet_gateway.gw.id
+  }
+
+  tags = {
+    Name = var.tag
+  }
+}
+
+# Now we need to create the route_table to subnets
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association
 
 
-# Now make the new route the main associated route
+# Now associated the route table
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/main_route_table_association
 
 
