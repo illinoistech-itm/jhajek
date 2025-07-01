@@ -21,6 +21,15 @@ resource "aws_vpc" "main" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway
 ##############################################################################
 
+resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "module-03",
+    Type = "main"
+  }
+}
+
 # Create VPC DHCP options -- public DNS provided by Amazon
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_dhcp_options
 
