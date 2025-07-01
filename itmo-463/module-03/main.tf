@@ -55,15 +55,35 @@ resource "aws_internet_gateway" "gw" {
 # BLock to create a subnet for our VPC
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet
 ##############################################################################
-resource "aws_subnet" "main" {
+resource "aws_subnet" "subneta" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.0.1.0/24"
+  availability_zone = var.az[0]
 
   tags = {
     Name = var.tag
   }
 }
 
+resource "aws_subnet" "subnetb" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.0.2.0/24"
+  availability_zone = var.az[1]
+
+  tags = {
+    Name = var.tag
+  }
+}
+
+resource "aws_subnet" "subnetc" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.0.0.0/24"
+  availability_zone = var.az[2]
+
+  tags = {
+    Name = var.tag
+  }
+}
 ##############################################################################
 # BLock to create an AWS Security Group (firewall for AWS Ec2 instances)
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
@@ -126,7 +146,7 @@ resource "aws_instance" "module_03" {
   instance_type = var.instance-type
   key_name = var.key-name
   vpc_security_group_ids = [aws_security_group.allow_module_03.id]
-  subnet_id = aws_subnet.main.id
+  #subnet_id = aws_subnet.main.id
 
   tags = {
     Name = var.tag
