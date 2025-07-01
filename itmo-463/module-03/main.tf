@@ -84,7 +84,7 @@ resource "aws_subnet" "subnetb" {
 
 resource "aws_subnet" "subnetc" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.0.0/24"
+  cidr_block = "10.0.3.0/24"
   availability_zone = var.az[2]
 
   tags = {
