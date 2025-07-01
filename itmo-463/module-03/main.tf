@@ -33,6 +33,9 @@ resource "aws_internet_gateway" "gw" {
 # Create VPC DHCP options -- public DNS provided by Amazon
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_dhcp_options
 
+resource "aws_vpc_dhcp_options" "dns_resolver" {
+  domain_name_servers = ["AmazonProvidedDNS"]
+}
 
 # Now we need to create the route_table to subnets
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table
@@ -52,13 +55,27 @@ resource "aws_route_table" "main" {
 # Now we need to create the route_table to subnets
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association
 
+resource "aws_route_table_association" "a" {
+  subnet_id      = aws_subnet.subneta.id
+  route_table_id = aws_route_table.main.id
+}
+
+resource "aws_route_table_association" "b" {
+  subnet_id      = aws_subnet.subnetb.id
+  route_table_id = aws_route_table.main.id
+}
+
+resource "aws_route_table_association" "c" {
+  subnet_id      = aws_subnet.subnetc.id
+  route_table_id = aws_route_table.main.id
+}
 
 # Now associated the route table
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/main_route_table_association
 
 resource "aws_main_route_table_association" "a" {
-  vpc_id         = aws_vpc.foo.id
-  route_table_id = aws_route_table.bar.id
+  vpc_id         = aws_vpc.main.id
+  route_table_id = aws_route_table.main.id
 }
 
 ##############################################################################
