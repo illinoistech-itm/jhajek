@@ -10,6 +10,7 @@
 resource "aws_vpc" "main" {
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "default"
+  enable_dns_hostnames = true
 
   tags = {
     Name = var.tag
@@ -35,6 +36,14 @@ resource "aws_internet_gateway" "gw" {
 
 resource "aws_vpc_dhcp_options" "dns_resolver" {
   domain_name_servers = ["AmazonProvidedDNS"]
+}
+
+# Associate these options with our VPC now
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_dhcp_options_association
+
+resource "aws_vpc_dhcp_options_association" "dns_resolver" {
+  vpc_id          = aws_vpc.main.id
+  dhcp_options_id = aws_vpc_dhcp_options.dns_resolver.id
 }
 
 # Now we need to create the route_table to subnets
