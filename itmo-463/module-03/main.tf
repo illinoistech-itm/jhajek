@@ -34,11 +34,6 @@ resource "aws_internet_gateway" "gw" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_dhcp_options
 
 
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_dhcp_options
-
-
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway
-
 # Now we need to create the route_table to subnets
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table
 
@@ -46,7 +41,8 @@ resource "aws_route_table" "main" {
   vpc_id = aws_vpc.main.id
 
   route {
-    cidr_block = "10.0.1.0/24"
+    # must match the size of the VPC CIDR block
+    cidr_block = "10.0.0.0/16"
     gateway_id = aws_internet_gateway.gw.id
   }
 
