@@ -154,7 +154,7 @@ resource "aws_instance" "module_03" {
   instance_type = var.instance-type
   key_name = var.key-name
   vpc_security_group_ids = [aws_security_group.allow_module_03.id]
-  #subnet_id = aws_subnet.main.id
+  subnet_id = aws_subnet.subneta.id
 
   tags = {
     Name = var.tag
