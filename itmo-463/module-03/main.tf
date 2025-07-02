@@ -186,7 +186,7 @@ resource "aws_instance" "module_03" {
   key_name = var.key-name
   vpc_security_group_ids = [aws_security_group.allow_module_03.id]
   subnet_id = aws_subnet.subneta.id
-  user_data = "./install-env.sh" 
+  user_data = file("./install-env.sh")
 
   tags = {
     Name = var.tag
