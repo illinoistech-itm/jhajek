@@ -80,7 +80,6 @@ Enter [Hashicorp Consul](https://consul.io "webpage for consul.io service discov
 
 The main principle is that each Packer `source block` in a build template will have the configuration preset so that each virtual machine instance knows how to register itself with the Consul service upon launch and over the `meta-network firewalld zone` and can communicate with the other registered nodes.
 
-
 ### Configuring Consul
  
 * `scripts` > `proxmox` > `core-jammy` > `post_install_prxmx_update_dns_for_consul_service.sh` 
