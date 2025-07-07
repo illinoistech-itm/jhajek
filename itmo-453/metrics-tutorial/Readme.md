@@ -2,9 +2,9 @@
 
 This tutorial will explain how the metrics collection is setup for the VMs in our internal cloud.
 
-## Metrics collection for Internal See-through Cloud
+## Metrics collection for the Internal See-through Cloud
 
-Each VM that is deployed on our internal cloud using the templates provided will be automatically configured for metrics export. Each VM will have Node Exporter configured for hardware metrics. The metrics will be harvested and amalgamated by a central Prometheus instance. A Grafana server will allow you to graph all your metrics. 
+Each VM that is deployed on our cloud platform, using the templates provided, will be automatically configured for metrics export. Each VM will have `Node Exporter` configured for hardware metrics publishing. The published metrics will be harvested and amalgamated by a Prometheus instance. A Grafana server will allow you to graph all your collected metrics. 
 
 ### Node Exporter
 
@@ -24,6 +24,8 @@ The [Alert Manager](https://prometheus.io/docs/alerting/latest/alertmanager/ "we
 It is now a standalone open source project and maintained independently of any company. To emphasize this, and to clarify the project's governance structure, Prometheus joined the Cloud Native Computing Foundation in 2016 as the second hosted project, after Kubernetes.
 
 Prometheus collects and stores its metrics as time series data, i.e. metrics information is stored with the timestamp at which it was recorded, alongside optional key-value pairs called labels.
+
+Prometheus [is part of the CNCF](https://www.cncf.io/projects/prometheus/ "webpage CNCF for Prometheus"), the Cloud Native Compute Foundation (CNCF). 
 
 ### Grafana
 
@@ -76,13 +78,16 @@ Enter [Hashicorp Consul](https://consul.io "webpage for consul.io service discov
 
 > *A modern service networking solution requires that we answer four specific questions: Where are my services running? How do I secure the communication between them? ... How do I control access to my environments?*
 
-The main principle is that each Packer source block in build templates have the configuration preset so that each virtual machine instance knows how to register itself with the Consul service upon launch and over the `meta-network firewalld zone` can communicate with the other registered nodes.
+The main principle is that each Packer `source block` in a build template will have the configuration preset so that each virtual machine instance knows how to register itself with the Consul service upon launch and over the `meta-network firewalld zone` and can communicate with the other registered nodes.
 
 Consul is configured via the `shell provisioner`: `post_install_prxmx_update_dns_for_consul_service.sh` under `scripts` > `proxmox` > `core-jammy` to configure systemd-resolved, which is the systemd DNS resolver, to run a local DNS resolver on port 8600 internally (in addition to the normal 53) to listen for specific domain requests. Consul will then forward any requests to *.service.consul to port 8600. This port is open on the `meta-network firewalld zone` for all nodes and runs the Gossip protocol. The name implies, like real life, each node gossips to each other based on your domain name. This way each node knows who they are, and can resolve any known name to an IP via Consul on the `meta-network`
 
 The hostnames that appear in the Proxmox Consol are defined in the `main.tf` resource block, in the remote-exec section, the line: 
 
-`"sudo sed -i 's/replace-name/${var.lb-yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",`
+```bash
+"sudo sed -i 's/replace-name/${var.lb-yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl"
+```
+
 Here we are using the `sed` command to find and replace a place holder, `replace-name` with the value you defined in the var `lb.yourinitials` and append the vm count value to generate a unique FQDN.
 
 For example if you system names are:
@@ -174,7 +179,7 @@ The virtual machines created inside of our cloud and as part of this three-tier 
 
 The first one is: 
 
-```
+```bash
 packer > scripts > jammy-services > node-exporter-consul-service.json
 ```
 
@@ -216,7 +221,7 @@ ExecStart=/bin/sh -c '/usr/local/bin/node_exporter --web.listen-address=0.0.0.0:
 WantedBy=multi-user.target
 ```
 
-Even with this service file we need to do a bit more manuvering of the files to get them into the correct locations.
+Even with this service file we need to do a bit more maneuvering of the files to get them into the correct locations.
 
 #### Installing the Node Exporter Binary
 
@@ -241,10 +246,10 @@ echo "Changing ownership of node_exporter binary..."
 sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
 
 sudo cp -v /home/vagrant/node-exporter.service /etc/systemd/system/node-exporter.service
-#sudo systemctl enable node-exporter.service
+
 ```
 
-This logic is downloading Node Exporter from an internal mirror, extracting the contents, and then copying our binary to the `/usr/local/bin` directory. In addition we see the service file for `node-exporter.service` being copied to the `/etc/systemd/system` directory--that is where user created `.service` files reside.
+This logic is downloading the Node Exporter compressed binary, extracting the contents, and then copying our binary to the `/usr/local/bin` directory. In addition we see the service file for `node-exporter.service` being copied to the `/etc/systemd/system` directory--that is where user created `.service` files reside. I am providing the `.service` file -- the documentation for Node Exporter tells you how to create one, but they do not provide one.
 
 #### Moving the files into place
 
@@ -272,11 +277,11 @@ sleep 5
 
 This file has two purposes: it starts the `Consul` service as well as copies the `node exporter` service config file into the Consul configuration directory: `/etc/consul.d`.
 
-Now when the Consul service starts on each VM, the node_exporter service will also start and register there endpoints with Consul.
+When the Consul service starts on each VM, the `node_exporter service` will also start and register itself with Consul.
 
 #### Where does everything start?
 
-The final piece is run time configuration during the `terraform apply` stage in the `main.tf` file.
+The final piece is the run time configuration during the `terraform apply` stage in the `main.tf` file.
 
 ```
 # main.tf
@@ -290,7 +295,7 @@ The final piece is run time configuration during the `terraform apply` stage in 
 "sudo systemctl start node-exporter.service",
 ```
 
-You can see in the `provisioner "remote-exec"` block that we start all of our services; consul and node_exporter.
+You can see in the `provisioner "remote-exec"` block that we start all of our services; consul and node_exporter. Using `sed` we are replacing the placeholder values with our values defined in the `terraform.tfvars`.
 
 ## Conclusion
 
