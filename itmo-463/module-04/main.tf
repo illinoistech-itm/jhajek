@@ -222,7 +222,7 @@ resource "aws_instance" "module_04" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb
 ##############################################################################
 resource "aws_lb" "production" {
-  depends_on = [ aws_subnet.subneta,aws_subnet.subnetb,aws_subnet.subnetc, aws_subnets.project ]
+  depends_on = [ aws_subnet.subneta,aws_subnet.subnetb,aws_subnet.subnetc, data.aws_subnets.project ]
   name               = "production-lb-tf"
   internal           = false
   load_balancer_type = "application"
