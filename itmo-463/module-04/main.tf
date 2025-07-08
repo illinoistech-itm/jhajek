@@ -226,8 +226,8 @@ resource "aws_lb" "production" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_module_04.id]
-  #subnets            = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
-  subnets            = [for subnet in data.aws_subnet.project : subnet.id]
+  subnets            = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
+  #subnets            = [for subnet in data.aws_subnet.project : subnet.id]
 
   tags = {
     Name = var.tag,
