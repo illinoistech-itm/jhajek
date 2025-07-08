@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #########################################################################
-# Script to change the bind_addr in Consul to the dynmaic Go lang call to
+# Script to change the bind_addr in Consul to the dynamic Go lang call to
 # Interface ens18
 # https://www.consul.io/docs/troubleshoot/common-errors
 #########################################################################

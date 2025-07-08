@@ -66,7 +66,17 @@ brew install --cask powershell ; brew install --cask iterm2 ; brew install git ;
 For M1 Macs you will run the same as above but without the VirtualBox install:
 
 ```bash
-brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask vagrant ; brew install packer
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code
+```
+
+Then run these commands to install Packer and Vagrant. Essentially, [a tap is a Git repository](https://docs.brew.sh/Taps "webpage for Brew tap description") that provides extra formulae for Homebrew, enhancing its functionality and software availability.
+
+```bash
+brew tap hashicorp/tap
+brew install hashicorp/tap/packer
+
+brew tap hashicorp/tap
+brew install hashicorp/tap/hashicorp-vagrant
 ```
 
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition

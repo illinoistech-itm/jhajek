@@ -123,7 +123,7 @@ You have the code that does three things
 2) Create three zones
 3) Configure and attach the zones to existing network interfaces
 
-By default all interfaces are locked down and you need to open additional ports in the firewall during the `provisioning `phase.
+By default all interfaces are locked down and you need to open additional ports in the firewall during the `provisioning` phase.
 
 ```bash
 #!/bin/bash
