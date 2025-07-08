@@ -221,15 +221,17 @@ resource "aws_instance" "module_04" {
 # Block to create AWS ELB (Elastic Load Balancer)
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb
 ##############################################################################
+# creating a private IPv4 subnet per AZ
+# https://stackoverflow.com/questions/63991120/automatically-create-a-subnet-for-each-aws-availability-zone-in-terraform
+# https://stackoverflow.com/questions/26706683/ec2-t2-micro-instance-has-no-public-dns
 resource "aws_lb" "production" {
-  depends_on = [ aws_subnet.subneta,aws_subnet.subnetb,aws_subnet.subnetc ]
   name               = "production-lb-tf"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_module_04.id]
   #subnets            = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
   subnets            = [for subnet in data.aws_subnet.project : subnet.id]
-
+  
   tags = {
     Name = var.tag,
     Environment = "production"
