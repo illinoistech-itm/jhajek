@@ -133,11 +133,18 @@ data "aws_subnets" "project" {
     name   = "tag:Name"
     values = [var.tag]
   }
+}
 
+# Link to get all subnet ids dynamically
+# Assign the values to a data object
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets#example-usage
+data "aws_subnet" "project" {
+  for_each = toset(data.aws_subnets.project.ids)
+  id       = each.value
 }
 
 output "subnet_ids" {
-  value = [for s in data.aws_subnets.project : s.id]
+  value = [for s in data.aws_subnet.project : s.id]
 }
 
 ##############################################################################
@@ -220,7 +227,7 @@ resource "aws_lb" "production" {
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_module_04.id]
   #subnets            = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
-  subnets            = [for subnet in data.aws_subnets.project : subnet.id]
+  subnets            = [for subnet in data.aws_subnet.project : subnet.id]
 
   tags = {
     Name = var.tag,
