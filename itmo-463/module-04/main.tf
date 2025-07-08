@@ -222,12 +222,13 @@ resource "aws_instance" "module_04" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb
 ##############################################################################
 resource "aws_lb" "production" {
+  depends_on = [ aws_subnet.project ]
   name               = "production-lb-tf"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_module_04.id]
-  subnets            = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
-  #subnets            = [for subnet in data.aws_subnet.project : subnet.id]
+  #subnets            = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
+  subnets            = [for subnet in aws_subnet.project : subnet.id]
 
   tags = {
     Name = var.tag,
