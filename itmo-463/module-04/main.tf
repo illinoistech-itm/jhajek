@@ -130,7 +130,7 @@ resource "aws_subnet" "subnetc" {
 ##############################################################################
 data "aws_subnets" "project" {
   filter {
-    name   = "Name"
+    name   = "tag:Name"
     values = [var.tag]
   }
 
