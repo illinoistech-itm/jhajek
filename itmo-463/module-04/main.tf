@@ -137,7 +137,7 @@ data "aws_subnets" "project" {
 }
 
 output "subnet_ids" {
-  value = [for s in data.aws_subnet.project : s.id]
+  value = [for s in data.aws_subnets.project : s.id]
 }
 
 ##############################################################################
