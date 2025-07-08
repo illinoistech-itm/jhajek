@@ -123,12 +123,29 @@ resource "aws_subnet" "subnetc" {
     Name = var.tag
   }
 }
+
+##############################################################################
+# Block to create a data variable that is a list of all subnets tagged with module-04
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets
+##############################################################################
+data "aws_subnets" "project" {
+  filter {
+    name   = "Name"
+    values = [var.tag]
+  }
+
+}
+
+output "subnet_ids" {
+  value = [for s in data.aws_subnet.project : s.id]
+}
+
 ##############################################################################
 # BLock to create an AWS Security Group (firewall for AWS Ec2 instances)
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
 ##############################################################################
 
-resource "aws_security_group" "allow_module_03" {
+resource "aws_security_group" "allow_module_04" {
   name        = "allow_module_03"
   description = "Allow HTTP inbound traffic and all outbound traffic for module 03"
   vpc_id      = aws_vpc.main.id
@@ -139,7 +156,7 @@ resource "aws_security_group" "allow_module_03" {
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_http_ipv4" {
-  security_group_id = aws_security_group.allow_module_03.id
+  security_group_id = aws_security_group.allow_module_04.id
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = 80
   ip_protocol       = "tcp"
@@ -147,7 +164,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_http_ipv4" {
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
-  security_group_id = aws_security_group.allow_module_03.id
+  security_group_id = aws_security_group.allow_module_04.id
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = 22
   ip_protocol       = "tcp"
@@ -155,7 +172,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
 }
 
 resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
-  security_group_id = aws_security_group.allow_module_03.id
+  security_group_id = aws_security_group.allow_module_04.id
   cidr_ipv4         = "0.0.0.0/0"
   ip_protocol       = "-1" # semantically equivalent to all ports
 }
@@ -180,15 +197,33 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_instance" "module_03" {
+resource "aws_instance" "module_04" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance-type
   key_name = var.key-name
-  vpc_security_group_ids = [aws_security_group.allow_module_03.id]
+  vpc_security_group_ids = [aws_security_group.allow_module_04.id]
   subnet_id = aws_subnet.subneta.id
   user_data = file("./install-env.sh")
 
   tags = {
     Name = var.tag
+  }
+}
+
+##############################################################################
+# Block to create AWS ELB (Elastic Load Balancer)
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb
+##############################################################################
+resource "aws_lb" "production" {
+  name               = "production-lb-tf"
+  internal           = false
+  load_balancer_type = "application"
+  security_groups    = [aws_security_group.allow_module_04.id]
+  #subnets            = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
+  subnets            = [for subnet in aws_subnet.data.aws_subnets.project : subnet.id]
+
+  tags = {
+    Name = var.tag,
+    Environment = "production"
   }
 }
