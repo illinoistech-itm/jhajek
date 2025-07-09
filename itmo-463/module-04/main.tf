@@ -143,10 +143,6 @@ data "aws_subnet" "project" {
   id       = each.value
 }
 
-output "ids_of_subnets_loop" {
-  value = [ data.aws_subnets.project.ids ]
-}
-
 output "subnet_ids" {
   value = [for s in data.aws_subnet.project : s.id]
 }
