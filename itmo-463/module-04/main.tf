@@ -129,7 +129,6 @@ resource "aws_subnet" "subnetc" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets
 ##############################################################################
 data "aws_subnets" "project" {
-  depends_on = [ aws_subnet.subneta,aws_subnet.subnetb,aws_subnet.subnetc ]
   filter {
     name   = "tag:Name"
     values = [var.tag]
@@ -232,8 +231,8 @@ resource "aws_lb" "production" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_module_04.id]
-  #subnets            = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
-  subnets            = [for subnet in data.aws_subnet.project : subnet.id]
+  subnets            = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
+  #subnets            = [for subnet in data.aws_subnet.project : subnet.id]
 
   tags = {
     Name = var.tag,
