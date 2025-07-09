@@ -140,7 +140,6 @@ data "aws_subnets" "project" {
 # Assign the values to a data object
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets#example-usage
 data "aws_subnet" "project" {
-  depends_on = [ aws_subnet.subneta,aws_subnet.subnetb,aws_subnet.subnetc ]
   for_each = toset(data.aws_subnets.project.ids)
   id       = each.value
 }
