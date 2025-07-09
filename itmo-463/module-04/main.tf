@@ -129,6 +129,7 @@ resource "aws_subnet" "subnetc" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets
 ##############################################################################
 data "aws_subnets" "project" {
+  depends_on = [ aws_subnet.subneta,aws_subnet.subnetb,aws_subnet.subnetc ]
   filter {
     name   = "tag:Name"
     values = [var.tag]
@@ -139,6 +140,7 @@ data "aws_subnets" "project" {
 # Assign the values to a data object
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets#example-usage
 data "aws_subnet" "project" {
+  depends_on = [ aws_subnet.subneta,aws_subnet.subnetb,aws_subnet.subnetc ]
   for_each = toset(data.aws_subnets.project.ids)
   id       = each.value
 }
@@ -226,7 +228,7 @@ resource "aws_instance" "module_04" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb
 ##############################################################################
 resource "aws_lb" "production" {
-  depends_on = [ aws_subnet.subneta,aws_subnet.subnetb,aws_subnet.subnetc, data.aws_subnets.project, data.aws_subnet.project ]
+  depends_on = [ data.aws_subnets.project, data.aws_subnet.project ]
   name               = "production-lb-tf"
   internal           = false
   load_balancer_type = "application"
