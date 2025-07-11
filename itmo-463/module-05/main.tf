@@ -192,39 +192,6 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
   ip_protocol       = "-1" # semantically equivalent to all ports
 }
 
-###############################################################################
-# Block to create AWS EC2 instance
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
-##############################################################################
-data "aws_ami" "ubuntu" {
-  most_recent = true
-  
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["099720109477"] # Canonical
-}
-
-resource "aws_instance" "module_05" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = var.instance-type
-  key_name = var.key-name
-  vpc_security_group_ids = [aws_security_group.allow_module_05.id]
-  subnet_id = aws_subnet.subneta.id
-  user_data = file("./install-env.sh")
-
-  tags = {
-    Name = var.tag
-  }
-}
-
 ##############################################################################
 # Block to create AWS ELB (Elastic Load Balancer)
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb
@@ -287,4 +254,90 @@ resource "aws_lb_target_group_attachment" "front_end" {
   target_group_arn = aws_lb_target_group.front_end.arn
   target_id        = aws_instance.module_05.id
   port             = 80
+}
+
+##############################################################################
+# Create autoscaling group
+# What is an AutoScaling Group? https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-groups.html
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group
+##############################################################################
+resource "aws_autoscaling_group" "production" {
+  name                      = asg.name
+  max_size                  = 5
+  min_size                  = 2
+  health_check_grace_period = 300
+  health_check_type         = "ELB"
+  desired_capacity          = 3
+  force_delete              = true
+  #launch_configuration      = aws_launch_template.production.id
+  vpc_zone_identifier       = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
+
+  launch_template {
+    id      = aws_launch_template.launch_template.id
+    version = "$Latest"
+  }
+
+  tag {
+    key                 = "Name"
+    value               = var.tag
+    propagate_at_launch = true
+  }
+}
+
+##############################################################################
+# How to attach an AutoScaling group to a target group 
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment
+##############################################################################
+
+# Create a new ALB Target Group attachment
+resource "aws_autoscaling_attachment" "production" {
+  autoscaling_group_name = aws_autoscaling_group.production.id
+  lb_target_group_arn    = aws_lb_target_group.front_end.arn
+}
+
+##############################################################################
+# AWS EC2 Launch Template for the ASG to create instances for us...  this helps a lot
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/launch_template
+##############################################################################
+# Collect the current Ubuntu AMI ID
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"] # Canonical
+}
+
+resource "aws_launch_template" "production" {
+  name = var.lt-name
+  block_device_mappings {
+    device_name = "/dev/sdf"
+    ebs {
+      volume_size = 20
+    }
+  }
+#  iam_instance_profile {
+#    name = "test"
+#  }
+  image_id = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
+  key_name = var.key-name
+  vpc_security_group_ids = [aws_security_group.allow_module_05.id]
+
+  tag_specifications {
+    resource_type = "instance"
+
+    tags = {
+      Name = var.tag
+    }
+  }
+  user_data = file("./install-env.sh")
 }
