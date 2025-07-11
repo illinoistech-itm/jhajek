@@ -262,7 +262,7 @@ resource "aws_lb_target_group" "front_end" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group
 ##############################################################################
 resource "aws_autoscaling_group" "production" {
-  name                      = asg.name
+  name                      = var.asg-name
   max_size                  = 5
   min_size                  = 2
   health_check_grace_period = 300
@@ -273,7 +273,7 @@ resource "aws_autoscaling_group" "production" {
   vpc_zone_identifier       = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
 
   launch_template {
-    id      = aws_launch_template.launch_template.id
+    id      = aws_launch_template.production.id
     version = "$Latest"
   }
 
