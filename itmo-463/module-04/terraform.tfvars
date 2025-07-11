@@ -4,3 +4,5 @@
 instance-type          = "t2.micro"
 key-name               = "vagrant-463-key-pair"
 tag                    = "module-04"
+tg-name                = "tf-example-lb-tg"
+elb-name               = "production-lb-tf"

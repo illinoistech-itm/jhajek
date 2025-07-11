@@ -170,6 +170,14 @@ resource "aws_vpc_security_group_ingress_rule" "allow_http_ipv4" {
   to_port           = 80
 }
 
+resource "aws_vpc_security_group_ingress_rule" "allow_https_ipv4" {
+  security_group_id = aws_security_group.allow_module_04.id
+  cidr_ipv4         = "0.0.0.0/0"
+  from_port         = 443
+  ip_protocol       = "tcp"
+  to_port           = 443
+}
+
 resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
   security_group_id = aws_security_group.allow_module_04.id
   cidr_ipv4         = "0.0.0.0/0"
@@ -223,7 +231,7 @@ resource "aws_instance" "module_04" {
 ##############################################################################
 resource "aws_lb" "production" {
   depends_on = [ data.aws_subnets.project, data.aws_subnet.project ]
-  name               = "production-lb-tf"
+  name               = var.elb-name
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_module_04.id]
@@ -234,4 +242,34 @@ resource "aws_lb" "production" {
     Name = var.tag,
     Environment = "production"
   }
+}
+
+##############################################################################
+# Block to create AWS ELB Listener
+# Listen for traffic on a certain port (443 or 80) and balancer based on that
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener
+##############################################################################
+
+resource "aws_lb_listener" "front_end" {
+  load_balancer_arn = aws_lb.front_end.arn
+  port              = "80"
+  protocol          = "HTTP"
+  #ssl_policy        = "ELBSecurityPolicy-2016-08"
+  #certificate_arn   = "arn:aws:iam::187416307283:server-certificate/test_cert_rab3wuqwgja25ct3n4jdj2tzu4"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.front_end.arn
+  }
+}
+
+##############################################################################
+# Create AWS Target Group
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group
+##############################################################################
+resource "aws_lb_target_group" "test" {
+  name     = var.tg-name
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = aws_vpc.main.id
 }

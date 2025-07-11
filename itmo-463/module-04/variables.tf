@@ -16,3 +16,5 @@ variable "instance-type" {}
 variable "key-name" {}
 variable "az" { default = ["us-east-2a", "us-east-2b", "us-east-2c"] }
 variable "tag" {}
+variable "tg-name" {}
+variable "elb-name" {}
