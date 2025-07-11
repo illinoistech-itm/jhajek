@@ -251,7 +251,7 @@ resource "aws_lb" "production" {
 ##############################################################################
 
 resource "aws_lb_listener" "front_end" {
-  load_balancer_arn = aws_lb.front_end.arn
+  load_balancer_arn = aws_lb.production.arn
   port              = "80"
   protocol          = "HTTP"
   #ssl_policy        = "ELBSecurityPolicy-2016-08"
@@ -267,7 +267,7 @@ resource "aws_lb_listener" "front_end" {
 # Create AWS Target Group
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group
 ##############################################################################
-resource "aws_lb_target_group" "test" {
+resource "aws_lb_target_group" "front_end" {
   name     = var.tg-name
   port     = 80
   protocol = "HTTP"
