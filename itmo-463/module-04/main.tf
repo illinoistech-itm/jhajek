@@ -244,6 +244,11 @@ resource "aws_lb" "production" {
   }
 }
 
+# output will print a value out to the screen
+output "url" {
+  value = aws_lb.production.dns_name
+}
+
 ##############################################################################
 # Block to create AWS ELB Listener
 # Listen for traffic on a certain port (443 or 80) and balancer based on that
