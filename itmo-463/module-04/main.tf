@@ -273,3 +273,13 @@ resource "aws_lb_target_group" "front_end" {
   protocol = "HTTP"
   vpc_id   = aws_vpc.main.id
 }
+
+##############################################################################
+# Register EC2 instances with a target group and attach them to the LB
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group_attachment
+##############################################################################
+resource "aws_lb_target_group_attachment" "front_end" {
+  target_group_arn = aws_lb_target_group.front_end.arn
+  target_id        = aws_instance.module_04.id
+  port             = 80
+}
