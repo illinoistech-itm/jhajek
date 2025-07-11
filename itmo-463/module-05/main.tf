@@ -339,5 +339,5 @@ resource "aws_launch_template" "production" {
       Name = var.tag
     }
   }
-  user_data = file("./install-env.sh")
+  user_data = filebase64("./install-env.sh")
 }
