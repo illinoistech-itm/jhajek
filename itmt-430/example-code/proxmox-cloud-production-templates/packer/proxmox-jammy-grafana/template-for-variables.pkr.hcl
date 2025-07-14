@@ -53,3 +53,23 @@ variable "VMNAME" {
   type    = string
   default = "jammy-grafana-infra-template"
 }
+
+variable "iso_checksum" {
+  type    = string
+  default = "file:https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
+}
+
+variable "iso_urls" {
+  type    = list(string)
+  default = ["http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/ubuntu-22.04.5-live-server-amd64.iso"]
+}
+
+variable "local_iso_name" {
+  type    = string
+  default = "ubuntu-22.04.5-live-server-amd64.iso"
+}
+
+variable "TAGS" {
+  type = string
+  default  = "grafana;team00"
+}

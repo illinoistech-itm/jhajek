@@ -83,9 +83,9 @@ source "proxmox-iso" "proxmox-jammy-grafana-system41" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/ubuntu-24.04.2-live-server-amd64.iso"
+    iso_file="local:iso/${var.local_iso_name}"
     unmount=true
-    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/24.04.2/SHA256SUMS"
+    iso_checksum="${var.iso_checksum}"
   }
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
