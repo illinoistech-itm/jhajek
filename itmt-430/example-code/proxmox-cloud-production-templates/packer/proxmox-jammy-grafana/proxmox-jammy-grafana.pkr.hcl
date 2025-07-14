@@ -24,9 +24,9 @@ source "proxmox-iso" "proxmox-jammy-grafana-system41" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/ubuntu-24.04.2-live-server-amd64.iso"
+    iso_file="local:iso/${var.local_iso_name}"
     unmount=true
-    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/24.04.2/SHA256SUMS"
+    iso_checksum="${var.iso_checksum}"
   }
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
@@ -62,15 +62,17 @@ source "proxmox-iso" "proxmox-jammy-grafana-system41" {
   os                       = "l26"
   proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
-  unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller          = "virtio-scsi-single"
   ssh_password             = "${local.SSHPW}"
-  ssh_username             = "vagrant"
-  ssh_timeout              = "20m"
-  template_description     = "A Packer template to create a Grafana template for Ubuntu Noble"
+  ssh_username             = "${local.SSHUSER}"
+  ssh_timeout              = "22m"
+  template_description     = "A Packer template for Grafana on Jammy Linux"
   vm_name                  = "${var.VMNAME}"
+  tags                     = "${var.TAGS}"
 }
 
 source "proxmox-iso" "proxmox-jammy-grafana-system42" {
@@ -121,15 +123,17 @@ source "proxmox-iso" "proxmox-jammy-grafana-system42" {
   os                       = "l26"
   proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
-  unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller          = "virtio-scsi-single"
   ssh_password             = "${local.SSHPW}"
-  ssh_username             = "vagrant"
-  ssh_timeout              = "20m"
-  template_description     = "A Packer template to create a Grafana template for Ubuntu Noble"
+  ssh_username             = "${local.SSHUSER}"
+  ssh_timeout              = "22m"
+  template_description     = "A Packer template for Grafana on Jammy Linux"
   vm_name                  = "${var.VMNAME}"
+  tags                     = "${var.TAGS}"
 }
 
 build {

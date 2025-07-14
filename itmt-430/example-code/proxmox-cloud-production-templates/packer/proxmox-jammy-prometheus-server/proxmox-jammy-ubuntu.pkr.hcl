@@ -22,6 +22,12 @@ source "proxmox-iso" "jammy-prometheus-server-system41" {
         "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
         "<f10><wait>"
       ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/${var.local_iso_name}"
+    unmount=true
+    iso_checksum="${var.iso_checksum}"
+  }
   boot_wait    = "5s"
   cores        = "${var.NUMBEROFCORES}"
   node         = "${local.NODENAME1}"
@@ -29,17 +35,16 @@ source "proxmox-iso" "jammy-prometheus-server-system41" {
   token        = "${local.PROXMOX_TOKEN}"
   cpu_type     = "host"
   disks {
-    disk_size         = "${var.DISKSIZE}"
-    storage_pool      = "${var.STORAGEPOOL}"
-    type              = "virtio"
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
   }
   http_directory   = "subiquity/http"
   http_bind_address = "10.110.0.45"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "${var.iso_checksum}"
-  iso_urls         = "${var.iso_urls}"
-  iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
   network_adapters {
@@ -58,15 +63,17 @@ source "proxmox-iso" "jammy-prometheus-server-system41" {
   os                       = "l26"
   proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
-  unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller          = "virtio-scsi-single"
   ssh_password             = "${local.SSHPW}"
-  ssh_username             = "vagrant"
+  ssh_username             = "${local.SSHUSER}"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for Prometheus on Jammy Linux"
   vm_name                  = "${var.VMNAME}"
+  tags                     = "${var.TAGS}"
 }
 
 ##############################################################################
@@ -80,6 +87,12 @@ source "proxmox-iso" "jammy-prometheus-server-system42" {
         "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
         "<f10><wait>"
       ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/${var.local_iso_name}"
+    unmount=true
+    iso_checksum="${var.iso_checksum}"
+  }
   boot_wait    = "5s"
   cores        = "${var.NUMBEROFCORES}"
   node         = "${local.NODENAME2}"
@@ -87,9 +100,11 @@ source "proxmox-iso" "jammy-prometheus-server-system42" {
   token        = "${local.PROXMOX_TOKEN}"
   cpu_type     = "host"
   disks {
-    disk_size         = "${var.DISKSIZE}"
-    storage_pool      = "${var.STORAGEPOOL}"
-    type              = "virtio"
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
   }
   http_directory   = "subiquity/http"
   http_bind_address = "10.110.0.45"
@@ -116,15 +131,17 @@ source "proxmox-iso" "jammy-prometheus-server-system42" {
   os                       = "l26"
   proxmox_url              = "${local.URL}"
   insecure_skip_tls_verify = true
-  unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
-  ssh_password             = "vagrant"
-  ssh_username             = "${local.SSHPW}"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller          = "virtio-scsi-single"
+  ssh_password             = "${local.SSHPW}"
+  ssh_username             = "${local.SSHUSER}"
   ssh_timeout              = "28m"
   template_description     = "A Packer template for Prometheus on Jammy Linux"
   vm_name                  = "${var.VMNAME}"
+  tags                     = "${var.TAGS}"
 }
 
 build {

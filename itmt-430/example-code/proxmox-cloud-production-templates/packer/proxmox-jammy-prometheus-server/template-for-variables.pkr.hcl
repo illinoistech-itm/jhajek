@@ -55,12 +55,21 @@ variable "VMNAME" {
 }
 
 variable "iso_checksum" {
-  type = string
-  default =  "file:http://mirrors.edge.kernel.org/ubuntu-releases/22.04.4/SHA256SUMS"
+  type    = string
+  default = "file:https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
 }
 
-# https://developer.hashicorp.com/terraform/language/values/variables#declaring-an-input-variable
 variable "iso_urls" {
   type    = list(string)
-  default = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.4/ubuntu-22.04.4-live-server-amd64.iso","http://www.releases.ubuntu.com/jammy/ubuntu-22.04.4-live-server-amd64.iso"]
+  default = ["http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/ubuntu-22.04.5-live-server-amd64.iso"]
+}
+
+variable "local_iso_name" {
+  type    = string
+  default = "ubuntu-22.04.5-live-server-amd64.iso"
+}
+
+variable "TAGS" {
+  type = string
+  default  = "prometheus;team00"
 }
