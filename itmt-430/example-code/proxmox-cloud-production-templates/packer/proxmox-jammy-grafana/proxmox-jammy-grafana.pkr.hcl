@@ -73,7 +73,7 @@ source "proxmox-iso" "proxmox-jammy-grafana-system41" {
   vm_name                  = "${var.VMNAME}"
 }
 
-source "proxmox-iso" "proxmox-jammy-grafana-system41" {
+source "proxmox-iso" "proxmox-jammy-grafana-system42" {
   boot_command = [
     "e<wait>",
     "<down><down><down>",
