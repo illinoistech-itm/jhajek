@@ -3,7 +3,7 @@
 
 instance-type          = "t2.micro"
 key-name               = "vagrant-463-key-pair"
-tag                    = "module-05"
+tag                    = "module-06"
 tg-name                = "tf-example-lb-tg"
 elb-name               = "tf-elb-tf"
 asg-name               = "tf-asg"
