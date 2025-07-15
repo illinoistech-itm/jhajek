@@ -125,7 +125,7 @@ resource "aws_subnet" "subnetc" {
 }
 
 ##############################################################################
-# Block to create a data variable that is a list of all subnets tagged with module-05
+# Block to create a data variable that is a list of all subnets tagged with module-06
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnets
 ##############################################################################
 data "aws_subnets" "project" {
@@ -152,8 +152,8 @@ output "subnet_ids" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
 ##############################################################################
 
-resource "aws_security_group" "allow_module_05" {
-  name        = "allow_module_03"
+resource "aws_security_group" "allow_module_06" {
+  name        = "allow_module_06"
   description = "Allow HTTP inbound traffic and all outbound traffic for module 03"
   vpc_id      = aws_vpc.main.id
 
@@ -163,7 +163,7 @@ resource "aws_security_group" "allow_module_05" {
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_http_ipv4" {
-  security_group_id = aws_security_group.allow_module_05.id
+  security_group_id = aws_security_group.allow_module_06.id
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = 80
   ip_protocol       = "tcp"
@@ -171,7 +171,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_http_ipv4" {
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_https_ipv4" {
-  security_group_id = aws_security_group.allow_module_05.id
+  security_group_id = aws_security_group.allow_module_06.id
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = 443
   ip_protocol       = "tcp"
@@ -179,7 +179,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_https_ipv4" {
 }
 
 resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
-  security_group_id = aws_security_group.allow_module_05.id
+  security_group_id = aws_security_group.allow_module_06.id
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = 22
   ip_protocol       = "tcp"
@@ -187,7 +187,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
 }
 
 resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
-  security_group_id = aws_security_group.allow_module_05.id
+  security_group_id = aws_security_group.allow_module_06.id
   cidr_ipv4         = "0.0.0.0/0"
   ip_protocol       = "-1" # semantically equivalent to all ports
 }
@@ -201,7 +201,7 @@ resource "aws_lb" "production" {
   name               = var.elb-name
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.allow_module_05.id]
+  security_groups    = [aws_security_group.allow_module_06.id]
   subnets            = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
   #subnets            = [for subnet in data.aws_subnet.project : subnet.id]
 
@@ -252,7 +252,7 @@ resource "aws_lb_target_group" "front_end" {
 ##############################################################################
 #resource "aws_lb_target_group_attachment" "front_end" {
 #  target_group_arn = aws_lb_target_group.front_end.arn
-#  target_id        = aws_instance.module_05.id
+#  target_id        = aws_instance.module_06.id
 #  port             = 80
 #}
 
@@ -330,7 +330,7 @@ resource "aws_launch_template" "production" {
   image_id = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   key_name = var.key-name
-  vpc_security_group_ids = [aws_security_group.allow_module_05.id]
+  vpc_security_group_ids = [aws_security_group.allow_module_06.id]
 
   tag_specifications {
     resource_type = "instance"

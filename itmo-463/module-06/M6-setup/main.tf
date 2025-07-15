@@ -1,17 +1,3 @@
-# Create an EC2 instance to execute the SQL commands on
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
-resource "aws_instance" "helloworld" {
-  ami                    = var.imageid
-  instance_type          = var.instance-type
-  key_name               = var.key-name
-  vpc_security_group_ids = [var.vpc_security_group_ids]
-  user_data              = filebase64("./install-env.sh")
-
-  tags = {
-    Name = var.tag-name
-  }
-}
-
 # Generate random password -- this way its never hardcoded into our variables and inserted directly as a secretcheck 
 # No one will know what it is!
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/secretsmanager_random_password
