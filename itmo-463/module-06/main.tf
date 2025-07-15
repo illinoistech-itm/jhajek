@@ -341,3 +341,77 @@ resource "aws_launch_template" "production" {
   }
   user_data = filebase64("./install-env.sh")
 }
+
+##############################################################################
+# Creating the policy (rules) for what the role can do
+##############################################################################
+data "aws_iam_policy_document" "assume_role" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["ec2.amazonaws.com"]
+    }
+
+    actions = ["sts:AssumeRole"]
+  }
+}
+
+##############################################################################
+# Creating the role
+##############################################################################
+resource "aws_iam_role" "role" {
+  name               = "project_role"
+  path               = "/"
+  assume_role_policy = data.aws_iam_policy_document.assume_role.json
+
+  tags = {
+    Name = var.tag
+  }
+}
+
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy
+##############################################################################
+resource "aws_iam_role_policy" "s3_fullaccess_policy" {
+  name = "s3_fullaccess_policy"
+  role = aws_iam_role.role.id
+
+  # Terraform's "jsonencode" function converts a
+  # Terraform expression result to valid JSON syntax.
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "s3:*",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy
+##############################################################################
+resource "aws_iam_role_policy" "rds_fullaccess_policy" {
+  name = "rds_fullaccess_policy"
+  role = aws_iam_role.role.id
+
+  # Terraform's "jsonencode" function converts a
+  # Terraform expression result to valid JSON syntax.
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "rds:*",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
