@@ -415,3 +415,23 @@ resource "aws_iam_role_policy" "rds_fullaccess_policy" {
     ]
   })
 }
+
+resource "aws_iam_role_policy" "sm_fullaccess_policy" {
+  name = "sm_fullaccess_policy"
+  role = aws_iam_role.role.id
+
+  # Terraform's "jsonencode" function converts a
+  # Terraform expression result to valid JSON syntax.
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "secretsmanager:*",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
