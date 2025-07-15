@@ -263,11 +263,11 @@ resource "aws_lb_target_group" "front_end" {
 ##############################################################################
 resource "aws_autoscaling_group" "production" {
   name                      = var.asg-name
-  max_size                  = 5
-  min_size                  = 2
+  max_size                  = 9
+  min_size                  = 3
   health_check_grace_period = 300
   health_check_type         = "ELB"
-  desired_capacity          = 3
+  desired_capacity          = 9
   force_delete              = true
   #launch_configuration      = aws_launch_template.production.id
   vpc_zone_identifier       = [aws_subnet.subneta.id,aws_subnet.subnetb.id,aws_subnet.subnetc.id]
