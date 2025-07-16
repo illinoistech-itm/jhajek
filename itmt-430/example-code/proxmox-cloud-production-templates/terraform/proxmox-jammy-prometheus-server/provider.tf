@@ -21,9 +21,9 @@ provider "vault" {}
 
 provider "proxmox" {
   pm_tls_insecure     = true
-  pm_api_url          = data.vault_generic_secret.pm_api_url.data["PVE"]
-  pm_api_token_id     = data.vault_generic_secret.pm_api_token_id.data["USERNAME"]
-  pm_api_token_secret = data.vault_generic_secret.pm_api_token_secret.data["TOKEN"]
+  pm_api_url          = data.vault_generic_secret.pm_api_url.data["S41"]
+  pm_api_token_id     = data.vault_generic_secret.pm_api_token_id.data["TF-USERNAME"]
+  pm_api_token_secret = data.vault_generic_secret.pm_api_token_secret.data["TF-TOKEN"]
   pm_log_enable       = var.pm_log_enable
   pm_log_file         = var.pm_log_file
   pm_timeout          = var.pm_timeout
