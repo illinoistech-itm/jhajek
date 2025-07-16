@@ -56,7 +56,7 @@ variable "NUMBEROFCORES" {
 # This is the name of the Virtual Machine Template you want to create
 variable "VMNAME" {
   type    = string
-  default = "jammy-grafana-infra-template"
+  default = "yourinitials-grafana-template"
 }
 
 variable "iso_checksum" {
@@ -76,5 +76,5 @@ variable "local_iso_name" {
 
 variable "TAGS" {
   type = string
-  default  = "grafana;team00"
+  default  = "grafana;yourinitials;classname"
 }

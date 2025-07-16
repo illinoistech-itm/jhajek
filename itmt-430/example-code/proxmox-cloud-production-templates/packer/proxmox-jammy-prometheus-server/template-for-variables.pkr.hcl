@@ -55,7 +55,7 @@ variable "NUMBEROFCORES" {
 # This is the name of the Virtual Machine Template you want to create
 variable "VMNAME" {
   type    = string
-  default = "jammy-prometheus-infra-template"
+  default = "yourinitials-prometheus-template"
 }
 
 variable "iso_checksum" {
@@ -75,5 +75,5 @@ variable "local_iso_name" {
 
 variable "TAGS" {
   type = string
-  default  = "prometheus;team00"
+  default  = "prometheus;yourinitials;classname"
 }
