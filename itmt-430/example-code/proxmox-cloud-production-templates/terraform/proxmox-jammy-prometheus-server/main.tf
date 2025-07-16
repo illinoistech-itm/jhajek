@@ -44,7 +44,8 @@ resource "proxmox_vm_qemu" "prometheus-server" {
   count       = var.numberofvms
   name        = "${var.yourinitials}-vm${count.index}.service.consul"
   desc        = var.desc
-  target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
+  target_node = random_shuffle.nodename.result[0]
+  #target_node = data.vault_generic_secret.target_node.data[random_shuffle.nodename.result[0]]
   clone       = var.template_to_clone
   os_type     = "cloud-init"
   memory      = var.memory
