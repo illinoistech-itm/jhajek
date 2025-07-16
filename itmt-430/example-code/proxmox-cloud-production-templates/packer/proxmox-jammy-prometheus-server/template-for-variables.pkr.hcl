@@ -5,27 +5,31 @@
 
 # This is the name of the node in the Cloud Cluster where to deploy the virtual instances
 locals {
-  NODENAME1 = vault("/secret/data/proxmox-infra-ssh-NODENAME","NODENAME1")
+  NODENAME = vault("/secret/data/NODENAME","SYSTEM41")
 }
 
 locals {
-  NODENAME2 = vault("/secret/data/proxmox-infra-ssh-NODENAME","NODENAME2")
+  NODENAME2 = vault("/secret/data/NODENAME","SYSTEM42")
 }
 
 locals {
-  USERNAME = vault("/secret/data/proxmox-infra-ssh-username-packer-infra","USERNAME")
+  USERNAME = vault("/secret/data/SECRETKEY","PK-USERNAME")
 }
 
 locals {
-  PROXMOX_TOKEN = vault("/secret/data/proxmox-infra-ssh-token-packer-infra","TOKEN")
+  PROXMOX_TOKEN = vault("/secret/data/ACCESSKEY","PK-TOKEN")
 }
 
 locals {
-  URL = vault("/secret/data/proxmox-infra-ssh-url","SYSTEM29")
+  URL = vault("/secret/data/URL","S41")
 }
 
 locals {
-  SSHPW = vault("/secret/data/proxmox-infra-ssh","SSHPW")
+  SSHPW = vault("/secret/data/SSH","SSHPW")
+}
+
+locals {
+  SSHUSER = vault("/secret/data/SSH","SSHUSER")
 }
 
 variable "MEMORY" {
