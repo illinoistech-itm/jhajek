@@ -81,10 +81,16 @@ resource "proxmox_vm_qemu" "grafana" {
     bridge = "vmbr2"
   }
 
-  disk {
-    type    = "virtio"
-    storage = random_shuffle.datadisk.result[0]
-    size    = var.disk_size
+  disks {
+    virtio {
+      virtio0 {
+        disk {
+          iothread = true
+          storage  = random_shuffle.datadisk.result[0]
+          size     = var.disk_size
+        }
+      }
+    }
   }
   
   provisioner "remote-exec" {
