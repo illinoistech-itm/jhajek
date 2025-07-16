@@ -30,7 +30,7 @@ source "proxmox-iso" "jammy-prometheus-server-system41" {
   }
   boot_wait    = "5s"
   cores        = "${var.NUMBEROFCORES}"
-  node         = "${local.NODENAME1}"
+  node         = "${local.NODENAME}"
   username     = "${local.USERNAME}"
   token        = "${local.PROXMOX_TOKEN}"
   cpu_type     = "host"
@@ -110,9 +110,6 @@ source "proxmox-iso" "jammy-prometheus-server-system42" {
   http_bind_address = "10.110.0.45"
   http_port_max    = 9200
   http_port_min    = 9001
-  iso_checksum     = "${var.iso_checksum}"
-  iso_urls         = "${var.iso_urls}"
-  iso_storage_pool = "local"
   memory           = "${var.MEMORY}"
 
   network_adapters {
