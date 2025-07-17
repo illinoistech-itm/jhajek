@@ -54,6 +54,24 @@ data "aws_secretsmanager_secret_version" "project_password" {
   secret_id = aws_secretsmanager_secret.project_password.id
 }
 
+##############################################################################
+# Data block to retrieve our custom subnet IDs
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnet
+##############################################################################
+
+
+
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group
+resource "aws_db_subnet_group" "project" {
+  name       = "db_subnet_group"
+  subnet_ids = [aws_subnet.frontend.id, aws_subnet.backend.id]
+
+  tags = {
+    Name = var.tag-name
+  }
+}
+
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance
 resource "aws_db_instance" "default" {
   depends_on = [ aws_secretsmanager_secret_version.project_password, aws_secretsmanager_secret_version.project_username ]
