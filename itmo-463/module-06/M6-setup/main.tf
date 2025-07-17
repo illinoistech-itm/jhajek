@@ -116,12 +116,16 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
+##############################################################################
+# Temprorary EC2 instance that will be used to run the create.sql program and 
+# then discarded
+##############################################################################
 resource "aws_instance" "db_setup" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance-type
   key_name = var.key-name
   #vpc_security_group_ids = [aws_security_group.allow_module_04.id]
-  subnet_id = data.aws_subnet.example.id
+  subnet_id = data.aws_subnets.project[1].id
 
   tags = {
     Name = var.temp-tag
