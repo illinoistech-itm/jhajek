@@ -124,7 +124,7 @@ resource "aws_instance" "db_setup" {
   subnet_id = aws_subnet.example[1].id
 
   tags = {
-    Name = var.tag-name
+    Name = var.temp-tag
   }
 }
 

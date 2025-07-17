@@ -17,6 +17,7 @@ variable "key-name" {}
 variable "vpc_security_group_ids" {}
 variable "az" { default = ["us-east-2a", "us-east-2b", "us-east-2c"] }
 variable "tag-name" {}
+variable "temp-tag" {}
 variable "user-sns-topic" {}
 variable "elb-name" {}
 variable "tg-name" {}
