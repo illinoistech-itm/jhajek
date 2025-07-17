@@ -95,7 +95,17 @@ resource "aws_db_subnet_group" "project" {
     Name = var.tag-name
   }
 }
-
+###############################################################################
+# Data block to retrieve the custom security group that we have created for the
+# project
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/security_group
+###############################################################################
+data "aws_security_group" "selected" {
+    filter {
+    name   = "tag:Name"
+    values = [var.tag-name]
+  }
+}
 ###############################################################################
 # Block to create AWS EC2 instance
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
@@ -137,7 +147,7 @@ resource "aws_instance" "db_setup" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance-type
   key_name = var.key-name
-  #vpc_security_group_ids = [aws_security_group.allow_module_04.id]
+  vpc_security_group_ids = [data.aws_security_group.selected.id]
   subnet_id = element(data.aws_subnets.project.ids, random_integer.pick.result)
 
   tags = {
