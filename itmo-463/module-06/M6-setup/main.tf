@@ -104,6 +104,7 @@ resource "aws_db_instance" "default" {
   engine               = "mysql"
   engine_version       = "8.0"
   instance_class       = "db.t3.micro"
+  db_subnet_group_name = aws_db_subnet_group.project.name
   # Retrieve secrets value set in secret manager
   username             = data.aws_secretsmanager_secret_version.project_username.secret_string
   password             = data.aws_secretsmanager_secret_version.project_password.secret_string
