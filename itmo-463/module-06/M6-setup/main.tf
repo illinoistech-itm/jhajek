@@ -55,11 +55,34 @@ data "aws_secretsmanager_secret_version" "project_password" {
 }
 
 ##############################################################################
+# Data Block to filter and retrieve our custom VPC ID for use in looking up
+# custom subnet IDs to pass to the db subnet group create function
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/vpc
+data "aws_vpc" "selected" {
+  filter {
+    name   = "tag:Name"
+    values = [var.tag-name]
+  }
+}
+##############################################################################
 # Data block to retrieve our custom subnet IDs
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnet
 ##############################################################################
+data "aws_subnets" "project" {
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.selected.id]
+  }
+}
 
+data "aws_subnet" "example" {
+  for_each = toset(data.aws_subnets.project.ids)
+  id       = each.value
+}
 
+output "subnet_cidr_blocks" {
+  value = [for s in data.aws_subnet.example : s.cidr_block]
+}
 
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group
