@@ -118,6 +118,7 @@ data "aws_ami" "ubuntu" {
 
 #############################################################################
 # From Co-pilot how to get a single random Subnet ID
+# https://copilot.microsoft.com/shares/uDCFoa9Dfz8KgMADetqVL
 #############################################################################
 resource "random_integer" "pick" {
   min = 0
@@ -127,7 +128,6 @@ resource "random_integer" "pick" {
 output "random_subnet_id" {
   value = element(data.aws_subnets.selected.ids, random_integer.pick.result)
 }
-
 
 ##############################################################################
 # Temporary EC2 instance that will be used to run the create.sql program and 
