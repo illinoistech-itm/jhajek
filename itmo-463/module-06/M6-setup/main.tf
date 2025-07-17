@@ -178,7 +178,7 @@ resource "aws_db_instance" "default" {
   password             = data.aws_secretsmanager_secret_version.project_password.secret_string
   parameter_group_name = "default.mysql8.0"
   skip_final_snapshot  = true
-  vpc_security_group_ids = data.aws_security_group.db_selected.id
+  vpc_security_group_ids = [data.aws_security_group.db_selected.id]
   
   tags = {
     Name = var.tag-name
