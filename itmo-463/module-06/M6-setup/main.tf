@@ -116,8 +116,21 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
+#############################################################################
+# From Co-pilot how to get a single random Subnet ID
+#############################################################################
+resource "random_integer" "pick" {
+  min = 0
+  max = length(data.aws_subnets.project.ids) - 1
+}
+
+output "random_subnet_id" {
+  value = element(data.aws_subnets.selected.ids, random_integer.pick.result)
+}
+
+
 ##############################################################################
-# Temprorary EC2 instance that will be used to run the create.sql program and 
+# Temporary EC2 instance that will be used to run the create.sql program and 
 # then discarded
 ##############################################################################
 resource "aws_instance" "db_setup" {
@@ -125,7 +138,7 @@ resource "aws_instance" "db_setup" {
   instance_type = var.instance-type
   key_name = var.key-name
   #vpc_security_group_ids = [aws_security_group.allow_module_04.id]
-  subnet_id = data.aws_subnet.example.id
+  subnet_id = element(data.aws_subnets.selected.ids, random_integer.pick.result)
 
   tags = {
     Name = var.temp-tag
