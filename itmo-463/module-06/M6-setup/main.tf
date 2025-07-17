@@ -125,7 +125,7 @@ resource "aws_instance" "db_setup" {
   instance_type = var.instance-type
   key_name = var.key-name
   #vpc_security_group_ids = [aws_security_group.allow_module_04.id]
-  subnet_id = data.aws_subnets.project.id
+  subnet_id = data.aws_subnet.example.id
 
   tags = {
     Name = var.temp-tag
