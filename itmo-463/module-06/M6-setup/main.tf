@@ -81,15 +81,16 @@ data "aws_subnet" "example" {
 }
 
 output "subnet_cidr_blocks" {
-  value = [for s in data.aws_subnet.example : s.cidr_block]
+  value = [for s in data.aws_subnet.example : s.id]
 }
 
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group
 resource "aws_db_subnet_group" "project" {
   name       = "db_subnet_group"
-  subnet_ids = [aws_subnet.frontend.id, aws_subnet.backend.id]
-
+  #subnet_ids = [aws_subnet.frontend.id, aws_subnet.backend.id]
+  subnet_ids = [for s in data.aws_subnet.example : s.id]
+  
   tags = {
     Name = var.tag-name
   }
