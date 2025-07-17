@@ -126,7 +126,7 @@ resource "random_integer" "pick" {
 }
 
 output "random_subnet_id" {
-  value = element(data.aws_subnets.selected.ids, random_integer.pick.result)
+  value = element(data.aws_subnets.project.ids, random_integer.pick.result)
 }
 
 ##############################################################################
