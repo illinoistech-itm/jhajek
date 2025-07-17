@@ -199,7 +199,7 @@ resource "aws_security_group" "allow_database_access" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name = var.tag
+    #Name = var.tag
     Type = "db"
   }
 }
