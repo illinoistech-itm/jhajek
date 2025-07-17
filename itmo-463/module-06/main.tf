@@ -148,7 +148,7 @@ output "subnet_ids" {
 }
 
 ##############################################################################
-# BLock to create an AWS Security Group (firewall for AWS Ec2 instances)
+# Block to create an AWS Security Group (firewall for AWS Ec2 instances)
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
 ##############################################################################
 
@@ -192,6 +192,31 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
   ip_protocol       = "-1" # semantically equivalent to all ports
 }
 
+# Create a security group for just database access
+resource "aws_security_group" "allow_database_access" {
+  name        = "allow_db_access"
+  description = "Allow inbound traffic and all outbound traffic for to port 3306"
+  vpc_id      = aws_vpc.main.id
+
+  tags = {
+    Name = var.tag
+    Type = "db"
+  }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "allow_db_ipv4" {
+  security_group_id = aws_security_group.allow_database_access.id
+  cidr_ipv4         = "0.0.0.0/0"
+  from_port         = 22
+  ip_protocol       = "tcp"
+  to_port           = 22
+}
+
+resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4_db" {
+  security_group_id = aws_security_group.allow_database_access.id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1" # semantically equivalent to all ports
+}
 ##############################################################################
 # Block to create AWS ELB (Elastic Load Balancer)
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb

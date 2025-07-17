@@ -106,6 +106,15 @@ data "aws_security_group" "selected" {
     values = [var.tag-name]
   }
 }
+
+# Retrieve the aws_security_group created for Database access
+
+data "aws_security_group" "db_selected" {
+    filter {
+    name   = "tag:Type"
+    values = ["db"]
+  }
+}
 ###############################################################################
 # Block to create AWS EC2 instance
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
@@ -169,7 +178,7 @@ resource "aws_db_instance" "default" {
   password             = data.aws_secretsmanager_secret_version.project_password.secret_string
   parameter_group_name = "default.mysql8.0"
   skip_final_snapshot  = true
-  #vpc_security_group_ids = aws_security_group
+  vpc_security_group_ids = data.aws_security_group.db_selected.id
   
   tags = {
     Name = var.tag-name
