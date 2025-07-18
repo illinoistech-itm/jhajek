@@ -1,4 +1,4 @@
-# Module 03 Autograder
+# Module 06 Autograder
 import boto3
 import json
 import requests
@@ -23,7 +23,7 @@ def currentPoints():
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html
 
 ##############################################################################
-# Nine tasks to cover
+# Twelve tasks to cover
 ##############################################################################
 # VPC tagged
 # Security group tagged
@@ -34,6 +34,10 @@ def currentPoints():
 # 3 subnets tagged
 # DHCP options tagged
 # Check to make sure 1 route table is attached to IG
+# 1 Load Balancer tagged
+# 1 autoscaling group tagged
+# 1 launch template tagged
+# Database snapshot tagged (need to add this in your main.tf when creating it)
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_vpcs.html
 
