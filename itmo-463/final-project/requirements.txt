@@ -1,0 +1,6 @@
+boto3
+requests
+datetime
+tqdm
+mysql-connector-python
+beautifulsoup4
