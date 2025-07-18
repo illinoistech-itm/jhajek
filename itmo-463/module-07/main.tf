@@ -460,3 +460,69 @@ resource "aws_iam_role_policy" "sm_fullaccess_policy" {
     ]
   })
 }
+
+##############################################################################
+# Generate random password -- this way its never hardcoded into our variables 
+#and inserted directly as a secretcheck
+# No one will know what it is!
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/secretsmanager_random_password
+##############################################################################
+data "aws_secretsmanager_random_password" "project" {
+  password_length = 30
+  exclude_numbers = true
+  exclude_punctuation = true
+}
+
+# Create the actual secret (not adding a value yet)
+# Provides a resource to manage AWS Secrets Manager secret metadata. To manage
+# secret rotation, see the aws_secretsmanager_secret_rotation resource. To 
+# manage a secret value, see the aws_secretsmanager_secret_version resource.
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret
+resource "aws_secretsmanager_secret" "project_username" {
+  name = "uname"
+  # https://github.com/hashicorp/terraform-provider-aws/issues/4467
+  # This will automatically delete the secret upon Terraform destroy 
+  recovery_window_in_days = 0
+  tags = {
+    Name = var.tag
+  }
+}
+
+resource "aws_secretsmanager_secret" "project_password" {
+  name = "pword"
+  # https://github.com/hashicorp/terraform-provider-aws/issues/4467
+  # This will automatically delete the secret upon Terraform destroy 
+  recovery_window_in_days = 0
+  tags = {
+    Name = var.tag
+  }
+}
+
+# Provides a resource to manage AWS Secrets Manager secret version including its secret value.
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret_version
+# Used to set the value
+resource "aws_secretsmanager_secret_version" "project_username" {
+  #depends_on = [ aws_secretsmanager_secret_version.project_username ]
+  secret_id     = aws_secretsmanager_secret.project_username.id
+  secret_string = var.username
+  #secret_string = data.aws_secretsmanager_random_password.project.random_password
+}
+
+resource "aws_secretsmanager_secret_version" "project_password" {
+  #depends_on = [ aws_secretsmanager_secret_version.project_password ]
+  secret_id     = aws_secretsmanager_secret.project_password.id
+  secret_string = data.aws_secretsmanager_random_password.project.random_password
+}
+
+# Retrieve secrets value set in secret manager
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/secretsmanager_secret_version
+# https://github.com/hashicorp/terraform-provider-aws/issues/14322
+data "aws_secretsmanager_secret_version" "project_username" {
+  depends_on = [ aws_secretsmanager_secret_version.project_username ]
+  secret_id = aws_secretsmanager_secret.project_username.id
+}
+
+data "aws_secretsmanager_secret_version" "project_password" {
+  depends_on = [ aws_secretsmanager_secret_version.project_password ]
+  secret_id = aws_secretsmanager_secret.project_password.id
+}

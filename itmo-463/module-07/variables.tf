@@ -20,3 +20,4 @@ variable "tg-name" {}
 variable "elb-name" {}
 variable "asg-name" {}
 variable "lt-name" {}
+variable "username" {}
