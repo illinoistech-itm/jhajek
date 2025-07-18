@@ -554,7 +554,7 @@ resource "aws_db_instance" "default" {
   username             = data.aws_secretsmanager_secret_version.project_username.secret_string
   password             = data.aws_secretsmanager_secret_version.project_password.secret_string
   vpc_security_group_ids = [aws_security_group.allow_database_access.id]
-  db_subnet_group_name  = data.aws_db_subnet_group.project.ids
+  db_subnet_group_name  = aws_db_subnet_group.project.ids
 }
 
 output "db-address" {
