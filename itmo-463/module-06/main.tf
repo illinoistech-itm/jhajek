@@ -217,6 +217,19 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4_db" {
   cidr_ipv4         = "0.0.0.0/0"
   ip_protocol       = "-1" # semantically equivalent to all ports
 }
+###############################################################################
+# Data block to retrieve the custom security group that we have created for the
+# project
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/security_group
+###############################################################################
+# Retrieve the aws_security_group created for Database access
+data "aws_security_group" "db_selected" {
+    filter {
+    name   = "tag:Type"
+    values = ["db"]
+  }
+}
+
 ##############################################################################
 # Block to create AWS ELB (Elastic Load Balancer)
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb

@@ -526,3 +526,88 @@ data "aws_secretsmanager_secret_version" "project_password" {
   depends_on = [ aws_secretsmanager_secret_version.project_password ]
   secret_id = aws_secretsmanager_secret.project_password.id
 }
+
+##############################################################################
+# Block to create an AWS Security Group (firewall for AWS Ec2 instances)
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group
+##############################################################################
+# Create a security group for just database access
+resource "aws_security_group" "allow_database_access" {
+  name        = "allow_db_access"
+  description = "Allow inbound traffic and all outbound traffic for to port 3306"
+  vpc_id      = aws_vpc.main.id
+
+  tags = {
+    #Name = var.tag
+    Type = "db"
+  }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "allow_db_ipv4" {
+  security_group_id = aws_security_group.allow_database_access.id
+  cidr_ipv4         = "0.0.0.0/0"
+  from_port         = 3306
+  ip_protocol       = "tcp"
+  to_port           = 3306
+}
+
+resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4_db" {
+  security_group_id = aws_security_group.allow_database_access.id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1" # semantically equivalent to all ports
+}
+
+##############################################################################
+# Data block to retrieve our custom subnet IDs
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnet
+##############################################################################
+data "aws_subnets" "project" {
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.main.id]
+  }
+}
+
+data "aws_subnet" "example" {
+  for_each = toset(data.aws_subnets.project.ids)
+  id       = each.value
+}
+
+output "subnet_cidr_blocks" {
+  value = [for s in data.aws_subnet.example : s.id]
+}
+
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group
+resource "aws_db_subnet_group" "project" {
+  name       = "db_subnet_group"
+  subnet_ids = [for s in data.aws_subnet.example : s.id]
+  
+  tags = {
+    Name = var.tag
+  }
+}
+
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/db_snapshot
+# Use the latest production snapshot to create a dev instance.
+##############################################################################
+resource "aws_db_instance" "default" {
+  instance_class      = "db.t3.micro"
+  snapshot_identifier = var.snapshot_identifier
+  skip_final_snapshot  = true
+  username             = data.aws_secretsmanager_secret_version.project_username.secret_string
+  password             = data.aws_secretsmanager_secret_version.project_password.secret_string
+  vpc_security_group_ids = [data.aws_security_group.allow_database_access.id]
+  db_subnet_group_name  = data.aws_db_subnet_group.project.id
+}
+
+output "db-address" {
+  description = "Endpoint URL "
+  value = aws_db_instance.default.address
+}
+
+output "db-name" {
+  description = "DB Name "
+  value = aws_db_instance.default.db_name
+}
