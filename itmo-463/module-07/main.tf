@@ -192,18 +192,6 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
   ip_protocol       = "-1" # semantically equivalent to all ports
 }
 
-# Create a security group for just database access
-resource "aws_security_group" "allow_database_access" {
-  name        = "allow_db_access"
-  description = "Allow inbound traffic and all outbound traffic for to port 3306"
-  vpc_id      = aws_vpc.main.id
-
-  tags = {
-    #Name = var.tag
-    Type = "db"
-  }
-}
-
 ##############################################################################
 # Block to create AWS ELB (Elastic Load Balancer)
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb
@@ -542,26 +530,6 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4_db" {
   security_group_id = aws_security_group.allow_database_access.id
   cidr_ipv4         = "0.0.0.0/0"
   ip_protocol       = "-1" # semantically equivalent to all ports
-}
-
-##############################################################################
-# Data block to retrieve our custom subnet IDs
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/subnet
-##############################################################################
-data "aws_subnets" "project" {
-  filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.main.id]
-  }
-}
-
-data "aws_subnet" "example" {
-  for_each = toset(data.aws_subnets.project.ids)
-  id       = each.value
-}
-
-output "subnet_cidr_blocks" {
-  value = [for s in data.aws_subnet.example : s.id]
 }
 
 ##############################################################################
