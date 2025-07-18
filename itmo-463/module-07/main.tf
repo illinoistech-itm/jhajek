@@ -536,7 +536,7 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4_db" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group
 resource "aws_db_subnet_group" "project" {
   name       = "db_subnet_group"
-  subnet_ids = [for s in data.aws_subnet.example : s.id]
+  subnet_ids = [for s in data.aws_subnet.project : s.id]
   
   tags = {
     Name = var.tag
@@ -553,7 +553,7 @@ resource "aws_db_instance" "default" {
   skip_final_snapshot  = true
   username             = data.aws_secretsmanager_secret_version.project_username.secret_string
   password             = data.aws_secretsmanager_secret_version.project_password.secret_string
-  vpc_security_group_ids = [data.aws_security_group.allow_database_access.id]
+  vpc_security_group_ids = [aws_security_group.allow_database_access.id]
   db_subnet_group_name  = data.aws_db_subnet_group.project.ids
 }
 
