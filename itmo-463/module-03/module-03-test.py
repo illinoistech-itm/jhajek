@@ -274,6 +274,19 @@ print("\r")
 print('*' * 79)
 print("Testing to see if the Internet Gateway was created and Tagged: " + tag + "... ")
 
+if len(responseIG['InternetGateways']) != correctNumberOfIgs:
+  print(str(correctNumberOfIgs) + " Internet Gateway tagged with " + tag + " required...")
+  print(str(len(responseIG['InternetGateways'])) + " Internet Gateway tagged with " + tag + " found." )
+  print("Double check the terraform.tfvars file to make sure you have the aws_internet_gateway function...")
+  print("Double check that you have executed the terraform destroy command from a previous exercise...")
+  currentPoints()
+else:
+  print("Internet Gateway ID: " + str(responseIG['InternetGateways'][0]['InternetGatewayId']))
+  print(str(correctNumberOfIgs) + " Internet Gateway tagged with " + tag + " required...")
+  print(str(len(responseIG['InternetGateways'])) + " Internet Gateway tagged with " + tag + " found." )
+  grandTotal += 1
+  currentPoints()
+
 print('*' * 79)
 print("\r")
 ##############################################################################
