@@ -61,11 +61,29 @@ responseVpcs = clientEc2.describe_vpcs(
     ],
 )
 
-# https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_subnets.html
-
-# https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_route_tables.html
+responseRouteTables = clientEc2.describe_route_tables(
+    Filters=[
+        {
+            'Name': 'tag:Name',
+            'Values': [
+            tag,
+            ]
+        },
+    ],
+)
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_dhcp_options.html
+
+responseDHCP = clientEc2.describe_dhcp_options(
+    Filters=[
+        {
+            'Name': 'tag:Name',
+            'Values': [
+            tag,
+            ]
+        },
+    ],
+)
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_security_groups.html
 
@@ -82,11 +100,53 @@ responseSecurityGroups = clientEc2.describe_security_groups(
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_internet_gateways.html
 
-# https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_subnets.html
+responseIG = clientEc2.describe_internet_gateways(
+  Filters=[
+        {
+            'Name': 'tag:Name',
+            'Values': [
+                tag,
+            ]
+        },
+    ],
+)
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_route_tables.html
+# https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_subnets.html
+responseSubnets = clientEc2.describe_subnets(
+  Filters=[
+        {
+            'Name': 'tag:Name',
+            'Values': [
+                tag,
+            ]
+        },
+    ],
+)
+
+# https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_route_tables.html
+responseRT = clientEc2.describe_route_tables(
+  Filters=[
+        {
+            'Name': 'tag:Name',
+            'Values': [
+                tag,
+            ]
+        },
+    ],
+)
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_dhcp_options.html
+responseDhcpOptions = clientEc2.describe_dhcp_options(
+  Filters=[
+        {
+            'Name': 'tag:Name',
+            'Values': [
+                tag,
+            ]
+        },
+    ],
+)
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_instances.html
 
@@ -209,10 +269,18 @@ else:
 print('*' * 79)
 print("\r")
 ##############################################################################
-# Check to see if Route Table Created and Tagged
+# Check to see if Internet Gateway created and tagged
 ##############################################################################
 print('*' * 79)
-print("Testing to see if the Route Table was created and Tagged... ")
+print("Testing to see if the Internet Gateway was created and Tagged: " + tag + "... ")
+
+print('*' * 79)
+print("\r")
+##############################################################################
+# Check to see Route Table Attached has the correct VPC CIDR Block and Gateway
+##############################################################################
+print('*' * 79)
+print("Testing to see if the properly tagged Route Table are attached to the properly tagged Internet Gateway...")
 
 print('*' * 79)
 print("\r")
@@ -233,15 +301,7 @@ print("Testing to see if the DHCP Options were set and properly tagged with " + 
 print('*' * 79)
 print("\r")
 ##############################################################################
-# Check to see Route Table Attached has the correct VPC CIDR Block and Gateway
-##############################################################################
-print('*' * 79)
-print("Testing to see if the properly tagged Route Table are attached to the properly tagged Internet Gateway...")
-
-print('*' * 79)
-print("\r")
-##############################################################################
-# Print out the grandtotal and the grade values to result.txt
+# Print out the grandtotal
 ##############################################################################
 print('*' * 79)
 print("Your result is: " + str(grandTotal) + " out of " + str(totalPoints) + " points.")
