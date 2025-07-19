@@ -290,37 +290,25 @@ else:
 
 print('*' * 79)
 print("\r")
+
 ##############################################################################
-# Check to see Route Table Attached has the correct VPC CIDR Block and Gateway
+# Check to see if Route Table Created and Tagged
 ##############################################################################
 print('*' * 79)
-print("Testing to see if the properly tagged Route Table are attached to the properly tagged Internet Gateway...")
+print("Testing to see if the Route Table was created and Tagged... ")
 
-routeTableLengthIsCorrect = False
-
-if len(responseRT['RouteTables']) != correctNumberOfRouteTables:
-  print(str(len(responseRT['RouteTables'])) + " Route Table tagged with " + tag + " required...")
-  print(str(len(responseRT['RouteTables'])) + " Route Table tagged with " + tag + " found." )
-  print("Double check the terraform.tfvars file to make sure you have the aws_internet_gateway function...")
+if len(responseRouteTables['RouteTables']) != correctNumberOfRouteTables:
+  print(str(correctNumberOfRouteTables) + " Route Tables tagged with " + tag + " required...")
+  print(str(len(responseRouteTables['RouteTables'])) + " Route Tables tagged with " + tag + " found." )
+  print("Double check the terraform.tfvars file to make sure you have the aws_route_table function...")
   print("Double check that you have executed the terraform destroy command from a previous exercise...")
   currentPoints()
 else:
-  if len(responseRT['RouteTables']) == correctNumberOfRouteTables:
-    print("Route Table ID: " + str(responseRouteTables['RouteTables'][0]['RouteTableId']))
-    print(str(correctNumberOfRouteTables) + " Route Tables tagged with " + tag + " required...")
-    print(str(len(responseRouteTables['RouteTables'])) + " Route Tables tagged with " + tag + " found." )
-    if responseRT['RouteTables'][0]['Routes'][0]['DestinationCidrBlock'] == CIDRBLOCK and responseRT['RouteTables'][0]['Routes'][1]['DestinationCidrBlock'] == "0.0.0.0/0" and responseRT['RouteTables'][0]['Routes'][1]['GatewayId'] == responseIG['InternetGateways'][0]['InternetGatewayId']:
-      print("Your Route Tables Gateways match the required values and tag: " + tag + "...")
-      print("Destination CIDR Block: " + str(responseRT['RouteTables'][0]['Routes'][0]['DestinationCidrBlock']) + " | Destination Gateway: " + str(responseRT['RouteTables'][0]['Routes'][0]['GatewayId']))
-      print("Destination CIDR Block: " + str(responseRT['RouteTables'][0]['Routes'][1]['DestinationCidrBlock']) + " | Destination Gateway: " + str(responseRT['RouteTables'][0]['Routes'][1]['GatewayId']))
-      print("Internet Gateway tagged with " + tag + ": " + str(responseIG['InternetGateways'][0]['InternetGatewayId']))
-      grandTotal += 1
-      currentPoints()
-  else:
-    print("Double check the terraform.tfvars file to make sure you have the VPC cidr block set to 172.32.0.0/16...")
-    print("Double check the terraform.tfvars file to make sure you have created Route Tables and attached an INternet Gateway to your Route Table..")
-    print("Double check that you have executed the terraform destroy command from a previous exercise...")
-    currentPoints()    
+  print("Route Table ID: " + str(responseRouteTables['RouteTables'][0]['RouteTableId']))
+  print(str(correctNumberOfRouteTables) + " Route Tables tagged with " + tag + " required...")
+  print(str(len(responseRouteTables['RouteTables'])) + " Route Tables tagged with " + tag + " found." )
+  grandTotal += 1
+  currentPoints()
 
 print('*' * 79)
 print("\r")
@@ -363,6 +351,40 @@ else:
   print(str(len(responseDHCP['DhcpOptions'])) + " DHCP Options tagged with " + tag + " found." )
   grandTotal += 1
   currentPoints()
+
+print('*' * 79)
+print("\r")
+##############################################################################
+# Check to see Route Table Attached has the correct VPC CIDR Block and Gateway
+##############################################################################
+print('*' * 79)
+print("Testing to see if the properly tagged Route Table are attached to the properly tagged Internet Gateway...")
+
+routeTableLengthIsCorrect = False
+
+if len(responseRT['RouteTables']) != correctNumberOfRouteTables:
+  print(str(len(responseRT['RouteTables'])) + " Route Table tagged with " + tag + " required...")
+  print(str(len(responseRT['RouteTables'])) + " Route Table tagged with " + tag + " found." )
+  print("Double check the terraform.tfvars file to make sure you have the aws_internet_gateway function...")
+  print("Double check that you have executed the terraform destroy command from a previous exercise...")
+  currentPoints()
+else:
+  if len(responseRT['RouteTables']) == correctNumberOfRouteTables:
+    print("Route Table ID: " + str(responseRouteTables['RouteTables'][0]['RouteTableId']))
+    print(str(correctNumberOfRouteTables) + " Route Tables tagged with " + tag + " required...")
+    print(str(len(responseRouteTables['RouteTables'])) + " Route Tables tagged with " + tag + " found." )
+    if responseRT['RouteTables'][0]['Routes'][0]['DestinationCidrBlock'] == CIDRBLOCK and responseRT['RouteTables'][0]['Routes'][1]['DestinationCidrBlock'] == "0.0.0.0/0" and responseRT['RouteTables'][0]['Routes'][1]['GatewayId'] == responseIG['InternetGateways'][0]['InternetGatewayId']:
+      print("Your Route Tables Gateways match the required values and tag: " + tag + "...")
+      print("Destination CIDR Block: " + str(responseRT['RouteTables'][0]['Routes'][0]['DestinationCidrBlock']) + " | Destination Gateway: " + str(responseRT['RouteTables'][0]['Routes'][0]['GatewayId']))
+      print("Destination CIDR Block: " + str(responseRT['RouteTables'][0]['Routes'][1]['DestinationCidrBlock']) + " | Destination Gateway: " + str(responseRT['RouteTables'][0]['Routes'][1]['GatewayId']))
+      print("Internet Gateway tagged with " + tag + ": " + str(responseIG['InternetGateways'][0]['InternetGatewayId']))
+      grandTotal += 1
+      currentPoints()
+  else:
+    print("Double check the terraform.tfvars file to make sure you have the VPC cidr block set to 172.32.0.0/16...")
+    print("Double check the terraform.tfvars file to make sure you have created Route Tables and attached an INternet Gateway to your Route Table..")
+    print("Double check that you have executed the terraform destroy command from a previous exercise...")
+    currentPoints()    
 
 print('*' * 79)
 print("\r")
