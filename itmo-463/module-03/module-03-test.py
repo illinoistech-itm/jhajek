@@ -153,9 +153,14 @@ print('*' * 79)
 print("Testing three EC2 instances that all have the tag of: " + tag + "...")
 
 if len(responseEc2['Reservations'][0]['Instances']) == correctNumberOfEc2Instances:
-  print("There are 3...")
+  print("Well done! You have the correct number of Ec2 Instances: " + str(correctNumberOfEc2Instances) + " ...")
+  print("And your Ec2 Instances were tagged: " + tag + "...")
+  grandTotal += 1
+  currentPoints()
 else:
-  print("there are not three...")
+  print("You have an incorrect number of Ec2 Instances, you have: " + str(len(responseEc2['Reservations'][0]['Instances'])) + "...")
+  print("Perhaps double check that you have run the terraform apply command...")
+  print("Double check your terraform.tfvars and the tag variable is set correctly to the value " + tag + "...")
 
 print('*' * 79)
 print("\r")
