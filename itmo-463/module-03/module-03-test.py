@@ -122,7 +122,7 @@ print("\r")
 print('*' * 79)
 print("Testing the number of Security Groups and that they are tagged: " + tag + "...")
 
-if len(responseSecurityGroups['SecurityGroups']) == correctNumberOfSgs and responseSecurityGroups['SecurityGroups'][1]['Tags'][0]['Value'] == tag:
+if len(responseSecurityGroups['SecurityGroups']) == correctNumberOfSgs and responseSecurityGroups['SecurityGroups'][0]['Tags'][0]['Value'] == tag:
   print("Well done! You have the correct number of Security Groups: " + str(correctNumberOfSgs) + " ...")
   print("And your Security Groups was tagged: " + tag + "...")
   grandTotal += 1
