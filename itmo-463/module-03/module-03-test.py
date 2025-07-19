@@ -161,14 +161,50 @@ else:
   print("You have an incorrect number of Ec2 Instances, you have: " + str(len(responseEc2['Reservations'][0]['Instances'])) + "...")
   print("Perhaps double check that you have run the terraform apply command...")
   print("Double check your terraform.tfvars and the tag variable is set correctly to the value " + tag + "...")
+  currentPoints()
 
 print('*' * 79)
 print("\r")
 ##############################################################################
-# Check to see if Internet Gateway Created and Tagged
+# Testing to see if EC2 instances response with an HTTP 200 (OK)
 ##############################################################################
 print('*' * 79)
-print("Testing to see if newly created and tagged Internet Gateway created... ")
+print("Testing to see if EC2 instances response with an HTTP 200 (OK)...")
+
+if len(responseEc2['Reservations'][0]['Instances']) >= 1:
+  print("There are 1 or more EC2 instances present...")
+  print("Continuing with HTTP 200 (OK) check...")
+  # take 30 seconds to print out a little progress bar...
+  # https://pypi.org/project/tqdm
+  for i in tgdm(range(30)):
+    time.sleep(1)
+
+  checkHttpReturnStatusMismatch = False
+  print("Testing: http:// " + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'] + "...")
+  try:
+    res=requests.get("http:// " + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
+    if res.status_code == 200:
+      print("Successful request of the index.html file from: " + "http:// " + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
+    else:
+      checkHttpReturnStatusMismatch = True
+      print("Incorrect http response code: " + str(res.status_code) + " from: " + "http:// " + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
+  except requests.exceptions.ConnectionError as errc:
+    print("Error connecting:",errc)
+    checkHttpReturnStatusMismatch = True
+    print("No response code returned... not able to connect to: http:// " + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
+    sys.exit("Perhaps wait a minute or two for all your AWS resources to deploy...")
+
+  if checkHttpReturnStatusMismatch == False:
+    print("Correct status code returned...")
+    grandTotal += 1
+    currentPoints()
+  else:
+    print("Incorrect status code received...")
+    print("Perhaps double check the contnet of the --user-file in your main.tf file...")
+
+else:
+  print("There are less than 1 EC2 instance present, cannot perform HTTP 200 (OK) check...")
+  currentPoints()
 
 print('*' * 79)
 print("\r")
