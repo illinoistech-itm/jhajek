@@ -36,8 +36,8 @@ def currentPoints():
 ##############################################################################
 # VPC tagged
 # Security group tagged
-# HTTP check works 
 # three EC2 instances tagged
+# HTTP check works 
 # Internet gateway tagged 
 # Route table tagged
 # 3 subnets tagged
@@ -90,6 +90,17 @@ responseSecurityGroups = clientEc2.describe_security_groups(
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_instances.html
 
+responseEc2 = clientEc2.describe_instances(
+ Filters=[
+        {
+            'Name': 'string',
+            'Values': [
+                'string',
+            ]
+        },
+    ],
+)
+
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2/client/describe_load_balancers.html
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2/client/describe_target_groups.html
@@ -136,10 +147,15 @@ else:
 print('*' * 79)
 print("\r")
 ##############################################################################
-# Check EC2 instances Tag values to be 'module-03' tag
+# Testing for three Ec2 instances that are tagged...
 ##############################################################################
 print('*' * 79)
-print("Testing to make sure the running EC2 instances all have the tag of: " + tag + "...")
+print("Testing three EC2 instances that all have the tag of: " + tag + "...")
+
+if len(responseEc2['Reservations'][0]['Instances']) == correctNumberOfEc2Instances:
+  print("There are 3...")
+else:
+  print("there are not three...")
 
 print('*' * 79)
 print("\r")
