@@ -73,19 +73,6 @@ responseRouteTables = clientEc2.describe_route_tables(
     ],
 )
 
-# https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_dhcp_options.html
-
-responseDHCP = clientEc2.describe_dhcp_options(
-    Filters=[
-        {
-            'Name': 'tag:Name',
-            'Values': [
-            tag,
-            ]
-        },
-    ],
-)
-
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_security_groups.html
 
 responseSecurityGroups = clientEc2.describe_security_groups(
@@ -339,16 +326,16 @@ print("\r")
 print('*' * 79)
 print("Testing to see if the DHCP Options were set and properly tagged with " + tag + "...")
 
-if len(responseDHCP['DhcpOptions']) != correctNumberOfDhcpOptions:
-  print(str(responseDHCP['DhcpOptions']) + " DHCP Option tagged with " + tag + " required...")
-  print(str(len(responseDHCP['DhcpOptions'])) + " DHCP Option tagged with " + tag + " found." )
+if len(responseDhcpOptions['DhcpOptions']) != correctNumberOfDhcpOptions:
+  print(str(responseDhcpOptions['DhcpOptions']) + " DHCP Option tagged with " + tag + " required...")
+  print(str(len(responseDhcpOptions['DhcpOptions'])) + " DHCP Option tagged with " + tag + " found." )
   print("Double check the terraform.tfvars file to make sure you have the aws_route_table function...")
   print("Double check that you have executed the terraform destroy command from a previous exercise...")
   currentPoints()
 else:
-  print("DHCP Options ID: " + responseDHCP['DhcpOptions'][0]['DhcpOptionsId'])
-  print(str(len(responseDHCP['DhcpOptions'])) + " DHCP Options tagged with " + tag + " required...")
-  print(str(len(responseDHCP['DhcpOptions'])) + " DHCP Options tagged with " + tag + " found." )
+  print("DHCP Options ID: " + responseDhcpOptions['DhcpOptions'][0]['DhcpOptionsId'])
+  print(str(len(responseDhcpOptions['DhcpOptions'])) + " DHCP Options tagged with " + tag + " required...")
+  print(str(len(responseDhcpOptions['DhcpOptions'])) + " DHCP Options tagged with " + tag + " found." )
   grandTotal += 1
   currentPoints()
 
