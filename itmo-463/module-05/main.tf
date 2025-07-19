@@ -36,6 +36,9 @@ resource "aws_internet_gateway" "gw" {
 
 resource "aws_vpc_dhcp_options" "dns_resolver" {
   domain_name_servers = ["AmazonProvidedDNS"]
+  tags = {
+    Name = var.tag
+  }  
 }
 
 # Associate these options with our VPC now
