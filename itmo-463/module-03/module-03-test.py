@@ -295,6 +295,32 @@ print("\r")
 print('*' * 79)
 print("Testing to see if the properly tagged Route Table are attached to the properly tagged Internet Gateway...")
 
+routeTableLengthIsCorrect = False
+
+if len(responseRT['RouteTables']) != correctNumberOfRouteTables:
+  print(str(len(responseRT['RouteTables'])) + " Route Table tagged with " + tag + " required...")
+  print(str(len(responseRT['RouteTables'])) + " Route Table tagged with " + tag + " found." )
+  print("Double check the terraform.tfvars file to make sure you have the aws_internet_gateway function...")
+  print("Double check that you have executed the terraform destroy command from a previous exercise...")
+  currentPoints()
+else:
+  if len(responseRT['RouteTables']) == correctNumberOfRouteTables:
+    print("Route Table ID: " + str(responseRouteTables['RouteTables'][0]['RouteTableId']))
+    print(str(correctNumberOfRouteTables) + " Route Tables tagged with " + tag + " required...")
+    print(str(len(responseRouteTables['RouteTables'])) + " Route Tables tagged with " + tag + " found." )
+    if responseRT['RouteTables'][0]['Routes'][0]['DestinationCidrBlock'] == "172.32.0.0/16" and responseRT['RouteTables'][0]['Routes'][1]['DestinationCidrBlock'] == "0.0.0.0/0" and responseRT['RouteTables'][0]['Routes'][1]['GatewayId'] == responseIG['InternetGateways'][0]['InternetGatewayId']:
+      print("Your Route Tables Gateways match the required values and tag: " + tag + "...")
+      print("Destination CIDR Block: " + str(responseRT['RouteTables'][0]['Routes'][0]['DestinationCidrBlock']) + " | Destination Gateway: " + str(responseRT['RouteTables'][0]['Routes'][0]['GatewayId']))
+      print("Destination CIDR Block: " + str(responseRT['RouteTables'][0]['Routes'][1]['DestinationCidrBlock']) + " | Destination Gateway: " + str(responseRT['RouteTables'][0]['Routes'][1]['GatewayId']))
+      print("Internet Gateway tagged with " + tag + ": " + str(responseIG['InternetGateways'][0]['InternetGatewayId']))
+      grandTotal += 1
+      currentPoints()
+  else:
+    print("Double check the terraform.tfvars file to make sure you have the VPC cidr block set to 172.32.0.0/16...")
+    print("Double check the terraform.tfvars file to make sure you have created Route Tables and attached an INternet Gateway to your Route Table..")
+    print("Double check that you have executed the terraform destroy command from a previous exercise...")
+    currentPoints()    
+
 print('*' * 79)
 print("\r")
 ##############################################################################
@@ -303,6 +329,19 @@ print("\r")
 print('*' * 79)
 print("Testing to see if there are three subnets and they are tagged properly with " + tag + "...")
 
+if len(responseSubnets['Subnets']) == 0:
+  print(str(len(responseSubnets['Subnets'])) + " Subnets with tag: " + tag + " present...")
+  print("Double check your main.tf subnet creation code, aws_subnets...")
+  print("Double check that you have run the terraform destroy command to remove")
+  print("entities from previous exercises...")
+  currentPoints()
+else:
+  for n in range(0,len(responseSubnets['Subnets'])):
+    print("Subnet ID: " + str(responseSubnets['Subnets'][n]['SubnetId']) + " found with tag of " + tag + "...")
+
+  grandTotal += 1
+  currentPoints()
+
 print('*' * 79)
 print("\r")
 ##############################################################################
@@ -310,6 +349,19 @@ print("\r")
 ##############################################################################
 print('*' * 79)
 print("Testing to see if the DHCP Options were set and properly tagged with " + tag + "...")
+
+if len(responseDHCP['DhcpOptions']) != correctNumberOfDhcpOptions:
+  print(str(responseDHCP['DhcpOptions']) + " DHCP Option tagged with " + tag + " required...")
+  print(str(len(responseDHCP['DhcpOptions'])) + " DHCP Option tagged with " + tag + " found." )
+  print("Double check the terraform.tfvars file to make sure you have the aws_route_table function...")
+  print("Double check that you have executed the terraform destroy command from a previous exercise...")
+  currentPoints()
+else:
+  print("DHCP Options ID: " + responseDHCP['DhcpOptions'][0]['DhcpOptionsId'])
+  print(str(len(responseDHCP['DhcpOptions'])) + " DHCP Options tagged with " + tag + " required...")
+  print(str(len(responseDHCP['DhcpOptions'])) + " DHCP Options tagged with " + tag + " found." )
+  grandTotal += 1
+  currentPoints()
 
 print('*' * 79)
 print("\r")
