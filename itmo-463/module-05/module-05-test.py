@@ -27,8 +27,8 @@ def currentPoints():
 ##############################################################################
 # VPC tagged
 # Security group tagged
-# HTTP check works 
 # three EC2 instances tagged
+# HTTP check works 
 # Internet gateway tagged 
 # Route table tagged
 # 3 subnets tagged
