@@ -93,7 +93,7 @@ responseSecurityGroups = clientEc2.describe_security_groups(
 responseEc2 = clientEc2.describe_instances(
  Filters=[
         {
-            'Name': 'string',
+            'Name': 'tag:Name',
             'Values': [
                 tag,
             ]
