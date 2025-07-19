@@ -22,7 +22,7 @@ correctNumberOfDhcpOptions = 1
 
 # Function to print out current points progress
 def currentPoints():
-  print("Current Points: " + str(grandtotal) + " out of " + str(totalPoints) + ".")
+  print("Current Points: " + str(grandTotal) + " out of " + str(totalPoints) + ".")
 
 # Documentation Links
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html
@@ -44,7 +44,22 @@ def currentPoints():
 # DHCP options tagged
 # Check to make sure 1 route table is attached to IG
 
+# Instantiate all AWS Libraries
+
+clientEc2 = boto3.client('ec2')
+
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_vpcs.html
+
+responseVpcs = clientEc2.describe_vpcs(
+    Filters=[
+        {
+            'Name': 'tag:Name',
+            'Values': [
+                tag,
+            ]
+        },
+    ],
+)
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_subnets.html
 
@@ -72,11 +87,21 @@ def currentPoints():
 
 print("\r")
 ##############################################################################
-# Testing Tagging of new Security Group
+# Testing number of VPCs and that they have the correct tag
 ##############################################################################
 print('*' * 79)
-print("Testing that the new security group has been created and tagged: " + tag + "...")
+print("Testing the correct number of VPCs and that they are tagged: " + tag + "...")
 
+if len(responseVpcs['Vpcs']) == correctNumberOfVpcs and responseVpcs['Vpcs'][1]['Tags'][0]['Value'] == tag:
+  print("Well done! You have the correct number of VPCs: " + str(correctNumberOfVpcs) + " ...")
+  print("And your VPC was tagged: " + tag + "...")
+  grandTotal += 1
+  currentPoints()
+else:
+  print("You have an incorrect number of VPCs, you have: " + str(len(responseVpcs['Vpcs'])) + "...")
+  print("Perhaps double check that you have run the terraform apply command...")
+  print("Double check your terraform.tfvars and the tag variable is set correctly to the value " + tag + "...")
+  currentPoints()
 print('*' * 79)
 print("\r")
 ##############################################################################
@@ -139,7 +164,7 @@ print("\r")
 # Print out the grandtotal and the grade values to result.txt
 ##############################################################################
 print('*' * 79)
-print("Your result is: " + str(grandtotal) + " out of " + str(totalPoints) + " points.")
+print("Your result is: " + str(grandTotal) + " out of " + str(totalPoints) + " points.")
 print("You can retry any items that need adjustment and retest...")
 
 print('*' * 79)
