@@ -69,6 +69,17 @@ responseVpcs = clientEc2.describe_vpcs(
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_security_groups.html
 
+responseSecurityGroups = clientEc2.describe_security_groups(
+    Filters=[
+        {
+            'Name': 'tag:Name',
+            'Values': [
+                tag,
+            ]
+        },
+    ],
+)
+
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_internet_gateways.html
 
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_subnets.html
@@ -92,7 +103,7 @@ print("\r")
 print('*' * 79)
 print("Testing the correct number of VPCs and that they are tagged: " + tag + "...")
 
-if len(responseVpcs['Vpcs']) == correctNumberOfVpcs and responseVpcs['Vpcs'][1]['Tags'][0]['Value'] == tag:
+if len(responseVpcs['Vpcs']) == correctNumberOfVpcs and responseVpcs['Vpcs'][0]['Tags'][0]['Value'] == tag:
   print("Well done! You have the correct number of VPCs: " + str(correctNumberOfVpcs) + " ...")
   print("And your VPC was tagged: " + tag + "...")
   grandTotal += 1
@@ -102,13 +113,25 @@ else:
   print("Perhaps double check that you have run the terraform apply command...")
   print("Double check your terraform.tfvars and the tag variable is set correctly to the value " + tag + "...")
   currentPoints()
+
 print('*' * 79)
 print("\r")
 ##############################################################################
-# Check PublicDNS and HTTP return status to check if webserver was installed and working
+# Testing the number of Security Groups and that they have the correct tag...
 ##############################################################################
 print('*' * 79)
-print("Testing for the correct HTTP status (200) response from the webserver via the ELB URL...")
+print("Testing the number of Security Groups and that they are tagged: " + tag + "...")
+
+if len(responseSecurityGroups['SecurityGroups']) == correctNumberOfSgs and responseSecurityGroups['SecurityGroups'][1]['Tags'][0]['Value'] == tag:
+  print("Well done! You have the correct number of Security Groups: " + str(correctNumberOfSgs) + " ...")
+  print("And your Security Groups was tagged: " + tag + "...")
+  grandTotal += 1
+  currentPoints()
+else:
+  print("You have an incorrect number of Security Groups, you have: " + str(len(responseSecurityGroups['SecurityGroups'])) + "...")
+  print("Perhaps double check that you have run the terraform apply command...")
+  print("Double check your terraform.tfvars and the tag variable is set correctly to the value " + tag + "...")
+  currentPoints()
 
 print('*' * 79)
 print("\r")
