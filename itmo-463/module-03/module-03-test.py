@@ -19,6 +19,7 @@ correctNumberOfIgs = 1
 correctNumberOfRouteTables = 1
 correctNumberOfSubnets = 3
 correctNumberOfDhcpOptions = 1
+CIDRBLOCK = "10.0.0.0/16"
 
 # Function to print out current points progress
 def currentPoints():
@@ -308,7 +309,7 @@ else:
     print("Route Table ID: " + str(responseRouteTables['RouteTables'][0]['RouteTableId']))
     print(str(correctNumberOfRouteTables) + " Route Tables tagged with " + tag + " required...")
     print(str(len(responseRouteTables['RouteTables'])) + " Route Tables tagged with " + tag + " found." )
-    if responseRT['RouteTables'][0]['Routes'][0]['DestinationCidrBlock'] == "172.32.0.0/16" and responseRT['RouteTables'][0]['Routes'][1]['DestinationCidrBlock'] == "0.0.0.0/0" and responseRT['RouteTables'][0]['Routes'][1]['GatewayId'] == responseIG['InternetGateways'][0]['InternetGatewayId']:
+    if responseRT['RouteTables'][0]['Routes'][0]['DestinationCidrBlock'] == CIDRBLOCK and responseRT['RouteTables'][0]['Routes'][1]['DestinationCidrBlock'] == "0.0.0.0/0" and responseRT['RouteTables'][0]['Routes'][1]['GatewayId'] == responseIG['InternetGateways'][0]['InternetGatewayId']:
       print("Your Route Tables Gateways match the required values and tag: " + tag + "...")
       print("Destination CIDR Block: " + str(responseRT['RouteTables'][0]['Routes'][0]['DestinationCidrBlock']) + " | Destination Gateway: " + str(responseRT['RouteTables'][0]['Routes'][0]['GatewayId']))
       print("Destination CIDR Block: " + str(responseRT['RouteTables'][0]['Routes'][1]['DestinationCidrBlock']) + " | Destination Gateway: " + str(responseRT['RouteTables'][0]['Routes'][1]['GatewayId']))
