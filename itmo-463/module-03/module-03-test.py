@@ -9,7 +9,16 @@ import time
 from tqdm import tqdm
 
 # Create variables to check for correct numbers of elements
-
+grandTotal = 0
+totalPoints = 9
+tag = "module-03"
+correctNumberOfVpcs = 1
+correctNumberOfSgs = 1
+correctNumberOfEc2Instances = 3 # this is one that you need to add to the terraform - a count variable of 3
+correctNumberOfIgs = 1
+correctNumberOfRouteTables = 1
+correctNumberOfSubnets = 3
+correctNumberOfDhcpOptions = 1
 
 # Function to print out current points progress
 def currentPoints():
