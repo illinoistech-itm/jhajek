@@ -176,7 +176,7 @@ if len(responseEc2['Reservations'][0]['Instances']) >= 1:
   print("Continuing with HTTP 200 (OK) check...")
   # take 30 seconds to print out a little progress bar...
   # https://pypi.org/project/tqdm
-  for i in tgdm(range(30)):
+  for i in tqdm(range(30)):
     time.sleep(1)
 
   checkHttpReturnStatusMismatch = False
