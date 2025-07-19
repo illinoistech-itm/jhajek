@@ -180,18 +180,18 @@ if len(responseEc2['Reservations'][0]['Instances']) >= 1:
     time.sleep(1)
 
   checkHttpReturnStatusMismatch = False
-  print("Testing: http:// " + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'] + "...")
+  print("Testing: http://" + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'] + "...")
   try:
-    res=requests.get("http:// " + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
+    res=requests.get("http://" + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
     if res.status_code == 200:
-      print("Successful request of the index.html file from: " + "http:// " + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
+      print("Successful request of the index.html file from: " + "http://" + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
     else:
       checkHttpReturnStatusMismatch = True
-      print("Incorrect http response code: " + str(res.status_code) + " from: " + "http:// " + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
+      print("Incorrect http response code: " + str(res.status_code) + " from: " + "http://" + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
   except requests.exceptions.ConnectionError as errc:
     print("Error connecting:",errc)
     checkHttpReturnStatusMismatch = True
-    print("No response code returned... not able to connect to: http:// " + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
+    print("No response code returned... not able to connect to: http://" + responseEc2['Reservations'][0]['Instances'][0]['NetworkInterfaces'][0]['Association']['PublicDnsName'])
     sys.exit("Perhaps wait a minute or two for all your AWS resources to deploy...")
 
   if checkHttpReturnStatusMismatch == False:
@@ -200,7 +200,7 @@ if len(responseEc2['Reservations'][0]['Instances']) >= 1:
     currentPoints()
   else:
     print("Incorrect status code received...")
-    print("Perhaps double check the contnet of the --user-file in your main.tf file...")
+    print("Perhaps double check the content of the --user-file in your main.tf file...")
 
 else:
   print("There are less than 1 EC2 instance present, cannot perform HTTP 200 (OK) check...")
