@@ -95,7 +95,7 @@ responseEc2 = clientEc2.describe_instances(
         {
             'Name': 'string',
             'Values': [
-                'string',
+                tag,
             ]
         },
     ],
