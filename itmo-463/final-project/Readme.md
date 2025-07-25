@@ -80,7 +80,7 @@ Write code to detect, grade, and display if this content is present. You are abl
 1) 1 Load Balancer tagged
 1) 1 autoscaling group tagged
 1) 1 launch template tagged
-1) Database snapshot ~~~tagged (need to add this in your main.tf when creating it)~~~
+1) 1 Database snapshot ~~tagged (need to add this in your main.tf when creating it)~~
 
 ### Module 07
 
@@ -98,7 +98,7 @@ Write code to detect, grade, and display if this content is present. You are abl
 1) 1 Load Balancer tagged
 1) 1 autoscaling group tagged
 1) 1 launch template tagged
-1) Database snapshot ~~~tagged (need to add this in your main.tf when creating it)~~~
+1) 1 Database snapshot ~~tagged (need to add this in your main.tf when creating it)~~
 1) 1 RDS DB instance tagged
 
 ## Final Deliverable
