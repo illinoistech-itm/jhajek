@@ -55,7 +55,7 @@ Network Access:
 The entire cluster works on a single flat CIDR block: 192.168.172.0/24 and there is DNS available for each system. Which is based on the last octet of the IP address
 
 ```
-system41.rice.iit.edu will resolve to 192.168.172.41 
+system41.rice.iit.edu will resolve to 192.168.172.41
 ```
 
 2 Node Proxmox Cluster (Debian Linux running Managed KVM) 
