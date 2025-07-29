@@ -23,7 +23,7 @@ Authenticate using your Portal username and password
 
 Watch out! The two-factor message triggers quickly and doesn't have much patience, make sure to have your phone ready to approve the connection.
 
-If you have more than one MFA set up besides your phone, it could give you a tricky time. If it is not prompting you to input one of your MFA, then close it, reconnect, and try putting `,SMS` directly after your password (no spaces and caps). For example: `password,SMS`.
+If you have more than one MFA set up besides your phone, it could give you a tricky time. If it is not prompting you to input one of your MFA, then close it, reconnect, and try putting `,SMS` directly after your password (no spaces and caps). For example if your password is `ilovebunnies`: `ilovebunnies,SMS`.
 
 ## SSH Connection
 
