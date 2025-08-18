@@ -140,7 +140,7 @@ My information would look like this:
 
 ```bash
 git config --global user.name "Jeremy Hajek"
-git config --global user.email "hajek@iit.edu"
+git config --global user.email "hajek@illinoistech.edu"
 ```
 
 ### Install VirtualBox or Parallels

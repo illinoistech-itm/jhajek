@@ -1,10 +1,10 @@
-# ITMD 521 Big Data Infrastructure - Fall 2025
+# ITM 303 Intro OS and Hardware II - Fall 2025
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
 Semester: Fall 2025 Professor Jeremy Hajek
 
-![*https://xkcd.com/2054/*](images/data_pipeline.png "XCKD 2054 image URL")
+![*https://xkcd.com/2054/*](images/cautionary.png "XCKD 456 image URL")
 
 | Category | Value |
 | --------- | ------------ |
@@ -18,11 +18,7 @@ Semester: Fall 2025 Professor Jeremy Hajek
 
 ## Course Catalog Description
 
-This course covers both concepts and practical applications of distributed data paradigms. This provides a comparison between SQL, MapReduce, and Spark Frameworks. The course focuses on how to treat and prepare unstructured data to be used in the MapReduce framework for parallel processing. Students will be tasked with learning and demonstrating the MapReduce framework through implementing the Hadoop framework and associated Java technology. [ITMD 521 Bulletin Description](http://bulletin.iit.edu/courses/itmd/ "ITMD 521 Bulletin Description")
-
-## Updated Course Description
-
-This course covers both concepts and practical applications of distributed data paradigms and data engineering. We will explore cloud native tooling used in the industry. We will focus on the concepts of Data Engineering and explore the Data Life Cycle. We will apply these concepts using opensource Big Data platforms and by writing code to explore the concepts of Data Engineering. You will have an experience how to treat and prepare structured and unstructured Big Data. Students will be tasked with learning and demonstrating these concepts via a hands on final project.
+Introduces features of an advanced operating system, including basic commands, file and directory manipulation, security, and suitability for server applications. Popular and business-focused desktop and mobile device operating systems will be examined, as well as enterprise and open-source server implementations. [ITMD 521 Bulletin Description](http://bulletin.iit.edu/courses/itmd/ "ITM 303 Bulletin Description")
 
 ## Prerequisites
 
@@ -31,7 +27,7 @@ Familiarity with programming and Linux: Normally 3-0-3 Semester Hours
 ## Section 01 Tuesday Lecture, Time & Place
 
 * Main Class time
-  * Tuesday and Thursday 11:25 am to 12:40 PM
+  * Monday 2:00 PM to 4:40 PM
   * Location - TS-2030 Smart Lab
   * [Campus Map](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 
