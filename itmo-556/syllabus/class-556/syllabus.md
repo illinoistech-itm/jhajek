@@ -11,11 +11,9 @@ Semester: Fall 2024 Professor Jeremy Hajek
  **Professor** | Jeremy Hajek
  Address | Department of Information Technology & Management 10 W. 33rd St., Chicago, IL 60616
  Telephone | 312.567.5937
- Email | hajek@iit.edu
- Office | Galvin Tower 15th Floor, 10 W. 35th St.
- Office Hours | Mon - Thurs — 1:00 - 3:00 PM
+ Email | hajek@illinoistech.edu
  Location | Galvin Tower 15th Floor, 10 W. 35th St or via MS Teams Link
- URL | Book and appointment at: [https://hajek.youcanbook.me](https://hajek.youcanbook.me "Booking APP URL")
+ URL | [Book and appointment](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu "appointment booking URL")
 
 ## Course Catalog Description
 
@@ -39,22 +37,23 @@ All readings should be done prior to class. Do the readings!
 
 Session | Date | Topic | Homework Reading |
 --------|------|:------|----------
-01 | 08/20,22 | Introduction & Tooling Setup | Technology and Philosophy of FOSS Ch 2
-02 | 08/27,29 | History of Free and Open Source | Technology and Philosophy of FOSS Ch 3
-03 | 09/03,05 | Hardware and Linux Install | Technology and Philosophy of FOSS Ch 4
-04 | 09/10,12 | Desktop Linux and GUIs | Technology and Philosophy of FOSS Ch 5
-05 | 09/17,19 | Filesystem, Path, Shell, and File Permissions | Technology and Philosophy of FOSS Ch 6
-06 | 09/24,26 | Shell meta-characters, pipes, search and tools | Technology and Philosophy of FOSS Ch 7
-07 | 10/01,03 | Introduction to Bash Shell, Linux Editors, and User Profiles | Technology and Philosophy of FOSS Ch 8
-08 | 10/08,10 | Writing Basic Shell Scripts | NA
-09 | 10/15,17 | Midterm Project Week | Technology and Philosophy of FOSS Ch 9
-10 | 10/22,24 | no class - Spring Break | -
-11 | 10/29,31 | System Administration | Technology and Philosophy of FOSS Ch 10
-12 | 11/05,07 | Init Services, Daemons, Processes | Technology and Philosophy of FOSS Ch 11
-13 | 11/12,14 | Filesystems: Creating, Partitioning, and Mounting | Technology and Philosophy of FOSS Ch 12
-14 | 11/19,21 | Networking, Webservers, and Databases | Technology and Philosophy of FOSS Ch 13
-15 | 11/26,28 | Infrastructure and Orchestration | Final Project Assigned
-16 | 12/03  | Final Project Work | NA
+01 | 08/19,21 | Introduction & Tooling Setup | Technology and Philosophy of FOSS Ch 2
+02 | 08/26,28 | History of Free and Open Source | Technology and Philosophy of FOSS Ch 3
+03 | 09/02,04 | Hardware and Linux Install | Technology and Philosophy of FOSS Ch 4
+04 | 09/09,11 | Desktop Linux and GUIs | Technology and Philosophy of FOSS Ch 5
+05 | 09/16,18 | Filesystem, Path, Shell, and File Permissions | Technology and Philosophy of FOSS Ch 6
+06 | 09/23,25 | Shell meta-characters, pipes, search and tools | Technology and Philosophy of FOSS Ch 7
+07 | 09/30,02 | Introduction to Bash Shell, Linux Editors, and User Profiles | Technology and Philosophy of FOSS Ch 8
+08 | 10/07,09 | Writing Basic Shell Scripts | NA
+09 | 10/14,16 | **No class 10/14** Midterm Project Week | Technology and Philosophy of FOSS Ch 9
+10 | 10/21,23 | System Administration | Technology and Philosophy of FOSS Ch 10
+11 | 10/28,30 | Init Services, Daemons, Processes | Technology and Philosophy of FOSS Ch 11
+12 | 11/04,06 | Filesystems: Creating, Partitioning, and Mounting | Technology and Philosophy of FOSS Ch 12
+13 | 11/11,13 | Networking, Webservers, and Databases | Technology and Philosophy of FOSS Ch 13
+14 | 11/18,20 | Infrastructure and Orchestration | Final Project Assigned
+15 | 11/25,27 | Final Project Work **No Class Nov 26-28th** | -
+16 | 12/03,05  | Final Project Work | NA
+17 | 12/08 | Final's Week
 
 ### Course Outcomes
 
@@ -81,6 +80,7 @@ Students completing this course will be able to:
 ### Required Textbook
 
 Understanding Free and Opensource Operating Systems, The Technology and Philosophy Of - Part I
+
 Author: Jeremy Hajek
 
 OpenSource and freely available (and often updated) [https://github.com/jhajek/Linux-text-book-part-1/releases](https://github.com/jhajek/Linux-text-book-part-1/releases "Github URL to class textbook")

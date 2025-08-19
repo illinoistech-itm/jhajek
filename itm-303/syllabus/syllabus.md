@@ -18,7 +18,7 @@ Semester: Fall 2025 Professor Jeremy Hajek
 
 ## Course Catalog Description
 
-Introduces features of an advanced operating system, including basic commands, file and directory manipulation, security, and suitability for server applications. Popular and business-focused desktop and mobile device operating systems will be examined, as well as enterprise and open-source server implementations. [ITMD 521 Bulletin Description](http://bulletin.iit.edu/courses/itmd/ "ITM 303 Bulletin Description")
+Introduces features of an advanced operating system, including basic commands, file and directory manipulation, security, and suitability for server applications. Popular and business-focused desktop and mobile device operating systems will be examined, as well as enterprise and open-source server implementations. [ITM 303 Bulletin Description](http://bulletin.iit.edu/courses/itmd/ "ITM 303 Bulletin Description")
 
 ## Prerequisites
 
@@ -41,74 +41,54 @@ All readings should be done prior to class
 
 Week | Date | Topic | Readings |
 ----|------|:--------------------|-------------
-1 | 08/18 | Introduction | - 
-2 | 08/20 | Tooling Assignments | FDoE 1
-3 | 08/25 | Data Engineering Described | - 
-4 | 08/27 | Exercises | FDoE 2
-X | 09/01 | Labor day - No Class. Make up on 9/05 | -
-5 | 09/03 | Data Engineering Life Cycle | Learning Spark Ch 2
-6 | 09/05 | Apache Spark Install Exercises | FDoE 3
-7 | 09/08 | Designing Good Data Architecture | Learning Spark Ch 3 & 4
-8 | 09/10 | Apache Spark Structured APIs Exercises | -
-9 | 09/15 | End to End Data Set Examples | -
-10 | 09/17 | Exercises | FDoE 4
-11 | 09/22 | Choosing Technologies Across the Data Engineering LifeCycle | -
-12 | 09/24 | Exercises | FDoE 5
-13 | 09/29 | Data Generation in Source Systems | -
-14 | 10/01 | Exercises | FDoE 6
-15 | 10/06 | Storage | -
-16 | 10/08 | Exercises | FDoE 7
-17 | 10/13 | Fall Break Day. No Class | -
-18 | 10/15 | Ingestion | -
-19 | 10/20 | Exercises | FDoE 8
-20 | 10/22 | Queries, Modeling, and Transformations | -
-21 | 10/27 | Exercises | FDoE 9
-22 | 10/29 | Serving Data for Analytics, ML, and reverse ETL | -
-23 | 11/03 | Exercises | FDoE 10 & 11
-24 | 11/05 | Security, Privacy, and the Future | -
-25 | 11/10 | Exercises | -
-26 | 11/12 | Project Work | -
-27 | 11/17 | Project Work | -
-28 | 11/19 | Project Work | -
-29 | 11/24 | Project Work | -
-30 | 11/26 | Thanksgiving break - No Class | -
-31 | 12/01 | Project Presentation | -
-32 | 12/03 | Project Presentation | -
-33 | 12/08 | Final Exam Week | -
+01 | 08/18 | Introduction Tooling Setup | - 
+02 | 08/25 | Virtualization Tooling | - 
+XX | 09/01 | **Labor day - No Class. Make up on 9/05** | -
+03 | 09/05 | Shell Commands | -
+04 | 09/08 | Shell Scripting | -
+05 | 09/15 | SSH tooling | -
+06 | 09/22 | Text Manipulation | -
+07 | 09/29 | Advanced Git | -
+08 | 10/06 | API development | -
+09 | 10/13 | **Fall Break Day. No Class** | -
+10 | 10/20 | Intro to IoT | -
+11 | 10/27 | IoT DC,DT, DP | -
+12 | 11/03 | IoT Dashboards | -
+13 | 11/10 | Exercises | -
+14 | 11/17 | Project Work | -
+15 | 11/24 | Project Work | -
+16 | 12/01 | Project Presentation | -
+17 | 12/08 | Final Exam Week | -
 
 ## Course Student Outcomes
 
-At the outcome of this course, students will have a structured overview of distributed data-paradigms. You will be able to describe and explain the aspects of each paradigm and the tools used to run programs to query structured and unstructured data. You will be able to install, implement, and demonstrate the software that allows you to use these paradigms. You will be able to explain the concept of Data Engineering and the Data Life Cycle.
+At the outcome of this course, students will have a structured overview of computing tooling they will use and need in their career. This will expose them to the content through exercises and small challenges.
 
-## Course Objectives
+## Course Objectives - Updated
 
 Students completing this course will be able to:
-  
-* Describe the task of a Data Engineer
-* Explain the Data lifecycle
-* Deploy a Spark Application to a Spark cluster
-* Demonstrate loading data from disparate data sources and discuss advantages
-* Demonstrate and Discuss the benefits of enterprise Big Data tools
-* Demonstrate the creation of Data Pipelining
+
+Topics covered in this course fall into the following areas: 
+1. Command line interfaces 
+1. Text manipulation 
+1. Scripting and automation 
+1. Development tools and processes 
+1. DevOps tools 
+1. Introduction to IoT - data collection, presentation, and data transmission
+1. Virtualization 
+1. Information security 
+1. AI tools
+
+* Describe the task of a IT professional
+* Explain how and when to use common commandline commands
+* Demonstrate the ability to script and automate
+* Explain the current state of tooling
+* Demonstrate and Discuss the benefits of virtualization
+* Demonstrate the use and understanding of AI tools
 
 ## Required Textbook
 
-![*Learning Spark V2*](images/learning_spark_2_0.jpg "Learning Spark 2_0")
-
-* Learning Spark - Lighting-Fast Data Analytics
-  * Damji, Jules S.; Wening, Brooke; Das, Tathagata; & Lee, Danny
-  * ISBN-13: 978-1-492-05004-9
-  * Publisher: O'Reilly
-  * [https://www.amazon.com/Learning-Spark-Jules-Damji/dp/1492050040/ref=sr_1_9?keywords=learning+spark+2.0&qid=1641868150&sr=8-9](https://www.amazon.com/Learning-Spark-Jules-Damji/dp/1492050040/ref=sr_1_9?keywords=learning+spark+2.0&qid=1641868150&sr=8-9 "Link Learning Spark Amazon Page")
-
-![*Fundamentals of Data Engineering*](images/fund-data-engineering.png "Fundamentals of Data Engineering")
-
-* Fundamentals of Data Engineering
-  * Joe Reis, Matt Housley
-  * Released June 2022
-  * Publisher(s): O'Reilly Media, Inc.
-  * ISBN: 9781098108304
-  * [Link to Amazon](https://www.amazon.com/Fundamentals-Data-Engineering-Robust-Systems/dp/1098108302/ref=sr_1_1?crid=2Y0ZX5GC2N8KV&keywords=fundamentals+of+data+engineering&qid=1704683557&sprefix=fundamentals+of+data+en%2Caps%2C129&sr=8-1 "Textbook link to Amazon")
+None
 
 ### Readings
 
@@ -135,6 +115,7 @@ Mobile apps available
 
 Lab Assignment: There will be 13 lab assignments
 Final Project: The will be a final project detailed and presented during the final exam period
+Final Exam: Will be an oral exam related to weekly review questions
 
 ### Grading
 
@@ -151,18 +132,20 @@ The final grade for the class will be calculated as follows:
 
 Name | Grade | Total Points
 ------------------|----------|-----------
-Lab Assignments | 36% | 130 (10pts each x13)
-Final Project | 27% | 100 points
-Final Oral Exam | 27% | 100 points
-Attendance | 8% | 30 points
+Lab Assignments | 28% | 130 (10pts each x13)
+Podcast/Reading Assignment | 28% | 130 (10pts each x13)
+Final Project | 22% | 100 points
+Final Oral Exam | 22% | 100 points
+Attendance | 6% | 30 points
 
 Online 02 section
 
 Name | Grade | Total Points
 ------------------|----------|-----------
-Lab Assignments | 39% | 130 (10pts each x13)
-Final Project | 29% | 100 points
-Final Oral Exam | 29% | 100 points
+Lab Assignments | 30% | 130 (10pts each x13)
+Podcast/Reading Assignment | 30% | 130 (10pts each x13)
+Final Project | 20% | 100 points
+Final Oral Exam | 20% | 100 points
 
 ### Late Submission
 
