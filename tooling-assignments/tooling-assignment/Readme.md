@@ -60,13 +60,19 @@ Use the distros built in Package Manger where needed.
 For MacOS using Homebrew:
 
 ```bash
-brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install virtualbox ; brew install --cask vagrant ; brew install packer ; brew install --cask theiaide
+# First install the Hashicorp brew tap (repo)
+brew tap hashicorp/tap
+
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install virtualbox ; brew install hashicorp/tap/hashicorp-vagrant ; brew install hashicorp/tap/packer ; brew install --cask theiaide
 ```
 
 For M1 Macs you will run the same as above but without the VirtualBox install:
 
 ```bash
-brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install --cask vagrant ; brew install packer
+# First install the Hashicorp brew tap (repo)
+brew tap hashicorp/tap
+
+brew install --cask powershell ; brew install --cask iterm2 ; brew install git ; brew install --cask visual-studio-code ; brew install hashicorp/tap/hashicorp-vagrant ; brew install hashicorp/tap/packer
 ```
 
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
