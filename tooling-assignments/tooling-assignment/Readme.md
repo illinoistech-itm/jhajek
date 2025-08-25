@@ -43,6 +43,34 @@ Homebrew is the MacOS 3rd party package manager located at: [https://brew.sh/](h
 
 If you have a Mac - install `brew` and provide a screenshot of the output of the command: `brew --version`
 
+# Tooling Assignment
+
+## Part 1: Git Installation
+I installed Git and verified it works.
+<img width="410" height="45" alt="Screenshot 2025-08-25 at 12 10 19 PM" src="https://github.com/user-attachments/assets/8057a5f9-1169-4f52-9c2a-7f35775c6558" />
+
+
+## Part 2: VS Code
+I installed VS Code successfully.
+<img width="647" height="97" alt="Screenshot 2025-08-25 at 12 15 18 PM" src="https://github.com/user-attachments/assets/2994f98a-23fc-469e-8bb7-4a2e4e7b26ee" />
+
+## Part 3: Node.js and npm
+Installed Node.js and npm.
+<img width="347" height="72" alt="Screenshot 2025-08-25 at 2 12 52 PM" src="https://github.com/user-attachments/assets/b41b9b7a-e3da-425a-b34f-72117040c639" />
+<img width="347" height="58" alt="Screenshot 2025-08-25 at 2 14 14 PM" src="https://github.com/user-attachments/assets/31fa656b-0a0e-4381-a70f-cf234e28f072" />
+
+
+## Part 4: Docker
+Docker is installed and running.
+<img width="647" height="31" alt="Screenshot 2025-08-25 at 12 11 38 PM" src="https://github.com/user-attachments/assets/f40fb261-dca7-4e36-aa90-8285912e3478" />
+
+
+## Part 5: GitHub Repo Clone
+I cloned my private GitHub repo to my computer.
+
+<img width="715" height="45" alt="Screenshot 2025-08-25 at 4 40 22 PM" src="https://github.com/user-attachments/assets/44bb22e1-2472-4dec-b080-cd5c951eb768" />
+
+
 ### Windows
 
 [WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget/ "webpage for winget") is a command line tool enabling users to discover, install, upgrade, remove and configure applications on Windows 10, Windows 11, and Windows Server 2025 computers. This tool is the client interface to the Windows Package Manager service.
