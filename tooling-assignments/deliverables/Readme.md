@@ -22,6 +22,6 @@ Your `tooling-assignment` deliverable will be inside of a directory you created 
 
 ## Tooling Assignment Vagrant
 
-Your `tooling-assignment-vagrant` deliverable will be inside of its own directory under your class folder with its own `image` directory.
+Your `tooling-assignment-vagrant` deliverable will be inside of its own directory under your class folder with its own `images` directory.
 
 ![*Tooling Assignment Vagrant*](./images/tooling-assignment-vagrant-structure.png "Tooling Assignment Vagrant Structure")
