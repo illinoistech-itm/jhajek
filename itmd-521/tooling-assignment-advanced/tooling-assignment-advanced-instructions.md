@@ -9,7 +9,7 @@
 
 ## Outcomes
 
-At the conclusion of this lab you will have investigated using a virtualization platform (x86 VirtualBox and M1 Parallels) and demonstrated the ability to extend your PCs capabilities using a Virtual Machine.  You will have implemented a single abstraction layer on top of your virtualization platform.  You will have discussed the advantages of using Vagrant and you will have implemented the tool and deployed virtual machine images.
+At the conclusion of this lab you will have investigated using a virtualization platform (x86 VirtualBox and M series Macs with Parallels) and demonstrated the ability to extend your PCs capabilities using a Virtual Machine. You will have implemented a single abstraction layer on top of your virtualization platform. You will have discussed the advantages of using Vagrant and you will have implemented the tool and deployed virtual machine images.
 
 ### Vagrant
 
@@ -45,7 +45,7 @@ While VirtualBox presents many options and capabilities, if all we want to do is
 
 Vagrant was created in ~2010 by two college students in their dorm having to do what you are doing now.  They wanted to code their assignments up, install software to support their assignments, and not have each classes tools interfere with each other. Originally, Vagrant only supported VirtualBox, but over the years Vagrant support has spread to cover essentially all the possible Desktop Virtualization platforms ([Type II](https://en.wikipedia.org/wiki/Hypervisor#Classification "Type II wiki article")).
 
-Vagrant can be used to manage pre-made virtual machine artifacts or custom made virtual machine artifacts made from the Packer tool. HashiCorp provides pre-made virtual machine artifacts via the [https://app.vagrantup.com/boxes/search](https://app.vagrantup.com/boxes/search "Vagrant website") website.  Here you can search for primarily ready made Linux and some FreeBSD images provided by Distro makers and community members.  Note that most instances are provided for x86 Macs and Windows, but you can search for M1 based vms for Parallels.
+Vagrant can be used to manage pre-made virtual machine artifacts or custom made virtual machine artifacts made from the Packer tool. HashiCorp provides pre-made virtual machine artifacts via the [https://app.vagrantup.com/boxes/search](https://app.vagrantup.com/boxes/search "Vagrant website") website.  Here you can search for primarily ready made Linux and some FreeBSD images provided by distro makers and community members.  Note that most instances are provided for x86 Macs and Windows, but you can search for M1 based vms for Parallels.
 
 ### Vagrant Basics
 
@@ -156,7 +156,7 @@ You will need to use the `wget` commandline tool to retrieve installation files 
 * Install R package
   * Ubuntu - use `apt` to install `r-base`
   * AlmaLinux use: `sudo dnf config-manager --set-enabled crb; sudo dnf install R`
-* Install Spark 3.5.x
+* Install Spark 3.5.x (latest 3.5 branch)
   * [https://dlcdn.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz](https://dlcdn.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz "Apache Spark Download Link")
     * `wget https://dlcdn.apache.org/spark/spark-3.5.4/spark-3.5.4-bin-hadoop3.tgz`
     * `tar -xvzf spark-3.5.4-bin-hadoop3.tgz`
