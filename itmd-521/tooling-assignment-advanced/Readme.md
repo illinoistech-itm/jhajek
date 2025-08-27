@@ -6,10 +6,6 @@ This is the assigned template for the `tooling-assignment-advanced-instructions`
 
 Image goes here
 
-## WebServer Install
-
-Screenshot from the host OS of http://192.168.33.10 or whichever private IP you assign to your Vagrant Box
-
 ## MariaDB Version
 
 Execute command: `mysql -V`
@@ -29,16 +25,6 @@ Execute command: `R -v`
 ## Python Version
 
 Execute command: `python3 -V`
-
-## Result of Cloning Your Private Repository
-
-No need to show the clone action -- just the results of the `ls` command of the cloned directories content
-
-Image goes here
-
-## Output of vagrant box list command
-
-After completing this tutorial take a screenshot of the output of the command ```vagrant box list```
 
 ## Deliverable
 
