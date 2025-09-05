@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
     mnm_file = sys.argv[1]
 
-    mnm_df = (spark.read.format("csv").options("header","true").option("inferSchema","true").load(mnm_file))
+    mnm_df = (spark.read.format("csv").option("header","true").option("inferSchema","true").load(mnm_file))
 
     count_mnm_df = (mnm_df.select("State", "Color", "Count").groupBy("State", "Color").sum("Count)").orderBy("sum(Count)", ascending=False))
 
