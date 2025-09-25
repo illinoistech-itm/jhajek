@@ -32,7 +32,7 @@ When reading data you can use the generic `spark.read.format` command, but I rec
 
 From your Vagrant Box commandline, make sure your MySQL server is running. Type the command: `sudo systemctl status mysql.service` -- it should report as running.
 
-The next step is to create your database. Run this command from the commandline: `sudo mysql -e "CREATE DATABASE itmd521 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;`
+The next step is to create your database. Run this command from the commandline: `sudo mysql -e "CREATE DATABASE itmd521 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"`
 
 Make sure it worked by issuing the command: `sudo mysql`  then from the MySQL CLI issue: `SHOW DATABASES`, if you see the `itmd521` database then type quit.
 
@@ -49,9 +49,9 @@ Save and exit. **Remember** to source the changes via issuing the command: `. ~/
 
 Now you can issue the command to create a user/password combo in the MySQL server and assign database access.
 
-`sudo mysql -e "GRANT CREATE,SELECT,INSERT,DROP,UPDATE, DELETE,CREATE TEMPORARY TABLES ON itmd521.* TO '$USERNAME'@'127.0.0.1' IDENTIFIED BY '$PASSWORD';`
+`sudo mysql -e "GRANT CREATE,SELECT,INSERT,DROP,UPDATE, DELETE,CREATE TEMPORARY TABLES ON itmd521.* TO '$USERNAME'@'127.0.0.1' IDENTIFIED BY '$PASSWORD'";`
 
-Followed by the command: `sudo mysql -e "FLUSH PRIVILEGES;`
+Followed by the command: `sudo mysql -e "FLUSH PRIVILEGES;"`
 
 Now you are ready to proceed.
 
