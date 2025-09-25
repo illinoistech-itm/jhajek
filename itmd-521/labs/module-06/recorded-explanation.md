@@ -1,4 +1,4 @@
-# Lab-04
+# Module 06 Lab
 
 For ITMD 521, Big Data Technologies, module-06, lab-04, chapter-04 Learning Spark
 
@@ -17,7 +17,7 @@ For this portion of the assignment you will need to have software installed on y
 
 ## Deliverable Requirements
 
-Upon completing the lab, record a video not less than 2 minutes and not more than 7, to explain your work and output based on the questions listed below. Upload the video to Canvas. Double check your video before uploading to see if the audio and screen recording is done correctly.
+Upon completing the lab, record a video not less than 2 minutes and not more than 5 minutes, to explain your work and output based on the questions listed below. Upload the video to Canvas. Double check your video before uploading to see if the audio and screen recording is done correctly.
 
 * Make sure to introduce yourself and tell us which section you are in (briefly)
 * Demonstrate and explain the code that answers the questions posed in each of the 4 parts
