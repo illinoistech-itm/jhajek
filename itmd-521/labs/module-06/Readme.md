@@ -49,7 +49,7 @@ Save and exit. **Remember** to source the changes via issuing the command: `. ~/
 
 Now you can issue the command to create a user/password combo in the MySQL server and assign database access.
 
-`sudo mysql -e "GRANT CREATE,SELECT,INSERT,DROP,UPDATE, DELETE,CREATE TEMPORARY TABLES ON itmd521.* TO '$USERNAME'@'127.0.0.1' IDENTIFIED BY '$USERPASS';`
+`sudo mysql -e "GRANT CREATE,SELECT,INSERT,DROP,UPDATE, DELETE,CREATE TEMPORARY TABLES ON itmd521.* TO '$USERNAME'@'127.0.0.1' IDENTIFIED BY '$PASSWORD';`
 
 Followed by the command: `sudo mysql -e "FLUSH PRIVILEGES;`
 
