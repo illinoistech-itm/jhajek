@@ -10,7 +10,7 @@ To access your `spark-edge`:
 2. Connect to the host `vpn.iit.edu` in the vpn client.
 3. Connect via SSH
     This is the example syntax
-    `ssh -i "~\.ssh\id_ed25519_spark_edge_key" hajek@system26.rice.iit.edu`
+    `ssh -i "~\.ssh\id_ed25519_spark_edge_key" hajek@system22h029.itm.iit.edu`
 
 > **Note: You only need to SSH into your `spark-edge` once to get the credentials. You should store this credential some where safe as you can access the terminal inside the JupyterHub itself.**
 
@@ -21,7 +21,7 @@ To access your `spark-edge`:
 2. Connect to the host `vpn.iit.edu` in the vpn client.
 **You need to be on the ***VPN*** to access any resources related to the cluster.**
 
-Go to the link `http://system26.rice.iit.edu:8000/` and sign in  with your username and password.
+Go to the link `http://system22h030.itm.iit.edu:8000/` and sign in  with your username and password.
 
 !['login page'](./images/login-image.png)
 
@@ -115,9 +115,9 @@ You can restart the jupyter server by clicking on the hub control panel present 
 
 ### Creating a Spark Session 
 
-Access Spark Web UI @ http://system88.rice.iit.edu/
+Access Spark Web UI @ http://system22h029.itm.iit.edu/
 
-Access MinIO @ https://system54.rice.iit.edu/minio/ui/browser
+Access MinIO @ https://system22h026.itm.iit.edu/minio/ui/browser
 
 Run the below snippet of code in a cell to create a spark session on the spark master with connection to the Minio Bucket.
 
@@ -151,7 +151,7 @@ conf.set("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
 conf.set('spark.hadoop.fs.s3a.committer.magic.enabled','true')
 conf.set('spark.hadoop.fs.s3a.committer.name','magic')
 # Internal IP for S3 cluster proxy
-conf.set("spark.hadoop.fs.s3a.endpoint", "http://system54.rice.iit.edu")
+conf.set("spark.hadoop.fs.s3a.endpoint", "http://system22h026.itm.iit.edu")
 # Send jobs to the Spark Cluster
 conf.setMaster("spark://sm.service.consul:7077")
 #Set driver and executor memory
@@ -284,7 +284,7 @@ The code shown below write the `splitDF` as a single partioned csv file to a S3 
 splitDF.write.mode("overwrite").option("header","true").csv("s3a://REPLACEWITHYOURHAWKID/50.csv")
 ```
 
-You can check the contents of the bucket by logging into Minio @ https://system54.rice.iit.edu/minio/ui/browser with your credentials, which will be stored in `creds.txt` in the home directory.
+You can check the contents of the bucket by logging into Minio @ https://system22h026.itm.iit.edu/minio/ui/browser with your credentials, which will be stored in `creds.txt` in the home directory.
 
 Please refer to the below cheat sheet for read and write file options. The directory path will be the path of the MinIO S3 bucket.
 

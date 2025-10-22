@@ -66,12 +66,28 @@ Assuming that the command `vagrant --version` gives us output, lets begin by ins
 
 Here we are going to create a directory to manage our artifact. It is a good idea to create a directory per virtual machine that we will administer via Vagrant. You can create a class directory and then sub-directories and or you can place this on a different disk. This I will leave up to you as it is your filesystem and your data--you are the one in charge.
 
-`mkdir itmt-430 ; cd itmt-430`
+```bash
+# Create a directory here -- perhaps use the classname your in...
+mkdir CLASSNAME
+cd CLASSNAME
+```
 
-We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 22.04 known as Jammy and a [AlmaLinux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpagte release notes for AlmaLinux 9") (CentOS/Red Hat based) Virtual Machines
+We will now use Vagrant to retrieve 2 Linux Distributions and Ubuntu 24.04 known as **Noble** and a [AlmaLinux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpagte release notes for AlmaLinux 9") (CentOS/Red Hat based) Virtual Machines
 
-* `mkdir jammy64 ; cd jammy64 ; vagrant init ubuntu/jammy64 ; ls`
-* `mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls`
+```bash
+# Now create a directory for each Vagrant Box
+
+mkdir noble64
+cd noble64
+vagrant init bento/ubuntu-24.04
+ls
+
+# then change directory up one level (don't put these inside of each other)
+mkdir almalinux9
+cd almalinux9
+vagrant init almalinux/9
+ls
+```
 
 ### Vagrant Commands for Parallels on Apple Silicon M-series
 
@@ -89,8 +105,19 @@ Installation instructions
 
 We will now use Vagrant to retrieve 2 Linux Distributions prepared for M-series processors (arm64), Ubuntu Noble 24.04 and [AlmaLinux 9](https://wiki.almalinux.org/release-notes/9.1.html "webpage release notes for AlmaLinux 9") (CentOS/Red Hat based) Virtual Machines:
 
-* `mkdir noble64 ; cd noble64 ; vagrant init bento/ubuntu-24.04 ; ls`
-* `mkdir almalinux9 ; cd almalinux9 ; vagrant init almalinux/9 ; ls`
+```bash
+# Create two directories
+
+mkdir noble64 
+cd noble64
+vagrant init bento/ubuntu-24.04
+ls
+
+mkdir almalinux9
+cd almalinux9
+vagrant init almalinux/9
+ls
+```
 
 This will retrieve already created vanilla server installs. All instructions from here on out are the same.
 
@@ -102,7 +129,7 @@ Once these commands are executed, you will see a file named: `Vagrantfile` that 
 * `vim Vagrantfile`
   * You can use chocolatey to install `vim` on Windows
 
-This file is essentially your configuration file. In this abstraction, Vagrant will translate these values into the underlying `vboxmanage` or the `parallels` commandline commands. Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "ubuntu/jammy64"`. This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install. Line 59, 64, and 65 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb. For now lets not make any changes.
+This file is essentially your configuration file. In this abstraction, Vagrant will translate these values into the underlying `vboxmanage` or the `parallels` commandline commands. Line 15 you will see the setting that tells Vagrant which **box** this Vagrantfile manages: `config.vm.box = "bento/ubuntu-24.04"`. This value came from the `vagrant init` command typed above. Line 35, which is commented out, will let us configure a private local network between out host system and any guest (virtual) OSes we install. Line 59, 64, and 65 are a loop that allows us to increase the default memory from 1Gb to 2 Gb or 4 Gb. For now lets not make any changes.
 
 ### Start a Vagrant Box
 
@@ -141,7 +168,7 @@ If you want to reset your Vagrant Box after you installed a webserver. Exit the 
 
 ## Tutorial Steps
 
-* Using the `vagrant init ubuntu/jammy64` command, initialize a Vagrant Box (only has to be done once on a system)
+* Using the `vagrant init bento/ubuntu-24.04` command, initialize a Vagrant Box (only has to be done once on a system)
   * Or comparable Vagrant Box on an M1 Mac
 * Using the `vagrant up` command, start the virtual machine
 * Using the `vagrant ssh` command, connect to the virtual machine via SSH
