@@ -10,7 +10,7 @@ To access your `spark-edge`:
 2. Connect to the host `vpn.iit.edu` in the vpn client.
 3. Connect via SSH
     This is the example syntax
-    `ssh -i "~\.ssh\id_ed25519_spark_edge_key" hajek@system22h029.itm.iit.edu`
+    `ssh -i "~\.ssh\id_ed25519_spark_edge_key" hajek@system22h030.itm.iit.edu`
 
 > **Note: You only need to SSH into your `spark-edge` once to get the credentials. You should store this credential some where safe as you can access the terminal inside the JupyterHub itself.**
 
@@ -115,7 +115,9 @@ You can restart the jupyter server by clicking on the hub control panel present 
 
 ### Creating a Spark Session 
 
-Access Spark Web UI @ http://system22h029.itm.iit.edu/
+Access Spark Web UI @ http://system22h030.itm.iit.edu/
+
+Access Spark Master Cluster Information @ http://system22h029.itm.iit.edu/
 
 Access MinIO @ https://system22h026.itm.iit.edu/minio/ui/browser
 
