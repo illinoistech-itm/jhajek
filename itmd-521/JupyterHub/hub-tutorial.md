@@ -153,14 +153,14 @@ conf.set("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
 conf.set('spark.hadoop.fs.s3a.committer.magic.enabled','true')
 conf.set('spark.hadoop.fs.s3a.committer.name','magic')
 # Internal IP for S3 cluster proxy
-conf.set("spark.hadoop.fs.s3a.endpoint", "http://system22h026.itm.iit.edu")
+conf.set("spark.hadoop.fs.s3a.endpoint", "https://system22h026.itm.iit.edu")
 # Send jobs to the Spark Cluster
 conf.setMaster("spark://sm.service.consul:7077")
 #Set driver and executor memory
 conf.set("spark.driver.memory","4g")
 conf.set("spark.executor.memory","4g")
 
-spark = SparkSession.builder.appName("Your App Name")\
+spark = SparkSession.builder.appName("Hub Tutorial")\
     .config('spark.driver.host','spark-edge.service.consul').config(conf=conf).getOrCreate()
 ```
 The above code will create a new spark session with the configurations required to connect to S3 bucket. You can add your own configurations as need with `conf.set()`.
