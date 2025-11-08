@@ -25,6 +25,18 @@ Watch out! The two-factor message triggers quickly and doesn't have much patienc
 
 If you have more than one MFA set up besides your phone, it could give you a tricky time. If it is not prompting you to input one of your MFA, then close it, reconnect, and try putting `,SMS` directly after your password (no spaces and caps). For example if your password is `ilovebunnies`: `ilovebunnies,SMS`.
 
+## Test Connection
+
+Once the VPN is succesfully connected, you can test this connection by opening up a Terminal and issuing a `ping` command:
+
+```bash
+ping 192.168.192.2
+```
+
+Results:
+
+![*Ping Success*](./images/ping-success.png "Ping Success!")
+
 ## SSH Connection
 
 Now we will test your SSH connection to the `buildserver`. From the terminal on your computer run the following command, replacing values of mine with yours:

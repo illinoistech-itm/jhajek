@@ -38,3 +38,16 @@ The `-i` value is the path to the private key that matches the public key you pr
 The value `hajek` is the username of the account. I created the accounts to use your HAWKID (just the value not the @hawk part), though these account are not related to the university accounts.
 
 The FQDN of `system45.rice.iit.edu` is a virtual machine that we use as a buildserver to issue all of our build commands to our virtual machine cluster.
+
+## Test Connection
+
+Once the VPN is succesfully connected, you can test this connection by opening up a Terminal and issuing a `ping` command:
+
+```bash
+ping 192.168.192.2
+```
+
+Results:
+
+![*Ping Success*](./images/ping-success.png "Ping Success!")
+
