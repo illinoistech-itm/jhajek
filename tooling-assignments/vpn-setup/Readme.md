@@ -25,20 +25,6 @@ Watch out! The two-factor message triggers quickly and doesn't have much patienc
 
 If you have more than one MFA set up besides your phone, it could give you a tricky time. If it is not prompting you to input one of your MFA, then close it, reconnect, and try putting `,SMS` directly after your password (no spaces and caps). For example if your password is `ilovebunnies`: `ilovebunnies,SMS`.
 
-## SSH Connection
-
-Now we will test your SSH connection to the `buildserver`. From the terminal on your computer run the following command, replacing values of mine with yours:
-
-```bash
-ssh -i c:/users/palad/.ssh/id_ed25519_itmo_453_key hajek@system45.rice.iit.edu
-```
-
-The `-i` value is the path to the private key that matches the public key you provided to me in the excel Spreadsheet.
-
-The value `hajek` is the username of the account. I created the accounts to use your HAWKID (just the value not the @hawk part), though these account are not related to the university accounts.
-
-The FQDN of `system45.rice.iit.edu` is a virtual machine that we use as a buildserver to issue all of our build commands to our virtual machine cluster.
-
 ## Test Connection
 
 Once the VPN is succesfully connected, you can test this connection by opening up a Terminal and issuing a `ping` command:
@@ -49,5 +35,4 @@ ping 192.168.192.2
 
 Results:
 
-![*Ping Success*](./images/ping-success.png "Ping Success!")
-
+![*Ping Success*](./images/ping-success.png "Ping S")
