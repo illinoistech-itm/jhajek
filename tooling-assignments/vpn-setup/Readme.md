@@ -9,7 +9,7 @@ If you are off of the campus network, connect via the university VPN client to o
 
 ![*VPN Login*](./images/vpn.png "image for displaying vpn login")
 
-Use your full `@hawk.iit.edu` email and portal password to authenticate. You will have to 2-factor authenticate as well.
+Use your full `@hawk.illinoistech.edu` email and portal password to authenticate. You will have to 2-factor authenticate as well.
 
 ## Connect to VPN
 
