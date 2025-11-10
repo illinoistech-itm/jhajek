@@ -153,12 +153,19 @@ conf.set("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
 conf.set('spark.hadoop.fs.s3a.committer.magic.enabled','true')
 conf.set('spark.hadoop.fs.s3a.committer.name','magic')
 # Internal IP for S3 cluster proxy
-conf.set("spark.hadoop.fs.s3a.endpoint", "https://system22h026.itm.iit.edu")
+conf.set("spark.hadoop.fs.s3a.endpoint", "http://infra-minio-proxy-vm0.service.consul")
 # Send jobs to the Spark Cluster
 conf.setMaster("spark://sm.service.consul:7077")
-#Set driver and executor memory
+#Configuration Documentation Link
+#https://spark.apache.org/docs/latest/configuration.html
+# Set driver memory
 conf.set("spark.driver.memory","4g")
+# Set memory request per executor
 conf.set("spark.executor.memory","4g")
+# Set number of cores per executor to 1
+conf.set("spark.executor.cores","1")
+# Set number of cores total max per job
+conf.set("spark.cores.max","12")
 
 spark = SparkSession.builder.appName("Hub Tutorial")\
     .config('spark.driver.host','spark-edge.service.consul').config(conf=conf).getOrCreate()
