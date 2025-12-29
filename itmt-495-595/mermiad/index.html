@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mermaid Demo</title>
+<!-- Include Mermaid.js via CDN -->
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+    Hello
+<!-- Define a Mermaid diagram -->
+<div class="mermaid">
+graph LR
+A[Edge Node<br/>You are logged into] <--> B[Lab Node with IP of...]
+A <--> C[Lab Node with IP of...]
+</div>
+world
+<!-- Initialize Mermaid -->
+<script>
+mermaid.initialize({ startOnLoad: true });
+</script>
+</body>
+</html>
