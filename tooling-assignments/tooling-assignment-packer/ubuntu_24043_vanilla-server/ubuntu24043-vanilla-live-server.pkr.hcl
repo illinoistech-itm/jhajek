@@ -21,7 +21,7 @@ packer {
 
 # Packer Virtualbox-iso documentation
 # https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/latest/components/builder/iso
-source "virtualbox-iso" "ubuntu-22045-server" {
+source "virtualbox-iso" "ubuntu-24043-server" {
     boot_command = [
         "e<wait>",
         "<down><down><down>",
@@ -45,14 +45,14 @@ source "virtualbox-iso" "ubuntu-22045-server" {
   cpus                    = 2
   memory                  = "${var.memory_amount}"
   # Change to --nat-localhostreachable1 forced by https://github.com/hashicorp/packer/issues/12118
-  vboxmanage              = [["modifyvm", "{{.Name}}", "--nat-localhostreachable1", "on"]]
+  #vboxmanage              = [["modifyvm", "{{.Name}}", "--nat-localhostreachable1", "on"]]
   virtualbox_version_file = ".vbox_version"
   vm_name                 = "jammy-server"
   headless                = "${var.headless_build}"
 }
 
 build {
-  sources = ["source.virtualbox-iso.ubuntu-22045-server"]
+  sources = ["source.virtualbox-iso.ubuntu-24043-server"]
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
