@@ -21,7 +21,7 @@ packer {
 
 # Packer Virtualbox-iso documentation
 # https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/latest/components/builder/iso
-source "virtualbox-iso" "ubuntu-22045-server" {
+source "virtualbox-iso" "ubuntu-24043-vault-server" {
     boot_command = [
         "e<wait>",
         "<down><down><down>",
@@ -42,6 +42,9 @@ source "virtualbox-iso" "ubuntu-22045-server" {
   ssh_username            = "vagrant"
   ssh_password            = "${var.user-ssh-password}"
   ssh_timeout             = "25m"
+  # https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/latest/components/builder/iso#optional
+  nic_type                = "virtio"
+  chipset                 = "ich9"
   cpus                    = 2
   memory                  = "${var.memory_amount}"
   # Change to --nat-localhostreachable1 forced by https://github.com/hashicorp/packer/issues/12118
@@ -52,7 +55,7 @@ source "virtualbox-iso" "ubuntu-22045-server" {
 }
 
 build {
-  sources = ["source.virtualbox-iso.ubuntu-22045-server"]
+  sources = ["source.virtualbox-iso.ubuntu-24043-vault-server"]
 
   ##############################################################################
   # This shell script adds the default user "vagrant" to the sudoers group and

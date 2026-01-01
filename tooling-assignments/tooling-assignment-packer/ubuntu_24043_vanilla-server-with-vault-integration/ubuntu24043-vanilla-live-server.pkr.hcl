@@ -12,7 +12,7 @@ packer {
   }
 }
 
-source "virtualbox-iso" "ubuntu-22045-server" {
+source "virtualbox-iso" "ubuntu-24043-server" {
     boot_command = [
         "e<wait>",
         "<down><down><down>",
@@ -33,6 +33,9 @@ source "virtualbox-iso" "ubuntu-22045-server" {
   ssh_username            = "vagrant"
   ssh_password            = "${local.user-ssh-password}"
   ssh_timeout             = "30m"
+  # https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/latest/components/builder/iso#optional
+  nic_type                = "virtio"
+  chipset                 = "ich9"
   cpus                    = 2
   memory                  = "${var.memory_amount}"
   # Change to --nat-localhostreachable1 forced by https://github.com/hashicorp/packer/issues/12118
@@ -43,7 +46,7 @@ source "virtualbox-iso" "ubuntu-22045-server" {
 }
 
 build {
-  sources = ["source.virtualbox-iso.ubuntu-22045-server"]
+  sources = ["source.virtualbox-iso.ubuntu-24043-server"]
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
