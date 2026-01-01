@@ -42,6 +42,7 @@ source "virtualbox-iso" "ubuntu-24043-server" {
   ssh_username            = "vagrant"
   ssh_password            = "${var.user-ssh-password}"
   ssh_timeout             = "25m"
+  nic_type                = "virtio"
   cpus                    = 2
   memory                  = "${var.memory_amount}"
   # Change to --nat-localhostreachable1 forced by https://github.com/hashicorp/packer/issues/12118
