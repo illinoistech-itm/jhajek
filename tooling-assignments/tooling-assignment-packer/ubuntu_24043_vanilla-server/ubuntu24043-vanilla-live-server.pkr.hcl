@@ -45,7 +45,7 @@ source "virtualbox-iso" "ubuntu-24043-server" {
   # https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/latest/components/builder/iso#optional
   nic_type                = "virtio"
   chipset                 = "ich9"
-  gfx_vram_size           = "16m"
+  gfx_vram_size           = "16"
   gfx_controller          = "vboxvga"
   cpus                    = 2
   memory                  = "${var.memory_amount}"
