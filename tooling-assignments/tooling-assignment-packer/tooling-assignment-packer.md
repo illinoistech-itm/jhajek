@@ -34,7 +34,7 @@ A machine image is a single static unit that contains a pre-configured operating
 
 ## Packer HCL2 template
 
-Lets take a look and see how Packer is able to build virtual machines from a YAML based text file. For the sample code used in the next section you can issue the command `git pull` in the jhajek repo you cloned at the beginning of class to get the latest source code samples.  They will be located in the directory [packer-code-examples](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/packer-code-examples "website for packer code exmaple"). Let us look at the file named: `ubuntu-22041-live-server.pkr.hcl`
+Lets take a look and see how Packer is able to build virtual machines from a YAML based text file. For the sample code used in the next section you can issue the command `git pull` in the jhajek repo you cloned at the beginning of class to get the latest source code samples.  They will be located in the directory [packer-code-examples](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/packer-code-examples "website for packer code exmaple"). Let us look at the file named: `ubuntu-24041-live-server.pkr.hcl`
 
 ```hcl
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
@@ -51,7 +51,7 @@ packer {
 # Packer Virtualbox-iso documentation
 # https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/
 # latest/components/builder/iso
-source "virtualbox-iso" "ubuntu-22045-live-server" {
+source "virtualbox-iso" "ubuntu-24043-live-server" {
   boot_command          = ["<cOn><cOff>", "<wait5>linux /casper/vmlinuz"," quiet"," autoinstall"," ds='nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/'","<enter>","initrd /casper/initrd <enter>","boot <enter>"]
   boot_wait               = "5s"
   disk_size               = 15000
@@ -73,11 +73,11 @@ source "virtualbox-iso" "ubuntu-22045-live-server" {
 }
 
 build {
-  sources = ["source.virtualbox-iso.ubuntu-22045-live-server"]
+  sources = ["source.virtualbox-iso.ubuntu-24043-live-server"]
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    script          = "../scripts/post_install_ubuntu_2204_vagrant.sh"
+    script          = "../scripts/post_install_ubuntu_2404_vagrant.sh"
   }
 
   post-processor "vagrant" {
@@ -101,7 +101,7 @@ The build section tells Packer what to build.  You can have multiple *source* se
 
 ### Provisioners
 
-[Provisioners](https://www.packer.io/docs/provisioners "Packer provisioners web-page") are an extra feature of Packer. This allows you to execute additional commands after the initial install is completed.  This allows you to separate the installation template and the ability to customize your artifacts.  You can reuse the same template to build many Ubuntu Server Virtual Machines, but use a single or multiple shell script to install different software in each virtual machine.  You can see the source code on the line that has **script**: `script = "../scripts/post_install_ubuntu_2204_vagrant.sh"`
+[Provisioners](https://www.packer.io/docs/provisioners "Packer provisioners web-page") are an extra feature of Packer. This allows you to execute additional commands after the initial install is completed.  This allows you to separate the installation template and the ability to customize your artifacts.  You can reuse the same template to build many Ubuntu Server Virtual Machines, but use a single or multiple shell script to install different software in each virtual machine.  You can see the source code on the line that has **script**: `script = "../scripts/post_install_ubuntu_2404_vagrant.sh"`
 
 You can also use inline shell commands for customizing your artifact.  Packer will manage all of this using an SSH session.
 
@@ -170,15 +170,15 @@ To get a hold of the Packer Build Template samples, you will need to clone an ad
 The sample code provided is heavily templated, to allow many people to use without hard-coding specific values or secrets into the template. There will be a few steps to and values that we need to fill out. Let's take a look at the file named: 
 
 * x86 VirtualBox based OSes 
-  * [ubuntu22045-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/advanced-tooling-examples/ubuntu_22045_vanilla/ubuntu22045-vanilla-live-server.pkr.hcl "webpage showing the Packer syntax").
+  * [ubuntu24043-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/advanced-tooling-examples/ubuntu_24043_vanilla/ubuntu24043-vanilla-live-server.pkr.hcl "webpage showing the Packer syntax").
 * Apple Silicon M Series Parallels Pro
-  * [ubuntu22045-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/advanced-tooling-examples/ubuntu_22045_m1_mac/ubuntu_22045_vanilla-arm-server.pkr.hcll "webpage showing the Packer syntax").
+  * [ubuntu24043-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/advanced-tooling-examples/ubuntu_24043_m1_mac/ubuntu_24043_vanilla-arm-server.pkr.hcll "webpage showing the Packer syntax").
 
 There are two files associated with this Packer Build Template, there is a file called: `variables.pkr.hcl`. This file allows you to define variables that will be applied to settings at run time.
 
 ### Building Your Own Virtual Machines Using Packer and Parallels on Apple Silicon
 
-The sample code provided is heavily templated, to allow many people to use without hard-coding specific values or secrets into the template. There will be a few steps to and values that we need to fill out. Let's take a look at the file named: [ubuntu_22045_vanilla-arm-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/advanced-tooling-examples/ubuntu_22045_m1_mac/ubuntu_22045_vanilla-arm-server.pkr.hcl "webpage showing the Packer syntax for M1 silicon").
+The sample code provided is heavily templated, to allow many people to use without hard-coding specific values or secrets into the template. There will be a few steps to and values that we need to fill out. Let's take a look at the file named: [ubuntu_24043_vanilla-arm-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/advanced-tooling-examples/ubuntu_24043_m1_mac/ubuntu_24043_vanilla-arm-server.pkr.hcl "webpage showing the Packer syntax for M1 silicon").
 
 You will also be required to install the `Parallels Virtualization SDK`. You can install this from your Parallels account -- there is a download link. It is also available via `brew`: `brew install parallels-virtualization-sdk --cask`. This allows Packer to connect to the Parallels commandline, known as `prlctl`.
 
@@ -188,15 +188,15 @@ There is a special file associated with this Packer Build Template, there is a f
 
 Starting in Ubuntu Server 20.04, Ubuntu replaced the Preseed tool for autoinstalls with a tool called [Subiquity or Cloud Init](https://ubuntu.com/server/docs/install/autoinstall "webpage for autoinstall"). This allowed local auto-install logic and Cloud based server installs (AWS, VMWare, Azure, etc.. etc..) to use the same tool. Which makes sense as single installs on local servers or local PCs give way to a cloud native way of deploying multiple pre-configured copies of servers.
 
-Under the directory, `ubuntu_22045_vanilla` > `subiquity` > `http` you will find another template named: `user-data`. This `user-data` file contains all of the *answers* for auto-install questions. 
+Under the directory, `ubuntu_24043_vanilla` > `subiquity` > `http` you will find another template named: `user-data`. This `user-data` file contains all of the *answers* for auto-install questions. 
 
 This would be a place to configure timezone, harddrive size, software that is pre-installed, and configure SSH to accept Public Key based authentication. You would also create user accounts and passwords here. By default the system is setup for a username: `vagrant` and a password `vagrant`. If you choose to keep this pair then enter the SSH password `vagrant` in the value on line 14 of the `variables.pkr.hcl`.
 
 ### Provisioning Scripts
 
-At the end of the `ubuntu22045-vanilla-live-server.pkr.hcl` file there are two sections, `provisioners` and `post-processors`. Provisioners is a an additional feature of Packer that allows the Packer binary to reboot your installed virtual machine and run a provisioner script -- in this case a shell script -- for further custom installation.  
+At the end of the `ubuntu24043-vanilla-live-server.pkr.hcl` file there are two sections, `provisioners` and `post-processors`. Provisioners is a an additional feature of Packer that allows the Packer binary to reboot your installed virtual machine and run a provisioner script -- in this case a shell script -- for further custom installation.  
 
-This could be custom software, cloning of source code, or removal of keys used for authentication. You can run multiple provisioner scripts and people usually do this to keep there logic separated. The `provisioner` script for `ubuntu22045-vanilla-live-server.pkr.hcl` is `post_install_ubuntu_2204_vagrant.sh`.
+This could be custom software, cloning of source code, or removal of keys used for authentication. You can run multiple provisioner scripts and people usually do this to keep there logic separated. The `provisioner` script for `ubuntu24043-vanilla-live-server.pkr.hcl` is `post_install_ubuntu_2404_vagrant.sh`.
 
 ### Intializing the Packer VagrantBox plugin
 
@@ -226,7 +226,7 @@ packer {
 }
 ```
 
-You only have to run this once time before you run your first build to retrieve the plugin, from the directory where the `ubuntu22045-vanilla-live-server.pkr.hcl` is located: `packer init .` -- this will initialize the VirtualBox Plugin for your local system.
+You only have to run this once time before you run your first build to retrieve the plugin, from the directory where the `ubuntu24043-vanilla-live-server.pkr.hcl` is located: `packer init .` -- this will initialize the VirtualBox Plugin for your local system.
 
 ### Validation
 
@@ -237,15 +237,15 @@ To double check that you have configured everything properly, there is a command
 Here is where the fun begins. You will now execute the command required to build a custom VirtualBox VM from a completely automated script. If the two previous commands completed successfully then you can issue the command: `packer build .` and the virtual machine will begin to build. You will see the step by step process in the VirtualBox GUI as if you were manually installing, but there is no manual steps required if everything goes well. Depending on your laptops CPU and Hard disk the install can take as little as 10 minutes up to about 25 minutes. You will know things are successful if you see similar output on your Terminal:
 
 ```
-Build 'virtualbox-iso.ubuntu-22045-server' finished after 15 minutes 34 seconds.
+Build 'virtualbox-iso.ubuntu-24043-server' finished after 15 minutes 34 seconds.
 
 ==> Wait completed after 15 minutes 34 seconds
 
 ==> Builds finished. The artifacts of successful builds are:
---> virtualbox-iso.ubuntu-22045-server: 'virtualbox' provider box: ../build/ubuntu-22041-server-20230213020353.box
+--> virtualbox-iso.ubuntu-24043-server: 'virtualbox' provider box: ../build/ubuntu-24043-server-20230213020353.box
 ```
 
-The last line of the output tells you where to find your artifact. If you issue the command: `cd ../build` and then the command: `ls` you will see a similarly named file: `ubuntu-22045-server-20250213020353.box`. This is the `post-processor` for Vagrant converting the built VirtualBox artifact into a prepared Vagrant .Box file.
+The last line of the output tells you where to find your artifact. If you issue the command: `cd ../build` and then the command: `ls` you will see a similarly named file: `ubuntu-24043-server-20250213020353.box`. This is the `post-processor` for Vagrant converting the built VirtualBox artifact into a prepared Vagrant .Box file.
  
 ## Working with Vagrant and the Output Artifact - Part II
 
@@ -254,7 +254,7 @@ We need to add this `*.box` file to Vagrant so we can start, stop, and ssh to it
 * Lets `cd` into the newly created `build` directory: `cd ../build` 
 * In the current directory issue the command: `mkdir ubuntu-server`
   * This will be the directory where we store our `Vagrantfile`
-  * Issue the command: `vagrant box add ./ubuntu-22045-server-20250213020353.box --name ubuntu-server`
+  * Issue the command: `vagrant box add ./ubuntu-24043-server-20250213020353.box --name ubuntu-server`
     * Your file name will have different numbers (timestamp)
   * The `--name` option should match the directory name it helps keep track of things
   * `cd` into the `ubuntu-server` directory and issue the command: `vagrant init ubuntu-server`
