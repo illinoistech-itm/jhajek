@@ -28,6 +28,10 @@ Taken from [https://packer.io](https://packer.io "Packer webpage"): Why Packer?
 * Appliance Demo Creation
   * Create software appliances and disposable product demos quickly, even with software that changes continuously.
 
+Packer is a community tool for creating identical machine images for multiple platforms from a single source configuration. Packer is lightweight, runs on every major operating system, and is highly performant, creating machine images for multiple platforms in parallel. 
+
+A machine image is a single static unit that contains a pre-configured operating system and installed software which is used to quickly create new running machines. Machine image formats change for each platform. Some examples include AMIs for EC2, VMDK and VMX files for VMware, and OVF exports for VirtualBox.
+
 ## Packer HCL2 template
 
 Lets take a look and see how Packer is able to build virtual machines from a YAML based text file. For the sample code used in the next section you can issue the command `git pull` in the jhajek repo you cloned at the beginning of class to get the latest source code samples.  They will be located in the directory [packer-code-examples](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/packer-code-examples "website for packer code exmaple"). Let us look at the file named: `ubuntu-22041-live-server.pkr.hcl`
