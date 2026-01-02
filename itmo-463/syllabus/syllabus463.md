@@ -11,9 +11,9 @@ Semester: Summer 2025
  **Professor** | Jeremy Hajek
  Address | Department of Information Technology & Management 10 W. 35th St., Chicago, IL 60616
  Telephone | 312.567.5937
- Email | hajek@iit.edu
+ Email | hajek@illinoistech.edu
  Office | IIT Tower 15th Floor
- Office Hours and URL | [See Times](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu?anonymous&ep=plink "webpage for availability")
+ Office Hours and URL | [See Times](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu "webpage for availability")
  Location | IIT Tower 15th Floor or online via MS Teams
 
 **Course Catalog Description:** Software as a Service (SaaS) allows consumers to use a provider’s applications running on a cloud infrastructure. Students will explore different approaches, techniques, tools and technologies to build, deploy, 
