@@ -47,7 +47,7 @@ source "virtualbox-iso" "ubuntu-24043-server" {
   chipset                 = "ich9"
   gfx_vram_size           = "16"
   gfx_controller          = "vboxvga"
-  hard_drive_interface    = "virtio"
+  #hard_drive_interface    = "virtio"
   cpus                    = 2
   memory                  = "${var.memory_amount}"
   # Change to --nat-localhostreachable1 forced by https://github.com/hashicorp/packer/issues/12118
