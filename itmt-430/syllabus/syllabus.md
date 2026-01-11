@@ -170,6 +170,7 @@ Sprint Report (5) | 28% | 20 points each
 Team Chapter Presentation (1) | 15% | 50 points
 Chapter Weekly Critiques (11) | 15% | 55 points
 Tooling Assignment (1) | 2% | 10 points
+Debugging Under Fire (1) | 3% | 10 points
 Tooling Assignment Advanced (3) | 2% | 5 points each
 Final Exam | 28% | 100 points
 Attendance | 10% | 30 points
