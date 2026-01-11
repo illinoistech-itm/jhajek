@@ -27,7 +27,7 @@ If (Test-Path "./output/odt/itmt-430-spring-2026-Systems-Integration*"){
 # If you want to create a PDF, you’ll need to have LaTeX installed. (See MacTeX on OS X, MiKTeX on Windows, or
 # install the texlive package in linux.) Then do                
 ########################################################################################################################
-pandoc -V geometry:margin=.75in -V paperwidth=6.14in -V paperheight=9.25in -V linkcolor=blue -V fontsize=12pt -V -s -t latex -o ./output/pdf/itmt-430-spring-2025-Systems-Integration-$STAMP.pdf syllabus.md
+pandoc -V geometry:margin=.75in -V paperwidth=6.14in -V paperheight=9.25in -V linkcolor=blue -V fontsize=12pt -V -s -t latex -o ./output/pdf/itmt-430-spring-2026-Systems-Integration-$STAMP.pdf syllabus.md
 #############################################################################################################################
 # DOCX - [Convert your Markdown file to Word (docx):](http://bob.yexley.net/generate-a-word-document-from-markdown-on-os-x/)#############################################################################################################################
 pandoc -V fontsize=12pt -s -o ./output/docx/itmt-430-spring-2026-Systems-Integration-$STAMP.docx -f markdown -t docx syllabus.md
