@@ -1,8 +1,8 @@
 # Team Roles Descriptions
 
-You will form a team of 5 based on the Lab section you are in.  If the section has less than 20 people enrolled you will form teams of 4 people. There are 5 positions that you will rotate through in development sprints.  Each person will take a primary role—but that role is not exclusive.  Each team, starting week 1 in sprint 1, will outline a project plan of goals they aspire to accomplish.  At the end of the sprint the team will present their project to the entire class. There will be weekly check-ins with the project manager and early feedback.
+You will form a team of 5 based on the Lab section you are in. If the section has less than 20 people enrolled you will form teams of 4 people. There are 5 positions that you will rotate through in development sprints. Each person will take a primary role—but that role is not exclusive. Each team, starting week 1 in sprint 1, will outline a project plan of goals they aspire to accomplish. At the end of the sprint the team will present their project to the entire class. There will be weekly check-ins with the project manager and early feedback.
 
-The outputs will be demonstrated through your application code and infrastructure code on GitHub, your project progress will be tracked using a Project Management tool and Slack will be used to show code commits and team discussion.  Bugs will be tracked and resolved on GitHub Issues.  Operations will be tested to show your Visio diagrams match your output and how automated your build infrastructure is.  Grades will be individual based on accomplishments each week -- yet your work cumulatively hangs together, this aspect is how you learn to work in a team.
+The outputs will be demonstrated through your application code and infrastructure code on GitHub, your project progress will be tracked using a Project Management tool and Slack will be used to show code commits and team discussion. Bugs will be tracked and resolved on GitHub Issues. Operations will be tested to show your Visio diagrams match your output and how automated your build infrastructure is. Grades will be individual based on accomplishments each week -- yet your work cumulatively hangs together, this aspect is how you learn to work in a team.
 
 ## Team Roles
 
@@ -31,7 +31,7 @@ The outputs will be demonstrated through your application code and infrastructur
 
 ## Project Base Requirements
 
-Each Project will have additional specific details to be delivered once the exact project subject is determined.  But in this case we are going to disallow non-frameworked PHP and Google Firebase based applications.  Note some of the requirements below span across multiple categories.  Also each team will create a three-tier application
+We are recommending [Python Flask](https://flask.palletsprojects.com/en/stable/ "webpage for Python Flask") or a JavaScript framework such as [Vue.js](https://vuejs.org/ "webpage for Vue Framework") or [Next.js](https://nextjs.org/ "webpage for Next.js framework"). Each Project will have additional specific details to be delivered once the exact project subject is determined. In this class we are not allowing non-frameworked PHP or Google Firebase or Vercel based applications. Note some of the requirements below span across multiple categories. Also each team will create a three-tier application using our on prem [Min.io](https://www.min.io/ "webpage for min.io") S3 Object storage.
 
 * First Tier
   * Load-Balancer
