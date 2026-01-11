@@ -44,17 +44,15 @@ Participation - did each member of the team participate | 7 | -
 
 ### Non-Presenting Team's weekly role
 
-~~Each non-presenting team must prepare and additional two short answer review questions, per chapter covered and submit them to Canvas by the Friday prior to the weeks presentation so that the team and the instructor have a chance to cover the material during the Monday presentation.~~
-
-Updated 03/20 for second half. Students individually will provide short critiques based on the presentation.
+Students individually will provide short critiques based on the presentation.
 
 Answering these questions:
 
 1) Did the team make a clear introduction of the material that would be presented? If not, briefly explain what was missing or deficient?
-1) Briefly explain the main theme of the chapter.
+1) Briefly explain the main theme of the chapter
 1) Did the team provide three review questions and three additional resources at the end of the presentation? If not, briefly explain what was missing or deficient?
 1) Did the team give a summary and a clear conclusion at the end of the presentation? If not, briefly explain what was missing or deficient?
-1) Briefly explain one thing you learned in this presentation.
+1) Briefly explain one thing you learned in this presentation
 
 ### Submitted Questions
 
@@ -62,10 +60,8 @@ All presenter submitted questions will become part of a pool for the midterm and
 
 ### Project Deliverables
 
-Submit whichever notes / presentation platform you have prepared and a second copy with the detailed answers provided to Canvas the Thursday by 5:00 PM, so I have time to give you feedback before your Monday's presentation. Then we will meet as a team on Friday morning, we will most likely need 1.5 hours.[You can book an appointment](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu?anonymous&ep=plink "Instructor Booking App") -- Note only one team member has to book a time.
+Submit whichever notes / presentation platform you have prepared and a second copy with the detailed answers provided to Canvas the Thursday by 5:00 PM, so I have time to give you feedback before your Monday's presentation. Then we will meet as a team on Friday morning, we will most likely need 1.5 hours. [You can book an appointment](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu?anonymous&ep=plink "Instructor Booking App") -- Note only one team member has to book a time.
 
 Presenting team will be a group submission and only one submission is needed per team.
-
-~~Non-presenting teams will also submit their questions as a team submission~~ 
 
 Non-presenters will submit individual critiques.  
