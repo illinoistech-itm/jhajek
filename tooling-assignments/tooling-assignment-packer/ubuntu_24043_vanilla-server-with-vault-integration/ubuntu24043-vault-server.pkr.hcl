@@ -12,7 +12,7 @@ packer {
   }
 }
 
-source "virtualbox-iso" "ubuntu-24043-server" {
+source "virtualbox-iso" "vault-client" {
     boot_command = [
         "e<wait>",
         "<down><down><down>",
@@ -41,16 +41,16 @@ source "virtualbox-iso" "ubuntu-24043-server" {
   # Change to --nat-localhostreachable1 forced by https://github.com/hashicorp/packer/issues/12118
   vboxmanage              = [["modifyvm", "{{.Name}}", "--nat-localhostreachable1", "on"]]
   virtualbox_version_file = ".vbox_version"
-  vm_name                 = "jammy-server"
+  vm_name                 = "vault-client"
   headless                = "${var.headless_build}"
 }
 
 build {
-  sources = ["source.virtualbox-iso.ubuntu-24043-server"]
+  sources = ["source.virtualbox-iso.vault-client"]
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    script          = "../scripts/post_install_ubuntu_2204_vagrant.sh"
+    script          = "../scripts/post_install_ubuntu_2404_vagrant.sh"
     environment_vars = ["DBUSER=${local.db_user}"]
   }
 
