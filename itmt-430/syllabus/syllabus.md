@@ -146,8 +146,8 @@ The course will make use of Canvas inside of the Illinois Tech Portal. There are
   * Covering Vagrant, Packer, and Vault
 * Student Chapter Presentation
   * Each week there are scheduled lectures that will be given by the student teams during the main course section
-* Student Chapter Review Questions
-  * Each group provides at least 2 questions per chapter covered
+* Weekly Presentation Critique
+  * Each student will present a critique of the weeks presentations and a short summary.
 * Final exam consisting of review questions from student presentations
 
 ### Grading
@@ -167,10 +167,10 @@ The final grade for the class will be calculated as follows:
 Name | Grade | Total Points
 ------------------|----------|-----------
 Sprint Report (5) | 28% | 20 points each
-Chapter Presentation (1) | 15% | 50 points
-Chapter Weekly Review Questions (11) | 15% | 55 points
+Team Chapter Presentation (1) | 15% | 50 points
+Chapter Weekly Critiques (11) | 15% | 55 points
 Tooling Assignment (1) | 2% | 10 points
-Tooling Assignment Advanced (2) | 2% | 5 points each
+Tooling Assignment Advanced (3) | 2% | 5 points each
 Final Exam | 28% | 100 points
 Attendance | 10% | 30 points
 
@@ -213,3 +213,10 @@ Illinois Tech encourages anyone experiencing sexual harassment or sexual miscond
 For confidential support, you may reach Illinois Tech’s Confidential Advisor at (773) 907-1062. You can also contact a licensed practitioner in Illinois Tech’s Student Health and Wellness Center at student.health@iit.edu or (312)567-7550
 
 For a comprehensive list of resources regarding counseling services, medical assistance, legal assistance and visa and immigration services, you can visit the Office of Title IX Compliance website at [https://www.iit.edu/title-ix/resources](https://www.iit.edu/title-ix/resources "IIT Title IX resources").
+
+## Student Rights and Responsibilities
+
+* [Rights and Responsibilities](https://www.iit.edu/cdr/faqs/rights-and-responsibilities?utm_source=chatgpt.com "webpage for Rights and Responsibilities")
+* [FERPA](https://www.iit.edu/registrar/students-and-alumni/ferpa?utm_source=chatgpt.com "webpage for FERPA")
+* [Code of Conduct](https://www.iit.edu/student-affairs/student-handbook/fine-print/code-conduct?utm_source=chatgpt.com "webapge for code of conduct")
+* [Policies Procedures and Regulations from Student Handbook](https://www.iit.edu/student-affairs/student-handbook/fine-print/policies-regulations-and-procedures?utm_source=chatgpt.com "webpage for student handbook")
