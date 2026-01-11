@@ -11,7 +11,7 @@ Semester: Spring 2025 - Professor Jeremy Hajek
  **Professor** | Jeremy Hajek
  Address | Department of Information Technology & Management 10 W. 35th St., Chicago, IL 60616
  Telephone | 312.567.5937
- Email | hajek@iit.edu
+ Email | hajek@illinoistech.edu
  Office | IIT Tower 15th Floor
  Office Hours and URL | See Times at [https://iit.campus.eab.com/pal/WAle8ZAcry](https://iit.campus.eab.com/pal/WAle8ZAcry "webpage for availability")
  Location | IIT Tower 15th Floor or online via MS Teams
@@ -31,10 +31,8 @@ In this capstone course, students will identify, gather, analyze, and write requ
   * Monday 10:00 am to 11:40am
 * Lab Class Times - Located in TS-2030 Smart Lab
   * Lab 01 Monday 11:50am to 1:30pm
-  * Lab 02 Tuesday 10:00am to 11:40am
-  * Lab 03 Wednesday 11:50am to 1:30pm
-  * Lab 04 Online meeting determined by the teams
-  * Lab 05 Monday 1:50 PM to 3:30 PM
+  * Lab 02 Online meeting determined by the teams
+  * Lab 03 Wednesday 10:00 AM to 11:40 AM
 
 ## Directions to Herman Hall 002
 
@@ -50,23 +48,24 @@ All readings should be done prior to class
 
 Week | Date | Topic | Lab |
 ----|------|:--------------------|-------------
-1 | 01/13 | Introduction | Intro to Tooling Part I
-2 | 01/20 | No Class MLK Jr Day | Intro to Tooling Part II
-3 | 01/27 | The Three Ways Ch 2-4 | Intro to Tooling Part II
-4 | 02/03 | Where to Start Ch 5-6 | NA
-5 | 02/10 | Where to Start Ch 7-8 | Sprint 01 presentation
-6 | 02/17 | Technical Practices of Flow Ch 9-13 | NA
-7 | 02/24 | Technical Practices of Feedback Ch 14-18 | NA
-8 | 03/03 | Technical Practices of Learning Ch 19-21 | Sprint 02 presentation
-9 | 03/10 | Technical Practices of InfoSec Ch 22-23 | NA
-NA | 03/17 | Spring Break Week | NA
-10 | 03/24 | DevOps Solutions 2-3 | NA
-11 | 03/31 | DevOps Solutions 4-5 | Sprint 03 presentation
-12 | 04/07 | DevOps Solutions 6-7 | NA
-13 | 04/14 | DevOps Solutions 8-9 | Sprint 04 presentation
-14 | 04/21 | DevOps Solutions 10-12 | NA
-15 | 04/28 | Sprint 05 Final Presentation Day for everyone!
-16 | 05/06 | Final Exam Week | NA
+1 | 01/12 | Introduction | Intro to Tooling Part I
+2 | 01/19 | No Class MLK Jr Day | -
+2 | 01/23 | Make up class day | Intro to Tooling Part II
+3 | 01/26 | The Three Ways Ch 2-4 | Intro to Tooling Part II
+4 | 02/02 | Where to Start Ch 5-6 | NA
+5 | 02/09 | Where to Start Ch 7-8 | Sprint 01 presentation
+6 | 02/16 | Technical Practices of Flow Ch 9-13 | NA
+7 | 02/23 | Technical Practices of Feedback Ch 14-18 | NA
+8 | 03/02 | Technical Practices of Learning Ch 19-21 | Sprint 02 presentation
+9 | 03/09 | Technical Practices of InfoSec Ch 22-23 | NA
+NA | 03/16 | Spring Break Week | NA
+10 | 03/23 | DevOps Solutions 2-3 | NA
+11 | 03/30 | DevOps Solutions 4-5 | Sprint 03 presentation
+12 | 04/06 | DevOps Solutions 6-7 | NA
+13 | 04/13 | DevOps Solutions 8-9 | Sprint 04 presentation
+14 | 04/20 | DevOps Solutions 10-12 | NA
+15 | 04/27 | Sprint 05 Final Presentation Day for everyone!
+16 | 05/05 | Final Exam Week | NA
 
 ## Course Student Outcomes
 
@@ -91,7 +90,7 @@ Students completing this course will be able to:
 
 ## Required Textbook
 
-* DevOps Handbook - How to Create World-Class Agility, Reliability, & Security in Technology Organizations
+* DevOps Handbook - How to Create World-Class Agility, Reliability, & Security in Technology Organizations 2nd Edition
   * Gene Kim, Patrick Debois, John Willis, Jez Humble, Dr. Nicole Forsgren
   * ISBN-13: 9781950508402
   * Publisher: IT Revolution Press
@@ -120,7 +119,7 @@ Students completing this course will be able to:
 
 ### Readings
 
-Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected.  Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should already be familiar with.
+Readings for the class will be assigned from the textbooks; there will be additional reading assigned in the form of online reading. All readings should be done before coming to class on the assigned date, and are mandatory and expected. Generally if you do the readings you will excel in the course, as the lectures serve as a clarification and explanation of material you should already be familiar with.
 
 ### Course Notes
 
@@ -128,7 +127,7 @@ It is recommended to take notes from the discussion portion of the class.
 
 ### Attendance
 
-Attendance is expected and will be counted as part of your grade -- if you are not able to attend please email me / contact on Discord
+Attendance is expected and will be counted as part of your grade -- if you are not able to attend please email me
 
 ### Course Web Site
 
@@ -140,10 +139,10 @@ The course will make use of Canvas inside of the Illinois Tech Portal. There are
 ### Assignments
 
 * Sprint Report (x5)
-  * Individual reports given by each team member per sprint demonstrating the objectives they completed
+  * Individual reports given by each team member per sprint demonstrating the objectives they were assigned and they completed
 * Tooling assignment
   * This initial assignment will help you get your infrastructure setup and prepared for the semester
-* Advanced Tooling Assignments
+* Advanced Tooling Assignments (x3)
   * Covering Vagrant, Packer, and Vault
 * Student Chapter Presentation
   * Each week there are scheduled lectures that will be given by the student teams during the main course section

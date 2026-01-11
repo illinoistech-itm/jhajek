@@ -2,7 +2,7 @@
 
 ![](./images/CoC_horiz_lockup_2019.jpg "COC Logo")
 
-Semester: Summer 2025
+Semester: Spring 2026
 
 ![*https://xkcd.com/303/*](./images/compiling.png "XCKD 303 image URL")
 
@@ -16,32 +16,33 @@ Semester: Summer 2025
  Office Hours and URL | [See Times](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu "webpage for availability")
  Location | IIT Tower 15th Floor or online via MS Teams
 
-**Course Catalog Description:** Software as a Service (SaaS) allows consumers to use a provider’s applications running on a cloud infrastructure. Students will explore different approaches, techniques, tools and technologies to build, deploy, 
-and manage cloud native applications. [ITMO 463 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 463 Bulletin Description")
+**Course Catalog Description:** Software as a Service (SaaS) allows consumers to use a provider’s applications running on a cloud infrastructure. Students will explore different approaches, techniques, tools and technologies to build, deploy, and manage cloud native applications. [ITMO 463 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 463 Bulletin Description")
 
 **Prerequisites:** ITMO 340, ITM 313, and ITMO 356, Credit: Lab 2-0-2
 
-**Lecture Day, Time & Place:** Tuesday and Thursday 10 AM - 12:30 PM in the [Tech South 2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
+**Lecture Day, Time & Place:** Tuesday and Thursday 1:50 PM - 3:05 PM in the [Tech South 2030 Smart Lab](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL"), on IIT’s Mies Campus in Chicago.
 
-**Schedule of Topics/Readings:** All readings should be done prior to class. Most of the documents are reference documents, but still worth reading. 
+**Schedule of Topics/Readings:** All readings should be done prior to class. Most of the documents are reference documents, and worth reading. 
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 06/03 | Introduction and Definition of Cloud Native | -
-2 | 06/05 | Introduction and Definition of Cloud Native | -
-3 | 06/10 | Cloud Native Infrastructure Deployment | -
-4 | 06/12 | Cloud Native Infrastructure Deployment | -
-5 | 06/17 | Cloud Native Elements | -
-6 | 06/19 | Cloud Native Elements | -
-7 | 06/24 | Cloud Native Software Deployments | -
-8 | 06/26 | Cloud Native Software Deployments | -
-9 | 07/01 | Cloud Native Design Patterns | -
-10| 07/03 | Cloud Native Design Patterns | -
-11| 07/10 | Intermediate Cloud Native Application Development | -
-12| 07/12 | Intermediate Cloud Native Application Development | -
-13| 07/17 | Introduction to Cloud Native Design Patterns with Lambda | -
-14| 07/19 | Introduction to Cloud Native Design Patterns with Lambda | -
-15| 07/24 | Final Project/Exam Week | Final Presentation
+1 | 01/13 | Introduction and Definition of Cloud Native | -
+2 | 01/20 | Cloud Native Infrastructure Deployment | -
+3 | 01/27 | Cloud Native Elements | -
+4 | 02/03 | Cloud Native Software Deployments | -
+5 | 02/10 | Cloud Native Software Deployments | -
+6 | 02/17 | Cloud Native Design Patterns | -
+7 | 02/24 | Intermediate Cloud Native Application Development | -
+8 | 03/03 | Introduction to Cloud Native Design Patterns with Lambda | -
+9 | 03/10 | Final Project/Exam Week | Final Presentation
+10| 03/17 | Final Project/Exam Week | Final Presentation
+NA| 03/24 | Spring Break No Class | -
+11| 03/31 | Final Project/Exam Week | Final Presentation
+12| 04/07 | Final Project/Exam Week | Final Presentation
+13| 04/14 | Final Project/Exam Week | Final Presentation
+14| 04/21 | Final Project/Exam Week | Final Presentation
+15| 04/28 | Final Project/Exam Week | Final Presentation
+16| 04/07 | Final Project/Exam Week | Final Presentation
 
 **Course Student Outcomes:** Students completing this course will be able to:
 
@@ -67,11 +68,11 @@ applications
 
 No required textbook - article links will be provided
 
-**Course Notes:**  It is recommended to take notes from the oral discussion portion of the class.
+**Course Notes:** It is recommended to take notes from the oral discussion portion of the class.
 
 **Course Web Site:** We will be using Canvas for the course
 
-**Assignments:**  There will be 7 weekly assignments and 1 final presentation
+**Assignments:**  There will be 13 weekly assignments and 1 final presentation
 
 **Grading:** Grading criteria for (undergrad course number) students will be as follows:
 

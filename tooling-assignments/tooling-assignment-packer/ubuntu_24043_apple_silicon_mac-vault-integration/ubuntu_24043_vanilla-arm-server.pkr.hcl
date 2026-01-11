@@ -39,9 +39,9 @@ source "parallels-iso" "vault-client" {
   # Hint to fix the problem of "initramfs unpacking failed" error
   # https://askubuntu.com/questions/1269855/usb-installer-initramfs-unpacking-failed-decoding-failed]
   memory                  = "${var.memory_amount}"
-  prlctl                  = [["set", "{{.Name}}", "--bios-type", "efi-arm64" ]]
+  prlctl                  = [["set", "{{.Name}}", "--bios-type", "efi-arm64" ],["set", "{{.Name}}","--device-del", "sound0"]]
   prlctl_version_file     = ".prlctl_version"
-  vm_name                 = "ubuntu-server-vanilla"
+  vm_name                 = "vault-client"
 }
 
 build {

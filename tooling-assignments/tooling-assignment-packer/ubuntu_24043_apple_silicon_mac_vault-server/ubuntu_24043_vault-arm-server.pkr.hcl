@@ -18,7 +18,7 @@ packer {
 
 # Packer Parallels-iso documentation:
 # https://developer.hashicorp.com/packer/integrations/Parallels/parallels/latest/components/builder/iso
-source "parallels-iso" "vanilla-server" {
+source "parallels-iso" "vault-server" {
   # https://github.com/Parallels/packer-examples
   # Welcome to our repository containing a collection of Packer scripts intended for creating diverse virtual machine configurations for the Parallels Desktop provider.
   #boot_command          = ["<esc>", "linux /casper/vmlinuz"," quiet"," autoinstall"," ds='nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/'","<enter>","initrd /casper/initrd <enter>","boot <enter>"]
@@ -45,13 +45,13 @@ source "parallels-iso" "vanilla-server" {
   # Hint to fix the problem of "initramfs unpacking failed" error
   # https://askubuntu.com/questions/1269855/usb-installer-initramfs-unpacking-failed-decoding-failed]
   memory                  = "${var.memory_amount}"
-  prlctl                  = [["set", "{{.Name}}","--bios-type", "efi-arm64" ]]
+  prlctl                  = [["set", "{{.Name}}","--bios-type", "efi-arm64" ],["set", "{{.Name}}","--device-del", "sound0"]]
   prlctl_version_file     = ".prlctl_version"
-  vm_name                 = "ubuntu-server-vanilla"
+  vm_name                 = "ubuntu-vault-server"
 }
 
 build {
-  sources = ["source.parallels-iso.vanilla-server"]
+  sources = ["source.parallels-iso.vault-server"]
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
