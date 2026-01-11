@@ -50,7 +50,7 @@ source "virtualbox-iso" "ubuntu-vault-server" {
   # Change to --nat-localhostreachable1 forced by https://github.com/hashicorp/packer/issues/12118
   vboxmanage              = [["modifyvm", "{{.Name}}", "--nat-localhostreachable1", "on"]]
   virtualbox_version_file = ".vbox_version"
-  vm_name                 = "vault-server"
+  vm_name                 = "ubuntu-vault-server"
   headless                = "${var.headless_build}"
 }
 
