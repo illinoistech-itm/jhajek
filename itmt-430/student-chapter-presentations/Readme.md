@@ -18,10 +18,13 @@ See Canvas Modules: `Student Chapter Presentations` for the sign up link add you
 
 Your team will provide:
 
-* An approximately 40 minute presentation covering the main themes of the material allotted
+* A 30 minute presentation covering the main themes of the material allotted
 * Presentation will be done with partners from your class section
-  * Find partners from 01 and the 02 section finds partners
-  * Presentation will submitted the `Thursday` before your presentation day by 5:00 pm and involve a meeting with the professor to cover the material or make any adjustments the Friday before your team presents.
+  * Find partners from your class section
+    * In person 01 sections
+    * Online 02 section
+  * Finished presentation will submitted the `Thursday` before your presentation day by 5:00 pm and involve a meeting with the professor to cover the material or make any adjustments the Friday before your team presents.
+  * Team must schedule a Friday morning practice time with the instructor
   * All team members must participate and speak in the presentation
   * The presentation must clearly cover the main themes of your allotted material and clearly express them, as well as discuss the case studies mentioned (if applicable).
   * Teams will prepare at least 3 review questions per chapter material covered and the answers for these questions
