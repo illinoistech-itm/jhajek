@@ -274,6 +274,7 @@ For this assignment, this step is optional, but I wanted to expose you to it as 
 
 * The Packer build process may take anywhere from 5 to 25 minutes based on your system hardware and internet speeds
   * It is cached for subsequent use in the local directory `./packer_cache`
+  * You can define an environment varialbe: `PACKER_CACHE_DIR`
   * Note that on Windows there is no download meter, it will appear the process is frozen, its not, just have to be patient
 
 ## Summary

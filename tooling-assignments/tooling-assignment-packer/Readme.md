@@ -1,10 +1,13 @@
 # Tooling Assignment Packer
 
-Provide the required screenshots to show the completion of the tutorial for the local Packer build and the remote Build Server build.
+Provide the required screenshots to show the completion of the tutorial.
 
 ## Vagrant Box List
 
-Take a screenshot of the command: `vagrant box list` to show the ubuntu-server on your local host.
+Take a screenshot of the command: `vagrant box list` to show the required ubuntu-servers on your laptop. The output should show two Vagrant Boxes you built.
+
+* ubuntu-vault-server
+* ubuntu-vanilla-server
 
 ## Deliverable
 
