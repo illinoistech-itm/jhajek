@@ -10,5 +10,5 @@ The video should be no less than 2 minutes and no more than 5 minutes. Make sure
 
 * Describe what happened on "very very bad day" at Joyent?
 * What is one of the key things Joyent initially planned for during the outage?
-* According to the video, what is debugging?
+* According to the video, what is the art of debugging?
 * Describe what went wrong at Three Mile Island and how they found out the cause.
