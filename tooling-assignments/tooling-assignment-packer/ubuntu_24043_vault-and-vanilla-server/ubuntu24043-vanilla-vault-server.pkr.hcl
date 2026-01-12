@@ -45,6 +45,9 @@ source "virtualbox-iso" "ubuntu-vault-server" {
   # https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/latest/components/builder/iso#optional
   nic_type                = "virtio"
   chipset                 = "ich9"
+  gfx_vram_size           = "16"
+  gfx_controller          = "vboxvga"
+  #hard_drive_interface    = "virtio"
   cpus                    = 2
   memory                  = "${var.memory_amount}"
   # Change to --nat-localhostreachable1 forced by https://github.com/hashicorp/packer/issues/12118
