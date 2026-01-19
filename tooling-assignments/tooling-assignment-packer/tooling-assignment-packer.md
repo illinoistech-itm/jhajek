@@ -41,7 +41,7 @@ Lets take a look and see how Packer is able to build virtual machines from a YAM
 
 ## Installing HCL VSCode plugin
 
-VSCode has an extensive plugin system to provide features, syntax high-lighting, and auto-completion features for the HCL language. This will help with debugging.
+VSCode has an extensive plugin system to provide features, syntax high-lighting, and auto-completion features for the HCL language. This will help with debugging. You will want to install the `Hashicorp HCL` and `Hashicorp Terraform` plugins.
 
 ![*How to add HCL plugin in VSCode*](./images/hcl-vs-code-plugin.png "image showing how to install HCL plugins in VSCode")
 
