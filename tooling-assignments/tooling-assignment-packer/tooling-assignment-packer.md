@@ -41,7 +41,7 @@ Lets take a look and see how Packer is able to build virtual machines from a YAM
 
 ### Packer Template for x86 VirtualBox
 
-```json
+```hcl
 packer {
   required_plugins {
     virtualbox = {
@@ -106,7 +106,7 @@ build {
 
 ### Packer Template for Apple Silicon Parallels
 
-```json
+```hcl
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 packer {
