@@ -167,12 +167,12 @@ To get a hold of the Packer Build Template samples, you will need to clone an ad
 
 ### Building Your Own Virtual Machines Using Packer and VirtualBox
 
-The sample code provided is heavily templated, to allow many people to use without hard-coding specific values or secrets into the template. There will be a few steps to and values that we need to fill out. Let's take a look at the file named: 
+The sample code provided is heavily templated, to allow use without hard-coding specific values or secrets into the template. There will be a few steps to add values that we need to fill out. Let's take a look at the file named: 
 
 * x86 VirtualBox based OSes 
-  * [ubuntu24043-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/advanced-tooling-examples/ubuntu_24043_vanilla/ubuntu24043-vanilla-live-server.pkr.hcl "webpage showing the Packer syntax").
+  * [ubuntu24043-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/tooling-assignments/tooling-assignment-packer/ubuntu_24043_vanilla-server/ubuntu24043-vanilla-server.pkr.hcl "webpage showing the Packer syntax").
 * Apple Silicon M Series Parallels Pro
-  * [ubuntu24043-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/advanced-tooling-examples/ubuntu_24043_m1_mac/ubuntu_24043_vanilla-arm-server.pkr.hcll "webpage showing the Packer syntax").
+  * [ubuntu24043-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/tooling-assignments/tooling-assignment-packer/ubuntu_24043_apple_silicon_mac-vanilla-server/ubuntu_24043_vanilla-arm-server.pkr.hcl "webpage showing the Packer syntax").
 
 There are two files associated with this Packer Build Template, there is a file called: `variables.pkr.hcl`. This file allows you to define variables that will be applied to settings at run time.
 
@@ -180,7 +180,7 @@ There are two files associated with this Packer Build Template, there is a file 
 
 The sample code provided is heavily templated, to allow many people to use without hard-coding specific values or secrets into the template. There will be a few steps to and values that we need to fill out. Let's take a look at the file named: [ubuntu_24043_vanilla-arm-server.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/advanced-tooling-examples/ubuntu_24043_m1_mac/ubuntu_24043_vanilla-arm-server.pkr.hcl "webpage showing the Packer syntax for M1 silicon").
 
-You will also be required to install the `Parallels Virtualization SDK`. You can install this from your Parallels account -- there is a download link. It is also available via `brew`: `brew install parallels-virtualization-sdk --cask`. This allows Packer to connect to the Parallels commandline, known as `prlctl`.
+~~You will also be required to install the `Parallels Virtualization SDK`. You can install this from your Parallels account -- there is a download link. It is also available via `brew`: `brew install parallels-virtualization-sdk --cask`. This allows Packer to connect to the Parallels commandline, known as `prlctl`.~~
 
 There is a special file associated with this Packer Build Template, there is a file called: `variables.pkr.hcl`. This file allows you to define variables that will be applied to settings at run time.
 
@@ -226,7 +226,7 @@ packer {
 }
 ```
 
-You only have to run this once time before you run your first build to retrieve the plugin, from the directory where the `ubuntu24043-vanilla-live-server.pkr.hcl` is located: `packer init .` -- this will initialize the VirtualBox Plugin for your local system.
+You only have to run this once time before you run your first build to retrieve the plugin, from the directory where the `ubuntu24043-vanilla-server.pkr.hcl` is located: `packer init .` -- this will initialize the VirtualBox Plugin for your local system.
 
 ### Validation
 
@@ -274,7 +274,7 @@ For this assignment, this step is optional, but I wanted to expose you to it as 
 
 * The Packer build process may take anywhere from 5 to 25 minutes based on your system hardware and internet speeds
   * It is cached for subsequent use in the local directory `./packer_cache`
-  * You can define an environment varialbe: `PACKER_CACHE_DIR`
+  * You can define an environment variable: `PACKER_CACHE_DIR`
   * Note that on Windows there is no download meter, it will appear the process is frozen, its not, just have to be patient
 
 ## Summary
