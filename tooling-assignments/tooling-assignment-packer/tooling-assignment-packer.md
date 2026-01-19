@@ -171,23 +171,23 @@ build {
 
 There are two main sections to understand.  First is the **Source** section which tells us details about what needs to be built and how it will be built.  The second section, is the **Build** section and this section is the part of the code that executes the first section in order to build your virtualized artifact.
 
-### Source Section
+### Source Block
 
 The source code in the [HCL (HashiCorp Language)](https://www.packer.io/guides/hcl "HCL web-site") document under the header marked source, tells Packer what Operating System it will be building.  It tells Packer what the answers to all the installation questions are going to be and it tells Packer which virtualization platform it should be using on the local system.
 
-In this case, Packer is building a virtual machine using VirtualBox.   The documentation for the [VirtualBox ISO build method](https://www.packer.io/plugins/builders/virtualbox/iso "Packer vbox iso documentation web-site") is very helpful in allowing you to customize and expand this simple template.
+In this case, Packer is building a virtual machine using VirtualBox. The documentation for the [VirtualBox ISO build method](https://www.packer.io/plugins/builders/virtualbox/iso "Packer vbox iso documentation web-site") is very helpful in allowing you to customize and expand this simple template.
 
-### Build Section
+### Build Block
 
 The build section tells Packer what to build.  You can have multiple *source* sections in a single Packer build template. Within the Build portion of the template, there are two additional optional sections: provisioners and post-processors
 
-### Provisioners
+### Provisioner Block
 
 [Provisioners](https://www.packer.io/docs/provisioners "Packer provisioners web-page") are an extra feature of Packer. This allows you to execute additional commands after the initial install is completed.  This allows you to separate the installation template and the ability to customize your artifacts.  You can reuse the same template to build many Ubuntu Server Virtual Machines, but use a single or multiple shell script to install different software in each virtual machine.  You can see the source code on the line that has **script**: `script = "../scripts/post_install_ubuntu_2404_vagrant.sh"`
 
 You can also use inline shell commands for customizing your artifact.  Packer will manage all of this using an SSH session.
 
-### Post-Processors
+### Post-Processor Block
 
 This is one of the best features of Packer.  Not only is Packer able to build a Virtual Machine artifact from a single *.pkr.hcl document, but it is able to convert a single artifact into 1 of 30 other formats.  This allows for a single standardized template to be built, checked for compliance, version controlled, and converted all in a single step.
 
