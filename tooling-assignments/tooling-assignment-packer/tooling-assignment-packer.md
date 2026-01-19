@@ -34,46 +34,63 @@ A machine image is a single static unit that contains a pre-configured operating
 
 ## Packer HCL2 template
 
-Lets take a look and see how Packer is able to build virtual machines from a YAML based text file. For the sample code used in the next section you can issue the command `git pull` in the jhajek repo you cloned at the beginning of class to get the latest source code samples.  They will be located in the directory [packer-code-examples](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/packer-code-examples "website for packer code exmaple"). Let us look at the file named: `ubuntu-24041-live-server.pkr.hcl`
+Lets take a look and see how Packer is able to build virtual machines from a YAML based text file. For the sample code used in the next section you can issue the command `git pull` in the jhajek repo you cloned at the beginning of class to get the latest source code samples.  They will be located in the directory [packer-code-examples](https://github.com/illinoistech-itm/jhajek/tree/master/tooling-assignments/tooling-assignment-packers "website for packer code exmaple"). Let us look at the file named: `ubuntu_24043_vanilla-server` > `ubuntu24043-vanilla-server.pkr.hcl` and `ubuntu_24043_apple_silicon_mac-vanilla-server` > `ubuntu_24043_vanilla-arm-server.pkr.hcl` examples.
 
-```hcl
-locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
+* [Documentation options for VirtualBox](https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/latest/components/builder/iso "webpage for Documentation option for VirtualBox")
+* [Documentation options for Parallels](https://developer.hashicorp.com/packer/integrations/Parallels/parallels/latest/components/builder/iso "webpage for Documentation options for Parallels")
 
+### Packer Template for x86 VirtualBox
+
+```json
 packer {
   required_plugins {
     virtualbox = {
-      version = ">= 1.1.5"
       source  = "github.com/hashicorp/virtualbox"
+      version = "~> 1"
+    }
+      vagrant = {
+      version = "~> 1"
+      source = "github.com/hashicorp/vagrant"
     }
   }
 }
 
-# Packer Virtualbox-iso documentation
-# https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/
-# latest/components/builder/iso
-source "virtualbox-iso" "ubuntu-24043-live-server" {
-  boot_command          = ["<cOn><cOff>", "<wait5>linux /casper/vmlinuz"," quiet"," autoinstall"," ds='nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/'","<enter>","initrd /casper/initrd <enter>","boot <enter>"]
+source "virtualbox-iso" "ubuntu-24043-server" {
+    boot_command = [
+        "e<wait>",
+        "<down><down><down>",
+        "<end><bs><bs><bs><bs><wait>",
+        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+        "<f10><wait>"
+      ]
   boot_wait               = "5s"
-  disk_size               = 15000
+  disk_size               = 35000
   guest_additions_path    = "VBoxGuestAdditions_{{ .Version }}.iso"
   guest_os_type           = "Ubuntu_64"
   http_directory          = "subiquity/http"
   http_port_max           = 9200
   http_port_min           = 9001
-  iso_checksum            = "file:https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
-  iso_urls                = ["http://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/ubuntu-22.04.5-live-server-amd64.iso"]
+  iso_checksum            = "${var.iso_checksum}"
+  iso_urls                = ["${var.iso_url}"]   
   shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
   ssh_username            = "vagrant"
   ssh_password            = "${var.user-ssh-password}"
-  ssh_timeout             = "45m"
-  vboxmanage              = [["modifyvm", "{{ .Name }}", "--memory", "${var.memory_amount}"]]
+  ssh_timeout             = "25m"
+  nic_type                = "virtio"
+  chipset                 = "ich9"
+  gfx_vram_size           = "16"
+  gfx_controller          = "vboxvga"
+  #hard_drive_interface    = "virtio"
+  cpus                    = 2
+  memory                  = "${var.memory_amount}"
+  vboxmanage              = [["modifyvm", "{{.Name}}", "--nat-localhostreachable1", "on"]]
   virtualbox_version_file = ".vbox_version"
-  vm_name                 = "ubuntu-jammy"
+  vm_name                 = "ubuntu-vanilla-server"
   headless                = "${var.headless_build}"
 }
 
 build {
-  sources = ["source.virtualbox-iso.ubuntu-24043-live-server"]
+  sources = ["source.virtualbox-iso.ubuntu-24043-server"]
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
@@ -86,6 +103,71 @@ build {
   }
 }
 ```
+
+### Packer Template for Apple Silicon Parallels
+
+```json
+locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
+
+packer {
+  required_plugins {
+    vagrant = {
+      source  = "github.com/hashicorp/vagrant"
+      version = "~> 1"
+    }
+    parallels = {
+      source  = "github.com/hashicorp/parallels"
+      version = "~> 1.2.0"
+    }
+  }
+}
+
+source "parallels-iso" "vanilla-server" {
+  boot_command          = ["<esc>", "c", "linux /casper/vmlinuz",
+                           " quiet"," autoinstall",
+                           " ds='nocloud-net;s=http://{{.HTTPIP}}:{{.HTTPPort}}/'",
+                           "<enter>","initrd /casper/initrd <enter>","boot <enter>"]
+  boot_wait               = "5s"
+  disk_size               = 15000
+  parallels_tools_flavor  = "lin-arm"
+  guest_os_type           = "ubuntu"
+  hard_drive_interface    = "sata"
+  http_directory          = "subiquity/http"
+  http_port_max           = 9200
+  http_port_min           = 9001
+  iso_checksum            = "${var.iso_checksum}"
+  iso_urls                = ["${var.iso_url}"]    
+  shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
+  ssh_wait_timeout        = "1800s"
+  ssh_password            = "${var.SSHPW}"
+  ssh_timeout             = "20m"
+  ssh_username            = "vagrant"
+  parallels_tools_mode    = "upload"
+  ssh_handshake_attempts  = "300"
+  communicator            = "ssh"
+  memory                  = "${var.memory_amount}"
+  prlctl                  = [["set", "{{.Name}}","--bios-type", "efi-arm64" ],
+                             ["set", "{{.Name}}","--device-del", "sound0"]]
+  prlctl_version_file     = ".prlctl_version"
+  vm_name                 = "ubuntu-vanilla-server"
+}
+
+build {
+  sources = ["source.parallels-iso.vanilla-server"]
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    script          = "../scripts/post_install_ubuntu_2404_vagrant.sh"
+  }
+
+  post-processor "vagrant" {
+    keep_input_artifact = false
+    output              = "${var.build_artifact_location}{{ .BuildName }}--${local.timestamp}-arm.box"
+  }
+}
+```
+
+## Packer Template Main Sections
 
 There are two main sections to understand.  First is the **Source** section which tells us details about what needs to be built and how it will be built.  The second section, is the **Build** section and this section is the part of the code that executes the first section in order to build your virtualized artifact.
 
