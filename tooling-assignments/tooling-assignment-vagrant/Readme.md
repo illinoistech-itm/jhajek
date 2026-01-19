@@ -1,6 +1,6 @@
 # Tooling Assignment Vagrant
 
-This is the template provided for `tooling assignment vagrant`. Provide the required screenshots to show that tooling has been properly installed inside of your Ubuntu Noble 24.04 Vagrant Box and AlmaLinux 9 Box and submit to Canvas.
+This is the template provided for `tooling assignment vagrant`. Provide the required screenshots to show that tooling has been properly installed inside of your Ubuntu Noble 24.04 Vagrant Box and AlmaLinux 9 or 10 Box and submit to Canvas.
 
 ## WebServer Install
 
