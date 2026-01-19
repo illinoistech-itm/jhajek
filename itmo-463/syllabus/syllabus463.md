@@ -27,18 +27,18 @@ Semester: Spring 2026
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
 1 | 01/13 | Introduction and Definition of Cloud Native | -
-2 | 01/20 | Cloud Native Infrastructure Deployment | -
-3 | 01/27 | Cloud Native Elements | -
-4 | 02/03 | Cloud Native Software Deployments | -
-5 | 02/10 | Cloud Native Software Deployments | -
-6 | 02/17 | Cloud Native Design Patterns | -
-7 | 02/24 | Intermediate Cloud Native Application Development | -
-8 | 03/03 | Introduction to Cloud Native Design Patterns with Lambda | -
-9 | 03/10 | Final Project/Exam Week | Final Presentation
-10| 03/17 | Final Project/Exam Week | Final Presentation
-NA| 03/24 | Spring Break No Class | -
-11| 03/31 | Final Project/Exam Week | Final Presentation
-12| 04/07 | Final Project/Exam Week | Final Presentation
+2 | 01/20 | AWS and Virtualization setup | -
+3 | 01/27 | Cloud Native Infrastructure Deployment | -
+4 | 02/03 | Legacy Cloud App Creation | -
+5 | 02/10 | Cloud Software Software Deployments | -
+6 | 02/17 | Cloud Software Design Patterns | -
+7 | 02/24 | Intermediate Cloud Application Development | -
+8 | 03/03 | Intermediate Cloud Software Deployments | -
+9 | 03/10 | Intermediate Cloud Software Design Patterns | -
+NA| 03/17 | Spring Break No Class | -
+10| 03/24 | Cloud Native Application Development | -
+11| 03/31 | Cloud Native Software Deployments | -
+12| 04/07 | Cloud Software Design Patterns | -
 13| 04/14 | Final Project/Exam Week | Final Presentation
 14| 04/21 | Final Project/Exam Week | Final Presentation
 15| 04/28 | Final Project/Exam Week | Final Presentation
@@ -88,8 +88,8 @@ The final grade for the class will be calculated as follows: (example)
 
 | Name                 | Grade | Total Points |
 | ----------------------- | ------- | ---------------- |
-|   Weekly Assignments: | 50% | 70 |
-|         Final Project: | 50% | 70 |
+|   Weekly Assignments: | 50% | 120 |
+|         Final Project: | 50% | 120 |
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.
 

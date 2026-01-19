@@ -161,7 +161,7 @@ You will find two folders, one for local VirtualBox build, the other for your te
 
 ### Acquiring the Packer Sample Templates to build VirtualBox VMs for Vagrant
 
-To get a hold of the Packer Build Template samples, you will need to clone an additional repo to your host systems (MacOS, Windows, or Linux). Issue the command: `git clone https://github.com/illinoistech-itm/jhajek`. There will be many directories with sample code from other classes, but all you are interested in is the `itmt-430` directory and the conent in the `example-code` folder. 
+To get a hold of the Packer Build Template samples, you will need to clone an additional repo to your host systems (MacOS, Windows, or Linux). Issue the command: `git clone https://github.com/illinoistech-itm/jhajek` on your local system (but not inside your repository). There will be many directories with sample code from other classes, but all you are interested in is the ~~`itmt-430` directory and the conent in the `example-code` folder~~ `tooling-assignemnts` > `tooling-assignment-packer` folder. 
 
 **Note:** do not clone the `jhajek` repo directly into your own repo. Repos and not meant to be mixed together and can cause unexpected behavior.
 

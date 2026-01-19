@@ -11,7 +11,7 @@ Semester: Summer 2025
  **Professor** | Jeremy Hajek
  Address | Department of Information Technology & Management 10 W. 35th St., Chicago, IL 60616
  Telephone | 312.567.5937
- Email | hajek@iit.edu
+ Email | hajek@illinoistech.edu
  Office | IIT Tower 15th Floor
  Office Hours and URL | [See Times](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu?anonymous&ep=plink "webpage for availability")
  Location | IIT Tower 15th Floor or online via MS Teams
@@ -27,21 +27,23 @@ and manage cloud native applications.
 
 Session # | Date | Topic | Reading |
 ----------|------|:------|----------
-1 | 06/03 | Introduction and Definition of Cloud Native | -
-2 | 06/05 | Introduction and Definition of Cloud Native | -
-3 | 06/10 | Cloud Native Infrastructure Deployment | -
-4 | 06/12 | Cloud Native Infrastructure Deployment | -
-5 | 06/17 | Cloud Native Elements | -
-6 | 06/19 | Cloud Native Elements | -
-7 | 06/24 | Cloud Native Software Deployments | -
-8 | 06/26 | Cloud Native Software Deployments | -
-9 | 07/01 | Cloud Native Design Patterns | -
-10| 07/03 | Cloud Native Design Patterns | -
-11| 07/10 | Intermediate Cloud Native Application Development | -
-12| 07/12 | Intermediate Cloud Native Application Development | -
-13| 07/17 | Introduction to Cloud Native Design Patterns with Lambda | -
-14| 07/19 | Introduction to Cloud Native Design Patterns with Lambda | -
-15| 07/24 | Final Project/Exam Week | Final Presentation
+1 | 01/13 | Introduction and Definition of Cloud Native | -
+2 | 01/20 | AWS and Virtualization setup | -
+3 | 01/27 | Cloud Native Infrastructure Deployment | -
+4 | 02/03 | Legacy Cloud App Creation | -
+5 | 02/10 | Cloud Software Software Deployments | -
+6 | 02/17 | Cloud Software Design Patterns | -
+7 | 02/24 | Intermediate Cloud Application Development | -
+8 | 03/03 | Intermediate Cloud Software Deployments | -
+9 | 03/10 | Intermediate Cloud Software Design Patterns | -
+NA| 03/17 | Spring Break No Class | -
+10| 03/24 | Cloud Native Application Development | -
+11| 03/31 | Cloud Native Software Deployments | -
+12| 04/07 | Cloud Software Design Patterns | -
+13| 04/14 | Final Project/Exam Week | Final Presentation
+14| 04/21 | Final Project/Exam Week | Final Presentation
+15| 04/28 | Final Project/Exam Week | Final Presentation
+16| 04/07 | Final Project/Exam Week | Final Presentation
 
 **Course Student Outcomes:** Students completing this course will be able to:
 
@@ -86,8 +88,8 @@ The final grade for the class will be calculated as follows: (example)
 
 | Name                 | Grade | Total Points |
 | ----------------------- | ------- | ---------------- |
-|   Weekly Assignments: | 50% | 70 |
-|         Final Project: | 50% | 70 |
+|   Weekly Assignments: | 50% | 120 |
+|         Final Project: | 50% | 120 |
 
 **Late Submission:**  By default no late work will be accepted – barring situations beyond our control.
 
