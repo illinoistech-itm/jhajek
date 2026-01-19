@@ -39,6 +39,12 @@ Lets take a look and see how Packer is able to build virtual machines from a YAM
 * [Documentation options for VirtualBox](https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/latest/components/builder/iso "webpage for Documentation option for VirtualBox")
 * [Documentation options for Parallels](https://developer.hashicorp.com/packer/integrations/Parallels/parallels/latest/components/builder/iso "webpage for Documentation options for Parallels")
 
+## Installing HCL VSCode plugin
+
+VSCode has an extensive plugin system to provide features, syntax high-lighting, and auto-completion features for the HCL language. This will help with debugging.
+
+![*How to add HCL plugin in VSCode*](./images/hcl-vs-code-plugin.png "image showing how to install HCL plugins in VSCode")
+
 ### Packer Template for x86 VirtualBox
 
 ```hcl
