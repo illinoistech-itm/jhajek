@@ -11,7 +11,7 @@
 
 ## Outcomes
 
-At the conclusion of this lab you will have investigated using a virtualization platform (x86 VirtualBox and M1 Parallels) and demonstrated the ability to build your own custom virtualization artifacts.  You will have discussed the advantages of using Packer and Vagrant and you will have implemented and deployed your own custom virtual machine artifacts.
+At the conclusion of this lab you will have investigated using a virtualization platform (x86 VirtualBox and M1 Parallels) and demonstrated the ability to build your own custom virtualization artifacts. You will have discussed the advantages of using Packer and Vagrant and you will have implemented and deployed your own custom virtual machine artifacts.
 
 ### Packer - Part I
 
@@ -34,7 +34,7 @@ A machine image is a single static unit that contains a pre-configured operating
 
 ## Packer HCL2 template
 
-Lets take a look and see how Packer is able to build virtual machines from a YAML based text file. For the sample code used in the next section you can issue the command `git pull` in the jhajek repo you cloned at the beginning of class to get the latest source code samples.  They will be located in the directory [packer-code-examples](https://github.com/illinoistech-itm/jhajek/tree/master/tooling-assignments/tooling-assignment-packers "website for packer code exmaple"). Let us look at the file named: `ubuntu_24043_vanilla-server` > `ubuntu24043-vanilla-server.pkr.hcl` and `ubuntu_24043_apple_silicon_mac-vanilla-server` > `ubuntu_24043_vanilla-arm-server.pkr.hcl` examples.
+Lets take a look and see how Packer is able to build virtual machines from a YAML based text file. For the sample code used in the next section you can issue the command `git pull` in the jhajek repo you cloned at the beginning of class to get the latest source code samples. They will be located in the directory [packer-code-examples](https://github.com/illinoistech-itm/jhajek/tree/master/tooling-assignments/tooling-assignment-packers "website for packer code exmaple"). Let us look at the file named: `ubuntu_24043_vanilla-server` > `ubuntu24043-vanilla-server.pkr.hcl` and `ubuntu_24043_apple_silicon_mac-vanilla-server` > `ubuntu_24043_vanilla-arm-server.pkr.hcl` examples.
 
 * [Documentation options for VirtualBox](https://developer.hashicorp.com/packer/integrations/hashicorp/virtualbox/latest/components/builder/iso "webpage for Documentation option for VirtualBox")
 * [Documentation options for Parallels](https://developer.hashicorp.com/packer/integrations/Parallels/parallels/latest/components/builder/iso "webpage for Documentation options for Parallels")
@@ -71,7 +71,7 @@ source "virtualbox-iso" "ubuntu-24043-server" {
   http_port_max           = 9200
   http_port_min           = 9001
   iso_checksum            = "${var.iso_checksum}"
-  iso_urls                = ["${var.iso_url}"]   
+  iso_urls                = ["${var.iso_url}"]
   shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
   ssh_username            = "vagrant"
   ssh_password            = "${var.user-ssh-password}"
@@ -136,7 +136,7 @@ source "parallels-iso" "vanilla-server" {
   http_port_max           = 9200
   http_port_min           = 9001
   iso_checksum            = "${var.iso_checksum}"
-  iso_urls                = ["${var.iso_url}"]    
+  iso_urls                = ["${var.iso_url}"]
   shutdown_command        = "echo 'vagrant' | sudo -S shutdown -P now"
   ssh_wait_timeout        = "1800s"
   ssh_password            = "${var.SSHPW}"
@@ -169,27 +169,27 @@ build {
 
 ## Packer Template Main Sections
 
-There are two main sections to understand.  First is the **Source** section which tells us details about what needs to be built and how it will be built.  The second section, is the **Build** section and this section is the part of the code that executes the first section in order to build your virtualized artifact.
+There are two main sections to understand. First is the **Source** section which tells us details about what needs to be built and how it will be built. The second section, is the **Build** section and this section is the part of the code that executes the first section in order to build your virtualized artifact.
 
 ### Source Block
 
-The source code in the [HCL (HashiCorp Language)](https://www.packer.io/guides/hcl "HCL web-site") document under the header marked source, tells Packer what Operating System it will be building.  It tells Packer what the answers to all the installation questions are going to be and it tells Packer which virtualization platform it should be using on the local system.
+The source code in the [HCL (HashiCorp Language)](https://www.packer.io/guides/hcl "HCL web-site") document under the header marked source, tells Packer what Operating System it will be building. It tells Packer what the answers to all the installation questions are going to be and it tells Packer which virtualization platform it should be using on the local system.
 
 In this case, Packer is building a virtual machine using VirtualBox. The documentation for the [VirtualBox ISO build method](https://www.packer.io/plugins/builders/virtualbox/iso "Packer vbox iso documentation web-site") is very helpful in allowing you to customize and expand this simple template.
 
 ### Build Block
 
-The build section tells Packer what to build.  You can have multiple *source* sections in a single Packer build template. Within the Build portion of the template, there are two additional optional sections: provisioners and post-processors
+The build section tells Packer what to build. You can have multiple *source* sections in a single Packer build template. Within the Build portion of the template, there are two additional optional sections: provisioners and post-processors
 
 ### Provisioner Block
 
-[Provisioners](https://www.packer.io/docs/provisioners "Packer provisioners web-page") are an extra feature of Packer. This allows you to execute additional commands after the initial install is completed.  This allows you to separate the installation template and the ability to customize your artifacts.  You can reuse the same template to build many Ubuntu Server Virtual Machines, but use a single or multiple shell script to install different software in each virtual machine.  You can see the source code on the line that has **script**: `script = "../scripts/post_install_ubuntu_2404_vagrant.sh"`
+[Provisioners](https://www.packer.io/docs/provisioners "Packer provisioners web-page") are an extra feature of Packer. This allows you to execute additional commands after the initial install is completed. This allows you to separate the installation template and the ability to customize your artifacts. You can reuse the same template to build many Ubuntu Server Virtual Machines, but use a single or multiple shell script to install different software in each virtual machine. You can see the source code on the line that has **script**: `script = "../scripts/post_install_ubuntu_2404_vagrant.sh"`
 
-You can also use inline shell commands for customizing your artifact.  Packer will manage all of this using an SSH session.
+You can also use inline shell commands for customizing your artifact. Packer will manage all of this using an SSH session.
 
 ### Post-Processor Block
 
-This is one of the best features of Packer.  Not only is Packer able to build a Virtual Machine artifact from a single *.pkr.hcl document, but it is able to convert a single artifact into 1 of 30 other formats.  This allows for a single standardized template to be built, checked for compliance, version controlled, and converted all in a single step.
+This is one of the best features of Packer. Not only is Packer able to build a Virtual Machine artifact from a single *.pkr.hcl document, but it is able to convert a single artifact into 1 of 30 other formats. This allows for a single standardized template to be built, checked for compliance, version controlled, and converted all in a single step.
 
 List of Post-Processor Options:
 
@@ -276,7 +276,7 @@ This would be a place to configure timezone, harddrive size, software that is pr
 
 ### Provisioning Scripts
 
-At the end of the `ubuntu24043-vanilla-live-server.pkr.hcl` file there are two sections, `provisioners` and `post-processors`. Provisioners is a an additional feature of Packer that allows the Packer binary to reboot your installed virtual machine and run a provisioner script -- in this case a shell script -- for further custom installation.  
+At the end of the `ubuntu24043-vanilla-live-server.pkr.hcl` file there are two sections, `provisioners` and `post-processors`. Provisioners is a an additional feature of Packer that allows the Packer binary to reboot your installed virtual machine and run a provisioner script -- in this case a shell script -- for further custom installation.
 
 This could be custom software, cloning of source code, or removal of keys used for authentication. You can run multiple provisioner scripts and people usually do this to keep there logic separated. The `provisioner` script for `ubuntu24043-vanilla-live-server.pkr.hcl` is `post_install_ubuntu_2404_vagrant.sh`.
 
@@ -361,7 +361,7 @@ For this assignment, this step is optional, but I wanted to expose you to it as 
 
 ## Summary
 
-We went through using HashiCorp Packer and Vagrant to completely automate the building of Infrastructure to be used in the creation of our 3-tier application.  We covered using secure remote authentication to leverage build server infrastructure. We provided you with a demonstration of how to use these tools and to leverage them to help automate tasks as well as version control them for audit and inspection.
+We went through using HashiCorp Packer and Vagrant to completely automate the building of Infrastructure to be used in the creation of our 3-tier application. We covered using secure remote authentication to leverage build server infrastructure. We provided you with a demonstration of how to use these tools and to leverage them to help automate tasks as well as version control them for audit and inspection.
 
 ## Deliverable
 
