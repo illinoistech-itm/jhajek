@@ -9,7 +9,7 @@
 
 ## Outcomes
 
-At the conclusion of this lab you will have investigated using a virtualization platform (x86 VirtualBox and M1 Parallels) and demonstrated the ability to extend your PCs capabilities using a Virtual Machine. You will have implemented a single abstraction layer on top of your virtualization platform. You will have discussed the advantages of using Vagrant and you will have implemented the tool and deployed virtual machine images.
+At the conclusion of this lab you will have investigated using a virtualization platform (x86 VirtualBox and Apple Silicon M-Series Parallels) and demonstrated the ability to extend your PCs capabilities using a Virtual Machine. You will have implemented a single abstraction layer on top of your virtualization platform. You will have discussed the advantages of using Vagrant and you will have implemented the tool and deployed virtual machine images.
 
 ### Vagrant
 
@@ -29,7 +29,7 @@ While VirtualBox presents many options and capabilities, if all we want to do is
 
 Vagrant was created in ~2010 by two college students in their dorm having to do what you are doing now. They wanted to code their assignments up, install software to support their assignments, and not have each classes tools interfere with each other. Originally, Vagrant only supported VirtualBox, but over the years Vagrant support has spread to cover essentially all the possible Desktop Virtualization platforms ([Type II](https://en.wikipedia.org/wiki/Hypervisor#Classification "Type II wiki article")).
 
-Vagrant can be used to manage pre-made virtual machine artifacts or custom made virtual machine artifacts made from the Packer tool. HashiCorp provides pre-made virtual machine artifacts via the [https://app.vagrantup.com/boxes/search](https://app.vagrantup.com/boxes/search "Vagrant website") website. Here you can search for primarily ready made Linux and some FreeBSD images provided by Distro makers and community members. Note that most instances are provided for x86 Macs and Windows, but you can search for M1 based vms for Parallels.
+Vagrant can be used to manage pre-made virtual machine artifacts or custom made virtual machine artifacts made from the Packer tool. HashiCorp provides pre-made virtual machine artifacts via the [https://app.vagrantup.com/boxes/search](https://app.vagrantup.com/boxes/search "Vagrant website") website. Here you can search for primarily ready made Linux and some FreeBSD images provided by Distro makers and community members. Note that most instances are provided for x86 Macs and Windows, but you can search for Apple Silicon M-Series based vms for Parallels.
 
 Hashicorp was [recently purchased by IBM](https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform "webpage ibm purchases hashicorp") and is now part of their portfolio.
 
@@ -97,7 +97,7 @@ Parallels is a Apple Silicon, arm64 native virtualization solution, equal in all
 
 Student discount price for [Parallels Pro edition -- one year license](https://www.parallels.com/landingpage/pd/education/ "webpage parallels pro edition").
 
-For those using Apple Silicon Macs and Parallels you will need to replace the names of the Boxes in the demos with these two that have been prepared for M1 macs and parallels. Documentation and installation [instructions provided by Parallels](https://parallels.github.io/vagrant-parallels/docs/usage.html "webpage for parallels and vagrant installation on M-series macs").
+For those using Apple Silicon Macs and Parallels you will need to replace the names of the Boxes in the demos with these two that have been prepared for Apple Silicon M-Series macs and parallels. Documentation and installation [instructions provided by Parallels](https://parallels.github.io/vagrant-parallels/docs/usage.html "webpage for parallels and vagrant installation on M-series macs").
 
 Installation instructions 
 
@@ -171,7 +171,7 @@ If you want to reset your Vagrant Box after you installed a webserver. Exit the 
 ## Tutorial Steps
 
 * Using the `vagrant init bento/ubuntu-24.04` command, initialize a Vagrant Box (only has to be done once on a system)
-  * Or comparable Vagrant Box on an M1 Mac
+  * Or comparable Vagrant Box on an Apple Silicon M-Series Mac
 * Using the `vagrant up` command, start the virtual machine
 * Using the `vagrant ssh` command, connect to the virtual machine via SSH
 * Using the `sudo apt-get update` and `sudo apt-get install nginx` command, install the Nginx webserver (pronounced Engine X)
