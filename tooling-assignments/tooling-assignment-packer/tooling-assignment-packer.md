@@ -365,6 +365,18 @@ For this assignment, this step is optional, but I wanted to expose you to it as 
   * You can define an environment variable: `PACKER_CACHE_DIR`
   * Note that on Windows there is no download meter, it will appear the process is frozen, its not, just have to be patient
 
+## Assignment
+
+Using Packer and you appropriate platform, build two custom virtual machines using Packer, add use the command: `vagrant box add...`.  
+
+* `ubuntu_24043_apple_silicon_mac-vanilla-server`
+* `ubuntu_24043_apple_silicon_mac_vault-server`
+
+or
+
+* `ubuntu_24043_vanilla-server`
+* `ubuntu_24043_vault-server`
+
 ## Summary
 
 We went through using HashiCorp Packer and Vagrant to completely automate the building of Infrastructure to be used in the creation of our 3-tier application. We covered using secure remote authentication to leverage build server infrastructure. We provided you with a demonstration of how to use these tools and to leverage them to help automate tasks as well as version control them for audit and inspection.
