@@ -367,7 +367,7 @@ For this assignment, this step is optional, but I wanted to expose you to it as 
 
 ## Assignment
 
-Using Packer and you appropriate platform, build two custom virtual machines using Packer, add use the command: `vagrant box add...`.  
+Using Packer and you appropriate platform, build two custom virtual machines using Packer, add use the command: `vagrant box add...`. Make sure to modify the `Vagrantfile` and add an additional private-network (line 35). 
 
 * `ubuntu_24043_apple_silicon_mac-vanilla-server`
 * `ubuntu_24043_apple_silicon_mac_vault-server`
