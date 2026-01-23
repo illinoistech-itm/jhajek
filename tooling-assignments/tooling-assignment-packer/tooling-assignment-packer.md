@@ -243,7 +243,7 @@ These steps will walk you through building a custom VirtualBox Image from a Pack
 
 The first templates we will be building will be on your local systems. We will be creating a 2 VM node using VirtualBox. This assumes you are working on an x86 system. If using the Apple Silicon your instructions will be mostly the same, the templates will be different.
 
-The second step will be the IT Operations for your team deploying a Packer Build Tempalte to build the same software to our production cloud using Packer, Terraform, and Proxmox -- our Virtualization Platform. 
+The second step will be the IT Operations for your team deploying a Packer Build Template to build the same software to our production cloud using Packer, Terraform, and Proxmox -- our Virtualization Platform. 
 
 You will find two folders, one for local VirtualBox build, the other for your team repo to build and deploy on our production server. Lets start with the first one
 
@@ -286,7 +286,7 @@ At the end of the `ubuntu24043-vanilla-live-server.pkr.hcl` file there are two s
 
 This could be custom software, cloning of source code, or removal of keys used for authentication. You can run multiple provisioner scripts and people usually do this to keep there logic separated. The `provisioner` script for `ubuntu24043-vanilla-live-server.pkr.hcl` is `post_install_ubuntu_2404_vagrant.sh`.
 
-### Intializing the Packer VagrantBox plugin
+### Initializing the Packer VagrantBox Plugin
 
 Staring in 2021, Hashicorp moved to break the plugins for the various builders out of the main Packer binary and into community controlled plugins -- that can release in faster cycles. That is why you have these lines of code at the beginning of your build template.
 
