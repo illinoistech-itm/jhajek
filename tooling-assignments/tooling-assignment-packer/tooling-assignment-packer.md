@@ -356,7 +356,7 @@ For this assignment, this step is optional, but I wanted to expose you to it as 
 
 * Issue the command: `vagrant box remove ubuntu-server`
   * You can also use a `-f` flag to force the action
-  * You will also need to manually delete the `.vagrant` directory left behind: `rm -rf ./.vagrant`
+  * You will also need to manually delete the `.vagrant` directory left behind: `rm ./.vagrant`
 
 ### Notes while building the Vagrant box via Packer
 
