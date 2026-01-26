@@ -44,7 +44,7 @@ Participation - did each member of the team participate | 7 | -
 
 ### Non-Presenting Team's weekly role
 
-Students individually will provide short critiques based on the presentation - 1 minute minimum and a 3 minute max.
+Students individually will provide short critiques based on the presentation - 1 minute minimum and a 3 minute max.  **Note:** if your team is presenting you do not have to submit these answers.
 
 Answering these questions:
 
