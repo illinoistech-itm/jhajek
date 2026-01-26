@@ -50,13 +50,13 @@ Answering these questions:
 
 1) Did the team make a clear introduction of the material that would be presented? If not, briefly explain what was missing or deficient?
 1) Briefly explain the main theme of the chapter
-1) Did the team provide three review questions and three additional resources at the end of the presentation? If not, briefly explain what was missing or deficient?
 1) Did the team give a summary and a clear conclusion at the end of the presentation? If not, briefly explain what was missing or deficient?
+1) Did the team provide three review questions and three additional resources at the end of the presentation? If not, briefly explain what was missing or deficient?
 1) Briefly explain one thing you learned in this presentation
 
 ### Submitted Questions
 
-All presenter submitted questions will become part of a pool for the midterm and final exam.
+All presenter submitted questions will become part of a pool for the ~~midterm and~~ final exam.
 
 ### Project Deliverables
 
