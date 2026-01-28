@@ -164,7 +164,7 @@ If you want to reset your Vagrant Box after you installed a webserver. Exit the 
 
 ## From your host system
 
-* From the command line (non-admin) execute the command: `vagrant plugin install vagrant-vbguest`
+* From the command line (non-admin) execute the command: `vagrant plugin install vagrant-vbguest` on x86 Windows systems
   * This takes care of a warning message from Vagrant about not being able to mount VirtualBox shared drives
 * Configure Vagrant Box memory to use at least 2 GB
 
