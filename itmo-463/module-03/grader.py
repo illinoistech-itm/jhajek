@@ -4,8 +4,16 @@ import boto3
 
 client_ec2 = boto3.client('ec2')
 
+requiredNumberOfInstances = 3
+grandTotal = 0
 response = client_ec2.describe_instances()
 
 print(response)
 
-print(len(response["Reservations"][0]["Instances"]))
+NumberOfInstances=len(response["Reservations"][0]["Instances"])
+
+if NumberOfInstances == requiredNumberOfInstances:
+    print("Correct!")
+    grandTotal += 1
+else:
+    
