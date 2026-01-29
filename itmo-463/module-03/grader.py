@@ -8,4 +8,4 @@ response = client_ec2.describe_instances()
 
 print(response)
 
-print(len(response["Reservations"]["Instances"]))
+print(len(response["Reservations"][0]["Instances"]))
