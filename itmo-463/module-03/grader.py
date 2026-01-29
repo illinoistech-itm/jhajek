@@ -7,3 +7,5 @@ client_ec2 = boto3.client('ec2')
 response = client_ec2.describe_instances()
 
 print(response)
+
+print(len(response["Reservations"]["Instances"]))
