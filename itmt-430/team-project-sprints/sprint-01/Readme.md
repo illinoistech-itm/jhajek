@@ -43,9 +43,9 @@ While there are many solutions to the tooling required, I have provided a small 
     * [Basecamp](https://basecamp.com/ "Basecamp website")
     * [GitHub Projects](https://docs.github.com/issues/trying-out-the-new-projects-experience "website for GitHub projects")
   * Need to invite all team members to it
-  * Need to invite the instructor to the project - **hajek@iit.edu** and **izziwa@hawk.iit.edu**
+  * Need to invite the instructor to the project - **hajek@illinoistech.edu**
   * Must be used during the entire project to reflect work-in-progress and work completed
-  * Project Management tool needs to have integration features
+  * Project Management tool needs to have integration features for Discord, Git, and your PM tool
   * Google Docs is not a valid choice for a Project Management Tool as it does not meet the fist requirements
 
 * The team will a use Git development workflow
@@ -55,7 +55,7 @@ While there are many solutions to the tooling required, I have provided a small 
   * Will be making use of [Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request "webpage for creating pull requests")
   * Google Docs is not an adequate solution for team based Trunk Development - everything in the repository
 
-* Signup for Team Chat Tool
+* Sign up for Team Chat Tool
   * This will enable synchronous and asynchronous out of band communication between members and the professor if questions arise
     * Recommendations: [Discord](https://discord.com "Discord website") -- need to have integrations with Chat and Project Management tools
     * Drop the link in a DM in Discord
@@ -69,7 +69,7 @@ This is important as this is the document that your team will write up in markdo
 
 This document is important as it protects your team members and gives you recourse if for some reason members are not participating or delivering their requirements. This also lays ground work for conflict resolution as well as in a last case scenario--separation from the team. The purpose of a document like this is never to be punitive but to establish boundaries on what is acceptable behavior for a community or team.
 
-Place a markdown document named: **Compact.md** in the root of your team directory.  In the document address these areas:
+Place a markdown document named: **Compact.md** in the root of your team directory. In the document address these areas:
 
 * How work will flow
 * Communication rules and methods
@@ -144,17 +144,9 @@ In a folder in the team repository placed in the root the repo named **design**,
 
 ### Entity Relationship Diagram
 
-Based on completing the UI/UX design you will be able to create an entire Entity Relationship diagram. This will show the structure or schema of the database you end up working on. The ERD can be draw using a diagram tool and stored in the **design** folder for reference. In addition, from the ERD you can generate SQL CREATE statements to generate this schema. This will be used in sprint-02 but is required by the end of Sprint 01. Need to create 10 sample records.
-
-### Creation and Listing of Application Tasks
-
-Based on the creation of the UI/UX design, this will give your team a list of atomic tasks to accomplish.  These are things such as the login mechanism -- this is a good atomic task to start with. *"Get the website working"* is not a very good atomic task -- when is it finished? The team will break all the tasks for the entire site down and then assign each task a card or a task. This phase will just require the listing of all the atomic tasks to finish the project, no need to assign tasks yet, that will happen in Sprint 02. This is a team task as the project is everyone's responsibility.
-
-This will be accomplished on the teams Project Management tool, and notification will show in the Chat Channel
+Based on completing the UI/UX design you will be able to create an entire Entity Relationship diagram. This will show the structure or schema of the database you end up working on. The ERD can be draw using a diagram tool and stored in the **design** folder for reference. In addition, from the ERD you can generate SQL CREATE statements to generate this schema. This will be used in sprint-01 but will naturally be available from the work of doing the system design.
 
 ### IT Operations
-
-~~Will gain access to the build production server (provided by instructor) and will create the teams Production Vault Server for secrets management.~~
 
 Determine the type of database/datastore you will use for your project, needs to be able to run on Linux, on a replicated cluster (At least two nodes) detail your choice, documentation for configuring a DB cluster, and which platform you have chosen.
 
@@ -162,95 +154,12 @@ Determine the type of database/datastore you will use for your project, needs to
 
 Will document and determine the development framework used for the project in agreement with the rest of the group.
 
-### Individual Deliverables
+### Team Deliverable
 
-The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work. This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
+This sprint is unique as in most of the work is setup and configuration along with design. There will be one demonstration of all the required `.md` files listed in this document. 
 
-In the private repo provided to you (with your hawk ID), under the `itmt-430` folder, create another folder that will be named for this sprint, `sprint-01`.  In this directory place a markdown based document named: ~~Report.md~~ `Readme.md`. 
-
-In the document ~~Report.md~~ `Readme.md` include an H1 header called `Sprint-01` and then an H2 header: `Self-Critique` and detailing:
-
-* Any roles or jobs you had for the sprint
-* Detail the work you accomplished and delivered
-* Self-Critique what you did and what could have gone better
-
-In the second part of the document, include and H2 header: `Group-Critique` and write a critique of the each team member's role, the contributions that made for the sprint, and any notes or improvements that could be done.  Make use of GitHub commits, Project Management board or the Chat Channel to find artifacts
-
-#### Points for Self-Critique
-
-The points for the critique items will break down as follows:
-
-Topic | Points Range |
-----------|------
-Clear Explanation of your own role | 3
-Did your listed accomplished work match what was describe? | 3
-Did your self-critique cover or mention any proposed deficiencies? | 3
-Was your markdown proper and well formed HTML when rendered? | 1
-
-#### Points for Group Critique
-
-The points for the critique items will break down as follows:
-
-Topic | Points Range |
-----------|------
-Did you cover each team members contributions? | 3
-Did you add constructive and or productive critical feedback? | 3
-Did you make note of the artifacts each team member contributed? | 3
-Was your markdown proper and well formed HTML when rendered? | 1
-
-#### Rubric for Critiques
-
-* 3 points meets expectations
-* 2 points meets most of the items expected
-* 1 point meets some of the items expected
-* 0 points expectations missing
-
-#### Points for Project Manager Presentation
-
-The report will be worth 15 points and will be graded on a scale listed below. In addition to the critique, the Project Manager must deliver the presentation and will be graded on a 15 point scale for items delivered and 5 points (2.5 points each for the self and group critique).
-
-Topic | Points Range |
-----------|------
-Clear introduction and small summary of presentation | 1
-Clear conclusion and small summary of presentation | 1
-Introduction of your teammates | 1
-Demonstration your team Compact | 3
-Demonstration of project tooling | 3
-Demonstration of project overview from the About.md | 3
-Walk-through of your site | 3
-
-#### Rubric for Project Manager Presentation
-
-* 3 points meets expectations
-* 2 points meets most of the items expected
-* 1 point meets some of the items expected
-* 0 points expectations missing
-
-## attendance.md
-
-For the Online Only section PM, you need to add an additional `attendance.md` file in your `sprint-01` folder with a short record of who attended your teams meetings and when they took place.
-
-### Presentation Requirements
-
-* The presentation will be done in person for section 01 and 05. Section 04 will have to pre-record
-  * Only the Project Manager does the presenting
-  * Others need to help prepare it but only the PM will do the presenting
-  * Presentation is **not** a slide show, but a verbal explaining and demonstration of the artifacts produced
-  * We need to see your face
-  * If recorded, find a quiet place, focus on audio and or use head phones and make a quality recoding
-
-Demonstrate the implementations of the above requirements:
-
-* Introduce your teammates
-* Demonstrate your team Compact
-* Show Project Management Tool, GitHub, and Chat tool integration and that each member is participating
-* Demonstrate your project overview form the About.md
-* Present a walk-through of your site's design documents, explaining its functionality
+The presentation in class during the scheduled lab time will be worth 10 points.
 
 ### What to Deliver to Canvas
 
-Each person must deliver the URL to their Critique reports at the beginning of Sprint Presentation Day, Monday 10 AM. In your private GitHub repo under `itmt-430` > `sprint-01` > Readme.md.
-
-The project manager in addition has to submit a document under the `sprint-01` folder named `report.md` that is a written report collecting all of the artifacts presented in a single cohesive status report. This will count for 10 points of the PMs grade and is presented in markdown.
-
-Feedback will be given on each submission.
+Since it is a group deliverable (this one only) there will be a group submission of one person giving the URL to the private GitHub team repo.
