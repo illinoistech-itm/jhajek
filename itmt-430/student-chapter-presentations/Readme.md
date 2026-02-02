@@ -42,9 +42,9 @@ Additional Resources - were at least three additional resources linked to based 
 Closing - was there a clear transition to a conclusion with a summary of the material | 7 | -
 Participation - did each member of the team participate | 7 | -
 
-### Non-Presenting Team's weekly role
+### Non-Presenting Student's Responsibility
 
-Students individually will provide short critiques based on the presentation - 1 minute minimum and a 3 minute max.  **Note:** if your team is presenting you do not have to submit these answers, otherwise each team member needs to answer the questions.
+Students individually will provide short critiques based on the presentation - 1 minute minimum and a 3 minute max.  **Note:** if your team is presenting you do not have to submit these video answers, otherwise each student needs to answer the questions.
 
 Answering these questions:
 
@@ -52,7 +52,7 @@ Answering these questions:
 1) Briefly explain the main theme of the chapter
 1) Did the team give a summary and a clear conclusion at the end of the presentation? If not, briefly explain what was missing or deficient?
 1) Did the team provide three review questions and three additional resources at the end of the presentation? If not, briefly explain what was missing or deficient?
-1) Briefly explain one thing you learned in this presentation
+1) Briefly explain one thing you learned, or one new concept you encountered in this presentation
 
 ### Submitted Questions
 
