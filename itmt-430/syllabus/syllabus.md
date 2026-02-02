@@ -54,17 +54,17 @@ Week | Date | Topic | Lab |
 3 | 01/26 | The Three Ways Ch 1 | Intro to Tooling Part II
 4 | 02/02 | Where to Start Ch 2-5 | NA
 5 | 02/09 | Where to Start Ch 6-9 | ~~Sprint 01 presentation~~
-6 | 02/16 | Technical Practices of Flow Ch 10-13 | ~~NA~~ Sprint 01 presentation
+6 | 02/16 | Technical Practices of Flow Ch 10-13 | ~~NA~~ Sprint 00 presentation
 7 | 02/23 | Technical Practices of Feedback Ch 14-17 | NA
-8 | 03/02 | Technical Practices of Learning Ch 18-21 | Sprint 02 presentation
+8 | 03/02 | Technical Practices of Learning Ch 18-21 | Sprint 01 presentation
 9 | 03/09 | Technical Practices of InfoSec Ch 22-23 | NA
 NA | 03/16 | Spring Break Week | NA
-10 | 03/23 | DevOps Solutions 1-3 | NA
-11 | 03/30 | DevOps Solutions 4-6 | Sprint 03 presentation
+10 | 03/23 | DevOps Solutions 1-3 | Sprint 02 presentation
+11 | 03/30 | DevOps Solutions 4-6 | NA
 12 | 04/06 | DevOps Solutions 7-8 | NA
-13 | 04/13 | DevOps Solutions 9-10 | Sprint 04 presentation
+13 | 04/13 | DevOps Solutions 9-10 | Sprint 03 presentation
 14 | 04/20 | DevOps Solutions 11-12 | NA
-15 | 04/27 | Sprint 05 Final Presentation Day for everyone!
+15 | 04/27 | Sprint 04 Final Presentation Day for everyone!
 16 | 05/05 | Final Exam Week | NA
 
 ## Course Student Outcomes
