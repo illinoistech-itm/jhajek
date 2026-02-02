@@ -42,6 +42,7 @@ While there are many solutions to the tooling required, I have provided a small 
     * [Trello.com](https://trello.com/ "Trello web site")
     * [Basecamp](https://basecamp.com/ "Basecamp website")
     * [GitHub Projects](https://docs.github.com/issues/trying-out-the-new-projects-experience "website for GitHub projects")
+      * Contact the Professor, and he will created the Project within your Team repo and invite you to it -- its a permission issue and this is the way around it.
   * Need to invite all team members to it
   * Need to invite the instructor to the project - **hajek@illinoistech.edu**
   * Must be used during the entire project to reflect work-in-progress and work completed
