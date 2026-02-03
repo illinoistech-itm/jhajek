@@ -12,3 +12,8 @@
 
 # Default types are stings, lists, and maps
 
+variable "instance_type" {
+  type        = string
+  description = "Password for the RDS database instance"
+  sensitive   = true
+}
