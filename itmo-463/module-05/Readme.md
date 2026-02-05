@@ -150,3 +150,4 @@ At the conclusion of the grade script, print out the grand total for the student
 
 ## Deliverable
 
+Push all required files to your GitHub repo in the directory indicated.  Submit the URL to that directory to Canvas.
