@@ -42,9 +42,9 @@ Additional Resources - were at least three additional resources linked to based 
 Closing - was there a clear transition to a conclusion with a summary of the material | 7 | -
 Participation - did each member of the team participate | 7 | -
 
-### Non-Presenting Student's Responsibility
+### Non-Presenting Student's Responsibilities
 
-Students individually will provide short critiques based on the presentation - 1 minute minimum and a 3 minute max.  **Note:** if your team is presenting you do not have to submit these video answers, otherwise each student needs to answer the questions.
+Students individually will provide short critiques based on the presentation - 1 minute minimum and a 3 minute max.  **Note:** if your team is presenting you do not have to submit these video answers fr your chapter, otherwise each student needs to answer the questions.
 
 Answering these questions:
 
