@@ -47,7 +47,7 @@ In the `terraform.tfvars` assign a value for these variables:
 * `instance-type` = t3-micro 
 * `key-name`  = name of your keypair
 * `security-group` = id of your created security group
-* ~~count~~ `instance_account` = 3
+* ~~count~~ `instance_count` = 3
 * `user-data` = path to the file `install-env.sh`
 * `tags` = 'module-05'
 
