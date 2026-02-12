@@ -28,7 +28,41 @@ resource "aws_instance" "example" {
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
   enable_dns_hostnames = true
-  
+
+  tags = {
+    Name = var.item_tag
+  }
+}
+##############################################################################
+# Create an AWS subnet
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet
+##############################################################################
+
+resource "aws_subnet" "us-east-2a" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.0.1.0/24"
+  availability_zone = "us-east-2a"
+
+  tags = {
+    Name = var.item_tag
+  }
+}
+
+resource "aws_subnet" "us-east-2b" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.0.2.0/24"
+  availability_zone = "us-east-2b"
+
+  tags = {
+    Name = var.item_tag
+  }
+}
+
+resource "aws_subnet" "us-east-2c" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.0.3.0/24"
+  availability_zone = "us-east-2c"
+
   tags = {
     Name = var.item_tag
   }
