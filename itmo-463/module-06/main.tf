@@ -40,7 +40,7 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "us-east-2a" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.1.0/24"
+  cidr_block = "10.0.0.0/24"
   availability_zone = "us-east-2a"
 
   tags = {
@@ -50,7 +50,7 @@ resource "aws_subnet" "us-east-2a" {
 
 resource "aws_subnet" "us-east-2b" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.2.0/24"
+  cidr_block = "10.0.16.0/24"
   availability_zone = "us-east-2b"
 
   tags = {
@@ -60,7 +60,7 @@ resource "aws_subnet" "us-east-2b" {
 
 resource "aws_subnet" "us-east-2c" {
   vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.3.0/24"
+  cidr_block = "10.0.32.0/24"
   availability_zone = "us-east-2c"
 
   tags = {
