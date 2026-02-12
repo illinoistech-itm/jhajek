@@ -17,3 +17,7 @@ variable "instance_type" {
   description = "Password for the RDS database instance"
   sensitive   = true
 }
+
+variable "item_tag" {
+  type        = string
+}

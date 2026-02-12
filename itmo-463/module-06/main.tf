@@ -16,6 +16,19 @@ resource "aws_instance" "example" {
   instance_type = var.instance_type
 
   tags = {
-    Name = "HelloWorld-jrh"
+    Name = var.item_tag
+  }
+}
+
+##############################################################################
+# Link to aws_vpc
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
+##############################################################################
+
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+
+  tags = {
+    Name = var.item_tag
   }
 }
