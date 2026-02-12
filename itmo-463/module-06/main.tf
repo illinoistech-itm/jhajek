@@ -94,3 +94,19 @@ resource "aws_route_table" "rt" {
     Name = "example"
   }
 }
+# link to route association
+
+resource "aws_route_table_association" "a" {
+  subnet_id      = aws_subnet.us-east-2a.id
+  route_table_id = aws_route_table.rt.id
+}
+
+resource "aws_route_table_association" "b" {
+  subnet_id      = aws_subnet.us-east-2b.id
+  route_table_id = aws_route_table.rt.id
+}
+
+resource "aws_route_table_association" "c" {
+  subnet_id      = aws_subnet.us-east-2c.id
+  route_table_id = aws_route_table.rt.id
+}
