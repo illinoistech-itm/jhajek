@@ -141,7 +141,7 @@ Sort your team members alphabetically - this will be the rotation for jobs each 
 
 ### UI/UX Design
 
-In a folder in the team repository placed in the root the repo named **design**, place all the needed design documents. These might be images or could be skeleton HTML. The purpose of this directory is that the team needs to design the entire functionality on paper before coding anything. This is commonly known as design document or requirements gathering. Your team has to decide the use of colors, buttons, function of each page, and the data collection points (forms and textboxes). This document will be used in the future sprints to help the Project Managers to assign tasks and check that committed code matches the design documents. Having this document is critical to success, otherwise all progress is an illusion if you don't know what you should be working towards.
+In a folder in the team repository placed in the root the repo named **design**, place all the needed design documents. ~~These might be images or could be skeleton HTML~~. The purpose of this directory is that the team needs to design the entire functionality on paper before coding anything. This is commonly known as design document or requirements gathering. Your team has to decide the use of colors, buttons, function of each page, and the data collection points (forms and textboxes). This document will be used in the future sprints to help the Project Managers to assign tasks and check that committed code matches the design documents. Having this document is **critical** to success, otherwise all progress is an illusion if you don't know what you should be working towards.
 
 ### Entity Relationship Diagram
 
@@ -159,7 +159,23 @@ Will document and determine the development framework used for the project in ag
 
 This sprint is unique as in most of the work is setup and configuration along with design. There will be one demonstration of all the required `.md` files listed in this document. 
 
-The presentation in class during the scheduled lab time will be worth 10 points.
+The presentation in class during the scheduled lab time will be worth ~~10~~ 20 points.
+
+#### Online Sections
+
+For the online sections - you will need to submit the URL to your team GitHub repo and make a video presentation - between 10 and 20 minutes demonstrating the following:
+
+* Project Manager will give the presentation, but all members need to be present (on camera)
+* Briefly cover all the artifacts created
+  * `compact.md`
+  * `about.md`
+  * `readme.md`
+  * ERD
+  * Choose 5 finished items in your Kanban board and show the corresponding GitHub commit artifacts
+  * Demonstrate individual commits to GitHub using the charting tools available to show
+* Go over the sight design and flow/purpose of of the site
+
+No extra deliverable documents required, you should be able to show all the material from the team GitHub page. For the diagram you can use the online tool you built the site in to demonstrate your design.
 
 ### What to Deliver to Canvas
 

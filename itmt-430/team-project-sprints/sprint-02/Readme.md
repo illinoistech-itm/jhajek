@@ -4,9 +4,9 @@ This document contains the `Sprint-02` requirements and deliverables.
 
 ## Objectives
 
-* Determine what encapsulates a secret for your application
-* Deploy a three-tier web application 
+* Implement Secret Management using Vault
 * Create a virtualized environment for your 3-tier application
+* Deploy a three-tier web application in production
 * Integrate and document aspects of the Three Ways into your development process
 * Deploy your schema to a datastore for your application
 * Enable and create software deployment estimates to understand the nature of software production
@@ -50,7 +50,7 @@ For this sprint, the roles are not exclusive. Anyone can submit code for instanc
   * Responsible for working with the team to coordinate the automated building of the entire application
   * Responsible for creating any shell scripts required for automated deployment
   * Responsible for training and teaching internal group members for deployment of infrastructure
-  * Responsible for implementing Ubuntu Server 22.04
+  * Responsible for implementing Ubuntu Server 24.04
   * Responsible for noting and explaining all secrets management, firewall rules, and API security implemented
 
 ### Team Setup Items
@@ -62,7 +62,7 @@ In the team repo their will need to be a few additional folders added.
 * A folder named: **build**
   * This will contain all instructions on how to build and deploy your application
   * This will contain Packer build templates for building Virtual Machines
-  * The build directory will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
+  * The build directory will contain a `Readme.md` with detailed instruction on how to execute these scripts
 
 ### Project Management Tool and Task Difficulty Estimation
 
@@ -80,35 +80,33 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 * Login
   * Use Google OAuth for login authentication in your application code (there are other options -- check with the instructor for approval first)
-  * Rolling your own Authentication system in 2025 is not a valid choice
+  * Rolling your own Authentication system in 2026 is not a valid choice
 * Choice of Server OS
-  * Ubuntu Server 22.04
+  * Ubuntu Server 24.04
 * Infrastructure
   * Build virtual machine templates of each system you will need in the 3-tier app as Virtual Machines using [Packer](https://packer.io "webpage for hashicorp packer")
   * Use of [Terraform](https://www.terraform.io/ "webpage for hashicorp terraform") for deploying virtual machine templates
 * You will be assigned API keys and access to the department infrastructure
   * [Proxmox Cloud Platform Cluster](https://proxmox.com "webpage for proxmox virtualization platform")
 * Your team will be assigned a Mac address and a static IP for their load-balancer
-  * Note there is no team08, we merged them into a team06 and 07
 
 ### Team Static DHCP IPs
 
 | Team Number | MacAddr | Static IP | FQDN |
-| ----------- | -------------| ------------- | ----------------- |
-| team01 | 04:9F:15:00:00:37 | 192.168.172.55 | system55.rice.iit.edu |
-| team02 | 04:9F:15:00:00:38 | 192.168.172.56 | system56.rice.iit.edu |
-| team03 | 04:9F:15:00:00:39 | 192.168.172.57 | system57.rice.iit.edu |
-| team04 | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
-| team05 | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
-| 2024-1 | ----------------- | 192.168.172.62 | system62.rice.iit.edu |
-| team06 | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
-| team07 | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
-| team09 | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
-| team10 | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
-| 2024-2 | ----------------- | 192.168.172.67 | system67.rice.iit.edu |
-| team11 | 04:9F:15:00:00:19 | 192.168.172.68 | system68.rice.iit.edu |
-| team12 | 04:9F:15:00:00:20 | 192.168.172.69 | system69.rice.iit.edu |
-| team13 | 04:9F:15:00:00:21 | 192.168.172.70 | system70.rice.iit.edu |
+| ----------- | -------------| ------------- | ----------------- |  
+| team00 | bc:24:11:00:00:1A | 192.168.192.114 | system22h114.itm.iit.edu
+| sp2026-team01	| bc:24:11:00:00:1B	| 192.168.192.115	| system22h115.itm.iit.edu
+| sp2026-team02	| bc:24:11:00:00:1C	| 192.168.192.116	| system22h116.itm.iit.edu
+| sp2026-team03	| bc:24:11:00:00:1D	| 192.168.192.117	| system22h117.itm.iit.edu
+| sp2026-team04	| bc:24:11:00:00:1E	| 192.168.192.118	| system22h118.itm.iit.edu
+| sp2026-team05	| bc:24:11:00:00:1F	| 192.168.192.119	| stem22h119.itm.iit.edu
+| sp2026-team06	| bc:24:11:00:00:20	| 192.168.192.120	| system22h120.itm.iit.edu
+| sp2026-team07	| bc:24:11:00:00:21	| 192.168.192.121	| system22h121.itm.iit.edu
+| sp2026-team08	| bc:24:11:00:00:22	| 192.168.192.122	| system22h122.itm.iit.edu
+| sp2026-team09	| bc:24:11:00:00:23	| 192.168.192.123	| system22h123.itm.iit.edu
+| sp2026-team10	| bc:24:11:00:00:24 | 192.168.192.124	| system22h124.itm.iit.edu
+| sp2026-team11	| bc:24:11:00:00:25	| 192.168.192.125	| system22h125.itm.iit.edu
+| sp2026-team12	| bc:24:11:00:00:26	| 192.168.192.126	| system22h126.itm.iit.edu
 
 ## Deliverables
 
