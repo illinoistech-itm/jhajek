@@ -23,6 +23,8 @@ data "aws_security_group" "example" {
 resource "aws_instance" "example" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
+  security_groups = [data.aws_security_group.example.id]
+  user_data = filebase64("./install-env.sh")
 
   tags = {
     Name = var.item_tag
