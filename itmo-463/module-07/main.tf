@@ -11,7 +11,7 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-list "aws_security_group" "example" {
+data "aws_security_group" "example" {
   provider = aws
 
     filter {
