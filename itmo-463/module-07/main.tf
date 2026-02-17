@@ -10,7 +10,16 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
-  
+
+list "aws_security_group" "example" {
+  provider = aws
+
+    filter {
+    name = "tag:Name"
+    values = [var.item_tag]
+  }
+}
+
 resource "aws_instance" "example" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
