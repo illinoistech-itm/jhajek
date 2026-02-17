@@ -11,12 +11,11 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-
-
 resource "aws_instance" "example" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
-  #security_groups = [data.aws_security_group.example.id]
+  vpc_security_group_ids = [data.aws_security_group.project.id]
+  subnet_id = aws_subnet.us-east-2a.id
   user_data = "./install-env.sh"
 
   tags = {
@@ -34,18 +33,25 @@ resource "aws_security_group" "project" {
   vpc_id      = aws_vpc.main.id
 
   tags = {
-    Name = "allow_tls"
+    Name = var.item_tag
   }
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
-  security_group_id = aws_security_group.allow_tls.id
+resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
+  security_group_id = aws_security_group.project.id
   cidr_ipv4         = aws_vpc.main.cidr_block
-  from_port         = 443
+  from_port         = 22
   ip_protocol       = "tcp"
-  to_port           = 443
+  to_port           = 22
 }
 
+resource "aws_vpc_security_group_ingress_rule" "allow_http_ipv4" {
+  security_group_id = aws_security_group.project.id
+  cidr_ipv4         = aws_vpc.main.cidr_block
+  from_port         = 80
+  ip_protocol       = "tcp"
+  to_port           = 80
+}
 
 resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
   security_group_id = aws_security_group.allow_tls.id
@@ -53,11 +59,6 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
   ip_protocol       = "-1" # semantically equivalent to all ports
 }
 
-resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv6" {
-  security_group_id = aws_security_group.allow_tls.id
-  cidr_ipv6         = "::/0"
-  ip_protocol       = "-1" # semantically equivalent to all ports
-}
 
 ##############################################################################
 # Link to aws_vpc
