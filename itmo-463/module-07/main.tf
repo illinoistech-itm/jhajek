@@ -11,24 +11,52 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-data "aws_security_group" "example" {
-  provider = aws
 
-    filter {
-    name = "tag:Name"
-    values = [var.item_tag]
-  }
-}
 
 resource "aws_instance" "example" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
-  security_groups = [data.aws_security_group.example.id]
+  #security_groups = [data.aws_security_group.example.id]
   user_data = "./install-env.sh"
 
   tags = {
     Name = var.item_tag
   }
+}
+
+##############################################################################
+# Create Security Group and create rules for port 80 and 22 access
+#
+##############################################################################
+resource "aws_security_group" "project" {
+  name        = "allow_tls"
+  description = "Allow TLS inbound traffic and all outbound traffic"
+  vpc_id      = aws_vpc.main.id
+
+  tags = {
+    Name = "allow_tls"
+  }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
+  security_group_id = aws_security_group.allow_tls.id
+  cidr_ipv4         = aws_vpc.main.cidr_block
+  from_port         = 443
+  ip_protocol       = "tcp"
+  to_port           = 443
+}
+
+
+resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
+  security_group_id = aws_security_group.allow_tls.id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1" # semantically equivalent to all ports
+}
+
+resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv6" {
+  security_group_id = aws_security_group.allow_tls.id
+  cidr_ipv6         = "::/0"
+  ip_protocol       = "-1" # semantically equivalent to all ports
 }
 
 ##############################################################################
