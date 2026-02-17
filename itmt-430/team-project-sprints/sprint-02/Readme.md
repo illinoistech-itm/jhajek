@@ -110,11 +110,11 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ## Deliverables
 
-* All presentations and critiques are due 10:00am March 3rd
+* All presentations and critiques are due 10:00am March 02 for Lab section 01 and 10:00 am March 04 for Lab section 02 and 03.
 
 ### Individual Deliverables
 
-The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work.  This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
+The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work. This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
 
 In the private repo provided to you (with your hawk ID), under the `itmt-430` folder, create another folder that will be named for this sprint, `sprint-02`.  In this directory place a markdown based document named: `Readme.md`. 
 
