@@ -76,7 +76,7 @@ In the Project Management tool the **25 points** worth of tasks need to have the
 
 ### Required Artifacts
 
-The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points
+The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points. We will be deploying on the department's internal [See-through Cloud Platform](https://github.com/illinoistech-itm/jhajek/blob/master/See-Through-Cloud/Readme.md "Webpage for see-through cloud platform"). 
 
 * Login
   * Create a [sequence diagram using Mermaid](https://mermaid.ai/open-source/syntax/sequenceDiagram.html "webpage for mermaid sequence diagram") showing your decision logic when a user logs in and how to determine if they are a new user or existing user
@@ -89,6 +89,7 @@ The professor is prescribing a small number of **additional** required tasks to 
 * Infrastructure
   * Build a team Vault server and enter secrets
   * Build virtual machine templates of each system you will need in the 3-tier app as Virtual Machines using [Packer](https://packer.io "webpage for hashicorp packer")
+    * These will be provided
   * Use of [Terraform](https://www.terraform.io/ "webpage for hashicorp terraform") for deploying virtual machine templates
 * You will be assigned API keys and access to the department infrastructure
   * [Proxmox Cloud Platform Cluster](https://proxmox.com "webpage for proxmox virtualization platform")
