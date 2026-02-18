@@ -62,17 +62,17 @@ In the team repo their will need to be a few additional folders added.
 * A folder named: **build**
   * This will contain all instructions on how to build and deploy your application
   * This will contain Packer build templates for building Virtual Machines
-  * The build directory will contain a `Readme.md` with detailed instruction on how to execute these scripts
+  * The build directory will contain an additional `Readme.md` with detailed instruction on how to execute these scripts
 
 ### Project Management Tool and Task Difficulty Estimation
 
 One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. 
 
-Your team will use a scale of 1-5 points per task; 5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities. For Sprint 2 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points. If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
+Your team will use a scale of 1-5 points per task; 5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities. For Sprint 2 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points. If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint. Note this on each of the task cards.
 
 In the Project Management tool the **25 points** worth of tasks need to have the point value assigned to that task and also have a name that is primary responsible and clearly marked. This is how your Project Manager will report progress and how you will write your own and group critique at the end of the sprint. The professor will check in weekly during the beginning of the Lab days to check the current progress and help coordinate in anyway.  
 
-**Note** -- this may require the group to *Swarm* on some initial items so that items that are blocking progress of the entire application don't hold up the entire team. Remember as a team-member it is your duty to swarm problems and solve them as a team (The Third Way).
+**Note** -- this may require the group to *swarm* on some initial items so that items that are blocking progress of the entire application don't hold up the entire team. Remember as a team-member it is your duty to swarm problems and solve them as a team (The Third Way).
 
 ### Required Artifacts
 
@@ -80,6 +80,8 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 * Login
   * Use Google OAuth for login authentication in your application code (there are other options -- check with the instructor for approval first)
+  * Will require signing up for a team Oauth key
+  * See [Google Developer Documentation](https://developers.google.com/identity/protocols/oauth2 "Google developer documentation")
   * Rolling your own Authentication system in 2026 is not a valid choice
 * Choice of Server OS
   * Ubuntu Server 24.04
@@ -185,12 +187,10 @@ Clear transition to a conclusion and small summary of presentation | 1
 
 ### Presentation Requirements
 
-* The presentation can be live or pre-recorded but only the Project Manager does the presenting
+* Only the Project Manager does the presenting
   * Others need to help prepare it but only the PM will do the presenting
   * Presentation is not a slide show, but a verbal explaining and demonstration of the artifacts produced
-  * We need to see your face
-  * If recorded, find a quiet place, focus on audio and or use head phones and make a quality recoding.
-
+  
 ### What to Deliver to Canvas
 
 Each person must deliver the URL to their Critique reports at the beginning of Sprint Presentation Day, Monday 10 AM. In your private GitHub repo under `itmt-430` > `sprint-02` > `Readme.md`.
