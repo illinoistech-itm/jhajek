@@ -79,13 +79,15 @@ In the Project Management tool the **25 points** worth of tasks need to have the
 The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points
 
 * Login
-  * Use Google OAuth for login authentication in your application code (there are other options -- check with the instructor for approval first)
+  * Create a [sequence diagram using Mermaid](https://mermaid.ai/open-source/syntax/sequenceDiagram.html "webpage for mermaid sequence diagram") showing your decision logic when a user logs in and how to determine if they are a new user or existing user
+  * Integrate Google OAuth for login authentication in your application code
   * Will require signing up for a team Oauth key
-  * See [Google Developer Documentation](https://developers.google.com/identity/protocols/oauth2 "Google developer documentation")
-  * Rolling your own Authentication system in 2026 is not a valid choice
+    * See [Google Developer Documentation](https://developers.google.com/identity/protocols/oauth2 "Google developer documentation")
+    * Rolling your own Authentication system in 2026 is not a valid choice
 * Choice of Server OS
   * Ubuntu Server 24.04
 * Infrastructure
+  * Build a team Vault server and enter secrets
   * Build virtual machine templates of each system you will need in the 3-tier app as Virtual Machines using [Packer](https://packer.io "webpage for hashicorp packer")
   * Use of [Terraform](https://www.terraform.io/ "webpage for hashicorp terraform") for deploying virtual machine templates
 * You will be assigned API keys and access to the department infrastructure
