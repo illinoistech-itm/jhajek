@@ -30,6 +30,7 @@ resource "aws_instance" "example" {
   vpc_security_group_ids = [aws_security_group.project.id]
   subnet_id = aws_subnet.us-east-2a.id
   user_data = "./install-env.sh"
+  key_name = data.aws_key_pair.key_pair.key_name
 
   tags = {
     Name = var.item_tag
