@@ -11,6 +11,19 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
+##############################################################################
+# Data block to retrieve key pair name with particular filter
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/key_pair
+##############################################################################
+data "aws_key_pair" "key_pair" {
+
+    filter {
+    name = "tag:Name"
+    values = [var.item_tag]
+  }
+}
+
+
 resource "aws_instance" "example" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
@@ -136,7 +149,7 @@ resource "aws_route_table" "rt" {
   tags = {
     Name = "example"
   }
-}
+} 
 # link to route association
 
 resource "aws_route_table_association" "a" {
