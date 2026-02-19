@@ -157,6 +157,16 @@ resource "aws_route_table" "rt" {
   }
 } 
 # link to route association
+##############################################################################
+# Main Route Table association
+# Explanation of what a main route table is (hint important)
+# https://docs.aws.amazon.com/vpc/latest/userguide/RouteTables.html
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/main_route_table_association
+##############################################################################
+resource "aws_main_route_table_association" "a" {
+  vpc_id         = aws_vpc.main.id
+  route_table_id = aws_route_table.rt.id
+}
 
 resource "aws_route_table_association" "a" {
   subnet_id      = aws_subnet.us-east-2a.id
