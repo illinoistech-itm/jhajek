@@ -153,7 +153,7 @@ resource "aws_route_table" "rt" {
   }
 
   tags = {
-    Name = "example"
+    Name = var.item_tag
   }
 } 
 # link to route association
