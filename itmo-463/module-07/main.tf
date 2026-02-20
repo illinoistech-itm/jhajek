@@ -34,7 +34,7 @@ resource "aws_instance" "example" {
   instance_type = var.instance_type
   vpc_security_group_ids = [aws_security_group.project.id]
   subnet_id = aws_subnet.us-east-2a.id
-  user_data = "${file("./install-env.sh")}"
+  user_data = filebase64("./install-env.sh")
   key_name = data.aws_key_pair.key_pair.key_name
 
   tags = {
