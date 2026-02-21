@@ -25,9 +25,9 @@ source "proxmox-iso" "proxmox-noble-vault-template" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/ubuntu-24.04.5-live-server-amd64.iso"
+    iso_file="local:iso/ubuntu-24.04.3-live-server-amd64.iso"
     unmount=true
-    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/24.04.5/SHA256SUMS"
+    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/24.04.3/SHA256SUMS"
   }
   
   boot_wait = "5s"
