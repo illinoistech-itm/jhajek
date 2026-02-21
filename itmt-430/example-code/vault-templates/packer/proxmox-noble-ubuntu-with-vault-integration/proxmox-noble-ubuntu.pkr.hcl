@@ -35,8 +35,8 @@ source "proxmox-iso" "proxmox-noble-ubuntu" {
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
   node      = "${local.NODENAME}"
-  username  = "${local.USERNAME}"
-  token     = "${local.PROXMOX_TOKEN}"
+  username  = "${local.TOKEN_ID}"
+  token     = "${local.TOKEN_VALUE}"
   cpu_type  = "host"
 
   disks {
@@ -48,7 +48,7 @@ source "proxmox-iso" "proxmox-noble-ubuntu" {
     
   }
   http_directory    = "subiquity/http"
-  http_bind_address = "10.110.0.45"
+  http_bind_address = "${var.BIND_ADDRESS}"
   http_port_max     = 9200
   http_port_min     = 9001
   iso_storage_pool  = "local"

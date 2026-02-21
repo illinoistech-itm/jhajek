@@ -44,6 +44,11 @@ variable "NUMBEROFCORES" {
   default = "1"
 }
 
+variable "BIND_ADDRESS" {
+  type    = string
+  default = "10.110.0.98"
+}
+
 # This is the name of the Virtual Machine Template you want to create
 variable "VMNAME" {
   type    = string
