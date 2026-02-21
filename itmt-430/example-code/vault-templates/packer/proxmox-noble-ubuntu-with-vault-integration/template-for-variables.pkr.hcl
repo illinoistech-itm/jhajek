@@ -17,7 +17,7 @@ locals {
 }
 
 locals {
-  URL = vault("/secret/data/team00-url", "SYSTEM42")
+  URL = vault("/secret/data/team00-url", "SYSTEM82")
 }
 
 locals {
@@ -36,7 +36,7 @@ variable "DISKSIZE" {
 
 variable "STORAGEPOOL" {
   type    = string
-  default = "datadisk1"
+  default = "templatedisk"
 }
 
 variable "NUMBEROFCORES" {
@@ -58,12 +58,12 @@ variable "TAGS" {
 
 variable "iso_checksum" {
   type    = string
-  default = "file:https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/SHA256SUMS"
+  default = "file:https://mirrors.edge.kernel.org/ubuntu-releases/24.04.5/SHA256SUMS"
 }
 
 # https://developer.hashicorp.com/terraform/language/values/variables#declaring-an-input-variable
 variable "iso_urls" {
   type    = list(string)
-  default = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.5/ubuntu-22.04.5-live-server-amd64.iso"]
+  default = ["https://mirrors.edge.kernel.org/ubuntu-releases/24.04.5/ubuntu-24.04.5-live-server-amd64.iso"]
 }
   

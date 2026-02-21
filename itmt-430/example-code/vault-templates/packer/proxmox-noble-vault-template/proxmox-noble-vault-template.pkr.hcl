@@ -15,7 +15,7 @@ packer {
 # source. Read the documentation for source blocks here:
 # https://www.packer.io/docs/from-1.5/blocks/source
 # https://github.com/burkeazbill/ubuntu-22-04-packer-fusion-workstation/blob/master/ubuntu-2204-daily.pkr.hcl
-source "proxmox-iso" "proxmox-jammy-vault-template" {
+source "proxmox-iso" "proxmox-noble-vault-template" {
   boot_command = [
     "e<wait>",
     "<down><down><down>",
@@ -80,7 +80,7 @@ source "proxmox-iso" "proxmox-jammy-vault-template" {
 }
 
 build {
-  sources = ["source.proxmox-iso.proxmox-jammy-vault-template"]
+  sources = ["source.proxmox-iso.proxmox-noble-vault-template"]
 
   ########################################################################################################################
   # Using the file provisioner to SCP this file to the instance 
@@ -99,7 +99,7 @@ build {
   ########################################################################################################################
 
   provisioner "file" {
-    source      = "../scripts/proxmox/jammy-services/node-exporter-consul-service.json"
+    source      = "../scripts/proxmox/noble-services/node-exporter-consul-service.json"
     destination = "/home/vagrant/"
   }
 
@@ -109,7 +109,7 @@ build {
   ########################################################################################################################
 
   provisioner "file" {
-    source      = "../scripts/proxmox/jammy-services/consul.conf"
+    source      = "../scripts/proxmox/noble-services/consul.conf"
     destination = "/home/vagrant/"
   }
 
@@ -119,7 +119,7 @@ build {
   ########################################################################################################################
 
   provisioner "file" {
-    source      = "../scripts/proxmox/jammy-services/node-exporter.service"
+    source      = "../scripts/proxmox/noble-services/node-exporter.service"
     destination = "/home/vagrant/"
   }
 
@@ -129,7 +129,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx-firewall-configuration.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_prxmx-firewall-configuration.sh"]
   }
 
   ########################################################################################################################
@@ -139,10 +139,10 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_2204.sh",
-      "../scripts/proxmox/core-jammy/post_install_prxmx_start-cloud-init.sh",
-      "../scripts/proxmox/core-jammy/post_install_prxmx_install_hashicorp_consul.sh",
-    "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
+    scripts = ["../scripts/proxmox/core-noble/post_install_prxmx_ubuntu_2204.sh",
+      "../scripts/proxmox/core-noble/post_install_prxmx_start-cloud-init.sh",
+      "../scripts/proxmox/core-noble/post_install_prxmx_install_hashicorp_consul.sh",
+    "../scripts/proxmox/core-noble/post_install_prxmx_update_dns_for_consul_service.sh"]
   }
 
   ########################################################################################################################
@@ -153,7 +153,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_change_consul_bind_interface.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_change_consul_bind_interface.sh"]
   }
 
   ############################################################################################
@@ -164,7 +164,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_update_dynamic_motd_message.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_update_dynamic_motd_message.sh"]
   }
 
   ############################################################################################
@@ -174,7 +174,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh"]
   }
 
   ########################################################################################################################
@@ -184,7 +184,7 @@ build {
   # Script to install Vault
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/jammy-vault/install-vault.sh"]
+    scripts         = ["../scripts/proxmox/noble-vault/install-vault.sh"]
   }
 
 
