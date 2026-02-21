@@ -33,7 +33,7 @@ source "proxmox-iso" "proxmox-noble-vault-template" {
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
   node      = "${var.NODENAME}"
-  TOKEN_ID  = "${var.TOKEN_ID}"
+  username  = "${var.TOKEN_ID}"
   token     = "${var.TOKEN_VALUE}"
   cpu_type  = "host"
 
