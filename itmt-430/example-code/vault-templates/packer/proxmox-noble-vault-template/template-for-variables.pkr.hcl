@@ -40,12 +40,17 @@ variable "DISKSIZE" {
 
 variable "STORAGEPOOL" {
   type    = string
-  default = "tempaltedisk"
+  default = "templatedisk"
 }
 
 variable "NUMBEROFCORES" {
   type    = string
   default = "1"
+}
+
+variable "BIND_ADDRESS" {
+  type    = string
+  default = "10.110.0.98"
 }
 
 # REPLACE XX with your number
