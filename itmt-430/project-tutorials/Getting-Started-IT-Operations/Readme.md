@@ -413,8 +413,6 @@ The `only` tag is how you can create specific shell scripts that should be appli
     only            = ["proxmox-iso.proxmox-backend-database"]
   }
 
-}
-
 ```
 
 Notice under the `scripts` directive I can run many shell scripts. Some like to put everything into a single script, but it might be better to break it into many small scripts so that you can trouble shoot functionality easier. The location of the scripts is arbitrary but I gave it a logical place, `../scripts/proxmox/frontend/...` that way I can reason about where and how scripts are identified, in the end you can change any of this structure or reference it as an example.
