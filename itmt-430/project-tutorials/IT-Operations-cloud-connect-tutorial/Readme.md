@@ -49,11 +49,23 @@ There are two VSCode Extensions required, use the 4 square block Extensions icon
 
 ![*VSCode Extensions*](./images/vscode-extensions.png "Required Extensions for VSCode")
 
-## IP Adresses to Know
+## IP Addresses to Know
 
 For the department, we have an internal VLAN at the school. The address Range is 192.168.192.0/22. This address range has internal DNS with a domain name of `itm.iit.edu`. FQDNs are sequentially named: `system22hXYZ.itm.iit.edu` where `XYZ` is the value of the last IP octet and the 22 value is the CIDR block value. 
 
 An example is `system22h082.itm.iit.edu` has an IP address of `192.168.192.82`.
+
+Important Nodes
+*	system22h082.itm.iit.edu
+  * Node in cloud platform
+* system22h083.itm.iit.edu
+  * Node in cloud platform
+* system22h084.itm.iit.edu
+  * Node in cloud platform
+* system22h098.itm.iit.edu
+  * Buildserver with student accounts
+
+
 
 
 
