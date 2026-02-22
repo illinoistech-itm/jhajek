@@ -113,27 +113,14 @@ This tutorial will demonstrate how to use our class buildserver, provided API ke
 
 At the conclusion of this tutorial you will have successfully connected to the remote buildserver and used Packer and Terraform to deploy a sample three-tier web application. 
 
-### Retrieving Template Examples
+### Working With Template Examples
 
-* Make sure you have cloned your team repo to your local system. 
+* Make sure you have cloned your team repo to your local system 
 * On your local system, copy from the `example-code` directory in `jhajek` -> `itmt-430` directory, into the `build` folder in your team repo.
 
+Make sure you have created this folder structure.
+
 ![*Build Folder Containing All Build Scripts*](./images/build.png "Image showing build folder in repo")
-
-### Additional Configuration Steps
-
-* To have submitted your Public Key via blackboard and established a remote connection to the buildserver, which is `system44.rice.iit.edu`
-* If off campus established school VPN access
-
-Initial steps to complete on the buildserver once you log in:
-
-* On the buildserver you will need to generate another keypair via the `ssh-keygen` command
-  * This will be used by you (not shared) for cloning your team repo in your account on the buildserver (you could also clone your own repo as well if desired)
-  * You will have to also generate a `config` file, as we did for our local systems when initally cloning our GitHub repos
-  * You will need to have your team repo cloned to your local system, you won't be working on the buildserver, only deploying from it.
-  * Each team member will want to duplicate these steps in their own buildserver account - but for now only IT/Operations needs to do so
-  * You will need to add the content of the Public Key for this new keypair you generated on the server to your team-repo GitHub account for authentication
-  * Test this connection via the command: `ssh git@github.com`, if all is ok, then proceed to clone the team repo
 
 ## Department Production Cloud Details
 
@@ -163,7 +150,7 @@ The functionally is very similar to [VMware_ESXi](https://en.wikipedia.org/wiki/
 
 Our Cloud platform has three attached networks:
 
-* 192.168.192.0/24 is the private routable network available via the VPN or on campus, your virtual machines will be assigned an DHCP address from this IP range
+* 192.168.192.0/22 is the private routable network available via the VPN or on campus, your virtual machines will be assigned an DHCP address from this IP range
 * 10.0.0.0/16 is an internal non-routable network used to attach to an Ubuntu mirror so that all package updates happen over a local pre-configured network
 * 10.110.0.0/16 is an internal non-routable network used for metrics collection (see Telemetry from chapter 14)
   * This uses a preconfigured event-router called `node-exporter` which is part of the `Prometheus` project
