@@ -405,4 +405,4 @@ You can open firewall ports per zone as needed - by default everything is locked
 
 ## Conculsion
 
-Congratulations on getting this far. You have completed the second half of becoming a cloud native Ops Engineer. You are now able to end-to-end deploy Infrastucture as Code and begin now to focus on how to deploy the required applciation software and configure the needed items.
+Congratulations on getting this far. You have completed the second half of becoming a cloud native Ops Engineer. You are now able to end-to-end deploy Infrastructure as Code and begin now to focus on how to deploy the required application software and configure the needed items.

@@ -18,7 +18,7 @@ This tutorial is specifically for the IT/Operations person in your group for Spr
 
 ![*Build Folder Containing All Build Scripts*](./images/build.png "Image showing build folder in repo")
 
-For now lets copy the directory entirely, there are the local Packer/VirtualBox examples which you won't need. You can delete them if you want. We will be focusing on the `proxmox-cloud-production-templates` directory.
+For now, lets copy the entire directory, there are the local Packer/VirtualBox examples which you won't need. You can delete them if you want. We will be focusing on the `proxmox-cloud-production-templates` directory.
 
 ### Additional Configuration Steps
 
