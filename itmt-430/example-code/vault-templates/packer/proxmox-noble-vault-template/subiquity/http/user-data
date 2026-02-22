@@ -1,4 +1,5 @@
 #cloud-config - https://raw.githubusercontent.com/nickcharlton/packer-ubuntu-2004/master/http/user-data
+# Current Subiquity Documentation: https://canonical-subiquity.readthedocs-hosted.com/en/latest/reference/autoinstall-reference.html
 autoinstall:
   version: 1
   identity:
