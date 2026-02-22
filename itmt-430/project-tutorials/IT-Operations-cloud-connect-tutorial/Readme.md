@@ -1,24 +1,72 @@
-# Tutorial to Connect to the Department Cloud Platform - Part I
+# Buildserver Tutorial - Part I
 
-This tutorial will demonstrate how to use class build-server, provided API keys, and the Department Cloud Platform, running on [Proxmox](https://proxmox.com/en/ "webpage for Proxmox Virtualization Platform"), using [Hashicorp Packer](https://packer.io "webapge for Packer.io") and [Terraform](https://terraform.io "webpage for Terraform").
+This is the initial description and setup for the Capstone Cloud Platform. It is expected that all team members go through this tutorial, as this is the critical part in deploying your team application.
+
+## Overview
+
+This document will give you the first steps you need and acquaint you with the tools and locations needed to deploy your application.
+
+## Configure VPN
+
+If you are off of the campus network, connect via the university VPN client to our internal network. You can download the VPN client at [https://vpn-1.iit.edu](https://vpn-1.iit.edu "webpage for the VPN download") for MacOS and Windows (autodetects). 
+
+![*VPN Login*](./images/vpn.png "image for displaying vpn login")
+
+Use your full `@hawk.illinoistech.edu` email and portal password to authenticate. You will have to 2-factor authenticate as well.
+
+## Connect to VPN
+
+Launch the Cisco VPN tool and connect to `vpn.iit.edu` 
+
+![*VPN Connect*](./images/vpn-iit-edu.png "image of connection URL")
+
+Authenticate using your Portal username and password
+
+![*VPN Authentication*](./images/auth.png "image of correct authentication")
+
+Watch out! The two-factor message triggers quickly and doesn't have much patience, make sure to have your phone ready to approve the connection.
+
+If you have more than one MFA set up besides your phone, it could give you a tricky time. If it is not prompting you to input one of your MFA, then close it, reconnect, and try putting `,SMS` directly after your password (no spaces and caps). For example if your password is `ilovebunnies`: `ilovebunnies,SMS`.
+
+## Test Connection
+
+Once the VPN is succesfully connected, you can test this connection by opening up a Terminal and issuing a `ping` command:
+
+```bash
+ping 192.168.192.2
+```
+
+Results:
+
+![*Ping Success*](./images/ping-success.png "Ping S")
+
+## Required VSCode Extensions
+
+There are two VSCode Extensions required, use the 4 square block Extensions icon in VSCode to install for working with Hashicorp HCL syntax.
+
+*	`HashiCorp Terraform`
+*	`Hashicorp HCL`
+
+![*VSCode Extensions*](./images/vscode-extensions.png "Required Extensions for VSCode")
+
+
+
+# Tutorial to Connect to the Department Cloud Platform - Part II
+
+This tutorial will demonstrate how to use our class build-server, provided API keys, and the Department Cloud Platform, running on [Proxmox](https://proxmox.com/en/ "webpage for Proxmox Virtualization Platform"), using [Hashicorp Packer](https://packer.io "webpage for Packer.io") and [Terraform](https://terraform.io "webpage for Terraform").
 
 ## Overview
 
 This tutorial assumes you have completed the Vagrant-Tooling-Assignment, Packer-Tooling-Assignment, Vault-Tooling-Assignment. It is critical to complete those first -- this tutorial builds upon those concepts.
 
-At the conclusion of this tutorial you will have successfully connected to the remote buildserver and used Packer and Terraform to deploy a sample three-tier web application.
-
-## Setup
-
-This tutorial is specifically for the IT/Operations person in your group for Sprint-02, but eventually everyone will be able to do this starting Sprint-03. If you cloned the sample code in the previous Packer exercise, issue the command: `git pull` from the repo directory to get any update.  
+At the conclusion of this tutorial you will have successfully connected to the remote buildserver and used Packer and Terraform to deploy a sample three-tier web application. 
 
 ### Retrieving Template Examples
 
-* Make sure you have cloned your team repo to your local system. From the `jhajek` repo copy the `example-code` directory from the `jhajek` -> `itmt-430` directory into the `build` folder in your team repo.
+* Make sure you have cloned your team repo to your local system. 
+* On your local system, copy from the `example-code` directory in `jhajek` -> `itmt-430` directory, into the `build` folder in your team repo.
 
 ![*Build Folder Containing All Build Scripts*](./images/build.png "Image showing build folder in repo")
-
-For now, lets copy the entire directory, there are the local Packer/VirtualBox examples which you won't need. You can delete them if you want. We will be focusing on the `proxmox-cloud-production-templates` directory.
 
 ### Additional Configuration Steps
 
@@ -37,7 +85,7 @@ Initial steps to complete on the buildserver once you log in:
 
 ## Department Production Cloud Details
 
-The ITM department has a mock production cloud. The purpose of this on-prem cloud is not neccesarialy robustness or SLA based security, but has a promise of *good-enough* with the added ability to make thing visible--so we can see what is going on internally to the cloud.
+The ITM department has a mock production cloud. The purpose of this on-prem cloud is not robustness or SLA based security, but has a promise of *good-enough* with the added ability to make thing visible--so we can see what is going on internally to the cloud.
 
 We provide the building blocks of *cloud*
 
@@ -63,12 +111,12 @@ The functionally is very similar to [VMware_ESXi](https://en.wikipedia.org/wiki/
 
 Our Cloud platform has three attached networks:
 
-* 192.168.172.0/24 is the private routable network available via the VPN or on campus, your virtual machines will be assigned an DHCP address from this IP range
+* 192.168.192.0/24 is the private routable network available via the VPN or on campus, your virtual machines will be assigned an DHCP address from this IP range
 * 10.0.0.0/16 is an internal non-routable network used to attach to an Ubuntu mirror so that all package updates happen over a local pre-configured network
 * 10.110.0.0/16 is an internal non-routable network used for metrics collection (see Telemetry from chapter 14)
   * This uses a preconfigured event-router called `node-exporter` which is part of the `Prometheus` project
   * Each virtual machine launched will automatically register itself and begin reporting basic hardware metrics
-  * This network also uses [Hashicorp Consul](https://consul.io "webpage for consul") for applciation discovery
+  * This network also uses [Hashicorp Consul](https://consul.io "webpage for consul") for application discovery
 
 ### Proxmox API
 
