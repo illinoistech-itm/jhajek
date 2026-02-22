@@ -69,7 +69,7 @@ Important Nodes
 
 ## Setting up Your Team Repo
 
-Following the GitHub tutorial, you will need to generate an additional public/private keypair via the `ssh-keygen` command. In GitHub though, we will be creating a [Deploy Key](https://gist.github.com/zhujunsan/a0becf82ade50ed06115 "webpage for Deploy Key explanation")
+Following the GitHub tutorial, you will need to generate an additional public/private keypair via the `ssh-keygen` command. In GitHub though, we will be creating a [Deploy Key](https://gist.github.com/zhujunsan/a0becf82ade50ed06115 "webpage for Deploy Key explanation").
 
 Then you will clone your team-repo into your buildserver account. This is the place we will be deploying your application from.
 
@@ -99,17 +99,17 @@ Lets go and log into the Proxmox Cluster. Open a browser and enter the URL: `htt
 
 * Use the provided username (just the ID portion of your HAWKID)
 * Use the provided console password
-* Switch the third entry: Realm: to use `PVE`
+* Switch the third entry: Realm: to use `Proxmox VE authentication`
 
 Once logged in, be curious and look around, be judicious, as you have full access.
 
-# Tutorial to Connect to the Department Cloud Platform - Part II
+# Deploy Team Vault Server - Part II
 
-This tutorial will demonstrate how to use our class build-server, provided API keys, and the Department Cloud Platform, running on [Proxmox](https://proxmox.com/en/ "webpage for Proxmox Virtualization Platform"), using [Hashicorp Packer](https://packer.io "webpage for Packer.io") and [Terraform](https://terraform.io "webpage for Terraform").
+Getting our first component ready - Vault for secret management.
 
 ## Overview
 
-
+This tutorial will demonstrate how to use our class buildserver, provided API keys, and the See-Through Cloud Platform, running on [Proxmox](https://proxmox.com/en/ "webpage for Proxmox Virtualization Platform"), using [Hashicorp Packer](https://packer.io "webpage for Packer.io") and [Terraform](https://terraform.io "webpage for Terraform").
 
 At the conclusion of this tutorial you will have successfully connected to the remote buildserver and used Packer and Terraform to deploy a sample three-tier web application. 
 
