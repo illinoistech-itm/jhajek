@@ -290,7 +290,11 @@ I have provided a series of static files that are needed for various operations 
 * `node-exporter.service` 
   * A systemd service file - to start the telemetry export at boot
 
-You will find additional scripts needed for dynamically setting up firewalls for all of this internal traffic taking place. We are using [firewalld](https://firewalld.org "webpage for firewalld"). For our setup this material needs to remain here, you won't have to edit any of it, but I leave it here so that you can see what it takes to get a *regular* os into shape to work on a Cloud Native Platform. At the very end you will see some `provisioners` with shell scripts, but with an additional tag, `only            = ["proxmox-iso.proxmox-frontend-webserver"]`.
+You will find additional scripts needed for dynamically setting up firewalls for all of this internal traffic taking place. We are using [firewalld](https://firewalld.org "webpage for firewalld"). For our setup this material needs to remain here, you won't have to edit any of it, but I leave it here so that you can see what it takes to get a *regular* os into shape to work on a Cloud Native Platform. At the very end you will see some `provisioners` with shell scripts, but with an additional tag.
+
+```hcl
+only            = ["proxmox-iso.proxmox-frontend-webserver"]
+```
 
 The `only` tag is how you can create specific shell scripts that should be applied to only certain `images`. For instance you don't want to install a webserver on the backend image, and you don't want an uneeded database on a frontend image.
 
@@ -312,7 +316,7 @@ The `only` tag is how you can create specific shell scripts that should be appli
   ########################################################################################################################
 
   provisioner "file" {
-    source      = "../scripts/proxmox/jammy-services/node-exporter-consul-service.json"
+    source      = "../scripts/proxmox/noble-services/node-exporter-consul-service.json"
     destination = "/home/vagrant/"
   }
 
@@ -322,7 +326,7 @@ The `only` tag is how you can create specific shell scripts that should be appli
   ########################################################################################################################
 
   provisioner "file" {
-    source      = "../scripts/proxmox/jammy-services/consul.conf"
+    source      = "../scripts/proxmox/noble-services/consul.conf"
     destination = "/home/vagrant/"
   }
 
@@ -332,7 +336,7 @@ The `only` tag is how you can create specific shell scripts that should be appli
   ########################################################################################################################
 
   provisioner "file" {
-    source      = "../scripts/proxmox/jammy-services/node-exporter.service"
+    source      = "../scripts/proxmox/noble-services/node-exporter.service"
     destination = "/home/vagrant/"
   }
 
@@ -343,7 +347,7 @@ The `only` tag is how you can create specific shell scripts that should be appli
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx-firewall-configuration.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_prxmx-firewall-configuration.sh"]
   }
 
   ########################################################################################################################
@@ -353,10 +357,10 @@ The `only` tag is how you can create specific shell scripts that should be appli
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_2204.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_start-cloud-init.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_install_hashicorp_consul.sh",
-                       "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_prxmx_ubuntu_2204.sh",
+                       "../scripts/proxmox/core-noble/post_install_prxmx_start-cloud-init.sh",
+                       "../scripts/proxmox/core-noble/post_install_prxmx_install_hashicorp_consul.sh",
+                       "../scripts/proxmox/core-noble/post_install_prxmx_update_dns_for_consul_service.sh"]
   }
 
   ########################################################################################################################
@@ -367,7 +371,7 @@ The `only` tag is how you can create specific shell scripts that should be appli
   
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_change_consul_bind_interface.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_change_consul_bind_interface.sh"]
   }
   
   ############################################################################################
@@ -378,7 +382,7 @@ The `only` tag is how you can create specific shell scripts that should be appli
   
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_update_dynamic_motd_message.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_update_dynamic_motd_message.sh"]
   }  
   
   ############################################################################################
@@ -387,7 +391,7 @@ The `only` tag is how you can create specific shell scripts that should be appli
   
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh"]
   } 
 
   ########################################################################################################################
