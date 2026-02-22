@@ -53,7 +53,7 @@ There are two VSCode Extensions required, use the 4 square block Extensions icon
 
 For the department, we have an internal VLAN at the school. The address Range is 192.168.192.0/22. This address range has internal DNS with a domain name of `itm.iit.edu`. FQDNs are sequentially named: `system22hXYZ.itm.iit.edu` where `XYZ` is the value of the last IP octet and the 22 value is the CIDR block value. 
 
-An example is `system22h082.itm.iit.edu` has an IP address of `192.168.192.82`.
+An example is `system22h098.itm.iit.edu` has an IP address of `192.168.192.98`.
 
 Important Nodes
 *	system22h082.itm.iit.edu
