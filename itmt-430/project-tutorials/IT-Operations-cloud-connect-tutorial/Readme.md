@@ -95,7 +95,13 @@ In your document you will find three pairs of usernames and tokens. The first on
 
 Lets go and log into the Proxmox Cluster. Open a browser and enter the URL: `https://system22h082.itm.iit.edu:8006` -- take note that this is a self-signed certificate.
 
+![*Proxmox Login*](./images/login.png "Image of Proxmox login")
 
+* Use the provided username (just the ID portion of your HAWKID)
+* Use the provided console password
+* Switch the third entry: Realm: to use `PVE`
+
+Once logged in, be curious and look around, be judicious, as you have full access.
 
 # Tutorial to Connect to the Department Cloud Platform - Part II
 
