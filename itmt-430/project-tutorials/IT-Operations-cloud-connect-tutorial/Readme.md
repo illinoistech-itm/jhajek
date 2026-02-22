@@ -65,8 +65,19 @@ Important Nodes
 * system22h098.itm.iit.edu
   * Buildserver with student accounts
 
+## Buildserver accounts
 
+Each student has an account on our buildserver: `system22h098.itm.iit.edu`. This is where you will clone your team repo and deploy your Packer and Terraform commands from. To test your connection use this command--you will be using the private key you created on your host system that corresponds to the public key you created and entered into the **Account Creation** document.
 
+```bash
+# Replace the value HAWKID with your hawk ID
+# Replace the path (-i) from my identity file to your own identity file
+ssh -i "C:\Users\palad\.ssh\id_ed25519_itmt-430-key" HAWKID@system22h098.itm.iit.edu"
+```
+
+Upon successful login and after executing an `ls` command, you will see a credentials file located in your home directory. If you do not see this file contact your instructor.
+
+![*Succesful login*](./images/buildserver-login.png "Successful Login to the Buildserver")
 
 
 # Tutorial to Connect to the Department Cloud Platform - Part II
