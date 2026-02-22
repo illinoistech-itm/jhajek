@@ -13,6 +13,8 @@ autoinstall:
   # To ensure this doesn't happen we stop the SSH service until right at the end when we re-enable it
   # using a late-command.
     - sudo systemctl stop ssh
+  refresh-installer:
+    update: yes     
   storage:
     layout:
       name: lvm
