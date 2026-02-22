@@ -419,7 +419,7 @@ Notice under the `scripts` directive I can run many shell scripts. Some like to 
 
 ### Template for Variables
 
-You will need to rename (using the `mv` command) the file: `template-for-variables.pkr.hcl` to `variables.pkr.hcl` this is the default file that Packer will look for.  This file now contains secret information -- **you do not** want this to be in version control. This could be a legal issue or definately a security liability. Before modifying this file make sure that you have the `variables.pkr.hcl` in your team repo `.gitignore` file. The reason we make the change on the buildserver and not on your local system is due to secrets (tokens).
+You will need to rename (using the `mv` command) the file: `template-for-variables.pkr.hcl` to `variables.pkr.hcl` this is the default file that Packer will look for.  This file now contains secret information -- **you do not** want this to be in version control. This could be a legal issue or definitely a security liability. Before modifying this file make sure that you have the `variables.pkr.hcl` in your team repo `.gitignore` file. The reason we make the change on the buildserver and not on your local system is due to secrets (tokens).
 
 The first four values are specific and you will receive an email with the exact credentials to enter if you are the IT/Operations person for this sprint.
 
@@ -428,11 +428,11 @@ The values you will enter inside the `default` quotes are the following:
 * NODENAME
   * proxmonster3
 * TOKEN_ID
-  * provided to you via email
-* TOKEN_SECRET
-  * provided to you via email
+  * provided to you
+* TOKEN_VALUE
+  * provided to you
 * URL
-  * https://system41.rice.iit.edu:8006/api2/json
+  * https://system22h082.itm.iit.edu:8006/api2/json
 
 ```hcl
 variable "NODENAME" {
@@ -446,7 +446,7 @@ variable "TOKEN_ID" {
   default = ""
 }
 
-variable "TOKEN_SECRET" {
+variable "TOKEN_VALUE" {
   sensitive = true
   type   = string
   default = ""
@@ -466,29 +466,25 @@ The disksize you want to leave low, when deploying virtual machine instances fro
 
 ### Instance Variables
 
-These remaining fields will be familiar, while building the images, Packer needs SSH credentials to log into the system and execute all the `provisioners` before it cuts off password based ssh access and goes to key based auth only (which we will have to generate another keypair shortly). These remaining fields allow you to name your template, always a good idea to put your team name in the template name, something like `team-00-fe` (frontend) that lets you know who the VM belongs too as we will be sharing the same server to run all of these. The SSH password is again defaulted to `vagrant` but there instructions to change that password in the `subiquity/http/user-data` file. One can also consider that SSH password auth will be removed upon completion so it might not matter, unless someone has console access, then they can easily log into your system. This is a security decision you will have to make.
+These remaining fields will be familiar, while building the images, Packer needs SSH credentials to log into the system and execute all the `provisioners` before it cuts off password based ssh access and goes to key based auth only (which we will have to generate another keypair shortly). These remaining fields allow you to name your template, always a good idea to put your team name in the template name, something like `team-00-vault-server` that lets you know who the VM belongs too as we will be sharing the same server to run all of these. 
+
+The SSH password is again defaulted to `vagrant` but there are instructions to change that password in the `subiquity/http/user-data` file. One can also consider that SSH password auth will be removed upon completion so it might not matter, unless someone has console access, then they can easily log into your system. This is a security decision you will have to make.
 
 ```hcl
-variable "frontend-VMNAME" {
+variable "VMNAME" {
   type    = string
   default = ""
 }
 
-variable "frontend-SSHPW" {
+variable "SSHPW" {
   type    = string
   default = ""
   sensitive = true
 }
 
-variable "backend-VMNAME" {
+variable "TAGS" {
   type    = string
-  default = ""
-}
-
-variable "backend-SSHPW" {
-  type    = string
-  default = ""
-  sensitive = true
+  default = "teamXX;vault"
 }
 ```
 
@@ -505,7 +501,7 @@ You will once again generate an `ed25519` keypair using the ssh-keygen command. 
 
 ```
 authorized-keys:
-  - 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE288nVirfucLQIfHXOdEW6xQ2otramp587k6rn9IwBE hajek@newyorkphilharmonic '
+  - 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE288nVirfucLQI5555555otramp587k6rn9IwBE hajek@newyorkphilharmonic '
 ```
 
 ### Ready to Launch
@@ -518,7 +514,7 @@ Now I believe we are ready. You can execute the same three commands we ran for t
 
 Sit back and watch: you are about to become a cloud-native Ops Engineer.
 
-If successful, in the [Proxmox GUI Console](https://system41.rice.iit.edu:8006 "webpage for Proxmox GUI console") you will see two virtual machine templates a screen with a paper icon behind it and indicated by the red square. Virtual Machines are indicated by a little computer screen icon in the figure below.
+If successful, in the [Proxmox GUI Console](https://system22h082.itm.iit.edu:8006 "webpage for Proxmox GUI console") you will see two virtual machine templates a screen with a paper icon behind it and indicated by the red square. Virtual Machines are indicated by a little computer screen icon in the figure below.
 
 ![*Successful Packer Build*](./images/templates.png "image of templates being built")
 
