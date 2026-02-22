@@ -4,6 +4,8 @@ This is the initial description and setup for the Capstone Cloud Platform. It is
 
 ## Overview
 
+This tutorial assumes you have completed the Vagrant-Tooling-Assignment, Packer-Tooling-Assignment, Vault-Tooling-Assignment. It is critical to complete those first -- this tutorial builds upon those concepts.
+
 This document will give you the first steps you need and acquaint you with the tools and locations needed to deploy your application.
 
 ## Configure VPN
@@ -65,7 +67,13 @@ Important Nodes
 * system22h098.itm.iit.edu
   * Buildserver with student accounts
 
-## Buildserver accounts
+## Setting up Your Team Repo
+
+Following the GitHub tutorial, you will need to generate an additional public/private keypair via the `ssh-keygen` command. In GitHub though, we will be creating a [Deploy Key](https://gist.github.com/zhujunsan/a0becf82ade50ed06115 "webpage for Deploy Key explanation")
+
+Then you will clone your team-repo into your buildserver account. This is the place we will be deploying your application from.
+
+## Buildserver Accounts
 
 Each student has an account on our buildserver: `system22h098.itm.iit.edu`. This is where you will clone your team repo and deploy your Packer and Terraform commands from. To test your connection use this command--you will be using the private key you created on your host system that corresponds to the public key you created and entered into the **Account Creation** document.
 
@@ -79,6 +87,15 @@ Upon successful login and after executing an `ls` command, you will see a creden
 
 ![*Succesful login*](./images/buildserver-login.png "Successful Login to the Buildserver")
 
+### Content of proxmox-credentials.txt 
+
+In your document you will find three pairs of usernames and tokens. The first one is the commandline console access to the Proxmox 9 Cloud Platform.
+
+![*Console Password*](./images/console.png "Console Password")
+
+Lets go and log into the Proxmox Cluster. Open a browser and enter the URL: `https://system22h082.itm.iit.edu:8006` -- take note that this is a self-signed certificate.
+
+
 
 # Tutorial to Connect to the Department Cloud Platform - Part II
 
@@ -86,7 +103,7 @@ This tutorial will demonstrate how to use our class build-server, provided API k
 
 ## Overview
 
-This tutorial assumes you have completed the Vagrant-Tooling-Assignment, Packer-Tooling-Assignment, Vault-Tooling-Assignment. It is critical to complete those first -- this tutorial builds upon those concepts.
+
 
 At the conclusion of this tutorial you will have successfully connected to the remote buildserver and used Packer and Terraform to deploy a sample three-tier web application. 
 
