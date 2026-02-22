@@ -171,9 +171,9 @@ You don't actually install anything--you create OS templates or `images` and upl
 
 [Hashicorp Terraform](https://terraform.io "webpage for Terraform") is a platform neutral way to programmatically deploy arbitrary numbers of instances from pre-made images. Packer will help make your templates, and Terraform helps you think in terms of deploying your application in total. Think of Terraform as Vagrant all grown up.
 
-### Examples and HCL Templates
+### Vault Templates
 
-Let us start by unpacking the first Packer Proxmox template, `proxmox-jammy-ubuntu-front-back-template` > [proxmox-jammy-ubuntu-front-back-template.pkr.hcl](https://github.com/illinoistech-itm/jhajek/blob/master/itmt-430/example-code/proxmox-cloud-production-templates/packer/proxmox-jammy-ubuntu-front-back-template/proxmox-jammy-ubuntu-front-back-template.pkr.hcl "webpage showing packer proxmox first template") then we will go over each section and explain it. Most of it should look familiar to the Packer VirtualBox templates in the previous assignment.
+Similar to the Vault-tooling-assignment, we are now going to create a Vault Server. Let us start by unpacking the first Packer Proxmox template under,: `vault-templates` > `packer` > `proxmox-noble-vault-template`. Most of it should look familiar to the Packer VirtualBox templates in the previous assignment.
 
 ### Packer Init Block
 
@@ -186,54 +186,53 @@ locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 packer {
   required_plugins {
     virtualbox = {
-      version = ">= 1.1.0"
+      version = ">= 1.1.8"
       source  = "github.com/hashicorp/proxmox"
     }
   }
 }
 ```
 
-**Note** If you execute a `packer build .` command and receive a `501` error, it has to do with a bug in the the latest `packer-proxmox-plugin`. You will need to revert to a version before `1.1.1`. You can delete the plugin if you installed `1.1.1` by executing the command: `rm ~/.config/packer/plugins/github.com/hashicorp/proxmox/packer-plugin-proxmox_v1.1*` - the example code was updated 02/20 and the `packer init` block has been locked to `1.1.0`.
-
 ### Source Blocks
 
-The next part of the code contains the `source` directive to tell Packer what which virtualization platform to connect to and build for. In this case it will be Proxmox, *proxmox-iso*. We will also give the particalar `source` block a name so to be able to reference it in later `build` and `provisioner` stages.
-
-* [Source Block Documentation](https://www.packer.io/docs/from-1.5/blocks/source "webpage for SOurce Block Documentation")
-* [Packer Proxmox example template](https://github.com/burkeazbill/ubuntu-22-04-packer-fusion-workstation/blob/master/ubuntu-2204-daily.pkr.hcl "webpage for example promox template")
+The next part of the code contains the `source` directive to tell Packer what which virtualization platform to connect to and build for. In this case it will be Proxmox, *proxmox-iso*. We will also give the particular `source` block a name so to be able to reference it in later `build` and `provisioner` stages.
 
 ```hcl
 
-###############################################################################
-# This is a Packer build template for the backend database / datastore
-###############################################################################
-source "proxmox-iso" "backend-database" {
+source "proxmox-iso" "proxmox-noble-vault-template" {
   boot_command = [
-        "e<wait>",
-        "<down><down><down>",
-        "<end><bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
-        "<f10><wait>"
-      ]
-  boot_wait    = "5s"
-  cores        = "${var.NUMBEROFCORES}"
-  node         = "${var.NODENAME}"
-  username     = "${var.USERNAME}"
-  token        = "${var.PROXMOX_TOKEN}"
-  cpu_type     = "host"
-  disks {
-    disk_size         = "${var.DISKSIZE}"
-    storage_pool      = "${var.STORAGEPOOL}"
-    storage_pool_type = "lvm"
-    type              = "virtio"
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/ubuntu-24.04.3-live-server-amd64.iso"
+    unmount=true
+    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/24.04.3/SHA256SUMS"
   }
-  http_directory   = "subiquity/http"
-  http_port_max    = 9200
-  http_port_min    = 9001
-  iso_checksum     = "sha256:10f19c5b2b8d6db711582e0e27f5116296c34fe4b313ba45f9b201a5007056cb"
-  iso_urls         = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.1/ubuntu-22.04.1-live-server-amd64.iso"]
-  iso_storage_pool = "local"
-  memory           = "${var.MEMORY}"
+  
+  boot_wait = "5s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${var.NODENAME}"
+  username  = "${var.TOKEN_ID}"
+  token     = "${var.TOKEN_VALUE}"
+  cpu_type  = "host"
+
+  disks {
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
+  }
+  http_directory    = "subiquity/http"
+  http_bind_address = "${var.BIND_ADDRESS}"
+  http_port_max     = 9200
+  http_port_min     = 9001
+  memory            = "${var.MEMORY}"
 
   network_adapters {
     bridge = "vmbr0"
@@ -251,85 +250,30 @@ source "proxmox-iso" "backend-database" {
   os                       = "l26"
   proxmox_url              = "${var.URL}"
   insecure_skip_tls_verify = true
-  unmount_iso              = true
   qemu_agent               = true
   cloud_init               = true
   cloud_init_storage_pool  = "local"
-  ssh_password             = "vagrant"
-  ssh_username             = "${var.backend-SSHPW}"
-  ssh_timeout              = "28m"
-  template_description     = "A Packer template for backend database"
-  vm_name                  = "${var.backend-VMNAME}"
-}
-
-###########################################################################################
-# This is a Packer build template for the frontend webserver
-###########################################################################################
-source "proxmox-iso" "frontend-webserver" {
-  boot_command = [
-        "e<wait>",
-        "<down><down><down>",
-        "<end><bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
-        "<f10><wait>"
-      ]
-  boot_wait    = "5s"
-  cores        = "${var.NUMBEROFCORES}"
-  node         = "${var.NODENAME}"
-  username     = "${var.USERNAME}"
-  token        = "${var.PROXMOX_TOKEN}"
-  cpu_type     = "host"
-  disks {
-    disk_size         = "${var.DISKSIZE}"
-    storage_pool      = "${var.STORAGEPOOL}"
-    storage_pool_type = "lvm"
-    type              = "virtio"
-  }
-  http_directory   = "subiquity/http"
-  http_port_max    = 9200
-  http_port_min    = 9001
-  iso_checksum     = "sha256:10f19c5b2b8d6db711582e0e27f5116296c34fe4b313ba45f9b201a5007056cb"
-  iso_urls         = ["https://mirrors.edge.kernel.org/ubuntu-releases/22.04.1/ubuntu-22.04.1-live-server-amd64.iso"]
-  iso_storage_pool = "local"
-  memory           = "${var.MEMORY}"
-
-  network_adapters {
-    bridge = "vmbr0"
-    model  = "virtio"
-  }
-  network_adapters {
-    bridge = "vmbr1"
-    model  = "virtio"
-  }
-  network_adapters {
-    bridge = "vmbr2"
-    model  = "virtio"
-  }
-
-  os                       = "l26"
-  proxmox_url              = "${var.URL}"
-  insecure_skip_tls_verify = true
-  unmount_iso              = true
-  qemu_agent               = true
-  cloud_init               = true
-  cloud_init_storage_pool  = "local"
-  ssh_password             = "vagrant"
-  ssh_username             = "${var.frontend-SSHPW}"
-  ssh_timeout              = "28m"
-  template_description     = "A Packer template for a frontend webserver"
-  vm_name                  = "${var.frontend-VMNAME}"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller      = "virtio-scsi-single"
+  ssh_password         = "${var.SSHPW}"
+  ssh_username         = "vagrant"
+  ssh_timeout          = "22m"
+  template_description = "A Packer template Hashicorp Vault"
+  vm_name              = "${var.VMNAME}"
+  tags                 = "${var.TAGS}"
 }
 
 ```
 
 ### Build Blocks
 
-The build block is where we tell Packer what to build when the `packer build .` command is executed. Packer has the unique ability to build in parallel, as many templates as you create in the `source` blocks. Each `source` name has to be entered into the `build sources` in order to be built. This built in parallelism means you can generally completely build these two templates on our buildserver in around 12-17 minutes.
+The build block is where we tell Packer what to build when the `packer build .` command is executed. Packer has the unique ability to build in parallel, as many templates as you create in the `source` blocks. Each `source` name has to be entered into the `build sources` in order to be built. This built in parallelism means you can generally completely build templates on our buildserver in around 12-17 minutes.
 
 ```hcl
 
 build {
-  sources = ["source.proxmox-iso.frontend-webserver","source.proxmox-iso.backend-database"]
+  sources = ["source.proxmox-iso.proxmox-noble-vault-template"]
+}
 
 ```
 
@@ -342,7 +286,7 @@ I have provided a series of static files that are needed for various operations 
 * `system.hcl` 
   * A file that is needed to register each virtual machine with Consul for Service Discovery / DNS forwarding.
 * `node-exporter-consul-service.json` 
-  * To allow the `Prometheus` telemetry system to automatically discover newely launched virtual machines
+  * To allow the `Prometheus` telemetry system to automatically discover newly launched virtual machines
 * `node-exporter.service` 
   * A systemd service file - to start the telemetry export at boot
 
