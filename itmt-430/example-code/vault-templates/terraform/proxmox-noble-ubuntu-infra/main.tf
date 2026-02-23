@@ -13,7 +13,7 @@ resource "random_shuffle" "datadisk" {
 }
 
 resource "random_shuffle" "nodename" {
-  input        = [data.vault_generic_secret.target_node.data["SYSTEM42"], data.vault_generic_secret.target_node.data["SYSTEM41"]]
+  input        = [data.vault_generic_secret.target_node.data["SYSTEM82"], data.vault_generic_secret.target_node.data["SYSTEM83"], data.vault_generic_secret.target_node.data["SYSTEM84"]]
   result_count = 1
 }
 
@@ -101,7 +101,7 @@ resource "proxmox_vm_qemu" "vanilla-server" {
       "sudo sed -i 's/replace-name/${var.yourinitials}-vm${count.index}/' /etc/consul.d/system.hcl",
       "sudo sed -i 's/ubuntu-server/${var.yourinitials}-vm${count.index}/' /etc/hosts",
       "sudo sed -i 's/FQDN/${var.yourinitials}-vm${count.index}.service.consul/' /etc/update-motd.d/999-consul-dns-message",
-      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"rice-dc-1\"/' /etc/consul.d/consul.hcl",
+      "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"mies-dc-1\"/' /etc/consul.d/consul.hcl",
       "echo 'retry_join = [\"${var.consulip-240-prod-system28}\",\"${var.consulip-240-student-system41}\",\"${var.consulip-242-room}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
       "sudo systemctl daemon-reload",
       "sudo systemctl restart consul.service",
