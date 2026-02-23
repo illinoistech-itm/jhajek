@@ -426,7 +426,7 @@ The first four values are specific and you will receive an email with the exact 
 The values you will enter inside the `default` quotes are the following:
 
 * NODENAME
-  * proxmonster3
+  * system22h082
 * TOKEN_ID
   * provided to you
 * TOKEN_VALUE
@@ -520,4 +520,4 @@ If successful, in the [Proxmox GUI Console](https://system22h082.itm.iit.edu:800
 
 ## Conclusion
 
-This ends how to build Virtual Machine Templates on out Cloud provider, Proxmox. There will be a separate username and password to authenticate to a GUI to check your progress. The second part will engage with Terraform and how to deploy arbitrary numbers of virtual machines into production.
+This ends how to build Vault Virtual Machine Templates on our Cloud provider, Proxmox. There will be a separate username and password to authenticate to a GUI to check your progress. The second part will engage with Terraform and how to deploy arbitrary numbers of virtual machines into production.
