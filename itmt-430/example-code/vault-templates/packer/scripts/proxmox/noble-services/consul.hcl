@@ -5,7 +5,7 @@
 # it defaults to "dc1". Consul has first-class support for multiple datacenters, but
 # it relies on proper configuration. Nodes in the same datacenter should be on a
 # single LAN.
-datacenter = "rice-dc-1"
+datacenter = "mies-dc-1"
 
 # data_dir
 # This flag provides a data directory for the agent to store state. This is required
