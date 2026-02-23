@@ -2,7 +2,7 @@ terraform {
   required_providers {
     proxmox = {
       source  = "Telmate/proxmox"
-      version = "3.0.2-rc01"
+      version = "3.0.2-rc07"
     }
     consul = {
       source  = "hashicorp/consul"
@@ -29,6 +29,6 @@ provider "proxmox" {
 # Configure the Consul provider
 provider "consul" {
   # insecure_https = true
-  datacenter = "rice-dc-1"
-  address    = "${var.consulip}:8500"
+  datacenter = "mies-dc-1"
+  address    = "${var.system22h090}:8500"
 }

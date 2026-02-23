@@ -77,7 +77,7 @@ resource "proxmox_vm_qemu" "vault" {
       "sudo sed -i 's/ubuntu-server/${var.yourinitials}-vm${count.index}/' /etc/hosts",
       "sudo sed -i 's/FQDN/${var.yourinitials}-vm${count.index}.service.consul/' /etc/update-motd.d/999-consul-dns-message",
       "sudo sed -i 's/#datacenter = \"my-dc-1\"/datacenter = \"rice-dc-1\"/' /etc/consul.d/consul.hcl",
-      "echo 'retry_join = [\"${var.consulip-240-prod-system28}\",\"${var.consulip-240-student-system41}\",\"${var.consulip-242-room}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
+      "echo 'retry_join = [\"${var.system22h090}\",\"${var.system22h089}\",\"${var.system22h088}\"]' | sudo tee -a /etc/consul.d/consul.hcl",
       "sudo systemctl daemon-reload",
       "sudo systemctl restart consul.service",
       "sudo growpart /dev/vda 3",
