@@ -40,7 +40,7 @@ ui_config{
 # ensure availability in the case of node failure. Server nodes also participate in a
 # WAN gossip pool with server nodes in other datacenters. Servers act as gateways to
 # other datacenters and forward traffic as appropriate.
-server = true
+#server = true
 
 # Bind addr
 # You may use IPv4 or IPv6 but if you have multiple interfaces you must be explicit.
@@ -61,7 +61,7 @@ bind_addr = "{{GetInterfaceIP \"ens20\"}}" # Listen on all IPv4
 # bootstraps the cluster. This allows an initial leader to be elected automatically.
 # This cannot be used in conjunction with the legacy -bootstrap flag. This flag requires
 # -server mode.
-bootstrap_expect=1
+#bootstrap_expect=1
 
 # encrypt
 # Specifies the secret key to use for encryption of Consul network traffic. This key must
