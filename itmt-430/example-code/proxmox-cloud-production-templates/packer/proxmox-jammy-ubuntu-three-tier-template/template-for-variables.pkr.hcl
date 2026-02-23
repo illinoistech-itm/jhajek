@@ -66,12 +66,34 @@ variable "BIND_ADDRESS" {
 }
 
 # This is the name of the Virtual Machine Template you want to create
-variable "VMNAME" {
+variable "BE-VMNAME" {
   type    = string
-  default = "teamXX-template"
+  default = "teamXX-be-template"
 }
 
-variable "TAGS" {
+variable "LB-VMNAME" {
+  type    = string
+  default = "teamXX-lb-template"
+}
+
+variable "FE-VMNAME" {
+  type    = string
+  default = "teamXX-fe-template"
+}
+
+variable "BE-TAGS" {
+  # Place your initials first then team name and any other tag seperated via ;
+  type    = string
+  default = "team;type-of-server"
+}
+
+variable "LB-TAGS" {
+  # Place your initials first then team name and any other tag seperated via ;
+  type    = string
+  default = "team;type-of-server"
+}
+
+variable "FE-TAGS" {
   # Place your initials first then team name and any other tag seperated via ;
   type    = string
   default = "team;type-of-server"

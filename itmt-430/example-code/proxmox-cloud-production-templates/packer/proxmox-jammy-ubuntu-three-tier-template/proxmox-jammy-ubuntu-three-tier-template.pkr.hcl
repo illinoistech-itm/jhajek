@@ -18,7 +18,7 @@ packer {
 ###########################################################################################
 # This is a Packer build template for the backend database / datastore
 ###########################################################################################
-source "proxmox-iso" "backend-database41" {
+source "proxmox-iso" "backend-database82" {
   boot_command = [
     "e<wait>",
     "<down><down><down>",
@@ -34,9 +34,9 @@ source "proxmox-iso" "backend-database41" {
   }
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
-  node      = "${local.NODENAME}"
-  username  = "${local.USERNAME}"
-  token     = "${local.PROXMOX_TOKEN}"
+  node      = "${local.NODENAME1}"
+  username  = "${local.TOKEN_ID}"
+  token     = "${local.TOKEN_VALUE}"
   cpu_type  = "host"
   disks {
     disk_size    = "${var.DISKSIZE}"
@@ -46,7 +46,7 @@ source "proxmox-iso" "backend-database41" {
     format       = "raw"
   }
   http_directory    = "subiquity/http"
-  http_bind_address = "10.110.0.45"
+  http_bind_address = "${var.BIND_ADDRESS}"
   http_port_max    = 9200
   http_port_min    = 9001
   memory           = "${var.MEMORY}"
@@ -75,15 +75,15 @@ source "proxmox-iso" "backend-database41" {
   ssh_password             = "${local.SSHPW}"
   ssh_username             = "${local.SSHUSER}"
   ssh_timeout              = "22m"
-  template_description     = "A Packer template for Ubuntu Jammy Database" 
-  vm_name                  = "${var.backend-VMNAME}"
+  template_description     = "A Packer template for Ubuntu Noble Database" 
+  vm_name                  = "${var.BE-VMNAME}"
   tags                     = "${var.BE-TAGS}"
 }
 
 ###########################################################################################
 # This is a Packer build template for the frontend webserver
 ###########################################################################################
-source "proxmox-iso" "frontend-webserver41" {
+source "proxmox-iso" "frontend-webserver82" {
   boot_command = [
     "e<wait>",
     "<down><down><down>",
@@ -99,9 +99,9 @@ source "proxmox-iso" "frontend-webserver41" {
   }
   boot_wait = "15s"
   cores     = "${var.NUMBEROFCORES}"
-  node      = "${local.NODENAME}"
-  username  = "${local.USERNAME}"
-  token     = "${local.PROXMOX_TOKEN}"
+  node      = "${local.NODENAME1}"
+  username  = "${local.TOKEN_ID}"
+  token     = "${local.TOKEN_VALUE}"
   cpu_type  = "host"
   disks {
     disk_size    = "${var.DISKSIZE}"
@@ -111,7 +111,7 @@ source "proxmox-iso" "frontend-webserver41" {
     format       = "raw"
   }
   http_directory    = "subiquity/http"
-  http_bind_address = "10.110.0.45"
+  http_bind_address = "${var.BIND_ADDRESS}"
   http_port_max    = 9200
   http_port_min    = 9001
   memory           = "${var.MEMORY}"
@@ -140,15 +140,15 @@ source "proxmox-iso" "frontend-webserver41" {
   ssh_password             = "${local.SSHPW}"
   ssh_username             = "${local.SSHUSER}"
   ssh_timeout              = "22m"
-  template_description     = "A Packer template for Ubuntu Jammy Frontend webserver"
-  vm_name                  = "${var.frontend-VMNAME}"
+  template_description     = "A Packer template for Ubuntu Noble Frontend webserver"
+  vm_name                  = "${var.FE-VMNAME}"
   tags                     = "${var.FE-TAGS}"
 }
 
 ###########################################################################################
 # This is a Packer build template for the load-balancer
 ###########################################################################################
-source "proxmox-iso" "load-balancer41" {
+source "proxmox-iso" "load-balancer82" {
   boot_command = [
     "e<wait>",
     "<down><down><down>",
@@ -164,9 +164,9 @@ source "proxmox-iso" "load-balancer41" {
   }
   boot_wait = "12s"
   cores     = "${var.NUMBEROFCORES}"
-  node      = "${local.NODENAME}"
-  username  = "${local.USERNAME}"
-  token     = "${local.PROXMOX_TOKEN}"
+  node      = "${local.NODENAME1}"
+  username  = "${local.TOKEN_ID}"
+  token     = "${local.TOKEN_VALUE}"
   cpu_type  = "host"
   disks {
     disk_size    = "${var.DISKSIZE}"
@@ -176,7 +176,7 @@ source "proxmox-iso" "load-balancer41" {
     format       = "raw"
   }
   http_directory    = "subiquity/http"
-  http_bind_address = "10.110.0.45"
+  http_bind_address = "${var.BIND_ADDRESS}"
   http_port_max    = 9200
   http_port_min    = 9001
   memory           = "${var.MEMORY}"
@@ -205,35 +205,402 @@ source "proxmox-iso" "load-balancer41" {
   ssh_password             = "${local.SSHPW}"
   ssh_username             = "${local.SSHUSER}"
   ssh_timeout              = "22m"
-  template_description     = "A Packer template for Ubuntu Jammy Load Balancer"
-  vm_name                  = "${var.loadbalancer-VMNAME}"
+  template_description     = "A Packer template for Ubuntu Noble Load Balancer"
+  vm_name                  = "${var.LB-VMNAME}"
+  tags                     = "${var.LB-TAGS}"
+}
+##############################################################################
+# Templates for system83
+##############################################################################
+source "proxmox-iso" "backend-database83" {
+  boot_command = [
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/${var.local_iso_name}"
+    unmount=true
+    iso_checksum="${var.iso_checksum}"
+  }
+  boot_wait = "5s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${local.NODENAME2}"
+  username  = "${local.TOKEN_ID}"
+  token     = "${local.TOKEN_VALUE}"
+  cpu_type  = "host"
+  disks {
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
+  }
+  http_directory    = "subiquity/http"
+  http_bind_address = "${var.BIND_ADDRESS}"
+  http_port_max    = 9200
+  http_port_min    = 9001
+  memory           = "${var.MEMORY}"
+
+  network_adapters {
+    bridge = "vmbr0"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr1"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr2"
+    model  = "virtio"
+  }
+
+  os                       = "l26"
+  proxmox_url              = "${local.URL}"
+  insecure_skip_tls_verify = true
+  qemu_agent               = true
+  cloud_init               = true
+  cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller          = "virtio-scsi-single"
+  ssh_password             = "${local.SSHPW}"
+  ssh_username             = "${local.SSHUSER}"
+  ssh_timeout              = "22m"
+  template_description     = "A Packer template for Ubuntu Noble Database" 
+  vm_name                  = "${var.BE-VMNAME}"
+  tags                     = "${var.BE-TAGS}"
+}
+
+###########################################################################################
+# This is a Packer build template for the frontend webserver
+###########################################################################################
+source "proxmox-iso" "frontend-webserver83" {
+  boot_command = [
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/${var.local_iso_name}"
+    unmount=true
+    iso_checksum="${var.iso_checksum}"
+  }
+  boot_wait = "15s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${local.NODENAME2}"
+  username  = "${local.TOKEN_ID}"
+  token     = "${local.TOKEN_VALUE}"
+  cpu_type  = "host"
+  disks {
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
+  }
+  http_directory    = "subiquity/http"
+  http_bind_address = "${var.BIND_ADDRESS}"
+  http_port_max    = 9200
+  http_port_min    = 9001
+  memory           = "${var.MEMORY}"
+
+  network_adapters {
+    bridge = "vmbr0"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr1"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr2"
+    model  = "virtio"
+  }
+
+  os                       = "l26"
+  proxmox_url              = "${local.URL}"
+  insecure_skip_tls_verify = true
+  qemu_agent               = true
+  cloud_init               = true
+  cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller          = "virtio-scsi-single"
+  ssh_password             = "${local.SSHPW}"
+  ssh_username             = "${local.SSHUSER}"
+  ssh_timeout              = "22m"
+  template_description     = "A Packer template for Ubuntu Noble Frontend webserver"
+  vm_name                  = "${var.FE-VMNAME}"
+  tags                     = "${var.FE-TAGS}"
+}
+
+###########################################################################################
+# This is a Packer build template for the load-balancer
+###########################################################################################
+source "proxmox-iso" "load-balancer83" {
+  boot_command = [
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/${var.local_iso_name}"
+    unmount=true
+    iso_checksum="${var.iso_checksum}"
+  }
+  boot_wait = "12s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${local.NODENAME2}"
+  username  = "${local.TOKEN_ID}"
+  token     = "${local.TOKEN_VALUE}"
+  cpu_type  = "host"
+  disks {
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
+  }
+  http_directory    = "subiquity/http"
+  http_bind_address = "${var.BIND_ADDRESS}"
+  http_port_max    = 9200
+  http_port_min    = 9001
+  memory           = "${var.MEMORY}"
+
+  network_adapters {
+    bridge = "vmbr0"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr1"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr2"
+    model  = "virtio"
+  }
+
+  os                       = "l26"
+  proxmox_url              = "${local.URL}"
+  insecure_skip_tls_verify = true
+  qemu_agent               = true
+  cloud_init               = true
+  cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller          = "virtio-scsi-single"
+  ssh_password             = "${local.SSHPW}"
+  ssh_username             = "${local.SSHUSER}"
+  ssh_timeout              = "22m"
+  template_description     = "A Packer template for Ubuntu Noble Load Balancer"
+  vm_name                  = "${var.LB-VMNAME}"
+  tags                     = "${var.LB-TAGS}"
+}
+
+##############################################################################
+# Templates for system83
+##############################################################################
+source "proxmox-iso" "backend-database84" {
+  boot_command = [
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/${var.local_iso_name}"
+    unmount=true
+    iso_checksum="${var.iso_checksum}"
+  }
+  boot_wait = "5s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${local.NODENAME3}"
+  username  = "${local.TOKEN_ID}"
+  token     = "${local.TOKEN_VALUE}"
+  cpu_type  = "host"
+  disks {
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
+  }
+  http_directory    = "subiquity/http"
+  http_bind_address = "${var.BIND_ADDRESS}"
+  http_port_max    = 9200
+  http_port_min    = 9001
+  memory           = "${var.MEMORY}"
+
+  network_adapters {
+    bridge = "vmbr0"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr1"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr2"
+    model  = "virtio"
+  }
+
+  os                       = "l26"
+  proxmox_url              = "${local.URL}"
+  insecure_skip_tls_verify = true
+  qemu_agent               = true
+  cloud_init               = true
+  cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller          = "virtio-scsi-single"
+  ssh_password             = "${local.SSHPW}"
+  ssh_username             = "${local.SSHUSER}"
+  ssh_timeout              = "22m"
+  template_description     = "A Packer template for Ubuntu Noble Database" 
+  vm_name                  = "${var.BE-VMNAME}"
+  tags                     = "${var.BE-TAGS}"
+}
+
+###########################################################################################
+# This is a Packer build template for the frontend webserver
+###########################################################################################
+source "proxmox-iso" "frontend-webserver84" {
+  boot_command = [
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/${var.local_iso_name}"
+    unmount=true
+    iso_checksum="${var.iso_checksum}"
+  }
+  boot_wait = "15s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${local.NODENAME3}"
+  username  = "${local.TOKEN_ID}"
+  token     = "${local.TOKEN_VALUE}"
+  cpu_type  = "host"
+  disks {
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
+  }
+  http_directory    = "subiquity/http"
+  http_bind_address = "${var.BIND_ADDRESS}"
+  http_port_max    = 9200
+  http_port_min    = 9001
+  memory           = "${var.MEMORY}"
+
+  network_adapters {
+    bridge = "vmbr0"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr1"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr2"
+    model  = "virtio"
+  }
+
+  os                       = "l26"
+  proxmox_url              = "${local.URL}"
+  insecure_skip_tls_verify = true
+  qemu_agent               = true
+  cloud_init               = true
+  cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller          = "virtio-scsi-single"
+  ssh_password             = "${local.SSHPW}"
+  ssh_username             = "${local.SSHUSER}"
+  ssh_timeout              = "22m"
+  template_description     = "A Packer template for Ubuntu Noble Frontend webserver"
+  vm_name                  = "${var.FE-VMNAME}"
+  tags                     = "${var.FE-TAGS}"
+}
+
+###########################################################################################
+# This is a Packer build template for the load-balancer
+###########################################################################################
+source "proxmox-iso" "load-balancer84" {
+  boot_command = [
+    "e<wait>",
+    "<down><down><down>",
+    "<end><bs><bs><bs><bs><wait>",
+    "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+    "<f10><wait>"
+  ]
+  boot_iso {
+    type="scsi"
+    iso_file="local:iso/${var.local_iso_name}"
+    unmount=true
+    iso_checksum="${var.iso_checksum}"
+  }
+  boot_wait = "12s"
+  cores     = "${var.NUMBEROFCORES}"
+  node      = "${local.NODENAME3}"
+  username  = "${local.TOKEN_ID}"
+  token     = "${local.TOKEN_VALUE}"
+  cpu_type  = "host"
+  disks {
+    disk_size    = "${var.DISKSIZE}"
+    storage_pool = "${var.STORAGEPOOL}"
+    type         = "virtio"
+    io_thread    = true
+    format       = "raw"
+  }
+  http_directory    = "subiquity/http"
+  http_bind_address = "${var.BIND_ADDRESS}"
+  http_port_max    = 9200
+  http_port_min    = 9001
+  memory           = "${var.MEMORY}"
+
+  network_adapters {
+    bridge = "vmbr0"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr1"
+    model  = "virtio"
+  }
+  network_adapters {
+    bridge = "vmbr2"
+    model  = "virtio"
+  }
+
+  os                       = "l26"
+  proxmox_url              = "${local.URL}"
+  insecure_skip_tls_verify = true
+  qemu_agent               = true
+  cloud_init               = true
+  cloud_init_storage_pool  = "local"
+  # io thread option requires virtio-scsi-single controller
+  scsi_controller          = "virtio-scsi-single"
+  ssh_password             = "${local.SSHPW}"
+  ssh_username             = "${local.SSHUSER}"
+  ssh_timeout              = "22m"
+  template_description     = "A Packer template for Ubuntu Noble Load Balancer"
+  vm_name                  = "${var.LB-VMNAME}"
   tags                     = "${var.LB-TAGS}"
 }
 
 build {
-  sources = ["source.proxmox-iso.frontend-webserver41","source.proxmox-iso.backend-database41","source.proxmox-iso.load-balancer41"]
-
-  #############################################################################
-  # Using the file provisioner to SCP this file to the instance 
-  # Copy the configured config file to the ~/.ssh directory so you can clone 
-  # your GitHub account to the server
-  #############################################################################
-
-  provisioner "file" {
-    source      = "./config"
-    destination = "/home/vagrant/.ssh/config"
-  }
-
-  #############################################################################
-  # Using the file provisioner to SCP this file to the instance 
-  # Copy the private key used to clone your source code -- make sure the public
-  # key is in your GitHub account and you using a deploy key
-  #############################################################################
-
-  provisioner "file" {
-    source      = "./id_ed25519_github_key"
-    destination = "/home/vagrant/.ssh/id_ed25519_github_key"
-  }
+  sources = ["source.proxmox-iso.frontend-webserver82","source.proxmox-iso.backend-database82","source.proxmox-iso.load-balancer82","source.proxmox-iso.frontend-webserver83","source.proxmox-iso.backend-database83","source.proxmox-iso.load-balancer83","source.proxmox-iso.frontend-webserver84","source.proxmox-iso.backend-database84","source.proxmox-iso.load-balancer84"]
 
   #############################################################################
   # Using the file provisioner to SCP this file to the instance 
@@ -254,7 +621,7 @@ build {
   #############################################################################
 
   provisioner "file" {
-    source      = "../scripts/proxmox/jammy-services/node-exporter-consul-service.json"
+    source      = "../scripts/proxmox/noble-services/node-exporter-consul-service.json"
     destination = "/home/vagrant/"
   }
 
@@ -264,7 +631,7 @@ build {
   #############################################################################
 
   provisioner "file" {
-    source      = "../scripts/proxmox/jammy-services/consul.conf"
+    source      = "../scripts/proxmox/noble-services/consul.conf"
     destination = "/home/vagrant/"
   }
 
@@ -274,7 +641,7 @@ build {
   #############################################################################
 
   provisioner "file" {
-    source      = "../scripts/proxmox/jammy-services/node-exporter.service"
+    source      = "../scripts/proxmox/noble-services/node-exporter.service"
     destination = "/home/vagrant/"
   }
 
@@ -286,7 +653,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx-firewall-configuration.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_prxmx-firewall-configuration.sh"]
   }
 
   #############################################################################
@@ -296,10 +663,10 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_2204.sh",
-      "../scripts/proxmox/core-jammy/post_install_prxmx_start-cloud-init.sh",
-      "../scripts/proxmox/core-jammy/post_install_prxmx_install_hashicorp_consul.sh",
-    "../scripts/proxmox/core-jammy/post_install_prxmx_update_dns_for_consul_service.sh"]
+    scripts = ["../scripts/proxmox/core-noble/post_install_prxmx_ubuntu_2204.sh",
+      "../scripts/proxmox/core-noble/post_install_prxmx_start-cloud-init.sh",
+      "../scripts/proxmox/core-noble/post_install_prxmx_install_hashicorp_consul.sh",
+    "../scripts/proxmox/core-noble/post_install_prxmx_update_dns_for_consul_service.sh"]
   }
 
   #############################################################################
@@ -310,7 +677,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_change_consul_bind_interface.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_change_consul_bind_interface.sh"]
   }
 
   #############################################################################
@@ -321,7 +688,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_update_dynamic_motd_message.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_update_dynamic_motd_message.sh"]
   }
 
   #############################################################################
@@ -330,7 +697,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/core-jammy/post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh"]
+    scripts         = ["../scripts/proxmox/core-noble/post_install_prxmx_ubuntu_install-prometheus-node-exporter.sh"]
   }
 
   #############################################################################
@@ -347,10 +714,8 @@ build {
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
-      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-webserver.sh",
-    "../scripts/proxmox/three-tier/frontend/application-start.sh"]
-    environment_vars = ["DBUSER=${local.DBUSER}", "DBPASS=${local.DBPASS}", "DATABASE=${local.DATABASE}", "FQDN=${local.FQDN}"]
-    only             = ["proxmox-iso.frontend-webserver41"]
+      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-webserver.sh"]
+    only             = ["proxmox-iso.frontend-webserver82","proxmox-iso.frontend-webserver83","proxmox-iso.frontend-webserver84"]
   }
 
   provisioner "shell" {
@@ -358,7 +723,7 @@ build {
     scripts = ["../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-firewall-open-ports.sh",
     "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-database.sh"]
     environment_vars = ["DBUSER=${local.DBUSER}", "IPRANGE=${local.CONNECTIONFROMIPRANGE}", "DBPASS=${local.DBPASS}"]
-    only             = ["proxmox-iso.backend-database41"]
+    only             = ["proxmox-iso.backend-database82","proxmox-iso.backend-database84","proxmox-iso.backend-database84"]
   }
 
   provisioner "shell" {
@@ -366,7 +731,7 @@ build {
     scripts = ["../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load-balancer-firewall-open-ports.sh",
       "../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load_balancer.sh",
     "../scripts/proxmox/three-tier/loadbalancer/move-nginx-files.sh"]
-    only = ["proxmox-iso.load-balancer41"]
+    only = ["proxmox-iso.load-balancer82","proxmox-iso.load-balancer83","proxmox-iso.load-balancer84"]
   }
 
   provisioner "shell" {
