@@ -5,7 +5,7 @@
 
 # This is the name of the node in the Cloud Cluster where to deploy the virtual instances
 locals {
-  NODENAME = vault("/secret/data/NODENAME", "NODENAME1")
+  NODENAME1 = vault("/secret/data/NODENAME", "NODENAME1")
 }
 
 # This is essentially the USERNAME

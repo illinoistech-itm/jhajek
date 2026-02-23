@@ -34,7 +34,7 @@ source "proxmox-iso" "proxmox-noble-ubuntu" {
 
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
-  node      = "${local.NODENAME}"
+  node      = "${local.NODENAME1}"
   username  = "${local.TOKEN_ID}"
   token     = "${local.TOKEN_VALUE}"
   cpu_type  = "host"
