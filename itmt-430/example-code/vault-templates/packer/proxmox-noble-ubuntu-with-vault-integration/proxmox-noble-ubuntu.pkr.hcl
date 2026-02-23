@@ -26,12 +26,12 @@ source "proxmox-iso" "proxmox-noble-ubuntu" {
     "<f10><wait>"
   ]
   boot_iso {
-    type="scsi"
-    iso_file="local:iso/ubuntu-24.04.3-live-server-amd64.iso"
-    unmount=true
-    iso_checksum="file:http://mirrors.edge.kernel.org/ubuntu-releases/24.04.3/SHA256SUMS"
+    type         = "scsi"
+    iso_file     = "local:iso/ubuntu-24.04.3-live-server-amd64.iso"
+    unmount      = true
+    iso_checksum = "file:http://mirrors.edge.kernel.org/ubuntu-releases/24.04.3/SHA256SUMS"
   }
-  
+
   boot_wait = "5s"
   cores     = "${var.NUMBEROFCORES}"
   node      = "${local.NODENAME}"
@@ -45,7 +45,7 @@ source "proxmox-iso" "proxmox-noble-ubuntu" {
     type         = "virtio"
     io_thread    = true
     format       = "raw"
-    
+
   }
   http_directory    = "subiquity/http"
   http_bind_address = "${var.BIND_ADDRESS}"
@@ -75,8 +75,8 @@ source "proxmox-iso" "proxmox-noble-ubuntu" {
   cloud_init_storage_pool  = "local"
   # io thread option requires virtio-scsi-single controller
   scsi_controller      = "virtio-scsi-single"
-  ssh_password             = "${local.SSHPW}"
-  ssh_username         = "vagrant"
+  ssh_password         = "${local.SSHPW}"
+  ssh_username         = "${local.SSHUSER}"
   ssh_timeout          = "22m"
   template_description = "A Packer template for Ubuntu noble Server integrated with Vault secrets."
   vm_name              = "${var.VMNAME}"

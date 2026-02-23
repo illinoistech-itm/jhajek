@@ -5,23 +5,29 @@
 
 # This is the name of the node in the Cloud Cluster where to deploy the virtual instances
 locals {
-  NODENAME = vault("/secret/data/team00-NODENAME", "NODENAME4")
+  NODENAME = vault("/secret/data/NODENAME", "NODENAME1")
+}
+
+# This is essentially the USERNAME
+locals {
+  TOKEN_ID = vault("/secret/data/ACCESSKEY", "PK-USERNAME")
+}
+
+# This is essentially the PASSWORD or TOKEN VALUE
+locals {
+  TOKEN_VALUE = vault("/secret/data/SECRETKEY", "PK-TOKEN")
 }
 
 locals {
-  USERNAME = vault("/secret/data/team00-username-packer-system", "USERNAME")
+  URL = vault("/secret/data/URL", "SYSTEM82")
 }
 
 locals {
-  PROXMOX_TOKEN = vault("/secret/data/team00-token-packer-system", "TOKEN")
+  SSHPW = vault("/secret/data/SSH", "SSHPASS")
 }
 
 locals {
-  URL = vault("/secret/data/team00-url", "SYSTEM82")
-}
-
-locals {
-  SSHPW = vault("/secret/data/team00-ssh", "SSHPASS")
+  SSHUSER = vault("/secret/data/SSH", "SSHUSER")
 }
 
 variable "MEMORY" {
