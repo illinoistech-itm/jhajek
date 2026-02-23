@@ -462,7 +462,7 @@ variable "URL" {
 
 The next set of values are only for Virtual Machine Template building -- the amount of memory or CPUs doesn't reflect when the instances are deployed. You can experiment with these values, but I didn't notice a large performance increase when I added more memory or CPU.
 
-The disksize you want to leave low, when deploying virtual machine instances from and image, you can increase the disk size, but not decrease it, so best to start low and increase when deploying with Terraform.
+The `disksize` you want to leave low, when deploying virtual machine instances from and image, you can increase the disk size, but not decrease it, so best to start low and increase when deploying with Terraform.
 
 ### Instance Variables
 
