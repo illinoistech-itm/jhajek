@@ -915,18 +915,25 @@ You can open firewall ports per zone as needed - by default everything is locked
 
 Congratulations on getting this far. You have completed the second half of becoming a cloud native Ops Engineer. You are now able to end-to-end deploy Infrastructure as Code and begin now to focus on how to deploy the required application software and configure the needed items.
 
-# COnfiguring the Vault
+# Configuring Your Vault
 
 After you have successfully deployed an VM instance of your Vault template. We want to SSH into the Vault server and configure the Vault server. Your team needs to designate one Vault server (who ever is the current IT/OPs person) to be the official Vault repo.
 
-Once your Vault server has been deployed log in and complete the contents of the Vault tutorial again – this time adding these values below as the initial secrets.  You can and will need to add some additional secrets but can start with these for deployment of infrastructure.
+## Secrets
+
+Refer to the `tooling-assignment-vault` for the instructions to initialize and configure a Vault. Once those steps have been accomplished there are a series of additional secrets that I am going to give you, and there a series of secrets that your team has already outlined will be required for your project. Feel free to add them at this time.
+
+```bash
 vault kv put -mount=secret NODENAME NODENAME1=system82 NODENAME2=system83 NODENAME3=system84 NODENAME4=system149
 vault kv put -mount=secret SSH SSHUSER=vagrant SSHPW=vagrant
 vault kv put -mount=secret URL NODE1=https://system22h082.itm.iit.edu:8006/api2/json 
 vault kv put -mount=secret ACCESSKEY PK-USERNAME='hajek-pk@pve!hajek-itmt4302024' TF-USERNAME='hajek-tf@pve!hajek-itmt4302024'
 vault kv put -mount=secret SECRETKEY PK-TOKEN='7935a1ca-7775-487f-adaa-awwewethgfb67' TF-TOKEN='c4662ce8-a9eb-4424-8573-axdsceeeee140'
 vault kv put -mount=secret DB DBPASS=letmein DBUSER=controller DATABASENAME=foo DBURL=team-00-db.service.console CONNECTIONFROMIPRANGE='10.110.%.%'
+```
 
-Advanced: Vault MySQL integration: MySQL/MariaDB database secrets engine | Vault | HashiCorp Developer
+## Advanced Vault
 
-https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria
+Note that many of the settings in the `tooling-assignment-vault` are open defaults. I would recommend as a team discussing how to reduce your privilleges foot print. There are additional storage engines for Vault. One of the interesting ones is the Vault MySQL integration. The [MySQL/MariaDB database secrets engine](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for MySQL/MariaDB database secrets engine") is a special engine, different from the K/V pairings specifically for storing and retriving database credentials. I would encourage you to dedicate a team member to study how this works and implement this paradigm.
+
+
