@@ -2,4 +2,4 @@
 # This way you are not accidentally committing secrets to version control
 
 instance_type = "t3.micro"
-item_tag      = "module-07"
+item_tag      = "module-08"
