@@ -29,7 +29,7 @@ locals {
 }
 
 locals {
-  URL = vault("/secret/data/URL", "SYSTEM82")
+  URL = vault("/secret/data/URL", "NODE1")
 }
 
 locals {
