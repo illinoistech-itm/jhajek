@@ -936,7 +936,7 @@ path "auth/token/create" { capabilities = ["create", "read", "update", "list"] }
 Refer to the `tooling-assignment-vault` for the instructions to initialize and configure a Vault. Once those steps have been accomplished there are a series of additional secrets that I am going to give you, and there a series of secrets that your team has already outlined will be required for your project. Feel free to add them at this time.
 
 ```bash
-vault kv put -mount=secret NODENAME NODENAME1=system82 NODENAME2=system83 NODENAME3=system84 NODENAME4=system149
+vault kv put -mount=secret NODENAME NODENAME1=system22h082 NODENAME2=system22h083 NODENAME3=system22h084 NODENAME4=system22h149
 vault kv put -mount=secret SSH SSHUSER=vagrant SSHPW=vagrant
 vault kv put -mount=secret URL NODE1=https://system22h082.itm.iit.edu:8006/api2/json 
 vault kv put -mount=secret ACCESSKEY PK-USERNAME='hajek-pk@pve!hajek-itmt4302024' TF-USERNAME='hajek-tf@pve!hajek-itmt4302024'
