@@ -928,7 +928,7 @@ vault kv put -mount=secret NODENAME NODENAME1=system82 NODENAME2=system83 NODENA
 vault kv put -mount=secret SSH SSHUSER=vagrant SSHPW=vagrant
 vault kv put -mount=secret URL NODE1=https://system22h082.itm.iit.edu:8006/api2/json 
 vault kv put -mount=secret ACCESSKEY PK-USERNAME='hajek-pk@pve!hajek-itmt4302024' TF-USERNAME='hajek-tf@pve!hajek-itmt4302024'
-vault kv put -mount=secret SECRETKEY PK-TOKEN='7935a1ca-7775-487f-adaa-awwewethgfb67' TF-TOKEN='c4662ce8-a9eb-4424-8573-axdsceeeee140'
+vault kv put -mount=secret SECRETKEY PK-TOKEN='4365a1ca-7775-487f-adaa-awwewethgfb67' TF-TOKEN='c4662ce8-a9eb-4424-8573-axdsceeeee934'
 vault kv put -mount=secret DB DBPASS=letmein DBUSER=controller DATABASENAME=foo DBURL=team-00-db.service.console CONNECTIONFROMIPRANGE='10.110.%.%'
 ```
 
