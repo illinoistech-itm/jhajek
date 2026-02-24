@@ -27,7 +27,8 @@ data "aws_key_pair" "key_pair" {
     values = [var.item_tag]
   }
 }
-
+# Create a Launch Template
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/launch_template
 resource "aws_launch_template" "lt" {
   name = "lt-project"
   image_id = data.aws_ami.ubuntu.id
@@ -45,6 +46,27 @@ resource "aws_launch_template" "lt" {
       Name = var.item_tag
     }
   }
+}
+##############################################################################
+# Create Auto Scaling Group
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group
+##############################################################################
+resource "aws_autoscaling_group" "as" {
+  availability_zones = ["us-east-2a"]
+  desired_capacity   = 3
+  max_size           = 5
+  min_size           = 2
+
+  launch_template {
+    id      = aws_launch_template.lt.id
+    version = "$Latest"
+  }
+  tag {
+    key                 = "Name"
+    value               = var.item_tag
+    propagate_at_launch = true
+  }
+
 }
 
 ##############################################################################
