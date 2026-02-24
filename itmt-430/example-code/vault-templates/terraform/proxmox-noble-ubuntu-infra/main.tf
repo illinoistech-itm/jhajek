@@ -13,7 +13,7 @@ resource "random_shuffle" "datadisk" {
 }
 
 resource "random_shuffle" "nodename" {
-  input        = [data.vault_generic_secret.target_node.data["SYSTEM82"], data.vault_generic_secret.target_node.data["SYSTEM83"], data.vault_generic_secret.target_node.data["SYSTEM84"]]
+  input        = [data.vault_generic_secret.target_node.data["NODENAME1"], data.vault_generic_secret.target_node.data["NODENAME2"], data.vault_generic_secret.target_node.data["NODENAME3"]]
   result_count = 1
 }
 
@@ -24,19 +24,19 @@ resource "random_shuffle" "nodename" {
 # https://github.com/hashicorp/terraform/issues/16457
 ##############################################################################
 data "vault_generic_secret" "pm_api_url" {
-  path = "secret/team00-url"
+  path = "secret/URL"
 }
 
 data "vault_generic_secret" "pm_api_token_id" {
-  path = "secret/team00-username-tf-system"
+  path = "secret/ACCESSKEY"
 }
 
 data "vault_generic_secret" "pm_api_token_secret" {
-  path = "secret/team00-token-tf-system"
+  path = "secret/SECRETKEY"
 }
 
 data "vault_generic_secret" "target_node" {
-  path = "secret/team00-NODENAME"
+  path = "secret/NODENAME"
 }
 
 resource "proxmox_vm_qemu" "vanilla-server" {
