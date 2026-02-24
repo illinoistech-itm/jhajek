@@ -919,6 +919,18 @@ Congratulations on getting this far. You have completed the second half of becom
 
 After you have successfully deployed an VM instance of your Vault template. We want to SSH into the Vault server and configure the Vault server. Your team needs to designate one Vault server (who ever is the current IT/OPs person) to be the official Vault repo.
 
+## Additional Vault Policies
+
+Your Vault Policy file needs to be extended. In addition to the `path secret/data` we saw in the tooling-assignment, we need to add an `auth/token/create` policy as follows:
+
+```hcl
+# Dev servers have version 2 of KV secrets engine mounted by default, so will
+# need these paths to grant permissions:
+path "secret/data/*" { capabilities = ["read","create", "update","delete"] }
+
+path "auth/token/create" { capabilities = ["create", "read", "update", "list"] }
+```
+
 ## Secrets
 
 Refer to the `tooling-assignment-vault` for the instructions to initialize and configure a Vault. Once those steps have been accomplished there are a series of additional secrets that I am going to give you, and there a series of secrets that your team has already outlined will be required for your project. Feel free to add them at this time.
