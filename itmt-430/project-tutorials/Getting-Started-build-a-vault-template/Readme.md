@@ -698,7 +698,7 @@ terraform {
   required_providers {
     proxmox = {
       source  = "Telmate/proxmox"
-      version = "2.9.11"
+      version = "3.0.2rc-07"
     }
     consul = {
       source  = "hashicorp/consul"
@@ -852,17 +852,17 @@ These values will be interspersed, especially in later sprints where we are depl
 
 Since we are working on a platform and operating on Cloud Native principles, each time you launch instances, they will get a potentially new set of IP addresses. Each virtual machine instance will have three IP addresses, one on each network.
 
-* 192.168.172.0/24
+* 192.168.192.0/22
   * This is the *public* network and routable inside the IIT Network or externally via the VPN.
   * Each IP address has an associated FQDN based in the last octet
-  * Example, if you IP address is 192.168.172.75 - then your FQDN is system75.rice.iit.edu
+  * Example, if you IP address is 192.168.192.75 - then your FQDN is system22h075.rice.iit.edu
 * 10.0.0.0/16
   * This is the non-routable network for running the Ubuntu package manger to get localized updates (not over the external network)
   * This IP is ephemeral and is assigned by DHCP
 * 10.110.0.0/16
   * This is the non-routable network used for service and application discovery
   * Using [consul](https://consul/io "webpage for consul service discovery") and the gossip protocol each instance is assigned an ephemeral DHCP IP address.
-  * This IP is registered with the consul server and all the other nodes and will automatically resolve to the variable: `frontend-yourinitials`.service.consul 
+  * This IP is registered with the consul server and all the other nodes and will automatically resolve to the variable: `frontend-team00.service.consul`
     * You can run the command from your instance CLI: `consul catalog nodes`
   * This allows you to connect your frontend and backend without having to know any IP address or hard code IP addresses
   * This is how cloud native and how applications are deployed
@@ -914,3 +914,19 @@ You can open firewall ports per zone as needed - by default everything is locked
 ## Conculsion
 
 Congratulations on getting this far. You have completed the second half of becoming a cloud native Ops Engineer. You are now able to end-to-end deploy Infrastructure as Code and begin now to focus on how to deploy the required application software and configure the needed items.
+
+# COnfiguring the Vault
+
+After you have successfully deployed an VM instance of your Vault template. We want to SSH into the Vault server and configure the Vault server. Your team needs to designate one Vault server (who ever is the current IT/OPs person) to be the official Vault repo.
+
+Once your Vault server has been deployed log in and complete the contents of the Vault tutorial again – this time adding these values below as the initial secrets.  You can and will need to add some additional secrets but can start with these for deployment of infrastructure.
+vault kv put -mount=secret NODENAME NODENAME1=system82 NODENAME2=system83 NODENAME3=system84 NODENAME4=system149
+vault kv put -mount=secret SSH SSHUSER=vagrant SSHPW=vagrant
+vault kv put -mount=secret URL NODE1=https://system22h082.itm.iit.edu:8006/api2/json 
+vault kv put -mount=secret ACCESSKEY PK-USERNAME='hajek-pk@pve!hajek-itmt4302024' TF-USERNAME='hajek-tf@pve!hajek-itmt4302024'
+vault kv put -mount=secret SECRETKEY PK-TOKEN='7935a1ca-7775-487f-adaa-awwewethgfb67' TF-TOKEN='c4662ce8-a9eb-4424-8573-axdsceeeee140'
+vault kv put -mount=secret DB DBPASS=letmein DBUSER=controller DATABASENAME=foo DBURL=team-00-db.service.console CONNECTIONFROMIPRANGE='10.110.%.%'
+
+Advanced: Vault MySQL integration: MySQL/MariaDB database secrets engine | Vault | HashiCorp Developer
+
+https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria
