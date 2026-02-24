@@ -33,7 +33,7 @@ locals {
 }
 
 locals {
-  SSHPW = vault("/secret/data/SSH", "SSHPASS")
+  SSHPW = vault("/secret/data/SSH", "SSHPW")
 }
 
 locals {
