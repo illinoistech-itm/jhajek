@@ -51,7 +51,6 @@ source "proxmox-iso" "proxmox-noble-ubuntu" {
   http_bind_address = "${var.BIND_ADDRESS}"
   http_port_max     = 9200
   http_port_min     = 9001
-  iso_storage_pool  = "local"
   memory            = "${var.MEMORY}"
 
   network_adapters {
