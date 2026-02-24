@@ -56,6 +56,8 @@ resource "aws_autoscaling_group" "as" {
   desired_capacity   = 3
   max_size           = 5
   min_size           = 2
+  health_check_grace_period = 300
+  health_check_type         = "ELB"
 
   launch_template {
     id      = aws_launch_template.lt.id
@@ -67,6 +69,54 @@ resource "aws_autoscaling_group" "as" {
     propagate_at_launch = true
   }
 
+}
+##############################################################################
+# Attach an elastic-load-balancer to an auto-scaling group 
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_attachment
+##############################################################################
+# Create a new ALB Target Group attachment
+resource "aws_autoscaling_attachment" "example" {
+  autoscaling_group_name = aws_autoscaling_group.as.id
+  lb_target_group_arn    = aws_lb_target_group.test.arn
+}
+
+##############################################################################
+# Create an Elastic Load Balancer
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb
+##############################################################################
+resource "aws_lb" "test" {
+  name               = "test-lb-tf"
+  internal           = false
+  load_balancer_type = "application"
+  security_groups    = [aws_security_group.project.id]
+  subnets            = [aws_subnet.us-east-2a.id, aws_subnet.us-east-2b.id,aws_subnet.us-east-2c.id]
+
+  tags = {
+    Environment = "production"
+  }
+}
+
+# Create ELB listener
+
+resource "aws_lb_listener" "front_end" {
+  load_balancer_arn = aws_lb.test.arn
+  port              = 80
+  protocol          = "HTTP"
+ 
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.front_end.arn
+  }
+}
+##############################################################################
+# Create Target group
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group
+##############################################################################
+resource "aws_lb_target_group" "test" {
+  name     = "tf-example-lb-tg"
+  port     = 80
+  protocol = "HTTP"
+  vpc_id   = aws_vpc.main.id
 }
 
 ##############################################################################
