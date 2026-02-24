@@ -52,7 +52,7 @@ resource "aws_launch_template" "lt" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/autoscaling_group
 ##############################################################################
 resource "aws_autoscaling_group" "as" {
-  availability_zones = ["us-east-2a"]
+  vpc_zone_identifier = [aws_subnet.us-east-2a.id, aws_subnet.us-east-2b.id,aws_subnet.us-east-2c.id]
   desired_capacity   = 3
   max_size           = 5
   min_size           = 2
