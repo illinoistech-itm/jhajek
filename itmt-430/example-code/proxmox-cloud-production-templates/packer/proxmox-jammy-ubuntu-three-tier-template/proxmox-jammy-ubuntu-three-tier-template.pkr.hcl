@@ -28,7 +28,7 @@ source "proxmox-iso" "backend-database82" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/${var.local_iso_name}"
+    iso_file="local:iso/${var.iso_urls}"
     unmount=true
     iso_checksum="${var.iso_checksum}"
   }
@@ -93,7 +93,7 @@ source "proxmox-iso" "frontend-webserver82" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/${var.local_iso_name}"
+    iso_file="local:iso/${var.iso_urls}"
     unmount=true
     iso_checksum="${var.iso_checksum}"
   }
@@ -158,7 +158,7 @@ source "proxmox-iso" "load-balancer82" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/${var.local_iso_name}"
+    iso_file="local:iso/${var.iso_urls}"
     unmount=true
     iso_checksum="${var.iso_checksum}"
   }
@@ -222,7 +222,7 @@ source "proxmox-iso" "backend-database83" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/${var.local_iso_name}"
+    iso_file="local:iso/${var.iso_urls}"
     unmount=true
     iso_checksum="${var.iso_checksum}"
   }
@@ -287,7 +287,7 @@ source "proxmox-iso" "frontend-webserver83" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/${var.local_iso_name}"
+    iso_file="local:iso/${var.iso_urls}"
     unmount=true
     iso_checksum="${var.iso_checksum}"
   }
@@ -352,7 +352,7 @@ source "proxmox-iso" "load-balancer83" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/${var.local_iso_name}"
+    iso_file="local:iso/${var.iso_urls}"
     unmount=true
     iso_checksum="${var.iso_checksum}"
   }
@@ -417,7 +417,7 @@ source "proxmox-iso" "backend-database84" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/${var.local_iso_name}"
+    iso_file="local:iso/${var.iso_urls}"
     unmount=true
     iso_checksum="${var.iso_checksum}"
   }
@@ -482,7 +482,7 @@ source "proxmox-iso" "frontend-webserver84" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/${var.local_iso_name}"
+    iso_file="local:iso/${var.iso_urls}"
     unmount=true
     iso_checksum="${var.iso_checksum}"
   }
@@ -547,7 +547,7 @@ source "proxmox-iso" "load-balancer84" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/${var.local_iso_name}"
+    iso_file="local:iso/${var.iso_urls}"
     unmount=true
     iso_checksum="${var.iso_checksum}"
   }
