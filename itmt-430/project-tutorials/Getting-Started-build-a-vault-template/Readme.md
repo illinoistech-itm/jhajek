@@ -57,7 +57,8 @@ For the department, we have an internal VLAN at the school. The address Range is
 
 An example is `system22h098.itm.iit.edu` has an IP address of `192.168.192.98`.
 
-Important Nodes
+Important Nodes:
+
 *	system22h082.itm.iit.edu
   * Node in cloud platform
 * system22h083.itm.iit.edu
@@ -80,7 +81,7 @@ Each student has an account on our buildserver: `system22h098.itm.iit.edu`. This
 ```bash
 # Replace the value HAWKID with your hawk ID
 # Replace the path (-i) from my identity file to your own identity file
-ssh -i "C:\Users\palad\.ssh\id_ed25519_itmt-430-key" HAWKID@system22h098.itm.iit.edu"
+ssh -i "C:\Users\palad\.ssh\id_ed25519_itmt-430-key" hawkid@system22h098.itm.iit.edu
 ```
 
 Upon successful login and after executing an `ls` command, you will see a credentials file located in your home directory. If you do not see this file contact your instructor.
