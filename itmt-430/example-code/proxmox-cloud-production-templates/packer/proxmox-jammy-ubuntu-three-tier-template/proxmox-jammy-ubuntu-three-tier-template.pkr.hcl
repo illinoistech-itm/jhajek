@@ -728,9 +728,4 @@ build {
     only = ["proxmox-iso.load-balancer82","proxmox-iso.load-balancer83","proxmox-iso.load-balancer84"]
   }
 
-  provisioner "shell" {
-    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
-    scripts         = ["../scripts/proxmox/three-tier/cleanup.sh"]
-  }
-
 }
