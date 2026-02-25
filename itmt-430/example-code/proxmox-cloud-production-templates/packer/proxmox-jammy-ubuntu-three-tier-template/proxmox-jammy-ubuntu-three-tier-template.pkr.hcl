@@ -551,7 +551,7 @@ source "proxmox-iso" "load-balancer84" {
     unmount=true
     iso_checksum="${var.iso_checksum}"
   }
-  boot_wait = "12s"
+  boot_wait = "9s"
   cores     = "${var.NUMBEROFCORES}"
   node      = "${local.NODENAME3}"
   username  = "${local.TOKEN_ID}"
