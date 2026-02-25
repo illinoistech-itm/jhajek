@@ -101,11 +101,11 @@ variable "FE-TAGS" {
 
 variable "iso_checksum" {
   type    = string
-  default = "file:https://mirrors.edge.kernel.org/ubuntu-releases/24.04.5/SHA256SUMS"
+  default = "file:https://mirrors.edge.kernel.org/ubuntu-releases/24.04.3/SHA256SUMS"
 }
 
 # https://developer.hashicorp.com/terraform/language/values/variables#declaring-an-input-variable
 variable "iso_urls" {
   type    = list(string)
-  default = ["https://mirrors.edge.kernel.org/ubuntu-releases/24.04.5/ubuntu-24.04.5-live-server-amd64.iso"]
+  default = ["https://mirrors.edge.kernel.org/ubuntu-releases/24.04.3/ubuntu-24.04.3-live-server-amd64.iso"]
 }
