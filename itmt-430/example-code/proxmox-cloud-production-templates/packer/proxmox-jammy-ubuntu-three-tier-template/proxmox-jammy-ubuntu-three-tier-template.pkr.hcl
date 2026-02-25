@@ -482,7 +482,7 @@ source "proxmox-iso" "frontend-webserver84" {
   ]
   boot_iso {
     type="scsi"
-    iso_file="local:iso/${var.iso_urls}"
+    iso_file="local:iso/${var.iso_name}"
     unmount=true
     iso_checksum="${var.iso_checksum}"
   }
