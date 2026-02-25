@@ -3,8 +3,8 @@ set -e
 set -v
 
 echo "Downloading Prometheus Node Exporter..."
-#wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0/node_exporter-1.4.0.linux-amd64.tar.gz
-wget http://10.0.0.40/node_exporter/v1.4.0/node_exporter-1.4.0.linux-amd64.tar.gz
+wget https://github.com/prometheus/node_exporter/releases/download/v1.4.0/node_exporter-1.4.0.linux-amd64.tar.gz
+#wget http://10.0.0.40/node_exporter/v1.4.0/node_exporter-1.4.0.linux-amd64.tar.gz
 tar -xvzf node_exporter-1.4.0.linux-amd64.tar.gz
 
 echo "Create system account and group node_exporter..."
