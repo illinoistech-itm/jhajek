@@ -18,3 +18,15 @@ if NumberOfInstances == requiredNumberOfInstances:
     grandTotal += 1
 else:
     print("not correct...")
+
+###############################################################################
+# Test 1 check for 3 instances attached to load-balancer
+# https://docs.aws.amazon.com/boto3/latest/reference/services/autoscaling.html
+# https://docs.aws.amazon.com/boto3/latest/reference/services/autoscaling/client/describe_auto_scaling_instances.html
+###############################################################################
+
+client_asg = boto3.client('autoscaling')
+
+response_asg = client_asg.describe_auto_scaling_instances()
+
+print(response_asg)
