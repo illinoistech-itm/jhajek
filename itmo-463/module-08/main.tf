@@ -17,6 +17,14 @@ data "aws_ami" "ubuntu" {
 }
 
 ##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones
+##############################################################################
+
+data "aws_availability_zones" "available" {
+  state = "available"
+}
+
+##############################################################################
 # Data block to retrieve key pair name with particular filter
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/key_pair
 ##############################################################################
