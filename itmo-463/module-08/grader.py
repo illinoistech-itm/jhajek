@@ -10,7 +10,7 @@ response = client_ec2.describe_instances()
 
 print(response)
 
-NumberOfInstances=len(response["Reservations"][0]["Instances"])
+NumberOfInstances=len(response["Reservations"][1]["Instances"])
 print(NumberOfInstances)
 
 if NumberOfInstances == requiredNumberOfInstances:
