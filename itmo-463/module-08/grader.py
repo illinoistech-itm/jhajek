@@ -2,9 +2,10 @@ import boto3
 
 # link to boto resources: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html
 
+AMOUNT_OF_INSTANCES = 3
+
 client_ec2 = boto3.client('ec2')
 
-requiredNumberOfInstances = 3
 grandTotal = 0
 response = client_ec2.describe_instances()
 
@@ -13,7 +14,7 @@ print(response)
 NumberOfInstances=len(response["Reservations"][1]["Instances"])
 print(NumberOfInstances)
 
-if NumberOfInstances == requiredNumberOfInstances:
+if NumberOfInstances == AMOUNT_OF_INSTANCES:
     print("Correct!")
     grandTotal += 1
 else:
@@ -29,4 +30,11 @@ client_asg = boto3.client('autoscaling')
 
 response_asg = client_asg.describe_auto_scaling_instances()
 
-print(response_asg)
+
+
+if (len(response_asg["AutoScalingInstances"]) == AMOUNT_OF_INSTANCES):
+    print("Correct!")
+    grandTotal += 1
+else:
+    print("not correct...")
+
