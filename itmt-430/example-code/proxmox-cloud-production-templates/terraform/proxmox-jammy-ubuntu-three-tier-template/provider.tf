@@ -2,15 +2,15 @@ terraform {
   required_providers {
     proxmox = {
       source  = "Telmate/proxmox"
-      version = "3.0.2-rc01"
+      version = "3.0.2-rc07"
     }
     consul = {
       source  = "hashicorp/consul"
-      version = "2.21.0"
+      version = "2.23.0"
     }
     vault = {
       source  = "hashicorp/vault"
-      version = "4.4.0"
+      version = "5.7.0"
     }
   }
 }
@@ -23,7 +23,7 @@ provider "vault" {}
 # https://registry.terraform.io/providers/Telmate/proxmox/latest/docs
 provider "proxmox" {
   pm_tls_insecure     = true
-  pm_api_url          = data.vault_generic_secret.pm_api_url.data["S41"]
+  pm_api_url          = data.vault_generic_secret.pm_api_url.data["NODE1"]
   pm_api_token_id     = data.vault_generic_secret.pm_api_token_id.data["TF-USERNAME"]
   pm_api_token_secret = data.vault_generic_secret.pm_api_token_secret.data["TF-TOKEN"]
   pm_log_enable       = var.pm_log_enable
@@ -39,6 +39,6 @@ provider "proxmox" {
 # Configure the Consul provider
 provider "consul" {
   # insecure_https = true
-  datacenter = "rice-dc-1"
+  datacenter = "mies-dc-1"
   address    = "${var.consulip-240-prod-system28}:8500"
 }

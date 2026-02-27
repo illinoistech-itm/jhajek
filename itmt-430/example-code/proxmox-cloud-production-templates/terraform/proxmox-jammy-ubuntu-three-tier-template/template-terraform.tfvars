@@ -16,7 +16,7 @@ pm_log_file   = "terraform-plugin-proxmox.log" # (Optional; defaults to terrafor
 # FQDN -- this is needed for the gossip based DNS to work
 ###############################################################################
 frontend-yourinitials            = ""                     # initials to add to make unique systems
-frontend-numberofvms             = 1                      # quantity of that template to launch
+frontend-numberofvms             = 3                      # quantity of that template to launch
 frontend-desc                    = ""                     # What is the purpose of the TF template
 backend-yourinitials             = ""                     # initials to add to make unique systems
 backend-numberofvms              = 1                      # quantity of that template to launch
@@ -25,7 +25,7 @@ lb-yourinitials                  = ""                     # initials to add to m
 lb-numberofvms                   = 1                      # quantity of that template to launch
 lb-desc                          = ""                     # What is the purpose of the TF template
 lb-macaddr                       = ""                     # Class assigned mac address for a public IP for your lb
-consul-service-tag-contact-email = "your-hawk-email-here" # Used as part of the consul service definition as a tag that can be queried
+consul-service-tag-contact-email = "your-full-hawk-email-here" # Used as part of the consul service definition as a tag that can be queried
 ###############################################################################
 # Name the template your created via Packer for Terraform to use to deploy
 # instances from
