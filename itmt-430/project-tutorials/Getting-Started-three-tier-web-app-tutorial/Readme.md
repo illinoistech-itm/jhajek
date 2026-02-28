@@ -99,9 +99,9 @@ Another consideration is how to insert data, create schemas, and version control
 
 flowchart TD
     ExternalInternetRequest <-->|Firewall<br />public zone| A
-    A[Load-Balancer<br />192.168.172.0/24] <-->|Firewall<br />meta-network zone| B{Webserver 01<br />10.110.0.0/16}
-    A[Load-Balancer<br />192.168.172.0/24] <-->|Firewall<br />meta-network zone| C{Webserver 02<br />10.110.0.0/16}
-    A[Load-Balancer<br />192.168.172.0/24] <-->|Firewall<br />meta-network zone| D{Webserver 03<br />10.110.0.0/16}
+    A[Load-Balancer<br />192.168.192.0/22] <-->|Firewall<br />meta-network zone| B{Webserver 01<br />10.110.0.0/16}
+    A[Load-Balancer<br />192.168.192.0/22] <-->|Firewall<br />meta-network zone| C{Webserver 02<br />10.110.0.0/16}
+    A[Load-Balancer<br />192.168.192.0/22] <-->|Firewall<br />meta-network zone| D{Webserver 03<br />10.110.0.0/16}
     B <-->|Firewall<br />meta-network zone| E[Database<br />10.110.0.0/16]
     C <-->|Firewall<br />meta-network zone| E[Database<br />10.110.0.0/16]
     D <-->|Firewall<br />meta-network zone| E[Database<br />10.110.0.0/16]
