@@ -178,19 +178,20 @@ You can increase the number of deployed instances from 1 to and arbitrary amount
 Though in your internal network and for service discovery you do not and won't assign static IP addresses, your external network connections need an static IP so your URL can be found.
 
 | Team Number | MacAddr | Static IP | FQDN |
-| ----------- | -------------| ------------- | ----------------- |
-| team01 | 04:9F:15:00:00:37 | 192.168.172.55 | system55.rice.iit.edu |
-| team02 | 04:9F:15:00:00:38 | 192.168.172.56 | system56.rice.iit.edu |
-| team03 | 04:9F:15:00:00:39 | 192.168.172.57 | system57.rice.iit.edu |
-| team04 | 04:9F:15:00:00:11 | 192.168.172.60 | system60.rice.iit.edu |
-| team05 | 04:9F:15:00:00:12 | 192.168.172.61 | system61.rice.iit.edu |
-| team06 | 04:9F:15:00:00:14 | 192.168.172.63 | system63.rice.iit.edu |
-| team07 | 04:9F:15:00:00:15 | 192.168.172.64 | system64.rice.iit.edu |
-| team09 | 04:9F:15:00:00:16 | 192.168.172.65 | system65.rice.iit.edu |
-| team10 | 04:9F:15:00:00:17 | 192.168.172.66 | system66.rice.iit.edu |
-| team11 | 04:9F:15:00:00:19 | 192.168.172.68 | system68.rice.iit.edu |
-| team12 | 04:9F:15:00:00:20 | 192.168.172.69 | system69.rice.iit.edu |
-| team13 | 04:9F:15:00:00:21 | 192.168.172.70 | system70.rice.iit.edu |
+| ----------- | -------------| ------------- | ----------------- |  
+| team00 | bc:24:11:00:00:1A | 192.168.192.114 | system22h114.itm.iit.edu
+| sp2026-team01	| bc:24:11:00:00:1B	| 192.168.192.115	| system22h115.itm.iit.edu
+| sp2026-team02	| bc:24:11:00:00:1C	| 192.168.192.116	| system22h116.itm.iit.edu
+| sp2026-team03	| bc:24:11:00:00:1D	| 192.168.192.117	| system22h117.itm.iit.edu
+| sp2026-team04	| bc:24:11:00:00:1E	| 192.168.192.118	| system22h118.itm.iit.edu
+| sp2026-team05	| bc:24:11:00:00:1F	| 192.168.192.119	| stem22h119.itm.iit.edu
+| sp2026-team06	| bc:24:11:00:00:20	| 192.168.192.120	| system22h120.itm.iit.edu
+| sp2026-team07	| bc:24:11:00:00:21	| 192.168.192.121	| system22h121.itm.iit.edu
+| sp2026-team08	| bc:24:11:00:00:22	| 192.168.192.122	| system22h122.itm.iit.edu
+| sp2026-team09	| bc:24:11:00:00:23	| 192.168.192.123	| system22h123.itm.iit.edu
+| sp2026-team10	| bc:24:11:00:00:24 | 192.168.192.124	| system22h124.itm.iit.edu
+| sp2026-team11	| bc:24:11:00:00:25	| 192.168.192.125	| system22h125.itm.iit.edu
+| sp2026-team12	| bc:24:11:00:00:26	| 192.168.192.126	| system22h126.itm.iit.edu
 
 All this requires is to modify the `resource` block of your load-balancer in your `main.tf`, the first `network` block.
 
