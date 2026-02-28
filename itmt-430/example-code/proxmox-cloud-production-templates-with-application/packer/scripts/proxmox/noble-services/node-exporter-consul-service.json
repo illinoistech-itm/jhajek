@@ -1,0 +1,7 @@
+{
+    "service":
+    {"name": "node-exporter",
+     "tags": ["node-exporter", "prometheus","HAWKID"],
+     "port": 9100
+    }
+  }
