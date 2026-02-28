@@ -1,0 +1,23 @@
+# General structure created from https://copilot.microsoft.com/shares/SVpE8dfAbZVoWPrHNEicu
+[Unit]
+Description=Gunicorn instance to serve Flask app
+After=network.target
+
+[Service]
+User=flaskuser
+Group=flaskuser
+WorkingDirectory=/home/flaskuser
+# The 0.0.0.0 address will be replaced with a private internal FQDN at runtime
+# by Terraform in the remote exec portion via sed
+# With debugging turned on
+ExecStart=/usr/bin/gunicorn --access-logfile - --error-logfile - --log-level debug --capture-output --certfile=/home/flaskuser/signed.crt --keyfile=/home/flaskuser/signed.key --workers 4 --bind 0.0.0.0:3000 app:app 
+#ExecStart=/usr/bin/gunicorn --certfile=/home/flaskuser/signed.crt --keyfile=/home/flaskuser/signed.key --workers 4 --bind 0.0.0.0:3000 app:app
+
+Restart=always
+RestartSec=5
+KillSignal=SIGQUIT
+TimeoutStopSec=15
+SyslogIdentifier=cyberrange
+
+[Install]
+WantedBy=multi-user.target

@@ -8,6 +8,6 @@
 # In this example, port 3000 is open because ExpressJS server is listening on that port
 # by default -- you should change this to match the port your application is being served on
 
-sudo firewall-cmd --zone=meta-network --add-service=https --permanent
+sudo firewall-cmd --zone=meta-network --add-port=5000/tcp --permanent
 
 sudo firewall-cmd --reload
