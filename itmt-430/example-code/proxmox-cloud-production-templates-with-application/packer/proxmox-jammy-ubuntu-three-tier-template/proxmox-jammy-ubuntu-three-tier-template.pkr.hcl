@@ -744,7 +744,9 @@ build {
     scripts = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
       "../scripts/proxmox/three-tier/frontend/post_install_prxmx_ubuntu_create_service_account_for_flask_app.sh",
       "../scripts/proxmox/three-tier/frontend/post_install_prxmx_ubuntu_install_flask_server_prereqs",
-      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_ubuntu_move_application_files_for_flask_app.sh"]
+      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_ubuntu_move_application_files_for_flask_app.sh",
+      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_ubuntu_update_env_values_from_vault.sh"]
+    environment_vars = ["DBUSER=${local.DBUSER}", "DBPASS=${local.DBPASS}", "DATABASE=${local.DATABASE}", "FQDN=${local.FQDN}"]
     only             = ["proxmox-iso.frontend-webserver82","proxmox-iso.frontend-webserver83","proxmox-iso.frontend-webserver84"]
   }
 
@@ -752,6 +754,7 @@ build {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts = ["../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-firewall-open-ports.sh",
     "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-database.sh"]
+    environment_vars = ["DBUSER=${local.DBUSER}", "IPRANGE=${local.CONNECTIONFROMIPRANGE}", "DBPASS=${local.DBPASS}"]
     only             = ["proxmox-iso.backend-database82","proxmox-iso.backend-database84","proxmox-iso.backend-database84"]
   }
 

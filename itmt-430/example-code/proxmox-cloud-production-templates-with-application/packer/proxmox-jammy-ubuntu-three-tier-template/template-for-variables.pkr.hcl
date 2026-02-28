@@ -40,6 +40,33 @@ locals {
   SSHUSER = vault("/secret/data/SSH", "SSHUSER")
 }
 
+# This will be the non-root user account name
+locals { 
+  DBUSER = vault("/secret/data/DB","DBUSER")
+}
+
+# This will be the Database user (non-root) password setup
+locals {
+  DBPASS = vault("/secret/data/DB","DBPASS")
+}
+
+# This variable is the IP address range to allow your connections
+# The SQL wildcard is the %
+# 10.110.%.%  could also be a FQDN 
+locals {
+  CONNECTIONFROMIPRANGE = vault("/secret/data/DB","CONNECTIONFROMIPRANGE")
+}
+
+# This will be the fully qualified domain name: team-00-be-vm0.service.consul
+locals {
+  FQDN = vault("/secret/data/DB","DBURL") 
+}
+
+# This will be the Database name you default to (like posts or comments or customers)
+locals {
+  DATABASE = vault("/secret/data/DB","DATABASENAME") 
+}
+
 variable "MEMORY" {
   type    = string
   default = "8192"
