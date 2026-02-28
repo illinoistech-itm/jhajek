@@ -211,7 +211,7 @@ network {
   model   = "virtio"
   bridge  = "vmbr0"
   # Replace this mac addr with your assigned Mac
-  macaddr = "04:9F:15:00:00:21"
+  macaddr = "bc:24:11:00:00:1A"
   }
 ```
 
@@ -221,7 +221,6 @@ Now that you have your infrastructure setup, how will we get code from a private
 
 A [file provisioner](https://developer.hashicorp.com/packer/docs/provisioners/file "webpage for packer file provisioner documentation") allows you to securely upload files from your local system to the virtual machine being built. This is a simple way to insert a private key and an ssh config file to a virtual machine template. Later you can use a [shell provisioner](https://developer.hashicorp.com/packer/docs/provisioners/shell "webpage for shell provisioner documentation") to do the cloning of your private team repo.
 
-Taking a look at the example Packer build template, `proxmox-jammy-ubuntu-three-tier-template.pkr.hcl` we added two file provisioners under the `build` block.
 
 ```hcl
 build {
@@ -263,7 +262,7 @@ In the sample code, there are many variables that assume you are using the `team
 * `packer > scripts > proxmox > three-tier > loadbalancer > move-nginx-files.sh`
 
 ```bash
-# This overrides the default nginx conf file enabling loadbalacning and 443 TLS only
+# This overrides the default nginx conf file enabling loadbalancing and 443 TLS only
 sudo cp -v /home/vagrant/team-00/code/nginx/nginx.conf /etc/nginx/
 sudo cp -v /home/vagrant/team-00/code/nginx/default /etc/nginx/sites-available/
 # This connects the TLS certs built in this script with the instances
@@ -338,9 +337,9 @@ The `team-00` directory name needs to be changed as well as the path to the `cod
 ```
 upstream backend {
   ip_hash;  # this allows for a sticky session - requests from origin IP always sent to the same backend
-      server team00-fe-vm0.service.consul:3000;
-      server team00-fe-vm1.service.consul:3000;
-      server team00-fe-vm2.service.consul:3000;
+      server team00-fe-vm0.service.consul:5000;
+      server team00-fe-vm1.service.consul:5000;
+      server team00-fe-vm2.service.consul:5000;
 }
 ```
 
