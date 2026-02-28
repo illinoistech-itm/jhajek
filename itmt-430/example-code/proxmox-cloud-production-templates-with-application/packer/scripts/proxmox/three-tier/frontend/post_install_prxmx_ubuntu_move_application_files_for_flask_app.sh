@@ -18,5 +18,5 @@ sudo chown -R flaskuser:flaskuser /home/flaskuser/*
 # service files are placed by convention
 # Enable Flask App service to boot at start 
 # from /etc/systemd/system/flask-app.service
-sudo mv /home/vagrant/team-00/code/flask-app.service /etc/systemd/system/flask-app.service
+sudo mv /home/vagrant/team-00/code/python-flask/flask-app.service /etc/systemd/system/flask-app.service
 sudo systemctl enable flask-app.service
