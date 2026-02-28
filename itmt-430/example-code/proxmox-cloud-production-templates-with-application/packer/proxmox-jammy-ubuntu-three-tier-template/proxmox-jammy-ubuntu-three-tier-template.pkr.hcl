@@ -609,7 +609,7 @@ build {
   #############################################################################
 
   provisioner "file" {
-    source      = "./template-config"
+    source      = "./config"
     destination = "/home/vagrant/.ssh/config"
   }
 
