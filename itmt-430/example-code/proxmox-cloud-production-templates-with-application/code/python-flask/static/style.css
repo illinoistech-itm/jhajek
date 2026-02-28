@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=BioRhyme&family=Raleway&display=swap');
+
+/* Base styles */
+body.index-page {
+  background-color: #ccffcc; /* light green */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+}
+
+/* Help text */
+.help {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  color: #F2EBEB;
+}
+
+/* Centered welcome message */
+h1 {
+  font-family: 'BioRhyme', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 120px;
+  color: #F2EBEB;
+}
+
+/* Button styles */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+button {
+  font-family: 'Alegreya Sans', sans-serif;
+  background-color: transparent;
+  border: 2px solid #F2EBEB;
+  color: #F2EBEB;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #E0AC87;
+  border-color: #D98845;
+}
+
+/* Styling for the dashboard */
+/* Logo and Header */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #E0AC87;
+}
+
+.header-left, .header-right {
+  flex: 1; /* This makes the left and right containers grow and push the center item */
+}
+
+.header-center {
+  flex: 1; /* This ensures the center container also has some flexibility */
+    text-align: center; /* This centers the text within the container */
+}
+
+.logo {
+  width: 80px;
+}
+
+.dashboard-title {
+  font-family: 'BioRhyme', serif;
+  font-size: 2.5rem;
+  color: #994040;
+  margin: 0;
+  text-align: center;
+}
+
+.header-right {
+  text-align: right; /* Align the help/sign out links to the right */
+}
+
+.header-right a {
+  font-family: 'Raleway', sans-serif;
+    color: #994040;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Dashboard main content */
+body.dashboard-bkgrd {
+  min-height: 100vh;
+  background-color: #ccffcc; /* light green */
+  opacity: 0.9;
+}
+
+.dashboard-main {
+  display: grid;
+  grid-template-areas:
+    "progress labs-and-grades"
+    "sandbox labs-and-grades";
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 40px;
+  align-items: start;
+}
+
+/* Progress section */
+.progress-section {
+  grid-area: progress;
+  padding: 20px;
+  border: 2px solid #D98845;
+  border-radius: 8px;
+  background-color: #F8E8D9;
+}
+
+.progress-section h2 {
+  color: #994040;
+  font-family: 'BioRhyme', serif;
+  margin-top: 0;
+}
+
+.progress-section ul {
+  list-style: none;
+  padding: 0;
+  font-family: 'Alegreya Sans', sans-serif;
+  color: #994040;
+}
+
+/* Sandbox button styling */
+.sandbox-section {
+  grid-area: sandbox;
+  padding: 20px 0;
+}
+
+.sandbox-link {
+  display: inline-block;
+}
+
+.sandbox-button {
+  font-family: 'Alegreya Sans', sans-serif;
+  background-color: #E0AC87;
+  border: 2px solid #D98845;
+  color: #994040;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sandbox-button:hover {
+  background-color: #D98845;
+  color: #F2EBEB;
+}
+
+/* Labs section */
+.labs-grades-container {
+  grid-area: labs-and-grades;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  height: 100%;
+}
+
+/* triangle layout */
+.labs-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  /* width: fit-content; */
+  margin: 0 auto;
+  justify-items: center;
+  align-items: center;
+  padding-top: 0; 
+  position: relative;
+}
+
+.lab-link {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Lab circle buttons */
+.lab-buttons {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #F2EBEB;
+  color: #994040;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  border: 2px solid #D98845;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.lab-buttons:hover {
+  background-color: #994040;
+  color: #F2EBEB;
+}
+
+#lab1-link {
+  grid-area: 1 / 1; /* Row 1, Column 1 (Top-left) */
+  z-index: 3;
+  margin-right: -100px; /* Adjust overlap */
+}
+
+#lab2-link {
+  grid-area: 1 / 3; /* Row 1, Column 3 (top-right) */
+  z-index: 2;
+  margin-left: -100px;
+}
+
+#lab3-link {
+  grid-area: 2 / 2; /* Row 2, Column 2 (Bottom-middle) */
+  z-index: 1;
+  margin-top: -100px;
+}
+
+/* Grades button */
+.grades-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.grades-link {
+  text-decoration: none;
+}
+
+.grades-button {
+  font-family: 'Alegreya Sans', sans-serif;
+  background-color: #E0AC87;
+  border: 2px solid #D98845;
+  color: #994040;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.grades-button:hover {
+  background-color: #994040;
+  color: #F2EBEB;
+}
+
+/* Lab page section */
+body.lab-page {
+  background-color: #944040;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.terminal-container {
+  border: 2px solid #D98845;
+}
+
+.lab-toolbar {
+  background-color: #E0AC87; 
+  color: #994040; 
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid #F2EBEB; 
+  /* position: sticky; */
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lab-toolbar .dropbtn,
+.lab-toolbar .toolbar-right button {
+    background-color: transparent;
+    color: inherit;
+    padding: 10px 15px;
+    border: 1px solid #D98845;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lab-toolbar .dropbtn:hover,
+.lab-toolbar .toolbar-right button:hover {
+    background-color: #D98845;
+    color: #F2EBEB; 
+}
+
+.lab-toolbar .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.lab-toolbar .dropdown-content { 
+    display: none;
+    position: absolute;
+    background-color: #F9F9F9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #D98845;
+}
+
+.lab-toolbar .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.lab-toolbar .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.lab-toolbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.lab-toolbar .toolbar-right {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+}
+
+/* divides the page into 2, the shell and the instructions */
+.lab-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 20px;
+    flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.terminal-container {
+    background-color: #944040;
+    color: #F0F0F0;
+    border: 1px solid #555;
+    border-radius: 8px;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.terminal-container #terminal {
+    flex-grow: 1;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.lab-instructions {
+    background-color: #F07D7D; 
+    color: #994040;
+    border: 1px solid #D98845; /* Border color */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.lab-instructions .steps-list {
+    padding: 20px;
+    margin: 0;
+    list-style-type: decimal; /* numbered list */
+    flex-grow: 1;
+    overflow-y: auto; /* scrolling settings */
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.lab-instructions .steps-list li {
+    margin-bottom: 10px;
+}
+
+.lab-instructions .scroll-controls,
+.lab-instructions .navigation-controls {
+    padding: 15px 20px;
+    border-top: 1px solid #D98845;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; 
+}
+
+.lab-form-group {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#destroy-link {
+    display: block; 
+    margin: 20px; 
+    padding: 10px 20px;
+    background-color: #E0AC87;
+    color: #994040;
+    border: 2px solid #D98845;
+    border-radius: 8px;
+    text-decoration: none; 
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+#destroy-link:hover {
+    background-color: #994040;
+    color: #F2EBEB;
+}

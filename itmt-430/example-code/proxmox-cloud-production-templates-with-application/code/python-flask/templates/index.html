@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>ITMT 430 Project (put your project name here)</title>
+  </head>
+<body class=index-page>
+  {# Create a logo for a software Cyber Range - prompt used in MS Paint Copilot AI image generator #}
+  <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+  <div class="help">
+    Need help? <a href="">Join the Discord!</a>
+  </div>
+
+  <h1>Welcome to the Project!</h1>
+
+  <div class="button-group">
+   <p><a href="{{ url_for('login') }}"> Login Here </a></p>
+  </div>
+</body>
+</html>

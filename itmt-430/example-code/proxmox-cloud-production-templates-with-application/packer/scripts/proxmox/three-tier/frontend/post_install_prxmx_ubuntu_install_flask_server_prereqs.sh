@@ -15,7 +15,7 @@ sudo apt install -y python3-setuptools python3-pip python3-dev
 sudo apt install -y gunicorn python3-flask
 
 # Requirements for Flask app functionality
-sudo apt install -y python3-flask-socketio python3-flask-login python3-requests python3-requests-oauthlib python3-hvac python3-dotenv python3-paramiko python3-jinja2 python3-metaconfig python3-flask-sqlalchemy 
+sudo apt install -y python3-flask-socketio python3-flask-login python3-requests python3-requests-oauthlib python3-dotenv python3-jinja2 python3-metaconfig python3-flask-sqlalchemy 
 
 # Pre-reqs for MySQL database, if using PostgreSQL change these out
 sudo apt install -y python3-pymysql libmysqlclient-dev

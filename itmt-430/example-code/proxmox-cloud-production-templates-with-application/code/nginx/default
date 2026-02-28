@@ -53,16 +53,7 @@ server {
         location /static/ {
              proxy_pass http://backend/static/;
         }
-        location /about/ {
-             proxy_pass http://backend/about/;
-        }
-        location /user/ {
-             proxy_pass http://backend/user/;
-        }
-        location /questions/ {
-             proxy_pass http://backend/questions/;
-        }
-        location /db/ {
-             proxy_pass http://backend/db/;
+        location /welcome/ {
+             proxy_pass http://backend/welcome/;
         }
 }
