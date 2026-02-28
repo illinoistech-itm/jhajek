@@ -763,7 +763,7 @@ build {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts = ["../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load-balancer-firewall-open-ports.sh",
       "../scripts/proxmox/three-tier/loadbalancer/post_install_prxmx_load_balancer.sh",
-   ]
+      "../scripts/proxmox/three-tier/loadbalancer/move-nginx-files.sh"]
     only = ["proxmox-iso.load-balancer82","proxmox-iso.load-balancer83","proxmox-iso.load-balancer84"]
   }
 
