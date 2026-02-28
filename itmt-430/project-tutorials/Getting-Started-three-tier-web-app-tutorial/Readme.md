@@ -111,11 +111,11 @@ This is what your deliverable will look like. With the tools provided, and enoug
 
 ### Make up of the Cloud Lab Network
 
-* 192.168.172.0/24
+* 192.168.192.0/22
   * public zone 
   * network interface ens18
-  * Has FQDN in the form of: `system78.rice.iit.edu` 
-  * Where the `78` is the last octet of its IP address: `192.168.172.78`
+  * Has FQDN in the form of: `system22h078.itm.iit.edu` 
+  * Where the `78` is the last octet of its IP address: `192.168.192.78`
 * 10.0.0.0/16
   * metrics-network zone
   * network interface ens19
@@ -130,11 +130,11 @@ This is what your deliverable will look like. With the tools provided, and enoug
 
 ### Service Discovery using Hashicorp Consul
 
-One of the benefits of building a cloud native application is that the components of the application are not static. You would think this makes things chaos, but actually frees us from having to reserve specific IP address. Having to reserve IP address prevents our applciation from being moved to a different platform or having a test environement and a production environment.
+One of the benefits of building a cloud native application is that the components of the application are not static. You would think this makes things chaos, but actually frees us from having to reserve specific IP address. Having to reserve IP address prevents our application from being moved to a different platform or having a test environment and a production environment.
 
-By the definition of cloud native, resources cannot be staticly defined. Everything then communicates via HTTP, how do we know the IP addresses of the nodes in our applciation? We could use a whole bunch of shell-scripted hackery, but we would quickly find that would run into scale problems.
+By the definition of cloud native, resources cannot be statically defined. Everything then communicates via HTTP, how do we know the IP addresses of the nodes in our application? We could use a whole bunch of shell-scripted hackery, but we would quickly find that would run into scale problems.
 
-You have a problem, that is connecting 3 webserver nodes to our load-balancer and connecting all three webserver nodese to communicate with a database layer. How will you know how to connect to these resoruces?
+You have a problem, that is connecting 3 webserver nodes to our load-balancer and connecting all three webserver nodes to communicate with a database layer. How will you know how to connect to these resources?
 
 Enter [Hashicorp Consul](https://consul.io "webpage for consul.io service discovery"):
 
@@ -154,10 +154,11 @@ Here we are using the `sed` command to find and replace a place holder, `replace
 For example if you system names are:
 
 * team00-lb-vm0.service.consul
-* team00-ws-vm0.service.consul
-* team00-ws-vm1.service.consul
-* team00-ws-vm2.service.consul
-* team00-db-vm0.service.consul
+* team00-fe-vm0.service.consul
+* team00-fe-vm1.service.consul
+* team00-fe-vm2.service.consul
+* team00-be-vm0.service.consul
+* team00-be-vm1.service.consul
 
 You would know these FQDNs ahead of time as you will be defining them in the `terraform.tfvars` under the `yourinitials` variable. Since you know the full domain names, you can add these directly into your Nginx loadbalacner configuration and into your application configuration to connect to the database. The IP resolution is completely transparent, as long as the consul service is running.
 
