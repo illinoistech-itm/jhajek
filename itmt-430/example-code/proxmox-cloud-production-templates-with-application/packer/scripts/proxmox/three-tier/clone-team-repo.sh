@@ -9,7 +9,4 @@ cd /home/vagrant
 ####################################################################
 # Note - change "team-00.git" to be your private repo name (hawk ID) #
 ####################################################################
-ls -l /home/vagrant/.ssh
 sudo -u vagrant git clone git@github.com:illinoistech-itm/team-00.git
-
-# Add commands to copy your code out of the team repo and into the correct location to serve code

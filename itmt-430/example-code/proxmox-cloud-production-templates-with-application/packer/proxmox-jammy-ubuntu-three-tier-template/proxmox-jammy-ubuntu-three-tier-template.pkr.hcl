@@ -604,6 +604,28 @@ build {
 
   #############################################################################
   # Using the file provisioner to SCP this file to the instance 
+  # Copies the needed SSH config file into the VM template so we can clone our
+  # Application source code
+  #############################################################################
+
+  provisioner "file" {
+    source      = "./template-config"
+    destination = "/home/vagrant/.ssh/config"
+  }
+
+  #############################################################################
+  # Using the file provisioner to SCP this file to the instance 
+  # Copy the private key used to clone your source code -- make sure the public
+  # key is in your GitHub account and you using a deploy key
+  #############################################################################
+
+  provisioner "file" {
+    source      = "./id_ed25519_github_key"
+    destination = "/home/vagrant/.ssh/id_ed25519_github_key"
+  }
+
+  #############################################################################
+  # Using the file provisioner to SCP this file to the instance 
   # Add .hcl configuration file to register an instance with Consul for dynamic
   # DNS on the third interface
   #############################################################################
@@ -708,8 +730,21 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
+    scripts         = ["../scripts/proxmox/three-tier/clone-team-repo.sh"]
+  }
+
+  #############################################################################
+  # Uncomment this block to add your own custom bash install scripts
+  # This block you can add your own shell scripts to customize the image you 
+  # are creating
+  #############################################################################
+
+  provisioner "shell" {
+    execute_command = "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'"
     scripts = ["../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-firewall-open-ports.sh",
-      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_frontend-nginx-install.sh"]
+      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_ubuntu_create_service_account_for_flask_app.sh",
+      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_ubuntu_install_flask_server_prereqs",
+      "../scripts/proxmox/three-tier/frontend/post_install_prxmx_ubuntu_move_application_files_for_flask_app.sh"]
     only             = ["proxmox-iso.frontend-webserver82","proxmox-iso.frontend-webserver83","proxmox-iso.frontend-webserver84"]
   }
 
