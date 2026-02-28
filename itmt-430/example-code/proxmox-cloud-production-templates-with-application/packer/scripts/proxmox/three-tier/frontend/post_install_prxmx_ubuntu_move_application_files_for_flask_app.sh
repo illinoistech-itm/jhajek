@@ -4,10 +4,10 @@ set -v
 
 # https://copilot.microsoft.com/shares/nis5fbJZkaup7K34PRKwK
 
-sudo mv /home/vagrant/team00/code/python-flask/app.py /home/flaskuser/app.py
-sudo mv /home/vagrant/team00/code/python-flask/.env /home/flaskuser/.env
-sudo mv /home/vagrant/team00/code/python-flask/static/ /home/flaskuser/static/
-sudo mv /home/vagrant/team00/code/python-flask/templates/ /home/flaskuser/templates/
+sudo mv /home/vagrant/team-00/code/python-flask/app.py /home/flaskuser/app.py
+sudo mv /home/vagrant/team-00/code/python-flask/.env /home/flaskuser/.env
+sudo mv /home/vagrant/team-00/code/python-flask/static/ /home/flaskuser/static/
+sudo mv /home/vagrant/team-00/code/python-flask/templates/ /home/flaskuser/templates/
 
 # How to use an ENV variable in a sed command
 # https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
@@ -18,5 +18,5 @@ sudo chown -R flaskuser:flaskuser /home/flaskuser/*
 # service files are placed by convention
 # Enable Flask App service to boot at start 
 # from /etc/systemd/system/flask-app.service
-sudo mv /home/vagrant/team00/code/flask-app.service /etc/systemd/system/flask-app.service
+sudo mv /home/vagrant/team-00/code/flask-app.service /etc/systemd/system/flask-app.service
 sudo systemctl enable flask-app.service
