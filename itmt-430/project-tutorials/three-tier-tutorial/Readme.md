@@ -76,6 +76,7 @@ Generally Nginx is preferred for any new infrastructure deployments. Often times
 
 For Example:
 
+* Flask/Python running on port 5000
 * Express/NodeJS running on port 3000
 * Tornado/Python running on port 8888
 * Tomcat/Glassfish Java running port 8080
