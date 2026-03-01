@@ -49,6 +49,14 @@ app.config['SQLALCHEMY_DATABASE_URI'] = CONNECTION_STRING
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+class Comment(db.Model):
+    __tablename__ = 'comment'
+    ID = db.Column(db.Integer, primary_key=True)
+    PosterName = db.Column(CHAR(32),nullable=False)
+    Title = db.Column(CHAR(32),nullable=False)
+    Content = db.column(CHAR(500),nullable=False)
+
+'''These are additional examples to show different contexts
 class Users(db.Model):
     __tablename__ = 'Users'  # trying to explicitly set the table name to 'Users' so there is no lowercase
     email = db.Column(db.String, primary_key=True)
@@ -56,7 +64,9 @@ class Users(db.Model):
     id = Column(CHAR(36), unique=True, server_default=func.uuid()) # new id declaration
     last_login = db.Column(db.DateTime, nullable=False)
     admin_status = db.Column(db.Integer, nullable=False)
+'''
 
+'''These are additional examples to show different contexts
 class Labs(db.Model):
     __tablename__ = 'Labs'  # trying to explicitly set the table name so there is no lowercase
     # id = db.Column(db.String(36), unique=True, nullable=False)
@@ -67,12 +77,13 @@ class Labs(db.Model):
     grade = db.Column(db.Float, nullable=True)
     last_attempt = db.Column(db.DateTime, nullable=False)
     email = db.Column(db.String(255), primary_key=True)
-
+'''
 ##############################################################################
 # Create Helper functions for DB access
 # https://copilot.microsoft.com/shares/MiPTDp2uEjHMXBJyHTJBF
 ##############################################################################
 # This will check if the user already exists in the DB else create
+# Working example
 def check_or_create_user(email):
     existing = db.session.execute(select(Users).filter_by(email=email)).scalar_one_or_none()
     if existing:
