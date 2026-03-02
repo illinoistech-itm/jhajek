@@ -117,10 +117,12 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
 
-# OAuth configuration
-authorization_base_url = 
-token_url = 
-redirect_uri = 
+##############################################################################
+# OAuth configuration example -- your REDIRECTION_URI will be different
+##############################################################################
+authorization_base_url = 'https://accounts.google.com/o/oauth2/auth'
+token_url = 'https://accounts.google.com/o/oauth2/token'
+redirect_uri = 'https://system22h200.itm.iit.edu/callback'
 scope = ['profile', 'email']
 
 ##########################
