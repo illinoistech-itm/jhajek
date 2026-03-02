@@ -74,7 +74,7 @@ variable "MEMORY" {
 
 variable "DISKSIZE" {
   type    = string
-  default = "10G"
+  default = "7G"
 }
 
 variable "STORAGEPOOL" {
