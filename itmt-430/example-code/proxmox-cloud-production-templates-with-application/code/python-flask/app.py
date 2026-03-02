@@ -138,7 +138,6 @@ DBPASS = os.getenv('DBPASS')
 DBURL = os.getenv('DBURL')
 DATABASENAME = os.getenv('DATABASENAME')
 
-
 ##########################
 class User(UserMixin):
     pass
