@@ -37,6 +37,19 @@ load_dotenv()
 ##############################################################################
 
 ##############################################################################
+# Read secrets from .env file
+# Make a decision to have .env variables be ALL CAPS or lower case
+##############################################################################
+# Extract username and password
+client_id = os.getenv('client_id')
+client_secret = os.getenv('client_secret')
+APP_SECRET = os.getenv('APP_SECRET')
+DBUSER = os.getenv('DBUSER')
+DBPASS = os.getenv('DBPASS')
+DBURL = os.getenv('DBURL')
+DATABASENAME = os.getenv('DATABASENAME')
+
+##############################################################################
 # Instantiate application
 ##############################################################################
 app = Flask(__name__)
@@ -112,7 +125,7 @@ def create_lab_entry(email,lab_number,launch_id):
 ##############################################################################
 # Flask-Login setup
 ##############################################################################
-app.secret_key = 'APP_SECRET' # Change to point to the vault instance EDIT: Added Manually, add back as 'APP_SECRET'
+app.secret_key = 'APP_SECRET'
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
@@ -124,19 +137,6 @@ authorization_base_url = 'https://accounts.google.com/o/oauth2/auth'
 token_url = 'https://accounts.google.com/o/oauth2/token'
 redirect_uri = 'https://system22h200.itm.iit.edu/callback'
 scope = ['profile', 'email']
-
-##############################################################################
-# Read secrets from .env file
-# Make a decision to have .env variables be ALL CAPS or lower case
-##############################################################################
-# Extract username and password
-client_id = os.getenv('client_id')
-client_secret = os.getenv('client_secret')
-APP_SECRET = os.getenv('APP_SECRET')
-DBUSER = os.getenv('DBUSER')
-DBPASS = os.getenv('DBPASS')
-DBURL = os.getenv('DBURL')
-DATABASENAME = os.getenv('DATABASENAME')
 
 ##########################
 class User(UserMixin):
