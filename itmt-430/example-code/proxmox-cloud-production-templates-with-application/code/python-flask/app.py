@@ -125,6 +125,20 @@ token_url = 'https://accounts.google.com/o/oauth2/token'
 redirect_uri = 'https://system22h200.itm.iit.edu/callback'
 scope = ['profile', 'email']
 
+##############################################################################
+# Read secrets from .env file
+# Make a decision to have .env variables be ALL CAPS or lower case
+##############################################################################
+# Extract username and password
+client_id = os.getenv('client_id')
+client_secret = os.getenv('client_secret')
+APP_SECRET = os.getenv('APP_SECRET')
+DBUSER = os.getenv('DBUSER')
+DBPASS = os.getenv('DBPASS')
+DBURL = os.getenv('DBURL')
+DATABASENAME = os.getenv('DATABASENAME')
+
+
 ##########################
 class User(UserMixin):
     pass
