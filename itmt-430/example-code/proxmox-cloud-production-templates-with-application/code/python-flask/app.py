@@ -97,6 +97,7 @@ class Labs(db.Model):
 ##############################################################################
 # This will check if the user already exists in the DB else create
 # Working example
+'''
 def check_or_create_user(email):
     existing = db.session.execute(select(Users).filter_by(email=email)).scalar_one_or_none()
     if existing:
@@ -121,7 +122,7 @@ def create_lab_entry(email,lab_number,launch_id):
     db.session.add(new_lab)
     db.session.commit()
     return new_lab
-
+'''
 ##############################################################################
 # Flask-Login setup
 ##############################################################################
