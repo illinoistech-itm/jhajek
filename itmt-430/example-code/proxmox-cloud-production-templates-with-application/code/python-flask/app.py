@@ -220,4 +220,4 @@ def logout():
 @app.route("/welcome")
 @login_required
 def welcome():
-    return render_template("progress.html")
+    return render_template("welcome.html")
