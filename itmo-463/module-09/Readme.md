@@ -26,7 +26,11 @@ Using your AWS credentials create terraform code to deploy the 10 requirements l
 * terraform.tfvars
 * variables.tf
 
-You will also create a Python app (or other language) using the AWS API via `boto3`. Write tests to prove all of the assumptions required. Give yourself 1 point for each test that passes. Print out a `grandTotal` score at the end the `grader.py` and use the provided sample code to write out your results.
+You will also create a Python app (or other language) using the AWS API via `boto3`. Write tests to prove all of the assumptions required. 
+
+Write out the requirements in your tests and provide the required and actual numbers of elements. If a test fails, provide the numeric details as well as some hints.
+
+Give yourself 1 point for each test that passes. Print out a `grandTotal` score at the end the `grader.py` and use the provided sample code to write out your results.
 
 ## Deliverable
 
