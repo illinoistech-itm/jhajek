@@ -103,6 +103,19 @@ resource "aws_lb" "test" {
     Environment = "production"
   }
 }
+#################################################################################
+# Retrieve data about ELB
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/lb
+#################################################################################
+data "aws_lb" "test" {
+  arn  = aws_lb.test.arn
+  name = aws_lb.test.name
+}
+
+output "elb_dns" {
+  value = data.aws_lb.test.dns_name
+  description = "The DNS name of the ELB."
+}
 
 # Create ELB listener
 
