@@ -77,16 +77,7 @@ clientrds = boto3.client('rds')
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/describe_launch_templates.html
 # https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds/client/describe_db_instances.html
 
-responseELB = clientelbv2.describe_load_balancers(
- Filters=[
-        {
-            'Name': 'tag:Name',
-            'Values': [
-                tag,
-            ]
-        },
-    ],
-)
+responseELB = clientelbv2.describe_load_balancers()
 
 
 
