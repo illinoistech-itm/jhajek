@@ -100,7 +100,7 @@ resource "aws_lb" "test" {
   subnets            = [aws_subnet.us-east-2a.id, aws_subnet.us-east-2b.id,aws_subnet.us-east-2c.id]
 
   tags = {
-    Environment = "production"
+    Name = var.item_tag
   }
 }
 #################################################################################
