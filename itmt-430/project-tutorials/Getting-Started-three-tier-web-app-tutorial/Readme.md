@@ -48,7 +48,7 @@ For load-balancing there are many options. Most public cloud providers have thei
 
 We will be doing TLS termination and load-balancing via a self-signed certificate, due to the school network being a private network. Looking at any cloud-native application, a load-balancer is at the root.
 
-### Downsides of a Load-Balacner
+### Downsides of a Load Balancer
 
 There is definitely some potential downsides of a loadbalancer. The first thing to know is that now your HTTP requests are not going directly to a webserver, they are being proxied through a load-balancer, which can make debugging more difficult. 
 
@@ -243,7 +243,7 @@ build {
 
   provisioner "file" {
     source      = "./id_ed25519"
-    destination = "/home/vagrant/.ssh/id_ed25519"
+    destination = "/home/vagrant/.ssh/id_ed25519_github_key"
   }
 ```
 
@@ -253,23 +253,7 @@ There is also an additional security step, at the very end of the Packer provisi
 
 ### Values that need to be changed
 
-In the sample code, there are many variables that assume you are using the `team-00` private GitHub repo. I will note the files and lines you need to change. All paths assume you are in the `proxmox-cloud-production-templates` directory.
-
-#### move-nginx-files.sh
-
-* `packer > scripts > proxmox > three-tier > loadbalancer > move-nginx-files.sh`
-
-```bash
-# This overrides the default nginx conf file enabling loadbalancing and 443 TLS only
-sudo cp -v /home/vagrant/team-00/code/nginx/nginx.conf /etc/nginx/
-sudo cp -v /home/vagrant/team-00/code/nginx/default /etc/nginx/sites-available/
-# This connects the TLS certs built in this script with the instances
-sudo cp -v /home/vagrant/team-00/code/nginx/self-signed.conf /etc/nginx/snippets/
-
-sudo systemctl daemon-reload
-```
-
-Update the path to the `code` folder. The `team-00` placeholder should be replaced with your private repo you were given for the class. Adjust the path as well.
+In the sample code, there are many variables that assume you are using the `team-00` private GitHub repo. I will note the files and lines you need to change. All paths assume you are in the `proxmox-cloud-production-templates-with-application` directory.
 
 #### clone-team-repo.sh
 
@@ -281,67 +265,219 @@ sudo -u vagrant git clone git@github.com:illinoistech-itm/team-00.git
 
 Update the repo name to clone -- this should be the provided private repo. Make sure you have generated an additional ed25519 key and placed the public key portion into GitHub as a per repo Deploy Key.
 
-#### application-start.sh
+#### post_install_prxmx_load_balancer.sh
 
-* `packer > scripts > proxmox > three-tier > frontend > application-start.sh`
+* `packer > scripts > proxmox > three-tier > loadbalancer > post_install_prxmx_load_balancer.sh`
 
 ```bash
-cd /home/vagrant/team-00/code/express-static-app/
+sudo apt update
+sudo apt-get install -y nginx
+
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj "/C=US/ST=IL/L=Chicago/O=IIT/OU=rice/CN=iit.edu"
+sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
+
 ```
 
-This line of code needs to be adjusted. Change the `team-00` value to your GitHub repo name and adjust the path to `code` as needed.
+This code will install Nginx and create a self-signed TLS cert and copy it a preconfigured directory that the Nginx configuration file will recognize.
 
-#### post_install_prxmx_frontend-webserver.sh
+#### post_install_prxmx_load-balancer-firewall-open-ports.sh
 
-* `packer > scripts > proxmox > three-tier > frontend > post_install_prxmx_frontend-webserver.sh`
+* `packer > scripts > proxmox > three-tier > loadbalancer > post_install_prxmx_load-balancer-firewall-open-ports.sh`
 
 ```bash
-# Change directory to the location of your JS code
-cd /home/vagrant/team-00/code/express-static-app/
+
+sudo firewall-cmd --zone=public --add-service=https --permanent
+sudo firewall-cmd --reload
 ```
 
-This line of code needs to be adjusted. Change the `team-00` value to your GitHub repo name and adjust the path to `code` as needed.
+Opens the port on the public zone for the `https` protocol or port `443/tcp`. This **cannot** be adjusted for security reasons -- everything must come through port 443 on the public FQDN.
+
+#### move-nginx-files.sh
+
+* `packer > scripts > proxmox > three-tier > loadbalancer > move-nginx-files.sh`
 
 ```bash
-###############################################################################
+# This overrides the default nginx conf file enabling loadbalancing and 443 TLS only
+sudo cp -v /home/vagrant/team-00/code/nginx/nginx.conf /etc/nginx/
+sudo cp -v /home/vagrant/team-00/code/nginx/default /etc/nginx/sites-available/
+# This connects the TLS certs built in this script with the instances
+sudo cp -v /home/vagrant/team-00/code/nginx/self-signed.conf /etc/nginx/snippets/
+sudo cp -v /home/vagrant/team-00/code/nginx/upstream.conf /etc/nginx/conf.d/
+
+```
+
+This path to the code folder will the path of the cloned repo onto a deployed VM. Update the path to the `code` folder. The `team-00` placeholder should be replaced with your private repo you were given for the class. Adjust the path as well.
+
+#### post_install_prxmx_frontend-firewall-open-ports.sh
+
+* `packer > scripts > proxmox > three-tier > frontend > post_install_prxmx_frontend-firewall-open-ports.sh`
+
+You will need to change the port to match your application. 5000 is the default port for Flask and 3000 is the default NodeJS/NextJS.
+
+#### post_install_prxmx_ubuntu_create_service_account_for_flask_app.sh
+
+* `packer > scripts > proxmox > three-tier > frontend > post_install_prxmx_ubuntu_create_service_account_for_flask_app.sh`
+
+```bash
+
+echo "Create system account and group flaskuser ..."
+# Using Ubuntu 22.04 this syntax creates a home directory by default: 
+# /home/flaskuser
+#sudo adduser --system --group flaskuser
+# Using Ubuntu 24.04 default behavior changed to not create a home directory
+# for a system account
+sudo adduser --system --home /home/flaskuser --group flaskuser
+
+```
+
+No changes needed. This file creates a system account/user to run your Flask-app service
+
+#### post_install_prxmx_generate_self_signed_certs.sh
+
+* `packer > scripts > proxmox > three-tier > frontend > post_install_prxmx_generate_self_signed_certs.sh`
+
+```bash
+
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /home/flaskuser/signed.key -out /home/flaskuser/signed.crt -subj "/C=US/ST=IL/L=Chicago/O=IIT/OU=rice/CN=iit.edu"
+sudo openssl dhparam -out /etc/nginx/dhparam.pem 2048
+
+# Change ownership of generated keys so that the user: flaskapp can access them
+sudo chown flaskuser:flaskuser /home/flaskuser/signed.key
+sudo chown flaskuser:flaskuser /home/flaskuser/signed.crt
+
+```
+
+#### post_install_prxmx_ubuntu_install_flask_server_prereqs.sh
+
+* `packer > scripts > proxmox > three-tier > frontend > post_install_prxmx_ubuntu_install_flask_server_prereqs.sh`
+
+```bash
+# Install Flask and dependencies - create service file
+# https://flask.palletsprojects.com/en/stable/installation/#install-flask
+
+sudo apt update
+sudo apt install -y python3-setuptools python3-pip python3-dev
+
+# https://flask.palletsprojects.com/en/stable/deploying/
+# Install Gunicorn and Flask not via Pip but via Ubuntu apt packages
+sudo apt install -y gunicorn python3-flask
+
+# Requirements for Flask app functionality
+sudo apt install -y python3-flask-socketio python3-flask-login python3-requests python3-requests-oauthlib python3-dotenv python3-jinja2 python3-metaconfig python3-flask-sqlalchemy 
+
+# Pre-reqs for MySQL database, if using PostgreSQL change these out
+sudo apt install -y python3-pymysql libmysqlclient-dev
+
+# Install dependencies for application logging to the Journal
+sudo apt install -y libsystemd-dev python3-systemd
+```
+
+#### post_install_prxmx_ubuntu_move_application_files_for_flask_app.sh
+
+* `packer > scripts > proxmox > three-tier > frontend > post_install_prxmx_ubuntu_move_application_files_for_flask_app.sh`
+
+```bash
+sudo mv /home/vagrant/team-00/code/python-flask/app.py /home/flaskuser/app.py
+sudo mv /home/vagrant/team-00/code/python-flask/.env /home/flaskuser/.env
+sudo mv /home/vagrant/team-00/code/python-flask/static/ /home/flaskuser/static/
+sudo mv /home/vagrant/team-00/code/python-flask/templates/ /home/flaskuser/templates/
+
+# How to use an ENV variable in a sed command
+# https://askubuntu.com/questions/76808/how-do-i-use-variables-in-a-sed-command
+# sed -i "s/REPLACE/$APPVAULT_TOKEN/g" /home/flaskuser/.env
+sudo chown -R flaskuser:flaskuser /home/flaskuser/*
+
+# Move the service file into /etc/systemd/system which is where user created
+# service files are placed by convention
+# Enable Flask App service to boot at start 
+# from /etc/systemd/system/flask-app.service
+sudo mv /home/vagrant/team-00/code/python-flask/flask-app.service /etc/systemd/system/flask-app.service
+sudo systemctl enable flask-app.service
+```
+
+You will need to change the value of **team-00** to match the name of your repo. This code moves the cloned source code into the proper place for the Flask server to find the code and begin serving pages.
+
+#### post_install_prxmx_ubuntu_update_env_values_from_vault.sh
+
+* `packer > scripts > proxmox > three-tier > frontend > post_install_prxmx_ubuntu_update_env_values_from_vault.sh`
+
+```bash
+##############################################################################
 # Using Find and Replace via sed to add in the secrets to connect to MySQL
 # There is a .env file containing an empty template of secrets -- essentially
 # this is a hack to pass environment variables into the vm instances
 ###############################################################################
 
-sudo sed -i "s/FQDN=/FQDN=$FQDN/" /home/vagrant/team-00/code/express-static-app/.env
-sudo sed -i "s/DBUSER=/DBUSER=$DBUSER/" /home/vagrant/team-00/code/express-static-app/.env
-sudo sed -i "s/DBPASS=/DBPASS=$DBPASS/" /home/vagrant/team-00/code/express-static-app/.env
-sudo sed -i "s/DATABASE=/DATABASE=$DATABASE/" /home/vagrant/team-00/code/express-static-app/.env
+sudo sed -i "s/FQDN=/FQDN=$FQDN/" /home/flaskuser/.env
+sudo sed -i "s/DBUSER=/DBUSER=$DBUSER/" /home/flaskuser/.env
+sudo sed -i "s/DBPASS=/DBPASS=$DBPASS/" /home/flaskuser/.env
+sudo sed -i "s/DATABASE=/DATABASE=$DATABASE/" /home/flaskuser/.env
 ```
 
-These lines are taking the username and password values from Vault and using the to execute inline mysql commands to create users and databases for the example project. Adjust the paths to the files. **Advanced:** This part could be replaced by using the MySQL Vault secrets backend...
+Add any additional secrets that you need to pass into a `.env` file for your application to work.
+
+#### post_install_prxmx_backend-firewall-open-ports.sh
+
+* `packer > scripts > proxmox > three-tier > backend > post_install_prxmx_backend-firewall-open-ports.sh`
+
+```bash
+
+sudo firewall-cmd --zone=meta-network --add-port=3306/tcp --permanent
+sudo firewall-cmd --reload
+
+```
+
+This is set to open the default port for MariaDB/MySQL on the internal meta-network.  Adjust this port if using PostgreSQL to 5432.
 
 #### post_install_prxmx_backend-database.sh
 
 * `packer > scripts > proxmox > three-tier > backend > post_install_prxmx_backend-database.sh`
 
 ```bash
+# Install and prepare backend database
+echo "############ Installing Maria DB Server #####################"
+sudo apt update
+sudo apt install -y mariadb-server
+echo "############ Install of Maria DB Server Complete #####################"
+# Required to have the mariadb.service start at boot time
+sudo systemctl enable mariadb.service
+sudo systemctl start mariadb.service
+## During the Terraform apply phase -- we will make some run time adjustments
+# to configure the database to listen on the meta-network interface only
+```
+
+Code to install, enable, and start the MariaDB server -- adjust if using PostgreSQL.
+
+#### post_install_prxmx_backend-database-configuration.sh
+
+* `packer > scripts > proxmox > three-tier > backend > post_install_prxmx_backend-database-configuration.sh`
+
+```bash
 # Change directory to the location of your JS code
 cd /home/vagrant/team-00/code/db-samples
+
+# Inline MySQL code that uses the secrets passed via the ENVIRONMENT VARIABLES to create a non-root user
+# IPRANGE is "10.110.%.%"
+echo "Executing inline mysql -e to create user..."
+sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '${DBUSER}'@'${IPRANGE}' IDENTIFIED BY '${DBPASS}';"
+
+# Inlein mysql to allow the USERNAME you passed in via the variables.pkr.hcl file to access the Mariadb/MySQL commandline 
+# for debugging purposes only to connect via localhost (or the mysql CLI)
+
+sudo mysql -e "GRANT SELECT,INSERT,CREATE TEMPORARY TABLES ON posts.* TO '${DBUSER}'@'localhost' IDENTIFIED BY '${DBPASS}';"
+
+# These sample files are located in the mysql directory but need to be part of 
+# your private team repo
+sudo mysql < ./create-database.sql
+sudo mysql < ./create-table.sql
+sudo mysql < ./insert-records.sql
 ```
 
-The `team-00` directory name needs to be changed as well as the path to the `code` directory.
+Using the variables you are passing via the variables.pkr.hcl file, you can access those variables as Linux ENVIRONMENT variables, use find and replace via sed and inline execute an inline mysql command This looks a bit hacky -- but it allows us not to hard code secrets directly into our systems when building your backend template.  
 
-#### nginx.conf
+Note that we have the actual creation commands in `.sql` files that are located in our `code` directory. We are sort of mixing metaphors here because we need the dynamic nature of the CLI to create users based on the variables that are passed into our application.
 
-* `packer > scripts > proxmox > jammy-services > nginx > nginx.conf`
-
-```
-upstream backend {
-  ip_hash;  # this allows for a sticky session - requests from origin IP always sent to the same backend
-      server team00-fe-vm0.service.consul:5000;
-      server team00-fe-vm1.service.consul:5000;
-      server team00-fe-vm2.service.consul:5000;
-}
-```
-
-Update the value of `team-00-fe` to be the value you have or will provide in the `terraform.tfvars` file for this variable: `frontend-yourinitials`. This is how you will assign you Consul network FQDN so that you can resolve the IP in your application.
+Change the **team00** to your repo name. Also take note of the SQL commands to create tables. In this example there is a table named `posts` being created -- adjust as necessary.
 
 ### Troubleshooting
 
