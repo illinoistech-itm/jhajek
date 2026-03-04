@@ -504,6 +504,60 @@ This is important because if you are trying to troubleshoot the system and the s
 
 Another important concern is Linux system service control. How do you start services at boot? How does your application start at boot? You will need to think about creating systemd `.service` files so that your application can start up immediately at boot--without human intervention.
 
+### Advanced Troubleshooting
+
+In Linux using `systemd` there is the `journalctl` command, as well as the venerable `/var/log/` logs location and in addition service managers such as `pm2` have their own shortcut to application logs via the `pm2 logs` command. All of these will help you troubleshoot why application are not loading or installing on your Ubuntu Linux servers.
+
+Use the `firewall-cmd` syntax to interrogate your firewall. You can see the state of your firewall interfaces via these commands:
+
+* `sudo firewall-cmd --zone=public --list-all`
+* `sudo firewall-cmd --zone=meta-network --list-all`
+* [firewalld documentation](https://firewalld.org "webpage for firewalld documentation")
+
+Use the `journalctl`, `systemctl`, and the good old `/var/logs` tools to interrogate your services
+
+* `sudo systemctl status nginx`
+* `sudo journalctl -u nginx.service`
+* `sudo journalctl -u mariadb.service`
+  * `-u` means service name
+* `tail /var/log/nginx/error.log`
+* If using `pm2` it has a built in log feature that captures all the `console.log()` content
+  * `pm2 logs`
+
+You can also SSH in directly from the buildserver to your instances. Just use the private key you have in the directory containing the `main.tf` file
+
+* For example: `ssh -i ./id_ed25519_terraform_deploy_key vagrant@system96.rice.iit.edu`
+  * Assume that system96 is the FQDN of the instance you want to connect to
+* Try to resist using the Proxmox GUI - use as a last resort
+  * Normally you won't have this console access anyway and the only way will be via SSH
+
+### SSH Errors and Warnings
+
+What happens if you try to `ssh` to a system you just deployed and you recieve this error?
+```
+hajek@newyorkphilharmonic:~/team-00/build/example-code/$ ssh -i ./id_ed25519_terraform_deploy_key vagrant@system107.rice.iit.edu
+```
+
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:7a2Ei1s54cU2f+N2kO32I9TIHXwL1VsWyHZnBNP/X5c.
+Please contact your system administrator.
+Add correct host key in /datadisk1/home/hajek/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /datadisk1/home/hajek/.ssh/known_hosts:102
+  remove with:
+  ssh-keygen -f "/datadisk1/home/hajek/.ssh/known_hosts" -R "system107.rice.iit.edu"
+ECDSA host key for system107.rice.iit.edu has changed and you have requested strict checking.
+Host key verification failed.
+```
+
+This is due to strict host key checking and is due to the nature that IP address are correlated with hostnames. This is simply stating that from a previous SSH connection the previous IP/hostname pair doesn't match. And if you deploy many times, this is bound to happen--our network is small only 192.168.192.0/22 IPs. The reason this doesn't happen on major cloud providers is that they have massive IP ranges and the chance of being assigned the same one is very small.
+
 ## Summary and Conclusion
 
 This sprint is a long one, but important as we are beginning to create an actual working cloud native application. Continue to make use of the principles we are learning in the DevOps handbook and keep working at this--soon you will see the fruits of your labors.

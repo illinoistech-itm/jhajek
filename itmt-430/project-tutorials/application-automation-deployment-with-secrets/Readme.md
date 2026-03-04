@@ -148,7 +148,7 @@ Second you have to consider that all cloud-native applications live behind a loa
 
 ### Troubleshooting
 
-In Linux using `systemd` there is the `journalctl` command, as well as the venerable `/var/log/` logs location and in addition service managers such as `pm2` have their own shortcut to applcation logs via the `pm2 logs` command. All of these will help you troubleshoot why applciation are not loading or installing on your Ubuntu Linux servers.
+In Linux using `systemd` there is the `journalctl` command, as well as the venerable `/var/log/` logs location and in addition service managers such as `pm2` have their own shortcut to application logs via the `pm2 logs` command. All of these will help you troubleshoot why application are not loading or installing on your Ubuntu Linux servers.
 
 Use the `firewall-cmd` syntax to interrogate your firewall. You can see the state of your firewall interfaces via these commands:
 
@@ -166,7 +166,7 @@ Use the `journalctl`, `systemctl`, and the good old `/var/logs` tools to interro
 * If using `pm2` it has a built in log feature that captures all the `console.log()` content
   * `pm2 logs`
 
-You can also SSH in directly from the buildserver to your instances. Just use the private key you have in the directory contianing the `main.tf` file
+You can also SSH in directly from the buildserver to your instances. Just use the private key you have in the directory containing the `main.tf` file
 
 * For example: `ssh -i ./id_ed25519_terraform_deploy_key vagrant@system96.rice.iit.edu`
   * Assume that system96 is the FQDN of the instance you want to connect to
