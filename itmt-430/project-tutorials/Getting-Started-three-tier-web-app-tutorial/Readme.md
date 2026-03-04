@@ -253,7 +253,7 @@ There is also an additional security step, at the very end of the Packer provisi
 
 ### Values that need to be changed
 
-In the sample code, there are many variables that assume you are using the `team-00` private GitHub repo. I will note the files and lines you need to change. All paths assume you are in the `proxmox-cloud-production-templates-with-application` directory.
+In the sample code and in the provisioning scripts, there are many variables that assume you are using the **team-00** private GitHub repo. I will note the files and lines you need to change. All paths assume you are in the `proxmox-cloud-production-templates-with-application` directory.
 
 #### clone-team-repo.sh
 
@@ -478,6 +478,21 @@ Using the variables you are passing via the variables.pkr.hcl file, you can acce
 Note that we have the actual creation commands in `.sql` files that are located in our `code` directory. We are sort of mixing metaphors here because we need the dynamic nature of the CLI to create users based on the variables that are passed into our application.
 
 Change the **team00** to your repo name. Also take note of the SQL commands to create tables. In this example there is a table named `posts` being created -- adjust as necessary.
+
+### Modify the upstream.conf
+
+In the `code` > `nginx` > `upstream.conf` directory, you want to modify the `upstream.conf` file to represent your internal FQDN on the consul network. You will also need to adjust the port for your application.
+
+```bash
+upstream backend {
+    ip_hash;  # this allows for a sticky session - requests from origin IP always sent to the same backend
+    server team00-fe-vm0.service.consul:5000;
+    server team00-fe-vm1.service.consul:5000;
+    server team00-fe-vm2.service.consul:5000;
+}
+```
+
+Remember we will be load-balancing on the internal, meta-network. These will be the FQDNs you set in the Terraform phase in the `terraform.tfvars` file and appear in the Proxmox web console. Adjust accordingly.
 
 ### Troubleshooting
 
