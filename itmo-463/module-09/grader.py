@@ -79,8 +79,6 @@ clientrds = boto3.client('rds')
 
 responseELB = clientelbv2.describe_load_balancers()
 
-
-
 ##############################################################################
 print('*' * 79)
 print("Begin tests for Module-09 Assessment...")
