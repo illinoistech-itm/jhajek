@@ -48,3 +48,17 @@ resource "aws_subnet" "us-east-2c" {
     Name = var.item_tag
   }
 }
+
+resource "aws_route_table" "example" {
+  vpc_id = aws_vpc.main.id
+
+  route {
+    cidr_block = aws_vpc.main.cidr_block
+    gateway_id = aws_internet_gateway.gw.id
+  }
+
+
+  tags = {
+    Name = var.item_tag
+  }
+}
