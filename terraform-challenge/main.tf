@@ -1,5 +1,6 @@
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
+  enable_dns_hostnames = true
 }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway
@@ -79,5 +80,16 @@ resource "aws_route_table_association" "us-east-2b" {
 
 resource "aws_route_table_association" "us-east-2c" {
   subnet_id      = aws_subnet.us-east-2c.id
+  route_table_id = aws_route_table.example.id
+}
+
+##############################################################################
+# Main Route Table association
+# Explanation of what a main route table is (hint important)
+# https://docs.aws.amazon.com/vpc/latest/userguide/RouteTables.html
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/main_route_table_association
+##############################################################################
+resource "aws_main_route_table_association" "a" {
+  vpc_id         = aws_vpc.main.id
   route_table_id = aws_route_table.example.id
 }
