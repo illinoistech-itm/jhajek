@@ -11,7 +11,40 @@ resource "aws_internet_gateway" "gw" {
   }
 }
 
-resource "aws_internet_gateway_attachment" "example" {
-  internet_gateway_id = aws_internet_gateway.gw.id
-  vpc_id              = aws_vpc.main.id
+##############################################################################
+# Create an AWS subnet
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet
+##############################################################################
+
+resource "aws_subnet" "us-east-2a" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.0.0.0/24"
+  availability_zone = "us-east-2a"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = var.item_tag
+  }
+}
+
+resource "aws_subnet" "us-east-2b" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.0.16.0/24"
+  availability_zone = "us-east-2b"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = var.item_tag
+  }
+}
+
+resource "aws_subnet" "us-east-2c" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.0.32.0/24"
+  availability_zone = "us-east-2c"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = var.item_tag
+  }
 }
