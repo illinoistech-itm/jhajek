@@ -19,5 +19,5 @@ variable "instance_type" {
 }
 
 variable "item_tag" {
-  type        = string
+  type = string
 }

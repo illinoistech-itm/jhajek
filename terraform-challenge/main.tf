@@ -17,9 +17,9 @@ resource "aws_internet_gateway" "gw" {
 ##############################################################################
 
 resource "aws_subnet" "us-east-2a" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.0.0/24"
-  availability_zone = "us-east-2a"
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.0.0/24"
+  availability_zone       = "us-east-2a"
   map_public_ip_on_launch = true
 
   tags = {
@@ -28,9 +28,9 @@ resource "aws_subnet" "us-east-2a" {
 }
 
 resource "aws_subnet" "us-east-2b" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.16.0/24"
-  availability_zone = "us-east-2b"
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.16.0/24"
+  availability_zone       = "us-east-2b"
   map_public_ip_on_launch = true
 
   tags = {
@@ -39,9 +39,9 @@ resource "aws_subnet" "us-east-2b" {
 }
 
 resource "aws_subnet" "us-east-2c" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = "10.0.32.0/24"
-  availability_zone = "us-east-2c"
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.32.0/24"
+  availability_zone       = "us-east-2c"
   map_public_ip_on_launch = true
 
   tags = {
@@ -53,10 +53,14 @@ resource "aws_route_table" "example" {
   vpc_id = aws_vpc.main.id
 
   route {
-    cidr_block = aws_vpc.main.cidr_block
+    cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.gw.id
   }
 
+  route {
+    cidr_block = aws_vpc.main.cidr_block
+    gateway_id = "local"
+  }
 
   tags = {
     Name = var.item_tag
