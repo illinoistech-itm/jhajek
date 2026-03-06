@@ -10,3 +10,8 @@ resource "aws_internet_gateway" "gw" {
     Name = var.item_tag
   }
 }
+
+resource "aws_internet_gateway_attachment" "example" {
+  internet_gateway_id = aws_internet_gateway.gw.id
+  vpc_id              = aws_vpc.main.id
+}
