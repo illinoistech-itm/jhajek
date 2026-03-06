@@ -66,3 +66,18 @@ resource "aws_route_table" "example" {
     Name = var.item_tag
   }
 }
+
+resource "aws_route_table_association" "us-east-2a" {
+  subnet_id      = aws_subnet.us-east-2a.id
+  route_table_id = aws_route_table.example.id
+}
+
+resource "aws_route_table_association" "us-east-2b" {
+  subnet_id      = aws_subnet.us-east-2b.id
+  route_table_id = aws_route_table.example.id
+}
+
+resource "aws_route_table_association" "us-east-2c" {
+  subnet_id      = aws_subnet.us-east-2c.id
+  route_table_id = aws_route_table.example.id
+}
