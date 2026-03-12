@@ -28,6 +28,8 @@ var (
 
 ## Removal of pre-compiled plugin
 
+The last step is to remove the pre-compiled plugin so it doesn't conflict with our compiled version.
+
 1) `cd ~/.config/packer/plugins/github.com/hashicorp/proxmox`
 1) Final step is to remove the pre-compiled `packer-proxmox-plugin` provided via the `packer init .` command...
 ```bash 
