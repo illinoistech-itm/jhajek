@@ -25,6 +25,10 @@ var (
 1) Run the command: `go build` and go-lang will download dependencies and compile the plugin
 1) Rename the plugin you just built: `packer-proxmox-plugin` to `packer-plugin-proxmox_v1.2.3_x5.0-dev_linux_amd64`
 1) Run the command to *install* and *register* this new plugin : `packer plugins install --path ./packer-plugin-proxmox_v1.2.3_x5.0-dev_linux_amd64 "github.com/hashicorp/proxmox"`
+
+## Removal of pre-compiled plugin
+
+1) `cd ~/.config/packer/plugins/github.com/hashicorp/proxmox`
 1) Final step is to remove the pre-compiled `packer-proxmox-plugin` provided via the `packer init .` command...
 ```bash 
 rm packer-plugin-proxmox_v1.2.3_x5.0_linux_amd64
