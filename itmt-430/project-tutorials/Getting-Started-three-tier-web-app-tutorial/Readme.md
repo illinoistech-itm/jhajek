@@ -191,26 +191,24 @@ Though in your internal network and for service discovery you do not and won't a
 | sp2026-team11	| bc:24:11:00:00:25	| 192.168.192.125	| system22h125.itm.iit.edu
 | sp2026-team12	| bc:24:11:00:00:26	| 192.168.192.126	| system22h126.itm.iit.edu
 
-All this requires is to modify the `resource` block of your load-balancer in your `main.tf`, the first `network` block.
+In your `main.tf` you will see this network block
 
 ```hcl
-network {
-  id     = 0
-  model  = "virtio"
-  bridge = "vmbr0"
- }
+  network {
+    id     = 0
+    model  = "virtio"
+    bridge = "vmbr0"
+    # Edit in the terraform.tfvars and add your assigned mac address
+    macaddr = var.lb-macaddr
+  }
 ```
 
-Should be edited to say this:
+Fill out the provided MAC address in the `lb-macaddr` value in the `terraform.tfvars` file.
 
 ```hcl
-network {
-  id      = 0
-  model   = "virtio"
-  bridge  = "vmbr0"
-  # Replace this mac addr with your assigned Mac
-  macaddr = "bc:24:11:00:00:1A"
-  }
+lb-numberofvms    = 1                          # quantity of that template to launch
+lb-desc           = "Load balancer for team00" # What is the purpose of the TF template
+lb-macaddr        = "bc:24:11:00:00:88"        # Class assigned mac address for a public IP
 ```
 
 ### Getting Application Code from the Team Repo into VM Instances
