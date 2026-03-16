@@ -76,8 +76,6 @@ In the Project Management tool the **25 points** worth of tasks need to have the
 
 ### Required Artifacts
 
-The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points. We will be deploying on the department's internal [See-through Cloud Platform](https://github.com/illinoistech-itm/jhajek/blob/master/See-Through-Cloud/Readme.md "Webpage for see-through cloud platform"). 
-
 * Login
   * Create a [sequence diagram using Mermaid](https://mermaid.ai/open-source/syntax/sequenceDiagram.html "webpage for mermaid sequence diagram") showing your decision logic when a user logs in and how to determine if they are a new user or existing user
   * Integrate Google OAuth for login authentication in your application code
@@ -86,42 +84,32 @@ The professor is prescribing a small number of **additional** required tasks to 
     * Rolling your own Authentication system in 2026 is not a valid choice
 * Choice of Server OS
   * Ubuntu Server 24.04
-* Infrastructure
+* Infrastructure on our production cloud
+  * Localhost is not an acceptable deliverable
   * Build a team Vault server and enter secrets
   * Build virtual machine templates of each system you will need in the 3-tier app as Virtual Machines using [Packer](https://packer.io "webpage for hashicorp packer")
-    * These will be provided
   * Use of [Terraform](https://www.terraform.io/ "webpage for hashicorp terraform") for deploying virtual machine templates
 * You will be assigned API keys and access to the department infrastructure
   * [Proxmox Cloud Platform Cluster](https://proxmox.com "webpage for proxmox virtualization platform")
 * Your team will be assigned a Mac address and a static IP for their load-balancer
 
-### Team Static DHCP IPs
+## Demonstrate Login
 
-| Team Number | MacAddr | Static IP | FQDN |
-| ----------- | -------------| ------------- | ----------------- |  
-| team00 | bc:24:11:00:00:1A | 192.168.192.114 | system22h114.itm.iit.edu
-| sp2026-team01	| bc:24:11:00:00:1B	| 192.168.192.115	| system22h115.itm.iit.edu
-| sp2026-team02	| bc:24:11:00:00:1C	| 192.168.192.116	| system22h116.itm.iit.edu
-| sp2026-team03	| bc:24:11:00:00:1D	| 192.168.192.117	| system22h117.itm.iit.edu
-| sp2026-team04	| bc:24:11:00:00:1E	| 192.168.192.118	| system22h118.itm.iit.edu
-| sp2026-team05	| bc:24:11:00:00:1F	| 192.168.192.119	| stem22h119.itm.iit.edu
-| sp2026-team06	| bc:24:11:00:00:20	| 192.168.192.120	| system22h120.itm.iit.edu
-| sp2026-team07	| bc:24:11:00:00:21	| 192.168.192.121	| system22h121.itm.iit.edu
-| sp2026-team08	| bc:24:11:00:00:22	| 192.168.192.122	| system22h122.itm.iit.edu
-| sp2026-team09	| bc:24:11:00:00:23	| 192.168.192.123	| system22h123.itm.iit.edu
-| sp2026-team10	| bc:24:11:00:00:24 | 192.168.192.124	| system22h124.itm.iit.edu
-| sp2026-team11	| bc:24:11:00:00:25	| 192.168.192.125	| system22h125.itm.iit.edu
-| sp2026-team12	| bc:24:11:00:00:26	| 192.168.192.126	| system22h126.itm.iit.edu
+Project Manager will demonstrate the functioning login, explain the logic behind how it works, and demonstrate a logout and then relogin of a user.
 
 ## Deliverables
 
-* All presentations and critiques are due 10:00am March 02 for Lab section 01 and 10:00 am March 04 for Lab section 02 and 03.
+* All presentations and critiques are due 10:00am March 23rd Lab section 01 and 10:00 am March 25th for Lab section 03 and the internet section 02.
+
+### What is an Artifact?
+
+Your report must include **artifacts**, much like how you use citations in a written paper, you must clearly list each persons assigned tasks for the Sprint from the PM tool, then explain what was completed and explain what wasn't as well as adding artifacts (PM Board Cards, GitHub Commits, and screenshots of components in place).
 
 ### Individual Deliverables
 
 The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work. This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
 
-In the private repo provided to you (with your hawk ID), under the `itmt-430` folder, create another folder that will be named for this sprint, `sprint-02`.  In this directory place a markdown based document named: `Readme.md`. 
+In the private repo provided to you **(with your hawk ID)**, under the `itmt-430` folder, create another folder that will be named for this sprint, `sprint-02`.  In this directory place a markdown based document named: `Readme.md`. 
 
 In the document `Readme.md` include an H1 header called `Sprint-02` and then an H2 header: `Self-Critique` and detailing:
 
@@ -169,7 +157,7 @@ Was your markdown proper and well formed HTML when rendered? | 1
 
 #### Points for Project Manager Presentation
 
-The report will be worth 15 points and will be graded on a scale listed below.  In addition to the critique, the Project Manager must deliver the presentation and will be graded on a 15 point scale for items delivered and 5 points (2.5 points each for the self and group critique).
+The report will be worth 15 points and will be graded on a scale listed below. In addition to the critique, the Project Manager must deliver a live presentation and demonstration and will be graded on a 15 point scale for items delivered and 5 points (2.5 points each for the self and group critique).
 
 Topic | Points Range |
 ----------|------
