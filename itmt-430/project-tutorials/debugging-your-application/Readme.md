@@ -114,6 +114,8 @@ This script will make sure that your project will start at boot. You can use the
 
 ![*PM2 logs output*](./images/pm2.png "PM2 logs output")
 
+![*PM2 Commands output*](./images/pm2commands.png "PM2 Commands output")
+
 ### Common Places to Check in Your Code
 
 Quick note in the example code -- in the Terraform `main.tf` line 323, 324 and 326 have Maria DB specific commands that need to be adjusted if you are using MySQL and definitely if you are using PostgreSQL.
