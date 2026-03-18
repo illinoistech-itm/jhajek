@@ -6,7 +6,7 @@ This document contains the Sprint-03 requirements and deliverables
 
 ## Objectives
 
-* Create and Deploy a three tier web application
+* Engage in troubleshooting of a complex system
 * Integrate and document aspects of the Three Ways into your development process
 * Deploy your schema to a datastore for your application
 * Create software deployment estimates to understand the nature of software production
@@ -106,10 +106,8 @@ The professor is prescribing a small number of **additional** required tasks to 
     * Configure Loadbalancer to connect to webservers using the Consul DNS resolver on the meta-network (10.110.0.0/16)
     * Enable the use of a self-signed https TLS cert
     * Using Nginx and proper routes
-    * Create packer VM templates on both SYSTEM41 and SYSETM42
   * Second tier is the webserver tier
     * Count of 3
-    * Disable direct Public IP access to the 2nd and 3rd tier 
     * Connect to your database-tier using the Consul DNS resolver on the meta-network
     * Adjust links for images to use Minio (on-prem Object storage S3-like cluster)
       * Account credentials will be provided
@@ -119,7 +117,7 @@ The professor is prescribing a small number of **additional** required tasks to 
     * Configure database/datastore to listen for external connection of the meta-network (10.110.0.0/16)
     * Add **25** posts, 15 new posts and 10 replies - as according to your sites specific design
       * Essentially simulate real activity on your site
-      * Use the [Python Faker](https://pypi.org/project/Faker/ "webpage for Python Faker") library to generate fake, but realistic names, states, cities, and so forth
+      * Use the [Python Faker](https://pypi.org/project/Faker/ "webpage for Python Faker") library to generate fake, but realistic names, states, cities, and so forth if needed.
 * User Testing
   * Show use of GitHub Issues for placing tickets to fix bugs
   * UI/UX should be testing the production system, logging in, posting items, etc, etc.
@@ -131,7 +129,6 @@ The professor is prescribing a small number of **additional** required tasks to 
      * Development on Localhost is not acceptable at this point
      * Code will be pulled from GitHub and the system will be configured to start the application at boot
        * You can and will have to do some manual exploration, but back port those changes and always be able to build from scratch a fully working application
-      * Reduce your Packer Template harddisk sizes to 15 GB (possibly 10) to reduce the raw copy time and then expand the disk size in the `remote-exec` portion of the `main.tf` (`lvextend` code is already there for you)
      * Removal of all hard coded secrets
      * Use Vault
        * These can be KV pair secrets
@@ -146,13 +143,13 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ## Deliverables
 
-* All sections presentation and critiques are due Monday March 31st at 10:00am.
+* All sections presentation and critiques are due Monday April 06 at 10:00am for the L01 section and Wednesday April 09th for L02 and L03.
 
 ### Individual Deliverables
 
 The teamwork is cumulative but the grading is individual. Each team member will write a markdown based critique of their own work for the sprint and of their teammates' work. This will be anonymous and the purpose is to highlight good work and where improvement can be had, not to be punitive.
 
-In the private repo provided to you (with your hawk ID), under the itmt-430 folder, create another folder that will be named for this sprint, **sprint-03**.  In this directory place a markdown based document named: **Report.md**
+In the private repo provided to you (with your hawk ID), under the `itmt-430` folder, create another folder that will be named for this sprint, **sprint-03**.  In this directory place a markdown based document named: **Report.md**
 
 In the document **Report.md** include an H1 header called **Sprint-03** and then an H2 header: **Self-Critique** and detailing:
 
