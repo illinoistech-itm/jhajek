@@ -158,7 +158,7 @@ You can add additional openings if needed:
 
 ### The 3Ps Troubleshooting Framework
 
-All my troubleshooting experience in Linux boils down to three things. I have named them the 3Ps. If you have an error message or cannot execute a command–run start with these three troubleshooting steps:
+All my troubleshooting experience in Linux boils down to three things. I have named them the 3Ps. If you have an error message or cannot execute a command, start with these three troubleshooting steps.
 
 * Path
   * If you get an error message telling you that file not found or path does not exist–double check your path. Is the absolute path correct? Is it a relative path problem? Are you on the wrong level of the tree?
