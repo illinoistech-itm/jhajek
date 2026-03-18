@@ -124,11 +124,9 @@ Quick note in the example code -- in the Terraform `main.tf` line 323, 324 and 3
 
 Line 324 is using `sed` to find and replace the setting that makes a DB listen only on localhost -- needs to be changed to listen for external connections on the internal Consul network `.service.consul`. Adjust accordingly the file path at the end of the `sed` command.
 
-### Troubleshooting Franework
+### The 3Ps Troubleshooting Framework
 
-All my troubleshooting experience in Linux boils down to three things. I have named them the
-3P’s (yes I know that they all don’t start with P). If you have an error message or cannot execute a
-command–run down these three troubleshooting steps:
+All my troubleshooting experience in Linux boils down to three things. I have named them the 3Ps. If you have an error message or cannot execute a command–run start with these three troubleshooting steps:
 
 * Path
   * If you get an error message telling you that file not found or path does not exist–double check your path. Is the absolute path correct? Is it a relative path problem? Are you on the wrong level of the tree?
