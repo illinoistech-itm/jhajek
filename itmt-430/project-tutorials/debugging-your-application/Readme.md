@@ -116,13 +116,45 @@ This script will make sure that your project will start at boot. You can use the
 
 ![*PM2 Commands output*](./images/pm2commands.png "PM2 Commands output")
 
-### Common Places to Check in Your Code
+## Common Places to Check in Your Code
 
 Quick note in the example code -- in the Terraform `main.tf` line 323, 324 and 326 have Maria DB specific commands that need to be adjusted if you are using MySQL and definitely if you are using PostgreSQL.
 
 ![*Main.tf Lines 323,324, and 326*](./images/main.png "Main.tf Lines 323,324, and 326")
 
 Line 324 is using `sed` to find and replace the setting that makes a DB listen only on localhost -- needs to be changed to listen for external connections on the internal Consul network `.service.consul`. Adjust accordingly the file path at the end of the `sed` command.
+
+### The Firewall
+
+First tip -- *do not* turn it off, ever. That isn't a solution as you will **never** run your application with the firewall off. Linux uses the `firewalld` firewall on all systemd based systems. The command `firewall-cmd` is the syntax to interrogate your firewall.
+
+Remember we have three networks:
+
+* `192.168.192.0/22`
+  * `zone=public`
+  * Attached to network interface `ens18`
+  * The public facing network
+* `10.0.0.0/16`
+  * `zone=metrics-network`
+  * Attached to network interface `ens19`
+  * This is the internal Ubuntu Mirror and Metrics Collection Network
+* `10.110.0.0/16`
+  * `zone=meta-network`
+  * Attached to network interface `ens20`
+  * This is the internal Gossip Network that does our DNS lookup via [Consul](https://developer.hashicorp.com/consul "Website for Hashicorp Consul").
+
+
+You can check the state of your firewall zones via these commands:
+
+* `sudo firewall-cmd --zone=public --list-all`
+* `sudo firewall-cmd --zone=meta-network --list-all`
+
+You can add additional openings if needed:
+
+* `sudo firewall-cmd --zone=meta-network --add-port=5000/tcp --permanent`
+* `sudo firewall-cmd --reload`
+
+[firewalld documentation](https://firewalld.org/ "website for firrewalld documentation")
 
 ### The 3Ps Troubleshooting Framework
 
