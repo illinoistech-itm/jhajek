@@ -86,6 +86,34 @@ Nginx doesn't use the systemd journal for its logs. It places them in the tradit
 * `/var/log/nginx/access.log`
 * `/var/log/nginx/error.log`
 
+## Using PM2 to control Next.JS services
+
+In the provisioner shell script: `post_install_prxmx_frontend-install_nextjs_service_dependencies.sh` 
+
+```bash
+#!/bin/bash
+
+# PM2.io is a process manager for javascript applications
+sudo npm install -g --save pm2
+
+# This command uses pm2 to start your next.js application change the value 
+# "project2" to your project name
+pm2 start npm --name "project2" -- run start
+
+sudo -u vagrant pm2 save
+sudo -u vagrant pm2 startup
+```
+
+This script will make sure that your project will start at boot. You can use the pm2 options -- much like systemctl and the journalctl. The `pm2 status` command tells you if the application is running.
+
+* `pm2 status`
+* `pm2 logs`
+  * This will show you error logs and output logs
+* `pm2 start`
+* `pm2 stop`
+
+![*PM2 logs output*](./images/pm2.png "PM2 logs output")
+
 ### Common Places to Check in Your Code
 
 Quick note in the example code -- in the Terraform `main.tf` line 323, 324 and 326 have Maria DB specific commands that need to be adjusted if you are using MySQL and definitely if you are using PostgreSQL.
