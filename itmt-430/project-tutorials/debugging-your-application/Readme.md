@@ -121,3 +121,19 @@ Quick note in the example code -- in the Terraform `main.tf` line 323, 324 and 3
 ![*Main.tf Lines 323,324, and 326*](./images/main.png "Main.tf Lines 323,324, and 326")
 
 Line 324 is using `sed` to find and replace the setting that makes a DB listen only on localhost -- needs to be changed to listen for external connections on the internal Consul network `.service.consul`. Adjust accordingly the file path at the end of the `sed` command.
+
+### Troubleshooting Franework
+
+All my troubleshooting experience in Linux boils down to three things. I have named them the
+3P’s (yes I know that they all don’t start with P). If you have an error message or cannot execute a
+command–run down these three troubleshooting steps:
+
+* Path
+  * If you get an error message telling you that file not found or path does not exist–double check your path. Is the absolute path correct? Is it a relative path problem? Are you on the wrong level of the tree?
+* Permission
+  * Every file has permission on what is allowed to be done with it based on a simple access control of read write and execute. Maybe you don’t have permission to write and therefore can’t delete a file. Perhaps the file is owned by someone else and they didn’t give you permission. Check permissions via ls -la or see if you need sudo.
+* dePendencies
+  * Are all the correct software dependencies installed? Perhaps you are missing a library or have an incompatible version that is preventing a tool from running?
+  * If you try to run the commmand `btop` or `links 127.0.0.1` and you don’t have these packages installed, you will receive error messages.
+  * If you don’t have the gcc compiler installed you won’t be able to compile and build the VirtualBox Guest Additions, which will be a dependency error.
+* All else fails and you still have a problem, see if it is a full moon outside.
