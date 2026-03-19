@@ -177,19 +177,19 @@ Though in your internal network and for service discovery you do not and won't a
 
 | Team Number | MacAddr | Static IP | FQDN |
 | ----------- | -------------| ------------- | ----------------- |  
-| team00 | bc:24:11:00:00:1A | 192.168.192.114 | system22h114.itm.iit.edu
-| sp2026-team01	| bc:24:11:00:00:1B	| 192.168.192.115	| system22h115.itm.iit.edu
-| sp2026-team02	| bc:24:11:00:00:1C	| 192.168.192.116	| system22h116.itm.iit.edu
-| sp2026-team03	| bc:24:11:00:00:1D	| 192.168.192.117	| system22h117.itm.iit.edu
-| sp2026-team04	| bc:24:11:00:00:1E	| 192.168.192.118	| system22h118.itm.iit.edu
-| sp2026-team05	| bc:24:11:00:00:1F	| 192.168.192.119	| stem22h119.itm.iit.edu
-| sp2026-team06	| bc:24:11:00:00:20	| 192.168.192.120	| system22h120.itm.iit.edu
-| sp2026-team07	| bc:24:11:00:00:21	| 192.168.192.121	| system22h121.itm.iit.edu
-| sp2026-team08	| bc:24:11:00:00:22	| 192.168.192.122	| system22h122.itm.iit.edu
-| sp2026-team09	| bc:24:11:00:00:23	| 192.168.192.123	| system22h123.itm.iit.edu
-| sp2026-team10	| bc:24:11:00:00:24 | 192.168.192.124	| system22h124.itm.iit.edu
-| sp2026-team11	| bc:24:11:00:00:25	| 192.168.192.125	| system22h125.itm.iit.edu
-| sp2026-team12	| bc:24:11:00:00:26	| 192.168.192.126	| system22h126.itm.iit.edu
+| team00 | bc:24:11:00:00:52 | 192.168.192.114 | system22h114.itm.iit.edu
+| sp2026-team01	| bc:24:11:00:00:53	| 192.168.192.115	| system22h115.itm.iit.edu
+| sp2026-team02	| bc:24:11:00:00:54	| 192.168.192.116	| system22h116.itm.iit.edu
+| sp2026-team03	| bc:24:11:00:00:55	| 192.168.192.117	| system22h117.itm.iit.edu
+| sp2026-team04	| bc:24:11:00:00:56	| 192.168.192.118	| system22h118.itm.iit.edu
+| sp2026-team05	| bc:24:11:00:00:57	| 192.168.192.119	| stem22h119.itm.iit.edu
+| sp2026-team06	| bc:24:11:00:00:58	| 192.168.192.120	| system22h120.itm.iit.edu
+| sp2026-team07	| bc:24:11:00:00:59	| 192.168.192.121	| system22h121.itm.iit.edu
+| sp2026-team08	| bc:24:11:00:00:60	| 192.168.192.122	| system22h122.itm.iit.edu
+| sp2026-team09	| bc:24:11:00:00:61	| 192.168.192.123	| system22h123.itm.iit.edu
+| sp2026-team10	| bc:24:11:00:00:62 | 192.168.192.124	| system22h124.itm.iit.edu
+| sp2026-team11	| bc:24:11:00:00:63	| 192.168.192.125	| system22h125.itm.iit.edu
+| sp2026-team12	| bc:24:11:00:00:64	| 192.168.192.126	| system22h126.itm.iit.edu
 
 In your `main.tf` you will see this network block
 
