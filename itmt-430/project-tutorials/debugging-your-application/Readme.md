@@ -156,6 +156,24 @@ You can add additional openings if needed:
 
 [firewalld documentation](https://firewalld.org/ "website for firrewalld documentation")
 
+## Nginx Routes
+
+Due to the nature of our three-tier application, we are not making direct connections to frontend web-server. We are connecting through a load-balancer. That adds an extra layer for debugging. You will need/want to take a look at the routes in the Nginx `default` file. The routes there are from the example-code and you will need to adjust -- especially for static elements.
+
+* `example-code > proxmox-cloud-production-templates-with-application > code > nginx > default`
+
+Starting at about line 52:
+
+```
+# https://serverfault.com/questions/932628/how-to-handle-relative-urls-correctly-with-a-nginx-reverse-proxy
+location /static/ {
+      proxy_pass http://backend/static/;
+}
+location /welcome/ {
+      proxy_pass http://backend/welcome/;
+}
+```
+
 ### The 3Ps Troubleshooting Framework
 
 All my troubleshooting experience in Linux boils down to three things. I have named them the 3Ps. If you have an error message or cannot execute a command, start with these three troubleshooting steps.
