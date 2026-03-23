@@ -93,30 +93,20 @@ In the Project Management tool the *25 points* worth of tasks need to have the p
 
 ### Required Artifacts
 
-The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points. Each item listed here will contain multiple sub-steps. For instance deploying a database requires you to modify the database to listen for external connections, not on localhost.
+The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points. Each item listed here will contain multiple sub-steps.
 
-* Login
-  * Use a google account and Google OAuth for login authentication in your application code
-* Infrastructure
-  * Build each server template needed in the 3-tier app as Virtual Machines
-  * Use assigned MAC address to get a static IP
-  * Open proper firewall ports and firewall logic
-* 3-Tier Application
-  * First tier is a Load Balancer
-    * Configure Loadbalancer to connect to webservers using the Consul DNS resolver on the meta-network (10.110.0.0/16)
-    * Enable the use of a self-signed https TLS cert
-    * Using Nginx and proper routes
-  * Second tier is the webserver tier
-    * Count of 3
-    * Connect to your database-tier using the Consul DNS resolver on the meta-network
-    * Adjust links for images to use Minio (on-prem Object storage S3-like cluster)
+* Demonstrate the completion of all Sprint-02 requirements
+* Demonstrate UI/UX design and site compliance
+* Implement Database replication
+  * Read Replicas
+  * Adjust your code and secrets to have all write operations sent to the Main Database
+  * Adjust your code and secrets to have all read operations sent to the Read Replica Database
+* Implement the use of Minio for media storage
       * Account credentials will be provided
       * [SDK for multi-language Minio access](https://min.io/docs/minio/linux/developers/minio-drivers.html "webpage for Minio SDK")
-  * Third tier is a replicated database
-    * Add a read-replica to your database tier
-    * Configure database/datastore to listen for external connection of the meta-network (10.110.0.0/16)
-    * Add **25** posts, 15 new posts and 10 replies - as according to your sites specific design
+* Add **25** simulated users and posts/operations into your site, 15 new posts and 10 replies - as according to your sites specific design
       * Essentially simulate real activity on your site
+      * You need accounts to tie action to -- items do not just appear on a site
       * Use the [Python Faker](https://pypi.org/project/Faker/ "webpage for Python Faker") library to generate fake, but realistic names, states, cities, and so forth if needed.
 * User Testing
   * Show use of GitHub Issues for placing tickets to fix bugs
@@ -124,17 +114,17 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Show all issues filed and corresponding GitHub artifact and note if it is fixed
 * Deployment
   * All work needs to be tested and developed on the Proxmox Cloud Platform
-     * You will have to build often as code changes
-     * Expect 10+ deployments of your site (this is normative)
-     * Development on Localhost is not acceptable at this point
-     * Code will be pulled from GitHub and the system will be configured to start the application at boot
-       * You can and will have to do some manual exploration, but back port those changes and always be able to build from scratch a fully working application
-     * Removal of all hard coded secrets
-     * Use Vault
-       * These can be KV pair secrets
-       * [AppRole Secrets](https://developer.hashicorp.com/vault/docs/auth/approle "webpage for App Role secrets")
-       * [MySQL Secrets](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for MySQL secret engine")
-* Usage of site
+    * You will have to build often as code changes
+    * Expect multiple deployments of your site (this is normative)
+    * Development on Localhost is not acceptable at this point
+    * Code will be pulled from GitHub and the system will be configured to start the application at boot
+      * You can and will have to do some manual exploration, but back port those changes and always be able to build from scratch a fully working application
+    * Removal of all hard coded secrets
+* Use Vault
+  * These can be KV pair secrets
+  * [AppRole Secrets](https://developer.hashicorp.com/vault/docs/auth/approle "webpage for App Role secrets")
+  * [MySQL Secrets](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for MySQL secret engine")
+* Deliverable Demonstration: Usage of site
   * Each team member demonstrate a successful login of a user and the equivalent of these actions per your site
     * Post a question
     * Answer a question
@@ -143,7 +133,7 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ## Deliverables
 
-* All sections presentation and critiques are due Monday April 06 at 10:00am for the L01 section and Wednesday April 09th for L02 and L03.
+* All sections presentation and critiques are due Monday April 06 at 10:00am for every team (including L02 and L03).
 
 ### Individual Deliverables
 
@@ -217,7 +207,7 @@ Clear transition to a conclusion and small summary of presentation | 1
 
 ### Presentation Requirements
 
-* The presentation can be live or pre-recorded but only the Project Manager does the presenting
+* Project Manager does the presenting
   * Others need to help prepare it but only the PM will do the presenting
   * Presentation is not a slide show, but a verbal explaining and demonstration of the artifacts produced
   * We need to see your face
