@@ -41,3 +41,8 @@ echo "S3_BUCKET_NAME='${BUCKETNAME}'" >> /home/vagrant/team02m-2024/code/svelte/
 
 [JavaScript SDK](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/javascript/ "webpage for JavaScript SDK"). Same as the Python documentation - you will be working with the `get_presigned_url` function.
 
+### Accessing the Min.io Portal
+
+The Minio Web Portal can be accessed at: [https://system22h026.itm.iit.edu](https://system22h026.itm.iit.edu "webpage for access").
+
+![Minio Web Portal](./images/minio.png "image of minio web portal")
