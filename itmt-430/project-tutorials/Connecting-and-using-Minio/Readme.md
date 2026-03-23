@@ -43,6 +43,6 @@ echo "S3_BUCKET_NAME='${BUCKETNAME}'" >> /home/vagrant/team02m-2024/code/svelte/
 
 ### Accessing the Min.io Portal
 
-The Minio Web Portal can be accessed at: [https://system22h026.itm.iit.edu](https://system22h026.itm.iit.edu "webpage for access").
+The Minio Web Portal can be accessed at: [https://system22h026.itm.iit.edu](https://system22h026.itm.iit.edu "webpage for access") using the credentials received in the home directory of your buildserver account, named: login.txt.
 
 ![Minio Web Portal](./images/minio.png "image of minio web portal")
