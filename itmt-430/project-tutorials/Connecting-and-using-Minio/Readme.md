@@ -46,3 +46,7 @@ echo "S3_BUCKET_NAME='${BUCKETNAME}'" >> /home/vagrant/team02m-2024/code/svelte/
 The Minio Web Portal can be accessed at: [https://system22h026.itm.iit.edu](https://system22h026.itm.iit.edu "webpage for access") using the credentials received in the home directory of your buildserver account, named: login.txt.
 
 ![Minio Web Portal](./images/minio.png "image of minio web portal")
+
+### Troubleshooting
+
+The Minio Web Portal for the moment is a self-signed certificate. This will cause an issue when you are accessing the application in your web-browser and for your connection constructor. There is a `cert_check` boolean in your connection string header that can be set to `False`. Do not disable **https**.
