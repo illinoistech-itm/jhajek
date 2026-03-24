@@ -168,6 +168,18 @@ All databases are configured by default to listen for connection on 127.0.0.1 (l
 
 ![*Database listen on external connections*](images/db-replace.png "image of listening on external ports")
 
+## Vault Tokens Expiring
+
+When you created your token in Vault using this command: 
+
+```vault token create -ttl=21600m -policy=ssh-secret-policy````
+
+This will create a token that will be valid for only 15 days or 21600 minutes, your tokens will begin to expire and will have to reissued.  Tokens can be created with a `-renewable` option.
+
+```-renewable (bool: true) - Allow the token to be renewed up to it's maximum TTL.```
+
+This can be done with the command: `vault token renew -accessor <token_accessor>`, the token_accessor is different from the token itself. This value was generated upon a successful `vault token create`
+
 ## Nginx Routes
 
 Due to the nature of our three-tier application, we are not making direct connections to frontend web-server. We are connecting through a load-balancer. That adds an extra layer for debugging. You will need/want to take a look at the routes in the Nginx `default` file. The routes there are from the example-code and you will need to adjust -- especially for static elements.
