@@ -758,7 +758,7 @@ build {
                "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-database.sh",
                "../scripts/proxmox/three-tier/backend/post_install_prxmx_backend-database-configuration.sh"]
     environment_vars = ["DBUSER=${local.DBUSER}", "IPRANGE=${local.CONNECTIONFROMIPRANGE}", "DBPASS=${local.DBPASS}"]
-    only             = ["proxmox-iso.backend-database82","proxmox-iso.backend-database84","proxmox-iso.backend-database84"]
+    only             = ["proxmox-iso.backend-database82","proxmox-iso.backend-database83","proxmox-iso.backend-database84"]
   }
 
   provisioner "shell" {
