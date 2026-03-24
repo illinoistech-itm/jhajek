@@ -162,6 +162,12 @@ Due to the nature of our cloud requesting IPs via DHCP, the university has a tim
 
 ![*DHCP Timeout symptoms*](./images/dhcp-timeout.png "image of DHCP timeout")
 
+## Exposing Your Database to listen outside of 127.0.0.1
+
+All databases are configured by default to listen for connection on 127.0.0.1 (localhost) only. We will be configuring our databases to listen only on the `*.service.consul` network. Take a look at line 324 in your `main.tf` -- here you will find sample code using `sed` to find and replace the listen on localhost value and change it to listen on the FQDN of the `*.service.consul` network. The example file is doing this for MariaDB -- which if you are not using adjust the destination file accordingly.
+
+![*Database listen on external connections*](images/db-replace.png "image of listening on external ports")
+
 ## Nginx Routes
 
 Due to the nature of our three-tier application, we are not making direct connections to frontend web-server. We are connecting through a load-balancer. That adds an extra layer for debugging. You will need/want to take a look at the routes in the Nginx `default` file. The routes there are from the example-code and you will need to adjust -- especially for static elements.
