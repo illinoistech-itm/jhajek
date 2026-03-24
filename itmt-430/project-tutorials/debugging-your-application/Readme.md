@@ -156,6 +156,12 @@ You can add additional openings if needed:
 
 [firewalld documentation](https://firewalld.org/ "website for firrewalld documentation")
 
+### DHCP timeouts
+
+Due to the nature of our cloud requesting IPs via DHCP, the university has a timeout feature to prevent DHCP exhaustion attacks. When the class is working together this can sometimes be triggered. The University is aware of this and has made some adjustments. But if you the results of a `terraform apply` look like the image below, the best tactic is to issue the `terraform apply` again and that amount of time is usually enough backoff to get a DHCP address.
+
+![*DHCP Timeout symptoms*](./images/dhcp-timeout.png "image of DHCP timeout")
+
 ## Nginx Routes
 
 Due to the nature of our three-tier application, we are not making direct connections to frontend web-server. We are connecting through a load-balancer. That adds an extra layer for debugging. You will need/want to take a look at the routes in the Nginx `default` file. The routes there are from the example-code and you will need to adjust -- especially for static elements.
