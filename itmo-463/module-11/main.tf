@@ -280,3 +280,18 @@ resource "aws_route_table_association" "c" {
   subnet_id      = aws_subnet.us-east-2c.id
   route_table_id = aws_route_table.rt.id
 }
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance
+##############################################################################
+
+resource "aws_db_instance" "default" {
+  allocated_storage    = 10
+  db_name              = "mydb"
+  engine               = "mysql"
+  engine_version       = "8.0"
+  instance_class       = "db.t3.micro"
+  username             = "foo"
+  password             = "foobarbaz"
+  parameter_group_name = "default.mysql8.0"
+  skip_final_snapshot  = true
+}
