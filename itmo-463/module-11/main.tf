@@ -285,13 +285,14 @@ resource "aws_route_table_association" "c" {
 ##############################################################################
 
 resource "aws_db_instance" "default" {
+  depends_on = [ aws_secretsmanager_secret_version.itmo_project_password, aws_secretsmanager_secret_version.itmo_project_username ]
   allocated_storage    = 10
   db_name              = "mydb"
   engine               = "mysql"
   engine_version       = "8.0"
   instance_class       = "db.t3.micro"
-  username             = "foo"
-  password             = "foobarbaz"
+  username             = data.aws_secretsmanager_secret_version.project_username.secret_string
+  password             = data.aws_secretsmanager_secret_version.project_password.secret_string
   parameter_group_name = "default.mysql8.0"
   skip_final_snapshot  = true
 }
@@ -316,7 +317,7 @@ resource "aws_secretsmanager_secret" "itmo_project_username" {
   # This will automatically delete the secret upon Terraform destroy 
   recovery_window_in_days = 0
   tags = {
-    Name = var.tag-name
+    Name = var.item_tag
   }
 }
 
@@ -326,7 +327,7 @@ resource "aws_secretsmanager_secret" "itmo_project_password" {
   # This will automatically delete the secret upon Terraform destroy 
   recovery_window_in_days = 0
   tags = {
-    Name = var.tag-name
+    Name = var.item_tag
   }
 }
 
@@ -336,7 +337,7 @@ resource "aws_secretsmanager_secret" "itmo_project_password" {
 resource "aws_secretsmanager_secret_version" "itmo_project_username" {
   #depends_on = [ aws_secretsmanager_secret_version.project_username ]
   secret_id     = aws_secretsmanager_secret.itmo_project_username.id
-  secret_string = var.username
+  secret_string = data.aws_secretsmanager_random_password.itmo_project_username.random_password
 }
 
 resource "aws_secretsmanager_secret_version" "itmo_project_password" {
