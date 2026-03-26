@@ -12,7 +12,7 @@ from tqdm import tqdm
 # Assignment grand total
 grandtotal = 0
 totalPoints = 10
-assessmentName = "module-09-assessment"
+assessmentName = "module-11-assessment"
 correctNumberOfEC2Instances      = 3
 correctNumberOfTargetGroups      = 1
 correctNumberOfAutoScalingGroups = 1
