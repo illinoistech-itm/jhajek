@@ -337,7 +337,7 @@ resource "aws_secretsmanager_secret" "itmo_project_password" {
 resource "aws_secretsmanager_secret_version" "itmo_project_username" {
   #depends_on = [ aws_secretsmanager_secret_version.project_username ]
   secret_id     = aws_secretsmanager_secret.itmo_project_username.id
-  secret_string = data.aws_secretsmanager_random_password.itmo_project_username.random_password
+  secret_string = data.aws_secretsmanager_random_password.itmo_project.random_password
 }
 
 resource "aws_secretsmanager_secret_version" "itmo_project_password" {
