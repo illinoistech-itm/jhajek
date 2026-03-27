@@ -35,17 +35,29 @@ echo "S3_BUCKET_NAME='${BUCKETNAME}'" >> /home/vagrant/team02m-2024/code/svelte/
 
 ### Python Min.io SDK
 
-[Python SDK](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/python/ "webpage for Python SDK") contains extensive documentation and example code. You will be working with the [get_presigned_url](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/python/api/#get_presigned_urlmethod-bucket_name-object_name-expirestimedeltadays7-response_headersnone-request_datenone-version_idnone-extra_query_paramsnone). This allows a publicly accessible link to be generated without having to have public open access or generate personal links.
+* [Python SDK Examples](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/python/ "webpage for Python SDK") contains extensive documentation and example code. 
+* [Minio Python API Reference](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/python/api/ "webpage for Python API")
+* You will be working with the [get_presigned_url](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/python/api/#get_presigned_urlmethod-bucket_name-object_name-expirestimedeltadays7-response_headersnone-request_datenone-version_idnone-extra_query_paramsnone). This allows a publicly accessible link to be generated without having to have public open access or generate personal links.
 
 ### JavaScript Min.io SDK
 
-[JavaScript SDK](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/javascript/ "webpage for JavaScript SDK"). Same as the Python documentation - you will be working with the `get_presigned_url` function.
+* [JavaScript SDK Examples](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/javascript/ "webpage for JavaScript SDK"). 
+* [Minio JavaScript API Reference](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/javascript/api/ "Webpage for minio JavaScript Reference")
+* You will be working with the [get_presigned_url](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/javascript/api/#presignedUrl "webpage for Presigned URLs") function.
 
 ### Accessing the Min.io Portal
 
 The Minio Web Portal can be accessed at: [https://system22h026.itm.iit.edu](https://system22h026.itm.iit.edu "webpage for access") using the credentials received in the home directory of your buildserver account, named: login.txt.
 
 ![Minio Web Portal](./images/minio.png "image of minio web portal")
+
+### Minio Bucket Names
+
+Each student given an account on the Minio system, with one bucket created by default for you matching your HAWKID. Use the IT/Ops bucket name per sprint--update it via a Vault secret. You can log into the management consul with the credentials provided in your buildserver home directory on [https://system22h026.itm.iit.edu](https://system22h026.itm.iit.edu "web console for Minio").
+
+![*Your Bucket*](./images/bucket_name.png "image of default bucket")
+
+ You can upload any assets here; product images, css, logos. You need to use code then to retrieve said items and generate a `pre-fetch` URL.
 
 ### Troubleshooting
 
