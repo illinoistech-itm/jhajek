@@ -154,7 +154,7 @@ resource "aws_security_group" "db_allow" {
   }
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
+resource "aws_vpc_security_group_ingress_rule" "allow_db_ipv4" {
   security_group_id = aws_security_group.db_allow.id
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = 3306
@@ -322,7 +322,7 @@ resource "aws_db_instance" "default" {
   password             = data.aws_secretsmanager_secret_version.project_password.secret_string
   parameter_group_name = "default.mysql8.0"
   skip_final_snapshot  = true
-  vpc_security_group_ids = 
+  vpc_security_group_ids = [aws_security_group.db_allow.id]
 }
 
 # Generate random password -- this way its never hardcoded into our variables and inserted directly as a secretcheck 
