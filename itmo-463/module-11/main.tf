@@ -141,6 +141,33 @@ resource "aws_lb_target_group" "test" {
 }
 
 ##############################################################################
+# Create Security Group and create rules for port 3306
+#
+##############################################################################
+resource "aws_security_group" "db_allow" {
+  name        = "allow_db_connection"
+  description = "Allow Port 3306 on all outbound traffic"
+  vpc_id      = aws_vpc.main.id
+
+  tags = {
+    Name = var.item_tag
+  }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
+  security_group_id = aws_security_group.db_allow.id
+  cidr_ipv4         = "0.0.0.0/0"
+  from_port         = 3306
+  ip_protocol       = "tcp"
+  to_port           = 3306
+}
+
+resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
+  security_group_id = aws_security_group.db_allow.id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1" # semantically equivalent to all ports
+}
+##############################################################################
 # Create Security Group and create rules for port 80 and 22 access
 #
 ##############################################################################
@@ -295,6 +322,7 @@ resource "aws_db_instance" "default" {
   password             = data.aws_secretsmanager_secret_version.project_password.secret_string
   parameter_group_name = "default.mysql8.0"
   skip_final_snapshot  = true
+  vpc_security_group_ids = 
 }
 
 # Generate random password -- this way its never hardcoded into our variables and inserted directly as a secretcheck 
