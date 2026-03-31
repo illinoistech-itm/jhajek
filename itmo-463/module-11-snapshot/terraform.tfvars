@@ -3,3 +3,4 @@
 
 instance_type = "t3.micro"
 item_tag      = "module-11"
+snapshot_identifier = "module11"
