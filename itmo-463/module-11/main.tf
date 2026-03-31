@@ -307,6 +307,19 @@ resource "aws_route_table_association" "c" {
   subnet_id      = aws_subnet.us-east-2c.id
   route_table_id = aws_route_table.rt.id
 }
+
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group
+##############################################################################
+resource "aws_db_subnet_group" "project" {
+  name       = "main"
+  subnet_ids = [aws_subnet.us-east-2a.id,aws_subnet.us-east-2b.id,aws_subnet.us-east-2c.id]
+
+  tags = {
+    Name = var.item_tag
+  }
+}
+
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance
 ##############################################################################
@@ -322,6 +335,7 @@ resource "aws_db_instance" "default" {
   password             = data.aws_secretsmanager_secret_version.project_password.secret_string
   parameter_group_name = "default.mysql8.0"
   skip_final_snapshot  = true
+  db_subnet_group_name = aws_db_subnet_group.project.name
   vpc_security_group_ids = [aws_security_group.db_allow.id]
 }
 
