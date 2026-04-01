@@ -330,7 +330,7 @@ data "aws_db_snapshot" "project-snapshot" {
 }
 
 output "snapshot_id" {
-  value = data.aws_db_snapshot.example.id
+  value = data.aws_db_snapshot.project-snapshot.id
 }
 
 ##############################################################################
