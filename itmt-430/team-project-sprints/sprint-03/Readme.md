@@ -102,12 +102,12 @@ The professor is prescribing a small number of **additional** required tasks to 
   * Adjust your code and secrets to have all write operations sent to the Main Database
   * Adjust your code and secrets to have all read operations sent to the Read Replica Database
 * Implement the use of Minio for media storage
-      * Account credentials will be provided
-      * [SDK for multi-language Minio access](https://min.io/docs/minio/linux/developers/minio-drivers.html "webpage for Minio SDK")
+  * Account credentials will be provided
+  * [SDK for multi-language Minio access](https://docs.min.io/enterprise/aistor-object-store/developers/sdk/ "webpage for Minio SDK")
 * Add **25** simulated users and posts/operations into your site, 15 new posts and 10 replies - as according to your sites specific design
-      * Essentially simulate real activity on your site
-      * You need accounts to tie action to -- items do not just appear on a site
-      * Use the [Python Faker](https://pypi.org/project/Faker/ "webpage for Python Faker") library to generate fake, but realistic names, states, cities, and so forth if needed.
+  * Essentially simulate real activity on your site
+  * You need accounts to tie action to -- items do not just appear on a site
+  * Use the [Python Faker](https://pypi.org/project/Faker/ "webpage for Python Faker") library to generate fake, but realistic names, states, cities, and so forth if needed.
 * User Testing
   * Show use of GitHub Issues for placing tickets to fix bugs
   * UI/UX should be testing the production system, logging in, posting items, etc, etc.
