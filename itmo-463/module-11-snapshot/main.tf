@@ -319,6 +319,19 @@ resource "aws_db_subnet_group" "project" {
     Name = var.item_tag
   }
 }
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/db_snapshot
+##############################################################################
+data "aws_db_snapshot" "project-snapshot" {
+  most_recent = true
+  tags = {
+    Name = var.item_tag
+  }
+}
+
+output "snapshot_id" {
+  value = data.aws_db_snapshot.example.id
+}
 
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance
@@ -329,7 +342,8 @@ resource "aws_db_instance" "default" {
   instance_class       = "db.t3.micro"
   username             = data.aws_secretsmanager_secret_version.project_username.secret_string
   password             = data.aws_secretsmanager_secret_version.project_password.secret_string
-  snapshot_identifier = var.snapshot_identifier
+  #snapshot_identifier = var.snapshot_identifier
+  snapshot_identifier = data.aws_db_snapshot.project-snapshot.id  
   skip_final_snapshot  = true
   db_subnet_group_name = aws_db_subnet_group.project.name
   vpc_security_group_ids = [aws_security_group.db_allow.id]
