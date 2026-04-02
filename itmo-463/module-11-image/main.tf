@@ -17,5 +17,5 @@ data "aws_ami" "ubuntu" {
 }
 
 output "my_ami_id" {
-  value = data.aws_ami.ubuntu.id
+  value = data.aws_ami.ubuntu.image_id
 } 
