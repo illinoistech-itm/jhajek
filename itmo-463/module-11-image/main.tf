@@ -13,6 +13,11 @@ data "aws_ami" "ubuntu" {
     values = ["x86_64"]
   }
 
+    filter {
+    name = "tag:Name"
+    values = "module-11-image"
+  }
+
   owners = ["099720109477"] # Canonical
 }
 
