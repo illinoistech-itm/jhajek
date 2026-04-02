@@ -15,7 +15,7 @@ data "aws_ami" "ubuntu" {
 
     filter {
     name = "tag:Name"
-    values = "module-11-image"
+    values = ["module-11-image"]
   }
 
   owners = ["099720109477"] # Canonical
