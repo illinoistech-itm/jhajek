@@ -15,7 +15,7 @@ This document contains the Sprint-05 requirements and deliverables
 
 ## Outcomes
 
-At the conclusion of this sprint project and the class you will have built upon the work in Sprint-04 and have added an additional cloud-based production environment. Your team will have deployed a working prototype. You will be able to explain the evolution and the obstacles you overcame. Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working prototype of the project at the end of sprint-05.
+At the conclusion of this sprint project and the class you will have built upon the work in Sprint-04. Your team will have deployed a working prototype. You will be able to explain the evolution and the obstacles you overcame. Your team will be able to deploy a working project in an automated fashion for demonstration. Your goal is to show a working project at the end of sprint-05.
 
 ### Requirements
 

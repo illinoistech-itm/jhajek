@@ -7,25 +7,22 @@ This document contains the Sprint-04 requirements and deliverables
 ## Objectives
 
 * Integrate secure secrets management with Hashicorp Vault
-* Integrate Database replicas
 * Refine application feature deployment
-* ~~Examine site functionality with 10 non-team users~~
-* Introduce S3 Object Storage
-* Deploy to Production Infrastructure
+* Examine site functionality with 10 non-team users
+* Integrate Oauth Profile Image
+* Examine the advantages and implement an ORM
 
 ## Outcomes
 
-At the conclusion of this sprint your team will have created a Secure Vault for secrets management. You will have integrated Vault into your application deployment. You will have created a database read-only replica and continued your feature deployment.
+At the conclusion of this sprint your team will have integrated an ORM for database requests, tested the working site with 10 non-team users, integrated Oauth profile image and explored the advantages of using an ORM.
 
 ### Requirements
 
-All code and development will be graded and judged on what is on the Production Proxmox cloud platform. No hard coded values or secrets, make use of Vault - samples provided in the `jhajek` > `example-code` repository. Sprint-04 assumes that all of Sprint-03 requirements are delivered. All team members need to rotate positions.
-
-[Vault Integration Tutorial](https://github.com/illinoistech-itm/jhajek/tree/master/itmt-430/vault-integration-tutorial "webpage for Vault Integration")
+All code and development will be graded and judged on what is on the Production Proxmox cloud platform. `Sprint-04` assumes that all of `Sprint-03` requirements are delivered.
 
 ### Team Roles
 
-For this sprint, there will be 5 team roles. For the teams with 4 - you can combine UI/UX with Dev2 and for the team with 6 you will add a Dev3. While these roles call for each person to focus an area -- **these roles are not exclusive**. Anyone can submit code for instance anyone can file a bug. The roles must rotate per sprint. This is an artificial inefficiency that I am introducing to allow all members to participate and experience each role.
+For this sprint, there will be 5 team roles, for the team with 6 you will add a Dev3. While these roles call for each person to focus an area -- **these roles are not exclusive**. Anyone can submit code for instance anyone can file a bug. The roles must rotate per sprint. This is an artificial inefficiency that I am introducing to allow all members to participate and experience each role.
 
 * Project Manager
   * In charge of making sure that tasks are assigned, artifacts are being delivered, and project boards are updated accordingly.
@@ -50,19 +47,6 @@ For this sprint, there will be 5 team roles. For the teams with 4 - you can comb
   * Responsible for training and teaching internal group members for deployment of infrastructure
   * Responsible for noting and explaining all secrets management, firewall rules, and API security implemented
 
-### Team Setup Items
-
-In the team repo their will need to be a few additional folders added. Keep the team repo clean -- add your code and scripts into the proper folder -- do not place them at the root of the repo.
-
-[*Git Seminar by Dr. Karl Stolley*](https://www.youtube.com/watch?v=ap7rqcD8uPs "Git Seminar by Dr. karl Stolley")
-
-* A folder named: **code**
-  * This will contain all application source code
-* A folder named: **build**
-  * This will contain all instructions to build and deploy your application
-  * Remove all uneeded sample code from your `build` folder
-  * This will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
-
 ### Project Management Tool and Task Difficulty Estimation
 
 One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. Your team will use a scale of 1-5 points. 5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities.  For Sprint 04 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points.  If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
@@ -75,58 +59,29 @@ In the Project Management tool the 25 points worth of tasks need to have the poi
 
 The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points
 
-* Login
-  * Use your @hawk accounts and Google OAuth (or appropriate authentication mechanism) for login authentication in your application code
-  * Demonstrate how your `sign up` feature works
-  * Login as a user
-* Infrastructure
-  * Demonstrate that the Vault KV pairs are stored -- show you setting a secret
-  * Deploy your code to a production cloud environment at the same time using Packer and [Terraform](https://www.terraform.io/ "Hashicorp Terraform webpage")
-* 3 Tier Application
-  * First tier is a Load Balancer
-  * Second tier is 3 webservers
-  * Third tier is a `replicated` datastore
-    * Means at least two, can be more
-  * For MySQL/MariaDB this means setting up [Master/Slave or Primary/Replica](https://mariadb.com/kb/en/setting-up-replication/ "webpage setup a replication") to create a write Master and a read-only system
-    * This will split your database calls into two -- all writes go to the master, and all reads come from the replica
-    * ~~On MongoDB you will be working with a [ReplicaSet](https://www.mongodb.com/docs/manual/tutorial/deploy-replica-set/ "webpage ReplicaSet MongoDB")~~
-* Deployment
-  * All work needs to be tested and developed ~~on your teams built Vagrant Boxes and~~ in the production environment
-    * You will have to build often, perhaps daily/nightly
-    * We can set up an additional nightly systemd timer script to add an nightly build task, if you are interested - ask me
-  * ~~Development on Localhost is not acceptable at this point~~
-* Usage of site
-  * Demonstrate all of your team members signed up and making at least 1 post and 1 answer (as applicable)
-    * You do this live not -- pre-programmed via an `.sql` file (or appropriate JSON file)
-  * Pre-seed your site with 100 posts from 20 additional `real` test users
-    * Have them "ask" 2 questions each and answer 1 other persons questions
-    * This is to show the search functionality and ability to store a complex discussion
-      * Must pre-seed this using an `.sql` file
-  * Logout that user
-  * ~~Ask 10 classmates (not in the class) to sign up and use your site (Done by UI/UX)~~
-* Object Storage Integration
-  * Make use of on prem S3-like Object Storage, using [min.io](https://min.io webpage for on-prem S3 storage min.io").
-  * Compatible with [Amazon S3 Object Storage](https://aws.amazon.com/s3/ "webpage for AWS S3") but on-premises storage 
-  * Credentials and tutorial will be provided
-* [Minio SDKs](https://min.io/docs/minio/linux/developers/minio-drivers.html "webpage for Minio SDKs"
-  * [JavaScript SDK](https://min.io/docs/minio/linux/developers/minio-drivers.html#javascript-sdk "webpage for JavaScript SDK")
-  * [Python SDK](https://min.io/docs/minio/linux/developers/minio-drivers.html#python-minio-py "webpage for Python SDK minio")
+* Continue to fix bugs and add functionality
+* Ask 10 classmates (not in the class) to sign up and use your site (Done by UI/UX)
+* Implement/modify your use of database queries to use an ORM
+  * What is an [ORM - Object Relational Mapping](https://aws.amazon.com/what-is/object-relational-mapping/ "webpage for describing an ORM") 
+  * For Flask using PostgreSQL, MySQL, or MariaDB make use of [SQLAlchemy](https://www.sqlalchemy.org/ "webpage showing examples of SQLAlchemy")
+    * There are SQL Alchemy examples in the `code` folder in the `itmt-430` > `example-code` > `code` > `app.py`
+  * For JavaScript
+    * [Sequelize](https://sequelize.org/ "webpage for sequelize")
+    * [TypeORM](https://typeorm.io/ "webpage for typeORM")
+* Implement a Vault Database Authentication Role
+  * [Vault/PostegreSQL role](https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql "webpage for Vault PostgreSQL Role)
+  * [Vault/MySQL/MariaDB role](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for Vault MariaDB Role)
+ * **Optional**
+   * Implement a basic analytics tracking system to record which pages and or listings are clicked on
+   * Adjust as appropriate to your application 
 
 ### 10 User Site Review
 
-~~You will need to find 10 classmates (not on your team) and ask them to sit down and "use" your site.  This will include you having a short explanation of the site and then explaining what the task might be (each groups site functionality will differ). Your specific tasks might include: signup for the service, purchase an item, make a post, or search for an item. This is to be designed and accomplished by the UI/UX person. You as the interviewer need to watch and take notes on how they accomplish the task. Your system needs to be stable so that the artifacts of these experiments remain resident for the sprint presentation. ~~
-
-~~Record their information:~~
-
-* ~~Name of student~~
-* ~~Major~~
-* ~~Include a description of the tasks you gave them~~
-  * ~~Include your experience of how they did~~
-* ~~Write your conclusions~~ 
+You will need to find 10 classmates (not on your team) and ask them to sit down and "use" your site. This will include you having a short explanation of the site and then explaining what the task might be (each groups site functionality will differ). Your specific tasks might include: signup for the service, purchase an item, make a post, or search for an item. This is to be designed and accomplished by the UI/UX person. You as the interviewer need to watch and take notes on how they accomplish the task and then create a 5 to 10 question feedback document on use of the site, publish these information and synopsis as part of your deliverable. Your system needs to be stable so that the artifacts of these experiments remain resident for the sprint presentation.
 
 ## Deliverables
 
-* Monday Lab live presentation and critiques are due Monday 10:00 am April 14th
+* Monday Lab live presentation and critiques are due Monday 10:00 am April 13th
 
 ### Individual Deliverables
 
@@ -190,7 +145,7 @@ Demonstration of project management tool and explanation of the 25 build point i
 Demonstrate deployment of full working application on the provided cloud environment by killing one Front End (showing the LB) | 3
 Demonstrate login of user, taking an action, and logging out | 2
 Demonstration of all team-members accomplishing the prior step | 3
-~~Presenting of conclusions of UI/UX study~~ | ~~1~~
+Presenting of conclusions of UI/UX study | 1
 UI/UX walk through explaining what was accomplished and what portions of the UI/UX are outstanding | 2
 Clear transition to a conclusion and small summary of presentation | 1
 
@@ -207,8 +162,8 @@ Clear transition to a conclusion and small summary of presentation | 1
 * Online - get a quality recording
   * Find a quiet place
   * Use a headset
-  * Use a recording software that allows for Picture in Picture recording, like [Open Broadcast Project, OBS](https://obsproject.com/ "webpage for OBS project")
+  * Use a recording software that allows for Picture in Picture recording, like [Open Broadcast Project, OBS](https://obsproject.com/ "webpage for OBS project") or Panopto
 
-### What to Deliver to Blackboard
+### What to Deliver to Canvas
 
-Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day.  Feedback will be given on each submission.
+Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day. Feedback will be given on each submission.
