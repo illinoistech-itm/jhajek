@@ -6,12 +6,9 @@ This document contains the Sprint-05 requirements and deliverables
 
 ## Objectives
 
-* Deploy and explain user application testing
-* Deploy and explain uses of Bug tracking and creation of GitHub issues
-* Deploy final CSS revisions - matching original site plan
-* Explore your site vulnerabilities via a Pen Test
-* Ask 10 classmates (not in the class) to sign up and use your site (Done by UI/UX)
-* Deploy to Production Infrastructure
+* Reflect on the semesters tech journey
+* Implement bug fixes
+* Implement one additional feature
 
 ## Outcomes
 
@@ -54,19 +51,6 @@ For this sprint, there will be 5 team roles. For the teams with 4 - you can comb
 * Responsible for noting and explaining all secrets management, firewall rules, and API security implemented
 * Responsible for doing a site vulnerability analysis on **another** teams site/infrastructure
 
-### Team Setup Items
-
-In the team repo their will need to be a few additional folders added. Keep the team repo clean -- add your code and scripts into the proper folder -- do not place them at the root of the repo.
-
-[*Git Seminar by Dr. Karl Stolley*](https://www.youtube.com/watch?v=ap7rqcD8uPs "Git Seminar by Dr. karl Stolley")
-
-* A folder named: **code**
-  * This will contain all application source code
-* A folder named: **build**
-  * This will contain all instructions on how to build and deploy your application
-  * This will contain Packer build templates for building Proxmox virtual machine Templates
-  * This will contain a `Readme.md` with detailed instruction on how to execute these scripts and a screenshot of what the finished artifact should look like - this is how you will know that you successfully deployed everything
-
 ### Project Management Tool and Task Difficulty Estimation
 
 One of the first steps the team will undertake is to determine which atomic tasks it will undertake from your project management tool. Note that some additional tasks (such as deploying infrastructure will have to be added to the Atomic Task list). We will work this sprint using a points estimation process -- this process is commonly used in industry to give an evolving estimate of software readiness and complexity. Your team will use a scale of 1-5 points. 5 being a hard task and 1 being a simple task. These numbers are purely relative to your own team's estimation of your own abilities.  For Sprint 05 you will start with 25 total points of tasks to be assigned amongst the group members. If you finish them all, you can add increments of 15 points.  If you don't finish them, as long as you are progressing, your team will reevaluate their numerical rankings of tasks in the next sprint.
@@ -79,41 +63,15 @@ In the Project Management tool the 25 points worth of tasks need to have the poi
 
 The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points
 
-* Login
-  * Use your @hawk accounts and Google OAuth for login authentication in your application code
-* Infrastructure
-  * Build each server needed in the 3-tier app as Virtual Machines using Proxmox via Packer and Terraform templates
-  * Use Packer as the tool for automating the creation of the Proxmox Images/Templates
-  * Deploy your code to a production cloud environment at the same time using Packer and [Terraform](https://www.terraform.io/ "Hashicorp Terraform webpage")
-* 3 Tier Application
-  * First tier is a Load Balancer
-  * Second tier is 3 webservers
-  * Third tier is a single datastore
-* Deployment
-  * You will have to build often, perhaps daily/nightly
-* Usage of site
-  * Pre-seed your site with 50 additional "real test users" and have them "ask" 10 questions and answer 1 other persons question (adjust the terms as appropriate to your site)
-    * This is to show the search functionality and ability to store a complex discussion
-  * Each member of your team needs to use the site and engage in making an account and at least 5 interaction
-  * Posts must be real -- not "test test"
-
-
-### 10 User Site Review
-
-You will need to find 10 classmates (not on your team) and ask them to sit down and "use" your site.  This will include you having a short explanation of the site and then explaining what the task might be (each groups site functionality will differ). Your specific tasks might include: signup for the service, purchase an item, make a post, or search for an item. This is to be designed and accomplished by the UI/UX person. You as the interviewer need to watch and take notes on how they accomplish the task. Your system needs to be stable so that the artifacts of these experiments remain resident for the sprint presentation.
-
-Record their information:
-
-* Name of student
-* Major
-* Include a description of the tasks you gave them
-  * Include your experience of how they did
-* Write your conclusions
-
+* All requirements up to sprint-04
+* Your choice of one the following
+  * Implementation of one additional site specific feature
+  * Implementation of site specific analytics tracking (page and or listing)
+  * Fix of bugs
 
 ## Deliverables
 
-* **All sections** critiques due on Monday April ~~22nd~~ 28th 10:00am.
+* **All sections** critiques due on Monday April 27th 10:00am.
 
 ### Individual Deliverables
 
@@ -194,8 +152,7 @@ Clear transition to a conclusion and small summary of presentation | 1
   * Presentation is not a slide show, but a verbal explaining and demonstration of the artifacts produced
   * We need to see your face
   * If recorded, find a quiet place, focus on audio and or use head phones and make a quality recoding.
-  * There are OTS recording studios in the basement of Stuart Building and I have recording equipment available in the Smart Lab as well.
 
-### What to Deliver to Blackboard
+### What to Deliver to Canvas
 
-Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day 04/28 10:00 AM. Feedback will be given on each submission.
+Each person must deliver the URL to their Critique reports at the beginning of the assigned Lab Time Sprint Presentation Day 04/27 10:00 AM. Feedback will be given on each submission.
