@@ -62,8 +62,8 @@ NA | 03/16 | Spring Break Week | NA
 10 | 03/23 | DevOps Solutions 1-3 | ~~Sprint 03 presentation~~ Sprint 02 presentation
 11 | 03/30 | DevOps Solutions 4-6 | ~~NA~~ ~~Sprint 03 presentation~~
 12 | 04/06 | DevOps Solutions 7-8 | ~~NA~~ Sprint 03 presentation 
-13 | 04/13 | DevOps Solutions 9-10 | Sprint 04 presentation
-14 | 04/20 | DevOps Solutions 11-12 | NA
+13 | 04/13 | DevOps Solutions 9-10 | ~~Sprint 04 presentation~~
+14 | 04/20 | DevOps Solutions 11-12 | ~~NA~~Sprint 04 presentation
 15 | 04/27 | Sprint 05 Final Presentation Day for everyone!
 16 | 05/05 | Final Exam Week | NA
 
