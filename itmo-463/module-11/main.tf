@@ -22,7 +22,7 @@ data "aws_ami" "ubuntu" {
   }
 }
 
-output "Custom AMI ID" {
+output "Custom_AMI_ID" {
   value = data.aws_ami.ubuntu.id
   description = "The AMI ID of the custom image"
 }
