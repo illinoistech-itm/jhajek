@@ -1,13 +1,17 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
 
 data "aws_instance" "ubuntu" {
-  
+   
+   filter {
+    name   = "instance-state-name"
+    values = ["running"]
+  }
   filter {
     name = "tag:Name"
     values = [var.item_tag_template]
   }
 
-  
+
 }
 
 
