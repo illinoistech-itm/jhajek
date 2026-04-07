@@ -21,6 +21,11 @@ data "aws_ami" "ubuntu" {
     values = [var.item_tag]
   }
 }
+
+output "Custom AMI ID" {
+  value = data.aws_ami.ubuntu.id
+  description = "The AMI ID of the custom image"
+}
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones
 ##############################################################################
