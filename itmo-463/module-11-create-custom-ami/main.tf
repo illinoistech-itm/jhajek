@@ -14,7 +14,7 @@ resource "aws_ami_from_instance" "custom_ami" {
   snapshot_without_reboot = false
 
   tags = {
-    Name = var.item_tag,
+    Name = var.item_tag_template,
     Type = "CustomAMI"
   }
 }
