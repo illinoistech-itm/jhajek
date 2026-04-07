@@ -182,3 +182,13 @@ resource "aws_route_table_association" "c" {
   subnet_id      = aws_subnet.us-east-2c.id
   route_table_id = aws_route_table.rt.id
 }
+
+resource "aws_ami_from_instance" "custom_ami" {
+  name               = "project"
+  source_instance_id = aws_instance.example.id
+  snapshot_without_reboot = false
+
+  tags = {
+    Name = var.item_tag
+  }
+}
