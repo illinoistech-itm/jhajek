@@ -25,6 +25,6 @@ resource "aws_instance" "example" {
   #key_name = data.aws_key_pair.key_pair.key_name
 
   tags = {
-    Name = var.item_tag
+    Name = var.item_tag_template
   }
 }
