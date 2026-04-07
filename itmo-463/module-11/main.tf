@@ -18,7 +18,7 @@ data "aws_ami" "ubuntu" {
 data "aws_ami" "ubuntu" {
   filter {
     name = "tag:Name"
-    values = [var.item_tag]
+    values = [var.item_tag_template]
   }
 }
 

@@ -22,3 +22,7 @@ variable "item_tag" {
   type        = string
 }
 
+variable "item_tag_template" {
+  type = string
+}
+
