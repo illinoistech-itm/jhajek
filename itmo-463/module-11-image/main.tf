@@ -30,6 +30,19 @@ resource "aws_instance" "example" {
 }
 
 ##############################################################################
+# Data block to retrieve key pair name with particular filter
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/key_pair
+##############################################################################
+data "aws_key_pair" "key_pair" {
+
+    filter {
+    name = "tag:Name"
+    values = [var.item_tag]
+  }
+}
+
+
+##############################################################################
 # Create Security Group and create rules for port 22 access
 #
 ##############################################################################
