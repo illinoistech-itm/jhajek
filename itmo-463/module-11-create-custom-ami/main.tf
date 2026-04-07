@@ -3,7 +3,7 @@
 data "aws_instance" "ubuntu" {
   filter {
     name = "tag:Name"
-    values = [var.item_tag]
+    values = [var.item_tag_template]
   }
 }
 
