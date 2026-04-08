@@ -64,7 +64,7 @@ The professor is prescribing a small number of **additional** required tasks to 
 * Ask 10 classmates (not in the class) to sign up and use your site (Done by UI/UX)
   * See below details for usage information and how to capture feedback.
   * Might be good to implement a site backup capability to allow your team to capture all the current work you and your team has done and be able to restore it
-* **Pick One from the list below**
+* **Optional - Pick One from the list below**
   * Implement/modify your use of database queries to use an ORM
     * What is an [ORM - Object Relational Mapping](https://aws.amazon.com/what-is/object-relational-mapping/ "webpage for describing an ORM") 
     * For Flask using PostgreSQL, MySQL, or MariaDB make use of [SQLAlchemy](https://www.sqlalchemy.org/ "webpage showing examples of SQLAlchemy")
