@@ -80,7 +80,9 @@ The professor is prescribing a small number of **additional** required tasks to 
 
 ### 10 User Site Review
 
-You will need to find 10 classmates (not on your team) and ask them to sit down and "use" your site. This will include you having a short explanation of the site and then explaining what the task might be (each groups site functionality will differ). Your specific tasks might include: signup for the service, purchase an item, make a post, or search for an item. This is to be designed and accomplished by the UI/UX person. You as the interviewer need to watch and take notes on how they accomplish the task and then create a 5 to 10 question feedback document on use of the site, publish these information and synopsis as part of your deliverable. Your system needs to be stable so that the artifacts of these experiments remain resident for the sprint presentation.
+You will need to find 10 classmates (not on your team) and ask them to sit down and "use" your site. This will include you having a short explanation of the site and then explaining what the task might be (each groups site functionality will differ). Your specific tasks might include: signup for the service, purchase an item, make a post, or search for an item. 
+
+This is to be designed and accomplished by the UI/UX person. You as the interviewer need to watch and take notes on how they accomplish the task and then create a 5 to 10 question feedback document on use of the site, publish these information and synopsis as part of your deliverable. Your system needs to be stable so that the artifacts of these experiments remain resident for the sprint presentation.
 
 ## Deliverables
 
