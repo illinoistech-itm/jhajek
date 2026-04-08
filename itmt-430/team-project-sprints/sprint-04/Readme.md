@@ -73,8 +73,8 @@ The professor is prescribing a small number of **additional** required tasks to 
       * [Sequelize](https://sequelize.org/ "webpage for sequelize")
       * [TypeORM](https://typeorm.io/ "webpage for typeORM")
   * Implement a Vault Database Authentication Role
-    * [Vault/PostegreSQL role](https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql "webpage for Vault PostgreSQL Role)
-    * [Vault/MySQL/MariaDB role](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for Vault MariaDB Role)
+    * [Vault/PostegreSQL role](https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql "webpage for Vault PostgreSQL Role")
+    * [Vault/MySQL/MariaDB role](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for Vault MariaDB Role")
   * Implement a basic analytics tracking system to record which pages and or listings are clicked on
     * Adjust as appropriate to your application
 
