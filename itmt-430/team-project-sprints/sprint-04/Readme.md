@@ -57,23 +57,26 @@ In the Project Management tool the 25 points worth of tasks need to have the poi
 
 ### Required Artifacts
 
-The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points
+The professor is prescribing a small number of **additional** required tasks to be selected amongst your 25 points. If you have time I would like to challenge you to implement as many as you can.
 
 * Continue to fix bugs and add functionality
+  * Application must be working and usable
 * Ask 10 classmates (not in the class) to sign up and use your site (Done by UI/UX)
-* Implement/modify your use of database queries to use an ORM
-  * What is an [ORM - Object Relational Mapping](https://aws.amazon.com/what-is/object-relational-mapping/ "webpage for describing an ORM") 
-  * For Flask using PostgreSQL, MySQL, or MariaDB make use of [SQLAlchemy](https://www.sqlalchemy.org/ "webpage showing examples of SQLAlchemy")
-    * There are SQL Alchemy examples in the `code` folder in the `itmt-430` > `example-code` > `code` > `app.py`
-  * For JavaScript
-    * [Sequelize](https://sequelize.org/ "webpage for sequelize")
-    * [TypeORM](https://typeorm.io/ "webpage for typeORM")
-* Implement a Vault Database Authentication Role
-  * [Vault/PostegreSQL role](https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql "webpage for Vault PostgreSQL Role)
-  * [Vault/MySQL/MariaDB role](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for Vault MariaDB Role)
- * **Optional**
-   * Implement a basic analytics tracking system to record which pages and or listings are clicked on
-   * Adjust as appropriate to your application 
+  * See below details for usage information and how to capture feedback.
+  * Might be good to implement a site backup capability to allow your team to capture all the current work you and your team has done and be able to restore it
+* **Pick One from the list below**
+  * Implement/modify your use of database queries to use an ORM
+    * What is an [ORM - Object Relational Mapping](https://aws.amazon.com/what-is/object-relational-mapping/ "webpage for describing an ORM") 
+    * For Flask using PostgreSQL, MySQL, or MariaDB make use of [SQLAlchemy](https://www.sqlalchemy.org/ "webpage showing examples of SQLAlchemy")
+      * There are SQL Alchemy examples in the `code` folder in the `itmt-430` > `example-code` > `code` > `app.py`
+    * For JavaScript
+      * [Sequelize](https://sequelize.org/ "webpage for sequelize")
+      * [TypeORM](https://typeorm.io/ "webpage for typeORM")
+  * Implement a Vault Database Authentication Role
+    * [Vault/PostegreSQL role](https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql "webpage for Vault PostgreSQL Role)
+    * [Vault/MySQL/MariaDB role](https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria "webpage for Vault MariaDB Role)
+  * Implement a basic analytics tracking system to record which pages and or listings are clicked on
+    * Adjust as appropriate to your application
 
 ### 10 User Site Review
 
