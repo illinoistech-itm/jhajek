@@ -120,7 +120,7 @@ data "aws_secretsmanager_random_password" "itmo_project" {
 # manage a secret value, see the aws_secretsmanager_secret_version resource.
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret
 resource "aws_secretsmanager_secret" "itmo_project_username" {
-  name = "uname"
+  name = "tmp_uname"
   # https://github.com/hashicorp/terraform-provider-aws/issues/4467
   # This will automatically delete the secret upon Terraform destroy 
   recovery_window_in_days = 0
@@ -130,7 +130,7 @@ resource "aws_secretsmanager_secret" "itmo_project_username" {
 }
 
 resource "aws_secretsmanager_secret" "itmo_project_password" {
-  name = "pword"
+  name = "tmp_pword"
   # https://github.com/hashicorp/terraform-provider-aws/issues/4467
   # This will automatically delete the secret upon Terraform destroy 
   recovery_window_in_days = 0
