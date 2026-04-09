@@ -26,3 +26,7 @@ variable "snapshot_identifier" {
   type = string
 }
 
+variable "item_tag_template" {
+  type = string
+}
+

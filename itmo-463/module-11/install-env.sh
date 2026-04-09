@@ -8,4 +8,4 @@ sudo systemctl start nginx
 
 # Cloning private repo over ssh
 echo "Beginning clone operation..."
-git clone git@github.com:illinoistech-itm/hajek.git
+sudo -u ubuntu git clone git@github.com:illinoistech-itm/hajek.git

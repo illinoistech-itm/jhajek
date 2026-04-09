@@ -1,5 +1,5 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
-
+/*
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -14,7 +14,16 @@ data "aws_ami" "ubuntu" {
   }
 
   owners = ["099720109477"] # Canonical
+} */
+
+
+data "aws_ami" "ubuntu" {
+  filter {
+    name = "tag:Name"
+    values = [var.item_tag_template]
+  }
 }
+
 
 ##############################################################################
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones

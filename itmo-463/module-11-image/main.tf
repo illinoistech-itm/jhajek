@@ -46,7 +46,7 @@ data "aws_key_pair" "key_pair" {
 
 
 ##############################################################################
-# Create Security Group and create rules for port 22 access
+# Create Security Group and create rules for port 22 and 3306 access
 #
 ##############################################################################
 
@@ -73,3 +73,92 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
   ip_protocol       = "-1" # semantically equivalent to all ports
 }
 
+resource "aws_vpc_security_group_ingress_rule" "allow_db_ipv4" {
+  security_group_id = aws_security_group.db_allow.id
+  cidr_ipv4         = "0.0.0.0/0"
+  from_port         = 3306
+  ip_protocol       = "tcp"
+  to_port           = 3306
+}
+
+# Get code from module-11 on launching an RDS instance
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance
+##############################################################################
+
+resource "aws_db_instance" "default" {
+  depends_on = [ aws_secretsmanager_secret_version.itmo_project_password, aws_secretsmanager_secret_version.itmo_project_username ]
+  allocated_storage    = 10
+  db_name              = "mydb"
+  engine               = "mysql"
+  engine_version       = "8.0"
+  instance_class       = "db.t3.micro"
+  username             = data.aws_secretsmanager_secret_version.project_username.secret_string
+  password             = data.aws_secretsmanager_secret_version.project_password.secret_string
+  parameter_group_name = "default.mysql8.0"
+  skip_final_snapshot  = true
+  db_subnet_group_name = aws_db_subnet_group.project.name
+  vpc_security_group_ids = [aws_security_group.db_allow.id]
+}
+
+# Generate random password -- this way its never hardcoded into our variables and inserted directly as a secretcheck 
+# No one will know what it is!
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/secretsmanager_random_password
+data "aws_secretsmanager_random_password" "itmo_project" {
+  password_length = 30
+  exclude_numbers = true
+  exclude_punctuation = true
+}
+
+# Create the actual secret (not adding a value yet)
+# Provides a resource to manage AWS Secrets Manager secret metadata. To manage
+# secret rotation, see the aws_secretsmanager_secret_rotation resource. To 
+# manage a secret value, see the aws_secretsmanager_secret_version resource.
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret
+resource "aws_secretsmanager_secret" "itmo_project_username" {
+  name = "uname"
+  # https://github.com/hashicorp/terraform-provider-aws/issues/4467
+  # This will automatically delete the secret upon Terraform destroy 
+  recovery_window_in_days = 0
+  tags = {
+    Name = var.item_tag
+  }
+}
+
+resource "aws_secretsmanager_secret" "itmo_project_password" {
+  name = "pword"
+  # https://github.com/hashicorp/terraform-provider-aws/issues/4467
+  # This will automatically delete the secret upon Terraform destroy 
+  recovery_window_in_days = 0
+  tags = {
+    Name = var.item_tag
+  }
+}
+
+# Provides a resource to manage AWS Secrets Manager secret version including its secret value.
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret_version
+# Used to set the value
+resource "aws_secretsmanager_secret_version" "itmo_project_username" {
+  #depends_on = [ aws_secretsmanager_secret_version.project_username ]
+  secret_id     = aws_secretsmanager_secret.itmo_project_username.id
+  secret_string = data.aws_secretsmanager_random_password.itmo_project.random_password
+}
+
+resource "aws_secretsmanager_secret_version" "itmo_project_password" {
+  #depends_on = [ aws_secretsmanager_secret_version.project_password ]
+  secret_id     = aws_secretsmanager_secret.itmo_project_password.id
+  secret_string = data.aws_secretsmanager_random_password.itmo_project.random_password
+}
+
+# Retrieve secrets value set in secret manager
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/secretsmanager_secret_version
+# https://github.com/hashicorp/terraform-provider-aws/issues/14322
+data "aws_secretsmanager_secret_version" "project_username" {
+  depends_on = [ aws_secretsmanager_secret_version.itmo_project_username ]
+  secret_id = aws_secretsmanager_secret.itmo_project_username.id
+}
+
+data "aws_secretsmanager_secret_version" "project_password" {
+  depends_on = [ aws_secretsmanager_secret_version.itmo_project_password ]
+  secret_id = aws_secretsmanager_secret.itmo_project_password.id
+}
