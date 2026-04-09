@@ -1,4 +1,7 @@
+##############################################################################
+# Data block to retrieve AMI
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
+##############################################################################
 
 data "aws_ami" "ubuntu" {
   most_recent = true
