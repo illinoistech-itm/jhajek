@@ -99,6 +99,10 @@ resource "aws_db_instance" "default" {
   skip_final_snapshot  = true
   # db_subnet_group_name = aws_db_subnet_group.project.name
   vpc_security_group_ids = [aws_security_group.project.id]
+
+    tags = {
+    Name = var.item_tag_template
+  }
 }
 
 # Generate random password -- this way its never hardcoded into our variables and inserted directly as a secretcheck 
