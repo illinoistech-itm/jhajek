@@ -6,7 +6,9 @@
 ##############################################################################
 
 data "aws_db_instance" "database" {
-  tags = [var.item_tag_template]
+  tags = {
+    Name = var.item_tag_template
+  }
 
 }
 
