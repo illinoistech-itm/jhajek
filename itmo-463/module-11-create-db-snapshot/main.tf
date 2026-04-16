@@ -13,7 +13,7 @@ data "aws_db_instance" "database" {
 }
 
 output "aws_db_instance_output" {
-  value = data.aws_db_instance.database.db_name
+  value = data.aws_db_instance.database.db_instance_identifier
   description = "db_name output"
 }
 ##############################################################################
