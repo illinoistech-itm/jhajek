@@ -23,7 +23,7 @@ output "aws_db_instance_output" {
 # 1 resource block to create a DB snapshot - with tag of that RDS instance
 resource "aws_db_snapshot" "snap" {
   db_instance_identifier = data.aws_db_instance.database.id
-  db_snapshot_identifier = "testsnapshot1"
+  db_snapshot_identifier = var.item_tag
 tags = {
     Name = var.item_tag
   }
