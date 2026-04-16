@@ -12,6 +12,14 @@ data "aws_db_instance" "database" {
 
 }
 
+output "aws_db_instance_output" {
+  value = data.aws_db_instance.database.db_name
+  description = "db_name output"
+}
+##############################################################################
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_snapshot
+##############################################################################
+
 # 1 resource block to create a DB snapshot - with tag of that RDS instance
 resource "aws_db_snapshot" "snap" {
   db_instance_identifier = data.aws_db_instance.database.db_instance_identifier
