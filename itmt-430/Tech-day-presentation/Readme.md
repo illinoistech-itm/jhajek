@@ -28,16 +28,22 @@ You will have 5-10 minutes to present (best to have two presenters – someone o
 ### Tell us a story of the complete journey
 
 Required:
-* Show quickly your GitHub commit frequency
-* Show your project management screen
+
 * Demonstrate the functionality of your site (login and take a few actions)
 * Discuss your tech stack (from the Application point of view)
+* Show (quickly) your GitHub commit frequency page
+* Show your project management screen
+* Number of VMs you deployed
 * Discuss your toughest bug that you solved, and the coolest feature your team designed
 * Discuss one thing your group learned or that you want others to know
-* Number of VMs you deployed
+
 
 ### Is this a deliverable?
 
 Note this is a separate presentation and will the take place of the normative PM presentation but the regular report.md and critiques are still due as always. No deliverable will be turned in for this presentation Monday April 27th, but you should organize your presentation ahead of time in PowerPoint or a Readme.md file
 
 Event will be live-streamed by OTS on YouTube (link in the PDF invite document) you will have access to the entire recording for reposting/editing your part – shortly after the presentation day.
+
+### Dress Code
+
+For presenting teams it will be business casual. For non-presenting students please show up to support your fellow presenters.
