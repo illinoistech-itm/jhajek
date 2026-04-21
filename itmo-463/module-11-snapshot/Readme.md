@@ -1,4 +1,4 @@
-# Mini-Project 3
+# Mini-Project 2
 
 This project will deploy the following 10 tasks and verify they have been created.
 
@@ -8,15 +8,14 @@ The tag to search for is: `module-11`  and `module-11-template`
 
 1) Check that there is 1 AMI tagged: `module-11-template`
 1) Check that there is 1 RDS Snapshot tagged:`module-11-template`
+1) Check that there is 1 RDS Instance tagged:`module-11`
+1) Check that there is 1 Database subnet group tagged: `module-11`
 1) Check that there are 2 Security Groups tagged: `module-11`
 1) Check the HTTP check returns an HTTP 200 
 1) Check that there are 3 EC2 instances and they are tagged: `module-11`
-1) Check that there are 2 S3 buckets tagged: `module-11`
+1) Check that there are 2 secrets in the secrets manager and they are tagged: `module-11`
 1) Check that there are 3 subnets and they are tagged: `module-11`
-1) Check that there is 1 IAM instance profile tagged: `module-11`
-1) Check that there is 2 IAM Role Policies tagged: `module-11`
 1) Check that there is one Auto Scaling Group and that it is tagged: `module-11`
-1) Check to make sure there is 1 or more objects in the S3 *raw* bucket
 
 ### Requirements
 
