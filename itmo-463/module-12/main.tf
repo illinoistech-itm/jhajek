@@ -476,3 +476,20 @@ resource "aws_iam_role_policy" "s3_fullaccess_policy" {
     ]
   })
 }
+
+##############################################################################
+# Create S3 buckets with policies that allow GetObject
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
+# https://stackoverflow.com/questions/65984400/how-to-delete-non-empty-s3-bucket-with-terraform
+##############################################################################
+
+resource "aws_s3_bucket" "raw-bucket" {
+  bucket = var.raw-s3-bucket
+  force_destroy = true
+}
+
+resource "aws_s3_bucket" "finished-bucket" {
+  bucket = var.finished-s3-bucket
+  force_destroy = true
+}

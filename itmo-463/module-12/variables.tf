@@ -30,3 +30,6 @@ variable "item_tag_template" {
   type = string
 }
 
+variable "raw-s3-bucket" {}
+
+variable "finished-s3-bucket" {}
