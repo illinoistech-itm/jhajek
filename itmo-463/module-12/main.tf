@@ -419,3 +419,57 @@ data "aws_secretsmanager_secret_version" "project_password" {
   depends_on = [ aws_secretsmanager_secret_version.itmo_project_password ]
   secret_id = aws_secretsmanager_secret.itmo_project_password.id
 }
+
+# IAM instance policy
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile
+
+resource "aws_iam_instance_profile" "coursera_profile" {
+  name = "coursera_profile"
+  role = aws_iam_role.role.name
+}
+
+# Creating the policy (rules) for what the role can do
+data "aws_iam_policy_document" "assume_role" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["ec2.amazonaws.com"]
+    }
+
+    actions = ["sts:AssumeRole"]
+  }
+}
+
+# Creating the role
+resource "aws_iam_role" "role" {
+  name               = "project_role"
+  path               = "/"
+  assume_role_policy = data.aws_iam_policy_document.assume_role.json
+
+  tags = {
+    Name = var.tag-name
+  }
+}
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy
+resource "aws_iam_role_policy" "s3_fullaccess_policy" {
+  name = "s3_fullaccess_policy"
+  role = aws_iam_role.role.id
+
+  # Terraform's "jsonencode" function converts a
+  # Terraform expression result to valid JSON syntax.
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "s3:*",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+    ]
+  })
+}
