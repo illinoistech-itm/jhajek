@@ -449,7 +449,7 @@ resource "aws_iam_role" "role" {
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 
   tags = {
-    Name = var.tag-name
+    Name = var.item_tag
   }
 }
 
