@@ -53,6 +53,9 @@ resource "aws_launch_template" "lt" {
   placement {
     availability_zone = "us-east-2a"
   }
+  iam_instance_profile {
+    name = aws_iam_instance_profile.coursera_profile.name
+  }
   user_data= filebase64("./install-env.sh")
   vpc_security_group_ids = [aws_security_group.project.id]
   key_name = data.aws_key_pair.key_pair.key_name
