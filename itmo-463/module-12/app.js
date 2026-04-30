@@ -481,13 +481,13 @@ app.get("/", function (req, res) {
         (async () => {
           await getPostedData(req, res);
         })();
-        (async () => { await getListOfSnsTopics(); })();
-        (async () => { await getSnsTopicArn() })();
-        (async () => { await subscribeEmailToSNSTopic() } ) ();
-        (async () => { await sendMessageViaEmail(req,res) } ) ();
-        (async () => {
-          await insertRecord(req, res);
-        })();
+        //(async () => { await getListOfSnsTopics(); })();
+        //(async () => { await getSnsTopicArn() })();
+        //(async () => { await subscribeEmailToSNSTopic() } ) ();
+        //(async () => { await sendMessageViaEmail(req,res) } ) ();
+        //(async () => {
+        //  await insertRecord(req, res);
+        //})();
       });
       
       app.listen(3000, function () {
