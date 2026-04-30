@@ -4,19 +4,20 @@ This project will deploy the following 10 tasks and verify they have been create
 
 ## Requirements
 
-The tag to search for is: `module-11`  and `module-11-template`
+Using the AWS Terraform Provider, you are to remove all RDS components, subnets, and snapshots from your code and replace with a DynamoDB.  Use the provided `create.sql` as your template for creating the DynamoDB and use the `put item` command to insert one record.
+
+The tag to search for is: `module-12`, unless noted. You can reuse tests from previous assignments. Copy your `grader.py` from the previous assignment and adjust the grader tasks to be these 10 tasks.
 
 1) Check that there is 1 AMI tagged: `module-11-template`
-1) Check that there is 1 RDS Snapshot tagged:`module-11-template`
-1) Check that there are 2 Security Groups tagged: `module-11`
+1) Check that there is 1 DynamoDB Table tagged `module-12`
+1) Check that there is 1 item (record) present in the DynamoDB table
+1) Check that there are 0 RDS Snapshots
+1) Check that there are 0 RDS subnets
+1) Check that there are 2 Security Groups tagged: `module-12`
 1) Check the HTTP check returns an HTTP 200 
-1) Check that there are 3 EC2 instances and they are tagged: `module-11`
-1) Check that there are 2 S3 buckets tagged: `module-11`
-1) Check that there are 3 subnets and they are tagged: `module-11`
-1) Check that there is 1 IAM instance profile tagged: `module-11`
-1) Check that there is 2 IAM Role Policies tagged: `module-11`
-1) Check that there is one Auto Scaling Group and that it is tagged: `module-11`
-1) Check to make sure there is 1 or more objects in the S3 *raw* bucket
+1) Check that there are 3 EC2 instances and they are tagged: `module-12`
+1) Check that there are 3 subnets and they are tagged: `module-12`
+1) Check that there is one Auto Scaling Group and that it is tagged: `module-12`
 
 ### Requirements
 
