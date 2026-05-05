@@ -13,7 +13,7 @@ The tag to search for is: `module-12`, unless noted. You can reuse tests from pr
 1) Check that there is 1 item (record) present in the DynamoDB table
 1) Check that there are 0 RDS Snapshots
 1) Check that there are 0 RDS subnets
-1) Check that there are 2 Security Groups tagged: `module-12`
+1) Check that there are ~~2~~ 1 Security Groups tagged: `module-12`
 1) Check the HTTP check returns an HTTP 200 
 1) Check that there are 3 EC2 instances and they are tagged: `module-12`
 1) Check that there are 3 subnets and they are tagged: `module-12`
