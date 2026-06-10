@@ -20,3 +20,13 @@ variable "build_artifact_location" {
   default = "../build/"
 
 }
+
+variable "iso_checksum" {
+  type = string
+  default = "file:http://mirrors.edge.kernel.org/ubuntu-releases/24.04/SHA256SUMS"
+}
+
+variable "iso_urls" {
+  type = string
+  default = "https://mirrors.edge.kernel.org/ubuntu-releases/24.04.3/ubuntu-24.04.3-live-server-amd64.iso"
+}

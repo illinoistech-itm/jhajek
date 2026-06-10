@@ -30,4 +30,4 @@ variable "iso_urls" {
   type = string
   default = "https://mirrors.edge.kernel.org/ubuntu-releases/24.04.3/ubuntu-24.04.3-live-server-amd64.iso"
 }
-  
+
