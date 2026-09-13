@@ -1,8 +1,8 @@
-# ITMD 521 Big Data Infrastructure - Fall 2025
+# ITMD 521 Big Data Infrastructure
 
 ![*College of Computing*](images/CoC_horiz_lockup_2019.jpg "College of Computing Logo")
 
-Semester: Fall 2025 Professor Jeremy Hajek
+Semester: Fall 2026 Professor Jeremy Hajek
 
 ![*https://xkcd.com/2054/*](images/data_pipeline.png "XCKD 2054 image URL")
 
@@ -13,8 +13,8 @@ Semester: Fall 2025 Professor Jeremy Hajek
  Telephone | 312.567.5937
  Email | hajek@illinoistech.edu
  Office | IIT Tower 15th Floor
- Office Hours and URL | See Times at [Book an Appointment](https://outlook.office.com/bookwithme/user/c0947acc2b7040bbab5c8c289e3d4a83@iit.edu "webpage for availability")
- Location | IIT Tower 15th Floor or online via MS Teams
+ Office Hours | Monday and Wednesday 11:00 am to 12:00 PM
+ Location | IIT Tower 15th Floor or online via Discord
 
 ## Course Catalog Description
 
@@ -31,7 +31,7 @@ Familiarity with programming and Linux: Normally 3-0-3 Semester Hours
 ## Section 01 Tuesday Lecture, Time & Place
 
 * Main Class time
-  * Tuesday and Thursday 11:25 am to 12:40 PM
+  * Tuesday and Thursday 3:15 pm to 4:30 pm
   * Location - TS-2030 Smart Lab
   * [Campus Map](https://www.iit.edu/about/campus-information/mies-campus/mies-campus-map "IIT Campus Map URL")
 
@@ -46,7 +46,7 @@ All readings should be done prior to class
 Week | Date | Topic | Readings |
 ----|------|:--------------------|-------------
 1 | 08/18 | Introduction | - 
-2 | 08/20 | Tooling Assignments | FDoE 1
+1 | 08/20 | Tooling Assignment | - 
 3 | 08/25 | Data Engineering Described | - 
 4 | 08/27 | Exercises | FDoE 2
 X | 09/01 | Labor day - No Class. Make up on 9/05 | -
