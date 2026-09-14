@@ -49,6 +49,8 @@ If you have a Mac - install `brew` and provide a screenshot of the output of the
 
 For Windows, place a screenshot of the version command output for: `winget --version`.
 
+![*Winget version*](./images/winget-v.png "image of winget")
+
 ### Linux
 
 Use the distros built in Package Manger where needed.
@@ -96,7 +98,7 @@ For Windows we are going to install PowerShell Core, also known as PowerShell 7.
 
 Open PowerShell 7 and issue the command: `ssh -V` and take a screenshot of the PowerShell version output as well as the SSH version output.
 
-[*SSH Version*](./images/ssh-v.png "image for SSH -V")
+![*SSH Version*](./images/ssh-v.png "image for SSH -V")
 
 For MacOS, newer versions use the Z shell.  This is due to Apple not using GPLv3+ software, which newer versions of BASH are licensed under.  This should be just fine and not require a new shell install.  If you want to experiment you can also install PowerShell 7 via Brew but it is not required.
 
@@ -129,11 +131,11 @@ We will be installing an text editor or and IDE for all of our coding and config
    
 Take a screenshot from the ABOUT tab or commandline `--version` output of your installed IDE.
 
-[*VS Code version*](./images/code-v.png "image of VSCode command line")
+![*VS Code version*](./images/code-v.png "image of VSCode command line")
 
 or 
 
-[*VS Code version*](./images/code--version.png "image of VSCode command line")
+![*VS Code version*](./images/code--version.png "image of VSCode command line")
 
 ### Install Git Client for Version Control
 
