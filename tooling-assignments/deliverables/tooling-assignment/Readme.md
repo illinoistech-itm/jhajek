@@ -80,7 +80,7 @@ brew install --cask powershell ; brew install --cask iterm2 ; brew install git ;
 * For M1 Macs you will need to make a purchase of a copy of Parallels Pro or Enterprise edition
   * [https://www.parallels.com/products/desktop/pro/](https://www.parallels.com/products/desktop/pro/ "Parallels Pro Edition")
   * The standard and education edition **doesn't** contain the commandline interface needed for automation.
-  * [30% discount from Parallels for students](https://www.parallels.com/plans/education/?utm_id=62180886&extensionid={extensionid}&matchtype=p&device=c&devicemodel=&creative=&network=o&placement=&x-source=ppc&msclkid=b165d690a867187c3acfb112351dd161&utm_source=bing&utm_medium=cpc&utm_campaign=PDfM%20-%20B%20-%20EN%20-%20US%20-%20PS%20-%20AMER&utm_term=parallels%20academic&utm_content=Parallels%20EDU "webpage for discount")
+  * [50% discount from Parallels for students](https://www.parallels.com/plans/education/?utm_id=62180886&extensionid={extensionid}&matchtype=p&device=c&devicemodel=&creative=&network=o&placement=&x-source=ppc&msclkid=b165d690a867187c3acfb112351dd161&utm_source=bing&utm_medium=cpc&utm_campaign=PDfM%20-%20B%20-%20EN%20-%20US%20-%20PS%20-%20AMER&utm_term=parallels%20academic&utm_content=Parallels%20EDU "webpage for discount")
 * Once Vagrant and Parallels Pro Edition is installed you need to also install the Parallels SDK from the Download Tab in your parallels.com account
   * From the Terminal run the command: `vagrant plugin install vagrant-parallels`
     * This will add the needed plugin to allow you to use Parallels from Vagrant
@@ -143,6 +143,8 @@ Version Control is **vital** to modern software development and we will be using
 
 Take a screenshot of the output of the command: ```git --version```
 
+![*Git version*](./images/git-v.png "image for git version")
+
 #### Configure Git Client
 
 You will need to configure Git if you already haven't done so.  From a shell run these two commands:
@@ -165,6 +167,8 @@ If you do not already have VirtualBox 7.x installed, use your package manager to
 
 Take a screenshot of the VirtualBox > Help > About VirtualBox output or from the Terminal: `vboxmanage --version` (Windows or Intel MacOS)
 
+![*VBox version*](./images/vboxmanage-v.png "image for vbox manage")
+
 For those using an M1 Mac we will require a [Pro License from Parallels](https://www.parallels.com/products/desktop/pro/ "Pro License form parallels.com website").
 
 Take a screenshot of Parallels Desktop > About Parallels Desktop or from the terminal : `prlctl --version` (Works on any version of Parallels)
@@ -179,6 +183,8 @@ Using your package manager, install the latest version of [Vagrant](https://vagr
 
 Take a screenshot of the output of the command: `vagrant --version`
 
+![*Vagrant Version*](./images/vagrant-v.png "image for vagrant version")
+
 ### Install Packer.io
 
 Packer is another automation tool from HashiCorp. Whereas Vagrant was for running virtual machines, Packer's job is to build virtual machine images from a template language. This tool allows fast infrastructure deployment, multi-provider portability, improved stability, and greater testability.
@@ -186,6 +192,8 @@ Packer is another automation tool from HashiCorp. Whereas Vagrant was for runnin
 Using a package manager, install the latest version of [Packer](https://packer.io "Packer install site"). If you have a version > 1.8.x you will be ok. Note, if on Linux, do not use the built in package manager as these versions of Vagrant and Packer are too old and unmaintained.
 
 Take a screenshot of the output of the command: `packer --version`
+
+![*Packer Version*](./images/packer-v.png "images of Packer Version")
 
 ### Oh-My-Git Tutorial
 
