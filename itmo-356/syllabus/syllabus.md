@@ -13,7 +13,7 @@ Semester: Fall 2026 Professor Jeremy Hajek
       Telephone: 312.567.5937
           Email: hajek@illinoistech.edu
          Office: Galvin Tower 15th floor ITM Offices, 10 W. 35th St.
-   Office Hours: Monday and Wednesday 10:00 - 12:00
+   Office Hours: Monday and Wednesday 12:45 - 2:00 PM
 ---------------- --------------------------------------------------------
 
 **Course Catalog Description:** Students learn to set up and configure an industry-standard open source operating system including system installation and basic system administration; system architecture; package management; command-line commands; devices, filesystems, and the filesystem hierarchy standard. Also addressed are applications, shells, scripting and data management; user interfaces and desktops; administrative tasks; essential system services; networking fundamentals; and security, as well as support issues for open source software. Multiple distributions are covered with emphasis on the two leading major distribution forks. [ITMO 356 Bulletin Description](http://bulletin.iit.edu/courses/itmo/ "ITMO 356 Bulletin Description")
