@@ -92,16 +92,12 @@ This section we will be working with the [jdbc](https://spark.apache.org/docs/3.
 spark-submit --packages com.mysql:mysql-connector-j:9.4.0 ./departuredelays.json
 ```
 
-* ~~In your MySQL instance from the command line create a `database` named: `module-06` (this step is done manually not in the code).~~
 * Read the parquet file you wrote in Part III into a DataFrame 
 * Using the DataFrame, select all records that have `ORD` (Chicago O'Hare as `Origin`) writeing the results to a DataFrameWriter named `orddeparturedelays`
 * Write the content of the DataFrame: `orddeparturedelays` via JDBC into a **table** in your `itmd-521` database named: `orddeparturedelays` 
-* ~~Use a `.show(10)` function to print out the first 10 lines~~
 
 ### Deliverable
 
 Create a sub-folder under `labs` named:`module-06` under the `itmd-521` folder. Place all deliverables there.
 
 Submit to Canvas the URL to the folder in your GitHub repo. I will clone your code and run it to test the functionality. I don't need the datasets as I will have them already.
-
-Due at the **Start of class** Oct 1st 1:00 PM
