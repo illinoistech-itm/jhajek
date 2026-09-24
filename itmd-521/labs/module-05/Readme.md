@@ -10,10 +10,7 @@
 
 - We will be working the LearningSpark book chapter 3 starting on page 54/78 printed page/pdf
 - Use the file `sf-fire-calls.csv` from the sample code
-- Write a Pyspark application that answers the seven questions on Page 68/92 (printed page/pdf) of the Text Book under the header **End-to-End DataFrame Examples** 
-- Databricks has released the textbook as a free online version
-  - [https://pages.databricks.com/rs/094-YMS-629/images/LearningSpark2.0.pdf](https://pages.databricks.com/rs/094-YMS-629/images/LearningSpark2.0.pdf "web page free databricks version of learning spark) 
-  - **Note** do not use the notebook file provided, we want to challenge you to be able to build this yourself
+- Write a Pyspark application that answers the seven questions on Page 68/92 (printed page/pdf) of the Textbook under the header **End-to-End DataFrame Examples** 
 
 ## Assignment Details - Part I
 
