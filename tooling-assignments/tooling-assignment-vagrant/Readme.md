@@ -12,4 +12,4 @@ After completing this tutorial take a screenshot of the output of the command ``
 
 ## Deliverable
 
-In the document, `Readme.md`, provide the required screenshots. Push a copy of this Markdown file in the private GitHub repo provided, under the `itmt-430 folder` or comparable class directory and make an additional sub-folder named: `tooling-assignment-vagrant`. Submit the URL to your deliverable to Canvas.
+In the document, `Readme.md`, provide the required screenshots. Push a copy of this Markdown file to the private GitHub repo provided, create the appropriate folder for the class you are in: such as: `itmt-430 folder` or comparable class directory. Make an additional sub-folder named: `tooling-assignment-vagrant`. Submit the URL to your deliverable to Canvas.
