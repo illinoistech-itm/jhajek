@@ -13,7 +13,7 @@ For ITMD 521, Big Data Technologies, module-03, lab-01, chapter-02
 
 ## Pre-reqs
 
-For this portion of the assignment you will need to have software installed on your computer to be able to screen record, record audio, and record your web cam to produce and explanation video for your homework submission. Use the **Panopto** plugin provided directly in the toolbar of the Canvas submission. Look for a greeb triangle icon.
+For this portion of the assignment you will need to have software installed on your computer to be able to screen record, record audio, and record your web cam to produce and explanation video for your homework submission. Use the **Panopto** plugin provided directly in the toolbar of the Canvas submission. Look for a green triangle icon.
 
 ## Deliverable Requirements
 
