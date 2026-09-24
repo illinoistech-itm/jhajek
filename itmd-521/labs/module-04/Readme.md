@@ -56,5 +56,5 @@ Screenshot goes here
 
 ### Deliverable
 
-Using this template, under the itmd-521 directory in your local repository, create a sub-directory named labs. Under that create another subdirectory named module-03 and place this Readme.md file in that directory along with a folder for images. `itmd-521` > `labs` > `module-04`
+Using the provided template, under the `itmd-521` directory in your local repository, create a sub-directory named `labs`. Under that create another subdirectory named `module-04` and place this `Readme.md` file in that directory along with a folder for images. `itmd-521` > `labs` > `module-04`
 
