@@ -52,7 +52,7 @@ Now you can issue the command to create a user/password combo in the MySQL serve
 ```mysql
 sudo mysql -e "CREATE USER '$USERNAME' IDENTIFIED BY '$PASSWORD'";
 
-sudo mysql -e "GRANT CREATE,SELECT,INSERT,DROP,UPDATE, DELETE,CREATE TEMPORARY TABLES ON itmd521.* TO '$USERNAME'@'127.0.0.1'";`
+sudo mysql -e "GRANT CREATE,SELECT,INSERT,DROP,UPDATE,DELETE,CREATE TEMPORARY TABLES ON itmd521.* TO '$USERNAME'@'127.0.0.1'";`
 ```
 
 Followed by the command: `sudo mysql -e "FLUSH PRIVILEGES;"`
