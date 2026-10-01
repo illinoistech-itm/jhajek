@@ -48,8 +48,12 @@ export PASSWORD=ilovebunnies
 Save and exit. **Remember** to source the changes via issuing the command: `. ~/.bashrc`
 
 Now you can issue the command to create a user/password combo in the MySQL server and assign database access.
+ 
+```mysql
+sudo mysql -e "CREATE USER '$USERNAME' IDENTIFIED BY '$PASSWORD'";
 
-`sudo mysql -e "GRANT CREATE,SELECT,INSERT,DROP,UPDATE, DELETE,CREATE TEMPORARY TABLES ON itmd521.* TO '$USERNAME'@'127.0.0.1' IDENTIFIED BY '$PASSWORD'";`
+sudo mysql -e "GRANT CREATE,SELECT,INSERT,DROP,UPDATE, DELETE,CREATE TEMPORARY TABLES ON itmd521.* TO '$USERNAME'@'127.0.0.1'";`
+```
 
 Followed by the command: `sudo mysql -e "FLUSH PRIVILEGES;"`
 
