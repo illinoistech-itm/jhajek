@@ -45,7 +45,7 @@ export USERNAME=controller
 export PASSWORD=ilovebunnies
 ```
 
-Save and exit. **Remember** to source the changes via issuing the command: `. ~/.bashrc`
+Save and exit. **Remember** to source the changes via issuing the command: `. ~/ .bashrc`
 
 Now you can issue the command to create a user/password combo in the MySQL server and assign database access.
  
