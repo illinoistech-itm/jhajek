@@ -38,7 +38,7 @@ sudo firewall-cmd --zone=metrics-network --change-interface=enp3s0f1 --permanent
 # Create new zone on ens20 called meta-network for a non-routable internal network
 sudo firewall-cmd --new-zone=meta-network --permanent
 # Attach interface ens20 (eth2) to the new zone
-sudo firewall-cmd --zone=meta-network --change-interface=enp4s0f0 --permanent
+sudo firewall-cmd --zone=meta-network --change-interface=enp4s0f1 --permanent
 
 # Consul ports needed for Gossip protocol on the LAN
 # https://www.consul.io/docs/install/ports
@@ -54,7 +54,7 @@ sudo firewall-cmd --zone=public --add-service=ssh --permanent
 
 # Creating the data network interface
 sudo firewall-cmd --new-zone=data-network --permanent
-sudo firewall-cmd --zone=meta-network --change-interface=enp4s0f1 --permanent
+sudo firewall-cmd --zone=meta-network --change-interface=enp4s0f0 --permanent
 ##############################################################################################
 # Add any additional firewall ports below this line in this format:
 # sudo firewall-cmd --zone=public --add-port=####/tcp --permanent
